@@ -1,0 +1,12 @@
+{
+  "name": "rss-aggregator-build",
+  "version": "1.0.0",
+  "description": "Script to fetch and process RSS feeds for static hosting.",
+  "main": "feed-processor.js",
+  "scripts": {
+    "start": "node feed-processor.js"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  }
+}
