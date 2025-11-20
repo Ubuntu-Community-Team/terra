@@ -1,0 +1,39 @@
+name: Ubuntu Member RSS Feed Builder
+
+on:
+  # Run the member feed pull every hour.. may wanna rachet this fella back..
+  schedule:
+    - cron: '0 * * * *' 
+  # Allow manual trigger from GitHub Actions
+  workflow_dispatch: 
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        # Important: Need token for committing changes back to the repo
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Feed Processor Script
+        run: npm start
+
+      - name: Commit and Push new feed-data.json
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # Only commit the generated JSON file
+          commit_message: "🤖 Feeds: Update processed feed data"
+          file_pattern: 'feed-data.json' 
+          # Use the default GitHub token for authenticated commits
+          commit_user_name: 'GitHub Actions Bot'
+          commit_user_email: 'actions@github.com'
