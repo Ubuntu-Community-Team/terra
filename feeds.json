@@ -1,33 +1,8 @@
 [
   {
-    "name": "Canonical",
-    "nick": "dholbach",
-    "url": "http://blog.canonical.com/tag/planetubuntu/feed/"
-  },
-  {
-    "name": "Xubuntu",
-    "nick": "lyz",
-    "url": "https://xubuntu.org/feed/"
-  },
-  {
     "name": "Ubuntu Classroom",
     "nick": "nhandler",
     "url": "https://ubuntuclassroom.wordpress.com/feed/?mrss=off"
-  },
-  {
-    "name": "Ubuntu Women",
-    "nick": "lyz",
-    "url": "http://blog.ubuntu-women.org/feed/"
-  },
-  {
-    "name": "Ubuntu Kernel Team",
-    "nick": "leannogasawara",
-    "url": "http://voices.canonical.com/kernelteam/?feed=rss2"
-  },
-  {
-    "name": "The Fridge",
-    "nick": "lyz",
-    "url": "http://fridge.ubuntu.com/category/planet/feed/atom/"
   },
   {
     "name": "Launchpad News",
@@ -40,24 +15,9 @@
     "url": "http://ubuntugnome.org/feed/?mrss=off"
   },
   {
-    "name": "Ubuntu App Developer Blog",
-    "nick": "timo-jyrinki",
-    "url": "https://developer.ubuntu.com/en/blog/feeds/tags/planet-ubuntu/"
-  },
-  {
     "name": "Ubuntu Blog",
     "nick": "dholbach",
     "url": "https://ubuntu.com/blog/feed/"
-  },
-  {
-    "name": "Ubuntu Server blog",
-    "nick": "robbiew",
-    "url": "http://www.ubuntuserver.org/?feed=atom"
-  },
-  {
-    "name": "Svetlana Belkin",
-    "nick": "belkinsa",
-    "url": "https://belkinsa.github.io/SenseOpenness/categories/ubuntu/"
   },
   {
     "name": "Dave Morley",
@@ -70,24 +30,9 @@
     "url": "http://andrea.corbellini.name/ubuntu.rss"
   },
   {
-    "name": "Fabián Rodríguez",
-    "nick": "magicfab",
-    "url": "http://www.fabianrodriguez.com/blog/category/tech/linux/ubuntu/ubuntu-planet/feed"
-  },
-  {
     "name": "Benjamin Mako Hill",
     "nick": "mako",
     "url": "http://mako.cc/copyrighteous/?flav=rss"
-  },
-  {
-    "name": "Robert Collins",
-    "nick": "lifeless",
-    "url": "http://advogato.org/person/robertc/rss.xml"
-  },
-  {
-    "name": "Jonathan Riddell",
-    "nick": "jr",
-    "url": "http://blogs.kde.org/blog/57/feed"
   },
   {
     "name": "Jonathan Riddell",
@@ -105,21 +50,6 @@
     "url": "https://ograblog.wordpress.com/feed/atom"
   },
   {
-    "name": "Daniel Holbach",
-    "nick": "dholbach",
-    "url": "https://daniel.holba.ch/blog/index.xml"
-  },
-  {
-    "name": "Corey Burger",
-    "nick": "corey.burger",
-    "url": "http://www.advogato.org/person/Burgundavia/rss.xml"
-  },
-  {
-    "name": "Martin Meredith",
-    "nick": "mez",
-    "url": "http://www.sourceguru.net/tag/ubuntu/feed/"
-  },
-  {
     "name": "Ante Karamatić",
     "nick": "ivoks",
     "url": "http://ivoks.com/category/ubuntu/feed/"
@@ -135,24 +65,9 @@
     "url": "https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml"
   },
   {
-    "name": "Mark Shuttleworth",
-    "nick": "sabdfl",
-    "url": "http://www.markshuttleworth.com/feed/"
-  },
-  {
     "name": "Jonathan Carter",
     "nick": "jonathan",
     "url": "https://jonathancarter.org/feed"
-  },
-  {
-    "name": "Joey Stanford",
-    "nick": "joey",
-    "url": "http://voices.canonical.com/joey.stanford/feed/"
-  },
-  {
-    "name": "Melissa Draper",
-    "nick": "melissa",
-    "url": "http://www.geekosophical.net/?feed=rss2"
   },
   {
     "name": "Scott Balneaves",
@@ -170,11 +85,6 @@
     "url": "https://popey.com/blog/post/index.xml"
   },
   {
-    "name": "Mike Basinger",
-    "nick": "mike.basinger",
-    "url": "http://www.mikesplanet.net/feed/"
-  },
-  {
     "name": "Stéphane Graber",
     "nick": "stgraber",
     "url": "https://stgraber.org/category/planet-ubuntu/feed/"
@@ -190,29 +100,9 @@
     "url": "http://blog.markvdb.be/feeds/posts/full/-/english/ubuntu"
   },
   {
-    "name": "David Murphy",
-    "nick": "schwuk",
-    "url": "http://blog.schwuk.com/category/ubuntu/feed/"
-  },
-  {
-    "name": "Dave Walker",
-    "nick": "davewalker",
-    "url": "http://blog.daviey.com/feed/"
-  },
-  {
-    "name": "Sri Ramadoss|ஸ்ரீ  ராமதாஸ்",
-    "nick": "amachu",
-    "url": "http://amachu.net/enblog/?cat=13&feed=rss2"
-  },
-  {
     "name": "Carlos Diener - emonkey",
     "nick": "emonkey",
     "url": "http://blog.diener.li/feed"
-  },
-  {
-    "name": "Andre Noel",
-    "nick": "andrenoel",
-    "url": "http://en.andrenoel.com.br/tag/ubuntu/feed/"
   },
   {
     "name": "Elizabeth K. Joseph",
@@ -235,11 +125,6 @@
     "url": "http://kalon33.blogspot.com/feeds/posts/default"
   },
   {
-    "name": "Dax Solomon Umaming",
-    "nick": "knightlust",
-    "url": "http://blog.knightlust.com/?cat=4&feed=rss2"
-  },
-  {
     "name": "Timo Aaltonen",
     "nick": "tjaalton",
     "url": "https://tjaalton.wordpress.com/feed/"
@@ -258,21 +143,6 @@
     "name": "Julian Andres Klode",
     "nick": "juliank",
     "url": "https://blog.jak-linux.org/post/index.xml"
-  },
-  {
-    "name": "Scott Ritchie",
-    "nick": "scottritchie",
-    "url": "http://yokozar.org/blog/archives/tag/planet-ubuntu/feed"
-  },
-  {
-    "name": "Martin Pitt",
-    "nick": "pitti",
-    "url": "http://www.piware.de/category/ubuntu/feed/atom/"
-  },
-  {
-    "name": "Andrea Colangelo",
-    "nick": "warp10",
-    "url": "http://blog.andreacolangelo.com/category/planet-ubuntu/feed/atom/"
   },
   {
     "name": "Murat Güneş",
@@ -300,11 +170,6 @@
     "url": "http://blogs.gnome.org/mneptok/feed/"
   },
   {
-    "name": "Mahyuddin Susanto",
-    "nick": "udienz",
-    "url": "http://blog.mahyudd.in/category/planet-ubuntu/feed/atom/"
-  },
-  {
     "name": "Russell John",
     "nick": "russell.john",
     "url": "http://russelljohn.net/journal/category/linux/feed"
@@ -320,11 +185,6 @@
     "url": "http://www.murraytwins.com/blog/?feed=rss2&cat=8"
   },
   {
-    "name": "Alessio Treglia",
-    "nick": "quadrispro",
-    "url": "http://en.alessiotreglia.com/feed"
-  },
-  {
     "name": "Muhammad Takdir",
     "nick": "muhammad-takdir",
     "url": "https://kipas.wordpress.com/category/ubuntu/feed"
@@ -338,16 +198,6 @@
     "name": "Bryan Quigley",
     "nick": "bryanquigley",
     "url": "https://bryanquigley.com/rss.xml"
-  },
-  {
-    "name": "Jussi Schultink",
-    "nick": "jussi01",
-    "url": "http://jussi01.com/?cat=16&feed=rss2"
-  },
-  {
-    "name": "Clay Weber",
-    "nick": "claydoh",
-    "url": "http://claydoh.com/category/planetubuntu/feed/atom"
   },
   {
     "name": "Michael Casadevall",
@@ -380,11 +230,6 @@
     "url": "http://rafiiik.blogspot.com/feeds/posts/default/-/Ubuntu"
   },
   {
-    "name": "Milo Casagrande",
-    "nick": "milo",
-    "url": "http://www.milo.name/feed/atom"
-  },
-  {
     "name": "Didier Roche",
     "nick": "didrocks",
     "url": "https://didrocks.fr/tags/pu/index.xml"
@@ -405,24 +250,9 @@
     "url": "http://blog.luke.wf/feeds/posts/default/-/ubuntu-planet/"
   },
   {
-    "name": "David Rubin",
-    "nick": "drubin",
-    "url": "http://blog.smartcube.co.za/feed/"
-  },
-  {
     "name": "Dougie Richardson",
     "nick": "dougierichardson",
     "url": "https://dougiewougie.com/category/linux/feed/"
-  },
-  {
-    "name": "Nizar Kerkeni",
-    "nick": "nizarus",
-    "url": "http://blog.nizarus.org/topics/planet-ubuntu/feed/"
-  },
-  {
-    "name": "Michael Terry",
-    "nick": "mterry",
-    "url": "http://mterry.name/log/tag/ubuntu/feed/"
   },
   {
     "name": "Eric Hammond",
@@ -475,16 +305,6 @@
     "url": "http://utappia.org/feed/"
   },
   {
-    "name": "Jamie Strandboge",
-    "nick": "jdstrand",
-    "url": "https://penguindroppings.wordpress.com/category/ubuntu/feed/?mrss=off"
-  },
-  {
-    "name": "Shane Fagan",
-    "nick": "shanepatrickfagan",
-    "url": "http://shanefagan.com/taxonomy/term/1/feed"
-  },
-  {
     "name": "Martin-Éric Racine",
     "nick": "q-funk",
     "url": "http://q-funk.blogspot.com/feeds/posts/default/-/Ubuntu"
@@ -498,11 +318,6 @@
     "name": "Benjamin Drung",
     "nick": "bdrung",
     "url": "https://overbenny.wordpress.com/category/planet-ubuntu/feed/atom"
-  },
-  {
-    "name": "Wesley Stessens",
-    "nick": "wesley",
-    "url": "http://wesley.vidiqatch.org/feed/"
   },
   {
     "name": "Robert Ancell",
@@ -525,34 +340,14 @@
     "url": "http://blog.cyphermox.net/feeds/posts/default/-/planet-ubuntu"
   },
   {
-    "name": "Chris Johnston",
-    "nick": "cjohnston",
-    "url": "http://chrisjohnston.org/category/ubuntu-planet/feed"
-  },
-  {
-    "name": "John Baab",
-    "nick": "rhpot1991",
-    "url": "http://www.baablogic.net/drupal/taxonomy/term/1/feed"
-  },
-  {
     "name": "Antonio Sánchez",
     "nick": "antoniosanchez",
     "url": "http://antoniosanchez.wordpress.com/category/planet-ubuntu/feed/atom"
   },
   {
-    "name": "Jussi Kekkonen",
-    "nick": "tmt",
-    "url": "http://www.tm-travolta.net/cat/ubuntu/feed"
-  },
-  {
     "name": "Ken VanDine",
     "nick": "ken-vandine",
     "url": "http://blogs.gnome.org/kenvandine/category/ubuntu/feed/"
-  },
-  {
-    "name": "Terence Simpson",
-    "nick": "tsimpson",
-    "url": "http://tsimpson.ubottu.com/blog/topics/ubuntu/feed"
   },
   {
     "name": "Dimitri John Ledkov",
@@ -565,11 +360,6 @@
     "url": "http://leftyfb.com/?feed=rss2&cat=4"
   },
   {
-    "name": "Duncan McGreggor",
-    "nick": "oubiwann",
-    "url": "http://feeds.feedburner.com/ElectricDuncan"
-  },
-  {
     "name": "Michael Hall",
     "nick": "mhall119",
     "url": "https://mhall119.com/blog/category/planet-ubuntu/feeds/rss/"
@@ -578,16 +368,6 @@
     "name": "Scott Moser",
     "nick": "smoser",
     "url": "https://smoser.github.io/feed/by_tag/ubuntu.xml"
-  },
-  {
-    "name": "Robbie Williamson",
-    "nick": "robbiew",
-    "url": "https://ubuhulk.wordpress.com/category/ubuntu/feed/?mrss=off"
-  },
-  {
-    "name": "Andrew Pollock",
-    "nick": "apollock",
-    "url": "http://blog.andrew.net.au/planetubuntu/index.rss"
   },
   {
     "name": "Muhammad Fauzilkamil Zainuddin",
@@ -600,19 +380,9 @@
     "url": "https://feeds.feedburner.com/TodayNotesBlogAboutLinuxOpenSourceComputerInternet"
   },
   {
-    "name": "Raphaël Hertzog",
-    "nick": "hertzog",
-    "url": "http://raphaelhertzog.com/feed/planets/"
-  },
-  {
     "name": "Rhonda D'Vine",
     "nick": "rhonda",
     "url": "https://rhonda.deb.at/blog/?flav=rss&lang=en"
-  },
-  {
-    "name": "Full Circle Magazine",
-    "nick": "ronnietucker",
-    "url": "http://fullcirclemagazine.org/tag/ubuntu/feed/"
   },
   {
     "name": "Cesar Sevilla",
@@ -648,11 +418,6 @@
     "name": "Luca Ferretti",
     "nick": "elle.uca",
     "url": "http://blogs.gnome.org/lferrett/feed/"
-  },
-  {
-    "name": "Vincent-Xavier JUMEL",
-    "nick": "vincentxavier",
-    "url": "http://blog.thetys-retz.net/feed/tag/PlanetUbuntu/atom"
   },
   {
     "name": "David Mandala",
@@ -710,16 +475,6 @@
     "url": "https://ubuntumug.wordpress.com/category/planet-ubuntu/feed/?mrss=off"
   },
   {
-    "name": "Salvatore Palma",
-    "nick": "palma-salvatore",
-    "url": "http://www.en.salvatorepalma.net/category/planet-ubuntu/feed/"
-  },
-  {
-    "name": "Charlene Tessier",
-    "nick": "cmmtessier",
-    "url": "https://frenchfortunecookie.wordpress.com/tag/ubuntu-planet/feed/?mrss=off"
-  },
-  {
     "name": "James Page",
     "nick": "james-page",
     "url": "https://javacruft.wordpress.com/category/ubuntu/feed/?mrss=off"
@@ -738,16 +493,6 @@
     "name": "Hajime MIZUNO",
     "nick": "mizuno-as",
     "url": "http://d.hatena.ne.jp/mizuno-as/rss"
-  },
-  {
-    "name": "Tony Whitmore",
-    "nick": "tonywhitmore",
-    "url": "http://tonywhitmore.co.uk/blog/feed/"
-  },
-  {
-    "name": "Steve Langasek",
-    "nick": "vorlon",
-    "url": "http://web.dodds.net/~vorlon/wiki/ubuntu/index.rss"
   },
   {
     "name": "Philipp Kern",
@@ -785,11 +530,6 @@
     "url": "http://askstefano.blogspot.com/feeds/posts/default/-/ubuntu"
   },
   {
-    "name": "Allison Randal",
-    "nick": "allison",
-    "url": "http://allisonrandal.com/category/ubuntu/feed"
-  },
-  {
     "name": "José Antonio Rey",
     "nick": "jose",
     "url": "https://joseeantonior.wordpress.com/category/planet-ubuntu/feed/atom"
@@ -815,16 +555,6 @@
     "url": "https://toabctl.wordpress.com/category/planet-ubuntu/feed/?mrss=off"
   },
   {
-    "name": "Thomas Ward",
-    "nick": "teward",
-    "url": "http://dark-net.net/?tag=ubuntu-planet&feed=rss2"
-  },
-  {
-    "name": "Rachid BM",
-    "nick": "rachidbm",
-    "url": "http://rachidbm.com/category/planet-ubuntu/feed/"
-  },
-  {
     "name": "Jhosman Lizarazo",
     "nick": "jhosman",
     "url": "http://feeds.feedburner.com/Jhosmanenglish"
@@ -833,16 +563,6 @@
     "name": "Juan Negron",
     "nick": "negronjl",
     "url": "http://blog.xtremeghost.com/feeds/posts/default/-/planet"
-  },
-  {
-    "name": "Rik Goldman",
-    "nick": "rikgoldman",
-    "url": "http://gonzotech.tumblr.com/tagged/planet/rss"
-  },
-  {
-    "name": "Christopher James Halse Rogers",
-    "nick": "raof",
-    "url": "http://blog.cooperteam.net/feeds/posts/default/-/ubuntu"
   },
   {
     "name": "Adnane Belmadiaf",
@@ -855,24 +575,9 @@
     "url": "https://noskcaj10.wordpress.com/category/ubuntu/feed/?mrss=off"
   },
   {
-    "name": "Mattia Migliorini",
-    "nick": "deshack",
-    "url": "http://www.deshack.net/ubuntu/feed/"
-  },
-  {
     "name": "Robie Basak",
     "nick": "racb",
     "url": "http://www.justgohome.co.uk/blog/feeds/tag/planet-ubuntu.atom.xml"
-  },
-  {
-    "name": "Michael Zanetti",
-    "nick": "mzanetti",
-    "url": "http://notyetthere.org/?cat=5&feed=rss2"
-  },
-  {
-    "name": "Sean Davis",
-    "nick": "bluesabre",
-    "url": "https://bluesabre.org/tag/xubuntu/rss/"
   },
   {
     "name": "Sujeevan Vijayakumaran",
@@ -880,19 +585,9 @@
     "url": "https://svij.org/tags/ubuntu-planet/index.xml"
   },
   {
-    "name": "Sebastian Kügler",
-    "nick": "sebasje",
-    "url": "http://vizZzion.org/blog/category/english/feed/"
-  },
-  {
     "name": "Marco Trevisan (Treviño)",
     "nick": "3v1n0",
     "url": "http://blog.3v1n0.net/tag/planet-ubuntu/feed/"
-  },
-  {
-    "name": "Chris J Arges",
-    "nick": "arges",
-    "url": "http://chrisarges.net/feed.ubuntu.xml"
   },
   {
     "name": "Alberto Milone",
@@ -900,24 +595,9 @@
     "url": "http://albertomilone.com/wordpress/?feed=rss2"
   },
   {
-    "name": "Soren Hansen",
-    "nick": "soren",
-    "url": "http://blog.warma.dk/tag/planetubuntu/feed"
-  },
-  {
-    "name": "Andi Darmawan",
-    "nick": "belutz",
-    "url": "http://www.belutz.net/category/ubuntu/feed/"
-  },
-  {
     "name": "Daniel T Chen",
     "nick": "crimsun",
     "url": "http://drowninginbugs.blogspot.com/feeds/posts/default/-/ubuntu"
-  },
-  {
-    "name": "Collin Pruitt",
-    "nick": "collinp",
-    "url": "http://collinp.com/rss"
   },
   {
     "name": "Myriam Schweingruber",
@@ -930,19 +610,9 @@
     "url": "http://supermario-world.blogspot.com/feeds/posts/default"
   },
   {
-    "name": "Chris Crisafulli",
-    "nick": "itnet7",
-    "url": "http://www.linuxsouls.com/taxonomy/term/6/feed"
-  },
-  {
     "name": "Sebastien Bacher",
     "nick": "seb128",
     "url": "http://blogs.gnome.org/seb128/feed/"
-  },
-  {
-    "name": "Christian Bjälevik",
-    "nick": "nafallo",
-    "url": "http://www.nafallo.info/blog/atom-en.xml"
   },
   {
     "name": "Walter Lapchynski",
@@ -955,39 +625,9 @@
     "url": "http://carla-sella.blogspot.it/rss.xml"
   },
   {
-    "name": "Bryce Harrington",
-    "nick": "bryce",
-    "url": "http://www.bryceharrington.org/wordpress/category/ubuntu/feed"
-  },
-  {
-    "name": "Gustavo Silva",
-    "nick": "gsilvapt",
-    "url": "https://gsilvapt.github.io/feed.xml"
-  },
-  {
-    "name": "Brendan Perrine",
-    "nick": "walterorlin",
-    "url": "http://brendanperrine.com/rss.xml"
-  },
-  {
     "name": "Mirko Pizii",
     "nick": "hallino1",
     "url": "http://www.mirkopizii.com/category/ubuntu-com-planet/feed/?mrss=off"
-  },
-  {
-    "name": "El Acheche Anis",
-    "nick": "elacheche",
-    "url": "http://ubuntiste-msakni.legtux.org/taxonomy/term/19/feed"
-  },
-  {
-    "name": "Nathan Osman",
-    "nick": "george-edison55",
-    "url": "http://2buntu.com/accounts/rss/6/"
-  },
-  {
-    "name": "Unity Team",
-    "nick": "mhall119",
-    "url": "https://unity.ubuntu.com/feed/"
   },
   {
     "name": "Dmitry Shachnev",
@@ -998,11 +638,6 @@
     "name": "Matthias Klumpp",
     "nick": "ximion",
     "url": "http://blog.tenstral.net/category/planet/planet-ubuntu/feed"
-  },
-  {
-    "name": "Will Cooke",
-    "nick": "willcooke",
-    "url": "http://www.whizzy.org/category/ubuntu-2/feed/"
   },
   {
     "name": "Sergio Schvezov",
@@ -1025,29 +660,14 @@
     "url": "https://jeremy.bicha.net/category/ubuntu/feed/?mrss=off"
   },
   {
-    "name": "Martin Wimpress",
-    "nick": "flexiondotorg",
-    "url": "https://flexion.org/categories/ubuntu.xml"
-  },
-  {
     "name": "David Mohammed",
     "nick": "fossfreedom",
     "url": "https://ubuntubudgie.org/feed/"
   },
   {
-    "name": "Andres Rodriguez",
-    "nick": "andreserl",
-    "url": "http://www.roaksoax.com/category/ubuntu/planet/feed/atom"
-  },
-  {
     "name": "Corey Bryant",
     "nick": "corey.bryant",
     "url": "https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off"
-  },
-  {
-    "name": "Tyler Hicks",
-    "nick": "tyhicks",
-    "url": "https://tyhicks.com/feed-ubuntu.xml"
   },
   {
     "name": "James Gifford",
@@ -1065,39 +685,14 @@
     "url": "https://podcastubuntuportugal.org/feed/podcast/index.xml"
   },
   {
-    "name": "LoCo Ubuntu PT",
-    "nick": "tcarrondo",
-    "url": "https://ubuntu-pt.org/category/planet/feed/"
-  },
-  {
-    "name": "Josh Powers",
-    "nick": "powersj",
-    "url": "https://powersj.github.io/tags/ubuntu/index.xml"
-  },
-  {
     "name": "Erich Eickmeyer",
     "nick": "eeickmeyer",
     "url": "https://ericheickmeyer.com/category/planet-ubuntu/feed/"
   },
   {
-    "name": "Ubucon Europe 2019",
-    "nick": "gsilvapt",
-    "url": "https://sintra2019.ubucon.org/category/planet/feed/"
-  },
-  {
-    "name": "Phil Roche",
-    "nick": "philroche",
-    "url": "https://philroche.net/category/ubuntu/feed/index.xml"
-  },
-  {
     "name": "Olivier Fraysse",
     "nick": "olivier.fraysse",
     "url": "https://people.ubuntu.com/~olivier.fraysse/index.xml"
-  },
-  {
-    "name": "Utkarsh Gupta",
-    "nick": "utkarsh",
-    "url": "https://utkarsh2102.com/index.xml"
   },
   {
     "name": "Lukas Märdian",
@@ -1123,11 +718,6 @@
     "name": "Soumyadeep Ghosh",
     "nick": "soumyadghosh",
     "url": "https://soumyadghosh.github.io/website/index.xml"
-  },
-  {
-    "name": "Kubuntu General News",
-    "nick": "ahoneybun",
-    "url": "http://www.kubuntu.org/news/feed/atom"
   },
   {
     "name": "Ubuntu Studio",
