@@ -1,5 +1,13 @@
 [
   {
+    "sourceName": "Podcast Ubuntu Portugal",
+    "sourceUrl": "https://podcastubuntuportugal.org/feed/podcast/index.xml",
+    "title": "E367 a Todo O Vapor",
+    "link": "https://podcastubuntuportugal.org/e367/",
+    "date": "2025-11-27T00:00:00.000Z",
+    "snippet": "Nesta semana e seguintes, vamos apostar no Ubuntu Touch e trazer o Software Livre nos telefones para as massas! O Miguel resolveu problemas com a ajuda da comunidade, o Diogo vai ao Porto evangelizar à bruta com o Ruben Carneiro e o sol brilhará para todos nós. A Canonical promete suporte para 15 anos; o Xubuntu foi hackeado porque não usa Hugo (womp, womp); o Miguel agora usa mano e bro em cada frase por causa de impressoras e vai converter-se ao Debian com Plasma e MEU DEUS, AS MÁQUINAS DA STE..."
+  },
+  {
     "sourceName": "Ubuntu Blog",
     "sourceUrl": "https://ubuntu.com/blog/feed/",
     "title": "AMI and Canonical announce partnership",
@@ -22,14 +30,6 @@
     "link": "https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-919/72377",
     "date": "2025-11-17T23:09:13.000Z",
     "snippet": "Ubuntu Weekly News\nUWN Issue 919 November 16-22 2025.\nWelcome to the Ubuntu Weekly Newsletter, Issue 919 for the week of November 16 - 22, 2025.\nIn this Issue\n\nPublic postmortem of the Xubuntu.org download compromise\nUbuntu Stats\nHot in Support\nOther Meeting Reports\nUpcoming Meetings and Events\nUbuntu Circles! (LoCo) News\n2025 Korean LoCo 8th Representative Election\nUbucon India 2025 - A milestone!\nUbuntu @ FOSDEM 2026\nUbuntu Circles! (LoCo) Events\nDebcrafters Digest Vol 3 – An Unexpected Attemp..."
-  },
-  {
-    "sourceName": "Podcast Ubuntu Portugal",
-    "sourceUrl": "https://podcastubuntuportugal.org/feed/podcast/index.xml",
-    "title": "E366 Morangos Com Linux",
-    "link": "https://podcastubuntuportugal.org/e366/",
-    "date": "2025-11-13T00:00:00.000Z",
-    "snippet": "O Miguel está enervadíssimo com Ubuntu Touch e fez peixeirada no Telegram, mas o Diogo tem boas notícias: para além de ter um monitor todo «gamer» para jogar SuperTuxKart, ele e o Ruben Carneiro vão ao Porto combater bravamente oligopólios malvados nos telefones! Revimos excelentes novidades do Firefox 145 que ajudam no combate às invasões de privacidade; discutimos a entrevista de Jon Seager sobre a última BRONCA da Canonical com Flatpaks e o que esperar do Ubuntu Core Desktop; debatemos violen..."
   },
   {
     "sourceName": "Soumyadeep Ghosh",
