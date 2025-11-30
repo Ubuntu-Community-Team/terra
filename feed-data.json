@@ -640,6 +640,14 @@
     "snippet": "So I created a subreddit for interesting G+ refugees. Emphasis on interesting."
   },
   {
+    "sourceName": "Nathan Haines",
+    "sourceUrl": "https://www.nhaines.com/feed.xml",
+    "title": "Announcing the Ubuntu 18.10 Free Culture Showcase winners",
+    "link": "https://www.nhaines.com/blog/2018/09/28/announcing-ubuntu-18.10-free-culture-showcase-winners/",
+    "date": "2018-09-28T07:00:00.000Z",
+    "snippet": "October approaches, and Ubuntu marches steadly along the road from one LTS to another.  Ubuntu 18.10 is another step in Ubuntu’s future.  And now it’s time to unveil a small part of that change: the community wallpapers to be included in Ubuntu 18.10!\n\nEvery cycle, talented artists around the world create media and release it under licenses that encourage sharing and adaptation. This cycle we had some amazing images submitted to the Ubuntu 18.10 Free Culture Showcase photo pool on Flickr, where ..."
+  },
+  {
     "sourceName": "Alberto Milone",
     "sourceUrl": "http://albertomilone.com/wordpress/?feed=rss2",
     "title": "NVIDIA PRIME in Ubuntu 18.04 and 18.10, and a call for testing",
@@ -718,14 +726,6 @@
     "link": "http://nhandler.com/blog/2017/08/26/freenode-live.html",
     "date": "2017-08-26T00:00:00.000Z",
     "snippet": "For those of you who might not be aware, freenode is an IRC network that caters to free and open source projects. We have had a goal for a number of years to hold freenode #live, an in-person conference where our staff, projects, FOSS supporters, and IRC enthusiasts could all get together in one place. Thanks to some very generous sponsorship, primarily by Private Internet Access, this conference is finally happening! The first ever freenode #live conference will take place October 28 - 29, 2017..."
-  },
-  {
-    "sourceName": "Robie Basak",
-    "sourceUrl": "http://www.justgohome.co.uk/blog/feeds/tag/planet-ubuntu.atom.xml",
-    "title": "More on the imported repositories",
-    "link": "http://www.justgohome.co.uk/blog/2017/08/more-on-the-imported-repositories.html",
-    "date": "2017-08-21T16:53:44.000Z",
-    "snippet": "This is the third post in our series on our git workflow tooling in\nUbuntu.  There is an index of all our planned posts in the first\npost.\nAs mentioned there, it is important to keep in mind that the tooling\nand implementation are still highly\nexperimental.\nNish introduced our imported repositories using the git ubuntu clone\nwrapper, as well\nas using git directly.\nI'd like to go into a little more detail about what we're actually importing.\nAutomatic imports watch for new source publications in ..."
   },
   {
     "sourceName": "Ubuntu GNOME",
