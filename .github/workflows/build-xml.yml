@@ -33,5 +33,5 @@ jobs:
       - name: Commit and push RSS XML
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update RSS XML"
+          commit_message: "🤖 Feeds: Update XML feed"
           branch: ${{ github.ref_name }}
