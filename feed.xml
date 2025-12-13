@@ -6,57 +6,167 @@
     <description>Fresh posts from the Ubuntu Planet</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 12 Dec 2025 01:54:32 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 13 Dec 2025 01:48:35 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Harnessing the potential of 5G with Kubernetes: a cloud-native telco transformation perspective</title>
-      <link>https://ubuntu.com//blog/harnessing-the-potential-of-5g-with-kubernetes-a-cloud-native-telco-transformation-perspective</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/harnessing-the-potential-of-5g-with-kubernetes-a-cloud-native-telco-transformation-perspective</guid>
-      <pubDate>Wed, 10 Dec 2025 15:47:17 GMT</pubDate>
-      <description><![CDATA[<p>Telecommunications networks are undergoing a cloud-native revolution. 5G promises ultra-fast connectivity and real-time services, but achieving those benefits requires an infrastructure that is agile, low-latency, and highly reliable. Kubernetes has emerged as a cornerstone for telecom operators to meet 5G demands. In 2025, Canonical Kubernetes delivers a single, production-grade Kubernetes platform with long-term support (LTS) and telco-specific optimizations, deployable across clouds, data centers, and the far edge.</p>
-<p>This blog explores how Canonical Kubernetes empowers 5G and cloud-native telco workloads with high performance, enhanced platform awareness (EPA), and robust security, while offering flexible deployment via snaps, Juju, or Cluster API. We’ll also highlight its integration into industry initiatives like Sylva, support for GPU/DPU acceleration, and synergy with MicroCloud for scalable edge infrastructure.</p>
-<h1 class="wp-block-heading">The rise of the cloud-native telco</h1>
-<p>Telecom decision-makers face immense pressure to evolve their networks rapidly and cost-effectively. Traditional, hardware-centric architectures struggle to keep pace with 5G’s requirements for low latency, high throughput, and dynamic scaling. This is where Kubernetes – the de facto platform for cloud-native applications – comes in. Kubernetes brings powerful automation, scalability, and resiliency that allow telcos to manage network functions like software across data centers, public clouds, and far-edge deployments. The result is a more agile operational model: services can be rolled out faster, resources automatically optimized to demand, and updates applied continuously without disrupting critical services. In the 5G era, such agility is essential for delivering innovations like network slicing, multi-access edge computing (MEC), and AI-driven services.</p>
-<p>At the same time, Kubernetes opens the door for telcos to refactor their network functions into microservices. Instead of relying on monolithic appliances or heavy virtual machines, operators can deploy <em>cloud-native network functions (CNFs)</em> – essentially containerized network services – that are lighter and faster to roll out than traditional virtual network functions (VNFs). By shifting to CNFs, new network features (whether a 5G core component or a firewall) can be introduced or updated in a fraction of the time, using automated CI/CD pipelines instead of lengthy manual upgrades. This approach helps telcos simplify the migration from legacy systems to a more agile, software-driven network model.</p>
-<p>However, adopting Kubernetes for telecom workloads also means meeting rigorous performance and reliability standards. Carrier-grade services like voice, video, and core network functions can’t tolerate unpredictable delays or downtime. Telco leaders need a Kubernetes platform that combines cloud-native flexibility with <em>telco-grade</em> performance, security, and support. Canonical Kubernetes answers that call, providing a Kubernetes distribution specifically tuned for telecommunications needs.</p>
-<h1 class="wp-block-heading">Canonical Kubernetes: optimized for cloud-native 5G networks and edge computing</h1>
-<p>Canonical’s Kubernetes distribution has been engineered from the ground up to address the unique challenges of 5G and cloud-native telco cloud deployments. It is a single, unified Kubernetes offering that blends the ease of use of lightweight deployments with the robustness of an enterprise-grade platform. Importantly, Canonical Kubernetes can be deployed and managed in whatever way best fits a telco’s environment – whether installed as a secure snap package or integrated with full automation tooling like Juju (model-driven operations) or Kubernetes Cluster API (CAPI). This flexibility means operators can start small at the network edge or scale up to carrier-core clusters, all using the same consistent platform. Notably, Canonical Kubernetes brings cloud-native telco-friendly capabilities in the areas of performance, networking, operations, and support:</p>
-<h3 class="wp-block-heading">High performance &amp; low latency</h3>
-<p><a href="https://ubuntu.com/engage/an-introduction-to-real-time-linux-part-i">Real-time linux kernel</a> support ensures that high-priority network workloads execute with predictable, ultra-low latency, a critical requirement for functions like the 5G user plane function (UPF). In parallel, built-in support for advanced networking (including SR-IOV and DPDK) enables fast packet processing by giving containerized network functions direct access to hardware, dramatically reducing network I/O latency for high bandwidth 5G applications. Together, these features allow cloud-native network functions to meet stringent performance and determinism once only achievable on specialized telecom hardware.</p>
-<h3 class="wp-block-heading">GPU acceleration</h3>
-<p>Canonical Kubernetes integrates seamlessly with acceleration technologies to support emerging cloud-native telco workloads. It works with NVIDIA’s GPU and networking operators to leverage hardware accelerators (GPUs, SmartNICs, DPUs) for intensive tasks. It supports NVIDIA’s Multi-Instance GPU (MIG), which expands the performance and value of the NVIDIA’s data center GPUs, such as the latest GB200 and RTX PRO 6000 Blackwell Server Edition by partitioning the GPU into up to seven instances, each fully hardware isolated with its own high-bandwidth memory, cache, and streaming multiprocessors. The partitioned instances are transparent to workloads which greatly optimizes the use of resources and allows for serving workloads with guaranteed QoS.</p>
-<p>This means telecom operators can run AI/ML analytics, media processing, or virtual RAN computations that take advantage of GPUs and DPU offloading within their Kubernetes clusters – all managed under the same platform. By tapping into hardware acceleration, telcos can deliver advanced services (like AI-driven network optimization or AR/VR streaming) with high performance, without needing separate siloed infrastructure.</p>
-<h3 class="wp-block-heading">Operational efficiency and automation</h3>
-<p>Day-0 to Day-2 operations are streamlined through automation in Canonical’s stack. The distribution supports full lifecycle management – clusters can be deployed, scaled, and updated via one-step commands or integrated CI/CD pipelines, reducing manual effort and errors. Using Juju charms, Canonical’s model-driven operations further simplify complex orchestration, enabling teams to configure and update Kubernetes and related services in a repeatable, declarative way. Built-in self-healing and high availability features ensure that the platform can recover from failures automatically, keeping services running without intervention.</p>
-<p>This high degree of automation translates into faster rollout of new network functions and updates (with minimal downtime), allowing telco teams to focus on innovation rather than routine ops tasks.</p>
-<h3 class="wp-block-heading">Edge flexibility</h3>
-<p>Canonical Kubernetes is designed to run from the core to the far edge with equal ease. Its lightweight, efficient design (delivered as a single snap package) results in a low resource footprint, making it viable even on a one- or two-node edge cluster in a remote site. At the same time, it scales up to multi-node deployments for central networks. The platform supports a variety of configurations – from a single node for an ultra-compact edge appliance, to a dual-node high-availability cluster, to large multi-node clusters for data centers – all with the same tooling and consistent experience.</p>
-<p>This flexibility allows operators to extend cloud capabilities to edge locations (for ultra-low latency processing) while managing everything in a unified way. In practice, Canonical’s solution can power cloud-native telco IT workloads, 5G core functions, and edge applications under one umbrella, meeting the specific performance and latency needs of each environment.</p>
-<h3 class="wp-block-heading">Long-Term support and stability</h3>
-<p>Canonical backs its Kubernetes with long-term support options far exceeding the typical open-source release cycle. <a href="https://canonical.com/blog/12-year-lts-for-kubernetes">Each Canonical Kubernetes LTS version can receive security patches and maintenance for up to 15 years</a>, ensuring a stable foundation for cloud-native telco services over the entire 5G rollout and beyond. (For comparison, upstream Kubernetes offers roughly 1 year of support per release).</p>
-<p>This extended support window means carriers can avoid frequent, disruptive upgrades and rest assured that their infrastructure remains compliant over the long term. Such a commitment to stability is a key reason telecom operators choose Canonical – long-term maintenance provides confidence that critical network workloads will run on a hardened, well-maintained platform for many years.</p>
-<h3 class="wp-block-heading">Cost efficiency and vendor neutrality</h3>
-<p>As an open-source, upstream-aligned distribution, Canonical Kubernetes has no licensing costs and prevents vendor lock-in. Telcos are free to deploy it on their preferred hardware or cloud, and they benefit from a large ecosystem of Kubernetes-compatible tools and operators. The platform’s efficient resource usage and automation also help drive down operating costs – by improving hardware utilization and simplifying management, it enables operators to serve growing traffic loads without linear cost increases. In short, Canonical’s Kubernetes offers carrier-grade performance and features at a fraction of the cost of proprietary alternatives, all while keeping the operator in control of their technology roadmap.</p>
-<h1 class="wp-block-heading">Enabling a new wave of cloud-native telco services</h1>
-<p>Using Canonical Kubernetes, cloud-native telcos can position themselves to innovate faster and operate more efficiently in the 5G era. They can readily stand up cloud-native 5G Core functions, scale out Open RAN deployments, and push applications to the network edge – all on a consistent Kubernetes foundation. In fact, Kubernetes makes it feasible for telcos to transition from traditional VNFs on virtual machines to containerized CNFs, reducing resource overhead and speeding up deployment of network features. This means legacy network applications can be modernized step-by-step and run alongside new microservices on the same platform, avoiding risky “big bang” overhauls.</p>
-<p>The result is not only technical efficiency but business agility: operators can launch new services (from enhanced mobile broadband to IoT analytics) in weeks instead of months, respond quickly to customer demand spikes, and streamline the integration of new network functions or vendors.</p>
-<p>Early adopters in the industry are already seeing the benefits. For example, <a href="https://ubuntu.com/blog/bringing-canonical-kubernetes-to-sylva-a-new-chapter-for-european-telco-clouds">Canonical’s Kubernetes has been embraced in initiatives like the European Sylva open telco cloud project</a>, in part due to its security, flexibility and long-term support advantages. This momentum underscores that a performant, open Kubernetes platform is becoming a strategic asset for telcos aiming to stay ahead in a competitive landscape. Perhaps most importantly, Canonical Kubernetes lets telcos focus on delivering value to subscribers – ultra-reliable connectivity, rich digital services, tailored enterprise solutions – rather than getting bogged down in infrastructure complexity. It abstracts away much of the heavy lifting of deploying and upgrading distributed systems, while providing the controls needed to meet strict cloud-native telco requirements. The combination of automation, performance tuning, and openness creates a powerful engine for telecom innovation.</p>
-<h1 class="wp-block-heading">Cloud-native at any scale: Canonical Kubernetes meets MicroCloud</h1>
-<p>At the edge, complexity is the enemy. That’s why Canonical Kubernetes pairs naturally with MicroCloud, our lightweight production-grade cloud infrastructure for distributed environments. MicroCloud fits the edge use case extremely well: it is easy to deploy, fully automated, and optimized for bare-metal and low-power sites. Drop it into a telco cabinet, regional hub, or remote data center, and you get a resilient control plane for running Kubernetes, virtualization, and storage with zero overhead.</p>
-<p>In such deployments, MicroCloud and Canonical Kubernetes form a tightly integrated stack that brings cloud-native operations to the far edge. Need to orchestrate CNFs next to VMs? Spin up a single-node cluster with high availability? Scale to dozens of locations without rearchitecting? This combo makes it possible, with snaps for simple updates, Juju for full automation, and long-term support built in.</p>
-<h1 class="wp-block-heading">Conclusion: building the future of cloud-native telco on open source Kubernetes</h1>
-<p>5G and edge computing are reshaping telecom networks, and Kubernetes has proven to be an essential technology powering this evolution.<a href="https://ubuntu.com/industrial"> Industrial IoT</a>,<a href="https://ubuntu.com/automotive"> automotive applications</a> ,<a href="https://ubuntu.com/internet-of-things/smart-city"> smart cities</a>,<a href="https://ubuntu.com/robotics"> robotics</a>, remote health care, and the gaming industry rely on high data transfer, close to real time latency, very high availability and reliability. Canonical Kubernetes brings the best of cloud-native innovation to the telecom domain in a form that aligns with carriers’ operational realities and performance needs. It delivers a rare mix of benefits – agility and efficiency from automation, high performance for demanding workloads, freedom from lock-in, and assured long-term support – making it a compelling choice for any telco modernizing its infrastructure.</p>
-<p>Telecommunications leaders looking to become cloud-native telcos should consider how an open-source platform like Canonical Kubernetes can serve as a foundation for growth. Whether the goal is to reduce operating costs in the core network, roll out programmable 5G services at the edge, or simply break free from proprietary constraints, Canonical’s Kubernetes distribution provides a proven path forward.</p>
-<h1 class="wp-block-heading">Explore further</h1>
-<p>To dive deeper into how Canonical Kubernetes meets telco performance and reliability requirements, we invite you to read our detailed white paper: <a href="https://ubuntu.com/engage/kubernetes-for-telco-performance">Addressing telco performance requirements with Canonical Kubernetes</a><em>.</em> It offers in-depth insights and benchmark results from real-world cloud-native telco scenarios. Additionally, visit our blogs on Ubuntu.com and Canonical.com for more success stories and technical guides – from 5G network modernization strategies to edge:</p>
+      <title>Coming to 26.04 LTS: Three Layouts</title>
+      <link>https://ubuntustudio.org/2025/12/coming-to-26-04-lts-three-layouts/</link>
+      <guid isPermaLink="true">https://ubuntustudio.org/2025/12/coming-to-26-04-lts-three-layouts/</guid>
+      <pubDate>Thu, 11 Dec 2025 18:41:20 GMT</pubDate>
+      <description><![CDATA[<h2>Xfce Legacy</h2>
+
+
+
+<p>A lot of people have asked us why Ubuntu Studio comes with a panel on top as the default. For that, it&#8217;s a simple answer: Legacy.</p>
+
+
+
+<p>When Ubuntu Studio 12.04 LTS (Precise Pangolin) released over 13 years ago, it was released with a top panel by default as that was the default for our desktop envirionment: Xfce.</p>
+
+
+
+<p>Fast-forward eight years to 20.10 and Xfce was no longer our default desktop environment: we had switched to KDE&#8217;s Plasma Desktop. Plasma has a bottom panel by default, similar to Windows. However, to ease the transition for our long-time users, we kept the panel on top by default, resizing it to be similar to the default top panel of Xfce.</p>
+
+
+
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" src="https://ubuntustudio.org/wp-content/uploads/2025/12/e9d5/VirtualBox_ISOTest_10_12_2025_18_42_41.jpg" alt="" class="wp-image-3053" width="640" height="400"/></figure>
+
+
+
+<h2>A macOS-Like Layout</h2>
+
+
+
+<p>With 25.10&#8217;s release, we included an additional layout: two panels. One panel is on top with a global menu, and the bottom contains some default applications, a trash can, and a full-screen application launcher. This is a way to feel familiar to those with a similar layout from where they may be coming from, being an operating system for creativity: macOS.</p>
+
+
+
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" src="https://ubuntustudio.org/wp-content/uploads/2025/12/1df5/VirtualBox_ISOTest_10_12_2025_18_45_35.png" alt="" class="wp-image-3050" width="640" height="400"/></figure>
+
+
+
+<h2>Familiarity and Traditionalism: Windows-like Layout</h2>
+
+
+
+<p>Starting with 26.04 LTS, we&#8217;ll also include one more layout: a bottom, Windows 10-like layout. This is to ease the transition for those coming from Windows, and due to popular request and reports.</p>
+
+
+
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" src="https://ubuntustudio.org/wp-content/uploads/2025/12/9220/VirtualBox_ISOTest_10_12_2025_18_43_35.jpg" alt="" class="wp-image-3052" width="640" height="400"/></figure>
+
+
+
+<h2>Should We Change The Default?</h2>
+
+
+
+<p>It has been 13 years since we defaulted to a top panel, but is that the right idea anymore?</p>
+
+
+
+<p>Right now, on the Ubuntu Discourse, <a href="https://discourse.ubuntu.com/t/coming-to-ubuntu-studio-26-04-lts-three-layouts/">we have a poll</a> to decide if we should change the default layout starting with 26.04 LTS. This will not affect layouts for anyone upgrading from a prior release, but only new installations or new users going forward.</p>
+
+
+
+<p>If you would like to participate in the poll, <a href="https://discourse.ubuntu.com/t/coming-to-ubuntu-studio-26-04-lts-three-layouts/">head on over to the Ubuntu Discourse and cast a vote</a>!</p>]]></description>
+      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
+    </item>
+    <item>
+      <title>Java 25 now available on Google Cloud Serverless</title>
+      <link>https://ubuntu.com//blog/java-25-now-available-on-google-cloud-serverless</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/java-25-now-available-on-google-cloud-serverless</guid>
+      <pubDate>Thu, 11 Dec 2025 14:38:00 GMT</pubDate>
+      <description><![CDATA[<p>[December 11, 2025] Today Canonical, the publisher of Ubuntu, announced the immediate availability of Java 25 across Google Cloud’s serverless portfolio, including Cloud Run, App Engine, and Cloud Functions.</p>
+<p>This release is the result of a collaboration between Google Cloud and Canonical, and it will allow developers to access the latest Java features the moment they are released publicly. All three serverless products use<strong> </strong>Ubuntu 24.04 as the base image, with Canonical actively maintaining the runtime and ensuring timely security patches.</p>
+<h2 class="wp-block-heading">Simplified deployment with Buildpacks</h2>
+<p>Deploying Java 25 is easy and fast thanks to Google Cloud Buildpacks. You do not need to create manual Dockerfiles or manage complex container configurations.</p>
+<p>Buildpacks are designed to transform your source code into a production-ready container image automatically. When you deploy your application, the Buildpacks system detects your requested Java version and automatically provisions the Ubuntu-based Java 25 environment, which Canonical team continuously updates with security fixes. This “source-to-deploy” workflow allows you to focus entirely on writing code while Google Cloud and Canonical handle the underlying OS and runtime security.</p>
+<h2 class="wp-block-heading">Get started</h2>
+<p>To get started, simply use the GOOGLE_RUNTIME_VERSION environment variable to specify the JDK version to 25.  </p>
+<p>pack build java-app –builder=<a href="http://gcr.io/buildpacks/builder">gcr.io/buildpacks/builder</a> –env GOOGLE_RUNTIME_VERSION=25</p>
+<p>To learn more about Canonical support on Java, <a href="https://documentation.ubuntu.com/ubuntu-for-developers/reference/availability/java/">please read our reference documentation</a>.</p>
+<h2 class="wp-block-heading">More reading and resources</h2>
 <ul>
-<li><a href="https://ubuntu.com/blog/edge-networking-gets-smarter-ai-and-5g-in-action">Edge Networking gets smarter: AI and 5G in action</a></li>
-<li><a href="https://ubuntu.com/blog/canonical-releases-fips-enabled-kubernetes">Canonical releases FIPS-enabled Kubernetes</a></li>
-<li><a href="https://ubuntu.com/blog/canonical-kubernetes-officially-included-in-sylva-1-5">Canonical Kubernetes officially included in Sylva 1.5</a></li>
-</ul>
-<p>Visiting MWC 2026?<a href="https://canonical.com/solutions/telco#get-in-touch"> Book a meeting with Canonical</a> to find out more.</p>]]></description>
+<li><a href="https://docs.cloud.google.com/run/docs/runtime-support#java"><strong>Runtime support details</strong></a></li>
+<li><a href="https://docs.cloud.google.com/docs/buildpacks/base-images#java"><strong>Ubuntu base images</strong></a></li>
+<li><a href="https://docs.cloud.google.com/docs/buildpacks/java"><strong>Learn more about Buildpacks</strong></a></li>
+</ul>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
+    <item>
+      <title>E368 Ensino De TIC, Com Artur Coelho</title>
+      <link>https://podcastubuntuportugal.org/e368/</link>
+      <guid isPermaLink="true">https://podcastubuntuportugal.org/e368/</guid>
+      <pubDate>Thu, 11 Dec 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Desta feita, raptámos&hellip;errr&hellip;recebemos um convidado muito especial: Artur Coelho. Professor de TIC, formador, apaixonado pela educação e criatividade com robótica, IA, 3D e programação de software, mantém uma visão crítica, actual e informada sobre o ensino das Tecnologias de Informação e Comunicação (TIC) nas escolas portuguesas - onde foi pioneiro na introdução de diversas tecnologias e construiu um percurso invejável, influenciando positivamente um grande número de alunos e professores. A conversa foi tão longa e interessante que vamos tentar rapt&hellip;convidá-lo outra vez no futuro.</p>
+<p>Já sabem: oiçam, subscrevam e partilhem!</p>
+<ul>
+<li>Artur Coelho:
+<ul>
+<li><a href="https://masto.pt/@arturcoelho">https://masto.pt/@arturcoelho</a></li>
+<li><a href="https://intergalacticrobot.blogspot.com/">https://intergalacticrobot.blogspot.com/</a></li>
+<li><a href="https://3dalpha.blogspot.com/">https://3dalpha.blogspot.com/</a></li>
+</ul>
+</li>
+<li>ANPRI: <a href="https://anpri.edu.pt/">https://anpri.edu.pt/</a></li>
+<li>O Robô Anprino:
+<ul>
+<li><a href="https://www.anpri.pt/anprino/index.php/componentes-do-robot/">https://www.anpri.pt/anprino/index.php/componentes-do-robot/</a></li>
+<li><a href="https://sketchfab.com/3d-models/anprino-f2c430c0b17d4124b7824ec8b3bf5670">https://sketchfab.com/3d-models/anprino-f2c430c0b17d4124b7824ec8b3bf5670</a></li>
+</ul>
+</li>
+<li>Fundação Microbit para a educação:
+<ul>
+<li><a href="https://microbit.org/">https://microbit.org/</a></li>
+<li><a href="https://microbit.org/projects/make-it-code-it/">https://microbit.org/projects/make-it-code-it/</a></li>
+<li><a href="https://microbit.org/buy/">https://microbit.org/buy/</a></li>
+</ul>
+</li>
+<li>Pocket Code: <a href="https://catrobat.org/pocket-code/">https://catrobat.org/pocket-code/</a></li>
+<li>Scratch: <a href="https://scratch.mit.edu/about">https://scratch.mit.edu/about</a></li>
+<li>Ubuntu Touch: <a href="https://www.ubuntu-touch.io/">https://www.ubuntu-touch.io/</a></li>
+<li>Sessão sobre Ubuntu Touch no LCD Porto (27 e 29 de Novembro): <a href="https://porto.ectl.softwarelivre.eu/pt/schedule/2025/">https://porto.ectl.softwarelivre.eu/pt/schedule/2025/</a></li>
+<li>«Ubuntu Touch e o seu ecossistema», com Diogo Constantino e António Aragão: <a href="https://youtu.be/GCiLd02G74g">https://youtu.be/GCiLd02G74g</a></li>
+<li>Uncomplicated Firewall (UFW): <a href="https://wiki.ubuntu.com/UncomplicatedFirewall">https://wiki.ubuntu.com/UncomplicatedFirewall</a></li>
+<li>Gufw, UFW com interface gráfico: <a href="https://help.ubuntu.com/community/Gufw">https://help.ubuntu.com/community/Gufw</a></li>
+<li>Debian 13 Trixie: <a href="https://www.debian.org/releases/trixie/">https://www.debian.org/releases/trixie/</a></li>
+<li>KDE Plasma 6: <a href="https://kde.org/announcements/megarelease/6/">https://kde.org/announcements/megarelease/6/</a></li>
+<li>Noughty Linux:
+<ul>
+<li><a href="https://noughtylinux.org/">https://noughtylinux.org/</a></li>
+<li><a href="https://github.com/noughtylinux">https://github.com/noughtylinux</a></li>
+</ul>
+</li>
+<li>Nicholas Negroponte: <a href="https://en.wikipedia.org/wiki/Nicholas_Negroponte">https://en.wikipedia.org/wiki/Nicholas_Negroponte</a></li>
+<li>Seymour Papert:
+<ul>
+<li>Sítio internet: <a href="http://papert.org/">http://papert.org/</a></li>
+<li>Obras publicadas: <a href="http://papert.org/works.html">http://papert.org/works.html</a></li>
+<li>Biografia: <a href="https://en.wikipedia.org/wiki/Seymour_Papert">https://en.wikipedia.org/wiki/Seymour_Papert</a></li>
+<li>«20 coisas para fazer com um computador» (Papert, Seymour A.; Solomon, Cynthia, 1971): <a href="https://dspace.mit.edu/handle/1721.1/5836">https://dspace.mit.edu/handle/1721.1/5836</a></li>
+</ul>
+</li>
+<li>OLPC: <a href="https://en.wikipedia.org/wiki/One_Laptop_per_Child">https://en.wikipedia.org/wiki/One_Laptop_per_Child</a></li>
+<li>Magalhães (Intel Classmate) PC: <a href="https://en.wikipedia.org/wiki/Classmate_PC">https://en.wikipedia.org/wiki/Classmate_PC</a></li>
+<li>Linux Caixa Mágica: <a href="https://en.wikipedia.org/wiki/Linux_Caixa_M%C3%A1gica">https://en.wikipedia.org/wiki/Linux_Caixa_M%C3%A1gica</a></li>
+<li>Alberto, o dicionário aberto: <a href="https://snapcraft.io/alberto">https://snapcraft.io/alberto</a></li>
+<li>Projecto Natura: <a href="https://natura.di.uminho.pt/wiki/doku.php?id=ProjectoNatura">https://natura.di.uminho.pt/wiki/doku.php?id=ProjectoNatura</a></li>
+<li>Faruk, uma mascote de Luís Louro para o Software Freedom Day: <a href="https://digitalfreedoms.org/en/sfd/blog/sfd-mascot-challenge-winners-2025">https://digitalfreedoms.org/en/sfd/blog/sfd-mascot-challenge-winners-2025</a></li>
+<li>Sobre Wernher Von Braun: <a href="https://youtu.be/TjDEsGZLbio">https://youtu.be/TjDEsGZLbio</a></li>
+<li>O foguetão Vergeltungswaffe 2: <a href="https://youtu.be/jePOQuFTXy4">https://youtu.be/jePOQuFTXy4</a></li>
+<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
+<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
+<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
+</ul>
+<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
+<p>Este episódio foi produzido por Diogo Constantino, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
+O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
+Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados.
+Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
+A arte de episódio foi criada pelo Luís Louro - a mascote Faruk - vencedora do terceiro lugar no concurso de mascote para o Software Freedom Day.</p>]]></description>
+      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
     </item>
     <item>
       <title>Addressing Linux's Missing PKI Infrastructure</title>
@@ -1191,210 +1301,6 @@ python-certifi for the Python&nbsp;team.</p>
       <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
-      <title>E367 a Todo O Vapor</title>
-      <link>https://podcastubuntuportugal.org/e367/</link>
-      <guid isPermaLink="true">https://podcastubuntuportugal.org/e367/</guid>
-      <pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>Nesta semana e seguintes, vamos apostar no Ubuntu Touch e trazer o Software Livre nos telefones para as massas! O Miguel resolveu problemas com a ajuda da comunidade, o Diogo vai ao Porto evangelizar à bruta com o Ruben Carneiro e o sol brilhará para todos nós. A Canonical promete suporte para 15 anos; o Xubuntu foi hackeado porque não usa Hugo (womp, womp); o Miguel agora usa mano e bro em cada frase por causa de impressoras e vai converter-se ao Debian com Plasma e MEU DEUS, AS MÁQUINAS DA STEAM SÃO LINDAS!! FUUUUYYYYYOOOOH!!!</p>
-<p>Já sabem: oiçam, subscrevam e partilhem!</p>
-<ul>
-<li>Ubuntu Touch: <a href="https://www.ubuntu-touch.io/">https://www.ubuntu-touch.io/</a></li>
-<li>Sessão sobre Ubuntu Touch no LCD Porto (27 e 29 de Novembro): <a href="https://porto.ectl.softwarelivre.eu/pt/schedule/2025/">https://porto.ectl.softwarelivre.eu/pt/schedule/2025/</a></li>
-<li>Ruben Carneiro: <a href="https://rubencarneiro.github.io/rubencarneiro.io/">https://rubencarneiro.github.io/rubencarneiro.io/</a></li>
-<li>Bugs do UT no Gitlab: <a href="https://gitlab.com/ubports/development/ubuntu-touch">https://gitlab.com/ubports/development/ubuntu-touch</a></li>
-<li>Pesquisar sem IA: <a href="https://noai.duckduckgo.com">https://noai.duckduckgo.com</a></li>
-<li>Canon Pixma, controladores para Linux: <a href="https://www.canon.pt/support/consumer/products/printers/pixma/ts-series/pixma-ts3150.html?type=drivers&amp;os=Linux%20(64-bit)">https://www.canon.pt/support/consumer/products/printers/pixma/ts-series/pixma-ts3150.html?type=drivers&amp;os=Linux%20(64-bit)</a></li>
-<li>CUPS? Temos tudo: <a href="https://openprinting.github.io/cups/">https://openprinting.github.io/cups/</a></li>
-<li>Mais apps? Não, obrigado: <a href="https://youtu.be/kfgtqNrGAFs">https://youtu.be/kfgtqNrGAFs</a></li>
-<li>Câmara da UBports: <a href="https://open-store.io/app/camera.ubports">https://open-store.io/app/camera.ubports</a></li>
-<li>Manigâncias para o Mistério da Câmara Desaparecida: <a href="https://forums.ubports.com/topic/10425/camera-app-cannot-be-installed/30">https://forums.ubports.com/topic/10425/camera-app-cannot-be-installed/30</a></li>
-<li>Podcat: <a href="https://open-store.io/app/podcat.cibersheep">https://open-store.io/app/podcat.cibersheep</a></li>
-<li>Podbird: <a href="https://open-store.io/app/com.mikeasoft.podbird">https://open-store.io/app/com.mikeasoft.podbird</a></li>
-<li>Debian 13 Trixie: <a href="https://www.debian.org/releases/trixie/">https://www.debian.org/releases/trixie/</a></li>
-<li>KDE Plasma 6: <a href="https://kde.org/announcements/megarelease/6/">https://kde.org/announcements/megarelease/6/</a></li>
-<li>João Gabriel Ribeiro (Shifter.pt): <a href="https://shifter.pt/author/joao-gabriel-ribeiro/">https://shifter.pt/author/joao-gabriel-ribeiro/</a></li>
-<li>Uncle Roger, embaixador da cozinha oriental, originário da Malásia: <a href="https://www.youtube.com/channel/UCVjlpEjEY9GpksqbEesJnNA">https://www.youtube.com/channel/UCVjlpEjEY9GpksqbEesJnNA</a></li>
-<li>Tio Roger num casamento Bengali em Sintra: <a href="https://youtu.be/wJoLjhgguwA">https://youtu.be/wJoLjhgguwA</a></li>
-<li>O site do Xubuntu foi hackeado e distribuiu malware:
-<ul>
-<li><a href="https://www.omgubuntu.co.uk/2025/10/xubuntu-website-malware-hack">https://www.omgubuntu.co.uk/2025/10/xubuntu-website-malware-hack</a></li>
-<li><a href="https://www.omgubuntu.co.uk/2025/11/xubuntu-website-breach-report">https://www.omgubuntu.co.uk/2025/11/xubuntu-website-breach-report</a></li>
-<li><a href="https://lists.ubuntu.com/archives/xubuntu-users/2025-November/012210.html">https://lists.ubuntu.com/archives/xubuntu-users/2025-November/012210.html</a></li>
-</ul>
-</li>
-<li>A Canonical oferece suporte para 15 anos:
-<ul>
-<li><a href="https://discourse.ubuntu.com/t/foundations-team-updates-2025-11-20/72480/3?u=d0od">https://discourse.ubuntu.com/t/foundations-team-updates-2025-11-20/72480/3?u=d0od</a></li>
-<li><a href="https://www.omgubuntu.co.uk/2025/11/ubuntu-lts-releases-15-years-of-support">https://www.omgubuntu.co.uk/2025/11/ubuntu-lts-releases-15-years-of-support</a></li>
-<li><a href="https://ubuntu.com/blog/canonical-expands-total-coverage-for-ubuntu-lts-releases-to-15-years-with-legacy-add-on">https://ubuntu.com/blog/canonical-expands-total-coverage-for-ubuntu-lts-releases-to-15-years-with-legacy-add-on</a></li>
-</ul>
-</li>
-<li>Steam da Valve; hardware para fartura de jogos em Linux: <a href="https://store.steampowered.com/sale/hardware">https://store.steampowered.com/sale/hardware</a></li>
-<li>Steam Machine:
-<ul>
-<li><a href="https://youtu.be/VkW3wTHT-p8">https://youtu.be/VkW3wTHT-p8</a></li>
-<li><a href="https://youtu.be/g3FkuZNSGkw">https://youtu.be/g3FkuZNSGkw</a></li>
-</ul>
-</li>
-<li>Steam Frame:
-<ul>
-<li><a href="https://youtu.be/b7q2CS8HDHU">https://youtu.be/b7q2CS8HDHU</a></li>
-<li><a href="https://youtu.be/dU3ru09HTng">https://youtu.be/dU3ru09HTng</a></li>
-</ul>
-</li>
-<li>NeXT computer (1988): <a href="https://en.wikipedia.org/wiki/NeXT_Computer">https://en.wikipedia.org/wiki/NeXT_Computer</a></li>
-<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
-<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
-<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
-</ul>
-<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
-<p>Este episódio foi produzido por Diogo Constantino, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
-O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
-Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: [patrons laughing.mp3 by pbrproductions] (<a href="https://freesound.org/s/418831/">https://freesound.org/s/418831/</a>) &ndash; License: Attribution 3.0. Concurso: [01 WINNER.mp3 by jordanielmills] &ndash; (<a href="https://freesound.org/s/167535/">https://freesound.org/s/167535/</a>) &ndash; License: Creative Commons 0.
-Este episódio e a imagem utilizada estão licenciados nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
-A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
-      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
-    </item>
-    <item>
-      <title>Think you can’t interpose static binaries with LD_PRELOAD? Think again!</title>
-      <link>https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</link>
-      <guid isPermaLink="true">https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</guid>
-      <pubDate>Thu, 20 Nov 2025 20:56:17 GMT</pubDate>
-      <description><![CDATA[<div class="wp-block-media-text alignwide is-vertically-aligned-center" style="grid-template-columns:21% auto"><figure class="wp-block-media-text__media"><img fetchpriority="high" decoding="async" width="4614" height="4001" src="https://balintreczey.hu/blog/wp-content/uploads/2023/04/firebuild-logo.svg" alt="" class="wp-image-853 size-thumbnail"/></figure><div class="wp-block-media-text__content">
-<p>Well, you are right, you can&#8217;t. At least not directly. This is well documented in many projects relying on interposing binaries, like faketime.</p>
-
-
-
-<p> </p>
-</div></div>
-
-
-
-<p></p>
-
-
-
-<p>But what if we could write something that would take a static binary, replace at least the direct syscalls with ones going through libc and load it with the dynamic linker? We are in luck, because the excellent QEMU project has a user space emulator! It can be compiled as a dynamically linked executable, honors LD_PRELOAD and uses the host libc&#8217;s syscall &#8211; well, at least sometimes. Sometimes syscalls just bypass libc.</p>
-
-
-
-<p>The missing piece was a way to make QEMU always take the interposable path and call the host libc instead of using an arch-specifix assembly routine (`safe_syscall_base`) to construct the syscall and going directly to the kernel. Luckily, this turned out to be doable. A small patch later, QEMU gained a switch that forces all syscalls through libc. Suddenly, our static binaries started looking a lot more dynamic!</p>
-
-
-
-<pre class="wp-block-code"><code>$ faketime '2008-12-24 08:15:42'  qemu-x86_64 ./test_static_clock_gettime
-2008-12-24 08:15:42.725404654
-$ file test_static_clock_gettime 
-test_clock_gettime: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, ...</code></pre>
-
-
-
-<p>With this in place, Firebuild can finally wrap even those secretive statically linked tools. QEMU runs them, libc catches their syscalls, <code>LD_PRELOAD</code> injects <code>libfirebuild.so</code>, and from there the usual interposition magic happens. The result: previously uncachable build steps can now be traced, cached, and shortcut just like their dynamic friends.</p>
-
-
-
-<p>There is one more problem though. Why would the static binaries deep in the build be run by QEMU? Firebuild also intercepts the `exec()` calls and now it rewrites them on the fly whenever the executed binary would be statically linked!</p>
-
-
-
-<pre class="wp-block-code"><code>$ firebuild -d comm bash -c ./test_static
-...
-FIREBUILD: fd 9.1: ({ExecedProcess 161077.1, running, "bash -c ./test_static", fds=&#91;0: {FileFD ofd={FileO
-FD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOFD #3 type=FD_PIPE_OUT w} {Pipe #0} close_o
-n_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=FD_PIPE_OUT w} {Pipe #1} close_on_popen=fal
-se cloexec=false}, 3: {FileFD NULL} /* times 2 */]})
-{
-    "&#91;FBBCOMM_TAG]": "exec",
-    "file": "test_static",
-    "// fd": null,
-    "// dirfd": null,
-    "arg": &#91;
-        "./test_static"
-    ],
-    "env": &#91;
-        "SHELL=/bin/bash",
- ...
-        "FB_SOCKET=/tmp/firebuild.cpMn75/socket",
-        "_=./test_static"
-    ],
-    "with_p": false,
-    "// path": null,
-    "utime_u": 0,
-    "stime_u": 1017
-}
-FIREBUILD: -> proc_ic_msg()  (message_processor.cc:782)  proc={ExecedProcess 161077.1, running, "bash -c 
-./test_static", fds=&#91;0: {FileFD ofd={FileOFD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOF
-D #3 type=FD_PIPE_OUT w} {Pipe #0} close_on_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=F
-D_PIPE_OUT w} {Pipe #1} close_on_popen=false cloexec=false}, 3: {FileFD NULL} /* times 2 */]}, fd_conn=9.
-1, tag=exec, ack_num=0
-FIREBUILD:   -> send_fbb()  (utils.cc:292)  conn=9.1, ack_num=0 fd_count=0
-Sending message with ancillary fds &#91;]:
-{
-    "&#91;FBBCOMM_TAG]": "rewritten_args",
-    "arg": &#91;
-        "/usr/bin/qemu-user-interposable",
-        "-libc-syscalls",
-        "./test_static"
-    ],
-    "path": "/usr/bin/qemu-user-interposable"
-}
-...
-FIREBUILD: -> accept_ic_conn()  (firebuild.cc:139)  listener=6
-...
-FIREBUILD: fd 9.2: ({Process NULL})
-{
-    "&#91;FBBCOMM_TAG]": "scproc_query",
-    "pid": 161077,
-    "ppid": 161073,
-    "cwd": "/home/rbalint/projects/firebuild/test",
-    "arg": &#91;
-        "/usr/bin/qemu-user-interposable",
-        "-libc-syscalls",
-        "./test_static"
-    ],
-    "env_var": &#91;
-        "CCACHE_DISABLE=1",
-...
-        "SHELL=/bin/bash",
-        "SHLVL=0",
-        "_=./test_static"
-    ],
-    "umask": "0002",
-    "jobserver_fds": &#91;],
-    "// jobserver_fifo": null,
-    "executable": "/usr/bin/qemu-user-interposable",
-    "// executed_path": null,
-    "// original_executed_path": null,
-    "libs": &#91;
-        "/lib/x86_64-linux-gnu/libatomic.so.1",
-        "/lib/x86_64-linux-gnu/libc.so.6",
-        "/lib/x86_64-linux-gnu/libglib-2.0.so.0",
-        "/lib/x86_64-linux-gnu/libm.so.6",
-        "/lib/x86_64-linux-gnu/libpcre2-8.so.0",
-        "/lib64/ld-linux-x86-64.so.2"
-    ],
-    "version": "0.8.5.1"
-}
-</code></pre>
-
-
-
-<p>The QEMU patch is <a href="https://lists.gnu.org/archive/html/qemu-devel/2025-11/msg02559.html">forwarded to qemu-devel</a>. If it lands, anyone using QEMU user-mode emulation could benefit — not just Firebuild.</p>
-
-
-
-<p>For Firebuild users, though, the impact is immediate. Toolchains that mix dynamic and static helpers? Cross-builds that pull in odd little statically linked utilities? Previously “invisible” steps in your builds? All now fair game for caching.</p>
-
-
-
-<p><a href="https://github.com/firebuild/firebuild/releases/tag/v0.8.5">Firebuild 0.8.5</a> ships this new capability out of the box. Just update, make sure you’re using a patched QEMU, and enjoy the feeling of watching even static binaries fall neatly into place in your cached build graph. Ubuntu users can get the prebuilt patched QEMU packages from the <a href="https://launchpad.net/~firebuild/+archive/ubuntu/stable">Firebuild PPA</a> already. </p>
-
-
-
-<p>Static binaries, welcome to the party!</p>]]></description>
-      <source url="https://balintreczey.hu/blog/tag/ubuntu/feed/">Balint Reczey</source>
-    </item>
-    <item>
       <title>GSoC 2025 Final Submission: Re-architecting PyCups for a Modern, Pythonic Future</title>
       <link>https://soumyadghosh.github.io/website/interns/gsoc-2025/gsoc-final-submission/</link>
       <guid isPermaLink="true">https://soumyadghosh.github.io/website/interns/gsoc-2025/gsoc-final-submission/</guid>
@@ -1453,70 +1359,6 @@ FIREBUILD: fd 9.2: ({Process NULL})
 
 <p>Thanks for your patience and understanding as I navigate this transition.</p>]]></description>
       <source url="https://www.scarlettgatelymoore.dev/category/open-source-software/feed/">Scarlett Gately Moore</source>
-    </item>
-    <item>
-      <title>Upgrading from 25.04 to 25.10</title>
-      <link>https://ubuntustudio.org/2025/10/upgrading-from-25-04-to-25-10/</link>
-      <guid isPermaLink="true">https://ubuntustudio.org/2025/10/upgrading-from-25-04-to-25-10/</guid>
-      <pubDate>Wed, 29 Oct 2025 20:08:52 GMT</pubDate>
-      <description><![CDATA[<div class="wp-block-image"><figure class="alignright size-full"><img loading="lazy" width="126" height="128" src="https://ubuntustudio.org/wp-content/uploads/2025/02/2be9/system-software-update.png" alt="" class="wp-image-2953"/></figure></div>
-
-
-
-<h2>An issue has been identified</h2>
-
-
-
-<p>The Ubuntu Release team has now enabled upgrades from 25.04 to 25.10! This is great news! In fact, you may have noticed this icon on your toolbar and a notification to upgrade.</p>
-
-
-
-<p>However, upon doing so, you may have noticed something a little more unfortunate:</p>
-
-
-
-<div class="wp-block-image"><figure class="aligncenter size-full is-resized"><img loading="lazy" src="https://ubuntustudio.org/wp-content/uploads/2025/10/df61/Screenshot_20251029_110851.png" alt="" class="wp-image-3046" width="680" height="305"/></figure></div>
-
-
-
-<p>Yep, we know. This tells you nothing about what is wrong. What is wrong is <em>slightly</em> more technical. As it turns out, the backend application that actually performs the upgrade removed an argument from its command line unannounced during the Plucky Puffin release cycle, approximately a year ago.</p>
-
-
-
-<p>As our project leader, Erich Eickmeyer, maintains the upgrade notifier widget for both Ubuntu Studio and Kubuntu, he woke up and immediately got to work identifying what&#8217;s wrong and how to patch the Plasma widget in question to correctly execute the upgrade process. He has uploaded the fix, and it was accepted by a member of the Ubuntu Stable Release Updates team.</p>
-
-
-
-<p>At the moment, the fix needs to be tested and verified. In order to test it, one must install the fix from the <code>plucky-proposed</code> repository. In order for it to be available, it must build for all architectures and, as of this writing, is awaiting building on <code>riscv64</code> which has a 40-hour backlog.</p>
-
-
-
-<h2>The Workaround</h2>
-
-
-
-<p>If you wish to begin the upgrade process manually rather than waiting on the upgrade notifier fix to be implemented, feel free to make sure you are fully updated, type <code>alt-space</code> to execute Krunner, and paste this:</p>
-
-
-
-<pre class="wp-block-code"><code>do-release-upgrade -f DistUpgradeViewKDE</code></pre>
-
-
-
-<p>This is the exact command that will be executed by the notifier widget as soon as it is updated.</p>
-
-
-
-<p>Of course, if you&#8217;re in no hurry, feel free to wait until the notifier is updated and use that method. Do bear in mind, though, that as of this writing, <strong>you have exactly 90 days to perform the upgrade to 25.10</strong> before your system will no longer be supported. At that time, you&#8217;ll risk being unable to upgrade at all unless certain procedures for End-Of-Life Upgrades are done, which can be tedious for those uncomfortable in a command line as it will require modifying system files.</p>
-
-
-
-<h2>Mea Culpa</h2>
-
-
-
-<p>We do apologize for the inconvenience. Testing upgrade paths like this are hard to do and things go missed, especially when teams don&#8217;t communicate with each other. We&#8217;re try to identify things before they happen but, unfortunately, certain items cannot be foreseen.<br><br>This issue has now been added to the Ubuntu Studio 25.10 Release Notes.</p>]]></description>
-      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
     </item>
     <item>
       <title>It's NOT always DNS.</title>
