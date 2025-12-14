@@ -386,20 +386,6 @@
     "imageUrl": null
   },
   {
-    "sourceName": "Serge Hallyn",
-    "sourceUrl": "https://s3hh.wordpress.com/feed/?mrss=off",
-    "title": "Attitudes on privacy and tracking",
-    "link": "https://s3hh.wordpress.com/2025/05/25/attitudes-on-privacy-and-tracking/",
-    "date": "2025-05-25T13:00:15.000Z",
-    "snippet": "It&#8217;s amazing how quickly public opinion changes. Or, how quickly\npeople cave. Remember just 10 years ago, how people felt about\ngoogle glass?\n\nhttps://www.businessinsider.com/i-was-assaulted-for-wearing-google-glass-2014-4\nhttps://www.youtube.com/watch?v=m8coAuWZL20\n\nOr how they felt when they found out target was analyzing their\npurchases and perhaps knew them better than themselves or their\nfamily?\n\nhttps://techland.time.com/2012/02/17/how-target-knew-a-high-school-girl-was-pregnant-befo...",
-    "contentHtml": "<p>It&#8217;s amazing how quickly public opinion changes. Or, how quickly<br />\npeople cave. Remember just 10 years ago, how people felt about<br />\ngoogle glass?</p>\n<ul>\n<li><a href=\"https://www.businessinsider.com/i-was-assaulted-for-wearing-google-glass-2014-4\" rel=\"nofollow\">https://www.businessinsider.com/i-was-assaulted-for-wearing-google-glass-2014-4</a></li>\n<li><a href=\"https://www.youtube.com/watch?v=m8coAuWZL20\" rel=\"nofollow\">https://www.youtube.com/watch?v=m8coAuWZL20</a></li>\n</ul>\n<p>Or how they felt when they found out target was analyzing their<br />\npurchases and perhaps knew them better than themselves or their<br />\nfamily?</p>\n<ul>\n<li><a href=\"https://techland.time.com/2012/02/17/how-target-knew-a-high-school-girl-was-pregnant-before-her-parents/\" rel=\"nofollow\">https://techland.time.com/2012/02/17/how-target-knew-a-high-school-girl-was-pregnant-before-her-parents/</a></li>\n<li><a href=\"https://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/\" rel=\"nofollow\">https://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/</a></li>\n</ul>\n<p>People used to worry about being tracked by companies and government.<br />\nToday, they feel insecure unless they are certain they are being<br />\ntracked. For their own well-being of course. If an online store does<br />\n*not* send an email 10 hours after you&#8217;ve &#8220;left items in your cart,<br />\ndon&#8217;t miss out!&#8221;, and another the next day, you feel disappointed. I<br />\nbelieve they&#8217;re now seen as sub-par.</p>",
-    "author": "s3hh",
-    "categories": [
-      "Uncategorized"
-    ],
-    "imageUrl": null
-  },
-  {
     "sourceName": "Oliver Grawert",
     "sourceUrl": "https://ograblog.wordpress.com/feed/atom",
     "title": "Rooming with Mark",
@@ -531,6 +517,22 @@
     "contentHtml": "<p>Last week I was bitten by a interesting C feature. The following terminate function was expected to exit if okay was zero (false) however it exited when zero was passed to it. The reason is the missing semicolon after the return function.<br /></p><p style=\"text-align: center;\">&nbsp;<a href=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5XsE4Yu_I1eR6AWu2lqrFg8fxaCPSapkZB6zAdASbARwqGZuoqE80Eqm97Hm7biYIZ7rjcgJtpwPMUniOKms_bcOqtRVO07JSno8Im1z9y5qgPkQ-I-Zl5Pwe0WerXyHBzevSbEHAu7s9m_YonDxEpwxZ3B47wxnKdsGSaP58iuoc5w7Ef0q5ozMdSAYt/s354/void-return.png\" imageanchor=\"1\" style=\"margin-left: 1em; margin-right: 1em;\"><img border=\"0\" data-original-height=\"354\" data-original-width=\"341\" height=\"320\" src=\"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5XsE4Yu_I1eR6AWu2lqrFg8fxaCPSapkZB6zAdASbARwqGZuoqE80Eqm97Hm7biYIZ7rjcgJtpwPMUniOKms_bcOqtRVO07JSno8Im1z9y5qgPkQ-I-Zl5Pwe0WerXyHBzevSbEHAu7s9m_YonDxEpwxZ3B47wxnKdsGSaP58iuoc5w7Ef0q5ozMdSAYt/s320/void-return.png\" width=\"308\" /></a></p><p style=\"text-align: left;\">The interesting part this that is compiles fine because the void function terminate is allowed to return the void return value, in this case the void return from exit(). <br /></p><p style=\"text-align: left;\">&nbsp;<br /></p>",
     "author": null,
     "categories": [],
+    "imageUrl": null
+  },
+  {
+    "sourceName": "Serge Hallyn",
+    "sourceUrl": "https://s3hh.wordpress.com/feed/?mrss=off",
+    "title": "Atomfs presented at OCI weekly discussion",
+    "link": "https://s3hh.wordpress.com/2024/12/14/atomfs-presented-at-oci-weekly-discussion/",
+    "date": "2024-12-14T03:52:06.000Z",
+    "snippet": "OCI (open container initiative) images are the standard format based onthe original docker format.  Each container image is represented as anarray of &#8216;layers&#8217;, each of which is a .tar.gz.  To unpack the containerimage, untar the first, then untar the second on top of the first, etc.Several years ago, while we were working on a product which ships itsroot filesystem (and of course containers) as OCI layers, Tycho Andersen(https://tycho.pizza/) came up with the idea of &#8216;atomfs&#8...",
+    "contentHtml": "OCI (open container initiative) images are the standard format based on<br />the original docker format.  Each container image is represented as an<br />array of &#8216;layers&#8217;, each of which is a .tar.gz.  To unpack the container<br />image, untar the first, then untar the second on top of the first, etc.<br /><br />Several years ago, while we were working on a product which ships its<br />root filesystem (and of course containers) as OCI layers, Tycho Andersen<br />(<a href=\"https://tycho.pizza/\" rel=\"nofollow\">https://tycho.pizza/</a>) came up with the idea of &#8216;atomfs&#8217; as a way to<br />avoid some of the deficiencies of tar<br />(<a href=\"https://www.cyphar.com/blog/post/20190121-ociv2-images-i-tar\" rel=\"nofollow\">https://www.cyphar.com/blog/post/20190121-ociv2-images-i-tar</a>).  In<br />&#8216;atomfs&#8217;, the .tar.gz layers are replaced by squashfs (now optionally<br />erofs) filesystems with dm-verity root hashes specified.  Mounting an<br />image now consists of mounting each squashfs, then merging them with<br />overlay.  Since we have the dmverity root hash, we can ensure that the<br />filesystem has not been corrupted without having to checksum the files<br />before mounting, and there is no tar unpacking step.<br /><br />This past week, Ram Chinchani presented atomfs at the OCI weekly<br />discussion, which you can see here<br /><a href=\"https://www.youtube.com/watch?v=CUyH319O9hM\" rel=\"nofollow\">https://www.youtube.com/watch?v=CUyH319O9hM</a> starting at about 28<br />minutes.  He showed a full use cycle, starting with a Dockerfile,<br />building atomfs images using stacker, mounting them using atomfs, and<br />then executing a container with lxc.  Ram mentioned his goal is to have<br />a containerd snapshotter for atomfs soon.  I&#8217;m excited to hear that, as<br />it will make it far easier to integrate into e.g.  kubernetes.<br /><br />Exciting stuff!<br />",
+    "author": "s3hh",
+    "categories": [
+      "Uncategorized",
+      "OCI",
+      "technology"
+    ],
     "imageUrl": null
   },
   {
