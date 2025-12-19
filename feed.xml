@@ -6,28 +6,65 @@
     <description>Fresh posts from the Ubuntu Planet</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 18 Dec 2025 01:51:14 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 19 Dec 2025 01:54:25 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Native integration available between Canonical LXD and HPE Alletra MP B10000</title>
-      <link>https://ubuntu.com//blog/canonical_lxd_hpe_alletra</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/canonical_lxd_hpe_alletra</guid>
-      <pubDate>Mon, 15 Dec 2025 15:57:28 GMT</pubDate>
-      <description><![CDATA[<p>The integration combines efficient open source virtualization with high performance, enterprise-grade storage</p>
-<p>We are pleased to announce a new,  native integration between Canonical LXD and HPE Alletra. This integration brings together Canonical’s securely designed, open source virtualization platform with HPE’s enterprise-grade storage to deliver a simple, scalable, high-performance experience. </p>
-<h1 class="wp-block-heading">Enterprise-grade storage meets efficient open source virtualization</h1>
-<p>HPE Alletra is designed to deliver mission-critical storage at mid range economics, with a consistent data experience across various cloud environments. With this integration, Canonical LXD and MicroCloud users can now provision and manage Alletra block storage directly through the LXD interface, without the need for any third-party plugins or additional abstraction layers. </p>
-<p>The integration enables users to seamlessly create, attach, snapshot, and manage thin-provisioned block volumes as easily as working with local storage, while retaining the full performance, resilience, and enterprise data services of HPE Alletra. </p>
-<figure class="wp-block-image size-full"><img alt="" height="949" loading="lazy" sizes="(min-width: 1571px) 1571px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1571/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb448%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb448%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb448%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb448%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb448%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb448%2Fimage.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1571/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb448%2Fimage.png 1571w" width="1571"/></figure>
-<h1 class="wp-block-heading">Simplified operations and scalable performance</h1>
-<p>HPE Alletra NVMe-based architecture ensures sub-millisecond latency for demanding workloads, with built-in services such as thin-provisioning and data deduplication minimizing storage costs while maintaining consistent performance. Paired with LXD’s lightweight control plane and streamlined UI, users can easily operate their environments, combining the best of open source with enterprise storage functionality.</p>
-<p>As demands grow, new volumes and storage capacity can be allocated on the fly. Alletra’s scale-out, modular architecture ensures the platform can expand without disrupting running workloads. </p>
-<h1 class="wp-block-heading">A foundation for modern infrastructure deployments </h1>
-<p>LXD provides a unified open source virtualization platform to run system containers and virtual machines with a focus on efficiency, security, and ease of management. With native support for HPE Alletra, enterprises can now build, deploy, and manage their workloads with enterprise storage guarantees, whether in private clouds, on-premises data centers, or edge environments. </p>
-<p>The combined solution empowers teams to deliver predictable performance for critical and data-intensive workloads while reducing complexity and ensuring agility.</p>
-<h1 class="wp-block-heading">Availability</h1>
-<p>The integration between LXD and HPE Alletra is available starting with the <a href="https://documentation.ubuntu.com/lxd/latest/reference/release-notes/release-notes-6.6/">LXD 6.6 feature release</a>, and requires a HPE Alletra WSAPI version 1. LXD currently supports connecting to HPE Alletra storage through NVMe/TCP or iSCSI protocols. For detailed information, visit <a href="https://documentation.ubuntu.com/lxd/stable-5.21/reference/storage_alletra/">Canonical’s LXD documentation</a>.</p>]]></description>
+      <title>Finally back at OLF!</title>
+      <link>https://princessleia.com/journal/2025/12/finally-back-at-olf/</link>
+      <guid isPermaLink="true">https://princessleia.com/journal/2025/12/finally-back-at-olf/</guid>
+      <pubDate>Thu, 18 Dec 2025 00:39:08 GMT</pubDate>
+      <description><![CDATA[<p>Back in 2018 <a href="/journal/2018/10/a-keynote-and-more-at-ohio-linuxfest-2018/">spoke at Ohio LinuxFest</a> and had a wonderful time with the community there. It&#8217;s a great mix of folks who are very local, and open source experts from across the country who come in for the event. Beth Lynn Eicher, who leads the event, is a champion in getting more folks involved in open source, and I&#8217;ve heard so many stories of how encouraging she always is to newcomers. There are key folks today you may have interacted with in open source communities who can thank Beth Lynn for encouragement in the early days that got them on the path to where they are today. Personally, I&#8217;ve also worked with her on some non-profit work with <a href="https://www.computerreach.org/">Computer Reach</a>, most notable of which was going to Ghana together for a few weeks back in 2012 to support a deployment they were doing with a Ghanaian NGO.</p>
+<div align="center"><a href="/images/journalpics/122025/olf_lyz_bethlynn.jpg"><img decoding="async" src="/images/journalpics/122025/olf_lyz_bethlynn_sm.jpg"></a></div>
+<p>So first, thanks to Beth Lynn, Vance Kochenderfer, Susan Rose Dudenhoefer, and the other volunteers who brought the event together this year on a tight deadline. I&#8217;m so grateful I thought to include the conference on my quarterly event requests in spite of it not being announced yet!</p>
+<p>I&#8217;ll also mention that I keep calling it &#8220;Ohio LinuxFest&#8221; but they rebranded as &#8220;OLF Conference&#8221; to reflect &#8220;Open Libre Free&#8221; and their goal to include operating systems beyond Linux, mea culpa!</p>
+<div align="center"><a href="/images/journalpics/122025/olf_banner.jpg"><img decoding="async" src="/images/journalpics/122025/olf_banner_sm.jpg"></a></div>
+<p>The event itself was a lot of fun. It was smaller than in years past, as they went with one track. They mentioned at closing that doing it in December is too late in the year, and along with the short runway for the conference likely impacted attendance. Still, if I had to guess I&#8217;d say there were a couple hundred people there.</p>
+<p>I saw a lot of familiar faces. My friend Scott came out from Pittsburgh, and though we still chat regularly in a group cobbled together from our Ubuntu Pennsylvania days, we hadn&#8217;t seen each other in person in <em>years</em>. It was really cool to catch up, and to laugh about kid stories, since we&#8217;ve both became parents since we last saw each other. I also got to spend a bunch of time with Amber Graner, who I also got to know very well during our time in the Ubuntu project. We&#8217;ve stayed in touch, so we&#8217;re still pretty close, but this was the first time in a while that we had more than 20 minutes to catch up. And new people! I got to chat with a student who was attending an open source conference for his first time, and met several folks who have been working in open source for decades. It really was a great mix of folks.</p>
+<div align="center"><a href="/images/journalpics/122025/olf_amber_lyz_scott.jpg"><img decoding="async" src="/images/journalpics/122025/olf_amber_lyz_scott_sm.jpg"></a></div>
+<p>I really enjoyed the opening keynote from Don Vosburg on <em>Passion and Pragmatism</em>. He tugged on a familiar thread in the open source world around the fact that a lot of folks got into open source software &#8220;for fun&#8221; or the passion of it, but most of us eventually had to get professional jobs that may have tested our fundamental commitment to open source. Or other things that have arisen in our lives that require us to make a choice. I&#8217;ve definitely had to walk a line throughout my career, but consider myself quite lucky to have found myself a series of good positions that have allowed me to follow my passion and make a living.</p>
+<div align="center"><a href="/images/journalpics/122025/olf_passion_pragmatism.jpg"><img decoding="async" src="/images/journalpics/122025/olf_passion_pragmatism_sm.jpg"></a></div>
+<p>My talk was just after the keynote, and I was very happy that most people stayed! It&#8217;s a re-working of a talk I gave last year, but I notably added an architecture and made some adjustments to my slides about software testing. I was amused to learn that my closing keynote back in 2018 was about doing software testing on your open source project, and that this could be seen as an expansion of that. I joked at the beginning that I was very glad everyone listened to me last time, and now that they all have software testing, it was time to add non-x86_64 hardware architectures into that testing matrix. The slides are available here: <a href="/presentations/2025/Will_your_open_source_project_run_on_a_mainframe_Or_a_watch_OLF_2025.pdf">Will_your_open_source_project_run_on_a_mainframe_Or_a_watch_OLF_2025.pdf</a> (1.2M)</p>
+<div align="center"><a href="/images/journalpics/122025/olf_lyz.jpg"><img decoding="async" src="/images/journalpics/122025/olf_lyz_sm.jpg"></a><br />
+<small>Thanks to Scott for taking a picture during my talk!</small></div>
+<p>Catherine Devlin&#8217;s &#8220;Graph Data for Heroes II: Rise of the Bot&#8221; was an interesting one. A large chunk of it had her scraping web data, and as I was live-posting about it on Mastodon and Bluesky I was speculating about how web scraping is one tech that hasn&#8217;t gotten a whole lot better in 25 years, then mused that it was actually a <em>good</em> use for AI/ML technologies. Indeed, that&#8217;s where her talk went!</p>
+<p>Scattered throughout the conference foyer were a few tables from supporters and sponsors, and I was delighted to see a series of ChromeBooks that had been repurposed to use various Linux distributions. I was delighted to see that Xubuntu made the cut, and when I walked over to check it out I was presented with our shiny new website. Lovely!</p>
+<div align="center"><a href="/images/journalpics/122025/olf_chromebooks_xubuntu.jpg"><img decoding="async" src="/images/journalpics/122025/olf_chromebooks_xubuntu_sm.jpg"></a></div>
+<p>In the afternoon I enjoyed seeing Steven Pritchard&#8217;s &#8220;The Great Open Source Rug-Pull&#8221; where he talked about open source software license changes, which have caused a lot of disruption and contention in the open source world these past few years. And although I had heard of <a href="https://hackerpublicradio.org/">Hacker Public Radio</a> before, it wasn&#8217;t until murph&#8217;s talk on the topic, along with a bunch of great tips, that I got a serious look into what it was and how the episodes are crowd sourced. These folks are doing great work.</p>
+<p>Amber Graner concluded the day with the closing keynote &#8220;Bless Their Hearts: Open Source, AI, and Southern Survival Skills.&#8221; She took us on a personal, funny journey through some of the characters and situations in the open source world. I particularly loved at the end where she shared a list of things she wished people had told her when she started contributing to open source. I&#8217;ll be keeping some of these things in mind as I continue working with students who need more than just the basic misconceptions about contributing corrected so they can effectively contribute.</p>
+<div align="center"><a href="/images/journalpics/122025/olf_bless_their_heart.jpg"><img decoding="async" src="/images/journalpics/122025/olf_bless_their_heart_sm.jpg"></a></div>
+<p>The end of the event crept up quickly! The group hosted a small closing after party in the hotel lobby with pizza and my favorite, cake!</p>
+<div align="center"><a href="/images/journalpics/122025/olf_cake.jpg"><img decoding="async" src="/images/journalpics/122025/olf_cake_sm.jpg"></a></div>
+<p>In what is perhaps one of my shortest conference trips, I flew out at 5AM the next morning to get home by midday on Sunday. It left me pretty tired, but it was worth it.</p>]]></description>
+      <source url="http://princessleia.com/journal/?cat=2&amp;feed=rss2">Elizabeth K. Joseph</source>
+    </item>
+    <item>
+      <title>Extending ROS Noetic Support with ESM-Enabled Content Snaps</title>
+      <link>https://ubuntu.com//blog/extending-ros-noetic-support-with-esm-enabled-content-snaps</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/extending-ros-noetic-support-with-esm-enabled-content-snaps</guid>
+      <pubDate>Wed, 17 Dec 2025 20:38:28 GMT</pubDate>
+      <description><![CDATA[<p>Since ROS Noetic reached end of life in May 2025, the Ubuntu Robotics team has been working to ensure that developers and organizations can continue building and deploying robots securely on Ubuntu.</p>
+<p>To build on this foundation, Canonical has now <strong>extended its </strong><a href="https://ubuntu.com/blog/ros-noetic-is-eol-take-action-to-maintain-fleet-security"><strong>ESM (Expanded Security Maintenance) for ROS</strong></a><strong> coverage to ROS Noetic content-sharing snaps.</strong> This update is a significant step toward long-term support and security for ROS environments distributed through the Snap ecosystem, ensuring developers can continue to rely on maintained and compatible components.</p>
+<h2 class="wp-block-heading">What are content-sharing snaps?</h2>
+<p><a href="https://canonical-robotics.readthedocs-hosted.com/en/latest/explanations/snaps/ros-architectures-with-snaps/#multi-snaps-using-content-sharing">Content-sharing snaps</a> are a key feature of the Snap ecosystem that allow multiple snaps to share common dependencies, such as ROS libraries, tools, and assets, without duplication. This model simplifies packaging, improves consistency, and reduces image size across robotic systems. You can learn more about the benefits of following a modular architecture for your ROS robots <a href="https://canonical-robotics.readthedocs-hosted.com/en/latest/explanations/snaps/ros-architectures-with-snaps/">here</a>.</p>
+<p>The Ubuntu Robotics team maintains several content-sharing snaps on the <a href="https://snapcraft.io/publisher/ubuntu-robotics-community">Snap Store</a> – such as <a href="https://snapcraft.io/ros-noetic-desktop"><em>ros-noetic-desktop</em></a> and <a href="https://snapcraft.io/ros-noetic-ros-base"><em>ros-noetic-ros-base</em></a> – which serve as the foundation for many ROS-based applications.</p>
+<p>With ESM now integrated, these content <strong>snaps continue to receive security updates and maintenance</strong>, ensuring developers can build and deploy with confidence as ROS 1 transitions into its long-term maintenance phase. What’s more, this benefit is free – no Pro token is required.</p>
+<h2 class="wp-block-heading">Why this matters</h2>
+<p>Robotics projects often have long lifecycles, where stability and security are critical. While ROS Noetic is no longer maintained upstream, Canonical’s ESM for ROS service delivers ongoing CVE patches and security fixes for both ROS and Ubuntu packages.</p>
+<p>By extending ESM for ROS to content-sharing snaps, we’re <strong>giving developers the same long-term security guarantees in the snap ecosystem</strong> that they already rely on in Ubuntu’s ESM for deb packages. This means:</p>
+<ul>
+<li>Continued security maintenance for ROS Noetic environments distributed through snaps.<br/></li>
+<li>A unified and consistent experience across both deb-based and snap-based systems.<br/></li>
+<li>Easier access to maintained ROS libraries for new and existing robotic deployments.<br/></li>
+</ul>
+<h2 class="wp-block-heading">Continuing long-term support for the ROS community</h2>
+<p>This update reflects Canonical’s ongoing commitment to the ROS ecosystem – helping developers and organizations extend the life of their robots securely and sustainably. With ESM for ROS now available in both deb and snap formats, Ubuntu continues to be the trusted foundation for secure, long-term robotics innovation.</p>
+<h2 class="wp-block-heading">Learn more</h2>
+<ul>
+<li><a href="https://canonical-robotics.readthedocs-hosted.com/en/latest/explanations/security/what-is-ros-esm/">What is ESM for ROS</a></li>
+<li><a href="https://canonical-robotics.readthedocs-hosted.com/en/latest/tutorials/snaps-core/building-ros-snaps-with-content-sharing/">Tutorial: Building ROS snaps with content sharing</a></li>
+<li><a href="https://canonical.com/blog/ros-enterprise-support-15-things-you-need-to-know">ESM for ROS: 15 things you need to know</a></li>
+</ul>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -1574,145 +1611,6 @@ python-certifi for the Python&nbsp;team.</p>
       <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
-      <title>Think you can’t interpose static binaries with LD_PRELOAD? Think again!</title>
-      <link>https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</link>
-      <guid isPermaLink="true">https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</guid>
-      <pubDate>Thu, 20 Nov 2025 20:56:17 GMT</pubDate>
-      <description><![CDATA[<div class="wp-block-media-text alignwide is-vertically-aligned-center" style="grid-template-columns:21% auto"><figure class="wp-block-media-text__media"><img fetchpriority="high" decoding="async" width="4614" height="4001" src="https://balintreczey.hu/blog/wp-content/uploads/2023/04/firebuild-logo.svg" alt="" class="wp-image-853 size-thumbnail"/></figure><div class="wp-block-media-text__content">
-<p>Well, you are right, you can&#8217;t. At least not directly. This is well documented in many projects relying on interposing binaries, like faketime.</p>
-
-
-
-<p> </p>
-</div></div>
-
-
-
-<p></p>
-
-
-
-<p>But what if we could write something that would take a static binary, replace at least the direct syscalls with ones going through libc and load it with the dynamic linker? We are in luck, because the excellent QEMU project has a user space emulator! It can be compiled as a dynamically linked executable, honors LD_PRELOAD and uses the host libc&#8217;s syscall &#8211; well, at least sometimes. Sometimes syscalls just bypass libc.</p>
-
-
-
-<p>The missing piece was a way to make QEMU always take the interposable path and call the host libc instead of using an arch-specifix assembly routine (`safe_syscall_base`) to construct the syscall and going directly to the kernel. Luckily, this turned out to be doable. A small patch later, QEMU gained a switch that forces all syscalls through libc. Suddenly, our static binaries started looking a lot more dynamic!</p>
-
-
-
-<pre class="wp-block-code"><code>$ faketime '2008-12-24 08:15:42'  qemu-x86_64 ./test_static_clock_gettime
-2008-12-24 08:15:42.725404654
-$ file test_static_clock_gettime 
-test_clock_gettime: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, ...</code></pre>
-
-
-
-<p>With this in place, Firebuild can finally wrap even those secretive statically linked tools. QEMU runs them, libc catches their syscalls, <code>LD_PRELOAD</code> injects <code>libfirebuild.so</code>, and from there the usual interposition magic happens. The result: previously uncachable build steps can now be traced, cached, and shortcut just like their dynamic friends.</p>
-
-
-
-<p>There is one more problem though. Why would the static binaries deep in the build be run by QEMU? Firebuild also intercepts the `exec()` calls and now it rewrites them on the fly whenever the executed binary would be statically linked!</p>
-
-
-
-<pre class="wp-block-code"><code>$ firebuild -d comm bash -c ./test_static
-...
-FIREBUILD: fd 9.1: ({ExecedProcess 161077.1, running, "bash -c ./test_static", fds=&#91;0: {FileFD ofd={FileO
-FD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOFD #3 type=FD_PIPE_OUT w} {Pipe #0} close_o
-n_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=FD_PIPE_OUT w} {Pipe #1} close_on_popen=fal
-se cloexec=false}, 3: {FileFD NULL} /* times 2 */]})
-{
-    "&#91;FBBCOMM_TAG]": "exec",
-    "file": "test_static",
-    "// fd": null,
-    "// dirfd": null,
-    "arg": &#91;
-        "./test_static"
-    ],
-    "env": &#91;
-        "SHELL=/bin/bash",
- ...
-        "FB_SOCKET=/tmp/firebuild.cpMn75/socket",
-        "_=./test_static"
-    ],
-    "with_p": false,
-    "// path": null,
-    "utime_u": 0,
-    "stime_u": 1017
-}
-FIREBUILD: -> proc_ic_msg()  (message_processor.cc:782)  proc={ExecedProcess 161077.1, running, "bash -c 
-./test_static", fds=&#91;0: {FileFD ofd={FileOFD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOF
-D #3 type=FD_PIPE_OUT w} {Pipe #0} close_on_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=F
-D_PIPE_OUT w} {Pipe #1} close_on_popen=false cloexec=false}, 3: {FileFD NULL} /* times 2 */]}, fd_conn=9.
-1, tag=exec, ack_num=0
-FIREBUILD:   -> send_fbb()  (utils.cc:292)  conn=9.1, ack_num=0 fd_count=0
-Sending message with ancillary fds &#91;]:
-{
-    "&#91;FBBCOMM_TAG]": "rewritten_args",
-    "arg": &#91;
-        "/usr/bin/qemu-user-interposable",
-        "-libc-syscalls",
-        "./test_static"
-    ],
-    "path": "/usr/bin/qemu-user-interposable"
-}
-...
-FIREBUILD: -> accept_ic_conn()  (firebuild.cc:139)  listener=6
-...
-FIREBUILD: fd 9.2: ({Process NULL})
-{
-    "&#91;FBBCOMM_TAG]": "scproc_query",
-    "pid": 161077,
-    "ppid": 161073,
-    "cwd": "/home/rbalint/projects/firebuild/test",
-    "arg": &#91;
-        "/usr/bin/qemu-user-interposable",
-        "-libc-syscalls",
-        "./test_static"
-    ],
-    "env_var": &#91;
-        "CCACHE_DISABLE=1",
-...
-        "SHELL=/bin/bash",
-        "SHLVL=0",
-        "_=./test_static"
-    ],
-    "umask": "0002",
-    "jobserver_fds": &#91;],
-    "// jobserver_fifo": null,
-    "executable": "/usr/bin/qemu-user-interposable",
-    "// executed_path": null,
-    "// original_executed_path": null,
-    "libs": &#91;
-        "/lib/x86_64-linux-gnu/libatomic.so.1",
-        "/lib/x86_64-linux-gnu/libc.so.6",
-        "/lib/x86_64-linux-gnu/libglib-2.0.so.0",
-        "/lib/x86_64-linux-gnu/libm.so.6",
-        "/lib/x86_64-linux-gnu/libpcre2-8.so.0",
-        "/lib64/ld-linux-x86-64.so.2"
-    ],
-    "version": "0.8.5.1"
-}
-</code></pre>
-
-
-
-<p>The QEMU patch is <a href="https://lists.gnu.org/archive/html/qemu-devel/2025-11/msg02559.html">forwarded to qemu-devel</a>. If it lands, anyone using QEMU user-mode emulation could benefit — not just Firebuild.</p>
-
-
-
-<p>For Firebuild users, though, the impact is immediate. Toolchains that mix dynamic and static helpers? Cross-builds that pull in odd little statically linked utilities? Previously “invisible” steps in your builds? All now fair game for caching.</p>
-
-
-
-<p><a href="https://github.com/firebuild/firebuild/releases/tag/v0.8.5">Firebuild 0.8.5</a> ships this new capability out of the box. Just update, make sure you’re using a patched QEMU, and enjoy the feeling of watching even static binaries fall neatly into place in your cached build graph. Ubuntu users can get the prebuilt patched QEMU packages from the <a href="https://launchpad.net/~firebuild/+archive/ubuntu/stable">Firebuild PPA</a> already. </p>
-
-
-
-<p>Static binaries, welcome to the party!</p>]]></description>
-      <source url="https://balintreczey.hu/blog/tag/ubuntu/feed/">Balint Reczey</source>
-    </item>
-    <item>
       <title>GSoC 2025 Final Submission: Re-architecting PyCups for a Modern, Pythonic Future</title>
       <link>https://soumyadghosh.github.io/website/interns/gsoc-2025/gsoc-final-submission/</link>
       <guid isPermaLink="true">https://soumyadghosh.github.io/website/interns/gsoc-2025/gsoc-final-submission/</guid>
@@ -3128,46 +3026,6 @@ for details of all the changes and improvements that Ubuntu MATE benefits from.<
 network connectivity to one of the official mirrors or to a locally accessible
 mirror and follow the instructions above.</p>]]></description>
       <source url="https://ubuntu-mate.org/rss.xml">Ubuntu MATE</source>
-    </item>
-    <item>
-      <title>A VisionFive 2 and a Raspberry Pi 1 B</title>
-      <link>https://princessleia.com/journal/2025/04/a-visionfive-2-and-a-raspberry-pi-1-b/</link>
-      <guid isPermaLink="true">https://princessleia.com/journal/2025/04/a-visionfive-2-and-a-raspberry-pi-1-b/</guid>
-      <pubDate>Thu, 03 Apr 2025 20:43:31 GMT</pubDate>
-      <description><![CDATA[<p>A couple weeks ago I was playing around with a multiple architecture CI setup with another team, and that led me to pull out my StarFive VisionFive 2 SBC again to see where I could make it this time with an install.</p>
-<p>I left off about a year ago when I succeeded in getting an older version of Debian on it, but attempts to get the tooling to install a more broadly supported version of U-Boot to the SPI flash were unsuccessful. Then I got pulled away to other things, effectively just bringing my VF2 around to events as a prop for my multiarch talks &#8211; which it did beautifully! I even had one conference attendee buy one to play with while sitting in the audience of my talk. Cool.</p>
-<p>I was delighted to learn how much progress had been made since I last looked. Canonical has published more formalized documentation: <a href="https://canonical-ubuntu-boards.readthedocs-hosted.com/en/latest/how-to/starfive-visionfive-2/">Install Ubuntu on the StarFive VisionFive 2</a> in the place of what had been a rather cluttered wiki page. So I got all hooked up and began my latest attempt.</p>
-<div align="center"><a href="/images/journalpics/032025/visionfive2_install_philly.jpg"><img decoding="async" src="/images/journalpics/032025/visionfive2_install_philly_sm.jpg"></a></div>
-<p>My first step was to grab the pre-installed server image. I got that installed, but struggled a little with persistence once I unplugged the USB UART adapter and rebooted. I then decided just to move forward with the <a href="https://canonical-ubuntu-boards.readthedocs-hosted.com/en/latest/how-to/starfive-visionfive-2/#install-u-boot-to-the-spi-flash">Install U-Boot to the SPI flash</a> instructions. I struggled a bit here for two reasons:</p>
-<ol>
-<li>The documentation today leads off with having you download the livecd, but you actually want the pre-installed server image to flash U-Boot, the livecd step doesn&#8217;t come until later. Admittedly, the instructions do <em>say</em> this, but I wasn&#8217;t reading carefully enough and was more focused on the steps.</li>
-<li>I couldn&#8217;t get the 24.10 pre-installed image to work for flashing U-Boot, but once I went back to the 24.04 pre-installed image it worked.</li>
-</ol>
-<p>And then I had to fly across the country. We&#8217;re spending a couple weeks around spring break here at our vacation house in Philadelphia, but the good thing about SBCs is that they&#8217;re incredibly portable and I just tossed my gear into my backpack and brought it along.</p>
-<p>Thanks to Emil Renner Berthing (esmil) on the <a href="https://discourse.ubuntu.com/t/getting-started-with-matrix/41000">Ubuntu Matrix server</a> for providing me with enough guidance to figure out where I had gone wrong above, and got me on my way just a few days after we arrived in Philly.</p>
-<p>With the newer U-Boot installed, I was able to use the Ubuntu 24.04 livecd image on a micro SD Card to install Ubuntu 24.04 on an NVMe drive! That&#8217;s another new change since I last looked at installation, using my little NVMe drive as a target was a lot simpler than it would have been a year ago. In fact, it was rather anticlimactic, hah!</p>
-<div align="center"><a href="/images/journalpics/032025/visionfive2_nvme.jpg"><img decoding="async" src="/images/journalpics/032025/visionfive2_nvme_sm.jpg"></a></div>
-<p>And with that, I was fully logged in to my new system.</p>
-<p><code>elizabeth@r2kt:~$ cat /proc/cpuinfo<br />
-processor	: 0<br />
-hart		: 2<br />
-isa		: rv64imafdc_zicntr_zicsr_zifencei_zihpm_zba_zbb<br />
-mmu		: sv39<br />
-uarch		: sifive,u74-mc<br />
-mvendorid	: 0x489<br />
-marchid		: 0x8000000000000007<br />
-mimpid		: 0x4210427<br />
-hart isa	: rv64imafdc_zicntr_zicsr_zifencei_zihpm_zba_zbb</code></p>
-<p>It has 4 cores, so here&#8217;s the full output: <a href="/txt/vf2-cpus.txt">vf2-cpus.txt</a></p>
-<p>What will I do with this little single board computer? I don&#8217;t know yet. I joked with my husband that I&#8217;d &#8220;install Debian on it and forget about it like everything else&#8221; but I really would like to get past that. I have my little multiarch demo CI project in the wings, and I&#8217;ll probably loop it into that.</p>
-<p>Since we were in Philly, I had a look over at my long-neglected Raspberry Pi 1B that I have here. When we first moved in, I used it as an ssh tunnel to get to this network from California. It was great for that! But now we have a more sophisticated network setup between the houses with a VLAN that connects them, so the ssh tunnel is unnecessary. In fact, my poor Raspberry Pi fell off the WiFi network when we switched to 802.1X just over a year ago and I never got around to getting it back on the network. I connected it to a keyboard and monitor and started some investigation. Honestly, I&#8217;m surprised the little guy was still running, but it&#8217;s doing fine!</p>
-<p>And it had been chugging along running Rasbian based on Debian 9. Well, that&#8217;s worth an upgrade. But not just an upgrade, I didn&#8217;t want to stress the device and SD card, so I figured flashing it with the latest version of Raspberry Pi OS was the right way to go. It turns out, it&#8217;s been a long time since I&#8217;ve done a Raspberry Pi install.</p>
-<p>I grabbed the <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a> and went on my way. It&#8217;s really nice. I went with the Raspberry Pi OS Lite install since it&#8217;s the RP1, I didn&#8217;t want a GUI. The imager asked the usual installation questions, loaded up my SSH key, and I was ready to load it up in my Pi.</p>
-<div align="center"><a href="https://princessleia.com/images/journalpics/032025/raspberripi1b_imager_2025.png"><img decoding="async" src="https://princessleia.com/images/journalpics/032025/raspberripi1b_imager_2025_sm.png"></a></div>
-<p>The only thing I need to finish sorting out is networking. The old USB WiFi adapter I have it in doesn&#8217;t initialize until after it&#8217;s booted up, so wpa_supplicant on boot can&#8217;t negotiate with the access point. I&#8217;ll have to play around with it. And what will I use this for once I do, now that it&#8217;s not an SSH tunnel? I&#8217;m not sure yet.</p>
-<div align="center"><a href="/images/journalpics/032025/raspberry_pi_1_dusty_case.jpg"><img decoding="async" src="/images/journalpics/032025/raspberry_pi_1_dusty_case_sm.jpg"></a></div>
-<p>I realize this blog post isn&#8217;t very deep or technical, but I guess that&#8217;s the point. We&#8217;ve come a long way in recent years in support for non-x86 architectures, so installation has gotten a lot easier across several of them. If you&#8217;re new to playing around with architectures, I&#8217;d say it&#8217;s a really good time to start. You can hit the ground running with some wins, and then play around as you go with various things you want to help get working. It&#8217;s a lot of fun, and the years I spent playing around with Debian on Sparc back in the day definitely laid the groundwork for the job I have at IBM working on mainframes. You never know where a bit of technical curiosity will get you.</p>]]></description>
-      <source url="http://princessleia.com/journal/?cat=2&amp;feed=rss2">Elizabeth K. Joseph</source>
     </item>
     <item>
       <title>I'm running for the OSI board... maybe</title>
