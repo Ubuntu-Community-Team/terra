@@ -6,9 +6,40 @@
     <description>Fresh posts from the Ubuntu Planet</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 19 Dec 2025 01:54:25 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 20 Dec 2025 01:48:27 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Design and Documentation clinics at FOSDEM Fringe 2026</title>
+      <link>https://ubuntu.com//blog/design-and-documentation-clinics-at-fosdem-fringe-2026</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/design-and-documentation-clinics-at-fosdem-fringe-2026</guid>
+      <pubDate>Thu, 18 Dec 2025 09:24:45 GMT</pubDate>
+      <description><![CDATA[<p><a href="https://fosdem.org/2026/">FOSDEM</a> is one of the biggest and most exciting open source events of the year, held at the Solbosch campus of the Université Libre de Bruxelles (Brussels), Belgium.</p>
+<p class="has-medium-font-size">Thousands of open source contributors and enthusiasts attend, often with several folks from Canonical among them. The next one is coming quickly, with FOSDEM 2026 being held across the weekend of <strong>January 31st – February 1st</strong>.</p>
+<p>For the first time, a few of us from the Design and Documentation teams at Canonical are going to both attend and <em>organize</em> a<strong> free</strong> <a href="https://fosdem.org/2026/fringe/">FOSDEM Fringe</a><strong> </strong>event<strong> </strong>on <strong>Monday February 2nd</strong>, between 09:00 and 17:00.  Anyone who needs help with their open source work is invited, as are unaffiliated individuals who want to learn more about either Design or Documentation.</p>
+<h3 class="wp-block-heading">How we can help</h3>
+<p>Our fringe event includes both Design and Documentation clinics where attendees can ask questions and get the help they need to fix a problem, get a review, or create a solution. Items you might want to consider include:</p>
+<p><strong>Design clinic:</strong></p>
+<ul>
+<li><strong>UX/UI reviews:</strong> Professional feedback on your CLI or GUI.</li>
+<li><strong>Workflow optimization:</strong> Streamline how users interact with your tool.</li>
+<li><strong>Visualization:</strong> Learn how to create and share your ideas.</li>
+</ul>
+<p><strong>Documentation</strong> <strong>clinic:</strong></p>
+<ul>
+<li><strong>Structure and strategy:</strong> Organize and plan your content for better navigability.</li>
+<li><strong>Tooling setup:</strong> Pick and configure the right documentation tools.</li>
+<li><strong>Onboarding:</strong> Make it easier for new contributors to join.</li>
+</ul>
+<p>But these are just a guide. We’re up for any challenge!</p>
+<h3 class="wp-block-heading">Register now</h3>
+<p><strong>When: </strong>Monday 2nd February, between 09:00 and 17:00. </p>
+<p><strong>Where</strong>: <a href="https://www.workatfirma.be/">Firma</a>, Brussels.</p>
+<p>To give us some idea of numbers, we’re asking anyone who may want to attend to register their interest first. Please fill in the following form and we’ll be in touch:</p>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfJLEIb5zZ3gggdIWQiB6X2asTIEJ_07CPV077blzf9YJ0HCQ/viewform"><strong>Documentation and Design Clinic @FOSDEM Fringe Attendance Form</strong></a></p>
+<p><br/><strong>Questions? Find us on Matrix at </strong><a href="https://matrix.to/#/#design:ubuntu.com"><strong>#design:ubuntu.com</strong></a><strong> and </strong><a href="https://matrix.to/#/#documentation:ubuntu.com"><strong>#documentation:ubuntu.com</strong></a><strong>.</strong></p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>Finally back at OLF!</title>
       <link>https://princessleia.com/journal/2025/12/finally-back-at-olf/</link>
@@ -37,35 +68,6 @@
 <div align="center"><a href="/images/journalpics/122025/olf_cake.jpg"><img decoding="async" src="/images/journalpics/122025/olf_cake_sm.jpg"></a></div>
 <p>In what is perhaps one of my shortest conference trips, I flew out at 5AM the next morning to get home by midday on Sunday. It left me pretty tired, but it was worth it.</p>]]></description>
       <source url="http://princessleia.com/journal/?cat=2&amp;feed=rss2">Elizabeth K. Joseph</source>
-    </item>
-    <item>
-      <title>Extending ROS Noetic Support with ESM-Enabled Content Snaps</title>
-      <link>https://ubuntu.com//blog/extending-ros-noetic-support-with-esm-enabled-content-snaps</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/extending-ros-noetic-support-with-esm-enabled-content-snaps</guid>
-      <pubDate>Wed, 17 Dec 2025 20:38:28 GMT</pubDate>
-      <description><![CDATA[<p>Since ROS Noetic reached end of life in May 2025, the Ubuntu Robotics team has been working to ensure that developers and organizations can continue building and deploying robots securely on Ubuntu.</p>
-<p>To build on this foundation, Canonical has now <strong>extended its </strong><a href="https://ubuntu.com/blog/ros-noetic-is-eol-take-action-to-maintain-fleet-security"><strong>ESM (Expanded Security Maintenance) for ROS</strong></a><strong> coverage to ROS Noetic content-sharing snaps.</strong> This update is a significant step toward long-term support and security for ROS environments distributed through the Snap ecosystem, ensuring developers can continue to rely on maintained and compatible components.</p>
-<h2 class="wp-block-heading">What are content-sharing snaps?</h2>
-<p><a href="https://canonical-robotics.readthedocs-hosted.com/en/latest/explanations/snaps/ros-architectures-with-snaps/#multi-snaps-using-content-sharing">Content-sharing snaps</a> are a key feature of the Snap ecosystem that allow multiple snaps to share common dependencies, such as ROS libraries, tools, and assets, without duplication. This model simplifies packaging, improves consistency, and reduces image size across robotic systems. You can learn more about the benefits of following a modular architecture for your ROS robots <a href="https://canonical-robotics.readthedocs-hosted.com/en/latest/explanations/snaps/ros-architectures-with-snaps/">here</a>.</p>
-<p>The Ubuntu Robotics team maintains several content-sharing snaps on the <a href="https://snapcraft.io/publisher/ubuntu-robotics-community">Snap Store</a> – such as <a href="https://snapcraft.io/ros-noetic-desktop"><em>ros-noetic-desktop</em></a> and <a href="https://snapcraft.io/ros-noetic-ros-base"><em>ros-noetic-ros-base</em></a> – which serve as the foundation for many ROS-based applications.</p>
-<p>With ESM now integrated, these content <strong>snaps continue to receive security updates and maintenance</strong>, ensuring developers can build and deploy with confidence as ROS 1 transitions into its long-term maintenance phase. What’s more, this benefit is free – no Pro token is required.</p>
-<h2 class="wp-block-heading">Why this matters</h2>
-<p>Robotics projects often have long lifecycles, where stability and security are critical. While ROS Noetic is no longer maintained upstream, Canonical’s ESM for ROS service delivers ongoing CVE patches and security fixes for both ROS and Ubuntu packages.</p>
-<p>By extending ESM for ROS to content-sharing snaps, we’re <strong>giving developers the same long-term security guarantees in the snap ecosystem</strong> that they already rely on in Ubuntu’s ESM for deb packages. This means:</p>
-<ul>
-<li>Continued security maintenance for ROS Noetic environments distributed through snaps.<br/></li>
-<li>A unified and consistent experience across both deb-based and snap-based systems.<br/></li>
-<li>Easier access to maintained ROS libraries for new and existing robotic deployments.<br/></li>
-</ul>
-<h2 class="wp-block-heading">Continuing long-term support for the ROS community</h2>
-<p>This update reflects Canonical’s ongoing commitment to the ROS ecosystem – helping developers and organizations extend the life of their robots securely and sustainably. With ESM for ROS now available in both deb and snap formats, Ubuntu continues to be the trusted foundation for secure, long-term robotics innovation.</p>
-<h2 class="wp-block-heading">Learn more</h2>
-<ul>
-<li><a href="https://canonical-robotics.readthedocs-hosted.com/en/latest/explanations/security/what-is-ros-esm/">What is ESM for ROS</a></li>
-<li><a href="https://canonical-robotics.readthedocs-hosted.com/en/latest/tutorials/snaps-core/building-ros-snaps-with-content-sharing/">Tutorial: Building ROS snaps with content sharing</a></li>
-<li><a href="https://canonical.com/blog/ros-enterprise-support-15-things-you-need-to-know">ESM for ROS: 15 things you need to know</a></li>
-</ul>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Coming to 26.04 LTS: Three Layouts</title>
@@ -1609,6 +1611,145 @@ python-certifi for the Python&nbsp;team.</p>
 
 <p>If you have ideas or feedback, reach out to us!</p>]]></description>
       <source url="http://news.launchpad.net/feed">Launchpad News</source>
+    </item>
+    <item>
+      <title>Think you can’t interpose static binaries with LD_PRELOAD? Think again!</title>
+      <link>https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</link>
+      <guid isPermaLink="true">https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</guid>
+      <pubDate>Thu, 20 Nov 2025 20:56:17 GMT</pubDate>
+      <description><![CDATA[<div class="wp-block-media-text alignwide is-vertically-aligned-center" style="grid-template-columns:21% auto"><figure class="wp-block-media-text__media"><img fetchpriority="high" decoding="async" width="4614" height="4001" src="https://balintreczey.hu/blog/wp-content/uploads/2023/04/firebuild-logo.svg" alt="" class="wp-image-853 size-thumbnail"/></figure><div class="wp-block-media-text__content">
+<p>Well, you are right, you can&#8217;t. At least not directly. This is well documented in many projects relying on interposing binaries, like faketime.</p>
+
+
+
+<p> </p>
+</div></div>
+
+
+
+<p></p>
+
+
+
+<p>But what if we could write something that would take a static binary, replace at least the direct syscalls with ones going through libc and load it with the dynamic linker? We are in luck, because the excellent QEMU project has a user space emulator! It can be compiled as a dynamically linked executable, honors LD_PRELOAD and uses the host libc&#8217;s syscall &#8211; well, at least sometimes. Sometimes syscalls just bypass libc.</p>
+
+
+
+<p>The missing piece was a way to make QEMU always take the interposable path and call the host libc instead of using an arch-specifix assembly routine (`safe_syscall_base`) to construct the syscall and going directly to the kernel. Luckily, this turned out to be doable. A small patch later, QEMU gained a switch that forces all syscalls through libc. Suddenly, our static binaries started looking a lot more dynamic!</p>
+
+
+
+<pre class="wp-block-code"><code>$ faketime '2008-12-24 08:15:42'  qemu-x86_64 ./test_static_clock_gettime
+2008-12-24 08:15:42.725404654
+$ file test_static_clock_gettime 
+test_clock_gettime: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, ...</code></pre>
+
+
+
+<p>With this in place, Firebuild can finally wrap even those secretive statically linked tools. QEMU runs them, libc catches their syscalls, <code>LD_PRELOAD</code> injects <code>libfirebuild.so</code>, and from there the usual interposition magic happens. The result: previously uncachable build steps can now be traced, cached, and shortcut just like their dynamic friends.</p>
+
+
+
+<p>There is one more problem though. Why would the static binaries deep in the build be run by QEMU? Firebuild also intercepts the `exec()` calls and now it rewrites them on the fly whenever the executed binary would be statically linked!</p>
+
+
+
+<pre class="wp-block-code"><code>$ firebuild -d comm bash -c ./test_static
+...
+FIREBUILD: fd 9.1: ({ExecedProcess 161077.1, running, "bash -c ./test_static", fds=&#91;0: {FileFD ofd={FileO
+FD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOFD #3 type=FD_PIPE_OUT w} {Pipe #0} close_o
+n_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=FD_PIPE_OUT w} {Pipe #1} close_on_popen=fal
+se cloexec=false}, 3: {FileFD NULL} /* times 2 */]})
+{
+    "&#91;FBBCOMM_TAG]": "exec",
+    "file": "test_static",
+    "// fd": null,
+    "// dirfd": null,
+    "arg": &#91;
+        "./test_static"
+    ],
+    "env": &#91;
+        "SHELL=/bin/bash",
+ ...
+        "FB_SOCKET=/tmp/firebuild.cpMn75/socket",
+        "_=./test_static"
+    ],
+    "with_p": false,
+    "// path": null,
+    "utime_u": 0,
+    "stime_u": 1017
+}
+FIREBUILD: -> proc_ic_msg()  (message_processor.cc:782)  proc={ExecedProcess 161077.1, running, "bash -c 
+./test_static", fds=&#91;0: {FileFD ofd={FileOFD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOF
+D #3 type=FD_PIPE_OUT w} {Pipe #0} close_on_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=F
+D_PIPE_OUT w} {Pipe #1} close_on_popen=false cloexec=false}, 3: {FileFD NULL} /* times 2 */]}, fd_conn=9.
+1, tag=exec, ack_num=0
+FIREBUILD:   -> send_fbb()  (utils.cc:292)  conn=9.1, ack_num=0 fd_count=0
+Sending message with ancillary fds &#91;]:
+{
+    "&#91;FBBCOMM_TAG]": "rewritten_args",
+    "arg": &#91;
+        "/usr/bin/qemu-user-interposable",
+        "-libc-syscalls",
+        "./test_static"
+    ],
+    "path": "/usr/bin/qemu-user-interposable"
+}
+...
+FIREBUILD: -> accept_ic_conn()  (firebuild.cc:139)  listener=6
+...
+FIREBUILD: fd 9.2: ({Process NULL})
+{
+    "&#91;FBBCOMM_TAG]": "scproc_query",
+    "pid": 161077,
+    "ppid": 161073,
+    "cwd": "/home/rbalint/projects/firebuild/test",
+    "arg": &#91;
+        "/usr/bin/qemu-user-interposable",
+        "-libc-syscalls",
+        "./test_static"
+    ],
+    "env_var": &#91;
+        "CCACHE_DISABLE=1",
+...
+        "SHELL=/bin/bash",
+        "SHLVL=0",
+        "_=./test_static"
+    ],
+    "umask": "0002",
+    "jobserver_fds": &#91;],
+    "// jobserver_fifo": null,
+    "executable": "/usr/bin/qemu-user-interposable",
+    "// executed_path": null,
+    "// original_executed_path": null,
+    "libs": &#91;
+        "/lib/x86_64-linux-gnu/libatomic.so.1",
+        "/lib/x86_64-linux-gnu/libc.so.6",
+        "/lib/x86_64-linux-gnu/libglib-2.0.so.0",
+        "/lib/x86_64-linux-gnu/libm.so.6",
+        "/lib/x86_64-linux-gnu/libpcre2-8.so.0",
+        "/lib64/ld-linux-x86-64.so.2"
+    ],
+    "version": "0.8.5.1"
+}
+</code></pre>
+
+
+
+<p>The QEMU patch is <a href="https://lists.gnu.org/archive/html/qemu-devel/2025-11/msg02559.html">forwarded to qemu-devel</a>. If it lands, anyone using QEMU user-mode emulation could benefit — not just Firebuild.</p>
+
+
+
+<p>For Firebuild users, though, the impact is immediate. Toolchains that mix dynamic and static helpers? Cross-builds that pull in odd little statically linked utilities? Previously “invisible” steps in your builds? All now fair game for caching.</p>
+
+
+
+<p><a href="https://github.com/firebuild/firebuild/releases/tag/v0.8.5">Firebuild 0.8.5</a> ships this new capability out of the box. Just update, make sure you’re using a patched QEMU, and enjoy the feeling of watching even static binaries fall neatly into place in your cached build graph. Ubuntu users can get the prebuilt patched QEMU packages from the <a href="https://launchpad.net/~firebuild/+archive/ubuntu/stable">Firebuild PPA</a> already. </p>
+
+
+
+<p>Static binaries, welcome to the party!</p>]]></description>
+      <source url="https://balintreczey.hu/blog/tag/ubuntu/feed/">Balint Reczey</source>
     </item>
     <item>
       <title>GSoC 2025 Final Submission: Re-architecting PyCups for a Modern, Pythonic Future</title>
