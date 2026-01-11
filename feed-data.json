@@ -1,5 +1,26 @@
 [
   {
+    "sourceName": "Scarlett Gately Moore",
+    "sourceUrl": "https://www.scarlettgatelymoore.dev/category/open-source-software/feed/",
+    "title": "I love KDE too much to retire! Snap beta releases trickling in. Stay tuned.",
+    "link": "https://www.scarlettgatelymoore.dev/i-love-kde-too-much-to-retire-snap-beta-releases-trickling-in-stay-tuned/",
+    "date": "2026-01-10T16:54:12.000Z",
+    "snippet": "A short but sweet note to say I am coming out of my short retirement to help with snaps again. My time is extremely limited, however we are working hard on getting snaps on CI and I have some newer snaps in &#8211;beta trickling in for testing. You must install kf6-core24 from beta as well to test them ( this will likely break older kde snaps in the process so beware. ) This is slow going as I work on them during my hour lunch at day job and spare stolen moments. KDE is coming up on its 30th bir...",
+    "contentHtml": "<figure class=\"wp-block-image aligncenter size-full\"><img fetchpriority=\"high\" decoding=\"async\" width=\"424\" height=\"600\" src=\"https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde.png\" alt=\"\" class=\"wp-image-1816\" srcset=\"https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde.png 424w, https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde-212x300.png 212w\" sizes=\"(max-width: 424px) 100vw, 424px\" /></figure>\n\n\n\n<p>A short but sweet note to say I am coming out of my short retirement to help with snaps again. My time is extremely limited, however we are working hard on getting snaps on CI and I have some newer snaps in &#8211;beta trickling in for testing. You must install kf6-core24 from beta as well to test them ( this will likely break older kde snaps in the process so beware. ) This is slow going as I work on them during my hour lunch at day job and spare stolen moments. KDE is coming up on its 30th birthday!!! How cool is that!</p>\n\n\n\n<p>I <img src=\"https://s.w.org/images/core/emoji/17.0.2/72x72/2764.png\" alt=\"❤\" class=\"wp-smiley\" style=\"height: 1em; max-height: 1em;\" /> KDE</p>\n\n\n\n<p>Like my work? Consider a donation. Thank you!</p>\n\n\n\n<a class=\"dbox-donation-page-button\" href=\"https://donorbox.org/open-source-work?\" style=\"background: rgb(18, 138, 237); color: rgb(255, 255, 255); text-decoration: none; font-family: Verdana, sans-serif; display: flex; gap: 8px; width: fit-content; font-size: 16px; border-radius: 5px; line-height: 24px; padding: 8px 24px;\"><img decoding=\"async\" src=\"https://donorbox.org/images/white_logo.svg\">Donate</a>",
+    "author": "sgmoore",
+    "categories": [
+      "KDE",
+      "Kubuntu",
+      "Linux",
+      "Open Source Software",
+      "Packaging",
+      "snaps",
+      "Software",
+      "Software development"
+    ],
+    "imageUrl": null
+  },
+  {
     "sourceName": "Ubuntu Blog",
     "sourceUrl": "https://ubuntu.com/blog/feed/",
     "title": "London called, and the world answered: creating a Summit without borders",
@@ -229,33 +250,6 @@
     "contentHtml": "<p><em>(Please note this is still a draft of my final blog)</em></p>\n<p>And just like that, my Google Summer of Code journey with OpenPrinting is drawing to a close. This post serves as a final summary of my project: rebuilding <code>pycups</code> from the ground up for <code>libcups3</code>. While I still have a few things I plan to update, this covers the core of my work over the summer.</p>\n<p>It&rsquo;s been an incredible experience, and I&rsquo;m excited to share the architectural decisions, challenges, and &ldquo;magic&rdquo; tricks that went into creating the new <code>pycups</code>.</p>",
     "author": null,
     "categories": [],
-    "imageUrl": null
-  },
-  {
-    "sourceName": "Scarlett Gately Moore",
-    "sourceUrl": "https://www.scarlettgatelymoore.dev/category/open-source-software/feed/",
-    "title": "A New Chapter: Career Transition Update",
-    "link": "https://www.scarlettgatelymoore.dev/a-new-chapter-career-transition-update/",
-    "date": "2025-10-31T15:38:55.000Z",
-    "snippet": "I&#8217;m pleased to share that my career transition has been successful! I&#8217;ve joined our local county assessor&#8217;s office, beginning a new path in property assessment for taxation and valuation. While the compensation is modest, it offers the stability I was looking for.\n\n\n\nMy new schedule consists of four 10-hour days with an hour commute each way, which means Monday through Thursday will be largely devoted to work and travel. However, I&#8217;ll have Fridays available for open sourc...",
-    "contentHtml": "<p>I&#8217;m pleased to share that my career transition has been successful! I&#8217;ve joined our local county assessor&#8217;s office, beginning a new path in property assessment for taxation and valuation. While the compensation is modest, it offers the stability I was looking for.</p>\n\n\n\n<p>My new schedule consists of four 10-hour days with an hour commute each way, which means Monday through Thursday will be largely devoted to work and travel. However, I&#8217;ll have Fridays available for open source contributions once I&#8217;ve completed my existing website maintenance commitments.</p>\n\n\n\n<h2 class=\"wp-block-heading\"><strong>Open Source Priorities</strong></h2>\n\n\n\n<p>Going forward, my contribution focus will be:</p>\n\n\n\n<ol class=\"wp-block-list\">\n<li>Ubuntu Community Council</li>\n\n\n\n<li>Kubuntu/Debian</li>\n\n\n\n<li>Snap packages (as time permits)</li>\n</ol>\n\n\n\n<p>Regarding the snap packages: my earlier hope of transitioning them to Carl hasn&#8217;t worked out as planned. He&#8217;s taken on maintaining KDE Neon single-handedly, and understandably, adding snap maintenance on top of that proved unfeasible. I&#8217;ll do what I can to help when time allows.</p>\n\n\n\n<h2 class=\"wp-block-heading\"><strong>Looking for Contributors</strong></h2>\n\n\n\n<p>If you&#8217;re interested in contributing to Kubuntu or helping with snap packages, I&#8217;d love to hear from you! Feel free to reach out—community involvement is what makes these projects thrive.</p>\n\n\n\n<p>Thanks for your patience and understanding as I navigate this transition.</p>",
-    "author": "sgmoore",
-    "categories": [
-      "Debian",
-      "debs",
-      "KDE",
-      "Kubuntu",
-      "Linux",
-      "Open Source Software",
-      "Packaging",
-      "snapcraft",
-      "snaps",
-      "Software development",
-      "Open Source software",
-      "Snaps",
-      "Software",
-      "Ubuntu"
-    ],
     "imageUrl": null
   },
   {
