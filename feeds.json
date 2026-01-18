@@ -4,6 +4,8 @@
     "nick": "uwn",
     "url": "https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss"
   },
+ 
+    
   {
     "name": "Ubuntu Classroom",
     "nick": "nhandler",
@@ -744,4 +746,9 @@
     "nick": "jnsgruk",
     "url": "https://jnsgr.uk/tags/ubuntu/index.xml"
   }
+   {
+    "name": "Techrefreshing Linux News",
+    "nick": "techrefreshing",
+    "url": "https://techrefreshing.com/tag/ubuntu/feed/"
+     }
 ]
