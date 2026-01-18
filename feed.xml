@@ -6,9 +6,33 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 17 Jan 2026 01:54:01 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jan 2026 02:06:46 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu Studio 25.04 Has Reached End-Of-Life (EOL)</title>
+      <link>https://ubuntustudio.org/2026/01/ubuntu-studio-25-04-has-reached-end-of-life-eol/</link>
+      <guid isPermaLink="true">https://ubuntustudio.org/2026/01/ubuntu-studio-25-04-has-reached-end-of-life-eol/</guid>
+      <pubDate>Fri, 16 Jan 2026 16:22:42 GMT</pubDate>
+      <description><![CDATA[<p>As of January 15, 2025, all flavors of Ubuntu 25.04, including Ubuntu Studio 25.04, codenamed &#8220;Plucky Puffin&#8221;, have reached end-of-life (EOL). There will be no more updates of any kind, including security updates, for this release of Ubuntu.</p>
+
+
+
+<p>If you have not already done so, please upgrade to Ubuntu Studio 25.10 via the instructions <a href="https://discourse.ubuntu.com/t/ubuntu-studio-25-10-release-notes/67578#p-175511-upgrading-to-ubuntu-studio-2510-5">provided here</a>. If you do not do so as soon as possible, you will lose the ability without additional advanced configuration.</p>
+
+
+
+<p>No single release of any operating system can be supported indefinitely, and Ubuntu Studio has no exception to this rule.</p>
+
+
+
+<p>Interim Ubuntu releases, meaning those that are between the Long-Term Support releases, are supported for 9 months and users are expected to upgrade after every release with a 3-month buffer following each release.</p>
+
+
+
+<p>Long-Term Support releases are identified by an even numbered year-of-release and a month-of-release of April (04). Hence, the most recent Long-Term Support release is 24.04 (YY.MM = 2024.April), and the next Long-Term Support release will be 26.04 (2026.April). LTS releases for official Ubuntu flavors (not Desktop or Server which are supported for five years) are three years, meaning LTS users are expected to upgrade after every LTS release with a one-year buffer.</p>]]></description>
+      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
+    </item>
     <item>
       <title>Canonical Ubuntu and Ubuntu Pro now available on AWS European Sovereign Cloud</title>
       <link>https://ubuntu.com//blog/ubuntu-aws-european-sovereign-cloud</link>
@@ -874,70 +898,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 <div align="center"><a href="/images/journalpics/122025/olf_cake.jpg"><img decoding="async" src="/images/journalpics/122025/olf_cake_sm.jpg"></a></div>
 <p>In what is perhaps one of my shortest conference trips, I flew out at 5AM the next morning to get home by midday on Sunday. It left me pretty tired, but it was worth it.</p>]]></description>
       <source url="http://princessleia.com/journal/?cat=2&amp;feed=rss2">Elizabeth K. Joseph</source>
-    </item>
-    <item>
-      <title>Coming to 26.04 LTS: Three Layouts</title>
-      <link>https://ubuntustudio.org/2025/12/coming-to-26-04-lts-three-layouts/</link>
-      <guid isPermaLink="true">https://ubuntustudio.org/2025/12/coming-to-26-04-lts-three-layouts/</guid>
-      <pubDate>Thu, 11 Dec 2025 18:41:20 GMT</pubDate>
-      <description><![CDATA[<h2>Xfce Legacy</h2>
-
-
-
-<p>A lot of people have asked us why Ubuntu Studio comes with a panel on top as the default. For that, it&#8217;s a simple answer: Legacy.</p>
-
-
-
-<p>When Ubuntu Studio 12.04 LTS (Precise Pangolin) released over 13 years ago, it was released with a top panel by default as that was the default for our desktop envirionment: Xfce.</p>
-
-
-
-<p>Fast-forward eight years to 20.10 and Xfce was no longer our default desktop environment: we had switched to KDE&#8217;s Plasma Desktop. Plasma has a bottom panel by default, similar to Windows. However, to ease the transition for our long-time users, we kept the panel on top by default, resizing it to be similar to the default top panel of Xfce.</p>
-
-
-
-<figure class="wp-block-image size-full is-resized"><img loading="lazy" src="https://ubuntustudio.org/wp-content/uploads/2025/12/e9d5/VirtualBox_ISOTest_10_12_2025_18_42_41.jpg" alt="" class="wp-image-3053" width="640" height="400"/></figure>
-
-
-
-<h2>A macOS-Like Layout</h2>
-
-
-
-<p>With 25.10&#8217;s release, we included an additional layout: two panels. One panel is on top with a global menu, and the bottom contains some default applications, a trash can, and a full-screen application launcher. This is a way to feel familiar to those with a similar layout from where they may be coming from, being an operating system for creativity: macOS.</p>
-
-
-
-<figure class="wp-block-image size-full is-resized"><img loading="lazy" src="https://ubuntustudio.org/wp-content/uploads/2025/12/1df5/VirtualBox_ISOTest_10_12_2025_18_45_35.png" alt="" class="wp-image-3050" width="640" height="400"/></figure>
-
-
-
-<h2>Familiarity and Traditionalism: Windows-like Layout</h2>
-
-
-
-<p>Starting with 26.04 LTS, we&#8217;ll also include one more layout: a bottom, Windows 10-like layout. This is to ease the transition for those coming from Windows, and due to popular request and reports.</p>
-
-
-
-<figure class="wp-block-image size-full is-resized"><img loading="lazy" src="https://ubuntustudio.org/wp-content/uploads/2025/12/9220/VirtualBox_ISOTest_10_12_2025_18_43_35.jpg" alt="" class="wp-image-3052" width="640" height="400"/></figure>
-
-
-
-<h2>Should We Change The Default?</h2>
-
-
-
-<p>It has been 13 years since we defaulted to a top panel, but is that the right idea anymore?</p>
-
-
-
-<p>Right now, on the Ubuntu Discourse, <a href="https://discourse.ubuntu.com/t/coming-to-ubuntu-studio-26-04-lts-three-layouts/">we have a poll</a> to decide if we should change the default layout starting with 26.04 LTS. This will not affect layouts for anyone upgrading from a prior release, but only new installations or new users going forward.</p>
-
-
-
-<p>If you would like to participate in the poll, <a href="https://discourse.ubuntu.com/t/coming-to-ubuntu-studio-26-04-lts-three-layouts/">head on over to the Ubuntu Discourse and cast a vote</a>!</p>]]></description>
-      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
     </item>
     <item>
       <title>Addressing Linux's Missing PKI Infrastructure</title>
