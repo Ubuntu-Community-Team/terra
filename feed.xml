@@ -6,9 +6,48 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 23 Jan 2026 01:59:06 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 24 Jan 2026 01:55:43 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>E371 Pluvioso Duvidoso</title>
+      <link>https://podcastubuntuportugal.org/e371/</link>
+      <guid isPermaLink="true">https://podcastubuntuportugal.org/e371/</guid>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>A conversa continua com os verdadeiros nómadas digitais; David Negreira, Tiago Carrondo, Miguel e Diogo Constantino - alguns a dobrarem as ceroulas para irem à FOSDEM. Queres ter o teu próprio e-mail? Ah! Querias! É mais complicado do que parece? Nim. A merdificação da internet e dos serviços digitais tem saída? Errr&hellip; E a Inferência Estatístisca Turbinada, vulgo Intelijumência Artificial? É ensinada ou treinada? Deve ser tratada como Deus na terra&hellip;ou como um estagiário meio-burro? Entretanto, o site da comunidade Ubuntu Portugal pula e avança, empurrado pela mãozinha do Hugo. Ainda a procissão vai no adro!&hellip;</p>
+<p>Já sabem: oiçam, subscrevam e partilhem!</p>
+<ul>
+<li>ZBT-2: <a href="https://www.home-assistant.io/connect/zbt-2">https://www.home-assistant.io/connect/zbt-2</a></li>
+<li>FOSDEM 2026: <a href="https://fosdem.org/2026/">https://fosdem.org/2026/</a></li>
+<li>Mailfence: <a href="https://mailfence.com/">https://mailfence.com/</a></li>
+<li>Tutamail: <a href="https://tuta.com/">https://tuta.com/</a></li>
+<li>Protonmail: <a href="https://mail.proton.me">https://mail.proton.me</a></li>
+<li>Mailgun: <a href="https://www.mailgun.com/">https://www.mailgun.com/</a></li>
+<li>Mail-in-a-box: <a href="https://github.com/mail-in-a-box">https://github.com/mail-in-a-box</a></li>
+<li>Hugo: <a href="https://gohugo.io/">https://gohugo.io/</a></li>
+<li>Vota sim ou não à IA: <a href="https://voteyesornoai.com/">https://voteyesornoai.com/</a></li>
+<li>Livro «Operating Systems: Three Easy Pieces» : <a href="https://pages.cs.wisc.edu//~remzi/OSTEP/">https://pages.cs.wisc.edu//~remzi/OSTEP/</a></li>
+<li>Anubis: <a href="https://anubis.techaro.lol/">https://anubis.techaro.lol/</a></li>
+<li>Home Assistant: <a href="https://www.home-assistant.io/">https://www.home-assistant.io/</a></li>
+<li>Ciência não é encher chouriços: <a href="https://www.nature.com/articles/d41586-025-04061-w">https://www.nature.com/articles/d41586-025-04061-w</a></li>
+<li>LLM para jornalismo? Uma boa má ideia: <a href="https://www.techdirt.com/2026/01/07/journalistic-malpractice-no-llm-ever-admits-to-anything-and-reporting-otherwise-is-a-lie/">https://www.techdirt.com/2026/01/07/journalistic-malpractice-no-llm-ever-admits-to-anything-and-reporting-otherwise-is-a-lie/</a></li>
+<li>Dependência de software Norte-Americano: <a href="https://www.cigref.fr/technological-dependence-on-american-software-and-cloud-services-an-assessment-of-the-economic-consequences-in-europe">https://www.cigref.fr/technological-dependence-on-american-software-and-cloud-services-an-assessment-of-the-economic-consequences-in-europe</a></li>
+<li>Como assim, desenvolver Ubuntu com IA? <a href="https://discourse.ubuntu.com/t/developing-with-ai-on-ubuntu/75299">https://discourse.ubuntu.com/t/developing-with-ai-on-ubuntu/75299</a></li>
+<li>Merdificação da Internet: <a href="https://guilhotrina.substack.com/p/a-epoca-de-ouro-digital-morreu-longa">https://guilhotrina.substack.com/p/a-epoca-de-ouro-digital-morreu-longa</a></li>
+<li>Merdificação (Enshittification): <a href="https://pt.wikipedia.org/wiki/Merdifica%C3%A7%C3%A3o">https://pt.wikipedia.org/wiki/Merdifica%C3%A7%C3%A3o</a></li>
+<li>Blog do Cory Doctorow: <a href="https://pluralistic.net/">https://pluralistic.net/</a></li>
+<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
+<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
+<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
+</ul>
+<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
+<p>Este episódio foi produzido por Diogo Constantino, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
+O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
+Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados.
+Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
+A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
+      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
+    </item>
     <item>
       <title>Developing with AI on Ubuntu</title>
       <link>https://jnsgr.uk/2026/01/developing-with-ai-on-ubuntu/</link>
@@ -955,36 +994,6 @@
 
 <a class="dbox-donation-page-button" href="https://donorbox.org/open-source-work?" style="background: rgb(18, 138, 237); color: rgb(255, 255, 255); text-decoration: none; font-family: Verdana, sans-serif; display: flex; gap: 8px; width: fit-content; font-size: 16px; border-radius: 5px; line-height: 24px; padding: 8px 24px;"><img decoding="async" src="https://donorbox.org/images/white_logo.svg">Donate</a>]]></description>
       <source url="https://www.scarlettgatelymoore.dev/category/open-source-software/feed/">Scarlett Gately Moore</source>
-    </item>
-    <item>
-      <title>E370 Insanus Ianuarius</title>
-      <link>https://podcastubuntuportugal.org/e370/</link>
-      <guid isPermaLink="true">https://podcastubuntuportugal.org/e370/</guid>
-      <pubDate>Thu, 08 Jan 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>Qual é o pior que pode acontecer para começar o ano, quando juntamos o David Negreira, Tiago Carrondo, Miguel e Diogo Constantino? Deboche total, pois claro, num podcast sobre carros eléctricos, baterias, painéis solares, Home Assistant e outras cenas. No meio do caos e confusão conseguimos falar brevemente de aventuras tecnológicas, teclados com luzes LGBT, osciloscópios de meter na língua, intelijumência artificial local para escrever código, discos IDE cheios de pó, a merdificação geral da Internet, financeirização da economia e mais além.</p>
-<p>Já sabem: oiçam, subscrevam e partilhem!</p>
-<ul>
-<li>Claude: <a href="https://claude.ai">https://claude.ai</a></li>
-<li>OpenCode - «The open source AI coding agent»: <a href="https://opencode.ai">https://opencode.ai</a></li>
-<li>Teclado Nuphy Air75 v2: <a href="https://nuphy.com/collections/keyboards/products/air75-v2?variant=40677451399277">https://nuphy.com/collections/keyboards/products/air75-v2?variant=40677451399277</a></li>
-<li>Osciloscópio FNIRSI-138 Pro: <a href="https://pt.aliexpress.com/item/1005003839624513.html">https://pt.aliexpress.com/item/1005003839624513.html</a></li>
-<li>Unav: <a href="https://github.com/costales/unav">https://github.com/costales/unav</a></li>
-<li>Home Assistant: <a href="https://www.home-assistant.io/">https://www.home-assistant.io/</a></li>
-<li>Merdificação da Internet: <a href="https://guilhotrina.substack.com/p/a-epoca-de-ouro-digital-morreu-longa">https://guilhotrina.substack.com/p/a-epoca-de-ouro-digital-morreu-longa</a></li>
-<li>Merdificação (Enshittification): <a href="https://pt.wikipedia.org/wiki/Merdifica%C3%A7%C3%A3o">https://pt.wikipedia.org/wiki/Merdifica%C3%A7%C3%A3o</a></li>
-<li>Blog do Cory Doctorow: <a href="https://pluralistic.net/">https://pluralistic.net/</a></li>
-<li>Hollywood, para mandar cenário bué da l33t: <a href="https://snapcraft.io/hollywood">https://snapcraft.io/hollywood</a></li>
-<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
-<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
-<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
-</ul>
-<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
-<p>Este episódio foi produzido por Diogo Constantino, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
-O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
-Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados.
-Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
-A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
-      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
     </item>
     <item>
       <title>Flipping the cube: 2025 is over</title>
