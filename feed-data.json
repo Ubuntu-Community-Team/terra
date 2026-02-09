@@ -1746,18 +1746,6 @@
     "imageUrl": null
   },
   {
-    "sourceName": "Daniel T Chen",
-    "sourceUrl": "http://drowninginbugs.blogspot.com/feeds/posts/default/-/ubuntu",
-    "title": "Fixing build failures for 13.04",
-    "link": "http://drowninginbugs.blogspot.com/2013/04/fixing-build-failures-for-1304.html",
-    "date": "2013-04-08T19:02:00.001Z",
-    "snippet": "One of the pleasures (and privileges) of Free Software is transparency in consistency, here meaning it's fairly painless to see where stuff fails to build in Ubuntu&nbsp;and to be able to&nbsp;help in fixing those failures.\n\nLet's get 13.04 into shape!",
-    "contentHtml": "<div dir=\"ltr\" style=\"text-align: left;\" trbidi=\"on\">\nOne of the pleasures (and privileges) of Free Software is transparency in consistency, here meaning it's fairly painless to <a href=\"http://people.ubuntuwire.org/~wgrant/rebuild-ftbfs-test/test-rebuild-20130329-raring.html\" rel=\"nofollow\" target=\"_blank\">see where stuff fails to build in Ubuntu</a>&nbsp;and to be able to&nbsp;<a href=\"https://lists.ubuntu.com/archives/ubuntu-devel/2013-March/036992.html\" target=\"_blank\">help in fixing those failures</a>.<br />\n<br />\nLet's get 13.04 into shape!</div>",
-    "author": null,
-    "categories": [],
-    "imageUrl": null
-  },
-  {
     "sourceName": "Ryan Kavanagh",
     "sourceUrl": "http://blog.ryanak.ca/feeds/planet-ubuntu.xml",
     "title": "Setting up full-disk encryption in OpenBSD 5.3",
