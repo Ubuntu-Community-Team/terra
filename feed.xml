@@ -6,9 +6,148 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sun, 08 Feb 2026 02:49:04 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Feb 2026 02:33:47 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Threads Algorithm Loves Rage Bait</title>
+      <link>https://blog.popey.com/2026/02/the-threads-algorithm-loves-rage-bait/</link>
+      <guid isPermaLink="true">https://blog.popey.com/2026/02/the-threads-algorithm-loves-rage-bait/</guid>
+      <pubDate>Sat, 07 Feb 2026 22:30:00 GMT</pubDate>
+      <description><![CDATA[<p>I use <a href="https://publer.com/popey">Publer</a> to post identical content across Threads, Mastodon, and Bluesky. Same words, same time, same bloke. It&rsquo;s a massive time-saver, and means I can reach people wherever they happen to hang out online without having to faff about copying and pasting between apps.</p>
+<p>I wasn&rsquo;t running some grand social media experiment. I was just having a moan about Windows updates like any reasonable person would. But the results were so stark they opened my eyes to exactly what these platforms reward - and it&rsquo;s not what you might think.</p>
+<h2 id="the-numbers">The Numbers</h2>
+<p>Here&rsquo;s what I posted:</p>
+<blockquote>
+<p>Six months since I booted my Windows &ldquo;gaming&rdquo; PC.<br>
+One game I want to play.<br>
+GPU drivers.<br>
+Windows updates.<br>
+27GB Steam update.<br>
+Three hours later, I&rsquo;ve played zero games.</p>
+</blockquote>
+<p>Same post, three platforms, posted simultaneously at about 6pm. Here&rsquo;s what happened:</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Followers</th>
+<th>Likes/Favourites</th>
+<th>Comments/Replies</th>
+<th>Reshares/Boosts/Reposts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://www.threads.com/@popey/post/DUbQdH-DbYZ?xmt=AQF07ljtVkX_pCSXkcv9-KJTAPP1TtjyHlza02uzX9-wkg">Threads</a></strong></td>
+<td>330</td>
+<td>927</td>
+<td>404</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong><a href="https://mastodon.social/@popey/116024981563433987">Mastodon</a></strong></td>
+<td>5,300</td>
+<td>19</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong><a href="https://bsky.app/profile/popey.me/post/3me7i73awpz2q">Bluesky</a></strong></td>
+<td>1,700</td>
+<td>3</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Let me spell that out clearly: On Threads, where I have my <em>smallest</em> following by a country mile, the post got <strong>49 times more engagement</strong> than on Mastodon, where I have <strong>16 times more followers</strong>.</p>
+<p>Mental.</p>
+<h2 id="what-threads-actually-rewards">What Threads Actually Rewards</h2>
+<p>Here&rsquo;s the thing - most of my Threads posts get precisely sod all engagement. Zero. Zilch. Nowt. I&rsquo;ll share something I&rsquo;m building, a technical observation, community updates, links to blog posts - nothing.</p>
+<p>Complain about Windows? 927 likes.</p>
+<p>A few weeks back I had a moan about a poorly-worded GitLab email. The message said &ldquo;You&rsquo;re receiving this email because of your account on gitlab.gnome.org&rdquo; which, as I pointed out, isn&rsquo;t actually a <em>reason</em> for sending an email - it&rsquo;s just stating a fact about my account existing. Fair criticism, I thought.</p>
+<p>Got absolutely slated in the replies. Told I was clueless about technology, that I was being unreasonable, the works. 22 hearts, 11 replies, mostly having a go.</p>
+<p>Pattern emerging?</p>
+<p>Threads has worked out what drives engagement on their platform: <strong>conflict</strong>.</p>
+<p>My Windows post hit every algorithmic sweet spot:</p>
+<ul>
+<li>Complaint/frustration ✓</li>
+<li>Platform wars potential (Windows vs. Linux) ✓</li>
+<li>Invites correction ✓</li>
+<li>Triggers strong opinions ✓</li>
+<li>Generates replies (even hostile ones) ✓</li>
+</ul>
+<p>The algorithm doesn&rsquo;t care if those replies are helpful, thoughtful, or complete bollocks. It just cares that people are <em>engaging</em>.</p>
+<h2 id="the-response-patterns">The Response Patterns</h2>
+<p>404 comments. Bloody hell. Now, I&rsquo;m fully aware that posting a complaint online is basically asking for it. Some of these responses were genuinely trying to help, some were having a laugh, some were probably winding me up for sport (fair play), and some seemed genuinely annoyed that I&rsquo;d dared complain about Windows. They fell into some pretty clear categories:</p>
+<h3 id="the-youre-doing-it-wrong-brigade">The &ldquo;You&rsquo;re Doing It Wrong&rdquo; Brigade</h3>
+<p>&ldquo;That&rsquo;s neglect&hellip;.. you&rsquo;re a terrible PC dad.&rdquo;</p>
+<p>&ldquo;clearly a skill issue&rdquo;</p>
+<p>&ldquo;Sounds like this is 100% user-error&rdquo;</p>
+<p>&ldquo;You&rsquo;re just self reporting your incompetence&rdquo;</p>
+<p>My personal favourite: &ldquo;Your poor parents, bro. As a father of five I can&rsquo;t imagine seeing my adult child struggle with basic critical thinking skills.&rdquo;</p>
+<p>Look, I&rsquo;ll admit this last one made me laugh. The mental image of my 84-year-old mum receiving a concerned phone call about my inability to operate a computer is genuinely brilliant. I&rsquo;m choosing to believe this was someone having a laugh rather than genuine concern for my elderly parents&rsquo; wellbeing.</p>
+<h3 id="the-well-meaning-but-mistaken-helper-squad">The Well-Meaning (But Mistaken) Helper Squad</h3>
+<p>Dozens of people telling me to use Linux. Fair enough on the surface, except the game won&rsquo;t run on Linux. That&rsquo;s literally why I have a Windows PC. But they didn&rsquo;t ask what game - they just assumed I was either being thick or hadn&rsquo;t considered Linux. Which is quite funny given I co-host a Linux podcast and spent years advocating for Ubuntu professionally.</p>
+<p>Multiple suggestions to &ldquo;just enable auto-updates&rdquo; - missing the point that I <em>can&rsquo;t</em> predict when I&rsquo;ll want to play, so auto-updates wouldn&rsquo;t have solved this particular Friday evening situation.</p>
+<p>&ldquo;Play while it downloads&rdquo; - it&rsquo;s multiplayer, the game literally requires the update to be installed before you can launch it. But I appreciate the optimism.</p>
+<p>A surprising number recommending GeForce Now or other streaming services. Points for creativity, even if it wasn&rsquo;t what I was after.</p>
+<h3 id="the-actually-helpful-responses">The Actually Helpful Responses</h3>
+<p>Buried among everything else, there were some genuinely lovely responses:</p>
+<p>&ldquo;This is my experience as a new parent. I finally get a few hours to do something fun for the first time in months and <em>BAM</em> 3 hours of updates, no matter what I choose to play.&rdquo;</p>
+<p>&ldquo;People will blame you about this, but I&rsquo;ve made the same complaints. The problem is not the amount of upgrades but how blocking and synchronous they are. They don&rsquo;t know there are better user experiences, they are just used to poorly designed systems.&rdquo;</p>
+<p>These folks got it. The issue isn&rsquo;t that updates exist - it&rsquo;s that the entire experience is designed to block you from doing what you actually want to do. They understood it was about UX frustration, not technical incompetence.</p>
+<h3 id="the-question-almost-nobody-asked">The Question Almost Nobody Asked</h3>
+<p>What game?</p>
+<p>Out of 404 comments, almost nobody asked which game I was trying to play. They just assumed I was being thick, or that I should obviously be using Linux, or that I was exaggerating for comic effect (I wasn&rsquo;t - it genuinely took three hours).</p>
+<p>The game is PUBG. Kernel-level anti-cheat. Won&rsquo;t work on Linux, won&rsquo;t work on SteamOS, won&rsquo;t work in a VM, won&rsquo;t work on anything except native Windows. Full stop. It&rsquo;s the sole reason I keep a Windows PC around.</p>
+<h2 id="what-nobody-knew-and-nobody-asked">What Nobody Knew (And Nobody Asked)</h2>
+<p>The PC sat unused for six months because we offered housing to someone experiencing homelessness. My gaming room became their room. They&rsquo;ve since moved on, and it took a while to get everything set back up properly.</p>
+<p>Not anyone&rsquo;s business, really. But it&rsquo;s interesting what people will assume when you don&rsquo;t provide full context. I&rsquo;m not blaming anyone for not knowing this - how could they? But it does highlight how social media strips away context and leaves room for people to fill in their own narratives.</p>
+<p>For the record: I&rsquo;m a Developer Advocate at an AI-native dev company. Long-time Ubuntu community member. I co-host Linux Matters podcast. I spent years working at Canonical in various roles including Developer Advocate. I&rsquo;ve advocated for Linux professionally and personally for over two decades.</p>
+<p>But Threads doesn&rsquo;t know that. Threads doesn&rsquo;t care. Threads just knows: complaint → engagement → boost the hell out of it.</p>
+<h2 id="the-platform-comparison">The Platform Comparison</h2>
+<p>Let&rsquo;s look at what happened on the other platforms.</p>
+<h3 id="mastodons-4-replies">Mastodon&rsquo;s 4 Replies:</h3>
+<p>&ldquo;that&rsquo;s why ppl kick out win and start using linux but you already know that I guess 😂&rdquo;</p>
+<p>&ldquo;and I used to complain about the loading bars on the speccy taking ages before I could play dizzy&rdquo;</p>
+<p>This second one is absolutely brilliant - nostalgic Spectrum reference, understands the frustration of waiting ages to do something you wanted to do <em>right now</em>, and doesn&rsquo;t assume I&rsquo;m a numpty. Just lovely, that.</p>
+<p>&ldquo;RIP Windows&rdquo;</p>
+<p>&ldquo;And you know what the next stage is going to be. Yesss Finaly! Let the games begin!!! Oh. Shader pre-cashing .. I might as well go to bed :D&rdquo;</p>
+<p>Light, friendly, empathetic. Nobody assumed I was completely incompetent. Nobody got angry at me for daring to complain. Just people who understood the frustration and shared their own experiences.</p>
+<h3 id="bluesky">Bluesky:</h3>
+<p>One repost. No commentary.</p>
+<p>The community&rsquo;s still finding its feet over there, I reckon. Or maybe they just didn&rsquo;t think it was worth engaging with. Either way, pretty quiet.</p>
+<h3 id="threads">Threads:</h3>
+<p>Mixed bag. Some genuinely thoughtful responses, some people winding me up (fair enough), some people who seemed genuinely annoyed that I&rsquo;d complained, and quite a few who wanted to help but made assumptions about my technical knowledge.</p>
+<p>But here&rsquo;s the key thing: the algorithm boosted it all the same, because engagement is engagement. Doesn&rsquo;t matter if you&rsquo;re being helpful, hostile, or having a laugh - it all counts the same to the algorithm.</p>
+<h2 id="what-this-actually-reveals">What This Actually Reveals</h2>
+<p>Different platforms, different algorithms, different incentives:</p>
+<p><strong>Mastodon</strong>: Chronological timeline. No algorithm boosting controversial content. Your followers see your posts in order. Engagement is modest but genuine. People who follow you chose to follow you, and they see what you post. Revolutionary concept, that.</p>
+<p><strong>Bluesky</strong>: Algorithm exists but doesn&rsquo;t seem to heavily favour conflict. Still relatively quiet, community still finding its shape. Might just be that my particular crowd hasn&rsquo;t really migrated over there yet.</p>
+<p><strong>Threads</strong>: Meta&rsquo;s algorithm surfaces content that generates interaction - <em>any</em> interaction. Arguments are engagement gold. The algorithm doesn&rsquo;t distinguish between &ldquo;this post made people think&rdquo; and &ldquo;this post wound people up&rdquo; - it just sees numbers going up.</p>
+<p>I wasn&rsquo;t trying to game the system. I was genuinely frustrated about waiting three hours to play a bloody video game on a Friday evening. But Threads saw a post about Windows, updates, and gaming, thought &ldquo;this will make people argue&rdquo; and ran with it.</p>
+<p>Got notifications at 100 views, 500 views, 1000 views. The algorithm was having a whale of a time.</p>
+<h2 id="the-irony">The Irony</h2>
+<p>I&rsquo;d rather have 19 favorites and 4 friendly replies on Mastodon than 927 likes on Threads if a chunk of those likes come packaged with people assuming I&rsquo;m incompetent or having a go at me (even if some of them are just having a laugh).</p>
+<p>High engagement ≠ good engagement.</p>
+<p>The algorithm doesn&rsquo;t care if people are being helpful or hostile. It cares that they&rsquo;re <em>engaging</em>. That&rsquo;s the metric. That&rsquo;s what gets boosted. That&rsquo;s what drives the platform.</p>
+<p>And look, I get it - I posted a complaint online. That&rsquo;s basically an invitation for people to respond however they like. Some will help, some will take the piss, some will genuinely think you&rsquo;re being thick. That&rsquo;s the internet. I&rsquo;m not precious about it.</p>
+<p>But it&rsquo;s fascinating that this type of content gets <em>algorithmically boosted</em> so much more than anything else I post. That&rsquo;s the bit worth paying attention to.</p>
+<h2 id="what-ive-learned">What I&rsquo;ve Learned</h2>
+<p><strong>Threads rewards rage bait.</strong> Complain about popular things - Windows, GitLab emails, whatever - and you&rsquo;ll get engagement. Won&rsquo;t necessarily be <em>good</em> engagement, mind. You&rsquo;ll get helpful people, people winding you up, people having a laugh, and people who are genuinely annoyed you dared complain.</p>
+<p><strong>Platform incentives shape behaviour.</strong> On Threads, I&rsquo;m learning (reluctantly) that controversy performs. On Mastodon, thoughtful content finds thoughtful people - just fewer of them. The numbers tell you what each platform values.</p>
+<p><strong>Context collapse is real.</strong> Without context, a post becomes whatever people project onto it. Very few people assume good intent. Most jump straight to filling in the gaps with their own assumptions. That&rsquo;s not necessarily malicious - it&rsquo;s just how human brains work when presented with incomplete information.</p>
+<p><strong>The network effect paradox</strong>: I have 16x more followers on Mastodon, but get better <em>reach</em> on Threads with 330 followers - because one platform actively surfaces controversial content to people who don&rsquo;t follow me.</p>
+<p>I&rsquo;m still posting to all three platforms. But I know now what each platform rewards. I know what kind of engagement I&rsquo;ll get where.</p>
+<p>Choose your platform based on what kind of engagement you want - not just how much of it.</p>
+<hr>
+<p><strong>Did I eventually get to play PUBG?</strong></p>
+<p>Yeah, hours later, as advertised. I&rsquo;m terrible at it, but glad I managed to squeeze a quick round in.</p>
+<p>The internet&rsquo;s reaction to my mild frustration about waiting to play it? That turned out to be the more interesting story.</p>]]></description>
+      <source url="https://blog.popey.com/post/index.xml">Alan Pope</source>
+    </item>
     <item>
       <title>SQL Server 2025 is generally available on Ubuntu 24.04 LTS</title>
       <link>https://ubuntu.com//blog/sql-server-2025-ubuntu-24-04-lts</link>
@@ -1155,103 +1294,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 <p>Developers who wish to experiment need reliable access to modern hardware, predictable tooling, and strong isolation boundaries. Ubuntu’s role is not to dictate how these tools are used, but to provide a stable and dependable platform on which they can be explored and deployed safely, without compromising security, provenance, or the day-to-day experience of those who choose to opt out.</p>
 <p>In addition to powering development workflows, Ubuntu makes for a dependable production operating system for your workloads. We&rsquo;re building <a href="https://documentation.ubuntu.com/canonical-kubernetes/latest/" target="_blank" rel="noreferrer">Canonical Kubernetes</a> with first-class GPU support, <a href="https://canonical.com/mlops/kubeflow" target="_blank" rel="noreferrer">Kubeflow</a> and <a href="https://canonical.com/mlops/mlflow" target="_blank" rel="noreferrer">MLFlow</a> for model training and serving and a suite of applications like <a href="https://canonical.com/data/postgresql" target="_blank" rel="noreferrer">PostgreSQL</a>, <a href="https://canonical.com/data/mysql" target="_blank" rel="noreferrer">MySQL</a>, <a href="https://canonical.com/data/opensearch" target="_blank" rel="noreferrer">Opensearch</a>, as well as other data-centric tools such as <a href="https://canonical.com/data/kafka" target="_blank" rel="noreferrer">Kafka</a> and <a href="https://canonical.com/data/spark" target="_blank" rel="noreferrer">Spark</a> that can be deployed with full <a href="https://ubuntu.com/pro" target="_blank" rel="noreferrer">Ubuntu Pro</a> support. Let me know if you&rsquo;d find value in a follow-up post on those topics!</p>]]></description>
       <source url="https://jnsgr.uk/tags/ubuntu/index.xml">Jon Seager</source>
-    </item>
-    <item>
-      <title>Malware Peddlers Are Now Hijacking Snap Publisher Domains</title>
-      <link>https://blog.popey.com/2026/01/malware-purveyors-taking-over-published-snap-email-domains/</link>
-      <guid isPermaLink="true">https://blog.popey.com/2026/01/malware-purveyors-taking-over-published-snap-email-domains/</guid>
-      <pubDate>Sat, 17 Jan 2026 19:00:00 GMT</pubDate>
-      <description><![CDATA[<p><strong>tl;dr</strong>: There&rsquo;s a relentless campaign by scammers to publish malware in the Canonical <a href="https://snapcraft.io/">Snap Store</a>. Some gets caught by automated filters, but plenty slips through. Recently, these miscreants have changed tactics - they&rsquo;re now registering expired domains belonging to legitimate snap publishers, taking over their accounts, and pushing malicious updates to previously trustworthy applications. This is a significant escalation.</p>
-<hr>
-<h2 id="context">Context</h2>
-<p>Snaps are compressed, cryptographically signed, revertable software packages for Linux desktops, servers, and embedded devices. They use standard security primitives in the Linux kernel alongside technology developed by Canonical for Ubuntu.</p>
-<p>Snaps are published in the Canonical-run Snap Store. Anyone can sign up for an account and, with relatively few roadblocks, publish a confined application. There are over 7,000 publicly published snaps from hundreds of developers.</p>
-<h2 id="yes-im-banging-this-drum-again">Yes, I&rsquo;m Banging This Drum Again</h2>
-<p>I have written about this topic before.</p>
-<p><a href="https://blog.popey.com/images/2026-01-17/exodus-blog.png"><img src="https://blog.popey.com/images/2026-01-17/exodus-blog_50pc.png" alt="Previous blogs"></a></p>
-<ul>
-<li><a href="https://blog.popey.com/2024/02/exodus-bitcoin-wallet-490k-swindle/">Exodus Bitcoin Wallet: $490K Swindle</a> - February 2024</li>
-<li><a href="https://blog.popey.com/2024/02/exodus-bitcoin-wallet-follow-up/">Exodus Bitcoin Wallet: Follow up 2.0</a> - February 2024</li>
-<li><a href="https://blog.popey.com/2024/03/exodus-wallet-part-three/">Guess Who&rsquo;s Back? Exodus Scam BitCoin Wallet Snap!</a> - March 2024</li>
-</ul>
-<p>I worked for Canonical between 2011 and 2021 as an Engineering Manager, Community Manager, and Developer Advocate. I was a strong advocate for snap packages and the Snap Store. While I left the company nearly five years ago, I still <a href="https://snapcraft.io/publisher/popey">maintain</a> nearly 50 packages in the Snap Store, with thousands of users.</p>
-<p><a href="https://blog.popey.com/images/2026-01-17/popey-publisher-page.png"><img src="https://blog.popey.com/images/2026-01-17/popey-publisher-page_50pc.png" alt="popey&rsquo;s publisher page"></a></p>
-<p>I also worked for <a href="https://anchore.com/">Anchore</a> until September 2025, where they sponsor development of two open-source, Apache-licensed security tools: <a href="https://github.com/anchore/syft">Syft</a> (an SBOM generator) and <a href="https://github.com/anchore/grype/">Grype</a> (a vulnerability scanner).</p>
-<p>I mention my employment history for transparency, and because knowledge from both roles informed this investigation.</p>
-<p><strong>Personally, I want the Snap Store to be successful, and for users to be confident that the packages they install are trustworthy and safe.</strong></p>
-<p>Currently, that confidence isn&rsquo;t warranted, which is a problem for desktop Linux users who install snap packages.</p>
-<p><strong>I report every bad snap I encounter, and I know other security professionals do the same - even though doing so results in no action for days sometimes.</strong></p>
-<h2 id="enter-snapscope">Enter SnapScope</h2>
-<p><a href="https://blog.popey.com/images/2026-01-17/snapscope.png"><img src="https://blog.popey.com/images/2026-01-17/snapscope_50pc.png" alt="SnapScope"></a></p>
-<p>I recently created <a href="https://snapscope.popey.com/">SnapScope</a> as part of a &ldquo;VibeCoding&rdquo; <a href="https://github.com/chainguard-demo/vibelympics">contest</a> run by some friends at <a href="https://www.chainguard.dev/">Chainguard</a>. They&rsquo;re good people doing great work - check them out.</p>
-<p>My original intention was to create a web app that generates an SBOM (Software Bill of Materials) for each snap using Syft, then produces a vulnerability report using Grype. Neither tool is perfect, and other tools exist, but I&rsquo;m familiar with these and they suited the contest nicely.</p>
-<p>While monitoring <a href="https://snapscope.popey.com/">SnapScope</a>, I was reminded of the malware problem. SnapScope wasn&rsquo;t <em>intended</em> to find malware - it was meant to identify outdated snaps with potential security issues. But I soon added features to highlight suspicious packages, so users could make informed decisions when searching for software.</p>
-<p><a href="https://blog.popey.com/images/2026-01-17/malware.png"><img src="https://blog.popey.com/images/2026-01-17/malware_50pc.png" alt="SnapScope"></a></p>
-<p><strong>To be clear</strong>: none of this should be seen as an attack on the Snap Store, Canonical, or the engineers working on these problems. I&rsquo;m raising awareness of an issue that exists, because I want it fixed.</p>
-<h2 id="the-scam">The Scam</h2>
-<p>The perpetrators - probably based in or near Croatia, based on data I&rsquo;ve been gathering - are constantly attempting to publish fake crypto wallet applications. The malware masquerades as genuine apps like Exodus, Ledger Live, or Trust Wallet. It asks users to enter their wallet recovery phrase, sends those credentials to the criminals, displays an error to the user, and by the time anyone realises what&rsquo;s happened, the wallet is empty.</p>
-<p>Whatever you think of cryptocurrency, these people are absolute dog shit.</p>
-<h2 id="the-cat-and-mouse-game">The Cat-and-Mouse Game</h2>
-<p>The Canonical Snap Store admins have attempted to stem the flow. However, as with many security issues, it&rsquo;s a relentless game of whack-a-mole.</p>
-<p>The scammers have tried various approaches to appear legitimate:</p>
-<p><strong>Initially</strong>, they just published authentic-looking applications with plausible screenshots and storefront pages. This was the approach I documented in my previous articles about the fake &ldquo;Exodus&rdquo; and &ldquo;Ledger Live&rdquo; apps.</p>
-<p><strong>Then</strong>, they started evading text filters by using similar-looking characters from other alphabets. For example, replacing the lowercase &ldquo;d&rdquo; in &ldquo;Ledger&rdquo; with the Armenian letter <a href="https://en.wikipedia.org/wiki/Zhe_(Armenian_letter)">Zhe</a> &ldquo;ժ&rdquo;, which at first glance passes for a Latin &ldquo;d&rdquo;. They also use <a href="https://en.wikipedia.org/wiki/Palochka">Palochka</a> &ldquo;ӏ&rdquo; which resembles a lowercase &ldquo;L&rdquo;.</p>
-<p><strong>More recently</strong>, they&rsquo;ve adopted a bait-and-switch approach:</p>
-<ol>
-<li>Register an innocuous, unrelated snap name like <a href="https://snapscope.popey.com/package/lemon-throw">lemon-throw</a>, <a href="https://snapscope.popey.com/package/alpha-hub">alpha-hub</a>, or <a href="https://snapscope.popey.com/package/tenor-freeze">tenor-freeze</a></li>
-<li>Publish something harmless - often claiming to be a game</li>
-<li>Wait for approval</li>
-<li>Push a second revision containing the fake crypto wallet app</li>
-</ol>
-<p>Some of us in the community diligently report these applications to Canonical, and after a period they get removed. But the sad fact is they keep getting through, and users could see, install, and be fooled by these malicious applications before anyone catches them. <a href="https://blog.popey.com/2024/02/exodus-bitcoin-wallet-490k-swindle/">Déjà</a> <a href="https://blog.popey.com/2024/02/exodus-bitcoin-wallet-follow-up/">vu</a>, <a href="https://blog.popey.com/2024/03/exodus-wallet-part-three/">much</a>?</p>
-<h2 id="following-the-telegram-trail">Following the Telegram Trail</h2>
-<p>Every so often, I download these dodgy snaps (<code>snap download badsnap</code>), unpack them (<code>unsquashfs badsnap.snap</code>), and have a poke around. Frequently it&rsquo;s the same codebase republished under a new name. Sometimes they vary the language or framework, but almost always follow the same pattern: an app rendering a web page that looks like a legitimate crypto wallet.</p>
-<p>I discovered that when launched, the applications ping this URL:</p>
-<p><em><a href="https://togogeo.com/trust.php?name=8888-8888">https://togogeo.com/trust.php?name=8888-8888</a></em></p>
-<p>This appears to be a connectivity test - if the victim has no internet connection or if <code>togogeo.com</code> is inaccessible, the application reports an error and refuses to continue. Makes sense from the scammers&rsquo; perspective: no point asking for credentials if you can&rsquo;t exfiltrate them.</p>
-<p>Initially, hitting this URL manually with <code>curl</code> returned something rather revealing:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;success&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Notification sent to Telegram: 8888-8888&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;telegram_response&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ok&#34;</span>: <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;result&#34;</span>: {
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;message_id&#34;</span>: <span style="color:#ae81ff">30111</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;from&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">7477383815</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;is_bot&#34;</span>: <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;first_name&#34;</span>: <span style="color:#e6db74">&#34;SmartShieldBot&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;pandadrainerbot&#34;</span>
-</span></span><span style="display:flex;"><span>      },
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;chat&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">5915612669</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;first_name&#34;</span>: <span style="color:#e6db74">&#34;ezzcash&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;username&#34;</span>: <span style="color:#e6db74">&#34;ikaikaika101&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;private&#34;</span>
-</span></span><span style="display:flex;"><span>      },
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;date&#34;</span>: <span style="color:#ae81ff">1767464029</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;text&#34;</span>: <span style="color:#e6db74">&#34;8888-8888&#34;</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Well, hello there <a href="https://t.me/ikaikaika101">@ikaikaika101</a>. Nice of them to leave their Telegram username in the response. They&rsquo;ve since changed this to return only an exclamation mark - clearly someone&rsquo;s reading my work, or at least noticed they were leaking operational details.</p>
-<p>They also used to have an avatar, but after I started poking the URL, they removed that from their Telegram account. Fancy that.</p>
-<p>If the user does enter their passphrase (valid or not), it gets sent in a subsequent request to a similar URL. By then, it&rsquo;s too late.</p>
-<h2 id="domain-squatting-the-new-low">Domain Squatting: The New Low</h2>
-<p>Just when you thought they&rsquo;d run out of tricks, they&rsquo;ve found another way in - and this one&rsquo;s particularly nasty.</p>
-<p>Rather than registering new accounts and hoping to slip through the filters, they&rsquo;ve started monitoring the Snap Store for published applications whose publishers&rsquo; domain registrations have lapsed. Think about it: a snap published years ago by <code>somedev@coolproject.tech</code>, where <code>coolproject.tech</code> expired and wasn&rsquo;t renewed.</p>
-<p>The scammers swoop in, register the expired domain, trigger a password reset on the Snap Store account, and <em>boom</em> - they now control a legitimate, trusted publisher account with an established history. No new account scrutiny. No &ldquo;New Publisher&rdquo; flags. Just an existing, seemingly trustworthy snap that suddenly gets a new revision containing their wallet-draining malware.</p>
-<p>I&rsquo;ve identified at least two domains this has happened with recently: <code>storewise.tech</code> and <code>vagueentertainment.com</code>. There are almost certainly more.</p>
-<p>This is a significant escalation. Previously, users could at least be wary of newly published snaps from fresh accounts. Now? That snap you installed three years ago from a reputable-looking publisher could push a malicious update tomorrow.</p>
-<h2 id="what-now">What Now?</h2>
-<p>I&rsquo;m not writing this to bury snaps or the Snap Store. I <em>want</em> this ecosystem to succeed - I still maintain nearly 50 packages there myself. But pretending there isn&rsquo;t a problem helps nobody.</p>
-<p>The domain takeover angle is particularly concerning because it undermines one of the few trust signals users had: publisher longevity. Canonical needs to address this, whether that&rsquo;s monitoring for domain expiry on publisher accounts, requiring additional verification for accounts that have been dormant, implementing mandatory two-factor authentication, or something else entirely. I don&rsquo;t have all the answers, but I know the current situation isn&rsquo;t sustainable.</p>
-<p><strong>If you&rsquo;re a snap publisher</strong>: keep your domain registration current, and enable two-factor authentication if you haven&rsquo;t already. Your lapsed domain could become someone else&rsquo;s attack vector.</p>
-<p><strong>If you&rsquo;re a snap user</strong>: be extremely cautious with cryptocurrency wallet applications from <em>any</em> source, not just the Snap Store. Check the publisher, check when the snap was last updated, and if something feels off, it probably is. Actually, scratch that - just don&rsquo;t install crypto wallet apps from app stores at all. Get them directly from the official project websites.</p>
-<p><strong>If you spot something dodgy</strong>: report it. Use the &ldquo;Report this app&rdquo; link at the bottom of the snap&rsquo;s store page. The community catching these before they catch users is the best defence we&rsquo;ve got right now.</p>
-<p>I&rsquo;ll keep monitoring via <a href="https://snapscope.popey.com/">SnapScope</a> and reporting what I find. Someone has to.</p>
-<p>Stay safe out there.</p>]]></description>
-      <source url="https://blog.popey.com/post/index.xml">Alan Pope</source>
     </item>
     <item>
       <title>HP battery not charging</title>
