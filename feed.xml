@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Mon, 09 Feb 2026 02:33:47 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 02:42:13 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -9274,17 +9274,6 @@ The cost of failure: being forced to praise Wndows 8 in a future video, and run 
       <description><![CDATA[<p>After almost 6 years the time has come to move on. I&#8217;m no longer with Canonical. New things on the horizon. I still plan on participating in Linux especially ARM Linux and also still being a part of Ubuntu Linux Community too.</p>
 <p>It&#8217;s been an interesting journey with Canonical, managing engineers around the world, up at weird hours of the day, starting a new flavour of Ubuntu (ARM), fighting daylight savings time twice a year, and finally supporting sales folks.  Always interesting, but I&#8217;m looking forward to the next new thing.  I will however miss the people, for the last 6 years I worked with some really smart people and I learned a lot from them.</p>]]></description>
       <source url="https://dmtechtalk.wordpress.com/category/ubuntu-2/feed/atom/">David Mandala</source>
-    </item>
-    <item>
-      <title>Fixing build failures for 13.04</title>
-      <link>http://drowninginbugs.blogspot.com/2013/04/fixing-build-failures-for-1304.html</link>
-      <guid isPermaLink="true">http://drowninginbugs.blogspot.com/2013/04/fixing-build-failures-for-1304.html</guid>
-      <pubDate>Mon, 08 Apr 2013 19:02:00 GMT</pubDate>
-      <description><![CDATA[<div dir="ltr" style="text-align: left;" trbidi="on">
-One of the pleasures (and privileges) of Free Software is transparency in consistency, here meaning it's fairly painless to <a href="http://people.ubuntuwire.org/~wgrant/rebuild-ftbfs-test/test-rebuild-20130329-raring.html" rel="nofollow" target="_blank">see where stuff fails to build in Ubuntu</a>&nbsp;and to be able to&nbsp;<a href="https://lists.ubuntu.com/archives/ubuntu-devel/2013-March/036992.html" target="_blank">help in fixing those failures</a>.<br />
-<br />
-Let's get 13.04 into shape!</div>]]></description>
-      <source url="http://drowninginbugs.blogspot.com/feeds/posts/default/-/ubuntu">Daniel T Chen</source>
     </item>
     <item>
       <title>Setting up full-disk encryption in OpenBSD 5.3</title>
