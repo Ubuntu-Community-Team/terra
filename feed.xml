@@ -6,9 +6,66 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Tue, 10 Feb 2026 00:41:11 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Feb 2026 00:40:15 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building new revenue streams: 3 strategic cloud opportunities for telcos in 2026</title>
+      <link>https://ubuntu.com//blog/new-telco-cloud-opportunity</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/new-telco-cloud-opportunity</guid>
+      <pubDate>Tue, 10 Feb 2026 15:52:38 GMT</pubDate>
+      <description><![CDATA[<p>The telecommunications industry is at a turning point: telcos are seeking ways to turn innovation into new opportunities. Looking at the data, the desire is easy to understand. <a href="https://www.pwc.com/gx/en/industries/tmt/assets/pwc-perspectives-from-the-global-telecom-outlook-2024-2028.pdf">In 2023, PWC projected</a> that the sector’s annual growth rate would slow significantly between 2024 and 2028. PWC claimed that the “fundamental challenge” behind this trend was that telecom’s “core products and services”, like fixed broadband service and mobile service, “are becoming commodities.” This means that prices remain stagnant, while the industry “faces a continual need to invest in infrastructure.” Slower projected growth in revenue was particularly noticeable in mature markets. PWC is not alone with its growth projections: Analysys Mason predicted <a href="https://www.analysysmason.com/research/content/regional-forecasts-/global-telecoms-forecast-rddg0/">CAGR growth of only 1% between 2024 and 2029</a>. </p>
+<p>For many, the way forward lies in modernizing and diversifying from their core offerings: evolving from traditional telecommunications to “techco” (technology company) services. These offerings focus on value added digital services that are client-centric, capitalizing on the established strengths of telecoms. In 2026, many of these opportunities will come from cloud computing.</p>
+<p>In advance of <a href="https://ubuntu.com/engage/canonical-at-mwc-barcelona-2026">MWC 2026</a>, this article will consider the issue in more depth, outline some of the strategies that telecoms are taking, and explain how – and why – open source solutions are more important than ever in the conversation.</p>
+<h2 class="wp-block-heading">Strategy one: regional sovereign clouds</h2>
+<p>Geopolitical turbulence and changing legislation have both resulted in organizations increasingly seeking data sovereignty strategies, which we cover in greater depth in “<a href="https://ubuntu.com/engage/sovereign-cloud-guide?_gl=1*1kq1shq*_gcl_au*MTQ1MTcwMTUxLjE3NjI3NzE5Mzc.">Sovereign clouds: the essential guide for enterprises</a>.” While public cloud vendors are starting to offer sovereign cloud solutions, many organizations would prefer to rely on local or regional clouds to gain more autonomy. </p>
+<p>Some organizations will be motivated to build their own on-premises sovereign clouds to host workloads and achieve digital sovereignty, but not every organization can – or should – do so. This leaves an interesting opportunity for telecommunications vendors, who can build fully open source, cost-effective private clouds using platforms such as <a href="https://canonical.com/openstack">Canonical OpenStack</a> to set up regional sovereign clouds. </p>
+<p><strong>What makes telecoms a natural fit for the sovereign cloud opportunity?</strong></p>
+<ol>
+<li><strong>Geography</strong>: since telecommunications providers typically operate as domestic entities, they are subject to regional legal frameworks. This alignment minimizes the likelihood of conflicting regulations and reduces overall compliance risk. Likewise, this makes local telecoms the natural choice for public sector data and workloads.</li>
+<li><strong>Trust</strong>: telecoms can benefit from their strong local presence. These organizations have often built familiarity and trust over time with both customers and local governments in their region, providing a comparatively strong commercial position from which to offer regional sovereign cloud services. </li>
+<li><strong>Existing infrastructure</strong>: telecoms have the unique advantage of a vast footprint of existing infrastructure. This established presence offers a distinct competitive advantage: it is often significantly faster and more cost-effective to retro-fit these facilities for sovereign cloud operations, than it is for competitors to construct new facilities from the ground up. </li>
+</ol>
+<p>While orchestrating workloads within a regional sovereign cloud is essential, it can often be a complex and demanding task. Kubernetes streamlines this, by providing a layer that makes applications portable across clouds, requiring minimal adaptations or configuration changes. Kubernetes is more nimble than monolithic architectures, and forms the starting point for digital transformation. Canonical offers security maintenance and updates for <a href="https://ubuntu.com/kubernetes">Canonical Kubernetes </a>for up to 15 years as part of our Long Term Support (LTS) commitment. This means that organizations can plan their IT lifecycle in advance, and avoid the sudden costs of unexpected migrations. </p>
+<h2 class="wp-block-heading">Strategy two: generative AI (GenAI) factories</h2>
+<p>GenAI has become firmly established in the workflows of an increasing number of organizations. With this comes the need for “AI factories”: specialized data centers that can turn raw data into AI models at scale. The capital expenditure of the high-performance hardware and software needed to run AI factories effectively – to ingest huge amounts of data, network at high speeds, and support AI training workloads – is an obstacle to building private AI factories on premises for most organizations. Instead, enterprises are looking to outsource the compute required to build models. This edge cloud opportunity also provides telecoms a new potential stream of revenue.</p>
+<p><strong>How can telcos lead the GenAI factory wave?</strong></p>
+<ol>
+<li>Inference at the edge: the pre-existing infrastructure that presents telecoms with a strong position from which to offer regional sovereign clouds also provides a competitive edge for moving into AI factories. As GenAI models shift from training to inference, telecoms’ pre-existing distributed infrastructure means that they can process sensitive data at the edge of the network, providing ultra-low latency required for highly efficient processing. This is particularly critical for AI that relies on instantaneous – or near instantaneous – speed, like agentic AI. </li>
+<li>Sovereign AI: much like sovereign clouds, there is a growing demand globally for LLMs that reflect local culture, values, legislation, and languages. Regionally based telecoms can provide trusted national infrastructure to host sovereign LLMs.</li>
+<li>Private AI Enclaves: telecoms can offer “GenAI-as-a-Service” over a private network slice. This ensures that an organization’s proprietary data used to fine-tune a model never traverses the public internet, providing a level of security that major public cloud vendors cannot match without a complex VPN setup.</li>
+</ol>
+<p>Building a GenAI factory demands a cutting-edge software stack – however, with such cutting-edge software comes brand-new security challenges. As <a href="https://ubuntu.com/engage/2025-state-of-software-supply-chain">our recent report with IDC</a> indicated:</p>
+<ul>
+<li>43% of organizations are “very” or “extremely” concerned about their ability to secure their AI stack</li>
+<li>60% have only basic, or no, security controls to safeguard their AI/ML systems</li>
+</ul>
+<p>This creates serious risks around data and security. Safely mitigating these is critical for telecoms to grasp the GenAI factory opportunity effectively. </p>
+<p>Through our data and AI portfolio, Canonical helps organizations mitigate security risks as well as simplify the deployment and maintenance of AI models through automated workflows, security patching, and tooling integrations. This ensures that organizations can access trusted, supported ML and AI applications. Find out more on our <a href="https://canonical.com/solutions/ai/infrastructure">webpage</a>.</p>
+<h2 class="wp-block-heading">Strategy three: smart factories</h2>
+<p>Telecoms have become the primary enablers of a growing phenomenon: smart factories. Smart factories are highly digitized and connected production facilities. Unlike traditional factories, which rely on fixed assembly lines and manual troubleshooting, smart factories optimize manufacturing through constant feedback loops of data, using these to run themselves with minimal human intervention. </p>
+<p>Smart factories require thousands of sensors, tracking each element of the manufacturing process. This is then translated into a digital twin – a real-time virtual 3-D replica of the factory. Changes to the physical world – communicated through the sensors – are reflected in the digital model. AI models analyze the data provided by sensors to identify patterns and alert factory managers to issues that require their attention. For example, predicting that a motor will fail before it does. In a traditional factory set up, this would require manual labour and time-intensive troubleshooting to fix; in a smart factory, issues are solved much faster. </p>
+<p>For these elements to come together effectively and successfully, smart factories require industrial connectivity – the ultra low-latency speeds of private 5G networks. It is this aspect which provides telcos an advantage in harnessing the smart factory cloud opportunity.</p>
+<p><strong>What gives telcos the edge in powering smart factories?</strong></p>
+<ol>
+<li>Private 5G: public Wi-Fi is too interference prone for smart factories to run on. Telecoms can carve a slice of their already-licensed 5G spectrum exclusively for factories, ensuring the greater reliability of connection necessary for smart factories to run efficiently. This carries a significant premium, which can be a lucrative stream of revenue for telecoms. </li>
+<li>Quality on demand: while a system integrator can, for example, build the applications that the smart factory runs on, telecoms own the Network APIs. Because of this, only telecoms have the power to reconfigure the network in real-time, and thus offer quality on demand APIs, ensuring that the factory’s connectivity is never lost. </li>
+</ol>
+<p>The missing piece of the puzzle for telecoms in this opportunity is getting support for edge systems, which smart factories depend on. Canonical’s edge portfolio is designed to support your systems’ security, whilst easily managing and governing your edge infrastructure. <a href="https://ubuntu.com/core">Ubuntu Core</a>, our operating system for internet of things (IoT), devices, and embedded systems, features a minimized attack surface and a variety of measures which help to reduce the risk of security breaches. Likewise, <a href="https://ubuntu.com/landscape?_gl=1*117tt2d*_gcl_au*MTQ1MTcwMTUxLjE3NjI3NzE5Mzc.">Canonical Landscape</a> simplifies managing the thousands of IoT devices needed to run a smart factory by enabling over the air (OTA) updates and automating compliance tasks across your Ubuntu estate. Find out more about our edge portfolio on our <a href="https://canonical.com/solutions/infrastructure/edge-computing">webpage</a>.</p>
+<p>Smart factories rely on huge amounts of data. That makes supporting and securing databases critical – downtime could cause a physical bottleneck, and equipment damage. Such support can be expensive, however, Canonical offers both security and support for databases under the same Ubuntu Pro subscription, reducing costs and enabling telcos to offer value-added services with open source data solutions. Find out more about our database offering on the <a href="https://canonical.com/data">webpage</a>.</p>
+<h2 class="wp-block-heading">Supporting your investment</h2>
+<p>To engage with any of these new streams of revenue, telecoms’ underlying software stack will become of critical importance. </p>
+<p>Proprietary “black-box” systems don’t offer the levels of cost-effectiveness, transparency, and agility telecoms need to remain competitive and future-proof their investments. Open source gives telcos the modular agility and transparency needed to turn emerging technologies into profitable services. </p>
+<p>Canonical’s trusted <a href="https://canonical.com/solutions/infrastructure">open source infrastructure solutions</a> are modular, offering supported software elements that telcos can use to build frameworks that are customized to their individual needs. On top of that, we optimize our solutions for silicon and offer them on a large variety of hardware, thanks to our collaboration with the world’s leading silicon and hardware vendors.</p>
+<p>Many open source projects are complex to manage, particularly at a large scale. Canonical offers long-term support (LTS) for up to 15 years for our open source software, ensuring that your investment is sustainable in the long term. Likewise, through our <a href="https://ubuntu.com/managed/firefighting-support">professional support offering</a>, our global team of experts is on call 24/7 to ensure that if you run into a problem, we’re there to help. </p>
+<p>The opportunity for growth is clear. By combining their inherent physical advantages with a securely-designed, supported, and open software foundation, telecoms can move beyond the limits of commoditized connectivity and break into new streams of revenue, new industries, and new technologies. </p>
+<p>Find out more about Canonical’s telco solutions on our <a href="https://canonical.com/solutions/telco">webpage</a>, or meet us in person <a href="https://ubuntu.com/engage/canonical-at-mwc-barcelona-2026">at MWC in 2026</a>.</p>
+<h2 class="wp-block-heading">Further resources:</h2>
+<p><a href="https://canonical.com/blog/bt-group-and-canonical-deliver-5g-to-uk-stadiums">BT Group and Canonical deliver 5G to UK stadiums</a></p>
+<p><a href="https://canonical.com/blog/how-telco-companies-can-reduce-5g-infrastructure-costs-with-modern-open-source-cloud-native-technologies">How telco companies can reduce 5G infrastructure costs with modern open source cloud-native technologies</a></p>
+<p><a href="https://canonical.com/blog/bringing-canonical-kubernetes-to-sylva-a-new-chapter-for-european-telco-clouds">Bringing Canonical Kubernetes to Sylva: a new chapter for European telco clouds</a></p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>The Threads Algorithm Loves Rage Bait</title>
       <link>https://blog.popey.com/2026/02/the-threads-algorithm-loves-rage-bait/</link>
@@ -147,26 +204,6 @@ Three hours later, I&rsquo;ve played zero games.</p>
 <p>Yeah, hours later, as advertised. I&rsquo;m terrible at it, but glad I managed to squeeze a quick round in.</p>
 <p>The internet&rsquo;s reaction to my mild frustration about waiting to play it? That turned out to be the more interesting story.</p>]]></description>
       <source url="https://popey.com/blog/post/index.xml">Alan Pope</source>
-    </item>
-    <item>
-      <title>SQL Server 2025 is generally available on Ubuntu 24.04 LTS</title>
-      <link>https://ubuntu.com//blog/sql-server-2025-ubuntu-24-04-lts</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/sql-server-2025-ubuntu-24-04-lts</guid>
-      <pubDate>Fri, 06 Feb 2026 15:41:36 GMT</pubDate>
-      <description><![CDATA[<p>Microsoft has announced the General Availability (GA) of SQL Server 2025 on Ubuntu 24.04 LTS, starting with the CU1 release. This milestone allows enterprises to deploy mission-critical workloads on our latest Long Term Support release, benefiting from predictable stability and up-to-date kernels.</p>
-<h3 class="wp-block-heading">Update your repository</h3>
-<p>If you have been testing the preview version, you must switch your repository configuration to ensure you are on the production track. To switch your repository configuration, update your source from mssql-server-preview.repo to mssql-server-2025.repo. Continuing to use the preview repository may result in installing pre-release builds that are not intended for production workloads.</p>
-<h3 class="wp-block-heading">Enhancements for Linux</h3>
-<p>SQL Server 2025 CU1 introduces specific improvements for managing databases on Linux infrastructure.</p>
-<p>New Dynamic Management Views (DMVs) now expose OS-level metrics directly to database administrators. Views such as sys.dm_os_linux_cpu_stats and sys.dm_os_linux_disk_stats help distinguish between database-specific bottlenecks and infrastructure issues. The release also includes sys.dm_os_linux_net_stats, which provides real-time network interface statistics to troubleshoot connectivity and throughput.</p>
-<p>We also see improvements in Contained Availability Groups (CAG). Administrators can now enable database creation and restoration directly within a CAG session using sp_set_session_context. This simplifies lifecycle operations while maintaining strict access controls: only users with the dbcreator role can create databases, while the db_owner or sysadmin roles are required for restoration.</p>
-<h3 class="wp-block-heading">AI capabilities</h3>
-<p>This release also brings native vector support for machine learning applications. To learn how to build a secure AI playground with these new capabilities, read our technical guide, <a href="https://ubuntu.com/blog/sql-server-2025-on-ubuntu">AI meets SQL Server 2025 on Ubuntu.</a></p>
-<h3 class="wp-block-heading">Enterprise security</h3>
-<p>For organizations with strict compliance requirements, Ubuntu Pro is the preferred choice. It extends the standard LTS security coverage to the full software stack covered in Universe and offers FIPS compliance, which is critical for many regulated SQL Server workloads.</p>
-<p><a href="https://ubuntu.com/azure/pro">Learn more about Ubuntu Pro for Azure ›</a></p>
-<p>You can install the production-ready version of SQL Server 2025 on Ubuntu 24.04 today by following the <a href="https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu">official installation guide</a>.</p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>E372 De Volta À Idade Média</title>
@@ -1811,145 +1848,6 @@ python-certifi for the Python&nbsp;team.</p>
   (merged and&nbsp;uploaded)</li>
 </ul>]]></description>
       <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
-    </item>
-    <item>
-      <title>Think you can’t interpose static binaries with LD_PRELOAD? Think again!</title>
-      <link>https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</link>
-      <guid isPermaLink="true">https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</guid>
-      <pubDate>Thu, 20 Nov 2025 20:56:17 GMT</pubDate>
-      <description><![CDATA[<div class="wp-block-media-text alignwide is-vertically-aligned-center" style="grid-template-columns:21% auto"><figure class="wp-block-media-text__media"><img fetchpriority="high" decoding="async" width="4614" height="4001" src="https://balintreczey.hu/blog/wp-content/uploads/2023/04/firebuild-logo.svg" alt="" class="wp-image-853 size-thumbnail"/></figure><div class="wp-block-media-text__content">
-<p>Well, you are right, you can&#8217;t. At least not directly. This is well documented in many projects relying on interposing binaries, like faketime.</p>
-
-
-
-<p> </p>
-</div></div>
-
-
-
-<p></p>
-
-
-
-<p>But what if we could write something that would take a static binary, replace at least the direct syscalls with ones going through libc and load it with the dynamic linker? We are in luck, because the excellent QEMU project has a user space emulator! It can be compiled as a dynamically linked executable, honors LD_PRELOAD and uses the host libc&#8217;s syscall &#8211; well, at least sometimes. Sometimes syscalls just bypass libc.</p>
-
-
-
-<p>The missing piece was a way to make QEMU always take the interposable path and call the host libc instead of using an arch-specifix assembly routine (`safe_syscall_base`) to construct the syscall and going directly to the kernel. Luckily, this turned out to be doable. A small patch later, QEMU gained a switch that forces all syscalls through libc. Suddenly, our static binaries started looking a lot more dynamic!</p>
-
-
-
-<pre class="wp-block-code"><code>$ faketime '2008-12-24 08:15:42'  qemu-x86_64 ./test_static_clock_gettime
-2008-12-24 08:15:42.725404654
-$ file test_static_clock_gettime 
-test_clock_gettime: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, ...</code></pre>
-
-
-
-<p>With this in place, Firebuild can finally wrap even those secretive statically linked tools. QEMU runs them, libc catches their syscalls, <code>LD_PRELOAD</code> injects <code>libfirebuild.so</code>, and from there the usual interposition magic happens. The result: previously uncachable build steps can now be traced, cached, and shortcut just like their dynamic friends.</p>
-
-
-
-<p>There is one more problem though. Why would the static binaries deep in the build be run by QEMU? Firebuild also intercepts the `exec()` calls and now it rewrites them on the fly whenever the executed binary would be statically linked!</p>
-
-
-
-<pre class="wp-block-code"><code>$ firebuild -d comm bash -c ./test_static
-...
-FIREBUILD: fd 9.1: ({ExecedProcess 161077.1, running, "bash -c ./test_static", fds=&#91;0: {FileFD ofd={FileO
-FD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOFD #3 type=FD_PIPE_OUT w} {Pipe #0} close_o
-n_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=FD_PIPE_OUT w} {Pipe #1} close_on_popen=fal
-se cloexec=false}, 3: {FileFD NULL} /* times 2 */]})
-{
-    "&#91;FBBCOMM_TAG]": "exec",
-    "file": "test_static",
-    "// fd": null,
-    "// dirfd": null,
-    "arg": &#91;
-        "./test_static"
-    ],
-    "env": &#91;
-        "SHELL=/bin/bash",
- ...
-        "FB_SOCKET=/tmp/firebuild.cpMn75/socket",
-        "_=./test_static"
-    ],
-    "with_p": false,
-    "// path": null,
-    "utime_u": 0,
-    "stime_u": 1017
-}
-FIREBUILD: -> proc_ic_msg()  (message_processor.cc:782)  proc={ExecedProcess 161077.1, running, "bash -c 
-./test_static", fds=&#91;0: {FileFD ofd={FileOFD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOF
-D #3 type=FD_PIPE_OUT w} {Pipe #0} close_on_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=F
-D_PIPE_OUT w} {Pipe #1} close_on_popen=false cloexec=false}, 3: {FileFD NULL} /* times 2 */]}, fd_conn=9.
-1, tag=exec, ack_num=0
-FIREBUILD:   -> send_fbb()  (utils.cc:292)  conn=9.1, ack_num=0 fd_count=0
-Sending message with ancillary fds &#91;]:
-{
-    "&#91;FBBCOMM_TAG]": "rewritten_args",
-    "arg": &#91;
-        "/usr/bin/qemu-user-interposable",
-        "-libc-syscalls",
-        "./test_static"
-    ],
-    "path": "/usr/bin/qemu-user-interposable"
-}
-...
-FIREBUILD: -> accept_ic_conn()  (firebuild.cc:139)  listener=6
-...
-FIREBUILD: fd 9.2: ({Process NULL})
-{
-    "&#91;FBBCOMM_TAG]": "scproc_query",
-    "pid": 161077,
-    "ppid": 161073,
-    "cwd": "/home/rbalint/projects/firebuild/test",
-    "arg": &#91;
-        "/usr/bin/qemu-user-interposable",
-        "-libc-syscalls",
-        "./test_static"
-    ],
-    "env_var": &#91;
-        "CCACHE_DISABLE=1",
-...
-        "SHELL=/bin/bash",
-        "SHLVL=0",
-        "_=./test_static"
-    ],
-    "umask": "0002",
-    "jobserver_fds": &#91;],
-    "// jobserver_fifo": null,
-    "executable": "/usr/bin/qemu-user-interposable",
-    "// executed_path": null,
-    "// original_executed_path": null,
-    "libs": &#91;
-        "/lib/x86_64-linux-gnu/libatomic.so.1",
-        "/lib/x86_64-linux-gnu/libc.so.6",
-        "/lib/x86_64-linux-gnu/libglib-2.0.so.0",
-        "/lib/x86_64-linux-gnu/libm.so.6",
-        "/lib/x86_64-linux-gnu/libpcre2-8.so.0",
-        "/lib64/ld-linux-x86-64.so.2"
-    ],
-    "version": "0.8.5.1"
-}
-</code></pre>
-
-
-
-<p>The QEMU patch is <a href="https://lists.gnu.org/archive/html/qemu-devel/2025-11/msg02559.html">forwarded to qemu-devel</a>. If it lands, anyone using QEMU user-mode emulation could benefit — not just Firebuild.</p>
-
-
-
-<p>For Firebuild users, though, the impact is immediate. Toolchains that mix dynamic and static helpers? Cross-builds that pull in odd little statically linked utilities? Previously “invisible” steps in your builds? All now fair game for caching.</p>
-
-
-
-<p><a href="https://github.com/firebuild/firebuild/releases/tag/v0.8.5">Firebuild 0.8.5</a> ships this new capability out of the box. Just update, make sure you’re using a patched QEMU, and enjoy the feeling of watching even static binaries fall neatly into place in your cached build graph. Ubuntu users can get the prebuilt patched QEMU packages from the <a href="https://launchpad.net/~firebuild/+archive/ubuntu/stable">Firebuild PPA</a> already. </p>
-
-
-
-<p>Static binaries, welcome to the party!</p>]]></description>
-      <source url="https://balintreczey.hu/blog/tag/ubuntu/feed/">Balint Reczey</source>
     </item>
     <item>
       <title>GSoC 2025 Final Submission: Re-architecting PyCups for a Modern, Pythonic Future</title>
