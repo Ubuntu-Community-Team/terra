@@ -6,41 +6,410 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 14 Feb 2026 02:24:02 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 15 Feb 2026 02:35:59 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>When an upstream change broke smartcard FIPS authentication – and how we fixed it</title>
-      <link>https://ubuntu.com//blog/when-an-upstream-change-broke-smartcard-fips-authentication-and-how-we-fixed-it</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/when-an-upstream-change-broke-smartcard-fips-authentication-and-how-we-fixed-it</guid>
-      <pubDate>Thu, 12 Feb 2026 13:36:21 GMT</pubDate>
-      <description><![CDATA[<p>A government agency mandated smartcard authentication across their Ubuntu fleet. When they enabled FIPS mode to meet compliance requirements, smartcard authentication stopped working. Nearly 1,000 systems sat waiting for FIPS rollout.</p>
-<p>This is the story of how Canonical’s Support team provided bug-fix support: we tracked down an upstream change in OpenSC that inadvertently broke FIPS compatibility, coordinated with upstream developers across distributions, and delivered both a hotfix and a proper universal solution.</p>
-<h3 class="wp-block-heading">The setup: finding what broke</h3>
-<p>When the case first opened, the error messages looked like standard authentication failures. Nothing pointed to the root cause.</p>
-<p>Our support engineer started by replicating the issue on a Noble (24.04 LTS) test system. The pkcs11 tooling was segfaulting on Noble FIPS installations, but the same tools worked fine on Jammy (22.04 LTS). Something had changed in the OpenSC package – the open source software toolkit for using cryptographic smartcards across various operating systems, which the government agency used for authentication – between Ubuntu 22.04 LTS and 24.04 LTS. But what?</p>
-<p>Within days, we’d narrowed the problem to changes in the upstream OpenSC codebase, ruling out conflicts with our FIPS implementation. An upstream change in how OpenSC handled provider initialization was causing crashes when it tried to interact with OpenSSL in FIPS mode.</p>
-<h3 class="wp-block-heading">The investigation: confirming the root cause</h3>
-<p>We filed upstream bug reports with both OpenSSL and OpenSC to see if they had insights. Then we kept debugging.</p>
-<p>The breakthrough came quickly: the FIPS OpenSSL provider was being initialized incorrectly. OpenSC was setting the wrong OpenSSL provider in its backend, using the default provider instead of the FIPS provider, which blocked the hashing mechanisms needed for smartcard authentication.</p>
-<p>We built a test to confirm this was the actual root cause. The customer tested it in their environment. It worked.</p>
-<p><strong>This is the challenge of managing upstream dependencies in enterprise Linux: OpenSC had evolved its provider handling between releases, introducing behavior that broke FIPS compatibility. An upstream development decision had unintended consequences in specific compliance contexts. </strong></p>
-<p>Enterprise bug-fix support bridges this gap: identifying which upstream change caused the regression, understanding why, and coordinating a universal fix.</p>
-<h3 class="wp-block-heading">The fix: unblock now, solve fully later</h3>
-<p>Working with OpenSC maintainers, we reached the final diagnosis: upstream changes to OpenSC meant it now attempts to load an algorithm disallowed under FIPS policy. OpenSSL correctly returns a NULL pointer, but OpenSC still tries to use it as a valid object. Instead of gracefully handling the situation – trying different crypto options or querying what’s available – it errors out.</p>
-<p>We shared a hotfix – a common practice to restore functionality in our enterprise bug-fix support service – to unblock the customer so they could move forward with their FIPS rollout.</p>
-<p>But a hotfix isn’t the same as a comprehensive fix. This needed a solution that worked upstream – fixing the issue in OpenSC itself so it would work across Ubuntu and any other distribution using OpenSC in FIPS environments, not just a distro-specific patch.</p>
-<p>This week, we agreed on the shape of the final fix. The upstream PR is waiting to merge. Once that’s done, we’ll backport it to Ubuntu. This will resolve all three customer cases we’ve seen with the same root cause.</p>
-<h3 class="wp-block-heading">The key ingredient: collaboration across the ecosystem</h3>
-<p>Dariusz Gadomski, a member of our Support team who worked on this case, reflected on what made it work:</p>
-<figure class="wp-block-pullquote"><blockquote><p><em>I really like how this case brought different groups together. Even though we come from different backgrounds, we all had the same goal: fixing the problem for our users. This is the real power of open source: people working together as one team to build better software for everyone.</em></p></blockquote></figure>
-<p>Fixing this bug involved coordination across support engineering, Canonical’s security team, and the OpenSC upstream community. What appeared as an authentication failure was an upstream change to provider initialization that broke FIPS compatibility. The diagnosis demanded understanding how OpenSC, OpenSSL, and FIPS mode interact across versions, then collaborating with upstream maintainers to develop a universal solution.</p>
-<h3 class="wp-block-heading">Learn more about bug-fix support through Ubuntu Pro + Support</h3>
-<ul>
-<li><a href="https://ubuntu.com/blog/what-is-linux-support">Read more about what Linux support actually means</a></li>
-<li><a href="https://ubuntu.com/support">Explore Ubuntu Pro + Support options</a></li>
-<li><a href="https://ubuntu.com/support/contact-us?product=support-overview">Get in touch to discuss your specific needs</a></li>
-</ul>]]></description>
+      <title>Smart DCA Strategy – Meet DCAi That Times the Dip The Open Source Machine Learning</title>
+      <link>https://utappia.org/2026/02/13/smart-dca-strategy-machine-learning-dcai/</link>
+      <guid isPermaLink="true">https://utappia.org/2026/02/13/smart-dca-strategy-machine-learning-dcai/</guid>
+      <pubDate>Fri, 13 Feb 2026 17:57:58 GMT</pubDate>
+      <description><![CDATA[<p>Is your Dollar Cost Averaging strategy &#8220;blind&#8221;? Buying on the 1st of the month is disciplined, but buying during a crash is profitable. Here is how the open source Smart DCA Strategy, based on <a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">K-Nearest Neighbors (KNN) algorithm</a> can help you aggressively buy the dips and preserve cash when the market is overheated.</p>
+
+
+
+<p>A few months ago, I analyzed <a href="https://arxiv.org/abs/2308.05200" type="link" id="https://arxiv.org/abs/2308.05200">a research paper on &#8220;Smart DCA Strategy&#8221;</a> and developed a <strong>TradingView PineScript</strong> indicator to implement it. The original concept was useful—it calculated the ideal investment amount based on price levels—but it lacked a crucial element: <strong>Timing.</strong></p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>I didn&#8217;t just want to know <strong><em>how much</em> to buy</strong> with my DCA strategy; </p>
+
+
+
+<p>I needed to know <em><strong>when</strong></em> to deploy that capital for maximum, long term impact.</p>
+</blockquote>
+
+
+
+<p>By integrating Machine Learning into the Smart DCA Strategy, I programmed the indicator to identify &#8220;fair value&#8221; based on historical price action. The result? A system that signals exactly when to enter and how much to commit, giving you the <em>psychological confidence</em> that you aren&#8217;t just buying at random.</p>
+
+
+
+<p>I call it <strong>DCAi</strong> (DCA + AI)&#8230;. yeah I know right&#8230; what a name <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f61b.png" alt="😛" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+
+
+
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="1022" height="439" src="https://utappia.org/wp-content/uploads/2026/02/dcai-machine-learning.webp" alt="DCAi – The Machine Learning Strategy That Times the Dip" class="wp-image-49946" srcset="https://utappia.org/wp-content/uploads/2026/02/dcai-machine-learning.webp 1022w, https://utappia.org/wp-content/uploads/2026/02/dcai-machine-learning-300x129.webp 300w, https://utappia.org/wp-content/uploads/2026/02/dcai-machine-learning-768x330.webp 768w" sizes="(max-width: 1022px) 100vw, 1022px" /></figure>
+
+
+
+<h2 class="wp-block-heading">What is DCAi?</h2>
+
+
+
+<p>Think of DCAi as an <a href="https://utappia.org/2025/07/10/ai-terminal-free/">intelligent Ai</a> assistant that scans market history inside TradingView.</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>When the market rallies:</strong> The assistant warns you: <em>&#8220;Do not buy now. The price is overextended. Keep your cash in the &#8216;Savings Pot&#8217; and wait for the next correction.&#8221;</em></li>
+
+
+
+<li><strong>When the market drops:</strong> It scans historical data to see if similar price structures in the past led to a recovery. If the algorithm identifies a high statistical probability of a bounce, it signals a <strong>Buy</strong>.</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">Why DCAi Smart DCA Strategy Outperforms Traditional DCA</h2>
+
+
+
+<p>The fact is that the standard DCA builds discipline. However, it is a static strategy — you buy the same amount on the same day, regardless of whether the market is crashing or &#8220;<em>mooning</em>&#8220;. DCAi is a Smart DCA Strategy that introduces <strong>three dynamic concepts </strong>to optimize your returns:</p>
+
+
+
+<h3 class="wp-block-heading">1. Dynamic Sizing (The Rho Parameter)</h3>
+
+
+
+<p>In your standard monthly DCA, you invest $100 whether Bitcoin is at $100,000 or $20,000. </p>
+
+
+
+<p>In contrast, the DCAi the <strong><em>Rho</em></strong> parameter to adjust your exposure.</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>How it works:</strong> instead of a fixed amount, the DCAi measures the deviation of the current price from its historical average.
+<ul class="wp-block-list">
+<li><strong>Flat Market:</strong> It invests your base budget.</li>
+
+
+
+<li><strong>Market Crash:</strong> If the price drops significantly (e.g., -40%), the algorithm aggressively increases the buy amount, allowing you to <em><strong>lower your average entry price</strong></em> faster.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">2. Statistical Confidence (KNN Algorithm)</h3>
+
+
+
+<p>The DCAi system doesn&#8217;t &#8220;predict&#8221; the future; it compares the present to the past using the <strong>K-Nearest Neighbors (KNN)</strong> algorithm.</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>How it works:</strong> KNN looks for historical moments where technical indicators (like volume and volatility) mirrored today&#8217;s price action. If the majority of those historical instances resulted in an uptrend, the system generates a signal with a &#8220;Confidence Score.&#8221;</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">3. The &#8220;Savings Pot&#8221; in the DCAi &#8211; Smart DCA Strategy</h3>
+
+
+
+<p>If the market is in a parabolic uptrend (&#8220;Mooning&#8221;) and there are no safe entry points, DCAi will try to prevent you from buying the top.</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>How it works:</strong> If the Machine Learning model detects low confidence for the month, it halts trading. Your monthly budget is moved to a virtual <strong>Savings Pot</strong>.</li>
+
+
+
+<li><strong>The Advantage:</strong> This cash accumulates. When a major correction finally occurs, you have a stockpile of &#8220;dry powder&#8221; ready to deploy at the bottom.</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">The Limitations: No Algorithm is Magic so is the DCAi Smart DCA Strategy</h2>
+
+
+
+<p>DCAi is a powerful tool, but it has limitations you must understand and accept:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>False Signals:</strong> Historical probability does not guarantee future performance. The market can signal a buy, yet the price may continue to fall.</li>
+
+
+
+<li><strong>Overfitting:</strong> The algorithm learns from known history. If a &#8220;Black Swan&#8221; event occurs (a scenario never seen before), the model may misinterpret the data.</li>
+
+
+
+<li><strong>Lag:</strong> DCAi confirms signals on candle closes (e.g., Daily close). In a rapid V-shape recovery, you might buy slightly higher than the absolute bottom.</li>
+
+
+
+<li><strong>Platform Limits:</strong> TradingView limits the script&#8217;s &#8220;memory&#8221; to about 3,000 candles. For this reason, <strong>Daily (D) or Weekly (W) timeframes are highly recommended.</strong></li>
+</ul>
+
+
+
+<p><em>Recommendation: Always backtest and forward-test using Paper Trading for 1-3 months before using real capital.</em></p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h2 class="wp-block-heading">Step-by-Step Installation Guide</h2>
+
+
+
+<p>Ready to automate your analysis? Follow these steps to set up DCAi on TradingView.</p>
+
+
+
+<h3 class="wp-block-heading">1. Install the Script</h3>
+
+
+
+<p>Open your chart on TradingView and locate the <strong>Pine Editor</strong> tab at the bottom.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" width="615" height="502" src="https://utappia.org/wp-content/uploads/2026/02/image.png" alt="" class="wp-image-49947" srcset="https://utappia.org/wp-content/uploads/2026/02/image.png 615w, https://utappia.org/wp-content/uploads/2026/02/image-300x245.png 300w" sizes="(max-width: 615px) 100vw, 615px" /></figure>
+</div>
+
+
+<p>Clear any existing code in the editor.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" width="1024" height="259" src="https://utappia.org/wp-content/uploads/2026/02/image-1.png" alt="DCAi pine script" class="wp-image-49950" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1.png 1024w, https://utappia.org/wp-content/uploads/2026/02/image-1-300x76.png 300w, https://utappia.org/wp-content/uploads/2026/02/image-1-768x194.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</div>
+
+
+<p>Copy the official DCAi code:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Source Code:</strong> <a href="https://github.com/cerebrux/DCAi/blob/stable/dcai.pine" target="_blank" rel="noreferrer noopener"><strong>https://github.com/cerebrux/DCAi/blob/stable/dcai.pine</strong></a></li>
+</ul>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="680" height="362" src="https://utappia.org/wp-content/uploads/2026/02/image-1-2.png" alt="dcai.pine" class="wp-image-49951" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1-2.png 680w, https://utappia.org/wp-content/uploads/2026/02/image-1-2-300x160.png 300w" sizes="auto, (max-width: 680px) 100vw, 680px" /></figure>
+</div>
+
+
+<p>Paste the code, click <strong>Save</strong>, and then select <strong>&#8220;Add to chart&#8221;</strong>.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="640" height="255" src="https://utappia.org/wp-content/uploads/2026/02/image-1-3.png" alt="dcai add to the chart" class="wp-image-49952" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1-3.png 640w, https://utappia.org/wp-content/uploads/2026/02/image-1-3-300x120.png 300w" sizes="auto, (max-width: 640px) 100vw, 640px" /></figure>
+</div>
+
+
+<p>Once you add it, it will start the training to past price action data and it will look like :</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="1024" height="781" src="https://utappia.org/wp-content/uploads/2026/02/image-1-4.webp" alt="Smart DCA Strategy DCAi Strategy Indicator" class="wp-image-49954" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1-4.webp 1024w, https://utappia.org/wp-content/uploads/2026/02/image-1-4-300x229.webp 300w, https://utappia.org/wp-content/uploads/2026/02/image-1-4-768x586.webp 768w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+</div>
+
+
+<h3 class="wp-block-heading">2. Asset Configuration</h3>
+
+
+
+<p>DCAi requires different settings for Crypto versus Stocks. You must configure it for the asset you are trading.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="712" height="165" src="https://utappia.org/wp-content/uploads/2026/02/image-1-5.png" alt="DCAi indicator Smart DCA Strategy " class="wp-image-49957" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1-5.png 712w, https://utappia.org/wp-content/uploads/2026/02/image-1-5-300x70.png 300w" sizes="auto, (max-width: 712px) 100vw, 712px" /></figure>
+</div>
+
+
+<ol start="1" class="wp-block-list">
+<li>Click the <strong>Settings</strong> (gear icon) on the DCAi indicator.</li>
+
+
+
+<li>Select your <strong>Asset Class</strong> (Crypto, Stocks, Indices, or Commodities).</li>
+
+
+
+<li>Set your <strong>Start Date</strong> (e.g., the 1st of the current month).</li>
+
+
+
+<li>Set your <strong>Base Monthly Budget</strong> (e.g., $100). This is the amount you <em>would</em> spend in a standard DCA strategy.</li>
+
+
+
+<li><strong>Crucial:</strong> Ensure your chart is on the <strong>Daily Timeframe</strong>.</li>
+
+
+
+<li>Select the ticker based on the Asset Class you choose</li>
+</ol>
+
+
+
+<h3 class="wp-block-heading">3.  Smart DCA Strategy Execution</h3>
+
+
+
+<p>Once set up, patience is key.</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>No Signal?</strong> If a month passes without a signal, <strong>do not spend your budget.</strong> Keep it in your &#8220;account&#8221;. The script will automatically add the months amount to your &#8220;Savings Pot&#8221; on the dashboard.</li>
+
+
+
+<li><strong>Buy Signal?</strong> The chart will display a label with the exact amount to invest.
+<ul class="wp-block-list">
+<li><em>Example:</em> If the label says <strong>$124</strong>, it means the algorithm is using your $100 monthly budget plus $24 from your accumulated savings to buy the dip.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1023" height="566" src="https://utappia.org/wp-content/uploads/2026/02/image-1-7.webp" alt="Smart DCA Strategy DCAi settings" class="wp-image-49959" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1-7.webp 1023w, https://utappia.org/wp-content/uploads/2026/02/image-1-7-300x166.webp 300w, https://utappia.org/wp-content/uploads/2026/02/image-1-7-768x425.webp 768w" sizes="auto, (max-width: 1023px) 100vw, 1023px" /></figure>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h2 class="wp-block-heading">Where to Execute Your Trades</h2>
+
+
+
+<p>Once DCAi gives the signal, you need a platform with low fees and flexible execution. Here are two recommendations with signup bonuses:</p>
+
+
+
+<p><strong>For Bitcoin (The &#8220;Bitcoin Only&#8221; Strategy):</strong></p>
+
+
+
+<p><strong>Strike</strong> is the superior choice for pure Bitcoin accumulation due to its minimal fees.</p>
+
+
+
+<ul class="wp-block-list">
+<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f449.png" alt="👉" class="wp-smiley" style="height: 1em; max-height: 1em;" /> <a href="https://invite.strike.me/QWHYWZ">Sign up for Strike here to claim your bonus</a></li>
+
+
+
+<li>Deposit your DCA amount</li>
+
+
+
+<li><strong>Bonus:</strong> You get a €500 cumulative fee-free Bitcoin purchases.</li>
+</ul>
+
+
+
+<p><strong>For ETFs &amp; Stocks (e.g., S&amp;P 500):</strong></p>
+
+
+
+<p>If you are building a diversified portfolio, <strong>Trading 212</strong> is ideal for fractional investing (you can invest as little as €1).</p>
+
+
+
+<ol start="1" class="wp-block-list">
+<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f449.png" alt="👉" class="wp-smiley" style="height: 1em; max-height: 1em;" /> <a href="https://www.trading212.com/invite/4DrudI95mps">Open a Trading 212 account and get a free share</a> <em>(Promo valid until March 4, 2026)</em>.</li>
+
+
+
+<li>Create a free virtual Visa card and add it to Apple/Google Wallet (Earn 1.5% cashback on investments. Promo ends in 02/28 ).</li>
+
+
+
+<li>Instant, fee-free deposits via Google/Apple Pay.</li>
+</ol>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h2 class="wp-block-heading">Conclusion</h2>
+
+
+
+<p>The goal of any robust investment strategy is to <strong>remove emotion from the equation.</strong> DCAi achieves this by adding a layer of algorithmic intelligence to the proven discipline of Dollar Cost Averaging. Whether you are stacking Sats or accumulating ETFs, having a machine learning model tell you when to be aggressive and when to sit on your hands is the ultimate portfolio upgrade.</p>
+
+
+
+<p><strong>Next Step:</strong> Download the code, run your own backtests, and see how much lower your average entry price could be!</p>
+
+
+
+<p><strong>Join the Community:</strong></p>
+
+
+
+<p>Did you find settings that work perfectly for a specific asset? Share your results in our GitHub Discussions:</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/cerebrux/DCAi/discussions">https://github.com/cerebrux/DCAi/discussions</a></li>
+</ul>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<p><em>Disclaimer: Investments involve risk. DCAi is a technical analysis tool, not financial advice or a guarantee of profit. Always conduct your own due diligence.</em></p>
+<p>The post <a href="https://utappia.org/2026/02/13/smart-dca-strategy-machine-learning-dcai/">Smart DCA Strategy &#8211; Meet DCAi That Times the Dip The Open Source Machine Learning</a> appeared first on <a href="https://utappia.org">Utappia</a>.</p>]]></description>
+      <source url="http://utappia.org/feed/">Salih Emin</source>
+    </item>
+    <item>
+      <title>The foundations of software: open source libraries and their maintainers</title>
+      <link>https://ubuntu.com//blog/the-foundations-of-software-open-source-libraries-and-their-maintainers</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/the-foundations-of-software-open-source-libraries-and-their-maintainers</guid>
+      <pubDate>Fri, 13 Feb 2026 17:30:52 GMT</pubDate>
+      <description><![CDATA[<p>Open source libraries are repositories of code that developers can use and, depending on the license, contribute to, modify, and redistribute. Open source libraries are usually developed on a platform like GitHub, and distributed using package registries like PyPI for Python and npm for JavaScript. These repositories contain pre-written, re-usable code that developers use to add elements or features within their software projects. Open source libraries are maintained – updated, patched, improved, and so on – by people who are known, unsurprisingly, as ‘maintainers.’</p>
+<p>That’s the simple definition, at least – but it fails to do justice to what goes on behind the scenes. The truth is that open source library maintainers are communities whose efforts support the overwhelming majority of modern software applications that we all rely on. For example, React is used widely to build user interfaces for web and mobile apps. React Native <a href="https://www.ropstam.com/react-native-apps/">was used to build many popular apps</a> which you may have used, including Facebook, Discord, and Airbnb. Libraries like React are sometimes supported by specific foundations, but there are hundreds, if not thousands, of libraries that rely on individual maintainers as well. </p>
+<p>You may have noticed that our YouTube channel recently began a new series, “<a href="https://www.youtube.com/playlist?list=PLwFSk464RMxns9ylPfbaivj-fmIiE-Kld">Push to Talk | Meet the Maintainers.</a>” The series highlights the work of prominent open source developers, like Andrew Gallant (the maintainer behind ripgrep), as well as giving a behind-the-scenes look into their journeys in the open source community. In this blog, we’re going to provide some context by peeling back the layers of open source libraries: how they work, why they’re important, and the maintainers that keep them going behind the scenes. </p>
+<h2 class="wp-block-heading">How open source libraries work, and why they’re different from closed source libraries</h2>
+<p>Software doesn’t spring from the void. Someone – or teams of someones – have to build it in the first place, write the code, and make it run. But software is never <em>really</em> done. Bugs appear that need patching, new functionalities are imagined or requested, performance can always be improved. Moreover, code faces an unrelenting tide of new security threats, changes to external libraries and frameworks, updates to operating systems, browsers and hardware – all of which someone needs to stay on top of to avoid code becoming obsolete or unusable. </p>
+<p>In proprietary software frameworks, broadly speaking, teams of developers are employed to do this work (building and/or maintaining software libraries). However, the library’s source code – human-readable text written in a programming language which computers translate to binary, process, and execute – can only be accessed by authorized individuals, like company employees and specific partners. The company, as the software owner, retains exclusive rights, which usually stops unauthorized viewing, modification, and redistribution of code from the closed source library. That means that only the software owners can include code from the libraries in their projects, and therefore, if software built using the closed source libraries goes wrong, users can only get support through the proprietary vendor who owns the code. </p>
+<p>Open source development frameworks work differently. Open source libraries are usually built through community effort. Depending on the license and contributor agreement, anyone can propose a contribution to the code. More often than not, anyone can request a new feature or modification, or offer bug fixes. Maintainers lead the library, managing and moderating the community of contributors and users. Depending on the library, maintainers may look both at fine details – reviewing contributed code, deciding which bits of code end up in the library, ensuring documentation is clear and accurate – as well as the big-picture decisions, like steering the direction of the open source library as a whole. </p>
+<p>The maintainers of open source libraries are usually not employed to look after the framework. Instead, the work is voluntary. In some cases, individual maintainers may support their work with sponsorships or donations. In other cases, foundations – such as the Eclipse Foundation or Linux Foundation – take a stewardship approach to open source maintenance. In these cases, the foundation acts as a guardian of the project or library, rather than an owner in the traditional sense. The foundation ensures that the project remains available and supported, which may include establishing Technical Steering Committees (TSCs) to provide strategic direction and guide the codebase, acting as a mediator for conflicts within the community regarding project development, and ensuring the code is properly licensed. Most importantly, foundations can collect and organize sponsorship, helping to buy servers, increase bandwidth, and provide grants for the contributors of the project.</p>
+<h2 class="wp-block-heading">Open source libraries: the backbone of modern software</h2>
+<p>Open source software can be found everywhere. <a href="https://canonical.com/blog/state-of-global-open-source-2025">Our recent report, in collaboration with the Linux Foundation</a>, revealed that globally, 55% of enterprises have adopted open source operating systems, whilst 49% have adopted open source cloud and container technologies, and 46% open source web and application development. Even if a project isn’t fully open source, it more likely than not contains some open source code, drawn from open source libraries: <a href="https://www.blackduck.com/resources/analyst-reports/open-source-security-risk-analysis.html?utm_source=the+new+stack&amp;utm_medium=referral&amp;utm_content=inline-mention&amp;utm_campaign=tns+platform">audits of codebases</a> have found that up to 96% of projects contain open source code. This isn’t surprising: open access to the code means code can potentially be worked on by any number of contributors, as well as offering greater opportunities for thorough testing of the code for bugs.</p>
+<p>Without maintainers to manage the libraries, many open source libraries would stagnate. Some open source libraries have huge numbers of contributors, whilst for others, the maintainer may be the only contributor. In the latter case, the library simply stops if the maintainer does: no more patches, no security updates, no bug fixes. </p>
+<p>If code needs to be continually updated and maintained to ensure that it doesn’t become obsolete, and the majority of software projects contain code from open source libraries, the effort that maintainers make to keep libraries up to date can’t be overstated.</p>
+<p>Why, then, do maintainers do the work? </p>
+<h2 class="wp-block-heading">What motivates maintainers?</h2>
+<p>As the 2023 <a href="https://www.sonarsource.com/open-source-maintainer-survey-2023.pdf"><em>Tidelift state of the open source maintainer report</em></a><em> </em>revealed, most are driven by making a positive impact on the world (70%) and the fact that the work is creative, challenging, and/or enjoyable (62%). Maintainers are motivated by belief in the software, in the community, and in the open source philosophy – broadly speaking. But what does that mean in practice?</p>
+<p>The first episode of Canonical’s “Meet the Maintainers” series begins to reveal what these general motivations mean for the individual maintainers. The maintainer behind ripgrep, Andrew Gallant (or BurntSushi, as he’s also known) explains his earliest contributions to open source were inspired by his desire to host a discussion forum on his fan website for <em>The Simpsons</em>. Starting with self-described “hacking” on the proprietary forum software VBulletin, Gallant developed an interest in forum software in general. Like the motivations other maintainers report, Gallant enjoyed the challenge and creativity involved with hacking the PHP code to modify it so it will “do little things.” Two decades later, Gallant’s motivations are more community-centered: the satisfaction of creating something that is “free for everyone to use,” and “watching people use the stuff [he] build[s].” To find out more about the many libraries and projects Gallant has contributed to and worked on over the years, <a href="https://www.youtube.com/watch?v=InsUD69qmUw">watch the video on our YouTube channel</a>. </p>
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="304" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/InsUD69qmUw?feature=oembed" title="Meet the Maintainers: the mind behind ripgrep - Andrew Gallant’s blazing-fast search tool" width="540"></iframe>
+</div></figure>
+<h2 class="wp-block-heading">Supporting maintainers: why it helps, and how you can do it</h2>
+<p>Financial incentives may not be the primary motivator for all maintainers; however, providing financial support helps to facilitate the work, ultimately producing stronger software, and faster code development. </p>
+<p>Fortunately, giving back to open source projects and libraries is simple and straightforward. Platforms like thanks.dev help you to donate to the repositories your software draws on, automatically distributing funds proportionally to how often the dependency is used. As <a href="https://thanks.dev/static/why">thanks.dev suggest on their site</a>, this makes it easier for larger organizations to “manage the logistics of supporting the thousands of projects they depend on”, including deeply nested packages and crucial indirect dependencies that may otherwise be overlooked.</p>
+<p><a href="https://ubuntu.com/blog/canonical-thanks-dev-giving-back-to-open-source-developers">Canonical began donating via thanks.dev in April of 2025</a>. We committed to donating US$120,000 across 12 months at US$10,000 a month through the platform. You can find the full list of recipients so far at <a href="https://thanks.dev/r/canonical">thanks.dev/r/canonical</a>. </p>
+<h2 class="wp-block-heading">Recognizing maintainers</h2>
+<p>Open source libraries are labors of love that depend on the hard work of communities and talented developers. That work often goes unseen, unpaid, and unrecognized, but – directly, or indirectly – we rely on it more than we may be aware of. </p>
+<p>As an open source company, Canonical is committed to spreading the open source philosophy to as many people and communities as we can. We drive our own projects, but also contribute staff, code, and funding to many more, which you can find out about on our <a href="https://canonical.com/projects">webpage</a>. “Meet the Maintainers” sheds light on the maintainers behind the libraries, recognizing them for their work, and, hopefully, inspiring more people to support open source, join communities, and contribute to open source libraries. </p>
+<p><a href="https://www.youtube.com/playlist?list=PLwFSk464RMxns9ylPfbaivj-fmIiE-Kld" rel="noreferrer noopener" target="_blank">Watch the series</a><a href="https://www.youtube.com/playlist?list=PLwFSk464RMxns9ylPfbaivj-fmIiE-Kld"> &gt;</a></p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -1472,225 +1841,6 @@ for the last two months now. I put this machine through the wringer: heavy strea
 <div align="center"><a href="/images/journalpics/122025/olf_cake.jpg"><img decoding="async" src="/images/journalpics/122025/olf_cake_sm.jpg"></a></div>
 <p>In what is perhaps one of my shortest conference trips, I flew out at 5AM the next morning to get home by midday on Sunday. It left me pretty tired, but it was worth it.</p>]]></description>
       <source url="http://princessleia.com/journal/?cat=2&amp;feed=rss2">Elizabeth K. Joseph</source>
-    </item>
-    <item>
-      <title>Fix Broken Updates: uCareSystem New Release uCareSystem v25.12</title>
-      <link>https://utappia.org/2025/12/06/fix-broken-update-linux-ucaresystem/</link>
-      <guid isPermaLink="true">https://utappia.org/2025/12/06/fix-broken-update-linux-ucaresystem/</guid>
-      <pubDate>Sat, 06 Dec 2025 15:59:58 GMT</pubDate>
-      <description><![CDATA[<p>Let’s be honest. Dealing with <strong>broken updates</strong> is a nightmare. We’ve all experienced that moment of panic when you run an update, step away for coffee, and return to a terminal screen full of angry red error messages. That is exactly why uCareSystem exists, and today, it gets even better at preventing these issues.</p>
-
-
-
-<span id="more-49934"></span>
-
-
-
-<p><strong>Fix Broken Updates: uCareSystem New Release</strong></p>
-
-
-
-<p>I&#8217;m thrilled to announce the latest release of <a href="https://utappia.org/download-ucaresystem/">uCareSystem</a>. As the sole developer, I feel the pain of <strong>broken updates</strong> personally. For this version, I spent a lot of time under the hood, focusing on making sure the tool doesn&#8217;t just work when everything is perfect, but proactively fixes issues before they break your system.</p>
-
-
-
-<p>Here is why you should upgrade to the new version and say goodbye to <strong>broken updates</strong> for good:</p>
-
-
-
-<h3 class="wp-block-heading">Prevent Broken Updates with Pre-flight Checks</h3>
-
-
-
-<p>The most frustrating <strong>broken updates</strong> are the ones that fail because of something that happened <em>last</em> week.</p>
-
-
-
-<p>The new uCareSystem introduces automated pre-flight checks. Think of it as a bouncer for your update process. Before it lets any new packages in, it checks the ID of your system to prevent <strong>broken updates</strong>. It now automatically detects and attempts to fix:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Those annoying stale <code>dpkg</code> locks that require a reboot.</li>
-
-
-
-<li>Installations that were interrupted (ghosts of updates past).</li>
-
-
-
-<li>Broken dependencies that threaten to ruin your day.</li>
-</ul>
-
-
-
-<p>The goal is simple: You press the button, and it actually works.</p>
-
-
-
-<h3 class="wp-block-heading">A UI Upgrade for Better Monitoring</h3>
-
-
-
-<p>While staring at scrolling walls of monochrome text makes us feel like hackers in a 90s movie, it’s not great for spotting errors.</p>
-
-
-
-<p>I’ve given the uCareSystem terminal interface a significant makeover. With improved color coding, better progress indicators, and real-time output logging, you’ll now have a much clearer idea of the process, helping you catch potential issues that could lead to <strong>broken updates</strong>.</p>
-
-
-
-<h3 class="wp-block-heading">Robustness: Avoiding Broken Updates in Containers</h3>
-
-
-
-<p>Linux runs everywhere now. To keep up, uCareSystem needs to be flexible.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Containers &amp; WSL:</strong> I’ve improved <code>systemd</code> detection so the tool plays nicely even in environments like Docker containers and <a href="https://learn.microsoft.com/en-us/windows/wsl/" target="_blank" rel="noreferrer noopener">Windows Subsystem for Linux (WSL)</a>.</li>
-
-
-
-<li><strong>Internet Reality Check:</strong> I added better connectivity checks. Trying to download updates without a stable connection is a common cause of <strong>broken updates</strong>, and we now handle that gracefully.</li>
-
-
-
-<li><strong>Auto-Recovery:</strong> If a <code>dpkg</code> process trips and falls midway, the software now has mechanisms to help pick it back up automatically.</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">Spring Cleaning the Code with ShellCheck</h3>
-
-
-
-<p>For the code-peepers out there who like to look under the hood: I did some massive spring cleaning. Extensive refactoring and complying with <a target="_blank" rel="noreferrer noopener" href="https://www.shellcheck.net/">ShellCheck</a> standards mean the codebase is now cleaner and safer. This ensures better maintainability and fewer bugs in the future.</p>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-
-
-<p>Give the new version a spin. Hopefully, it makes your system maintenance totally boring—and completely free of <strong>broken updates</strong>.</p>
-
-
-
-<h3 class="wp-block-heading">By the Numbers</h3>
-
-
-
-<p>This was a significant undertaking, reflected in the statistics for this release:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>38 files changed: </strong></li>
-
-
-
-<li><strong>2,030 additions, </strong></li>
-
-
-
-<li><strong>718 deletions</strong></li>
-</ul>
-
-
-
-<p>Please take a look to a comprehensive Release note in the repository: <a href="https://github.com/Utappia/uCareSystem/releases/tag/v25.12.04">https://github.com/Utappia/uCareSystem/releases/tag/v25.12.04</a></p>
-
-
-
-<p>This release is a testament to my commitment to quality and my vision for the future of uCareSystem as a one-stop system maintenance tool Debian Ubuntu. I am confident that I laid a stronger foundation that will allow for even more exciting features and faster development in the future.</p>
-
-
-
-<p>I am deeply grateful to the community members who supported the previous development cycle through donations or code contributions:</p>
-
-
-
-<ul class="wp-block-list">
-<li>P. Laoughman (Thanks for your continued support)</li>
-
-
-
-<li>W. Schreinemachers (Thanks for your continued support)</li>
-
-
-
-<li>D. Luchini (Thanks for your continued support)</li>
-
-
-
-<li>M. Van Hoof</li>
-
-
-
-<li>Frankie P.</li>
-
-
-
-<li>M. Ryser</li>
-
-
-
-<li>Th. Ploumis</li>
-
-
-
-<li>M. Stade</li>
-
-
-
-<li>K. J. Rasmussen</li>
-</ul>
-
-
-
-<p>Every version, has also a code name dedicated as a release honored to one of the contributors. For historical reference, you can check all <a href="https://github.com/Utappia/uCareSystem/blob/master/HONORED_RELEASES.md">previous honored releases</a>.</p>
-
-
-
-<h2 class="wp-block-heading">Where can I download uCareSystem ?</h2>
-
-
-
-<p>As always, I want to express my gratitude for your support over the past 15 years. I have received countless messages from inside and outside Greece about how useful they found the application. I hope you find the new version useful as well.</p>
-
-
-
-<p>If you&#8217;ve found uCareSystem to be valuable and it has saved you time, consider showing your appreciation with a donation. You can contribute via PayPal or Debit/Credit Card by clicking on the banner.</p>
-
-
-
-<table>
-<thead>
-<tr>
-<th>Pay what you want</th>
-<th>Maybe next time</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Click the donate button and enter the amount you want to donate. Then you will be navigated to the page with the latest version to download the installer</td>
-<td>If you don&#8217;t want to Donate this time, just click the download icon to be navigated to the page with the latest version to download the installer</td>
-</tr>
-<tr>
-<td><a href="https://www.paypal.com/donate/?hosted_button_id=SATQ6Y9S3UCSG" rel="attachment wp-att-2601"><img decoding="async" class="wp-image-2601 size-full aligncenter" src="http://utappiablog.wordpress.com/wp-content/uploads/2016/03/btn_donatecc_lg1.gif" alt="btn_donateCC_LG" width="147" height="47" /></a></td>
-<td><a href="https://github.com/Utappia/uCareSystem/releases/latest" rel="attachment wp-att-2593"><img decoding="async" class="size-full wp-image-2593 aligncenter" src="http://utappiablog.wordpress.com/wp-content/uploads/2016/03/ucare-system-download.png" alt="ucare-system-download" width="151" height="151" /></a></td>
-</tr>
-<tr>
-<td> </td>
-<td> </td>
-</tr>
-</tbody>
-</table>
-<p>Once installed, the updates for new versions will be installed along with your regular system updates.</p>
-<p>The post <a href="https://utappia.org/2025/12/06/fix-broken-update-linux-ucaresystem/">Fix Broken Updates: uCareSystem New Release uCareSystem v25.12</a> appeared first on <a href="https://utappia.org">Utappia</a>.</p>]]></description>
-      <source url="http://utappia.org/feed/">Salih Emin</source>
     </item>
     <item>
       <title>Free software activity in November 2025</title>
