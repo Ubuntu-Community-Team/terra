@@ -6,9 +6,42 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 14 Feb 2026 00:34:36 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 15 Feb 2026 00:37:21 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Mutable References with Caching</title>
+      <link>https://soumyadghosh.github.io/website/blog/python-mutable-reference-caching/</link>
+      <guid isPermaLink="true">https://soumyadghosh.github.io/website/blog/python-mutable-reference-caching/</guid>
+      <pubDate>Sat, 14 Feb 2026 18:08:23 GMT</pubDate>
+      <description><![CDATA[<p>So, while working with caching and scrapping, I understood the difference between immutable and mutable objects/datatypes very clearly. I had a scenario, where I am webscraping an API, the code looks like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> aiocache <span style="color:#f92672">import</span> cached
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@cached</span>(ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">7200</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_forecast</span>(station_id: str) <span style="color:#f92672">-&gt;</span> list[dict]:
+</span></span><span style="display:flex;"><span> data: dict <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> scrape_weather(station_id)
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># doing some operation</span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> forecasts
+</span></span></code></pre></div><p>and then using this utility tool in the endpoint.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_forecast_by_city</span>(
+</span></span><span style="display:flex;"><span> param: Annotated[StationIDQuery, Query()],
+</span></span><span style="display:flex;"><span>) <span style="color:#f92672">-&gt;</span> list[UpcomingForecast]:
+</span></span><span style="display:flex;"><span> forecasts_dict: list[dict] <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> get_forecast(param<span style="color:#f92672">.</span>station_id)
+</span></span><span style="display:flex;"><span> forecasts_dict<span style="color:#f92672">.</span>reversed()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> forecasts: deque[UpcomingForecast] <span style="color:#f92672">=</span> deque([])
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span> forecast <span style="color:#f92672">in</span> forecasts_dict:
+</span></span><span style="display:flex;"><span> date_delta: int <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span> date<span style="color:#f92672">.</span>fromisoformat(forecast[<span style="color:#e6db74">&#34;forecast_date&#34;</span>]) <span style="color:#f92672">-</span> date<span style="color:#f92672">.</span>today()
+</span></span><span style="display:flex;"><span> )<span style="color:#f92672">.</span>days
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> date_delta <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span> forecasts<span style="color:#f92672">.</span>appendleft(UpcomingForecast<span style="color:#f92672">.</span>model_validate(forecast))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> list(forecasts)
+</span></span></code></pre></div><p>But, here is the gotcha, something I was doing inherently wrong. Lists in python are mutable objects. So, reversing the list modifies the list in place, without creating a new reference of the list. My initial approach was to do this</p>]]></description>
+      <source url="https://soumyadghosh.github.io/website/index.xml">Soumyadeep Ghosh</source>
+    </item>
     <item>
       <title>Smart DCA Strategy – Meet DCAi That Times the Dip The Open Source Machine Learning</title>
       <link>https://utappia.org/2026/02/13/smart-dca-strategy-machine-learning-dcai/</link>
@@ -1790,30 +1823,6 @@ for the last two months now. I put this machine through the wringer: heavy strea
       <source url="https://steveire.wordpress.com/feed/?mrss=off">Stephen Kelly</source>
     </item>
     <item>
-      <title>I love KDE too much to retire! Snap beta releases trickling in. Stay tuned.</title>
-      <link>https://www.scarlettgatelymoore.dev/i-love-kde-too-much-to-retire-snap-beta-releases-trickling-in-stay-tuned/</link>
-      <guid isPermaLink="true">https://www.scarlettgatelymoore.dev/i-love-kde-too-much-to-retire-snap-beta-releases-trickling-in-stay-tuned/</guid>
-      <pubDate>Sat, 10 Jan 2026 16:54:12 GMT</pubDate>
-      <description><![CDATA[<figure class="wp-block-image aligncenter size-full"><img fetchpriority="high" decoding="async" width="424" height="600" src="https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde.png" alt="" class="wp-image-1816" srcset="https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde.png 424w, https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde-212x300.png 212w" sizes="(max-width: 424px) 100vw, 424px" /></figure>
-
-
-
-<p>A short but sweet note to say I am coming out of my short retirement to help with snaps again. My time is extremely limited, however we are working hard on getting snaps on CI and I have some newer snaps in &#8211;beta trickling in for testing. You must install kf6-core24 from beta as well to test them ( this will likely break older kde snaps in the process so beware. ) This is slow going as I work on them during my hour lunch at day job and spare stolen moments. KDE is coming up on its 30th birthday!!! How cool is that!</p>
-
-
-
-<p>I <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/2764.png" alt="❤" class="wp-smiley" style="height: 1em; max-height: 1em;" /> KDE</p>
-
-
-
-<p>Like my work? Consider a donation. Thank you!</p>
-
-
-
-<a class="dbox-donation-page-button" href="https://donorbox.org/open-source-work?" style="background: rgb(18, 138, 237); color: rgb(255, 255, 255); text-decoration: none; font-family: Verdana, sans-serif; display: flex; gap: 8px; width: fit-content; font-size: 16px; border-radius: 5px; line-height: 24px; padding: 8px 24px;"><img decoding="async" src="https://donorbox.org/images/white_logo.svg">Donate</a>]]></description>
-      <source url="https://www.scarlettgatelymoore.dev/category/open-source-software/feed/">Scarlett Gately Moore</source>
-    </item>
-    <item>
       <title>Finally back at OLF!</title>
       <link>https://princessleia.com/journal/2025/12/finally-back-at-olf/</link>
       <guid isPermaLink="true">https://princessleia.com/journal/2025/12/finally-back-at-olf/</guid>
@@ -2114,16 +2123,6 @@ FIREBUILD: fd 9.2: ({Process NULL})
 
 <p>Static binaries, welcome to the party!</p>]]></description>
       <source url="https://balintreczey.hu/blog/tag/ubuntu/feed/">Balint Reczey</source>
-    </item>
-    <item>
-      <title>GSoC 2025 Final Submission: Re-architecting PyCups for a Modern, Pythonic Future</title>
-      <link>https://soumyadghosh.github.io/website/interns/gsoc-2025/gsoc-final-submission/</link>
-      <guid isPermaLink="true">https://soumyadghosh.github.io/website/interns/gsoc-2025/gsoc-final-submission/</guid>
-      <pubDate>Sun, 09 Nov 2025 15:41:39 GMT</pubDate>
-      <description><![CDATA[<p><em>(Please note this is still a draft of my final blog)</em></p>
-<p>And just like that, my Google Summer of Code journey with OpenPrinting is drawing to a close. This post serves as a final summary of my project: rebuilding <code>pycups</code> from the ground up for <code>libcups3</code>. While I still have a few things I plan to update, this covers the core of my work over the summer.</p>
-<p>It&rsquo;s been an incredible experience, and I&rsquo;m excited to share the architectural decisions, challenges, and &ldquo;magic&rdquo; tricks that went into creating the new <code>pycups</code>.</p>]]></description>
-      <source url="https://soumyadghosh.github.io/website/index.xml">Soumyadeep Ghosh</source>
     </item>
     <item>
       <title>It's NOT always DNS.</title>
