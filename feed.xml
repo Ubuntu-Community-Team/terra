@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 20 Feb 2026 00:33:23 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Feb 2026 00:33:19 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -95,7 +95,7 @@
 </ul>
 </li>
 <li>
-<p>TUI para o Multipass: <a href="https://discourse.ubuntu.com/t/multipass-tui/77066">https://discourse.ubuntu.com/t/multipass-tui/77066</a></p>
+<p>TUI para o Multipass (PassGo): <a href="https://discourse.ubuntu.com/t/multipass-tui/77066">https://discourse.ubuntu.com/t/multipass-tui/77066</a></p>
 </li>
 <li>
 <p>Eventos:</p>
@@ -126,6 +126,8 @@
 <li>Discord is about to require age verification for everyone | GamingOnLinux: <a href="https://www.gamingonlinux.com/2026/02/discord-is-about-to-require-age-verification-for-everyone/">https://www.gamingonlinux.com/2026/02/discord-is-about-to-require-age-verification-for-everyone/</a></li>
 <li>O Discord cai na esparrela: <a href="https://discord.com/safety/how-discord-is-building-safer-experiences-for-teens">https://discord.com/safety/how-discord-is-building-safer-experiences-for-teens</a></li>
 <li>Proibição das redes sociais: «Esta medida cria a ilusão de que se faz qualquer coisa» | Entrevista | PÚBLICO: <a href="https://archive.is/AVTse">https://archive.is/AVTse</a></li>
+<li>O que está em causa: <a href="https://www.publico.pt/2026/02/18/p3/cronica/proteger-criancas-redes-sociais-sim-vigiar-adultos-nao-2165219">https://www.publico.pt/2026/02/18/p3/cronica/proteger-criancas-redes-sociais-sim-vigiar-adultos-nao-2165219</a></li>
+<li>Dilemas, dilemas e possíveis soluções: <a href="https://epicenter.works/en/content/a-potential-solution-to-the-dilemma-of-age-verification">https://epicenter.works/en/content/a-potential-solution-to-the-dilemma-of-age-verification</a></li>
 <li>España opta por la prohibición para controlar el uso de las redes sociales en la infancia: <a href="https://www.elsaltodiario.com/infancia/espana-opta-prohibicion-controlar-uso-redes-sociales-infancia/">https://www.elsaltodiario.com/infancia/espana-opta-prohibicion-controlar-uso-redes-sociales-infancia/</a></li>
 <li>«Dark Patterns»: <a href="https://en.wikipedia.org/wiki/Dark_pattern">https://en.wikipedia.org/wiki/Dark_pattern</a></li>
 </ul>
@@ -1829,6 +1831,30 @@ Three hours later, I&rsquo;ve played zero games.</p>
 
 <p class="wp-block-paragraph">I attempted to use new API additions in recent Qt 6 versions to interact with a few real-world REST services. The additions are valuable, but it seems that there are a few places where improvements might be possible. My attempt to make the API feel closer to what developers in other environments might be accustomed to had some success, but I&#8217;m not sure <code>QFuture</code> is really intended to be used this way.<br>Do readers have any feedback? Would using QCoro improve the coroutine experience? Is it very unusual to create an application with QWidgets instead of QML these days? Should I have used PyQt and the python networking APIs?</p>]]></description>
       <source url="https://steveire.wordpress.com/feed/?mrss=off">Stephen Kelly</source>
+    </item>
+    <item>
+      <title>I love KDE too much to retire! Snap beta releases trickling in. Stay tuned.</title>
+      <link>https://www.scarlettgatelymoore.dev/i-love-kde-too-much-to-retire-snap-beta-releases-trickling-in-stay-tuned/</link>
+      <guid isPermaLink="true">https://www.scarlettgatelymoore.dev/i-love-kde-too-much-to-retire-snap-beta-releases-trickling-in-stay-tuned/</guid>
+      <pubDate>Sat, 10 Jan 2026 16:54:12 GMT</pubDate>
+      <description><![CDATA[<figure class="wp-block-image aligncenter size-full"><img fetchpriority="high" decoding="async" width="424" height="600" src="https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde.png" alt="" class="wp-image-1816" srcset="https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde.png 424w, https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde-212x300.png 212w" sizes="(max-width: 424px) 100vw, 424px" /></figure>
+
+
+
+<p class="wp-block-paragraph">A short but sweet note to say I am coming out of my short retirement to help with snaps again. My time is extremely limited, however we are working hard on getting snaps on CI and I have some newer snaps in &#8211;beta trickling in for testing. You must install kf6-core24 from beta as well to test them ( this will likely break older kde snaps in the process so beware. ) This is slow going as I work on them during my hour lunch at day job and spare stolen moments. KDE is coming up on its 30th birthday!!! How cool is that!</p>
+
+
+
+<p class="wp-block-paragraph">I <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/2764.png" alt="❤" class="wp-smiley" style="height: 1em; max-height: 1em;" /> KDE</p>
+
+
+
+<p class="wp-block-paragraph">Like my work? Consider a donation. Thank you!</p>
+
+
+
+<a class="dbox-donation-page-button" href="https://donorbox.org/open-source-work?" style="background: rgb(18, 138, 237); color: rgb(255, 255, 255); text-decoration: none; font-family: Verdana, sans-serif; display: flex; gap: 8px; width: fit-content; font-size: 16px; border-radius: 5px; line-height: 24px; padding: 8px 24px;"><img decoding="async" src="https://donorbox.org/images/white_logo.svg">Donate</a>]]></description>
+      <source url="https://www.scarlettgatelymoore.dev/category/open-source-software/feed/">Scarlett Gately Moore</source>
     </item>
     <item>
       <title>Finally back at OLF!</title>
