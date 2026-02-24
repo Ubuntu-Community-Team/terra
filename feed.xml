@@ -6,9 +6,157 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Mon, 23 Feb 2026 02:32:35 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 02:29:00 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What makes online groups vulnerable to governance capture?</title>
+      <link>https://mako.cc/copyrighteous/what-makes-online-groups-vulnerable-to-governance-capture</link>
+      <guid isPermaLink="true">https://mako.cc/copyrighteous/what-makes-online-groups-vulnerable-to-governance-capture</guid>
+      <pubDate>Sun, 22 Feb 2026 21:12:41 GMT</pubDate>
+      <description><![CDATA[<p class="has-small-font-size"><em><strong>Note:</strong> I have not published blog posts about my academic papers over the past few years. To ensure that my blog contains a more comprehensive record of my published papers and to surface these for folks who missed them, I will be periodically (re)publishing blog posts about some &#8220;older&#8221; published projects. This post is closely based on <a href="https://blog.communitydata.science/governance-capture/">a previously published post</a> by <a href="https://zarine.net/">Zarine Kharazian</a> on <a href="https://blog.communitydata.science/">the Community Data Science Blog</a>.</em></p>
+
+
+
+<p><em> </em>For nearly a decade, the Croatian language version of Wikipedia was run by a cabal of far-right nationalists who edited articles in ways that promoted fringe political ideas and involved cases of <a href="https://perma.cc/YJ3B-V2YP">historical revisionism</a> related to the <a href="https://en.wikipedia.org/wiki/Usta%C5%A1e">Ustaše regime</a>, a fascist movement that ruled the Nazi puppet state called the Independent State of Croatia during World War II. This cabal seized complete control of the encyclopedia&#8217;s governance, banned and blocked those who disagreed with them, and operated a network of fake accounts to create the appearance of grassroots support for their policies. </p>
+
+
+
+<p>Thankfully, Croatian Wikipedia appears to be an outlier. Though both the Croatian and Serbian language editions have been documented to contain nationalist bias and historical revisionism, Croatian Wikipedia seems unique among Wikipedia editions in the extent to which its governance institutions were captured by a small group of users. <br><br>The situation in Croatian Wikipedia was <span style="box-sizing: border-box; margin: 0px; padding: 0px;"><a href="https://meta.wikimedia.org/wiki/File:Croatian_WP_Disinformation_Assessment_-_Final_Report_EN.pdf" target="_blank">well documented</a> and is now largely fixed, but we still know very little about why it</span> was taken over, while other language editions seem to have rebuffed similar capture attempts. In a paper published in the Proceedings of the ACM: Human-Computer Interaction (CSCW), Zarine Kharazian, Kate Starbird, and I present an interview-based study that provides an explanation for why Croatian was captured while several other editions facing similar contexts and threats fared better.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe class="youtube-player" width="525" height="296" src="https://www.youtube.com/embed/P9F_NBQBGWQ?version=3&#038;rel=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;fs=1&#038;hl=en-US&#038;autohide=2&#038;wmode=transparent" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation allow-popups-to-escape-sandbox"></iframe>
+</div><figcaption class="wp-element-caption">Short video presentation of the work given at Wikimania in August 2023.</figcaption></figure>
+
+
+
+<p>Based on insights from interviews with 15 participants from both the Croatian and Serbian Wikipedia projects and from the broader Wikimedia movement, we arrived at three propositions that, together, help explain why Croatian Wikipedia succumbed to capture while Serbian Wikipedia did not: </p>
+
+
+
+<ol class="wp-block-list">
+<li><em>Perceived Value as a Target.</em> Is the project worth expending the effort to capture?</li>
+
+
+
+<li><em>Bureaucratic Openness.</em> How easy is it for contributors outside the core founding team to ascend to local governance positions?</li>
+
+
+
+<li><em>Institutional Formalization.</em> To what degree does the project prefer personalistic, informal forms of organization over formal ones?</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="1024" height="393" src="https://mako.cc/copyrighteous/wp-content/uploads/2026/02/Screenshot-2024-01-11-at-3.17.08-PM-1024x393-1.png" alt="" class="wp-image-3339" srcset="https://mako.cc/copyrighteous/wp-content/uploads/2026/02/Screenshot-2024-01-11-at-3.17.08-PM-1024x393-1.png 1024w, https://mako.cc/copyrighteous/wp-content/uploads/2026/02/Screenshot-2024-01-11-at-3.17.08-PM-1024x393-1-300x115.png 300w, https://mako.cc/copyrighteous/wp-content/uploads/2026/02/Screenshot-2024-01-11-at-3.17.08-PM-1024x393-1-768x295.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /><figcaption class="wp-element-caption"><em>The conceptual model from our paper, visualizing possible institutional configurations among Wikipedia projects that affect the risk of governance capture.&nbsp;</em><br></figcaption></figure>
+
+
+
+<p>We found that both Croatian and Serbian Wikipedias were attractive targets for far-right nationalist capture due to their sizable readership and resonance with national identity. However, we also found that the two projects diverged early in their trajectories in how open they remained to new contributors ascending to local governance positions and in the degree to which they privileged informal relationships over formal rules and processes as the project&#8217;s organizing principles. Ultimately, Croatian&#8217;s relative lack of bureaucratic openness and rules constraining administrator behavior created a window of opportunity for a motivated contingent of editors to seize control of the governance mechanisms of the project. </p>
+
+
+
+<p>Though our empirical setting was Wikipedia, our theoretical model may offer insight into the challenges faced by self-governed online communities more broadly. As interest in decentralized alternatives to Facebook and X (formerly Twitter) grows, communities on these sites will likely face similar threats from motivated actors. Understanding the vulnerabilities inherent in these self-governing systems is crucial to building resilient defenses against threats like disinformation.&nbsp;</p>
+
+
+
+<p>For more details on our findings, take a look at the <a href="https://dl.acm.org/doi/10.1145/3637338">published version of our paper</a>.</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<p class="has-small-font-size"><em>Citation for the full paper:</em> Kharazian, Zarine, Kate Starbird, and Benjamin Mako Hill. 2024. “Governance Capture in a Self-Governing Community: A Qualitative Comparison of the Croatian, Serbian, Bosnian, and Serbo-Croatian Wikipedias.” <em>Proceedings of the ACM on Human-Computer Interaction</em> 8 (CSCW1): 61:1-61:26. <a href="https://doi.org/10.1145/3637338">https://doi.org/10.1145/3637338</a>.</p>
+
+
+
+<p class="has-small-font-size"><em> This blog post and the paper it describes are collaborative work by Zarine Kharazian, Benjamin Mako Hill, and Kate Starbird.</em></p>]]></description>
+      <source url="http://mako.cc/copyrighteous/?flav=rss">Benjamin Mako Hill</source>
+    </item>
+    <item>
+      <title>Technical Author on engineering duty: Launchpad support</title>
+      <link>https://blog.launchpad.net/general/technical-author-on-engineering-duty-launchpad-support</link>
+      <guid isPermaLink="true">https://blog.launchpad.net/general/technical-author-on-engineering-duty-launchpad-support</guid>
+      <pubDate>Sun, 22 Feb 2026 09:49:42 GMT</pubDate>
+      <description><![CDATA[<p>Being on support for Launchpad has a huge sense of responsibility. For a whole week, you are the first point of contact for users experiencing issues related to Launchpad or the services attached to it. For the person on support, even roadmap work takes a backseat.&nbsp;</p>
+
+
+
+<p>All Launchpad engineers, except managers, take turns being on support. Managers provide Level 2 and 3 support, and in some sense, are always on support. There is no explicit expectation for a technical author (TA) to take on this responsibility, but why should engineers have all the fun?</p>
+
+
+
+<h2>What was the motivation to go on support?</h2>
+
+
+
+<p>For a TA being embedded in your team’s duties and processes is key to driving documentation efforts and positively influencing what the team does beyond documentation. As Launchpad’s first full-time TA, I had my work cut out.</p>
+
+
+
+<p>When I started, my main role was driving existing objectives to completion. In later months, I had to play a key role in choosing the objectives. With so many pending issues, prioritization was the main challenge. Although I was able to figure things out, with lots of help from the Launchpad and documentation teams, I knew there were still some gaps left to cover.</p>
+
+
+
+<p>I decided to learn as much as possible about the product, team, and users, to help identify which aspects of documentation were most important to address. Guruprasad and I discussed shadowing engineers on support, but Clinton suggested I try the real thing too. </p>
+
+
+
+<h2>Shadowing engineers on support</h2>
+
+
+
+<p>The expectation that I would be going on support raised the stakes, and I had to make the most of my time shadowing engineers. Interacting with users requires a higher level of care, and I was also keen to repay the faith the team had placed in me.</p>
+
+
+
+<p>I shadowed İlker, Artem, and Inês in the three weeks before my turn. We used different techniques depending on our calendars and what issues they were addressing. In some cases, we would have a live meeting and I would follow along as they handled different tasks. In other cases, the approach was asynchronous, with the person on support linking me to user requests they were working on, discussions in the Launchpad channel, or documentation they had used to address specific issues.&nbsp;</p>
+
+
+
+<h2>In the support chair</h2>
+
+
+
+<p>On the morning of my first day on support, I couldn’t change the header of Launchpad’s public channel on Matrix. This was a simple yet frustrating problem and it took me a while to figure out this was a Matrix issue, not a skill issue. Despite the frustration, this was a good reality check. Support week is unpredictable and nothing can be underestimated.&nbsp;</p>
+
+
+
+<p>The rest of the week brought plenty of highs, lows, and unpredictable scenarios. My main takeaways were:</p>
+
+
+
+<ul><li><strong>Documentation </strong>&#8211; Being on support relies heavily on the availability and quality of documentation. In addition to improving my product and team knowledge, I was able to identify where and how existing documentation succeeded and failed. Whoever is on support is always expected to identify gaps and add to the documentation, but as a TA, I was also able to identify additional issues that hamper information extraction in our docs.&nbsp;</li><li><strong>Many requests are easy to handle</strong> &#8211; The Launchpad team has done a great job of documenting the processes needed to handle many types of requests and issues.</li><li><strong>The role challenges you to learn and do more</strong> &#8211; Trying to address user issues required interacting with parts of Launchpad I didn’t have to before.&nbsp;</li><li><strong>It’s a great team-building experience</strong> &#8211; For Launchpad engineers, being on support is such a core part of the job that it has its own culture and language. A lot of what it means to be part of the Launchpad team became clearer during this experience.</li><li><strong>It’s not a one person job</strong> &#8211; It was mentioned to me many times before, but it was great to see it in practice &#8211; the person on support isn’t always expected to solve the issue. Sometimes I just needed to tag someone else in, redirect the issue to the right team, or let a user know we would look into an issue</li></ul>
+
+
+
+<h2>Best moment</h2>
+
+
+
+<p>A user reported a bug where they couldn’t delete a comment. On inspection, the comment seemed to just be an attached text file. I started by going through the logs and confirmed that they had indeed deleted something, but it appeared to have been a different comment.</p>
+
+
+
+<p>I suspected this had something to do with the attachment so I decided to recreate the issue, i.e., uploading an attachment as a comment and trying to delete it. I confirmed that trying to delete such comments did not work. Bug confirmed… right?</p>
+
+
+
+<p>In Launchpad, we are a bit suspicious when things go exactly as planned the first time round. In this case, this issue appeared far too easy to encounter. I did some digging and found an older bug report where the unusual process for deleting such comments was also mentioned. So, I was able to tell the user how to solve their problem and avoided adding to our long list of bugs by marking this as a duplicate.</p>
+
+
+
+<h2>Final words</h2>
+
+
+
+<p>Supporting users is a team’s responsibility, not an individual’s. Technical authors maintain documentation used in support but may not get to test the experience of using it, and this can result in blind spots. This experience not only highlighted some of these blind spots for me, I also got to learn a lot about Launchpad, the community that uses it, and how we can improve the documentation to better serve users.</p>]]></description>
+      <source url="http://news.launchpad.net/feed">Launchpad News</source>
+    </item>
     <item>
       <title>Running RISC-V in a VM to test my snaps</title>
       <link>https://blog.popey.com/2026/02/running-risc-v-in-a-vm-to-test-my-snaps/</link>
@@ -307,68 +455,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 <p><a href="https://ubuntu.com/engage/optimize-cloud-storage-costs">Watch the webinar</a></p>
 <p>If you have any questions, or want to reach out to discuss cost-optimization for your custom storage solution, don’t hesitate to <a href="https://ubuntu.com/ceph/contact-us">reach out to our team</a>.</p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
-    </item>
-    <item>
-      <title>Why do people participate in similar online communities?</title>
-      <link>https://mako.cc/copyrighteous/why-do-people-participate-in-similar-online-communities</link>
-      <guid isPermaLink="true">https://mako.cc/copyrighteous/why-do-people-participate-in-similar-online-communities</guid>
-      <pubDate>Mon, 16 Feb 2026 03:13:59 GMT</pubDate>
-      <description><![CDATA[<p class="has-small-font-size"><em><strong>Note:</strong> I have not published blog posts about my academic papers over the past few years. To ensure that my blog contains a more comprehensive record of my published papers and to surface these for folks who missed them, I will be periodically (re)publishing blog posts about some &#8220;older&#8221; published projects.</em></p>
-
-
-
-<p>It seems natural to think of online communities competing for the time and attention of their participants. Over the last few years, I&#8217;ve worked with a team of collaborators—led by <a href="https://teblunthuis.cc/">Nathan TeBlunthuis</a>—to use mathematical and statistical techniques from ecology to understand these dynamics. What we&#8217;ve found surprised us: competition between online communities is<em> rare and typically short-lived</em>.</p>
-
-
-
-<p>When we started this research, we figured competition would be most likely among communities discussing similar topics. As a first step, we identified clusters of such communities on Reddit. One surprising thing we noticed in our Reddit data was that many of these communities that used similar language also had very high levels of overlap among their users. This was puzzling: <em>why were the same groups of people talking to each other about the same things in different places? And why don&#8217;t they appear to be in competition with each other for their users&#8217; time and activity?</em></p>
-
-
-
-<p>We didn&#8217;t know how to answer this question using quantitative methods. As a result, we recruited and interviewed 20 active participants in clusters of highly related subreddits with overlapping user bases (for example, one cluster was focused on vintage audio). </p>
-
-
-
-<p>We found that the answer to the puzzle lay in the fact that the people we talked to were looking for three distinct things from the communities they worked in:</p>
-
-
-
-<ol class="wp-block-list">
-<li> The ability to connect to specific information and narrowly scoped discussions.</li>
-
-
-
-<li>The ability to socialize with people who are similar to themselves.</li>
-
-
-
-<li>Attention from the largest possible audience.</li>
-</ol>
-
-
-
-<p>Critically, we also found that these three things represented a &#8220;trilemma,&#8221; and that no single community can meet all three needs. You might find two of the three in a single community, but you could never have all three.</p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full is-resized"><a href="https://mako.cc/copyrighteous/wp-content/uploads/2026/02/teaser_figure.jpg"><img fetchpriority="high" decoding="async" width="987" height="936" src="https://mako.cc/copyrighteous/wp-content/uploads/2026/02/teaser_figure.jpg" alt="" class="wp-image-3334" style="width:479px;height:auto" srcset="https://mako.cc/copyrighteous/wp-content/uploads/2026/02/teaser_figure.jpg 987w, https://mako.cc/copyrighteous/wp-content/uploads/2026/02/teaser_figure-300x284.jpg 300w, https://mako.cc/copyrighteous/wp-content/uploads/2026/02/teaser_figure-768x728.jpg 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a><figcaption class="wp-element-caption">Figure from “No Community Can Do Everything: Why People Participate in Similar Online Communities” depicts three key benefits that people seek from online communities and how individual communities tend not to optimally provide all three. For example, large communities tend not to afford a tight-knit homophilous community.</figcaption></figure>
-</div>
-
-
-<p>The end result is something I recognize in how I engage with online communities on platforms like Reddit. People tend to engage with a portfolio of communities that vary in size, specialization, topical focus, and rules. Compared with any single community, such overlapping systems can provide a wider range of benefits. No community can do everything.</p>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-
-
-<p class="has-small-font-size"><em>This work was published as a paper at CSCW: </em>TeBlunthuis, Nathan, Charles Kiene, Isabella Brown, Laura (Alia) Levi, Nicole McGinnis, and Benjamin Mako Hill. 2022. “No Community Can Do Everything: Why People Participate in Similar Online Communities.” <em>Proceedings of the ACM on Human-Computer Interaction</em> 6 (CSCW1): 61:1-61:25. <a href="https://doi.org/10.1145/3512908">https://doi.org/10.1145/3512908</a>.</p>
-
-
-
-<p class="has-small-font-size"><em>This work was supported by the National Science Foundation (awards IIS-1908850, IIS-1910202, and GRFP-2016220885).</em> A full list of acknowledgements is in the paper.</p>]]></description>
-      <source url="http://mako.cc/copyrighteous/?flav=rss">Benjamin Mako Hill</source>
     </item>
     <item>
       <title>An update on upki</title>
@@ -1448,18 +1534,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
             <p><small>1 post - 1 participant</small></p>
             <p><a href="https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-931/76675">Read full topic</a></p>]]></description>
       <source url="https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss">Ubuntu Weekly News</source>
-    </item>
-    <item>
-      <title>Launchpad mailing lists have been shut down</title>
-      <link>https://blog.launchpad.net/general/launchpad-mailing-lists-have-been-shut-down</link>
-      <guid isPermaLink="true">https://blog.launchpad.net/general/launchpad-mailing-lists-have-been-shut-down</guid>
-      <pubDate>Wed, 04 Feb 2026 08:19:39 GMT</pubDate>
-      <description><![CDATA[<p>As announced in<a href="https://blog.launchpad.net/general/sunsetting-launchpads-mailing-lists"> Sunsetting Launchpad mailing lists</a>, we have now shut down the Launchpad mailing lists hosting service.</p>
-
-
-
-<p>For backup and archival, we have provided an archive of the public mailing lists at<a href="https://archive.lists.launchpad.net"> https://archive.lists.launchpad.net</a>. All valid public lists.launchpad.net URLs that existed at the time of the shutdown now redirect to the archive, where the content will remain accessible. If you experience any issues with the archive, please report them by submitting a <a href="https://answers.launchpad.net/launchpad/+addquestion">question</a> or by contacting us on our Matrix channel, <code>#launchpad:ubuntu.com</code>.</p>]]></description>
-      <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
       <title>fifty</title>
