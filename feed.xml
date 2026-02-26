@@ -6,9 +6,79 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 25 Feb 2026 02:30:16 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Feb 2026 02:26:03 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building quantum-safe telecom infrastructure for 5G and beyond</title>
+      <link>https://ubuntu.com//blog/building-quantum-safe-telecom-infrastructure-for-5g-and-beyond</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/building-quantum-safe-telecom-infrastructure-for-5g-and-beyond</guid>
+      <pubDate>Tue, 24 Feb 2026 14:20:49 GMT</pubDate>
+      <description><![CDATA[<h2 class="wp-block-heading">coRAN Labs and Canonical at MWC Barcelona 2026</h2>
+<p>At MWC Barcelona 2026, coRAN Labs and Canonical are presenting a working demonstration of a cloud-native, quantum-safe telecom platform for 5G and beyond 5G networks.</p>
+<p>This is not a conceptual exercise. It is a full 5G System (5GS) deployment with post-quantum cryptography embedded across the stack – from radio access to core, from transport interfaces to orchestration and public key infrastructure (PKI).</p>
+<p>The objective is straightforward: show how telecommunications operators can modernize their networks using open source infrastructure while preparing for the cryptographic realities of the coming decade.</p>
+<h2 class="wp-block-heading">Why quantum-safe telecom matters now</h2>
+<p>The industry has long relied on the Rivest–Shamir–Adleman cryptosystem (RSA) and Elliptic Curve Digital Signature Algorithm (ECDSA) to secure signaling, control planes, APIs, and service communication. These algorithms remain critical to protect systems against classical computing attacks. They are not designed to resist large-scale quantum computers. Post-quantum cryptography (PQC) refers to a new class of cryptographic algorithms designed to run on conventional hardware while resisting attacks from both classical and quantum computers. Rather than relying on integer factorization or elliptic curve mathematics, PQC schemes are built on alternative hard mathematical problems, such as lattice-based constructions, that are believed to remain intractable even in a quantum computing era.</p>
+<p>In regulated markets, post-quantum transition planning is already formalized in national guidance and government roadmaps. Authorities such as the <a href="https://csrc.nist.gov/pubs/ir/8547/ipd">US National Institute of Standards and Technology (NIST)</a>, the <a href="https://www.ncsc.gov.uk/guidance/pqc-migration-timelines">UK National Cyber Security Centre (NCSC)</a>, and the <a href="https://digital-strategy.ec.europa.eu/en/news/eu-reinforces-its-cybersecurity-post-quantum-cryptography">European Commission (EC)</a> have issued timelines and migration guidance for adopting post-quantum cryptography. Notably, the EC summarizes the requirements, stating that “All Member States should start transitioning to post-quantum cryptography by the end of 2026. At the same time, the protection of critical infrastructures should be transitioned to PQC as soon as possible, no later than by the end of 2030.“ For operators serving government, finance, or critical infrastructure sectors, trust anchors and certificate authorities must align with these transition plans and support crypto-agility across their PKI and transport layers.</p>
+<p>That being said, PQC isn’t only a matter of regulatory compliance. For telecom operators, the risk is not abstract. Network traffic often has a long confidentiality lifetime. Subscriber identity data, authentication exchanges, and inter-operator signaling may need to remain confidential for years. A “harvest now, decrypt later” threat model is realistic.</p>
+<p>Preparing for post-quantum cryptography (PQC) is therefore an architectural challenge, not a patching exercise. It touches identity, certificates, transport security, service meshes, and automation pipelines.</p>
+<p>The demo at MWC explores what that transition looks like in practice.</p>
+<h2 class="wp-block-heading">A full quantum-safe 5G system</h2>
+<p>The deployment implements PQC across the complete 5GS as defined by the 3rd generation partnership project (3GPP), the consortium of standards organizations that develop technical specifications for mobile networks, including 4G LTE, 5G and upcoming 6G. That includes:</p>
+<ul>
+<li>Radio access network (RAN) components</li>
+<li>5G Core network functions</li>
+<li>Service-based interfaces (SBI)</li>
+<li>Transport security between distributed sites</li>
+<li>Authentication and identity flows</li>
+<li>Orchestration and lifecycle management channels</li>
+<li>PKI services and certificate issuance</li>
+</ul>
+<p>The system uses NIST-standardized post-quantum algorithms and operates in hybrid mode. In hybrid mode, classical and post-quantum cryptography are combined within the same handshake. This preserves interoperability while introducing quantum-resistant protection.</p>
+<p>Migrating to quantum-safe crypto requires a coordinated transformation of identity and trust across the telecom stack. Hybrid deployment as implemented in this system is thus critical for operators. It reduces migration risk, avoids sudden ecosystem breaks, and supports phased rollouts across brownfield environments. </p>
+<h2 class="wp-block-heading">Built on open, cloud-native infrastructure</h2>
+<p>The platform runs on Canonical’s open infrastructure stack:</p>
+<ul>
+<li>Ubuntu LTS as the operating system foundation</li>
+<li>Canonical Kubernetes for workload orchestration</li>
+<li>Juju for automation and lifecycle management</li>
+</ul>
+<p>Ubuntu LTS provides a stable, security-maintained base aligned with upstream Linux and hardware ecosystems. Canonical Kubernetes delivers a CNCF-conformant control plane suited to telco-grade deployments. Juju coordinates Day-0 to Day-2 operations across distributed environments.</p>
+<p>In this architecture, cryptographic posture is built-in instead of being treated as an afterthought. PQC protects:</p>
+<ul>
+<li>Control plane communication</li>
+<li>Workload-to-workload interactions</li>
+<li>Orchestration channels</li>
+<li>Management interfaces</li>
+</ul>
+<p>Automation channels are designed with post-quantum protection so that cryptographic controls extend consistently from core data centers to distributed edge locations.</p>
+<p>For operators, this matters. A secure network that cannot be upgraded, rotated, or audited at scale is not operationally viable. The demo focuses on lifecycle as much as cryptography.</p>
+<h2 class="wp-block-heading">Post-quantum PKI and sovereign trust</h2>
+<p>A major constraint in telecom security is certificate management. Traditional telecom PKI relies on RSA or ECDSA certificates. Both are vulnerable to future quantum attacks.</p>
+<p>The demonstration introduces a post-quantum PKI with:</p>
+<ul>
+<li>A PQ certificate authority issuing ML-DSA certificates</li>
+<li>Automated issuance and renewal integrated through Juju relations</li>
+<li>Hybrid certificate support for transition phases</li>
+<li>End-to-end lifecycle management</li>
+</ul>
+<p>There are no classical-only certificates in the system. Every TLS handshake, every mTLS connection, and every signed token is backed by quantum-resistant cryptography in hybrid mode.</p>
+<p>This approach supports sovereign trust chains. Operators retain full control over their root of trust, certificate issuance policies, and rotation strategies. They are not dependent on external certificate providers for core network functions.</p>
+<h2 class="wp-block-heading">Designed for brownfield reality</h2>
+<p>Telecom networks are dynamic. They evolve, instead of being rebuilt from scratch. </p>
+<p>The demo reflects this reality. Hybrid cryptography supports interoperability with legacy systems. Cloud-native packaging allows gradual adoption. Automation integrates with existing operational workflows.</p>
+<p>This work outlines a controlled transition path from classical to post-quantum cryptography, designed for phased adoption in live networks.</p>
+<p>Operators can begin introducing post-quantum protection in management planes and service-based interfaces, then expand coverage as vendor ecosystems mature.</p>
+<h2 class="wp-block-heading">Open collaboration for long-term resilience</h2>
+<p>coRAN Labs and Canonical share a commitment to open standards and upstream communities. Preparing telecom infrastructure for a post-quantum world should not be a proprietary exercise.</p>
+<p>By building on open source software, standardized algorithms, and interoperable automation frameworks, the industry can avoid fragmentation. The transition to PQC will span years. It must remain transparent, testable, and vendor-neutral.</p>
+<p>At MWC Barcelona 2026, this collaboration presents a practical reference architecture for quantum-safe telecom infrastructure. It demonstrates that cryptographic resilience, automation, and cloud-native design are compatible with telco-grade requirements for scale, determinism, and operational control.</p>
+<h2 class="wp-block-heading">Explore the demo at MWC Barcelona 2026</h2>
+<p>If you are evaluating how to introduce post-quantum cryptography into your 5G or beyond 5G infrastructure, we invite you to <a href="https://ubuntu.com/engage/canonical-at-mwc-barcelona-2026">engage with the coRAN Labs and Canonical teams at MWC Barcelona 2026</a>.</p>
+<p>We look forward to seeing you there! </p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>What makes online groups vulnerable to governance capture?</title>
       <link>https://mako.cc/copyrighteous/what-makes-online-groups-vulnerable-to-governance-capture</link>
@@ -429,32 +499,6 @@ Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Migue
 Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
 A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
       <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
-    </item>
-    <item>
-      <title>Predict, compare, and reduce costs with our S3 cost calculator</title>
-      <link>https://ubuntu.com//blog/predict-compare-and-reduce-costs-with-our-s3-cost-calculator</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/predict-compare-and-reduce-costs-with-our-s3-cost-calculator</guid>
-      <pubDate>Wed, 18 Feb 2026 10:08:59 GMT</pubDate>
-      <description><![CDATA[<p>Previously I have <a href="https://ubuntu.com/blog/cloud-storage-pricing-how-to-optimise-tco">written</a> about how useful public cloud storage can be when starting a new project without knowing how much data you will need to store.  However, as datasets grow  over time, the costs of public cloud storage can become overwhelming.  This is where an on premise, or co-located, self-hosted storage system becomes advantageous: it provides the greatest range of benefits, including cost, performance, security, and data sovereignty.  In this article we will briefly cover the storage use cases that might be suitable for storing on your own storage system, and what the cost savings could look like.</p>
-<figure class="wp-block-image size-full"><img alt="" height="3123" loading="lazy" sizes="(min-width: 3868px) 3868px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_3868/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fdaa5%2FArtboard-133%404x.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fdaa5%2FArtboard-133%404x.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fdaa5%2FArtboard-133%404x.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fdaa5%2FArtboard-133%404x.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fdaa5%2FArtboard-133%404x.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fdaa5%2FArtboard-133%404x.png 1920w" width="3868"/></figure>
-<h2 class="wp-block-heading">Growing storage workloads</h2>
-<p>Cloud computing services such as AWS S3, Azure Blob, and GCP GCS provide immediate access to compute, storage, and networking resources, which allow you scale up and down depending on current and future needs.  This can be critical for when you have sudden major increases in use, for example at product launches or real-life events that spike usage, such as sporting events. Once the spike has dropped back to normal, you can scale resources back to typical levels.  However storage usage tends to be a little different: while the rate of access (or IO) may change for peaks in workloads, most datasets only grow in capacity.  </p>
-<p>For example, datasets like an archive or media repository typically consume the greatest amount of storage, have well-understood growth rates, and are very unlikely to ever decrease in size, as the data they hold is of some reasonable importance.  </p>
-<p>Sometimes datasets like these are also seldom accessed, but it is important that the data remains readily accessible.  While public clouds do provide different classes of storage service, offering reduced performance or significantly increased retrieval times, at a lower cost per GB, a self-hosted solution can still be more cost effective, depending on your use case.</p>
-<h2 class="wp-block-heading">A different way</h2>
-<p>For data sets that have predictable growth rates and therefore do not need the burstability of public cloud storage, a more cost-effective approach is to utilize an on-premise or co-located storage system.  The location is important: you should maintain close proximity with the majority of users. This could be in an office, or a co-location facility near to a public cloud where you utilize compute services.</p>
-<p>Building your own storage system (with the help of <a href="https://ubuntu.com/ceph/managed">Canonical</a>, should you need it) puts you in control of the hardware used in that storage system, when and how it should grow, and also provides you with greater control over a core business asset:data.</p>
-<p>In our <a href="https://ubuntu.com/ceph/pricing-calculator">S3 cost calculator</a>, you can get an indication of the total cost of ownership (TCO) for various capacities, in both fully managed and self-operated configurations, and for different project durations.  For fairness, list prices have been used for both self-hosted and public cloud configurations, however it is commonplace for organizations to negotiate with vendors.</p>
-<p>Generally, self-hosted solutions give the most advantageous TCO for longer periods of time – and they can even impart significant benefits (such as a quick return on investment) to short-term projects, when there is a large enough data set.  To see this in action, try our <a href="https://ubuntu.com/ceph/pricing-calculator">TCO calculator</a>.</p>
-<h2 class="wp-block-heading">Cloud storage cost comparison calculator</h2>
-<figure class="wp-block-image size-full"><a href="https://ubuntu.com/ceph/pricing-calculator"><img alt="" height="1574" loading="lazy" sizes="(min-width: 2242px) 2242px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_2242/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4116%2FScreenshot-2026-02-16-at-16.37.48.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4116%2FScreenshot-2026-02-16-at-16.37.48.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4116%2FScreenshot-2026-02-16-at-16.37.48.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4116%2FScreenshot-2026-02-16-at-16.37.48.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4116%2FScreenshot-2026-02-16-at-16.37.48.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4116%2FScreenshot-2026-02-16-at-16.37.48.png 1920w" width="2242"/></a></figure>
-<p>To recap: a self-hosted storage solution can provide a complementary solution to growing storage needs in the public cloud, with the main focus on cost control. However, as you would also retain full control over the solution and your data, there is an improved security and sovereignty posture too.</p>
-<p>For a deep dive into the considerations and best practices you need to think about when designing and deploying your self-hosted storage solutions, you can read our dedicated and detailed whitepaper. It intensively breaks down the economics of your options, explains hardware selection and networking (using private interconnects) using a practical 2.5PB dataset as an example. </p>
-<p><a href="https://ubuntu.com/engage/optimize-cloud-storage-costs">Download the whitepaper</a></p>
-<p>You can also see this theory in action by watching our hands-on webinar, where we walk you through this process in person, step-by-step, to build a truly cost-effective self-hosted storage solution. </p>
-<p><a href="https://ubuntu.com/engage/optimize-cloud-storage-costs">Watch the webinar</a></p>
-<p>If you have any questions, or want to reach out to discuss cost-optimization for your custom storage solution, don’t hesitate to <a href="https://ubuntu.com/ceph/contact-us">reach out to our team</a>.</p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Ubuntu Weekly Newsletter Issue 932</title>
