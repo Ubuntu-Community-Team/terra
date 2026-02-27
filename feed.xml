@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 26 Feb 2026 02:26:03 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Feb 2026 02:25:02 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -73,6 +73,8 @@
 <h2 class="wp-block-heading">Open collaboration for long-term resilience</h2>
 <p>coRAN Labs and Canonical share a commitment to open standards and upstream communities. Preparing telecom infrastructure for a post-quantum world should not be a proprietary exercise.</p>
 <p>By building on open source software, standardized algorithms, and interoperable automation frameworks, the industry can avoid fragmentation. The transition to PQC will span years. It must remain transparent, testable, and vendor-neutral.</p>
+<p>Canonical is also advancing post-quantum enablement at the operating system level. Ubuntu 26.04 LTS will introduce expanded support for post-quantum cryptography in core system libraries and TLS tooling, providing operators with a stable foundation for crypto-agile deployments.</p>
+<p><a href="https://discourse.ubuntu.com/t/post-quantum-support-in-the-upcoming-26-04-lts">Learn more about the roadmap and technical direction in the Ubuntu community discussion on post-quantum support in the upcoming 26.04 LTS.</a></p>
 <p>At MWC Barcelona 2026, this collaboration presents a practical reference architecture for quantum-safe telecom infrastructure. It demonstrates that cryptographic resilience, automation, and cloud-native design are compatible with telco-grade requirements for scale, determinism, and operational control.</p>
 <h2 class="wp-block-heading">Explore the demo at MWC Barcelona 2026</h2>
 <p>If you are evaluating how to introduce post-quantum cryptography into your 5G or beyond 5G infrastructure, we invite you to <a href="https://ubuntu.com/engage/canonical-at-mwc-barcelona-2026">engage with the coRAN Labs and Canonical teams at MWC Barcelona 2026</a>.</p>
@@ -6973,35 +6975,6 @@ So, please sync with this change (and sorry :)).</p>
       <source url="http://blogs.gnome.org/mneptok/feed/">Kurt von Finck</source>
     </item>
     <item>
-      <title>Announcing the Ubuntu 18.10 Free Culture Showcase winners</title>
-      <link>https://www.nhaines.com/blog/2018/09/28/announcing-ubuntu-18.10-free-culture-showcase-winners/</link>
-      <guid isPermaLink="true">https://www.nhaines.com/blog/2018/09/28/announcing-ubuntu-18.10-free-culture-showcase-winners/</guid>
-      <pubDate>Fri, 28 Sep 2018 07:00:00 GMT</pubDate>
-      <description><![CDATA[<p>October approaches, and Ubuntu marches steadly along the road from one LTS to another.  Ubuntu 18.10 is another step in Ubuntu’s future.  And now it’s time to unveil a small part of that change: the community wallpapers to be included in Ubuntu 18.10!</p>
-
-<p>Every cycle, talented artists around the world create media and release it under licenses that encourage sharing and adaptation. This cycle we had some amazing images submitted to the <a href="https://www.flickr.com/groups/ubuntu-fcs-1810/">Ubuntu 18.10 Free Culture Showcase</a> photo pool on Flickr, where all eligible submissions can be found.  The competition was fierce; narrowing down the options to the final selections was painful!</p>
-
-<p>But there can be only 12, and the final images that will be included in Ubuntu 18.10 are:</p>
-
-<ul>
-  <li><a href="https://www.flickr.com/photos/155485295@N04/28898305427/in/pool-ubuntu-fcs-1810/">Cosmic Cuttlefish</a> by Jim Coleman</li>
-  <li><a href="https://www.flickr.com/photos/143512932@N03/29085424897/in/pool-ubuntu-fcs-1810/">Spring Flowers</a> by MK4-MI01</li>
-  <li><a href="https://www.flickr.com/photos/mendhak/37748450101/in/pool-ubuntu-fcs-1810/">Carriage Return</a> by mendhak</li>
-  <li><a href="https://www.flickr.com/photos/153219066@N06/41387651640/in/pool-ubuntu-fcs-1810/">Ubuntu Party de Paris</a> by Marcos Costales</li>
-  <li><a href="https://www.flickr.com/photos/98223780@N05/41846068390/in/pool-ubuntu-fcs-1810/">Tapiola, Espoo Cultural Center</a> by Agostino Faedda</li>
-  <li><a href="https://www.flickr.com/photos/14287735@N05/42055551820/in/pool-ubuntu-fcs-1810/">Fairground at Night</a> by martin</li>
-  <li><a href="https://www.flickr.com/photos/tomas_sobek/42346768035/in/pool-ubuntu-fcs-1810/">Milky Way before the dawn</a> by Tomas Sobek</li>
-  <li><a href="https://www.flickr.com/photos/38121135@N05/42996830034/in/pool-ubuntu-fcs-1810/">Black sand beach</a> by Mads Rosendahl</li>
-  <li><a href="https://www.flickr.com/photos/simosx/43736940061/in/pool-ubuntu-fcs-1810/">The Image of Mount Parnassus</a> by simosx</li>
-  <li><a href="https://www.flickr.com/photos/bernhardhanakam/44033490521/in/pool-ubuntu-fcs-1810/">Morning</a> by Bernhard Hanakam</li>
-  <li><a href="https://www.flickr.com/photos/155984160@N07/43295035514/in/pool-ubuntu-fcs-1810/">Encounter</a> by Lzardjin</li>
-  <li><a href="https://www.flickr.com/photos/134476822@N04/43642256642/in/pool-ubuntu-fcs-1810/">touche de vert</a> by François Cante</li>
-</ul>
-
-<p>A big congratulations to the winners, and thanks to everyone who submitted a wallpaper.  You can find these wallpapers (along with dozens of other stunning wallpapers) today at the links above, or in your desktop wallpaper list after you upgrade to or install Ubuntu 18.10 on October 18th.</p>]]></description>
-      <source url="https://www.nhaines.com/feed.xml">Nathan Haines</source>
-    </item>
-    <item>
       <title>NVIDIA PRIME in Ubuntu 18.04 and 18.10, and a call for testing</title>
       <link>https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</link>
       <guid isPermaLink="true">https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</guid>
@@ -8295,26 +8268,6 @@ reference objects presented by our importer in this post today.</p>
 <p>In our next post, Nish will continue discussing the <code>git ubuntu</code> tooling by
 introducing <code>git ubuntu tag</code>.</p>]]></description>
       <source url="http://www.justgohome.co.uk/blog/feeds/tag/planet-ubuntu.atom.xml">Robie Basak</source>
-    </item>
-    <item>
-      <title>Ubuntu GNOME 17.04 Released and What’s Next</title>
-      <link>https://ubuntugnome.org/ubuntu-gnome-17-04-released/</link>
-      <guid isPermaLink="true">https://ubuntugnome.org/ubuntu-gnome-17-04-released/</guid>
-      <pubDate>Thu, 13 Apr 2017 13:15:08 GMT</pubDate>
-      <description><![CDATA[<p>The Ubuntu GNOME developers are proud to announce our latest non-<abbr title="Long Term Support">LTS</abbr> release 17.04. For the first time in Ubuntu GNOME&#8217;s history, this release includes the latest stable release of GNOME, 3.24.</p>
-<p>Although Ubuntu&#8217;s release schedule was originally centered around shipping the latest GNOME release, this had not been possible since Ubuntu GNOME&#8217;s first release four years ago.</p>
-<p>Take a look at our <a href="https://wiki.ubuntu.com/ZestyZapus/ReleaseNotes/UbuntuGNOME" target="_blank">release notes</a> for a list of highlighted changes and improvements.</p>
-<h2>The future of Ubuntu GNOME</h2>
-<p>As announced last week by Ubuntu founder Mark Shuttleworth, Ubuntu 18.04 LTS will include GNOME instead of Unity. Specifically, it will be GNOME (including gnome-shell) with minimal Ubuntu customization. Next year, if you are using either Ubuntu 16.04 LTS or Ubuntu GNOME 16.04 LTS, you will be prompted to upgrade to Ubuntu 18.04 LTS. For normal release users, this upgrade should happen with the release of 17.10.</p>
-<p>As a result of this decision there will no longer be a separate GNOME flavor of Ubuntu. The development teams from both Ubuntu GNOME and Ubuntu Desktop will be merging resources and focusing on a single combined release, that provides the best of both GNOME and Ubuntu. We are currently liaising with the Canonical teams on how this will work out and more details will be announced in due course as we work out the specifics.</p>
-<p>The Ubuntu community is important to Mark Shuttleworth and he has publicly stated on <a href="https://plus.google.com/+MarkShuttleworthCanonical/posts/7LYubpaHUHH" target="_blank">Google+</a>: <em>&#8220;We will invest in Ubuntu GNOME with the intent of delivering a fantastic all-GNOME desktop. We&#8217;re helping the Ubuntu GNOME team, not creating something different or competitive with that effort. While I am passionate about the design ideas in Unity, and hope GNOME may be more open to them now, I think we should respect the GNOME design leadership by delivering GNOME the way GNOME wants it delivered.&#8221;</em></p>
-<p>The Ubuntu GNOME developers were already members of the Ubuntu Desktop team since both teams shared responsibility for maintaining many parts of GNOME. We will continue to work closely with them and push the visions of Ubuntu GNOME into the main Ubuntu Community.</p>
-<p>We started and maintained Ubuntu GNOME with the vision of bringing the most popular desktop experience<sup>1</sup> to the most popular Linux distribution. We are excited that we are now able to bring this powerful combination to many more people. If you want an early preview of what this will look like, try Ubuntu GNOME 17.04 today!</p>
-<p>On behalf of the Ubuntu GNOME team,<br />
-Jeremy Bicha and Tim Lunn</p>
-<hr />
-<p><sup>1</sup> GNOME is shipped as the default desktop on a majority of Linux distributions.</p>]]></description>
-      <source url="http://ubuntugnome.org/feed/?mrss=off">Ubuntu GNOME</source>
     </item>
     <item>
       <title>1er Festival Universitario de Tecnologías Libres</title>
