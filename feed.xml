@@ -6,88 +6,42 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sun, 01 Mar 2026 02:38:27 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2026 02:27:40 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Canonical and Ubuntu RISC-V: a 2025 retro and looking forward to 2026</title>
-      <link>https://ubuntu.com//blog/canonical-and-ubuntu-risc-v-a-2025-retro-and-looking-forward-to-2026</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/canonical-and-ubuntu-risc-v-a-2025-retro-and-looking-forward-to-2026</guid>
-      <pubDate>Fri, 27 Feb 2026 11:50:15 GMT</pubDate>
-      <description><![CDATA[<h2 class="wp-block-heading">2025: From RISC-V enablement to real execution </h2>
-<p>2025 was the year that RISC-V readiness gave way to RISC-V adoption. It’s been quite a journey. What began years ago as early architectural exploration and enablement has matured into real silicon, systems, and deployments. In particular, RVA23 provides a  stable and predictable baseline we can align on with our wider ecosystem of partners. </p>
-<p>At Canonical, we’re committed to making RISC-V a viable option for anyone who wishes to adopt it. We’ve taken deliberate steps to align with the ecosystem and our partners as a trusted software partner that makes RISC-V practical, scalable and production-ready.</p>
-<p>Our goal is to provide a stable, predictable, production-grade Linux platform that silicon vendors, OEMs, ODMs, and developers can build on with confidence. </p>
-<p>Let’s take a look at the efforts we have undertaken to empower that vision. </p>
-<h2 class="wp-block-heading">Raising the bar with RVA23</h2>
-<p>A major milestone for RISC-V was ecosystem convergence around the RVA23 profile. As a reminder, RVA23 was ratified by RISC-V International in 2024 to align with modern standards for computing architectures and ISA, providing a common feature set for the most demanding modern workloads.</p>
-<p>We knew that truly meaningful support for RISC-V meant that we had to keep in step with the latest RISC-V developments. That’s why we made upgrading Ubuntu to RVA23 a priority in 2025 so that Ubuntu users could quickly take advantage of the latest features of RISC-V. Additionally, the adoption of RVA23 ensured that we would:</p>
+      <title>Meet the wildlife conservation AI 5G hotspot at MWC Barcelona 2026</title>
+      <link>https://ubuntu.com//blog/meet-the-wildlife-conservation-ai-5g-hotspot-at-mwc-barcelona-2026</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/meet-the-wildlife-conservation-ai-5g-hotspot-at-mwc-barcelona-2026</guid>
+      <pubDate>Sat, 28 Feb 2026 08:51:53 GMT</pubDate>
+      <description><![CDATA[<p>From March 2-5 in Barcelona, Canonical will present a working wildlife conservation platform that combines open source 5G, AI, and cloud-native infrastructure in a travel friendly form factor.</p>
+<p>At the center is a portable 5G AI hotspot built on Ubuntu and Canonical Kubernetes, running on Arm-based Ampere servers. It connects drones, trail cameras, and researcher applications over a built-in private 5G network, with optional satellite backhaul.</p>
+<p>Its purpose is to process wildlife data including photos and videos where it is collected, extract insights with AI, and share structured results globally.</p>
+<p><a href="https://ubuntu.com/engage/canonical-at-mwc-barcelona-2026">Meet our team at Hall 2, stand 2D20</a></p>
+<h1 class="wp-block-heading">From edge intelligence to real-world impact</h1>
+<p>At the demo, visitors can explore wildlife video streams that are processed to identify animals, their species and even known individuals, shown on the geospatial TRAPPER interface with annotated media, plus a 5G dashboard showing user traffic on the active cells.</p>
+<p>The AI 5G platform is completely open source, with the 5G base station software stack running <a href="https://ocudu.org/">OCUDU</a> (developed by Software Radio Systems and DeepSig) and AI computer vision real-time and batch inference pipelines using YOLO, <a href="https://microsoft.github.io/CameraTraps/megadetector/">MegaDetector</a> and <a href="https://github.com/google/cameratrapai">SpeciesNet</a>, the Open Science Conservation Fund developed <a href="https://gitlab.com/trapper-project/trapper">TRAPPER</a> conservation platform with <a href="https://bearresearch.org/">BearID</a> atop of Canonical Kubernetes on Ubuntu 24.04.3 arm64 LTS.</p>
+<p>AI models execute directly on the AI 5G fly-away kit. Video is filtered and annotated locally. Selected metadata, processed video, and raw video is then shared with global biodiversity platforms such as the <a href="https://www.gbif.org/">Global Biodiversity Information Facility</a>.</p>
+<p>This is technology applied to a tangible societal challenge. Wildlife conservation teams face pressure from habitat loss, poaching, and climate change. Scalable data collection and analysis improve species monitoring, inform policy decisions, and support collaboration across research institutions. The same open source building blocks used in telecom networks and enterprise data centers can help protect biodiversity.</p>
+<p>The architecture can also apply to other use cases, such as industrial sites, utilities, ports, and other edge locations where private 5G and AI must operate together on constrained infrastructure.</p>
+<figure class="wp-block-image size-full"><img alt="" height="720" loading="lazy" sizes="(min-width: 1280px) 1280px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 1280w" width="1280"/></figure>
+<h1 class="wp-block-heading">An edge data center in a carry-on</h1>
+<p>The solution shown is powered by the <a href="https://solutions.nextcomputing.com/products/fly-away-kits/nextserver-ai-5g/#conservation">NextComputing NextServer AI 5G fly-away kit</a>, which is a self-contained airline carry-on AI 5G base station for field deployment.</p>
+<p>The NextServer AI 5G fly-away kit includes:</p>
 <ul>
-<li>Avoid ecosystem fragmentation and keep in step with our hardware partners.</li>
-<li>Enable latest and greatest ISA (instruction set architecture) features in Ubuntu.</li>
-<li>Ensure Ubuntu supports the highest performance on RISC-V hardware.</li>
-<li>Prepare Ubuntu to be robust and ready for emerging RVA23 RISC-V platforms.</li>
-<li>Provide a foundation for RISC-V to run modern workloads.</li>
-<li>Starting with Ubuntu 25.10, RVA23 became the minimum supported baseline. RVA20 users can still get up to 15 years of support, provided they are using Ubuntu 24.04 LTS with Ubuntu Pro. We continue to support <a href="https://ubuntu.com/download/risc-v/canonical-built">existing</a> platforms and have recently enabled new RVA20 boards including <a href="https://wiki.pine64.org/wiki/STAR64">Pine64 Star64</a>, <a href="https://www.youtube.com/watch?v=7F265MFtjR0">StarFive VisionFive 2 Lite</a>, and <a href="https://milkv.io/mars-cm">Milk-V Mars CM</a>  but it’s clear that the ecosystem is  moving toward a modern, unified foundation.</li>
+<li>2U <a href="https://amperecomputing.com/products/processors">AmpereOne 192 core Arm</a>-based server with up to 1TB DDR5 and 1PB NVMe running AI compute workloads and 5G AI-RAN</li>
+<li>NVIDIA RTX 4000 SFF Ada GPU to drive 4x 4K displays and accelerated workloads</li>
+<li>5G radio unit (RU) with external antenna(s) for up to 4 cells and 5,000 users</li>
+<li>High-speed networking for radio units and internet backhaul connectivity with Starlink Mini</li>
 </ul>
-<p>This is typically how architectures mature over time. For a deeper dive into how we enabled support for RVA23 on Ubuntu, check out our <a href="https://www.youtube.com/watch?v=yby1IkyZAsI">explanatory talk</a>.</p>
-<h2 class="wp-block-heading">Ensuring product and user experience parity</h2>
-<p>Support for RVA23 is just one aspect of our commitment to RISC-V. Our product parity work reflects our continued focus on making RISC-V a first-class citizen, wherever and however you use Ubuntu and other Canonical solutions.</p>
-<p>As a result, in 2025 we built upon our support for kernel bring-up, languages, and runtimes. We’re striving for the full range of Canonical’s open source solutions to be available on RISC-V, so that:</p>
-<ul>
-<li>Enterprise users can benefit from <a href="https://ubuntu.com/pro">Ubuntu Pro</a>, bringing security updates, compliance tooling, device management and long term maintenance.</li>
-<li>Developers will find RISC-V optimized images and tools available for <a href="https://ubuntu.com/desktop">Ubuntu Desktop</a>.</li>
-<li>Scale out and data centre users  benefit from an optimized experience on Canonical cloud products such as <a href="https://canonical.com/maas">MAAS</a>, <a href="https://canonical.com/lxd">LXD</a>, <a href="https://canonical.com/microcloud">MicroCloud</a> and <a href="https://ubuntu.com/kubernetes">Canonical Kubernetes</a>.</li>
-<li>Users deploying IoT devices can benefit from <a href="https://ubuntu.com/core">Ubuntu Core</a>: the immutable, minimal flavor of Ubuntu for embedded devices.</li>
-</ul>
-<p>As more vendors ship RISC-V based boards and systems, this parity work becomes ever more critical. System builders can rely on Canonical to provide a uniform experience across ISAs and platforms. </p>
-<p><a href="https://ubuntu.com/download/risc-v/canonical-built" rel="noreferrer noopener" target="_blank">Visit our dedicated page to browse the latest supported downloads</a><a href="https://ubuntu.com/download/risc-v/canonical-built"> &gt;</a></p>
-<h2 class="wp-block-heading">Partnerships that move the ecosystem</h2>
-<p>Canonical’s work was not done alone: 2025 was defined by deep engineering partnerships across the ecosystem. </p>
-<p>What made these collaborations successful was not just that Ubuntu “runs” on the hardware, but the fact that Canonical engineers work in partnership with leading hardware vendors to co-design solutions, validate platforms, and enable cutting edge use cases.</p>
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"></div>
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-<figure class="wp-block-image size-full"><img alt="" height="260" loading="lazy" sizes="(min-width: 480px) 480px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_480/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Faa8a%2Foutput2.webp" srcset="https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Faa8a%2Foutput2.webp 460w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Faa8a%2Foutput2.webp 620w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_480/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Faa8a%2Foutput2.webp 480w" width="480"/><figcaption class="wp-element-caption"><em>A demonstration of XuanTie running Ubuntu on the XuanTie-C930 proces</em>sor</figcaption></figure>
-</div>
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"></div>
-</div>
-<p>Our work with partners spans from desktops and data centers to high-performance AI chipsets. Here’s a cross-section of some of the work we did in 2025: </p>
-<ul>
-<li>In the data center, we partnered with Rivos to deliver <a href="https://canonical.com/blog/rivos-and-canonical-partner-to-deliver-scalable-risc-v-solutions-in-data-centers">scalable RISC-V solutions across Rivos platforms</a>. </li>
-<li>For edge AI and intelligent computing, we collaborated with SIFive and ESWIN  <a href="https://canonical.com/blog/eswin-computing-launches-the-ebc77-series-single-board-computer-with-ubuntu">to bring Ubuntu to the EIC7700X SoC,</a> providing a robust foundation for high-performance developer platforms and client computing products.</li>
-<li>To accelerate open-source adoption, we collaborated with <a href="https://canonical.com/blog/alibaba-damo-academy-and-canonical">Alibaba DAMO Academy</a> to bring Ubuntu to XuanTie processors, providing a unified, secure foundation for developers to scale RISC-V applications globally.</li>
-</ul>
-<p>As we collaborate closely with our partners, we are observing them deliver the next wave of hardware capabilities, such as:</p>
-<ul>
-<li>Control-Flow Integrity (CFI) expectations in silicon</li>
-<li>Vector and Matrix extensions for AI/ML and HPC workloads</li>
-<li>Hypervisor maturity for cloud and virtualization use cases</li>
-</ul>
-<p>Through our active upstream contributions, Canonical ensures our open-source solutions are aligned with these emerging hardware features, providing a stable path for developers to leverage new silicon capabilities as they mature.</p>
-<h2 class="wp-block-heading">Community as the multiplier</h2>
-<p>None of this happens without the open source community, RISC-V International, and RISE. From kernel and toolchain maintainers to distro engineers and early adopters, 2025’s progress is the result of large-scale collaboration.</p>
-<p>Ubuntu’s success on RISC-V is inseparable from this ecosystem’s health and Canonical continues to support the RISC-V community through our involvement in RISC-V International and RISE. These are important engagements which gather partners together to fund development efforts to raise the maturity level of open source projects. </p>
-<p>Whilst there’s not enough space for us to highlight every event we attended, a standout moment for us was presenting at the RISC-V Summits in <a href="https://www.linkedin.com/posts/canonical_iot-ubuntu-riscv-activity-7351895542190206976-rFFB/?utm_source=li_share&amp;utm_content=feedcontent&amp;utm_medium=g_dt_web&amp;utm_campaign=copy">China</a> and <a href="https://www.linkedin.com/posts/canonical_riscvsummit-ubuntu-riscv-activity-7388580502145748993-fMLw/">North America</a>. It was exciting to showcase exactly what users can get from RISC-V when using Ubuntu.</p>
-<h2 class="wp-block-heading">2026: From adoption to scale</h2>
-<p>If 2025 was all about readiness,  2026 will be about scale. More RISC-V systems will move from labs and pilots into commercial products, from cloud to edge, and Canonical is ready to enable our partners and customers to leverage the best of open source technology and run it seamlessly on RISC-V. </p>
-<p>Key focus areas for us at Canonical will be: </p>
-<ul>
-<li>Building on our partnership work: we’ll deepen our existing collaborations and onboarding a broader range of hardware vendors to bring Ubuntu to the next generation of RISC-V platforms.</li>
-<li>Closing the product parity gap:  we’ll ensure the additional Canonical portfolio, from cloud-native tools to IoT products runs as seamlessly on RISC-V.</li>
-<li>Delivering Ubuntu 26.04 LTS with RVA23 as our unified, long-term supported baseline, providing a stable platform for vendors moving from labs to commercial production.</li>
-<li>Maintaining leadership in standards alignment and upstream enablement: we’ll work to ensure new silicon capabilities are immediately accessible to the open-source community.</li>
-<li>Empowering the developer community: we’ll continue to partner with SBC partners to make Ubuntu the go-to platform with an amazing out-of-the-box experience for RISC-V development.</li>
-</ul>
-<p>RISC-V’s promise has always been about openness, choice and long-term innovation. Canonical is proud to play a long-term role as a builder, collaborator and steward of the RISC-V ecosystem. Ensuring Ubuntu remains the foundation on which RISC-V systems, solutions and products can scale. </p>
-<p>As the momentum behind RISC-V accelerates into 2026, <a href="https://ubuntu.com/download/risc-v/partner-built#get-in-touch">contact us</a> to find out how we can ensure your success.</p>
-<h2 class="wp-block-heading">Further reading</h2>
-<ul>
-<li><a href="https://ubuntu.com/download/risc-v/canonical-built">Download Canonical-built Ubuntu for RISC-V Platforms</a>  </li>
-<li><a href="https://ubuntu.com/summit">Ubuntu Summit 26.04</a> </li>
-<li><a href="https://canonical.com/blog/spacemit-announces-availability-of-ubuntu-on-k3-k1-series">SpacemiT announces the availability of Ubuntu on K3/K1 series RISC-V AI computing platforms | Canonical</a> </li>
-</ul>
-<div aria-hidden="true" class="wp-block-spacer" style="height:100px"></div>]]></description>
+<p>This design brings together telecom-grade compute and AI acceleration in a portable form factor. A high core count enables parallel AI inference and 5G workloads on the same system. Arm-based efficiency reduces power and cooling demands, which is critical in remote environments.</p>
+<p>For conservation teams operating in forests, savannahs, or mountainous regions, portability and power efficiency matter as much as raw performance. The fly-away kit reflects those constraints. It can be transported, deployed, and operated close to the data source without relying on fixed infrastructure.</p>
+<p>For telco engineers, it also demonstrates how cloud-native 5G and AI workloads can share a common hardware platform at the edge.</p>
+<figure class="wp-block-image size-full"><img alt="" height="900" loading="lazy" sizes="(min-width: 1600px) 1600px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1600/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F833f%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F833f%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F833f%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F833f%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F833f%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F833f%2Fimage.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1600/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F833f%2Fimage.png 1600w" width="1600"/></figure>
+<h1 class="wp-block-heading">Join us at MWC</h1>
+<p>This demo brings together Canonical, Arm, Ampere, NextComputing, and Software Radio Systems around a practical edge-to-cloud AI 5G design for wildlife conservation in partnership with the Open Science Conservation Fund, the BearID project and Universidad San Francisco de Quito.</p>
+<p>If you are evaluating private 5G, AI at the edge, or Arm-based infrastructure for telecom workloads, <a href="https://ubuntu.com/engage/canonical-at-mwc-barcelona-2026">visit the Canonical booth at MWC Barcelona 2026</a>.</p>
+<p>You will see a complete system running live, from radio to inference to application, in a form factor designed for the field.</p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -2186,6 +2140,145 @@ python-certifi for the Python&nbsp;team.</p>
   (merged and&nbsp;uploaded)</li>
 </ul>]]></description>
       <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
+    </item>
+    <item>
+      <title>Think you can’t interpose static binaries with LD_PRELOAD? Think again!</title>
+      <link>https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</link>
+      <guid isPermaLink="true">https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</guid>
+      <pubDate>Thu, 20 Nov 2025 20:56:17 GMT</pubDate>
+      <description><![CDATA[<div class="wp-block-media-text alignwide is-vertically-aligned-center" style="grid-template-columns:21% auto"><figure class="wp-block-media-text__media"><img fetchpriority="high" decoding="async" width="4614" height="4001" src="https://balintreczey.hu/blog/wp-content/uploads/2023/04/firebuild-logo.svg" alt="" class="wp-image-853 size-thumbnail"/></figure><div class="wp-block-media-text__content">
+<p>Well, you are right, you can&#8217;t. At least not directly. This is well documented in many projects relying on interposing binaries, like faketime.</p>
+
+
+
+<p> </p>
+</div></div>
+
+
+
+<p></p>
+
+
+
+<p>But what if we could write something that would take a static binary, replace at least the direct syscalls with ones going through libc and load it with the dynamic linker? We are in luck, because the excellent QEMU project has a user space emulator! It can be compiled as a dynamically linked executable, honors LD_PRELOAD and uses the host libc&#8217;s syscall &#8211; well, at least sometimes. Sometimes syscalls just bypass libc.</p>
+
+
+
+<p>The missing piece was a way to make QEMU always take the interposable path and call the host libc instead of using an arch-specifix assembly routine (`safe_syscall_base`) to construct the syscall and going directly to the kernel. Luckily, this turned out to be doable. A small patch later, QEMU gained a switch that forces all syscalls through libc. Suddenly, our static binaries started looking a lot more dynamic!</p>
+
+
+
+<pre class="wp-block-code"><code>$ faketime '2008-12-24 08:15:42'  qemu-x86_64 ./test_static_clock_gettime
+2008-12-24 08:15:42.725404654
+$ file test_static_clock_gettime 
+test_clock_gettime: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, ...</code></pre>
+
+
+
+<p>With this in place, Firebuild can finally wrap even those secretive statically linked tools. QEMU runs them, libc catches their syscalls, <code>LD_PRELOAD</code> injects <code>libfirebuild.so</code>, and from there the usual interposition magic happens. The result: previously uncachable build steps can now be traced, cached, and shortcut just like their dynamic friends.</p>
+
+
+
+<p>There is one more problem though. Why would the static binaries deep in the build be run by QEMU? Firebuild also intercepts the `exec()` calls and now it rewrites them on the fly whenever the executed binary would be statically linked!</p>
+
+
+
+<pre class="wp-block-code"><code>$ firebuild -d comm bash -c ./test_static
+...
+FIREBUILD: fd 9.1: ({ExecedProcess 161077.1, running, "bash -c ./test_static", fds=&#91;0: {FileFD ofd={FileO
+FD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOFD #3 type=FD_PIPE_OUT w} {Pipe #0} close_o
+n_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=FD_PIPE_OUT w} {Pipe #1} close_on_popen=fal
+se cloexec=false}, 3: {FileFD NULL} /* times 2 */]})
+{
+    "&#91;FBBCOMM_TAG]": "exec",
+    "file": "test_static",
+    "// fd": null,
+    "// dirfd": null,
+    "arg": &#91;
+        "./test_static"
+    ],
+    "env": &#91;
+        "SHELL=/bin/bash",
+ ...
+        "FB_SOCKET=/tmp/firebuild.cpMn75/socket",
+        "_=./test_static"
+    ],
+    "with_p": false,
+    "// path": null,
+    "utime_u": 0,
+    "stime_u": 1017
+}
+FIREBUILD: -> proc_ic_msg()  (message_processor.cc:782)  proc={ExecedProcess 161077.1, running, "bash -c 
+./test_static", fds=&#91;0: {FileFD ofd={FileOFD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOF
+D #3 type=FD_PIPE_OUT w} {Pipe #0} close_on_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=F
+D_PIPE_OUT w} {Pipe #1} close_on_popen=false cloexec=false}, 3: {FileFD NULL} /* times 2 */]}, fd_conn=9.
+1, tag=exec, ack_num=0
+FIREBUILD:   -> send_fbb()  (utils.cc:292)  conn=9.1, ack_num=0 fd_count=0
+Sending message with ancillary fds &#91;]:
+{
+    "&#91;FBBCOMM_TAG]": "rewritten_args",
+    "arg": &#91;
+        "/usr/bin/qemu-user-interposable",
+        "-libc-syscalls",
+        "./test_static"
+    ],
+    "path": "/usr/bin/qemu-user-interposable"
+}
+...
+FIREBUILD: -> accept_ic_conn()  (firebuild.cc:139)  listener=6
+...
+FIREBUILD: fd 9.2: ({Process NULL})
+{
+    "&#91;FBBCOMM_TAG]": "scproc_query",
+    "pid": 161077,
+    "ppid": 161073,
+    "cwd": "/home/rbalint/projects/firebuild/test",
+    "arg": &#91;
+        "/usr/bin/qemu-user-interposable",
+        "-libc-syscalls",
+        "./test_static"
+    ],
+    "env_var": &#91;
+        "CCACHE_DISABLE=1",
+...
+        "SHELL=/bin/bash",
+        "SHLVL=0",
+        "_=./test_static"
+    ],
+    "umask": "0002",
+    "jobserver_fds": &#91;],
+    "// jobserver_fifo": null,
+    "executable": "/usr/bin/qemu-user-interposable",
+    "// executed_path": null,
+    "// original_executed_path": null,
+    "libs": &#91;
+        "/lib/x86_64-linux-gnu/libatomic.so.1",
+        "/lib/x86_64-linux-gnu/libc.so.6",
+        "/lib/x86_64-linux-gnu/libglib-2.0.so.0",
+        "/lib/x86_64-linux-gnu/libm.so.6",
+        "/lib/x86_64-linux-gnu/libpcre2-8.so.0",
+        "/lib64/ld-linux-x86-64.so.2"
+    ],
+    "version": "0.8.5.1"
+}
+</code></pre>
+
+
+
+<p>The QEMU patch is <a href="https://lists.gnu.org/archive/html/qemu-devel/2025-11/msg02559.html">forwarded to qemu-devel</a>. If it lands, anyone using QEMU user-mode emulation could benefit — not just Firebuild.</p>
+
+
+
+<p>For Firebuild users, though, the impact is immediate. Toolchains that mix dynamic and static helpers? Cross-builds that pull in odd little statically linked utilities? Previously “invisible” steps in your builds? All now fair game for caching.</p>
+
+
+
+<p><a href="https://github.com/firebuild/firebuild/releases/tag/v0.8.5">Firebuild 0.8.5</a> ships this new capability out of the box. Just update, make sure you’re using a patched QEMU, and enjoy the feeling of watching even static binaries fall neatly into place in your cached build graph. Ubuntu users can get the prebuilt patched QEMU packages from the <a href="https://launchpad.net/~firebuild/+archive/ubuntu/stable">Firebuild PPA</a> already. </p>
+
+
+
+<p>Static binaries, welcome to the party!</p>]]></description>
+      <source url="https://balintreczey.hu/blog/tag/ubuntu/feed/">Balint Reczey</source>
     </item>
     <item>
       <title>It's NOT always DNS.</title>
