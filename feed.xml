@@ -6,9 +6,21 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Mon, 02 Mar 2026 02:27:40 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2026 02:30:18 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pronunciation</title>
+      <link>https://mako.cc/copyrighteous/pronunciation-lesson</link>
+      <guid isPermaLink="true">https://mako.cc/copyrighteous/pronunciation-lesson</guid>
+      <pubDate>Sun, 01 Mar 2026 18:51:22 GMT</pubDate>
+      <description><![CDATA[<p>Had a discussion about how to pronounce the name of Google&#8217;s chatbot. Turns out, we were all wrong.</p>
+
+
+
+<figure class="wp-block-video"><video height="360" style="aspect-ratio: 640 / 360;" width="640" controls src="https://mako.cc/copyrighteous/wp-content/uploads/2026/03/IMG_5667.mp4"></video></figure>]]></description>
+      <source url="http://mako.cc/copyrighteous/?flav=rss">Benjamin Mako Hill</source>
+    </item>
     <item>
       <title>Meet the wildlife conservation AI 5G hotspot at MWC Barcelona 2026</title>
       <link>https://ubuntu.com//blog/meet-the-wildlife-conservation-ai-5g-hotspot-at-mwc-barcelona-2026</link>
@@ -26,7 +38,7 @@
 <p>The architecture can also apply to other use cases, such as industrial sites, utilities, ports, and other edge locations where private 5G and AI must operate together on constrained infrastructure.</p>
 <figure class="wp-block-image size-full"><img alt="" height="720" loading="lazy" sizes="(min-width: 1280px) 1280px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa7b9%2Fimage.png 1280w" width="1280"/></figure>
 <h1 class="wp-block-heading">An edge data center in a carry-on</h1>
-<p>The solution shown is powered by the <a href="https://solutions.nextcomputing.com/products/fly-away-kits/nextserver-ai-5g/#conservation">NextComputing NextServer AI 5G fly-away kit</a>, which is a self-contained airline carry-on AI 5G base station for field deployment.</p>
+<p>The solution shown is powered by the <a href="https://solutions.nextcomputing.com/products/fly-away-kits/nextserver-ai-5g/">NextComputing NextServer AI 5G fly-away kit</a>, which is a self-contained airline carry-on AI 5G base station for field deployment.</p>
 <p>The NextServer AI 5G fly-away kit includes:</p>
 <ul>
 <li>2U <a href="https://amperecomputing.com/products/processors">AmpereOne 192 core Arm</a>-based server with up to 1TB DDR5 and 1PB NVMe running AI compute workloads and 5G AI-RAN</li>
@@ -43,74 +55,6 @@
 <p>If you are evaluating private 5G, AI at the edge, or Arm-based infrastructure for telecom workloads, <a href="https://ubuntu.com/engage/canonical-at-mwc-barcelona-2026">visit the Canonical booth at MWC Barcelona 2026</a>.</p>
 <p>You will see a complete system running live, from radio to inference to application, in a form factor designed for the field.</p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
-    </item>
-    <item>
-      <title>What makes online groups vulnerable to governance capture?</title>
-      <link>https://mako.cc/copyrighteous/what-makes-online-groups-vulnerable-to-governance-capture</link>
-      <guid isPermaLink="true">https://mako.cc/copyrighteous/what-makes-online-groups-vulnerable-to-governance-capture</guid>
-      <pubDate>Sun, 22 Feb 2026 21:12:41 GMT</pubDate>
-      <description><![CDATA[<p class="has-small-font-size"><em><strong>Note:</strong> I have not published blog posts about my academic papers over the past few years. To ensure that my blog contains a more comprehensive record of my published papers and to surface these for folks who missed them, I will be periodically (re)publishing blog posts about some &#8220;older&#8221; published projects. This post is closely based on <a href="https://blog.communitydata.science/governance-capture/">a previously published post</a> by <a href="https://zarine.net/">Zarine Kharazian</a> on <a href="https://blog.communitydata.science/">the Community Data Science Blog</a>.</em></p>
-
-
-
-<p><em> </em>For nearly a decade, the Croatian language version of Wikipedia was run by a cabal of far-right nationalists who edited articles in ways that promoted fringe political ideas and involved cases of <a href="https://perma.cc/YJ3B-V2YP">historical revisionism</a> related to the <a href="https://en.wikipedia.org/wiki/Usta%C5%A1e">Ustaše regime</a>, a fascist movement that ruled the Nazi puppet state called the Independent State of Croatia during World War II. This cabal seized complete control of the encyclopedia&#8217;s governance, banned and blocked those who disagreed with them, and operated a network of fake accounts to create the appearance of grassroots support for their policies. </p>
-
-
-
-<p>Thankfully, Croatian Wikipedia appears to be an outlier. Though both the Croatian and Serbian language editions have been documented to contain nationalist bias and historical revisionism, Croatian Wikipedia seems unique among Wikipedia editions in the extent to which its governance institutions were captured by a small group of users. <br><br>The situation in Croatian Wikipedia was <span style="box-sizing: border-box; margin: 0px; padding: 0px;"><a href="https://meta.wikimedia.org/wiki/File:Croatian_WP_Disinformation_Assessment_-_Final_Report_EN.pdf" target="_blank">well documented</a> and is now largely fixed, but we still know very little about why it</span> was taken over, while other language editions seem to have rebuffed similar capture attempts. In a paper published in the Proceedings of the ACM: Human-Computer Interaction (CSCW), Zarine Kharazian, Kate Starbird, and I present an interview-based study that provides an explanation for why Croatian was captured while several other editions facing similar contexts and threats fared better.</p>
-
-
-
-<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe class="youtube-player" width="525" height="296" src="https://www.youtube.com/embed/P9F_NBQBGWQ?version=3&#038;rel=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;fs=1&#038;hl=en-US&#038;autohide=2&#038;wmode=transparent" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation allow-popups-to-escape-sandbox"></iframe>
-</div><figcaption class="wp-element-caption">Short video presentation of the work given at Wikimania in August 2023.</figcaption></figure>
-
-
-
-<p>Based on insights from interviews with 15 participants from both the Croatian and Serbian Wikipedia projects and from the broader Wikimedia movement, we arrived at three propositions that, together, help explain why Croatian Wikipedia succumbed to capture while Serbian Wikipedia did not: </p>
-
-
-
-<ol class="wp-block-list">
-<li><em>Perceived Value as a Target.</em> Is the project worth expending the effort to capture?</li>
-
-
-
-<li><em>Bureaucratic Openness.</em> How easy is it for contributors outside the core founding team to ascend to local governance positions?</li>
-
-
-
-<li><em>Institutional Formalization.</em> To what degree does the project prefer personalistic, informal forms of organization over formal ones?</li>
-</ol>
-
-
-
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="1024" height="393" src="https://mako.cc/copyrighteous/wp-content/uploads/2026/02/Screenshot-2024-01-11-at-3.17.08-PM-1024x393-1.png" alt="" class="wp-image-3339" srcset="https://mako.cc/copyrighteous/wp-content/uploads/2026/02/Screenshot-2024-01-11-at-3.17.08-PM-1024x393-1.png 1024w, https://mako.cc/copyrighteous/wp-content/uploads/2026/02/Screenshot-2024-01-11-at-3.17.08-PM-1024x393-1-300x115.png 300w, https://mako.cc/copyrighteous/wp-content/uploads/2026/02/Screenshot-2024-01-11-at-3.17.08-PM-1024x393-1-768x295.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /><figcaption class="wp-element-caption"><em>The conceptual model from our paper, visualizing possible institutional configurations among Wikipedia projects that affect the risk of governance capture.&nbsp;</em><br></figcaption></figure>
-
-
-
-<p>We found that both Croatian and Serbian Wikipedias were attractive targets for far-right nationalist capture due to their sizable readership and resonance with national identity. However, we also found that the two projects diverged early in their trajectories in how open they remained to new contributors ascending to local governance positions and in the degree to which they privileged informal relationships over formal rules and processes as the project&#8217;s organizing principles. Ultimately, Croatian&#8217;s relative lack of bureaucratic openness and rules constraining administrator behavior created a window of opportunity for a motivated contingent of editors to seize control of the governance mechanisms of the project. </p>
-
-
-
-<p>Though our empirical setting was Wikipedia, our theoretical model may offer insight into the challenges faced by self-governed online communities more broadly. As interest in decentralized alternatives to Facebook and X (formerly Twitter) grows, communities on these sites will likely face similar threats from motivated actors. Understanding the vulnerabilities inherent in these self-governing systems is crucial to building resilient defenses against threats like disinformation.&nbsp;</p>
-
-
-
-<p>For more details on our findings, take a look at the <a href="https://dl.acm.org/doi/10.1145/3637338">published version of our paper</a>.</p>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-
-
-<p class="has-small-font-size"><em>Citation for the full paper:</em> Kharazian, Zarine, Kate Starbird, and Benjamin Mako Hill. 2024. “Governance Capture in a Self-Governing Community: A Qualitative Comparison of the Croatian, Serbian, Bosnian, and Serbo-Croatian Wikipedias.” <em>Proceedings of the ACM on Human-Computer Interaction</em> 8 (CSCW1): 61:1-61:26. <a href="https://doi.org/10.1145/3637338">https://doi.org/10.1145/3637338</a>.</p>
-
-
-
-<p class="has-small-font-size"><em> This blog post and the paper it describes are collaborative work by Zarine Kharazian, Benjamin Mako Hill, and Kate Starbird.</em></p>]]></description>
-      <source url="http://mako.cc/copyrighteous/?flav=rss">Benjamin Mako Hill</source>
     </item>
     <item>
       <title>Technical Author on engineering duty: Launchpad support</title>
@@ -2140,145 +2084,6 @@ python-certifi for the Python&nbsp;team.</p>
   (merged and&nbsp;uploaded)</li>
 </ul>]]></description>
       <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
-    </item>
-    <item>
-      <title>Think you can’t interpose static binaries with LD_PRELOAD? Think again!</title>
-      <link>https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</link>
-      <guid isPermaLink="true">https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</guid>
-      <pubDate>Thu, 20 Nov 2025 20:56:17 GMT</pubDate>
-      <description><![CDATA[<div class="wp-block-media-text alignwide is-vertically-aligned-center" style="grid-template-columns:21% auto"><figure class="wp-block-media-text__media"><img fetchpriority="high" decoding="async" width="4614" height="4001" src="https://balintreczey.hu/blog/wp-content/uploads/2023/04/firebuild-logo.svg" alt="" class="wp-image-853 size-thumbnail"/></figure><div class="wp-block-media-text__content">
-<p>Well, you are right, you can&#8217;t. At least not directly. This is well documented in many projects relying on interposing binaries, like faketime.</p>
-
-
-
-<p> </p>
-</div></div>
-
-
-
-<p></p>
-
-
-
-<p>But what if we could write something that would take a static binary, replace at least the direct syscalls with ones going through libc and load it with the dynamic linker? We are in luck, because the excellent QEMU project has a user space emulator! It can be compiled as a dynamically linked executable, honors LD_PRELOAD and uses the host libc&#8217;s syscall &#8211; well, at least sometimes. Sometimes syscalls just bypass libc.</p>
-
-
-
-<p>The missing piece was a way to make QEMU always take the interposable path and call the host libc instead of using an arch-specifix assembly routine (`safe_syscall_base`) to construct the syscall and going directly to the kernel. Luckily, this turned out to be doable. A small patch later, QEMU gained a switch that forces all syscalls through libc. Suddenly, our static binaries started looking a lot more dynamic!</p>
-
-
-
-<pre class="wp-block-code"><code>$ faketime '2008-12-24 08:15:42'  qemu-x86_64 ./test_static_clock_gettime
-2008-12-24 08:15:42.725404654
-$ file test_static_clock_gettime 
-test_clock_gettime: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, ...</code></pre>
-
-
-
-<p>With this in place, Firebuild can finally wrap even those secretive statically linked tools. QEMU runs them, libc catches their syscalls, <code>LD_PRELOAD</code> injects <code>libfirebuild.so</code>, and from there the usual interposition magic happens. The result: previously uncachable build steps can now be traced, cached, and shortcut just like their dynamic friends.</p>
-
-
-
-<p>There is one more problem though. Why would the static binaries deep in the build be run by QEMU? Firebuild also intercepts the `exec()` calls and now it rewrites them on the fly whenever the executed binary would be statically linked!</p>
-
-
-
-<pre class="wp-block-code"><code>$ firebuild -d comm bash -c ./test_static
-...
-FIREBUILD: fd 9.1: ({ExecedProcess 161077.1, running, "bash -c ./test_static", fds=&#91;0: {FileFD ofd={FileO
-FD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOFD #3 type=FD_PIPE_OUT w} {Pipe #0} close_o
-n_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=FD_PIPE_OUT w} {Pipe #1} close_on_popen=fal
-se cloexec=false}, 3: {FileFD NULL} /* times 2 */]})
-{
-    "&#91;FBBCOMM_TAG]": "exec",
-    "file": "test_static",
-    "// fd": null,
-    "// dirfd": null,
-    "arg": &#91;
-        "./test_static"
-    ],
-    "env": &#91;
-        "SHELL=/bin/bash",
- ...
-        "FB_SOCKET=/tmp/firebuild.cpMn75/socket",
-        "_=./test_static"
-    ],
-    "with_p": false,
-    "// path": null,
-    "utime_u": 0,
-    "stime_u": 1017
-}
-FIREBUILD: -> proc_ic_msg()  (message_processor.cc:782)  proc={ExecedProcess 161077.1, running, "bash -c 
-./test_static", fds=&#91;0: {FileFD ofd={FileOFD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOF
-D #3 type=FD_PIPE_OUT w} {Pipe #0} close_on_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=F
-D_PIPE_OUT w} {Pipe #1} close_on_popen=false cloexec=false}, 3: {FileFD NULL} /* times 2 */]}, fd_conn=9.
-1, tag=exec, ack_num=0
-FIREBUILD:   -> send_fbb()  (utils.cc:292)  conn=9.1, ack_num=0 fd_count=0
-Sending message with ancillary fds &#91;]:
-{
-    "&#91;FBBCOMM_TAG]": "rewritten_args",
-    "arg": &#91;
-        "/usr/bin/qemu-user-interposable",
-        "-libc-syscalls",
-        "./test_static"
-    ],
-    "path": "/usr/bin/qemu-user-interposable"
-}
-...
-FIREBUILD: -> accept_ic_conn()  (firebuild.cc:139)  listener=6
-...
-FIREBUILD: fd 9.2: ({Process NULL})
-{
-    "&#91;FBBCOMM_TAG]": "scproc_query",
-    "pid": 161077,
-    "ppid": 161073,
-    "cwd": "/home/rbalint/projects/firebuild/test",
-    "arg": &#91;
-        "/usr/bin/qemu-user-interposable",
-        "-libc-syscalls",
-        "./test_static"
-    ],
-    "env_var": &#91;
-        "CCACHE_DISABLE=1",
-...
-        "SHELL=/bin/bash",
-        "SHLVL=0",
-        "_=./test_static"
-    ],
-    "umask": "0002",
-    "jobserver_fds": &#91;],
-    "// jobserver_fifo": null,
-    "executable": "/usr/bin/qemu-user-interposable",
-    "// executed_path": null,
-    "// original_executed_path": null,
-    "libs": &#91;
-        "/lib/x86_64-linux-gnu/libatomic.so.1",
-        "/lib/x86_64-linux-gnu/libc.so.6",
-        "/lib/x86_64-linux-gnu/libglib-2.0.so.0",
-        "/lib/x86_64-linux-gnu/libm.so.6",
-        "/lib/x86_64-linux-gnu/libpcre2-8.so.0",
-        "/lib64/ld-linux-x86-64.so.2"
-    ],
-    "version": "0.8.5.1"
-}
-</code></pre>
-
-
-
-<p>The QEMU patch is <a href="https://lists.gnu.org/archive/html/qemu-devel/2025-11/msg02559.html">forwarded to qemu-devel</a>. If it lands, anyone using QEMU user-mode emulation could benefit — not just Firebuild.</p>
-
-
-
-<p>For Firebuild users, though, the impact is immediate. Toolchains that mix dynamic and static helpers? Cross-builds that pull in odd little statically linked utilities? Previously “invisible” steps in your builds? All now fair game for caching.</p>
-
-
-
-<p><a href="https://github.com/firebuild/firebuild/releases/tag/v0.8.5">Firebuild 0.8.5</a> ships this new capability out of the box. Just update, make sure you’re using a patched QEMU, and enjoy the feeling of watching even static binaries fall neatly into place in your cached build graph. Ubuntu users can get the prebuilt patched QEMU packages from the <a href="https://launchpad.net/~firebuild/+archive/ubuntu/stable">Firebuild PPA</a> already. </p>
-
-
-
-<p>Static binaries, welcome to the party!</p>]]></description>
-      <source url="https://balintreczey.hu/blog/tag/ubuntu/feed/">Balint Reczey</source>
     </item>
     <item>
       <title>It's NOT always DNS.</title>
@@ -6936,6 +6741,35 @@ So, please sync with this change (and sorry :)).</p>
 
 <p><a href="https://reddit.com/r/ploos" class="embedly-card external" data-card-recommend="0" data-card-width="100%">https://reddit.com/r/ploos</a></p>]]></description>
       <source url="http://blogs.gnome.org/mneptok/feed/">Kurt von Finck</source>
+    </item>
+    <item>
+      <title>Announcing the Ubuntu 18.10 Free Culture Showcase winners</title>
+      <link>https://www.nhaines.com/blog/2018/09/28/announcing-ubuntu-18.10-free-culture-showcase-winners/</link>
+      <guid isPermaLink="true">https://www.nhaines.com/blog/2018/09/28/announcing-ubuntu-18.10-free-culture-showcase-winners/</guid>
+      <pubDate>Fri, 28 Sep 2018 07:00:00 GMT</pubDate>
+      <description><![CDATA[<p>October approaches, and Ubuntu marches steadly along the road from one LTS to another.  Ubuntu 18.10 is another step in Ubuntu’s future.  And now it’s time to unveil a small part of that change: the community wallpapers to be included in Ubuntu 18.10!</p>
+
+<p>Every cycle, talented artists around the world create media and release it under licenses that encourage sharing and adaptation. This cycle we had some amazing images submitted to the <a href="https://www.flickr.com/groups/ubuntu-fcs-1810/">Ubuntu 18.10 Free Culture Showcase</a> photo pool on Flickr, where all eligible submissions can be found.  The competition was fierce; narrowing down the options to the final selections was painful!</p>
+
+<p>But there can be only 12, and the final images that will be included in Ubuntu 18.10 are:</p>
+
+<ul>
+  <li><a href="https://www.flickr.com/photos/155485295@N04/28898305427/in/pool-ubuntu-fcs-1810/">Cosmic Cuttlefish</a> by Jim Coleman</li>
+  <li><a href="https://www.flickr.com/photos/143512932@N03/29085424897/in/pool-ubuntu-fcs-1810/">Spring Flowers</a> by MK4-MI01</li>
+  <li><a href="https://www.flickr.com/photos/mendhak/37748450101/in/pool-ubuntu-fcs-1810/">Carriage Return</a> by mendhak</li>
+  <li><a href="https://www.flickr.com/photos/153219066@N06/41387651640/in/pool-ubuntu-fcs-1810/">Ubuntu Party de Paris</a> by Marcos Costales</li>
+  <li><a href="https://www.flickr.com/photos/98223780@N05/41846068390/in/pool-ubuntu-fcs-1810/">Tapiola, Espoo Cultural Center</a> by Agostino Faedda</li>
+  <li><a href="https://www.flickr.com/photos/14287735@N05/42055551820/in/pool-ubuntu-fcs-1810/">Fairground at Night</a> by martin</li>
+  <li><a href="https://www.flickr.com/photos/tomas_sobek/42346768035/in/pool-ubuntu-fcs-1810/">Milky Way before the dawn</a> by Tomas Sobek</li>
+  <li><a href="https://www.flickr.com/photos/38121135@N05/42996830034/in/pool-ubuntu-fcs-1810/">Black sand beach</a> by Mads Rosendahl</li>
+  <li><a href="https://www.flickr.com/photos/simosx/43736940061/in/pool-ubuntu-fcs-1810/">The Image of Mount Parnassus</a> by simosx</li>
+  <li><a href="https://www.flickr.com/photos/bernhardhanakam/44033490521/in/pool-ubuntu-fcs-1810/">Morning</a> by Bernhard Hanakam</li>
+  <li><a href="https://www.flickr.com/photos/155984160@N07/43295035514/in/pool-ubuntu-fcs-1810/">Encounter</a> by Lzardjin</li>
+  <li><a href="https://www.flickr.com/photos/134476822@N04/43642256642/in/pool-ubuntu-fcs-1810/">touche de vert</a> by François Cante</li>
+</ul>
+
+<p>A big congratulations to the winners, and thanks to everyone who submitted a wallpaper.  You can find these wallpapers (along with dozens of other stunning wallpapers) today at the links above, or in your desktop wallpaper list after you upgrade to or install Ubuntu 18.10 on October 18th.</p>]]></description>
+      <source url="https://www.nhaines.com/feed.xml">Nathan Haines</source>
     </item>
     <item>
       <title>NVIDIA PRIME in Ubuntu 18.04 and 18.10, and a call for testing</title>
