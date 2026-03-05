@@ -6,9 +6,148 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 04 Mar 2026 02:23:42 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2026 02:26:29 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Launchpad documentation office hours</title>
+      <link>https://blog.launchpad.net/general/launchpad-documentation-office-hours</link>
+      <guid isPermaLink="true">https://blog.launchpad.net/general/launchpad-documentation-office-hours</guid>
+      <pubDate>Tue, 03 Mar 2026 16:16:49 GMT</pubDate>
+      <description><![CDATA[<p>Did you know that Launchpad has a bi-weekly documentation office hour that&#8217;s open to everyone? Join us this Friday (6th March) for our third session from 1330 &#8211; 1430 UTC. These office hours will be a good opportunity to: </p>
+
+
+
+<ul><li>Discuss the documentation practices of the Launchpad team and make recommendations </li><li>Highlight your documentation issues and/or pages that don’t meet your needs </li><li>Point out gaps in available documentation  </li><li>Share any other Launchpad-related documentation thoughts</li></ul>
+
+
+
+<p> Looking forward to see you there!</p>
+
+
+
+<p>Meet joining info Video call link: <a rel="noreferrer noopener" href="https://meet.google.com/gcd-hnxo-sce" target="_blank">https://meet.google.com/gcd-hnxo-sce</a></p>]]></description>
+      <source url="http://news.launchpad.net/feed">Launchpad News</source>
+    </item>
+    <item>
+      <title>Announcing Incus 6.22</title>
+      <link>https://stgraber.org/2026/03/02/announcing-incus-6-22/</link>
+      <guid isPermaLink="true">https://stgraber.org/2026/03/02/announcing-incus-6-22/</guid>
+      <pubDate>Tue, 03 Mar 2026 03:30:41 GMT</pubDate>
+      <description><![CDATA[<p>The Incus team is pleased to announce the release of Incus 6.22!</p>
+
+
+
+<p>This is quite the busy release with a lot of changes all across the board on top of a large quantities of bugfixes. There should be something for everyone!</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://linuxcontainers.org/incus/try-it/" target="_blank" rel=" noreferrer noopener"><img fetchpriority="high" decoding="async" width="1024" height="364" src="https://stgraber.org/wp-content/uploads/2026/03/image-1024x364.png" alt="" class="wp-image-1845" srcset="https://stgraber.org/wp-content/uploads/2026/03/image-1024x364.png 1024w, https://stgraber.org/wp-content/uploads/2026/03/image-300x107.png 300w, https://stgraber.org/wp-content/uploads/2026/03/image-768x273.png 768w, https://stgraber.org/wp-content/uploads/2026/03/image.png 1205w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<p>On the feature front, the highlights for this release are:</p>
+
+
+
+<ul class="wp-block-list">
+<li>vsock support for the WIndows agent</li>
+
+
+
+<li>Direct backup retrieval</li>
+
+
+
+<li>Disk-only snapshot restoration</li>
+
+
+
+<li>Dedicated storage volume for server logs</li>
+
+
+
+<li>QCOW2 storage improvements</li>
+
+
+
+<li>lvmcluster storage pool resizing</li>
+
+
+
+<li>Automatic snapshot removal on restore with lvmcluster</li>
+
+
+
+<li>Full USB controller passthrough in unix-hotplug</li>
+
+
+
+<li>Certificate information in the authorization scriptlet</li>
+
+
+
+<li>VM fast reboot</li>
+
+
+
+<li>Image server URL restrictions in projects</li>
+
+
+
+<li>URL based imports in incus-migrate</li>
+
+
+
+<li>Multi-domain certificates with ACME</li>
+
+
+
+<li>Control of trusted property on SR-IOV NICs</li>
+
+
+
+<li>Additional cluster member states to track evacuation</li>
+
+
+
+<li>Cluster restore without instance migration</li>
+
+
+
+<li>Instance boot time metrics</li>
+</ul>
+
+
+
+<p>The full announcement and changelog can be <a href="https://discuss.linuxcontainers.org/t/incus-6-22-has-been-released/26300" target="_blank" rel="noreferrer noopener">found here</a>.<br>And for those who prefer videos, here&#8217;s the release <a href="https://www.youtube.com/watch?v=xrIFL7wSRw4">overview video</a>:</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="Introducing Incus 6.22!" width="640" height="360" src="https://www.youtube.com/embed/xrIFL7wSRw4?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>You can take the latest release of Incus up for a spin through our online demo service at: <a href="https://linuxcontainers.org/incus/try-it/" target="_blank" rel="noreferrer noopener">https://linuxcontainers.org/incus/try-it/</a></p>
+
+
+
+<p>And as always, my company is offering commercial support on Incus, ranging from by-the-hour support contracts to one-off services on things like initial migration from LXD, review of your deployment to squeeze the most out of Incus or even feature sponsorship. You&#8217;ll find all details of that here: <a href="https://zabbly.com/incus">https://zabbly.com/incus</a></p>
+
+
+
+<p>Donations towards my work on this and other open source projects is also always appreciated, you can  find me on <a href="https://github.com/sponsors/stgraber">Github Sponsors</a>, <a href="https://patreon.com/stgraber">Patreon</a> and <a href="https://ko-fi.com/stgraber">Ko-fi</a>.</p>
+
+
+
+<p>Enjoy!</p>
+
+
+<p><!-- /wp:post-content --></p>]]></description>
+      <source url="https://stgraber.org/category/planet-ubuntu/feed/">Stéphane Graber</source>
+    </item>
     <item>
       <title>Supporting more identity providers on Ubuntu with the new Authd OIDC broker</title>
       <link>https://ubuntu.com//blog/more-identity-providers-ubuntu-generic-broker</link>
@@ -1007,86 +1146,6 @@ talk to you about how they feel about a project they've built <a href="#sf-using
       <source url="https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss">Ubuntu Weekly News</source>
     </item>
     <item>
-      <title>Technical Author on engineering duty: Launchpad support</title>
-      <link>https://blog.launchpad.net/general/technical-author-on-engineering-duty-launchpad-support</link>
-      <guid isPermaLink="true">https://blog.launchpad.net/general/technical-author-on-engineering-duty-launchpad-support</guid>
-      <pubDate>Sun, 22 Feb 2026 09:49:42 GMT</pubDate>
-      <description><![CDATA[<p>Being on support for Launchpad has a huge sense of responsibility. For a whole week, you are the first point of contact for users experiencing issues related to Launchpad or the services attached to it. For the person on support, even roadmap work takes a backseat.&nbsp;</p>
-
-
-
-<p>All Launchpad engineers, except managers, take turns being on support. Managers provide Level 2 and 3 support, and in some sense, are always on support. There is no explicit expectation for a technical author (TA) to take on this responsibility, but why should engineers have all the fun?</p>
-
-
-
-<h2>What was the motivation to go on support?</h2>
-
-
-
-<p>For a TA being embedded in your team’s duties and processes is key to driving documentation efforts and positively influencing what the team does beyond documentation. As Launchpad’s first full-time TA, I had my work cut out.</p>
-
-
-
-<p>When I started, my main role was driving existing objectives to completion. In later months, I had to play a key role in choosing the objectives. With so many pending issues, prioritization was the main challenge. Although I was able to figure things out, with lots of help from the Launchpad and documentation teams, I knew there were still some gaps left to cover.</p>
-
-
-
-<p>I decided to learn as much as possible about the product, team, and users, to help identify which aspects of documentation were most important to address. Guruprasad and I discussed shadowing engineers on support, but Clinton suggested I try the real thing too. </p>
-
-
-
-<h2>Shadowing engineers on support</h2>
-
-
-
-<p>The expectation that I would be going on support raised the stakes, and I had to make the most of my time shadowing engineers. Interacting with users requires a higher level of care, and I was also keen to repay the faith the team had placed in me.</p>
-
-
-
-<p>I shadowed İlker, Artem, and Inês in the three weeks before my turn. We used different techniques depending on our calendars and what issues they were addressing. In some cases, we would have a live meeting and I would follow along as they handled different tasks. In other cases, the approach was asynchronous, with the person on support linking me to user requests they were working on, discussions in the Launchpad channel, or documentation they had used to address specific issues.&nbsp;</p>
-
-
-
-<h2>In the support chair</h2>
-
-
-
-<p>On the morning of my first day on support, I couldn’t change the header of Launchpad’s public channel on Matrix. This was a simple yet frustrating problem and it took me a while to figure out this was a Matrix issue, not a skill issue. Despite the frustration, this was a good reality check. Support week is unpredictable and nothing can be underestimated.&nbsp;</p>
-
-
-
-<p>The rest of the week brought plenty of highs, lows, and unpredictable scenarios. My main takeaways were:</p>
-
-
-
-<ul><li><strong>Documentation </strong>&#8211; Being on support relies heavily on the availability and quality of documentation. In addition to improving my product and team knowledge, I was able to identify where and how existing documentation succeeded and failed. Whoever is on support is always expected to identify gaps and add to the documentation, but as a TA, I was also able to identify additional issues that hamper information extraction in our docs.&nbsp;</li><li><strong>Many requests are easy to handle</strong> &#8211; The Launchpad team has done a great job of documenting the processes needed to handle many types of requests and issues.</li><li><strong>The role challenges you to learn and do more</strong> &#8211; Trying to address user issues required interacting with parts of Launchpad I didn’t have to before.&nbsp;</li><li><strong>It’s a great team-building experience</strong> &#8211; For Launchpad engineers, being on support is such a core part of the job that it has its own culture and language. A lot of what it means to be part of the Launchpad team became clearer during this experience.</li><li><strong>It’s not a one person job</strong> &#8211; It was mentioned to me many times before, but it was great to see it in practice &#8211; the person on support isn’t always expected to solve the issue. Sometimes I just needed to tag someone else in, redirect the issue to the right team, or let a user know we would look into an issue</li></ul>
-
-
-
-<h2>Best moment</h2>
-
-
-
-<p>A user reported a bug where they couldn’t delete a comment. On inspection, the comment seemed to just be an attached text file. I started by going through the logs and confirmed that they had indeed deleted something, but it appeared to have been a different comment.</p>
-
-
-
-<p>I suspected this had something to do with the attachment so I decided to recreate the issue, i.e., uploading an attachment as a comment and trying to delete it. I confirmed that trying to delete such comments did not work. Bug confirmed… right?</p>
-
-
-
-<p>In Launchpad, we are a bit suspicious when things go exactly as planned the first time round. In this case, this issue appeared far too easy to encounter. I did some digging and found an older bug report where the unusual process for deleting such comments was also mentioned. So, I was able to tell the user how to solve their problem and avoided adding to our long list of bugs by marking this as a duplicate.</p>
-
-
-
-<h2>Final words</h2>
-
-
-
-<p>Supporting users is a team’s responsibility, not an individual’s. Technical authors maintain documentation used in support but may not get to test the experience of using it, and this can result in blind spots. This experience not only highlighted some of these blind spots for me, I also got to learn a lot about Launchpad, the community that uses it, and how we can improve the documentation to better serve users.</p>]]></description>
-      <source url="http://news.launchpad.net/feed">Launchpad News</source>
-    </item>
-    <item>
       <title>Running RISC-V in a VM to test my snaps</title>
       <link>https://blog.popey.com/2026/02/running-risc-v-in-a-vm-to-test-my-snaps/</link>
       <guid isPermaLink="true">https://blog.popey.com/2026/02/running-risc-v-in-a-vm-to-test-my-snaps/</guid>
@@ -1848,99 +1907,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 <p><em>Disclaimer: Investments involve risk. DCAi is a technical analysis tool, not financial advice or a guarantee of profit. Always conduct your own due diligence.</em></p>
 <p>The post <a href="https://utappia.org/2026/02/13/smart-dca-strategy-machine-learning-dcai/">Smart DCA Strategy &#8211; Meet DCAi That Times the Dip The Open Source Machine Learning</a> appeared first on <a href="https://utappia.org">Utappia</a>.</p>]]></description>
       <source url="http://utappia.org/feed/">Salih Emin</source>
-    </item>
-    <item>
-      <title>Announcing Incus 6.21</title>
-      <link>https://stgraber.org/2026/01/27/announcing-incus-6-21/</link>
-      <guid isPermaLink="true">https://stgraber.org/2026/01/27/announcing-incus-6-21/</guid>
-      <pubDate>Tue, 27 Jan 2026 06:33:08 GMT</pubDate>
-      <description><![CDATA[<p>The Incus team is pleased to announce the release of Incus 6.21!</p>
-
-
-
-<p>We’re starting 2026 with a couple of security fixes, but that’s not all, we’re also introducing some long requested CLI improvements, made SR-IOV easier to use with network cards, improved startup performance and more!</p>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://linuxcontainers.org/incus/try-it/"><img fetchpriority="high" decoding="async" width="1024" height="556" src="https://stgraber.org/wp-content/uploads/2026/01/image-1024x556.png" alt="" class="wp-image-1839" srcset="https://stgraber.org/wp-content/uploads/2026/01/image-1024x556.png 1024w, https://stgraber.org/wp-content/uploads/2026/01/image-300x163.png 300w, https://stgraber.org/wp-content/uploads/2026/01/image-768x417.png 768w, https://stgraber.org/wp-content/uploads/2026/01/image.png 1112w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
-
-
-
-<p>This release includes two security fixes:</p>
-
-
-
-<ul class="wp-block-list">
-<li><a href="https://github.com/advisories/GHSA-x6jc-phwx-hp32">CVE-2026-23953</a> (Newline injection in environment variable)</li>
-
-
-
-<li><a href="https://github.com/advisories/GHSA-7f67-crqm-jgh7">CVE-2026-23954</a> (Arbitrary file read/write through templates)</li>
-</ul>
-
-
-
-<p>On the feature front, the highlights for this release are:</p>
-
-
-
-<ul class="wp-block-list">
-<li>New &#8220;incus wait&#8221; command</li>
-
-
-
-<li>Automatic SR-IOV network VF selection</li>
-
-
-
-<li>Support for detaching and disconnecting network interfaces</li>
-
-
-
-<li>Parallel instance startup</li>
-
-
-
-<li>Source subnet restrictions through OIDC claims</li>
-
-
-
-<li>Better DNS SOA handling in network zones</li>
-
-
-
-<li>Forceful (recursive) directory deletion in file REST API</li>
-</ul>
-
-
-
-<p>The full announcement and changelog can be <a href="https://discuss.linuxcontainers.org/t/incus-6-21-has-been-released/26005" target="_blank" rel="noreferrer noopener">found here</a>.<br>And for those who prefer videos, here&#8217;s the release <a href="https://www.youtube.com/watch?v=MhF7jgkqqyU">overview video</a>:</p>
-
-
-
-<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe title="Introducing Incus 6.21!" width="640" height="360" src="https://www.youtube.com/embed/MhF7jgkqqyU?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div></figure>
-
-
-
-<p>You can take the latest release of Incus up for a spin through our online demo service at: <a href="https://linuxcontainers.org/incus/try-it/" target="_blank" rel="noreferrer noopener">https://linuxcontainers.org/incus/try-it/</a></p>
-
-
-
-<p>And as always, my company is offering commercial support on Incus, ranging from by-the-hour support contracts to one-off services on things like initial migration from LXD, review of your deployment to squeeze the most out of Incus or even feature sponsorship. You&#8217;ll find all details of that here: <a href="https://zabbly.com/incus">https://zabbly.com/incus</a></p>
-
-
-
-<p>Donations towards my work on this and other open source projects is also always appreciated, you can  find me on <a href="https://github.com/sponsors/stgraber">Github Sponsors</a>, <a href="https://patreon.com/stgraber">Patreon</a> and <a href="https://ko-fi.com/stgraber">Ko-fi</a>.</p>
-
-
-
-<p>Enjoy!</p>
-
-
-<p><!-- /wp:post-content --></p>]]></description>
-      <source url="https://stgraber.org/category/planet-ubuntu/feed/">Stéphane Graber</source>
     </item>
     <item>
       <title>HP battery not charging</title>
