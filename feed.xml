@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 06 Mar 2026 02:24:43 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2026 02:11:23 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -359,6 +359,18 @@ something, but most people in the web community at least, and open source projec
 more generally, are in my experience not just willing but positively eager to
 talk to you about how they feel about a project they've built <a href="#sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-4-back" class="simple-footnote-back">↩</a></li></ol>]]></description>
       <source url="http://feeds.feedburner.com/kryogenix">Stuart Langridge</source>
+    </item>
+    <item>
+      <title>Pronunciation</title>
+      <link>https://mako.cc/copyrighteous/pronunciation-lesson</link>
+      <guid isPermaLink="true">https://mako.cc/copyrighteous/pronunciation-lesson</guid>
+      <pubDate>Sun, 01 Mar 2026 18:51:22 GMT</pubDate>
+      <description><![CDATA[<p>Had a discussion about how to pronounce the name of Google&#8217;s chatbot. Turns out, we were all wrong.</p>
+
+
+
+<figure class="wp-block-video"><video height="360" style="aspect-ratio: 640 / 360;" width="640" controls src="https://mako.cc/copyrighteous/wp-content/uploads/2026/03/IMG_5667.mp4"></video></figure>]]></description>
+      <source url="http://mako.cc/copyrighteous/?flav=rss">Benjamin Mako Hill</source>
     </item>
     <item>
       <title>Ubuntu Weekly Newsletter Issue 933</title>
