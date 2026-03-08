@@ -6,9 +6,69 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 07 Mar 2026 02:11:23 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2026 02:29:13 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sovereign clouds: enhanced data security with confidential computing </title>
+      <link>https://ubuntu.com//blog/sovereign-cloud-confidential-computing</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/sovereign-cloud-confidential-computing</guid>
+      <pubDate>Fri, 06 Mar 2026 11:55:30 GMT</pubDate>
+      <description><![CDATA[<p>Increasingly, enterprises are interested in improving their level of control over their data, achieving digital sovereignty, and even building their own <a href="https://canonical.com/solutions/infrastructure/sovereign-cloud">sovereign cloud</a>. However, this means moving beyond thinking about just where your data is stored to thinking about the entire data lifecycle. </p>
+<p>In this blog, we cover the differences between data residency and data sovereignty, how confidential computing works to enhance the security of your data, and can support you in achieving digital sovereignty. </p>
+<h1 class="wp-block-heading">Data residency is not data sovereignty.</h1>
+<p>Many people confuse knowing where your data is stored (data residency) with achieving data sovereignty. However, just because you know where your data is stored, and that it’s protected while being stored, doesn’t mean that you have data sovereignty. In other words,  it doesn’t mean you have complete control over it.</p>
+<p>Storage is only one state of data. Achieving true sovereignty in your systems means considering everywhere that plaintext exists: in memory during computation, in registers during execution, in GPU memory during inference, and in intermediate buffers during training. If those states are visible to the host – the underlying physical machine, or the hypervisor running the workloads – then your data protection depends entirely on operator behavior. Whether that’s a public cloud operator, third party managed service provider, or your own IT department, you’re not enforcing a boundary. You are hoping one holds.</p>
+<p>Confidential computing closes that gap. It is a hardware-level capability that encrypts data while it is being processed, not just when it is stored on disk or moving across a network. The processor itself enforces isolation using what are called Trusted Execution Environments (TEEs): protected regions of memory that the hypervisor cannot inspect, the host operating system cannot read, and administrators cannot dump. </p>
+<p>This is what makes it structurally different from conventional cloud security. Disk encryption protects data at rest. TLS protects data in transit. Confidential computing protects data in use, the one state where, until recently, defenders had almost no tools. And for sovereign clouds, that is the state that matters most.</p>
+<h2 class="wp-block-heading">From identity-based trust to state-based trust</h2>
+<p>Traditional cloud security is anchored to identity. IAM policies, role separation, access logs, conditional access, all of it answers one question: who is requesting access?</p>
+<p>Confidential computing introduces a different question: what is the state of the environment where data is being used?</p>
+<p>A workload proves the hardware class it runs on, the firmware version, the boot chain integrity, the measurement of its own code, and whether debug capabilities are active. Secrets are released based on verified state, not organizational assurances. You are no longer asking whether you trust this operator. You are asking whether this execution environment satisfies your cryptographic conditions.</p>
+<h2 class="wp-block-heading">Control under privilege</h2>
+<p>Cloud systems are layered privilege machines. Firmware controls hardware. Hypervisors control guests. Operators control infrastructure. Providers control updates. Supply chains control binaries. To achieve data sovereignty, you need to ask a difficult question that cuts across all of them: what happens when the layer with privilege is not the layer you want to trust?</p>
+<p>Without confidential computing, the answer is uncomfortable. You rely on contracts, governance frameworks, and organizational separation; mechanisms that constrain behavior, but cannot constrain capability. With confidential computing, the answer becomes structural: privilege does not automatically grant visibility.</p>
+<p>TEEs encrypt memory in use and restrict host introspection. The hypervisor may schedule a workload, but it cannot read its memory. An administrator may control the host, but cannot dump secrets from the guest. Debug pathways are restricted or disabled at the silicon level.</p>
+<p>This does not negate trust. It narrows it. And narrowing trust surfaces is the core engineering discipline behind any sovereign cloud that deserves the name.</p>
+<h2 class="wp-block-heading">Programmable sovereignty</h2>
+<p>The different levels of sovereignty – data, operational, and software, which we’ve discussed at greater length on our <a href="https://canonical.com/solutions/infrastructure/sovereign-cloud">webpage</a> – are typically treated as static requirements. Data must stay here. Operators must be local. Legal control must be bounded by jurisdiction. Software must be accessible without lock-in.</p>
+<p>Confidential computing makes both data and operational sovereignty programmable. Attestation policies can define which hardware generations are acceptable, which firmware versions are approved, which configurations are disallowed, and which geographic attestation roots are trusted. Those policies can evolve without re-architecting infrastructure.</p>
+<p>This matters most where regulatory frameworks move faster than infrastructure lifecycles. Instead of redesigning systems to meet new requirements, you rotate attestation baselines. That agility is not a convenience; it is a strategic capability that most sovereign deployments do not yet appreciate.</p>
+<h2 class="wp-block-heading">Blast radius, not distrust</h2>
+<p>There is a persistent misunderstanding that confidential computing implies an adversarial relationship with operators. That framing is shallow. </p>
+<p>The real issue is blast radius. Even trusted operators make mistakes, get phished, inherit compromised dependencies, become subject to legal orders from foreign jurisdictions, and rotate personnel. Infrastructure systems cannot assume that privileged access will always align with national or organizational intent, not because operators are necessarily malicious, but because assuming perpetual alignment is an architectural error.</p>
+<p>Confidential computing reduces what privileged access can see. That is risk minimization applied to the one attack surface sovereignty frameworks care most about: administrative and systemic pathways, not internet-facing exploits.</p>
+<h2 class="wp-block-heading">Sovereign AI without runtime protection is strategically exposed</h2>
+<p>As sovereign cloud strategies absorb AI workloads, national language models, public-sector analytics, and defense applications, the problem intensifies along every axis.</p>
+<p>Foundation models represent intellectual capital, and inference pipelines process high-value inputs in real time. Without runtime protection, model weights can be extracted from host memory, training data is visible during processing, debug hooks become exfiltration vectors, and multi-tenant infrastructure becomes a leakage surface.</p>
+<p>The more valuable the model, the less acceptable hypervisor visibility becomes. In sovereign AI, confidential computing is not an enhancement, but a necessity. Learn more on our <a href="https://ubuntu.com/confidential-computing/ai">webpage</a>. </p>
+<h2 class="wp-block-heading">The central role of open source in confidential computing</h2>
+<p>There is a dependency that is easy to overlook. Attestation proves that a workload matches a known measurement. But if you cannot audit the kernel, reproduce the build, verify the signing process, or inspect the virtualization stack, then the measurement proves very little. You have cryptographic evidence of an opaque system. That is not sovereignty.</p>
+<p>Confidential computing becomes meaningful only when the measured components are themselves transparent and reproducible. Operating system integrity, supply-chain provenance, and verifiable builds are not peripheral concerns. They are the substrate on which attestation credibility rests. </p>
+<p>This is why open source is not ideological in sovereign cloud architectures, it is structural. Learn more about why open source is necessary to achieve a truly sovereign cloud in <a href="https://ubuntu.com/engage/sovereign-cloud-guide">“Sovereign cloud: the essential guide for enterprises.”</a> </p>
+<h1 class="wp-block-heading">Ubuntu powering the world’s public and private confidential clouds</h1>
+<p>Confidential computing is a strategic investment area that Canonical has been building toward for years. Today, Ubuntu makes <a href="https://ubuntu.com/confidential-computing">confidential computing</a> operational across both public cloud and on-premise enterprise environments. </p>
+<p>On major public cloud providers, including Azure, AWS, and Google Cloud, Ubuntu powers confidential virtual machines with first-class guest support for AMD SEV-SNP and Intel TDX, enabling hardware-isolated workloads without proprietary guest images. </p>
+<p>At the same time, Ubuntu provides the necessary host and hypervisor integration for enterprises deploying confidential computing on-prem, including kernel, QEMU/KVM, and virtualization stack support aligned with upstream TDX and SNP enablement. </p>
+<p>This dual capability is important: sovereign and regulated environments rarely operate in a single domain. They span public cloud and private infrastructure. Ubuntu’s open, upstream implementation across both host and guest layers allows organizations to deploy confidential workloads consistently, without bifurcating their operating system strategy or relying on opaque vendor-specific stacks. Confidential computing is not a feature bolted onto Ubuntu; it is integrated into the core platform that enterprises already standardize on.</p>
+<h2 class="wp-block-heading">What confidential computing actually does</h2>
+<p>Confidential computing does three things for sovereign cloud architectures: </p>
+<ol>
+<li>It minimizes reliance on privileged infrastructure actors, </li>
+<li>It converts sovereignty requirements into cryptographic conditions, </li>
+<li>It makes assurance demonstrable rather than rhetorical.</li>
+</ol>
+<p>It does not replace governance, remove the need for identity controls, solve application-layer vulnerabilities, or resolve geopolitical complexity. It does something narrower and more precise. Confidential computing enforces confidentiality at the only moment that truly matters: while computation is happening.</p>
+<p>In cloud systems, computation is where data is most vulnerable. It is also where, until recently, defenders had the fewest tools. Confidential computing changes that. Not through policy, or through contract. Through architecture.</p>
+<p>The question for every sovereign cloud strategy is whether you design around the reality that infrastructure privilege always exists, or whether you ignore it and hope governance holds.</p>
+<p>Confidential computing is how you design around it.</p>
+<h2 class="wp-block-heading">Further resources:</h2>
+<p><a href="https://ubuntu.com/engage/sovereign-cloud-guide">Sovereign Cloud: the essential guide for enterprises</a></p>
+<p>This guide will help you to understand key concepts, requirements, and options to build cloud sovereignty in your organization. </p>
+<p><a href="https://ubuntu.com/blog/ubuntu-security-defense-in-depth">Security in depth with Ubuntu: Mapping security primitives to attacker capabilities</a></p>
+<p>Cybersecurity is not about perfection. In fact, it’s more like a game of chess: predicting your opponent’s moves and making the game unwinnable for them. The best defense isn’t a single unbreakable barrier, but instead a layered strategy that forces your adversary into a losing position at every turn. Learn more about Ubuntu’s security strategy in this blog. </p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>Launchpad documentation office hours</title>
       <link>https://blog.launchpad.net/general/launchpad-documentation-office-hours</link>
@@ -147,37 +207,6 @@
 
 <p><!-- /wp:post-content --></p>]]></description>
       <source url="https://stgraber.org/category/planet-ubuntu/feed/">Stéphane Graber</source>
-    </item>
-    <item>
-      <title>Supporting more identity providers on Ubuntu with the new Authd OIDC broker</title>
-      <link>https://ubuntu.com//blog/more-identity-providers-ubuntu-generic-broker</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/more-identity-providers-ubuntu-generic-broker</guid>
-      <pubDate>Mon, 02 Mar 2026 12:59:57 GMT</pubDate>
-      <description><![CDATA[<figure class="wp-block-image size-full"><img alt="" height="720" loading="lazy" sizes="(min-width: 1280px) 1280px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5789%2FBlog-Vanilla-Authd-broker.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5789%2FBlog-Vanilla-Authd-broker.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5789%2FBlog-Vanilla-Authd-broker.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5789%2FBlog-Vanilla-Authd-broker.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5789%2FBlog-Vanilla-Authd-broker.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5789%2FBlog-Vanilla-Authd-broker.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5789%2FBlog-Vanilla-Authd-broker.png 1280w" width="1280"/></figure>
-<p>Today we are announcing the general availability of the new generic OpenID Connect (OIDC) broker for Authd. With enterprises needing to centralise access management controls, the ability to choose your own identity solution is paramount. This new broker snap is our answer to that need, allowing Ubuntu Desktop and Server to integrate with any identity provider that supports a vanilla OIDC flow. This release empowers both our community members with self-hosted solutions like Keycloak and our enterprise clients leveraging platforms such as Okta, allowing a unified authentication experience across the entire infrastructure and application ecosystem.</p>
-<h2 class="wp-block-heading"><strong>What is Authd?</strong></h2>
-<p>Authd is a modern authentication daemon for Ubuntu that enables direct integration with cloud-based identity providers. This approach marks a significant shift away from traditional, complex infrastructure components like FreeIPA or dedicated Vault instances, which often come with considerable maintenance overhead. With Authd, Ubuntu endpoints can communicate with your chosen identity provider directly and in a securely designed way, dramatically simplifying management, reducing operational costs, and centralizing all authentication event visibility for easier auditing and monitoring.</p>
-<p>Authd’s modular architecture is the key to its flexibility. It consists of a privileged daemon that exposes a standardized API over DBus, and individual broker snaps that facilitate integration with various cloud services. This design leverages the OAuth 2.0 Device Authorisation Grant (also known as the Device Flow), an open standard that enhances security. It also provides a consistent and intuitive user authentication experience, whether a user is logging into a graphical session on Ubuntu Desktop or accessing a command-line interface via SSH on a remote server.</p>
-<h2 class="wp-block-heading"><strong>What’s new: agnostic identity provider integration with OIDC</strong></h2>
-<p>The new generic OIDC broker is a significant expansion of the Authd ecosystem. While we have previously offered dedicated brokers for <a href="https://snapcraft.io/authd-msentraid">Microsoft Entra ID </a>and <a href="https://snapcraft.io/authd-google">Google IAM</a>, this new broker opens the door to a vast landscape of identity providers.This includes community members using self-hosted solutions like Keycloak, and enterprises utilizing standard-compliant OIDC platforms such as Okta, Auth0, or Ping for their identity management. Ultimately enterprises will be able to use a single, modern identity solution across their server and application landscape.</p>
-<p>Authd’s design prioritizes flexibility in identity management for Ubuntu, aiming for broad compatibility with various identity providers. By adhering to the OIDC standard, Authd adapts to evolving identity landscapes. The OIDC broker snap contributes to this by offering a standard aligned, configurable interface for OIDC-compliant platforms, enhancing infrastructure compatibility.</p>
-<h2 class="wp-block-heading"><strong>Advanced user and device management</strong></h2>
-<p>Alongside the flexibility of the OIDC broker, we are also ensuring that our users have the powerful management features they need. The new broker snap supports the same advanced functionalities as our other brokers, providing granular control over access and permissions:</p>
-<ul>
-<li><strong>Allowlist:</strong> Restrict machine access to a specified list of users who are allowed to log in after a successful authentication with the identity provider. This provides an essential layer of security and control, particularly for shared or special-purpose machines where only specific personnel should have access.</li>
-<li><strong>Privilege management:</strong> Administrators can configure custom claims on their identity providers to assign users to specific Linux groups, such as sudo. This enables centralized permission management directly from the identity provider, simplifying user administration on remote machines and providing a clear, auditable trail for compliance purposes.</li>
-<li><strong>Device ownership:</strong> Define rules for device ownership based on login events. For example, the first user to successfully authenticate on a new laptop can be automatically designated as its owner, streamlining the provisioning process for IT departments managing a remote workforce.</li>
-</ul>
-<h2 class="wp-block-heading"><strong>Get the new broker and additional resources</strong></h2>
-<p>The new generic OIDC Authd broker is available today on Snapcraft. We encourage you to explore the possibilities it unlocks for your Ubuntu deployments.</p>
-<ul>
-<li><a href="https://snapcraft.io/authd-oidc">Get the new OIDC Authd broker on Snapcraft</a></li>
-<li><a href="https://documentation.ubuntu.com/authd/stable-docs/">Read the Authd documentation</a></li>
-<li><a href="https://github.com/ubuntu/authd">View the project on Github</a></li>
-<li><a href="https://ubuntu.com/blog/entra-id-authentication-on-ubuntu-at-scale-with-landscape?_gl=1*k7p59d*_gcl_au*MTU2OTEwMjk2LjE3NTQ0OTI1MTQ.">Learn how to deploy Authd at scale with Landscape on Desktop and Server</a></li>
-</ul>
-<p>We are committed to expanding the capabilities of Authd and supporting the diverse needs of the Ubuntu community and our enterprise customers. This release reaffirms our dedication to open standards and enterprise-grade security for everyone. We welcome your feedback and contributions to the project.</p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Using 11ty's WebC to separate web components out into separate files</title>
@@ -5050,98 +5079,6 @@ Into empty area / &ldquo;Clipboard to file&rdquo; menu: Will create the file cli
 <p>The rest is understanding your body and addiction, that smoking never made you feel better, it only made <em>not smoking</em> feel worse. As soon as you cut that cycle, your body recalibrates. As soon as you realise that, the infinitesimal cost of quitting seems worth it.</p>
 <p>If you’re trying to quit and you’re not finding it easy, stick with it. If you need help understanding addiction, <a href="https://www.amazon.co.uk/dp/0615482155">Allen Carr’s Easy Way to Stop Smoking</a> has an eerily convincing narrative that plods through the feelings every smoker goes through. I never finished it —I convinced myself I didn’t want to quit— but it was absolutely the basis for the voice in my head that let me quit later on.</p>]]></description>
       <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
-    </item>
-    <item>
-      <title>finding binary differences</title>
-      <link>https://outflux.net/blog/archives/2022/06/24/finding-binary-differences/</link>
-      <guid isPermaLink="true">https://outflux.net/blog/archives/2022/06/24/finding-binary-differences/</guid>
-      <pubDate>Fri, 24 Jun 2022 20:11:48 GMT</pubDate>
-      <description><![CDATA[<p>As part of the continuing work to <a href="https://github.com/KSPP/linux/issues/79">replace 1-element arrays in the Linux kernel</a>, it&#8217;s very handy to show that a source change has had no executable code difference. For example, if you started with this:</p>
-<pre class="brush:c">
-struct foo {
-    unsigned long flags;
-    u32 length;
-    u32 data[1];
-};
-
-void foo_init(int count)
-{
-    struct foo *instance;
-    size_t bytes = sizeof(*instance) + sizeof(u32) * (count - 1);
-    ...
-    instance = kmalloc(bytes, GFP_KERNEL);
-    ...
-};
-</pre>
-<p>And you changed only the struct definition:</p>
-<pre class="brush:diff">
--    u32 data[1];
-+    u32 data[];
-</pre>
-<p>The <code>bytes</code> calculation is going to be incorrect, since it is still subtracting 1 element&#8217;s worth of space from the desired count. (And let&#8217;s ignore for the moment the open-coded calculation that may end up with an arithmetic over/underflow here; that can be solved separately by using the <code>struct_size()</code> helper or the <code>size_mul()</code>, <code>size_add()</code>, etc family of helpers.)</p>
-<p>The missed adjustment to the size calculation is relatively easy to find in this example, but sometimes it&#8217;s much less obvious how structure sizes might be woven into the code. I&#8217;ve been checking for issues by using the fantastic <a href="https://diffoscope.org/">diffoscope</a> tool. It can produce a LOT of noise if you try to compare builds without keeping in mind the issues solved by <a href="https://docs.kernel.org/kbuild/reproducible-builds.html">reproducible builds</a>, with some additional notes. I prepare my build with the &#8220;known to disrupt code layout&#8221; options disabled, but with debug info enabled:</p>
-<pre class="brush:shell">
-$ KBF="KBUILD_BUILD_TIMESTAMP=1980-01-01 KBUILD_BUILD_USER=user KBUILD_BUILD_HOST=host KBUILD_BUILD_VERSION=1"
-$ OUT=gcc
-$ make $KBF O=$OUT allmodconfig
-$ ./scripts/config --file $OUT/.config \
-        -d GCOV_KERNEL -d KCOV -d GCC_PLUGINS -d IKHEADERS -d KASAN -d UBSAN \
-        -d DEBUG_INFO_NONE -e DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT
-$ make $KBF O=$OUT olddefconfig
-</pre>
-<p>Then I build a stock target, saving the output in &#8220;before&#8221;. In this case, I&#8217;m examining <code>drivers/scsi/megaraid/</code>:</p>
-<pre class="brush:shell">
-$ make -jN $KBF O=$OUT drivers/scsi/megaraid/
-$ mkdir -p $OUT/before
-$ cp $OUT/drivers/scsi/megaraid/*.o $OUT/before/
-</pre>
-<p>Then I patch and build a modified target, saving the output in &#8220;after&#8221;:</p>
-<pre class="brush:shell">
-$ vi the/source/code.c
-$ make -jN $KBF O=$OUT drivers/scsi/megaraid/
-$ mkdir -p $OUT/after
-$ cp $OUT/drivers/scsi/megaraid/*.o $OUT/after/
-</pre>
-<p>And then run <code>diffoscope</code>:</p>
-<pre class="brush:shell">
-$ diffoscope $OUT/before/ $OUT/after/
-</pre>
-<p>If <code>diffoscope</code> output reports nothing, then we&#8217;re done. 🥳</p>
-<p>Usually, though, when source lines move around other stuff will shift too (e.g. <code>WARN</code> macros rely on line numbers, so the bug table may change contents a bit, etc), and <code>diffoscope</code> output will look noisy. To examine just the executable code, the command that <code>diffoscope</code>  used is reported in the output, and we can run it directly, but with possibly shifted line numbers not reported. i.e. running <code>objdump</code> without <code>--line-numbers</code>:</p>
-<pre class="brush:shell">
-$ ARGS="--disassemble --demangle --reloc --no-show-raw-insn --section=.text"
-$ for i in $(cd $OUT/before && echo *.o); do
-        echo $i
-        diff -u <(objdump $ARGS $OUT/before/$i | sed "0,/^Disassembly/d") \
-                <(objdump $ARGS $OUT/after/$i  | sed "0,/^Disassembly/d")
-done
-</pre>
-<p>If I see an unexpected difference, for example:</p>
-<pre class="brush:diff">
--    c120:      movq   $0x0,0x800(%rbx)
-+    c120:      movq   $0x0,0x7f8(%rbx)
-</pre>
-<p>Then I'll search for the pattern with line numbers added to the <code>objdump</code> output:</p>
-<pre class="brush:shell">
-$ vi <(objdump --line-numbers $ARGS $OUT/after/megaraid_sas_fp.o)
-</pre>
-<p>I'd search for "0x0,0x7f8", find the source file and line number above it, open that source file at that position, and look to see where something was being miscalculated:</p>
-<pre class="brush:shell">
-$ vi drivers/scsi/megaraid/megaraid_sas_fp.c +329
-</pre>
-<p>Once tracked down, I'd start over at the "patch and build a modified target" step above, repeating until there were no differences. For example, in the starting example, I'd also need to make this change:</p>
-<pre class="brush:diff">
--    size_t bytes = sizeof(*instance) + sizeof(u32) * (count - 1);
-+    size_t bytes = sizeof(*instance) + sizeof(u32) * count;
-</pre>
-<p>Though, as hinted earlier, better yet would be:</p>
-<pre class="brush:diff">
--    size_t bytes = sizeof(*instance) + sizeof(u32) * (count - 1);
-+    size_t bytes = struct_size(instance, data, count);
-</pre>
-<p>But sometimes adding the helper usage will add binary output differences since they're performing overflow checking that might saturate at <code>SIZE_MAX</code>. To help with patch clarity, those changes can be done separately from fixing the array declaration.</p>
-<p style='text-align:left'>&copy; 2022 - 2023, <a href="https://outflux.net/blog/">Kees Cook</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 License</a>.<br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="CC BY-SA 4.0" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> </p>]]></description>
-      <source url="http://outflux.net/blog/archives/category/ubuntu/feed">Kees Cook</source>
     </item>
     <item>
       <title>How much does my flight sponsor Vladimir?</title>
