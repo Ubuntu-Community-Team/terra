@@ -6,9 +6,594 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sun, 08 Mar 2026 00:35:11 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2026 00:35:04 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to run Firecracker microVMs with vmsan on Incus</title>
+      <link>https://blog.simos.info/how-to-run-firecracker-microvms-with-vmsan-on-incus/</link>
+      <guid isPermaLink="true">https://blog.simos.info/how-to-run-firecracker-microvms-with-vmsan-on-incus/</guid>
+      <pubDate>Sun, 08 Mar 2026 21:48:08 GMT</pubDate>
+      <description><![CDATA[<p><a href="https://linuxcontainers.org/incus/">Incus</a> is a manager for virtual machines and system containers.</p>
+
+
+
+<p>A <strong>virtual machine</strong> (VM) is an instance of an operating system that runs on a computer, along with the main operating system. A virtual machine uses hardware virtualization features for the separation from the main operating system. With virtual machines, a complete operating system boots up in them. </p>
+
+
+
+<p>Incus, to run VMs, uses KVM as <a href="https://aws.amazon.com/compare/the-difference-between-type-1-and-type-2-hypervisors/">a Type 1 hypervisor</a>, and QEMU as a Type 2 hypervisor <em>and</em> emulator.</p>
+
+
+
+<p>On the other hand, <a href="https://github.com/angelorc/vmsan"><strong><em>vmsan</em></strong></a> only uses KVM as a Type 1 hypervisor. This means that it has far less features, but it is very lightweight. </p>
+
+
+
+<p>In this post we have a look at <strong><em>vmsan</em></strong> by running it in an Incus virtual machine. </p>
+
+
+<h2 class="simpletoc-title">Table of Contents</h2>
+<ul class="simpletoc-list">
+<li><a href="#prerequisites">Prerequisites</a>
+
+</li>
+<li><a href="#setting-up-vmsan">Setting up vmsan</a>
+
+</li>
+<li><a href="#using-vmsan">Using vmsan</a>
+
+
+<ul><li>
+<a href="#vmsan-create-to-create-a-microvm">vmsan create to create a microVM</a>
+
+</li>
+<li><a href="#vmsan-list-to-list-the-microvms">vmsan list to list the microVMs</a>
+
+</li>
+</ul>
+<li><a href="#vmsan-connect-to-get-a-shell-into-a-microvm">vmsan connect to get a shell into a microVM</a>
+
+</li>
+<li><a href="#running-nginx-in-a-microvm">Running nginx in a microVM</a>
+
+</li>
+<li><a href="#conclusion">Conclusion</a>
+</li></ul>
+
+<h2 class="wp-block-heading" id="prerequisites">Prerequisites</h2>
+
+
+<p>You need to </p>
+
+
+
+<ol class="wp-block-list">
+<li>have Incus installed and initialized</li>
+
+
+
+<li>have configured Incus to run virtual machines</li>
+
+
+
+<li>have configured your system for <strong><em>nested virtualization</em></strong></li>
+</ol>
+
+
+
+<p>For the last two points, check out this post, </p>
+
+
+
+<figure class="wp-block-embed is-type-wp-embed is-provider-mi-blog-lah wp-block-embed-mi-blog-lah"><div class="wp-block-embed__wrapper">
+<blockquote class="wp-embedded-content" data-secret="im1lVQejYh"><a href="https://blog.simos.info/how-to-run-an-incus-vm-inside-an-incus-vm-nested-virtualization/">How to run an Incus VM inside an Incus VM (nested virtualization)</a></blockquote><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted"  title="&#8220;How to run an Incus VM inside an Incus VM (nested virtualization)&#8221; &#8212; Mi blog lah!" src="https://blog.simos.info/how-to-run-an-incus-vm-inside-an-incus-vm-nested-virtualization/embed/#?secret=ruv2HvNvBn#?secret=im1lVQejYh" data-secret="im1lVQejYh" width="600" height="338" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div></figure>
+
+
+<h2 class="wp-block-heading" id="setting-up-vmsan">Setting up <code>vmsan</code></h2>
+
+
+<p>We launch an Incus VM and in there we install <strong><em>vmsan</em></strong>. By default, the Incus VM will have 1GiB RAM and 10GiB disk space. When you run <code>incus shell</code>, the instance should have finished the start-up. Otherwise, you get an error as shown below. Just try again and until you get the command succeeds.</p>
+
+
+
+<pre class="wp-block-code"><code>$ <kbd>incus launch --vm images:ubuntu/24.04/cloud microvm</kbd>
+$ <kbd>incus shell microvm</kbd>
+Error while executing alias expansion: incus exec microvm -- su -l
+Error: VM agent isn't currently running  // it just means the VM did not finish yet booting.
+$ <kbd>incus shell microvm</kbd>
+root@microvm:~# </code></pre>
+
+
+
+<p>Then, we follow the instructions at <a href="https://vmsan.dev/getting-started/installation">https://vmsan.dev/getting-started/installation</a> to install <strong><em>vmsan</em></strong>. First we install <code>curl</code> because the installation script is a <code>curl pipe</code> script. And we also install <code>iptables</code> because currently it&#8217;s not installed automatically by the installation script. This may change in the future. Note that <code>unzip</code> and <code>squashfs-tools</code> are both installed by the installation script, as shown below. We are also prompted to setup an optional Cloudflare tunnel which we do not do in this tutorial for simplicity. </p>
+
+
+
+<pre class="wp-block-code"><code>root@microvm:~# <kbd>apt install -y curl iptables</kbd>
+...
+root@microvm:~# <kbd>curl -fsSL https://vmsan.dev/install | bash</kbd>
+
+  vmsan installer
+  Firecracker microVM sandbox toolkit
+  https:&#47;&#47;github.com/angelorc/vmsan
+
+&#91;info]  <mark style="background-color:#7bdcb5" class="has-inline-color">Installing prerequisites: unzip squashfs-tools</mark>...
+&#91;ok]    Prerequisites installed
+&#91;info]  <mark style="background-color:#7bdcb5" class="has-inline-color">Node.js not found — installing Node.js 22 via NodeSource</mark>...
+...
+2026-03-04 18:15:18 - Repository configured successfully.
+2026-03-04 18:15:18 - To install Node.js, run: apt install nodejs -y
+2026-03-04 18:15:18 - You can use N|solid Runtime as a node.js alternative
+2026-03-04 18:15:18 - To install N|solid Runtime, run: apt install nsolid -y 
+
+&#91;ok]    Node.js v22.22.0 installed
+&#91;info]  Setting up /root/.vmsan...
+&#91;ok]    Directories created
+&#91;info]  Fetching latest Firecracker version...
+&#91;info]  Downloading firecracker.tgz...
+&#91;ok]    <mark style="background-color:#7bdcb5" class="has-inline-color has-black-color">Firecracker v1.14.2 installed</mark>
+&#91;info]  Downloading vmlinux-6.1...
+&#91;ok]    <mark style="background-color:#7bdcb5" class="has-inline-color">Kernel installed (vmlinux-6.1)</mark>
+&#91;info]  Downloading ubuntu-24.04.squashfs...
+&#91;info]  Converting squashfs to ext4 (this may take a minute)...
+&#91;ok]    Rootfs installed (ubuntu-24.04.ext4, 1024 MB)
+&#91;info]  Fetching latest release tag...
+&#91;ok]    Latest release: v0.1.0-alpha.24
+&#91;info]  Installing vmsan CLI via npm...
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+added 62 packages in 27s
+
+8 packages are looking for funding
+  run `npm fund` for details
+npm notice
+npm notice New major version of npm available! 10.9.4 -&gt; 11.11.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.11.0
+npm notice <mark style="background-color:#0693e3" class="has-inline-color has-black-color">To update run: npm install -g npm@11.11.0</mark>
+npm notice
+&#91;ok]    vmsan CLI installed (0.1.0-alpha.24)
+&#91;info]  Downloading vmsan-agent...
+&#91;ok]    vmsan-agent v0.1.0-alpha.24 installed
+&#91;info]  Downloading cloudflared...
+&#91;ok]    cloudflared 2026.2.0 installed
+
+  ┌─────────────────────────────────────────────────────────────┐
+  │  Cloudflare Tunnel (optional)                              │
+  │                                                            │
+  │  vmsan can expose VMs via Cloudflare Tunnels.              │
+  │  You need a Cloudflare API token and a domain managed      │
+  │  by Cloudflare.                                            │
+  └─────────────────────────────────────────────────────────────┘
+
+  <mark style="background-color:#fcb900" class="has-inline-color">Configure Cloudflare now?</mark> &#91;y/N] <kbd>N</kbd>
+&#91;info]  Skipping Cloudflare configuration
+
+&#91;ok]    <mark style="background-color:#8ed1fc" class="has-inline-color">vmsan environment ready at /root/.vmsan</mark>
+
+  Firecracker  /root/.vmsan/bin/firecracker
+  Jailer       /root/.vmsan/bin/jailer
+  Kernel       /root/.vmsan/kernels/vmlinux-6.1
+  Rootfs       /root/.vmsan/rootfs/ubuntu-24.04.ext4
+  Agent        /root/.vmsan/bin/vmsan-agent
+  cloudflared  /root/.vmsan/bin/cloudflared (not configured)
+  CLI          /usr/bin/vmsan
+
+  To configure Cloudflare later, re-run this installer.
+
+root@microvm:~# </code></pre>
+
+
+
+<p>Finally, we launch a microVM. We use the parameter <code>--connect</code> that gives as a non-root shell into the newly created microVM. The microVM has by default 128MiB RAM and a disk space of 10GiB. The Incus VM is also at 10GiB, which may not good. The default memory size is too little to even run <code>apt get</code> and the default disk space is too much. Don&#8217;t worry, we will remove this microVM and create a new one in the next section. What&#8217;s important, is that we got a shell into the microVM. It works!</p>
+
+
+
+<pre class="wp-block-code"><code>root@microvm:~# <kbd>vmsan create --connect</kbd>
+◐ Creating VM vm-918c59dc...                                                              
+◐ Setting up networking...                                                                
+&#x2714; Network: TAP fhvm0, Host 172.16.0.1, Guest 172.16.0.2                                   
+◐ Preparing chroot...                                                                     
+◐ Spawning Firecracker via jailer...                                                      
+◐ Waiting for API socket...                                                               
+&#x2714; API socket ready                                                                        
+◐ Starting VM...                                                                          
+&#x2714; VM vm-918c59dc is running (PID: 2116)                                                   
+
+ ╭───────────────────────────────────────────────────────────────────────────────────────╮
+ │                                                                                       │
+ │  <mark style="background-color:#7bdcb5" class="has-inline-color">VM Created</mark>: vm-918c59dc                                                              │
+ │                                                                                       │
+ │    <mark style="background-color:#00d084" class="has-inline-color">Status</mark>:   <mark style="background-color:#8ed1fc" class="has-inline-color">running</mark>                                                                  │
+ │    PID:      2116                                                                     │
+ │    vCPUs:    1                                                                        │
+ │    Memory:   128 MiB                                                                  │
+ │    Runtime:  base                                                                     │
+ │    Disk:     10 GB                                                                    │
+ │                                                                                       │
+ │    <mark style="background-color:#00d084" class="has-inline-color">Network</mark>:                                                                           │
+ │      TAP:    fhvm0                                                                    │
+ │      Host:   172.16.0.1                                                               │
+ │      Guest:  172.16.0.2                                                               │
+ │      MAC:    AA:FC:00:00:00:01                                                        │
+ │      Policy: allow-all                                                                │
+ │                                                                                       │
+ │    Kernel:   /root/.vmsan/kernels/vmlinux-6.1                                         │
+ │    Rootfs:   /root/.vmsan/rootfs/ubuntu-24.04.ext4                                    │
+ │                                                                                       │
+ │    Socket:   /root/.vmsan/jailer/firecracker/vm-918c59dc/root/run/firecracker.socket  │
+ │    Chroot:   /root/.vmsan/jailer/firecracker/vm-918c59dc                              │
+ │    State:    /root/.vmsan/vms/vm-918c59dc.json                                        │
+ │                                                                                       │
+ ╰───────────────────────────────────────────────────────────────────────────────────────╯
+
+◐ Waiting for agent to become ready...                                                    
+&#x2714; <mark style="background-color:#7bdcb5" class="has-inline-color">Agent is ready</mark>. Connecting via PTY shell...                                             
+<mark style="background-color:#f78da7" class="has-inline-color">ubuntu@ubuntu-fc-uvm</mark>:~$ </code></pre>
+
+
+
+<p>The microVM gets an IP address from the 176.16.x.y private address range. The hostname of the microVM is <em>ubuntu-fc-uvm</em>, and the name is derived from <em>Ubuntu FireCracker microVirtualMachine</em>.</p>
+
+
+
+<p>Let&#8217;s list the available microVMs and then remove &#8217;em. In the next section we examine a bit more about these commands.</p>
+
+
+
+<pre class="wp-block-code"><code>root@microvm:~# <kbd>vmsan list</kbd>
+ID            STATUS    CREATED         MEMORY    VCPUS  RUNTIME   TIMEOUT TUNNEL SNAPSHOT                                                                              
+<mark style="background-color:#fcb900" class="has-inline-color">vm-918c59dc</mark>   running   5 minutes ago   128 MiB   1      base      -       -      -       
+root@microvm:~# <kbd>vmsan remove vm-63eade04</kbd>
+
+ ERROR  Cannot remove running VM(s): vm-63eade04. Stop them first or use --force (-f).
+
+root@microvm:~# <kbd>vmsan remove vm-63eade04 --force</kbd>
+◐ Removing vm-63eade04...
+&#x2714; Removed vm-63eade04
+root@microvm:~# <kbd>vmsan list</kbd>
+No VMs found.    
+root@microvm:~#</code></pre>
+
+
+<h2 class="wp-block-heading" id="using-vmsan">Using <code>vmsan</code></h2>
+
+
+<p>Here are the available commands for <code>vmsan</code>. We can <mark style="background-color:#7bdcb5" class="has-inline-color">create</mark> microVMs and we can <mark style="background-color:#7bdcb5" class="has-inline-color">list</mark> them. By listing them, we can see the name that was given to them so that we can <mark style="background-color:#7bdcb5" class="has-inline-color">start</mark>, <mark style="background-color:#7bdcb5" class="has-inline-color">stop</mark> and <mark style="background-color:#7bdcb5" class="has-inline-color has-black-color">remove</mark> them. We can get a shell or run commands in a microVM with <mark style="background-color:#7bdcb5" class="has-inline-color">connect</mark> and <mark style="background-color:#7bdcb5" class="has-inline-color">exec</mark>. We transfer files with <mark style="background-color:#7bdcb5" class="has-inline-color">upload</mark> and <mark style="background-color:#7bdcb5" class="has-inline-color">download</mark>. Finally, with <mark style="background-color:#7bdcb5" class="has-inline-color">network</mark> we change the network policy.</p>
+
+
+
+<pre class="wp-block-code"><code>root@microvm:~# <kbd>vmsan</kbd> 
+Firecracker microVM sandbox toolkit (vmsan v0.1.0-alpha.24)
+
+USAGE vmsan &#91;OPTIONS] create|list|ls|start|stop|remove|rm|connect|upload|download|exec|network
+
+OPTIONS
+
+     --json    Output structured JSON (one event per command) 
+  --verbose    Show detailed debug output with wide event tree
+
+COMMANDS
+
+    create    Create and start a Firecracker microVM                 
+      list    List all VMs                                           
+        ls    List all VMs                                           
+     start    Start a previously stopped VM                          
+      stop    Stop one or more running VMs                           
+    remove    Remove one or more VMs (stops if running, then deletes)
+        rm    Remove one or more VMs (stops if running, then deletes)
+   connect    Connect to a running VM                                
+    upload    Upload local files to a running VM                     
+  download    Download a file from a running VM                      
+      exec    Execute a command inside a running VM                  
+   network    Update network policy on a running VM                  
+
+Use vmsan &lt;command&gt; --help for more information about a command.
+
+No command specified.
+root@microvm:~# </code></pre>
+
+
+<h3 class="wp-block-heading" id="vmsan-create-to-create-a-microvm"><code>vmsan create</code> to create a microVM</h3>
+
+
+<p>Here are the parameters. Note that if you run without any parameters (like <code>--help</code>), it will plough ahead create a microVM with the default parameters.</p>
+
+
+
+<p>By default, a microVM has 1 vCPU, 128MiB memory (you specify here the number only), disk space of <code>10gb</code> (you specify here the number with <code>gb</code>). If you use the <code>--connect</code> parameter, you get a non-root shell once the microVM is created. The default image is <code>base</code>, which is currently an Ubuntu 24.04.3. Once you launch a microVM, the <code>base</code> image uses 388MB of disk space. In addition, the microVM from the <code>base</code> image occupies about 34MiB of memory.</p>
+
+
+
+<pre class="wp-block-code"><code>root@microvm:~# <kbd>vmsan create --help</kbd>
+Create and start a Firecracker microVM (vmsan create v0.1.0-alpha.24)
+
+USAGE vmsan create &#91;OPTIONS] 
+
+OPTIONS
+
+                   --vcpus="1"    Number of vCPUs (default: 1)                                                                                                                 
+                --memory="128"    Memory in MiB (default: 128)                                                                                                                 
+                      --kernel    Path to kernel image. Auto-detected from kernels/ if not specified.                                                                          
+                      --rootfs    Path to rootfs image. Auto-detected from rootfs/ if not specified.                                                                           
+                  --from-image    Build rootfs from a Docker/OCI image (e.g. ubuntu:latest).                                                                                   
+              --runtime="base"    Runtime label (e.g. python3.13, node22, node22-demo). node22-demo auto-selects node:22 image and serves a branded welcome page. Default: base
+                     --project    Project label for grouping VMs                                                                                                               
+                 --disk="10gb"    Root disk size in GB (default: 10gb)                                                                                                         
+                     --timeout    Auto-shutdown timeout (e.g. 1h, 30m, 2h30m)                                                                                                  
+                --publish-port    Ports to forward to the VM (comma-separated, e.g. 8080,3000)                                                                                 
+                    --snapshot    Snapshot ID to restore from                                                                                                                  
+  --network-policy="allow-all"    Base network mode: allow-all (default), deny-all, or custom. Auto-promoted to custom when domains or CIDRs are provided.                     
+              --allowed-domain    Domains/patterns to allow (comma-separated). Wildcard * for subdomains.                                                                      
+                --allowed-cidr    Address ranges to allow (comma-separated CIDR, e.g. 10.0.0.0/8)                                                                              
+                 --denied-cidr    Address ranges to deny (comma-separated CIDR). Takes precedence over all allows.                                                             
+                  --no-seccomp    Disable seccomp-bpf filter for the Firecracker process.                                                                                      
+                   --no-pid-ns    Disable PID namespace isolation for the jailer.                                                                                              
+                   --no-cgroup    Disable cgroup resource limits for CPU and memory.                                                                                           
+                    --no-netns    Disable per-VM network namespace isolation.                                                                                                  
+                   --bandwidth    Max bandwidth per VM (e.g., 50mbit, 100mbit). Default: unlimited.                                                                            
+                     --connect    Automatically connect to the VM shell after creation.                                                                                        
+                      --silent    Suppress all output                                                                                                                          
+
+
+root@microvm:~# </code></pre>
+
+
+
+<p>We are creating microVM with the following defaults. </p>
+
+
+
+<pre class="wp-block-code"><code>root@microvm:~# <kbd>vmsan create --disk="1gb" --memory="512" --connect</kbd>
+◐ Creating VM vm-4373c955...
+◐ Setting up networking...
+&#x2714; Network: TAP fhvm0, Host 172.16.0.1, Guest 172.16.0.2 
+◐ Preparing chroot...
+◐ Spawning Firecracker via jailer... 
+◐ Waiting for API socket...
+&#x2714; API socket ready 
+◐ Starting VM...   
+&#x2714; VM vm-4373c955 is running (PID: 3987) 
+ ╭───────────────────────────────────────────────────────────────────────────────────────╮
+ │                                                                                       │
+ │  VM Created: vm-4373c955                                                              │
+ │                                                                                       │
+ │    Status:   running                                                                  │
+ │    PID:      3987                                                                     │
+ │    vCPUs:    1                                                                        │
+ │    Memory:   512 MiB                                                                  │
+ │    Runtime:  base                                                                     │
+ │    Disk:     1 GB                                                                     │
+ │                                                                                       │
+ │    Network:                                                                           │
+ │      TAP:    fhvm0                                                                    │
+ │      Host:   172.16.0.1                                                               │
+ │      Guest:  172.16.0.2                                                               │
+ │      MAC:    AA:FC:00:00:00:01                                                        │
+ │      Policy: allow-all                                                                │
+ │                                                                                       │
+ │    Kernel:   /root/.vmsan/kernels/vmlinux-6.1                                         │
+ │    Rootfs:   /root/.vmsan/rootfs/ubuntu-24.04.ext4                                    │
+ │                                                                                       │
+ │    Socket:   /root/.vmsan/jailer/firecracker/vm-4373c955/root/run/firecracker.socket  │
+ │    Chroot:   /root/.vmsan/jailer/firecracker/vm-4373c955                              │
+ │    State:    /root/.vmsan/vms/vm-4373c955.json                                        │
+ │                                                                                       │
+ ╰───────────────────────────────────────────────────────────────────────────────────────╯
+
+◐ Waiting for agent to become ready...
+&#x2714; Agent is ready. Connecting via PTY shell...
+ubuntu@ubuntu-fc-uvm:~$ <kbd>cat /etc/lsb-release </kbd>
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=24.04
+DISTRIB_CODENAME=noble
+DISTRIB_DESCRIPTION="Ubuntu 24.04.3 LTS"
+ubuntu@ubuntu-fc-uvm:~$ <kbd>df -h .</kbd>
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       974M  388M  570M  41% /
+ubuntu@ubuntu-fc-uvm:~$ <kbd>free -h</kbd>
+               total        used        free      shared  buff/cache   available
+Mem:           104Mi        34Mi        28Mi       1.7Mi        52Mi        70Mi
+Swap:             0B          0B          0B
+ubuntu@ubuntu-fc-uvm:~$ <kbd>su</kbd>
+root@ubuntu-fc-uvm:/home/ubuntu# <kbd>cd</kbd>
+root@ubuntu-fc-uvm:~# <kbd>pwd</kbd>
+/root
+root@ubuntu-fc-uvm:~# <kbd>exit</kbd>
+exit
+ubuntu@ubuntu-fc-uvm:~$ <kbd>exit</kbd>
+root@microvm:~# </code></pre>
+
+
+<h3 class="wp-block-heading" id="vmsan-list-to-list-the-microvms"><code>vmsan list</code> to list the microVMs</h3>
+
+
+<p>We run <code>vmsan list</code> to list the available microVMs.</p>
+
+
+
+<pre class="wp-block-code"><code>root@microvm:~# <kbd>vmsan list</kbd>
+ID            STATUS    CREATED         MEMORY    VCPUS   RUNTIME TIMEOUT TUNNEL SNAPSHOT
+vm-4373c955   running   7 minutes ago   512 MiB   1       base    -       -      -       
+root@microvm:~# </code></pre>
+
+
+<h2 class="wp-block-heading" id="vmsan-connect-to-get-a-shell-into-a-microvm"><code>vmsan connect</code> to get a shell into a microVM</h2>
+
+
+<p>We run <code>vmsan connect</code> to get a shell into a microVM. We need the ID of the microVM, and we get it by running <code>vmsan list</code>. We can get root by running <code>su</code>. The <code>root</code> account does not have a password, therefore you are not asked for a password for the <code>su</code> command. <code>sudo</code> is not enabled in this image as it is not needed. I am running <code>su --login</code> in order to get a login shell for root. </p>
+
+
+
+<pre class="wp-block-code"><code>root@microvm:~# <kbd>vmsan connect vm-4373c955</kbd>
+ubuntu@ubuntu-fc-uvm:~$ <kbd>su --login</kbd>
+root@ubuntu-fc-uvm:~# </code></pre>
+
+
+<h2 class="wp-block-heading" id="running-nginx-in-a-microvm">Running nginx in a microVM</h2>
+
+
+<p>Let&#8217;s do something useful. We are going to run <code>nginx</code> in a microVM and we will access it from the host. We are going to start from scratch, creating a new microVM.</p>
+
+
+
+<pre class="wp-block-code"><code>root@microvm:~# <kbd>vmsan create <kbd>--disk="1gb" --memory="512"</kbd> --publish-port 80 --connect</kbd>
+◐ Creating VM <mark style="background-color:#0693e3" class="has-inline-color">vm-2f796b98</mark>...                                                              
+◐ Setting up networking...                                                                
+&#x2714; Network: TAP fhvm0, Host 198.19.0.1, Guest 198.19.0.2                                   
+◐ Preparing chroot...                                                                     
+◐ Spawning Firecracker via jailer...                                                      
+◐ Waiting for API socket...                                                               
+&#x2714; API socket ready                                                                        
+◐ Starting VM...                                                                          
+&#x2714; VM vm-2f796b98 is running (PID: 6942)                                                   
+
+ ╭───────────────────────────────────────────────────────────────────────────────────────╮
+ │                                                                                       │
+ │  VM Created: <mark style="background-color:#7bdcb5" class="has-inline-color">vm-2f796b98</mark>                                                              │
+ │                                                                                       │
+ │    Status:   running                                                                  │
+ │    PID:      6942                                                                     │
+ │    vCPUs:    1                                                                        │
+ │    Memory:   512 MiB                                                                  │
+ │    Runtime:  base                                                                     │
+ │    Disk:     1 GB                                                                    │
+ │                                                                                       │
+ │    Network:                                                                           │
+ │      TAP:    fhvm0                                                                    │
+ │      Host:   198.19.0.1                                                               │
+ │      Guest:  198.19.0.2                                                               │
+ │      MAC:    AA:FC:00:00:00:01                                                        │
+ │      Policy: allow-all                                                                │
+ │      <mark style="background-color:#7bdcb5" class="has-inline-color">Ports</mark>:  80                                                                       │
+ │                                                                                       │
+ │    Kernel:   /root/.vmsan/kernels/vmlinux-6.1                                         │
+ │    Rootfs:   /root/.vmsan/rootfs/ubuntu-24.04.ext4                                    │
+ │                                                                                       │
+ │    Socket:   /root/.vmsan/jailer/firecracker/vm-2f796b98/root/run/firecracker.socket  │
+ │    Chroot:   /root/.vmsan/jailer/firecracker/vm-2f796b98                              │
+ │    State:    /root/.vmsan/vms/vm-2f796b98.json                                        │
+ │                                                                                       │
+ ╰───────────────────────────────────────────────────────────────────────────────────────╯
+
+◐ Waiting for agent to become ready...                                                    
+&#x2714; Agent is ready. Connecting via PTY shell...                                             
+ubuntu@vm-2f796b98:~$ </code></pre>
+
+
+
+<p>Note that if we try to run <code>apt install</code>, it will fail because it cannot find the packages. The reason is that this VM has not updated automatically the package list, and we have to perform this manually. <code>lsof -i</code> shows that the Web server has not started yet. We <strong><em>enable</em></strong> and then <strong><em>start</em></strong> the <em>nginx</em> service.  We then verify that <em>nginx</em> is now running. Finally, we change the default <code>index.html</code> file to reflect that we are running the Web server in a microVM and all that in an Incus VM.</p>
+
+
+
+<pre class="wp-block-code"><code>ubuntu@vm-2f796b98:~$ su -l
+root@ubuntu-fc-uvm:~# 
+root@ubuntu-fc-uvm:~# <kbd>apt install nginx lsof</kbd>
+Reading package lists... Done
+Building dependency tree... Done
+E: Unable to locate package nginx
+E: Unable to locate package lsof
+root@ubuntu-fc-uvm:~# <kbd>apt update</kbd>
+...
+root@ubuntu-fc-uvm:~# <kbd>apt install -y nginx lsof</kbd>
+...
+root@ubuntu-fc-uvm:~# <kbd>lsof -i</kbd>
+COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+systemd     1 root   64u  IPv4   1507      0t0  TCP *:ssh (LISTEN)
+systemd     1 root   65u  IPv6   1511      0t0  TCP *:ssh (LISTEN)
+vmsan-age 582 root    3u  IPv6   1630      0t0  TCP *:9119 (LISTEN)
+vmsan-age 582 root    8u  IPv6   1953      0t0  TCP 172.16.0.2:9119->10.200.0.1:39920 (ESTABLISHED)
+root@vm-f1d2f963:~# <kbd>systemctl enable nginx</kbd>
+Synchronizing state of nginx.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable nginx
+root@ubuntu-fc-uvm:~# <kbd>systemctl start nginx</kbd>
+root@ubuntu-fc-uvm:~# <kbd>lsof -i</kbd>
+COMMAND    PID     USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+systemd      1     root   64u  IPv4   1507      0t0  TCP *:ssh (LISTEN)
+systemd      1     root   65u  IPv6   1511      0t0  TCP *:ssh (LISTEN)
+vmsan-age  582     root    3u  IPv6   1630      0t0  TCP *:9119 (LISTEN)
+vmsan-age  582     root    8u  IPv6   1953      0t0  TCP 172.16.0.2:9119->10.200.0.1:39920 (ESTABLISHED)
+nginx     6342     root    5u  IPv4  11303      0t0  TCP *:http (LISTEN)
+nginx     6342     root    6u  IPv6  11304      0t0  TCP *:http (LISTEN)
+nginx     6343 www-data    5u  IPv4  11303      0t0  TCP *:http (LISTEN)
+nginx     6343 www-data    6u  IPv6  11304      0t0  TCP *:http (LISTEN)
+root@vm-f1d2f963:~# sed -i "s/Welcome to nginx/Welcome to nginx running in a vmsan microMV, which runs in an Incus VM/g"  /var/www/html/index.nginx-debian.html 
+root@ubuntu-fc-uvm:~# </code></pre>
+
+
+
+<p>We exit to the host and create <em>the Incus proxy device</em>. While exiting, we have a look at the firewall rule that performed the publishing of port 80 (http) to the Incus virtual machine. </p>
+
+
+
+<pre class="wp-block-code"><code>root@ubuntu-fc-uvm:~# <kbd>exit</kbd>
+exit
+ubuntu@ubuntu-fc-uvm:~$ <kbd>exit</kbd>
+exit
+root@microvm:~# <kbd>iptables-nft</kbd> 
+...
+Chain FORWARD (policy DROP)
+ACCEPT     tcp  --  anywhere             198.19.0.2           tcp dpt:<mark style="background-color:#00d084" class="has-inline-color">http</mark>
+...
+root@microvm:~# <kbd>exit</kbd>
+logout
+$ </code></pre>
+
+
+
+<p>Here is a screenshot of the the website, when accessed from the host. We use the IP address of the Incus VM <strong><em>microvm</em></strong>.</p>
+
+
+
+<figure class="wp-block-image size-full"><a href="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-2.png?ssl=1"><img data-recalc-dims="1" fetchpriority="high" decoding="async" width="750" height="438" data-attachment-id="54100" data-permalink="https://blog.simos.info/how-to-run-firecracker-microvms-with-vmsan-on-incus/image-17/" data-orig-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-2.png?fit=765%2C447&amp;ssl=1" data-orig-size="765,447" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-2.png?fit=300%2C175&amp;ssl=1" data-large-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-2.png?fit=750%2C438&amp;ssl=1" src="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-2.png?resize=750%2C438&#038;ssl=1" alt="" class="wp-image-54100" srcset="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-2.png?w=765&amp;ssl=1 765w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-2.png?resize=300%2C175&amp;ssl=1 300w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-2.png?resize=750%2C438&amp;ssl=1 750w" sizes="(max-width: 750px) 100vw, 750px" /></a></figure>
+
+
+<h2 class="wp-block-heading" id="conclusion">Conclusion</h2>
+
+
+<p>We had a quick look into <a href="https://github.com/angelorc/vmsan">vmsan</a>, a project that manages micro virtual machines that are based on Firecracker. vmsan is a new project and the maintainer is <a href="https://github.com/angelorc">Angelo RC</a>.</p>
+
+
+
+<p>vmsan also added support for Cloudflare tunnels. This means that you can expose your microVMs to the Internet using those Cloudflare tunnels. If you own a domain and you have configured it to be managed by Cloudflare, then vmsan allows you to publish your site automatically without needing to enable port forwarding. You would need to create an API key for this on Cloudflare and then feed that API key to vmsan. </p>
+
+
+
+<p>At the moment vmsan comes with four images. </p>
+
+
+
+<ol class="wp-block-list">
+<li>Ubuntu 24.04</li>
+
+
+
+<li>Ubuntu 24.04 with Python 3.13</li>
+
+
+
+<li>Ubuntu 24.04 with Node.js 22 LTS</li>
+
+
+
+<li>Ubuntu 24.04 with Node.js 24 LTS</li>
+</ol>
+
+
+
+<p>I would expect that the project will add support for smaller images, such as Alpine. Considering that Firecracker is not QEMU and has fewer requirements for resources (and features!), it would make sense to have tiny VMs.</p>
+
+
+
+<p>vmsan itself is a Node.js application. </p>
+
+
+
+<p></p>
+<div class="saboxplugin-wrap" itemtype="http://schema.org/Person" itemscope itemprop="author"><div class="saboxplugin-tab"><div class="saboxplugin-gravatar"><img alt='Simos Xenitellis' src='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=100&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=200&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' itemprop="image"/></div><div class="saboxplugin-authorname"><a href="https://blog.simos.info/author/simos/" class="vcard author" rel="author"><span class="fn">Simos Xenitellis</span></a></div><div class="saboxplugin-desc"><div itemprop="description"></div></div><div class="saboxplugin-web "><a href="https://blog.simos.info/" target="_self" >blog.simos.info/</a></div><div class="clearfix"></div></div></div>]]></description>
+      <source url="https://blog.simos.info/category/planet-ubuntu/feed/?mrss=off">Simos Xenitellis</source>
+    </item>
     <item>
       <title>Sovereign clouds: enhanced data security with confidential computing </title>
       <link>https://ubuntu.com//blog/sovereign-cloud-confidential-computing</link>
@@ -3309,304 +3894,6 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
       <source url="https://ograblog.wordpress.com/feed/atom">Oliver Grawert</source>
     </item>
     <item>
-      <title>How to run a Linux Desktop virtual machine on Incus</title>
-      <link>https://blog.simos.info/how-to-run-a-linux-desktop-virtual-machine-on-incus/</link>
-      <guid isPermaLink="true">https://blog.simos.info/how-to-run-a-linux-desktop-virtual-machine-on-incus/</guid>
-      <pubDate>Thu, 01 May 2025 22:51:53 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://linuxcontainers.org/incus/">Incus</a> is a manager for virtual machines and system containers.</p>
-
-
-
-<p>A <strong>virtual machine</strong> (VM) is an instance of an operating system that runs on a computer, along with the main operating system. A virtual machine uses hardware virtualization features for the separation from the main operating system. With virtual machines, the full operating system boots up in them. While in most cases you would run Linux on a VM without a desktop environment, you can also run Linux with a desktop environment (like in VirtualBox and VMWare).</p>
-
-
-
-<p>In <a href="https://blog.simos.info/how-to-run-a-windows-virtual-machine-on-incus-on-linux/">How to run a Windows virtual machine on Incus on Linux</a> we saw how to run a run a Windows VM on Incus. In this post we see how to run a Linux Desktop virtual machine on Incus. </p>
-
-
-<h2 class="simpletoc-title">Table of Contents</h2>
-<ul class="simpletoc-list">
-<li><a href="#updates">Updates</a>
-
-</li>
-<li><a href="#prerequisites">Prerequisites</a>
-
-</li>
-<li><a href="#cheat-sheet">Cheat sheet</a>
-
-</li>
-<li><a href="#availability-of-images">Availability of images</a>
-
-</li>
-<li><a href="#booting-a-desktop-linux-vm-on-incus">Booting a desktop Linux VM on Incus</a>
-
-
-<ul><li>
-<a href="#booting-the-ubuntu-desktop-image-on-incus">Booting the Ubuntu desktop image on Incus</a>
-
-</li>
-<li><a href="#booting-the-archlinux-desktop-image-on-incus">Booting the ArchLinux desktop image on Incus</a>
-
-</li>
-<li><a href="#booting-the-opensuse-desktop-image-on-incus">Booting the OpenSUSE desktop image on Incus</a>
-
-</li>
-</ul>
-<li><a href="#troubleshooting">Troubleshooting</a>
-
-
-<ul><li>
-
-<ul><li>
-<a href="#i-closed-the-desktop-window-but-the-vm-is-running-how-do-i-get-it-back-up">I closed the desktop window but the VM is running. How do I get it back up?</a>
-
-</li>
-<li><a href="#error-this-console-is-already-connected-force-is-required-to-take-it-over">Error: This console is already connected. Force is required to take it over.</a>
-
-</li>
-<li><a href="#error-instance-is-not-running">Error: Instance is not running</a>
-
-</li>
-<li><a href="#i-get-no-audio-from-the-desktop-vm-how-do-i-get-sound-in-the-desktop-vm">I get no audio from the desktop VM! How do I get sound in the desktop VM?</a>
-
-</li>
-<li><a href="#how-do-i-shutdown-the-desktop-vm">How do I shutdown the desktop VM?</a>
-
-</li>
-<li><a href="#error-failed-instance-creation-the-image-used-by-this-instance-is-incompatible-with-secureboot-please-set-securitysecurebootfalse-on-the-instance">Error: Failed instance creation: The image used by this instance is incompatible with secureboot. Please set security.secureboot=false on the instance</a>
-
-</li>
-<li><a href="#error-failed-instance-creation-failed-creating-instance-record-add-instance-info-to-the-database-failed-to-create-instances-entry-unique-constraint-failed-instancesprojectid-instancesname">Error: Failed instance creation: Failed creating instance record: Add instance info to the database: Failed to create &#8220;instances&#8221; entry: UNIQUE constraint failed: instances.project_id, instances.name</a>
-</li>
-</ul>
-</li>
-</ul>
-</li></ul>
-
-<h2 class="wp-block-heading" id="updates">Updates</h2>
-
-
-<p>No updates yet.</p>
-
-
-<h2 class="wp-block-heading" id="prerequisites">Prerequisites</h2>
-
-
-<ol class="wp-block-list">
-<li>You should have <a href="https://linuxcontainers.org/incus/docs/main/tutorial/first_steps/">a system that runs Incus</a>. </li>
-
-
-
-<li>A system with support for hardware virtualization so that it can run virtual machines.</li>
-
-
-
-<li>A virtual machine image of your preferred Linux desktop distribution.</li>
-</ol>
-
-
-<h2 class="wp-block-heading" id="cheat-sheet">Cheat sheet</h2>
-
-
-<p>You should specify how much RAM memory you are giving to the VM. The default is only 1GiB of RAM, which is not enough for desktop VMs. The <code>--console=vga</code> launches for you the Remote Viewer GUI application to allow you to use the desktop in a window.</p>
-
-
-
-<pre class="wp-block-code"><code>$ <mark style="background-color:#7bdcb5" class="has-inline-color">incus image list images:desktop</mark>       # List all available desktop images
-$ <mark style="background-color:#7bdcb5" class="has-inline-color">incus launch --vm images:ubuntu/jammy/desktop mydesktop -c limits.memory=3GiB --console=vga</mark>
-$ <mark style="background-color:#7bdcb5" class="has-inline-color">incus console mydesktop --type=vga</mark>    # Reconnect to already running instance
-$ <mark style="background-color:#7bdcb5" class="has-inline-color">incus start mydesktop --console=vga</mark>   # Start an existing desktop VM</code></pre>
-
-
-<h2 class="wp-block-heading" id="availability-of-images">Availability of images</h2>
-
-
-<p>Currently, Incus provides you with the following VM images of Linux desktop distributions. The architecture is <code>x86_64</code>.</p>
-
-
-
-<p>Run the following command to list all available Linux desktop images. <code>incus image</code> is the section of Incus that deals with the management of images. The <code>list</code> command lists the available images of a <em>remote</em>/repository, the default being <code>images:</code> (run <code>incus remote list</code> for the full list of <em>remotes</em>). After the colon (<code>:</code>), you type <em>filter</em> keywords, and in this case we typed <code>desktop</code> to show images that have the word <code>desktop</code> in them (to show only Desktop images). We are interested in a few columns only, therefore <code>-c ldt</code> only shows the columns for the <em>Alias</em>, the <em>Description</em> and the <em>Type</em>.</p>
-
-
-
-<pre class="wp-block-code"><code>$ <mark style="background-color:#00d084" class="has-inline-color">incus image list images:desktop -c ldt</mark>
-+------------------------------------------+---------------------------+-----------------+
-|                  ALIAS                   |      DESCRIPTION          |      TYPE       |
-+------------------------------------------+---------------------------+-----------------+
-| archlinux/desktop-gnome (3 more)         | <mark style="background-color:#8ed1fc" class="has-inline-color">Archlinux</mark> current amd64   | VIRTUAL-MACHINE |
-+------------------------------------------+---------------------------+-----------------+
-| opensuse/15.5/desktop-kde (1 more)       | <mark style="background-color:#00d084" class="has-inline-color has-black-color">Opensuse</mark> 15.5 amd64       | VIRTUAL-MACHINE |
-+------------------------------------------+---------------------------+-----------------+
-| opensuse/15.6/desktop-kde (1 more)       | <mark style="background-color:#00d084" class="has-inline-color">Opensuse</mark> 15.6 amd64       | VIRTUAL-MACHINE |
-+------------------------------------------+---------------------------+-----------------+
-| opensuse/tumbleweed/desktop-kde (1 more) | <mark style="background-color:#00d084" class="has-inline-color">Opensuse</mark> tumbleweed amd64 | VIRTUAL-MACHINE |
-+------------------------------------------+---------------------------+-----------------+
-| ubuntu/24.10/desktop (3 more)            | <mark style="background-color:#ff6900" class="has-inline-color">Ubuntu</mark> oracular amd64     | VIRTUAL-MACHINE |
-+------------------------------------------+---------------------------+-----------------+
-| ubuntu/focal/desktop (3 more)            | <mark style="background-color:#ff6900" class="has-inline-color">Ubuntu</mark> focal amd64        | VIRTUAL-MACHINE |
-+------------------------------------------+---------------------------+-----------------+
-| ubuntu/jammy/desktop (3 more)            | <mark style="background-color:#ff6900" class="has-inline-color">Ubuntu</mark> jammy amd64        | VIRTUAL-MACHINE |
-+------------------------------------------+---------------------------+-----------------+
-| ubuntu/noble/desktop (3 more)            | <mark style="background-color:#ff6900" class="has-inline-color">Ubuntu</mark> noble amd64        | VIRTUAL-MACHINE |
-+------------------------------------------+---------------------------+-----------------+
-| ubuntu/plucky/desktop (1 more)           | <mark style="background-color:#ff6900" class="has-inline-color">Ubuntu</mark> plucky amd64       | VIRTUAL-MACHINE |
-+------------------------------------------+---------------------------+-----------------+
-$ </code></pre>
-
-
-
-<p>These images have been generated with the utility <code>distrobuilder</code>, <a href="https://github.com/lxc/distrobuilder">https://github.com/lxc/distrobuilder</a> The purpose of the utility is to prepare the images so that when we launch them, we get immediately the desktop environment and do not perform any manual configuration. The configuration files for distrobuilder to create these images can be found at <a href="https://github.com/lxc/lxc-ci/tree/main/images">https://github.com/lxc/lxc-ci/tree/main/images</a> For example, the <code>archlinux.yaml</code> configuration file has a section to create the desktop image, along with the container and other virtual machine images. </p>
-
-
-
-<p>The full list of Incus images are also available on the Web, through the website <a href="https://images.linuxcontainers.org/">https://images.linuxcontainers.org/</a> It is possible to generate more such desktop images by following the steps of the existing configuration files. Perhaps a Kali Linux desktop image would be very useful. In the <a href="https://images.linuxcontainers.org/">https://images.linuxcontainers.org/</a> website you can also view the build logs that were generated while building the images, and figure out what parameters are needed for <code>distrobuilder</code> to build them (along with the actual configuration file). For example, here are the logs for the ArchLinux desktop image, <a href="https://images.linuxcontainers.org/images/archlinux/current/amd64/desktop-gnome/">https://images.linuxcontainers.org/images/archlinux/current/amd64/desktop-gnome/</a></p>
-
-
-
-<p>Up to this point we got a list of the available virtual machine images that are provided by Incus. We are ready to boot them.</p>
-
-
-<h2 class="wp-block-heading" id="booting-a-desktop-linux-vm-on-incus">Booting a desktop Linux VM on Incus</h2>
-
-
-<p>When launching a VM, Incus provides by default 1GiB RAM and 10GiB of disk space. The disk space is generally OK, but the RAM is too little for a desktop image (it&#8217;s OK for non-desktop images). For example, for an Ubuntu desktop image, the instance requires about 1.2GB of memory to start up and obviously more to run other programs. Therefore, if we do not specify more RAM, then the VM would struggle to make do of the mere 1GiB of RAM.</p>
-
-
-<h3 class="wp-block-heading" id="booting-the-ubuntu-desktop-image-on-incus">Booting the Ubuntu desktop image on Incus</h3>
-
-
-<p>Here is the command to launch a desktop image. We use <code>incus launch</code> to launch the image. It&#8217;s a VM, hence <code>--vm</code>. We are using the image from the <code>images:</code> remote, the one called <code>ubuntu/plucky/desktop</code> (it&#8217;s the last from the list of the previous section). We <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-luminous-vivid-orange-color">c</mark>onfigure a new limit for the memory usage, <code>-c limits.memory=3GiB</code>, so that the instance will be able to run successfully. Finally, the console is not textual but graphical. We specify that with <code>--console=vga</code> which means that Incus will launch the remote desktop utility for us. </p>
-
-
-
-<pre class="wp-block-code"><code>$ <mark style="background-color:#7bdcb5" class="has-inline-color">incus launch --vm images:ubuntu/plucky/desktop mydesktop -c limits.memory=3GiB --console=vga</mark>
-Launching mydesktop
-</code></pre>
-
-
-
-<p>Here is a screenshot of the new window with the running desktop virtual machine. </p>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-01-23-03-37.png?ssl=1"><img data-recalc-dims="1" fetchpriority="high" decoding="async" width="750" height="508" data-attachment-id="51379" data-permalink="https://blog.simos.info/how-to-run-a-linux-desktop-virtual-machine-on-incus/screenshot-from-2025-05-01-23-03-37/" data-orig-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-01-23-03-37.png?fit=1300%2C880&amp;ssl=1" data-orig-size="1300,880" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot from 2025-05-01 23-03-37" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-01-23-03-37.png?fit=300%2C203&amp;ssl=1" data-large-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-01-23-03-37.png?fit=750%2C508&amp;ssl=1" src="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-01-23-03-37.png?resize=750%2C508&#038;ssl=1" alt="" class="wp-image-51379" srcset="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-01-23-03-37.png?resize=1024%2C693&amp;ssl=1 1024w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-01-23-03-37.png?resize=300%2C203&amp;ssl=1 300w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-01-23-03-37.png?resize=768%2C520&amp;ssl=1 768w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-01-23-03-37.png?resize=750%2C508&amp;ssl=1 750w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-01-23-03-37.png?w=1300&amp;ssl=1 1300w" sizes="(max-width: 750px) 100vw, 750px" /></a><figcaption class="wp-element-caption">Screenshot of images:ubuntu/plucky/desktop</figcaption></figure>
-
-
-
-<p>Now we closed the wizard.</p>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/image.png?ssl=1"><img data-recalc-dims="1" decoding="async" width="750" height="508" data-attachment-id="51380" data-permalink="https://blog.simos.info/how-to-run-a-linux-desktop-virtual-machine-on-incus/image-13/" data-orig-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/image.png?fit=1300%2C880&amp;ssl=1" data-orig-size="1300,880" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/image.png?fit=300%2C203&amp;ssl=1" data-large-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/image.png?fit=750%2C508&amp;ssl=1" src="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/image.png?resize=750%2C508&#038;ssl=1" alt="" class="wp-image-51380" srcset="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/image.png?resize=1024%2C693&amp;ssl=1 1024w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/image.png?resize=300%2C203&amp;ssl=1 300w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/image.png?resize=768%2C520&amp;ssl=1 768w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/image.png?resize=750%2C508&amp;ssl=1 750w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/image.png?w=1300&amp;ssl=1 1300w" sizes="(max-width: 750px) 100vw, 750px" /></a><figcaption class="wp-element-caption">Screenshot of images:ubuntu/plucky/desktop after we close the wizard.</figcaption></figure>
-
-
-<h3 class="wp-block-heading" id="booting-the-archlinux-desktop-image-on-incus">Booting the ArchLinux desktop image on Incus</h3>
-
-
-<p>I cannot get this image to show the desktop. If someone can make this work, please post in a comment.</p>
-
-
-
-<pre class="wp-block-code"><code>$ <mark style="background-color:#7bdcb5" class="has-inline-color">incus launch --vm images:archlinux/desktop-gnome mydesktop -c limits.memory=3GiB --console=vga -c security.secureboot=false</mark>
-Launching mydesktop
-</code></pre>
-
-
-<h3 class="wp-block-heading" id="booting-the-opensuse-desktop-image-on-incus">Booting the OpenSUSE desktop image on Incus</h3>
-
-
-<pre class="wp-block-code"><code>$ <mark style="background-color:#7bdcb5" class="has-inline-color">incus launch --vm images:opensuse/15.5/desktop-kde mydesktop -c limits.memory=3GiB --console=vga</mark>
-Launching mydesktop
-</code></pre>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-02-01-41-39.png?ssl=1"><img data-recalc-dims="1" decoding="async" width="750" height="508" data-attachment-id="51382" data-permalink="https://blog.simos.info/how-to-run-a-linux-desktop-virtual-machine-on-incus/screenshot-from-2025-05-02-01-41-39/" data-orig-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-02-01-41-39.png?fit=1300%2C880&amp;ssl=1" data-orig-size="1300,880" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screenshot from 2025-05-02 01-41-39" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-02-01-41-39.png?fit=300%2C203&amp;ssl=1" data-large-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-02-01-41-39.png?fit=750%2C508&amp;ssl=1" src="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-02-01-41-39.png?resize=750%2C508&#038;ssl=1" alt="" class="wp-image-51382" srcset="https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-02-01-41-39.png?resize=1024%2C693&amp;ssl=1 1024w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-02-01-41-39.png?resize=300%2C203&amp;ssl=1 300w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-02-01-41-39.png?resize=768%2C520&amp;ssl=1 768w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-02-01-41-39.png?resize=750%2C508&amp;ssl=1 750w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2025/05/Screenshot-from-2025-05-02-01-41-39.png?w=1300&amp;ssl=1 1300w" sizes="(max-width: 750px) 100vw, 750px" /></a></figure>
-
-
-<h2 class="wp-block-heading" id="troubleshooting">Troubleshooting</h2>
-
-<h4 class="wp-block-heading" id="i-closed-the-desktop-window-but-the-vm-is-running-how-do-i-get-it-back-up">I closed the desktop window but the VM is running. How do I get it back up?</h4>
-
-
-<p>If you closed the Remote Viewer window, you can get Incus to start it again with the following command. By doing so, you are actually reconnecting back to the VM and continue working from where you left off.</p>
-
-
-
-<p>We are using the <code>incus console</code> action to connect to the running <em>mydesktop</em> instance and request access through the Remote Viewer (rather than a text console).</p>
-
-
-
-<pre class="wp-block-code"><code>$ <mark style="background-color:#7bdcb5" class="has-inline-color">incus console mydesktop --type=vga</mark>
-</code></pre>
-
-
-<h4 class="wp-block-heading" id="error-this-console-is-already-connected-force-is-required-to-take-it-over">Error: This console is already connected. Force is required to take it over.</h4>
-
-
-<p>You are already connected to the desktop VM with the Remote Viewer and you are trying to connect again. Either go to the existing Remote Viewer window, or add the parameter <code>--force</code> to close the existing Remote Viewer window and open a new one. </p>
-
-
-<h4 class="wp-block-heading" id="error-instance-is-not-running">Error: Instance is not running</h4>
-
-
-<p>You are trying to connect to a desktop VM with the Remote Viewer but the instance (which already exists) is not running. Use the action <code>incus start</code> to start the virtual machine, along with the <code>--type=vga</code> parameter to get Incus to launch the Remote Viewer for you.</p>
-
-
-
-<pre class="wp-block-code"><code>$ <mark style="background-color:#7bdcb5" class="has-inline-color">incus start mydesktop --console=vga</mark></code></pre>
-
-
-<h4 class="wp-block-heading" id="i-get-no-audio-from-the-desktop-vm-how-do-i-get-sound-in-the-desktop-vm">I get no audio from the desktop VM! How do I get sound in the desktop VM?</h4>
-
-
-<p>This requires extra steps which I do not show yet. There are three options. The first is to use the QEMU device emulation to emulate a sound device in the VM. The second is to somehow push an audio device into the VM so that this audio device is used exclusively in the VM (have not tried this but I think it&#8217;s possible). The third and perhaps best option is to use network audio with PulseAudio/Pipewire. You enable network audio on your desktop and then configure the VM instance to connect to that network audio server. I have tried that and it worked well for me. The downside is that the Firefox snap package in the VM could not figure out that there is network audio there and I could not get audio in that application. </p>
-
-
-<h4 class="wp-block-heading" id="how-do-i-shutdown-the-desktop-vm">How do I shutdown the desktop VM?</h4>
-
-
-<p>Use the desktop UI to perform the shutdown. The VM will shut down cleanly.</p>
-
-
-<h4 class="wp-block-heading" id="error-failed-instance-creation-the-image-used-by-this-instance-is-incompatible-with-secureboot-please-set-securitysecurebootfalse-on-the-instance">Error: Failed instance creation: The image used by this instance is incompatible with secureboot. Please set security.secureboot=false on the instance</h4>
-
-
-<p>You tried to launch a virtual machine with SecureBoot enabled but the image does not support SecureBoot. You need to disable SecureBoot when you launch this image. The instance has been created but is unable to run unless you disable SecureBoot. You can either disable SecureBoot through an Incus configuration for this image, or just delete the instance, and try again with the parameter <code>-c security.secureboot=false</code>. </p>
-
-
-
-<p>Here is how to disable SecureBoot, then try to <code>incus start</code> that instance. </p>
-
-
-
-<pre class="wp-block-code"><code>$ <mark style="background-color:#7bdcb5" class="has-inline-color">incus config set mydesktop security.secureboot=true</mark></code></pre>
-
-
-
-<p>Here is how you would enable that flag when you launch such a VM.</p>
-
-
-
-<pre class="wp-block-code"><code>incus launch --vm images:archlinux/desktop-gnome mydesktop -c limits.memory=3GiB --console=vga <mark style="background-color:#fcb900" class="has-inline-color">-c security.secureboot=false</mark></code></pre>
-
-
-
-<p>Note that official Ubuntu images can work with SecureBoot enabled, most others don&#8217;t. It has to do with the Linux kernel being digitally signed by some certification authority.</p>
-
-
-<h4 class="wp-block-heading" id="error-failed-instance-creation-failed-creating-instance-record-add-instance-info-to-the-database-failed-to-create-instances-entry-unique-constraint-failed-instancesprojectid-instancesname">Error: Failed instance creation: Failed creating instance record: Add instance info to the database: Failed to create &#8220;instances&#8221; entry: UNIQUE constraint failed: instances.project_id, instances.name</h4>
-
-
-<p>This error message is a bit cryptic. It just means that you are trying to create or launch an instance while the instance already exists. Read as <em><strong>Error: The instance name already exists</strong></em>.</p>
-
-
-
-<p></p>
-<div class="saboxplugin-wrap" itemtype="http://schema.org/Person" itemscope itemprop="author"><div class="saboxplugin-tab"><div class="saboxplugin-gravatar"><img alt='Simos Xenitellis' src='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=100&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=200&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' itemprop="image"/></div><div class="saboxplugin-authorname"><a href="https://blog.simos.info/author/simos/" class="vcard author" rel="author"><span class="fn">Simos Xenitellis</span></a></div><div class="saboxplugin-desc"><div itemprop="description"></div></div><div class="saboxplugin-web "><a href="https://blog.simos.info/" target="_self" >blog.simos.info/</a></div><div class="clearfix"></div></div></div>]]></description>
-      <source url="https://blog.simos.info/category/planet-ubuntu/feed/?mrss=off">Simos Xenitellis</source>
-    </item>
-    <item>
       <title>Ubuntu MATE 25.04 Release Notes</title>
       <link>https://ubuntu-mate.org/blog/ubuntu-mate-plucky-puffin-release-notes/</link>
       <guid isPermaLink="true">https://ubuntu-mate.org/blog/ubuntu-mate-plucky-puffin-release-notes/</guid>
@@ -4092,46 +4379,6 @@ mirror and follow the instructions above.</p>]]></description>
 
 <p>Making a service depend on <strong>network-online.target</strong> is considered an antipattern in most cases. This is because networking on Linux systems is very dynamic and the systemd target can only ever reflect the networking state at a single point in time. It cannot guarantee this state to be remained over the uptime of your system and has the potentially to delay the boot process considerably. Cables can be unplugged, wireless connectivity can drop, or remote routers can go down at any time, affecting the connectivity state of your local system. Therefore, “instead of wondering what to do about network.target, please just fix your program to be friendly to dynamically changing network configuration.” [<a href="https://systemd.io/NETWORK_ONLINE/#should-network-onlinetarget-be-used">source</a>].</p>]]></description>
       <source url="https://blog.slyon.de/category/ubuntu/feed/">Lukas Märdian</source>
-    </item>
-    <item>
-      <title>git revert name and Akademy</title>
-      <link>https://jriddell.org/2024/09/12/git-revert-name-and-akademy/</link>
-      <guid isPermaLink="true">https://jriddell.org/2024/09/12/git-revert-name-and-akademy/</guid>
-      <pubDate>Thu, 12 Sep 2024 14:33:09 GMT</pubDate>
-      <description><![CDATA[<p>I reverted my name back to Jonathan Riddell and have now made a new uid for my PGP key, you can get the updated one on <a href="https://keyserver.ubuntu.com/pks/lookup?op=vindex&amp;search=0xd7574483bb57b18d">keyserver.ubuntu.com</a> or <a href="https://jriddell.org/contact/">my contact page</a> or <a href="https://launchpad.net/~jr">my Launchpad page</a>. </p>
-
-
-
-<p>Here&#8217;s some pics from Akademy</p>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-1.png"><img width="939" height="1024" src="https://jriddell.org/wp-content/uploads/2024/09/image-1-939x1024.png" alt="" class="wp-image-1595" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-1-939x1024.png 939w, https://jriddell.org/wp-content/uploads/2024/09/image-1-275x300.png 275w, https://jriddell.org/wp-content/uploads/2024/09/image-1-768x837.png 768w, https://jriddell.org/wp-content/uploads/2024/09/image-1.png 941w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></figure>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-2.png"><img loading="lazy" width="1024" height="781" src="https://jriddell.org/wp-content/uploads/2024/09/image-2-1024x781.png" alt="" class="wp-image-1596" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-2-1024x781.png 1024w, https://jriddell.org/wp-content/uploads/2024/09/image-2-300x229.png 300w, https://jriddell.org/wp-content/uploads/2024/09/image-2-768x586.png 768w, https://jriddell.org/wp-content/uploads/2024/09/image-2.png 1292w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></figure>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-3.png"><img loading="lazy" width="1024" height="780" src="https://jriddell.org/wp-content/uploads/2024/09/image-3-1024x780.png" alt="" class="wp-image-1597" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-3-1024x780.png 1024w, https://jriddell.org/wp-content/uploads/2024/09/image-3-300x229.png 300w, https://jriddell.org/wp-content/uploads/2024/09/image-3-768x585.png 768w, https://jriddell.org/wp-content/uploads/2024/09/image-3.png 1291w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></figure>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-4.png"><img loading="lazy" width="1024" height="639" src="https://jriddell.org/wp-content/uploads/2024/09/image-4-1024x639.png" alt="" class="wp-image-1598" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-4-1024x639.png 1024w, https://jriddell.org/wp-content/uploads/2024/09/image-4-300x187.png 300w, https://jriddell.org/wp-content/uploads/2024/09/image-4-768x479.png 768w, https://jriddell.org/wp-content/uploads/2024/09/image-4-1536x958.png 1536w, https://jriddell.org/wp-content/uploads/2024/09/image-4.png 1577w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></figure>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-5.png"><img loading="lazy" width="1024" height="639" src="https://jriddell.org/wp-content/uploads/2024/09/image-5-1024x639.png" alt="" class="wp-image-1599" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-5-1024x639.png 1024w, https://jriddell.org/wp-content/uploads/2024/09/image-5-300x187.png 300w, https://jriddell.org/wp-content/uploads/2024/09/image-5-768x479.png 768w, https://jriddell.org/wp-content/uploads/2024/09/image-5-1536x958.png 1536w, https://jriddell.org/wp-content/uploads/2024/09/image-5.png 1577w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></figure>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-6.png"><img loading="lazy" width="659" height="1024" src="https://jriddell.org/wp-content/uploads/2024/09/image-6-659x1024.png" alt="" class="wp-image-1600" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-6-659x1024.png 659w, https://jriddell.org/wp-content/uploads/2024/09/image-6-193x300.png 193w, https://jriddell.org/wp-content/uploads/2024/09/image-6.png 693w" sizes="(max-width: 659px) 100vw, 659px" /></a></figure>
-
-
-
-<figure class="wp-block-image size-full"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-7.png"><img loading="lazy" width="562" height="810" src="https://jriddell.org/wp-content/uploads/2024/09/image-7.png" alt="" class="wp-image-1601" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-7.png 562w, https://jriddell.org/wp-content/uploads/2024/09/image-7-208x300.png 208w" sizes="(max-width: 562px) 100vw, 562px" /></a></figure>]]></description>
-      <source url="http://jriddell.org/feed/?tag=planetubuntu">Jonathan Riddell</source>
     </item>
     <item>
       <title>Freedesktop Specs Website Update</title>
