@@ -6,11 +6,11 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 13 Mar 2026 00:34:21 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2026 00:33:09 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>AppArmor security vulnerabilities fixes available</title>
+      <title>AppArmor vulnerability fixes available</title>
       <link>https://ubuntu.com//blog/apparmor-vulnerability-fixes-available</link>
       <guid isPermaLink="true">https://ubuntu.com//blog/apparmor-vulnerability-fixes-available</guid>
       <pubDate>Thu, 12 Mar 2026 23:46:05 GMT</pubDate>
@@ -40,7 +40,7 @@
 <pre class="wp-block-code"><code>dpkg -l 'linux-image*' | grep ^ii</code></pre>
 <p>You can compare the version of the specific kernel variant that you have installed against the per-release version table available in the <a href="https://ubuntu.com/security/vulnerabilities/crackarmor#affected-releases">Vulnerability Knowledge Base article</a>.</p>
 <h3 class="wp-block-heading">How to address</h3>
-<p>We recommend you upgrade all packages:</p>
+<p>Please note that the Linux kernel images are currently in the process of being made available in the Ubuntu Archive. When they are released, we recommend you upgrade all packages:</p>
 <pre class="wp-block-code"><code>sudo apt update &amp;&amp; sudo apt upgrade</code></pre>
 <p>If this is not possible and the Linux kernel is installed via a meta package, its update can be targeted directly:</p>
 <pre class="wp-block-code"><code>sudo apt update
