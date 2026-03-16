@@ -6,9 +6,57 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sun, 15 Mar 2026 02:43:37 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 02:43:55 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Calculating a rolling average without keeping all the numbers around</title>
+      <link>https://www.kryogenix.org/days/2026/03/14/calculating-a-rolling-average-without-keeping-all-the-numbers-around/</link>
+      <guid isPermaLink="true">https://www.kryogenix.org/days/2026/03/14/calculating-a-rolling-average-without-keeping-all-the-numbers-around/</guid>
+      <pubDate>Sat, 14 Mar 2026 23:23:00 GMT</pubDate>
+      <description><![CDATA[<p>OK, if you know anything about maths you will read this and shake your head in dismay because it's just <em>obvious</em> and why did I even need to think about it? But... I was quite pleased to think this through, so I thought I'd write it down in case anybody else finds it useful.</p>
+<p>So. Your job is to calculate the average of a set of numbers. This is not hard: the average value<sup id="sf-calculating-a-rolling-average-without-keeping-all-the-numbers-around-1-back"><a href="#sf-calculating-a-rolling-average-without-keeping-all-the-numbers-around-1" class="simple-footnote" title="maths people, I mean mean, obvs">1</a></sup> is the sum of the numbers divided by the count of the numbers. So the average of <code>2, 7, 8</code> is</p>
+<div class="highlight"><pre><span></span><code><span class="mf">2</span><span class="o">+</span><span class="mf">7</span><span class="o">+</span><span class="mf">8</span><span class="w">   </span><span class="mf">17</span>
+<span class="o">-----</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.666</span><span class="err">…</span>
+<span class="w">  </span><span class="mf">3</span><span class="w">      </span><span class="mf">3</span>
+</code></pre></div>
+
+<p>You know that bit already. But now I say: ok, here's a new number to add to the end of the list: <code>12</code>. What's the average now?</p>
+<p>One obvious way is to say, well, we know the numbers are <code>2, 7, 8</code>, so I'll just re-do the calculation with <code>2, 7, 8, 12</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="mf">2</span><span class="o">+</span><span class="mf">7</span><span class="o">+</span><span class="mf">8</span><span class="o">+</span><span class="mf">12</span><span class="w">   </span><span class="mf">29</span>
+<span class="o">--------</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.25</span>
+<span class="w">    </span><span class="mf">4</span><span class="w">       </span><span class="mf">4</span>
+</code></pre></div>
+
+<p>But that means that you have to keep all the numbers around forever. What if the list of numbers is big? That seems like hassle. It would be nice if we were able to calculate the average just from knowing what the <em>previous</em> average was, wouldn't it? So you know <code>5.666…</code> and you get told that the new number to add is 12: how do you get the new average of <code>7.25</code> just from that?</p>
+<p>I needed to do this and didn't know how, so I sat and thought about it for a short time and it's actually not hard, which was good; I'd just never considered it. So, as long as you know the "current" average number, <em>and</em> you know how many numbers there were in the list, you're all good. Consider: we know the current average is <code>5.666…</code> and that there were <code>3</code> numbers in the list that made that up. We don't need to know what the 3 numbers were (<code>2, 7, 8</code>) because if the three numbers we'd been given before were <em>all</em> <code>5.666…</code> -- that is, the list of numbers up to now was <code>5.666…, 5.666…, 5.666…</code> then when we took the average of that list, it would still be <code>5.666…</code>, because that's what an average means. So, even though we don't know what the 3 numbers were, we can pretend that we do, and now say that our new list is <code>5.666…, 5.666…, 5.666…, 12</code>. And we can work out the average of that! Or, put another way, we know that the average is</p>
+<div class="highlight"><pre><span></span><code>         sum of all numbers
+5.666… = ------------------
+          count of numbers
+</code></pre></div>
+
+<p>and because we can pretend that all the numbers were the average, we can say that the sum of all numbers is just the current average multiplied by the count:</p>
+<div class="highlight"><pre><span></span><code>         5.666…, 5.666…, "count" times
+5.666… = -----------------------------
+                   count
+</code></pre></div>
+
+<p>and so the <em>new</em> average is:</p>
+<div class="highlight"><pre><span></span><code>              (5.666…, 5.666…, "count" times) + 12
+new average = -----------------------------
+                       count + 1
+</code></pre></div>
+
+<p>which is</p>
+<div class="highlight"><pre><span></span><code>              (current average × count) + new number
+new average = --------------------------------------
+                          count + 1
+</code></pre></div>
+
+<p>So if you know the current average <code>a</code>, how many numbers there have been so far <code>c</code>, and the new number <code>n</code>, then the new <code>a = ((a*c)+n)/(c+1)</code>. And you only need to keep <code>a</code> and <code>c</code> around, rather than the whole list of numbers.</p>
+<p>Simple? Yes. But it was a useful thought for me that I could actually do this without having to keep the list around, which was handy in order to be able to <a href="https://mastodon.social/@sil/116230077286633335">calculate pi very inefficiently with coin flips on a BBC Micro</a>, a perfectly reasonable thing to do on your Saturday evening in my opinion.</p><ol class="simple-footnotes"><li id="sf-calculating-a-rolling-average-without-keeping-all-the-numbers-around-1">maths people, I mean mean, obvs <a href="#sf-calculating-a-rolling-average-without-keeping-all-the-numbers-around-1-back" class="simple-footnote-back">↩</a></li></ol>]]></description>
+      <source url="http://feeds.feedburner.com/kryogenix">Stuart Langridge</source>
+    </item>
     <item>
       <title>AppArmor vulnerability fixes available</title>
       <link>https://ubuntu.com//blog/apparmor-vulnerability-fixes-available</link>
@@ -1305,187 +1353,6 @@ Looking beyond the next two weeks? Visit the respective Circles!/LoCo Team calen
             <p><small>1 post - 1 participant</small></p>
             <p><a href="https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-934/77876">Read full topic</a></p>]]></description>
       <source url="https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss">Ubuntu Weekly News</source>
-    </item>
-    <item>
-      <title>Using 11ty's WebC to separate web components out into separate files</title>
-      <link>https://www.kryogenix.org/days/2026/03/02/using-11ty-s-webc-to-separate-web-components-out-into-separate-files/</link>
-      <guid isPermaLink="true">https://www.kryogenix.org/days/2026/03/02/using-11ty-s-webc-to-separate-web-components-out-into-separate-files/</guid>
-      <pubDate>Mon, 02 Mar 2026 05:22:00 GMT</pubDate>
-      <description><![CDATA[<p>For a thing I'm building I'm using web components to give me a convenient
-way to bundle up functionality of different bits of a web page into separate
-units. I'm not doing anything particularly clever here with web components;
-there's no shadow DOM here, the components aren't redistributable or
-particularly reusable anywhere else, and aren't required. They're simply a
-useful way to group "what happens when you click on this thing" into its own
-little section of code. Anyway, what I had was one big page with the styles for
-the components and the scripting for them all intertwined. </p>
-<h2>A simple example</h2>
-<p>Here's a simpler example. In this stripped down "page", you've got a 
-<code>&lt;light-bulb&gt;</code> component which either displays a little coloured
-dot and "on", or a black dot and "off". There are two of them, a green one and
-a yellow one. Then there's a <code>&lt;light-bulb-switch&gt;</code> component
-with three positions: green one on, both off, yellow one on. These aren't
-intended to be particularly <em>good</em> examples of web components (and you don't
-need to read or understand<sup id="sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-1-back"><a href="#sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-1" class="simple-footnote" title="or critique!">1</a></sup> the code in any detail), but they
-demonstrate the point.</p>
-<iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/stuartlangridge/embed/preview/gbwaLoj?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true">
-  See the Pen <a href="https://codepen.io/stuartlangridge/pen/gbwaLoj">
-  Untitled</a> by Stuart Langridge (<a href="https://codepen.io/stuartlangridge">@stuartlangridge</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
-
-<p>The HTML there is all one page; CSS and JS to define and style the components all
-inline. What I wanted was the <em>output</em> to be that, but to be able to split up
-the components into their own separate files, for ease of editing -- it's hard to
-keep track of where you are in a big long page. This isn't any sort of improvement
-to the user experience -- the long page with everything inline was exactly what I
-intend to serve to the user. This is purely a developer experience
-improvement.<sup id="sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-2-back"><a href="#sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-2" class="simple-footnote" title="Obviously there are many things that I could and will be doing to improve the user experience of this whole thing! But that's not what this particular writeup is about.">2</a></sup> I could have put the web component parts into
-their own CSS and JS files, and then added <code>&lt;script&gt;</code> and
-<code>&lt;link rel=stylesheet&gt;</code> lines for each, of course, and had the
-browser load them… but I wanted to keep all the code for each component together
-to make it easy for me to think about, but <em>not</em> have it all in the main file
-which was too confusing to navigate around in while editing it. Clearly there
-ought to be something which can do the purely mechanical task of "break this
-big file up into bits and then glue them back together in a build step of some
-kind". Helper libraries for web components tend to think of themselves as doing
-a lot of stuff to aid you in how you do that, either at build time or at run time;
-stuff like <a href="https://lit.dev/docs/">Lit</a> is pretty neat but it does
-six billion things I don't want, and the client-side half of this equation gives
-you React and all its cousins and I didn't need or want any of that either. All
-I needed was something to break a page apart into separate jigsaw pieces and
-mechanically glue them back together. I could probably write this myself in about
-twelve lines of python; it's not hard.</p>
-<h2>WebC</h2>
-<p>But then I was reminded by a search for <code>"distributing web components in a
-single file"</code> that <a href="https://github.com/11ty/webc">WebC</a> exists
-as part of the 11ty project. And… it sorta looks like it does this? But it's not
-all that clear; WebC isn't brilliantly documented. (It's fairly clear what the
-API is, at a technical level, but there's not very much about the <em>vibe</em>: what's
-WebC <em>for</em>, rather than how it does it.) I am a very big believer indeed in the
-notion of using software in accordance with its vibe; it's possible (and sometimes
-quite fun) to contort a bit of software into doing things that its authors don't
-think that it's for, and would perhaps be horrified to see it used for, but that's
-for hack value projects. When using a thing as a tool, use it the way it's meant
-to be used. If you swim against the tide on this, it will at some point bite you
-in the arse<sup id="sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-3-back"><a href="#sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-3" class="simple-footnote" title="can tides bite arses? we are in mixed metaphor city. Sorry, Uncle George. Jackboots in melting pots all over the place here">3</a></sup>
-and then you'll be sad. So, sure, WebC looks like it could do this mechanical
-reassemble-the-jigsaw task; is that what it's for? I needed support.</p>
-<p>So I got support for WebC in the most scalable and efficient way possible: chat
-to Zach Leatherman in the pub directly and ask him, after State of the Browser 2026.
-Isn't this how everyone gets support for everything, just talk directly to the
-author over a pint?<sup id="sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-4-back"><a href="#sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-4" class="simple-footnote" title="OK, tongue-in-cheek yes, but honestly this is quite a good way to find out about a piece of software! go to conferences and chat to the author. This isn't going to work if what you want help with is, like, Photoshop or something, but most people in the web community at least, and open source projects more generally, are in my experience not just willing but positively eager to talk to you about how they feel about a project they've built">4</a></sup> And Zach
-said: yup, that's what it's for. I promised to try it, and maybe write something
-down about it so that future people might not be as confused as I was, and now
-you're reading that very thing.</p>
-<p>(I'm not sure this is useful <em>documentation</em>. But I'm basically incapable of
-describing how to do anything without turning it into a short story. Insert that
-Mark Twain(?) quotation about writing a shorter letter here.)</p>
-<p>So I took my page above and broke it up into separate files. </p>
-<p><code>shell.html</code> is the "main page". The component names stay in place, but
-all their inner code is removed, and so are their styles and scripting:</p>
-<pre><code>&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Combined page&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;light-bulb data-color="orange"&gt;
-&lt;/light-bulb&gt;
-&lt;light-bulb data-color="green"&gt;
-&lt;/light-bulb&gt;
-&lt;light-bulb-switch&gt;
-&lt;/light-bulb-switch&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-
-<p>And then each of the components gets put into a separate file. This file
-contains the HTML for the component, including a <code>&lt;style&gt;</code> and
-<code>&lt;script&gt;</code> element for its CSS and JS. Here's (a cut-down version
-of) <code>light-bulb-switch.webc</code>:</p>
-<pre><code>    &lt;input type="range" min="0" 
-            max="2" value="1" list="bulbs"&gt;
-    &lt;datalist id="bulbs"&gt;
-        &lt;option value="0"&gt;orange&lt;/option&gt;
-        &lt;option value="1"&gt;neither&lt;/option&gt;
-        &lt;option value="2"&gt;green&lt;/option&gt;
-    &lt;/datalist&gt;
-
-&lt;style&gt;
-light-bulb-switch {
-    […css snipped…]
-}
-&lt;/style&gt;
-
-&lt;script&gt;
-window.customElements.define('light-bulb-switch', class extends HTMLElement {
-    […js snipped…]
-});
-
-&lt;/script&gt;</code></pre>
-
-<p>And there's a similar <code>light-bulb.webc</code> as well. (You can find all
-the code for this little demo, such as it is, at <a href="https://github.com/stuartlangridge/webc-simple-demonstration">github</a>.)</p>
-<p>Now this separation is done, we need WebC to glue it all back together. And
-this is a matter of a short bit of scripting:</p>
-<pre><code>import { WebC } from "@11ty/webc";
-import { writeFileSync } from "node:fs";
-
-// create WebC object
-let page = new WebC();
-
-// tell it where our components are
-page.defineComponents("*.webc");
-// have it collect style and script 
-// elements all together
-page.setBundlerMode(true);
-// this is the page to read and 
-// populate with components
-page.setInputPath("shell.html");
-
-// actually do the work
-let {
-    html, css, js, components
-} = await page.compile();
-
-// haha who needs webpack? not me!
-// just stick the js and css inline
-const out_js = `&lt;script&gt;
-${js.join("\n")}
-&lt;/script&gt;`
-const out_css = `&lt;style&gt;
-${css.join("\n")}
-&lt;/style&gt;`
-const out = html
-    .replace("&lt;/body&gt;", 
-        out_js + "&lt;/body&gt;")
-    .replace("&lt;/head&gt;", 
-        out_css + "&lt;/head&gt;");
-
-writeFileSync("combined.html", out);
-</code></pre>
-
-<p>WebC reads in our <code>shell.html</code> and all the component definitions in
-their own files, and gives back HTML, CSS, and JS; the HTML is a long string,
-which we can write to a file. The CSS and JS are both arrays of strings,
-each one being the code in a <code>&lt;style&gt;</code> or <code>&lt;script&gt;</code>
-element in a web component (and all together because we turned on 
-<code>bundlerMode</code>). Since we still need those styles and scripts in the
-output page somewhere, we bodge them into place by dropping a new <code>&lt;style&gt;</code> element into the page <code>&lt;head&gt;</code> and similarly for script and
-body. It's certainly possible to be a lot cleverer than this (and if you wanted
-to put the scripts in one separate file here and minify it on the way, this
-is where you'd do it) but for our example here, I don't want any of that cleverness.</p>
-<p>And that's all. WebC does quite a lot more than this, but I don't need any of that at
-the moment. If you do, check out the <a href="https://github.com/11ty/webc">WebC docs</a>.</p><ol class="simple-footnotes"><li id="sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-1">or critique! <a href="#sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-1-back" class="simple-footnote-back">↩</a></li><li id="sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-2">Obviously there are many things that I could and will be doing
-to improve the user experience of this whole thing! But that's not what this
-particular writeup is about. <a href="#sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-2-back" class="simple-footnote-back">↩</a></li><li id="sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-3">can tides bite arses? we are in mixed metaphor city. Sorry, <a href="https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/#:~:text=The%20Fascist%20octopus%20has%20sung%20its%20swan%20song">Uncle
-George</a>. Jackboots in melting pots all over the place here <a href="#sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-3-back" class="simple-footnote-back">↩</a></li><li id="sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-4">OK, tongue-in-cheek yes, but honestly this is quite a good
-way to find out about a piece of software! go to conferences and chat to the author.
-This isn't going to work if what you want help with is, like, <em>Photoshop</em> or
-something, but most people in the web community at least, and open source projects
-more generally, are in my experience not just willing but positively eager to
-talk to you about how they feel about a project they've built <a href="#sf-using-11ty-s-webc-to-separate-web-components-out-into-separate-files-4-back" class="simple-footnote-back">↩</a></li></ol>]]></description>
-      <source url="http://feeds.feedburner.com/kryogenix">Stuart Langridge</source>
     </item>
     <item>
       <title>Pronunciation</title>
