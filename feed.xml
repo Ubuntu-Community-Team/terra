@@ -6,61 +6,71 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 25 Mar 2026 02:32:42 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 02:39:46 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hot code burns</title>
-      <link>https://ubuntu.com//blog/hot-code-burns</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/hot-code-burns</guid>
-      <pubDate>Mon, 23 Mar 2026 13:54:33 GMT</pubDate>
-      <description><![CDATA[<p> The supply chain case for letting your containers cool before you ship them</p>
-<h1 class="wp-block-heading">The breach we got, and the one that’s coming</h1>
-<p>In September 2025, dozens of popular JavaScript packages,  like chalk and debug, were compromised on the npm registry. These packages are so ubiquitous they end up in everything: front-end apps, back-end microservices, and CI tooling. Developers didn’t do anything wrong, they just ran the same command they always do: npm install chalk. But then the malware arrived silently.</p>
-<p>This wasn’t a bug in an operating system. It wasn’t a virus on someone’s laptop. It was a supply chain attack: someone had poisoned the ingredients developers use to build their software. Nothing exotic,  just one developer getting phished, one malicious publish, and millions of downstream consumers letting it in because it looked like a legitimate update.</p>
-<p>Indeed, it was<em> </em>a legitimate update. The publisher didn’t intend to include malware, or know it was there.</p>
-<p>That was just npm. Now imagine the same technique targeting the system libraries your containers depend on before your application even runs, things like libcurl, zlib, or openssl. It would compromise the foundation underneath everything else you run or build.</p>
-<p>Welcome to the temperature problem of supply chain security. The industry is shipping code that’s still too hot to handle.</p>
-<h1 class="wp-block-heading">Two philosophies for building containers</h1>
-<p>A growing share of modern software runs inside containers. But whether the code inside has had time to cool, or whether it’s served straight off the upstream burner, varies dramatically across the industry.</p>
-<h2 class="wp-block-heading">The nightly-rebuild approach</h2>
-<p>One increasingly popular philosophy works like this: take the latest version of every package from upstream, rebuild the container image from scratch every night, use tooling to sign it, verify it, and minimize its footprint. On paper, it looks bulletproof. If the source is clean, you can ship good code quickly. If a bug is fixed upstream, you get the patch in your next nightly rebuild.</p>
-<p>But if the source is poisoned?</p>
-<p>You’ve just built and signed a perfectly minimal, fully traceable, enterprise-grade malware delivery mechanism. With reproducibility, no less. The backdoor doesn’t care about your beautiful infrastructure.</p>
-<p>You’re serving code straight from the upstream oven. No cooling rack. No resting time. No one checked the temperature.</p>
-<h2 class="wp-block-heading">The intentional update approach</h2>
-<p>Ubuntu takes a different path. Stable releases ship every two years. Package versions are frozen and security fixes are applied through surgical backports, which means patching vulnerabilities without pulling in new features or unreviewed upstream changes. Updates ship intentionally, with context.</p>
-<p>It’s not flashy,  but it’s calm, deliberate, and predictable.</p>
-<p>You don’t get nightly rebuilds: you get stability and confidence, because the code has already earned its place. It has cooled. It has been tested by time, by scrutiny, and by production workloads that depend on it behaving exactly as expected.</p>
-<p>No approach to supply chain security is foolproof. But if someone tries to slip a backdoor into libcurl? An Ubuntu-based container likely never pulled that update, because nothing in the release plan required it. While teams chasing upstream HEAD are plating up code that’s still burning hot, an intentional-update model is quietly unaffected.</p>
-<p>That container might be running a version of curl from 2022,  not because Ubuntu is behind, but because the maintainers know exactly what that version does. And more importantly, what it doesn’t. It cooled a long time ago. And cool code is predictable code.</p>
-<h1 class="wp-block-heading">Who ships the backdoor first?</h1>
-<p>Consider a scenario: a malicious patch gets merged upstream. It’s subtle, it’s signed, and it passes CI. As a result, it looks clean and is published to the world, all while being piping hot.</p>
-<p>A nightly-rebuild pipeline pulls the latest upstream automatically. The image gets built, scanned, still zero CVEs, because it’s brand new code. It’s signed,  minimal, and it’s perfectly malicious. Served at full temperature, no questions asked.</p>
-<p>An intentional-update distribution like Ubuntu? The pinned version is older, but it is predictable and stable. Ubuntu maintainers let the code cool, and the poison revealed itself in the upstream before it ever reached the plate.</p>
-<h1 class="wp-block-heading">The problem of zero CVEs</h1>
-<p>Security scanners love to flag CVEs. Found one? You’re in danger. Found zero? All clear.</p>
-<p>But the world is more subtle: old code has more CVEs because people have studied it longer, while new code has zero CVEs because no one has examined it yet. For new code, zero CVEs doesn’t mean secure,  it means unexamined. It means the code is too fresh for anyone to know what’s inside.</p>
-<p>If you’re rebuilding nightly from upstream, you’re pulling in code before it has even had a chance to be scrutinized. You’re signing first and asking questions later. You’re tasting the dish before it had time to cool.</p>
-<h1 class="wp-block-heading">Real security is earned slowly</h1>
-<p>Security isn’t just a scan result. It’s a discipline, and discipline requires  deliberate restraint. In other words, caution before adopting upstream code, discipline in changing what already works, and skepticism in extending trust.</p>
-<p>Ubuntu’s approach assumes upstream can be wrong, might be hasty, and may even be compromised. So the Ubuntu maintainers curate. They taste first, serve later. They let code cool before it leaves the kitchen, and they never serve anything they haven’t inspected themselves.</p>
-<p>The nightly-rebuild model bets on minimalism, transparency, and freshness, until freshness becomes a liability. Until “hot off the press” means “too hot to trust.”</p>
-<h1 class="wp-block-heading">When freshness becomes a liability</h1>
-<p>The practice that makes containers “clean”, nightly rebuilds from upstream,  is the same mechanism that pulls a backdoor in. The practice that makes containers seem  frozen, backported packages, is what keeps that door closed.</p>
-<p>One kitchen grabs every ingredient the moment it arrives and cooks immediately. The other inspects, waits, and only uses what it already knows is safe.</p>
-<p>When the next supply chain compromise hits a core system library, it’s worth asking: which of these two approaches will ship you the malware and which one will help you avoid it all together?</p>
-<h1 class="wp-block-heading">Rebuilding is not verification</h1>
-<p>You can rebuild every package, scan every layer, and sign every artifact. But if you don’t control the intent of the code, if you don’t know where it came from, why it changed, or who slipped something into the diff, you’re just rebuilding someone else’s malware, but faster and with better infrastructure.</p>
-<p>Rebuilding is replication. It’s only useful when you already know what you’re replicating. If you rebuild compromised code faithfully, you’re not verifying anything. You’re doing the attacker’s CI for them. You’re reheating someone else’s poison and calling it a fresh meal.</p>
-<h2 class="wp-block-heading">A different kind of CVE</h2>
-<p>When everyone chases “zero known CVEs,” we ignore wider risks. We stop asking, “Is this image vulnerable?” We need to start asking, “Is this image too trusting?”</p>
-<p>CVE counts are a lagging indicator. The breach arrives before the scanner lights up. And the real vulnerability isn’t the package,  it’s the philosophy. It’s the assumption that upstream is always safe to consume the moment it’s published.</p>
-<h1 class="wp-block-heading">Conclusion</h1>
-<p>This isn’t about any single vendor or project. It’s about how the industry treats trust and temperature.</p>
-<p>The intentional-update model assumes upstream can’t always be trusted, so it moves deliberately. It lets code cool. The nightly-rebuild model assumes upstream is trustworthy and must be kept current, so it moves constantly. It serves everything hot.</p>
-<p>Sometimes the most secure component in your pipeline is the one you haven’t touched in eighteen months. Not because it’s forgotten, but because it’s had time to cool, and it earned the right to stay.</p>
-<p>In software supply chain security, the best code isn’t always the freshest. It’s the code that cooled long enough for the truth to surface. So let your code cool. It tastes better anyways. </p>]]></description>
+      <title>Canonical at KubeCon Europe 2026: NVIDIA donates the GPU DRA driver to the CNCF</title>
+      <link>https://ubuntu.com//blog/canonical-nvidia-kubecon-2026</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/canonical-nvidia-kubecon-2026</guid>
+      <pubDate>Tue, 24 Mar 2026 15:21:03 GMT</pubDate>
+      <description><![CDATA[<h1 class="wp-block-heading">Previewing at KubeCon 2026: Canonical welcomes NVIDIA’s donation of the GPU DRA driver to CNCF.</h1>
+<p>At KubeCon Europe in Amsterdam, <a href="https://blogs.nvidia.com/blog/nvidia-at-kubecon-2026">NVIDIA announced that it will donate the GPU Dynamic Resource Allocation (DRA) Driver to the Cloud Native Computing Foundation (CNCF)</a>. This marks an important milestone for the Kubernetes ecosystem and for the future of AI infrastructure.</p>
+<p>For years, GPUs have been central to modern machine learning and high-performance computing workloads, yet integrating them into Kubernetes has required specialized tooling and vendor-specific components. The donation of the DRA driver represents a shift toward deeper standardization of GPU orchestration in cloud-native environments. By bringing this technology into the CNCF ecosystem, NVIDIA is helping ensure that advanced GPU scheduling capabilities evolve in the open, alongside the broader Kubernetes community.</p>
+<p>This contribution strengthens Kubernetes as the platform for large-scale AI workloads and provides a foundation for more flexible, programmable GPU resource management. To understand why this matters, it helps to look at the broader NVIDIA GPU ecosystem that powers AI workloads on Kubernetes.</p>
+<h1 class="wp-block-heading">The NVIDIA GPU ecosystem for kubernetes</h1>
+<p>As of 2026, the NVIDIA GPU stack in Kubernetes is organized into three major layers: the GPU Operator, the Modern Resource Stack built around DRA, and advanced orchestration capabilities such as the Kubernetes AI (KAI) Scheduler. Together, these components transform GPUs from simple hardware accelerators into fully orchestrated infrastructure resources.</p>
+<h2 class="wp-block-heading">The GPU operator: automating GPU infrastructure</h2>
+<p><a href="https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html">The NVIDIA GPU Operator</a> automates the lifecycle management of the software required for GPUs to function inside a Kubernetes cluster. Instead of requiring administrators to manually configure drivers, runtimes, and monitoring tools, the operator deploys and manages these components automatically. This provides a consistent, production-ready environment for GPU workloads.</p>
+<p>Typical components deployed by the operator include:</p>
+<ul>
+<li><strong>NVIDIA Driver</strong><strong>:</strong> The kernel modules and userspace libraries required for GPU operation are installed through a containerized driver manager.</li>
+<li><strong>NVIDIA Container Toolkit:</strong> This component integrates GPUs with container runtimes such as containerd or CRI-O, allowing containers to access GPU hardware and CUDA libraries on the node.</li>
+<li><strong>GPU Access Layer:</strong> Clusters traditionally used the NVIDIA device plugin to request GPUs using simple integer values. With the introduction of the DRA driver, clusters can adopt the new Kubernetes-native resource model instead. The GPU driver will install and manage the DRA driver for GPUs in an upcoming release. The use of the device plugin and DRA driver in the same cluster is and will remain mutually exclusive. </li>
+<li><strong>DCGM Exporter</strong><strong>:</strong> Exports telemetry such as power usage, temperature, and utilization metrics to Prometheus for monitoring.</li>
+<li><strong>GPU Feature Discovery (GFD):</strong> automatically labels Kubernetes nodes with GPU capabilities, such as memory size or CUDA support.</li>
+<li><strong>NVIDIA MIG Manager:</strong> allows modern GPUs such as <a href="https://www.nvidia.com/en-us/data-center/h100/">NVIDIA H100</a>, <a href="https://www.nvidia.com/en-us/data-center/h200/">NVIDIA H200</a>, and <a href="https://www.nvidia.com/en-us/data-center/technologies/blackwell-architecture/">NVIDIA Blackwell</a> to be partitioned into multiple logical GPU instances using Multi-Instance GPU (MIG) technology.</li>
+</ul>
+<p>The GPU Operator therefore acts as the operational backbone of GPU infrastructure in Kubernetes clusters.</p>
+<h2 class="wp-block-heading">The DRA driver: a modern resource model for GPUs</h2>
+<p>The DRA driver represents the next generation of GPU resource management for Kubernetes. Historically, Kubernetes treated GPUs as simple integer resources. A workload would request something like nvidia.com/gpu:1. While effective, this model lacked the expressiveness needed for modern AI workloads.</p>
+<p>DRA introduces a richer model based on ResourceClaims, enabling applications to request very specific hardware capabilities rather than just a count of GPUs.  ￼</p>
+<p>Examples include:</p>
+<ul>
+<li>Requesting GPUs connected through <a href="https://www.nvidia.com/en-us/data-center/nvlink/">NVIDIA NVLink</a></li>
+<li>Requesting a specific GPU slice</li>
+<li>Allocating GPUs across nodes that share memory domains</li>
+</ul>
+<p>This level of control becomes essential for modern training workloads, which often rely on tightly coupled GPU communication.</p>
+<p>DRA also introduces several important capabilities:</p>
+<ul>
+<li><strong>ComputeDomains:</strong> This abstraction enables multi-node <a href="https://www.nvidia.com/en-us/data-center/nvlink/">NVIDIA NVLink</a> communication. Systems (such as GB200) can allow workloads across multiple nodes to behave as if they are running on a single massive GPU.  </li>
+<li><strong>Container Device Interface (CDI):</strong> Instead of relying on environment variables such as NVIDIA_VISIBLE_DEVICES, CDI injects devices into containers through a standardized interface, improving reliability and portability.  </li>
+</ul>
+<p>With the DRA driver moving to the CNCF, these capabilities become part of a broader open ecosystem for accelerator orchestration.</p>
+<h2 class="wp-block-heading">The KAI scheduler: AI-aware scheduling</h2>
+<p>Running AI workloads efficiently requires more than just allocating GPUs. It requires scheduling decisions that understand how AI jobs behave. The KAI Scheduler adds a layer of intelligence on top of Kubernetes scheduling. It builds on top of the GPU Operator and the DRA driver to enable more advanced resource coordination.  ￼</p>
+<p>Key capabilities include:</p>
+<ul>
+<li><strong>Fractional GPU allocation:</strong> Multiple workloads can share a GPU using memory partitioning or time slicing.</li>
+<li><strong>Hierarchical queuing:</strong> Teams can be assigned GPU quotas, and the scheduler manages fairness and prioritization within those quotas.</li>
+<li><strong>Gang scheduling for distributed training: </strong>Large training jobs often require dozens or hundreds of GPUs simultaneously. KAI ensures these jobs start only when the required resources are available, preventing partially allocated clusters that sit idle.</li>
+</ul>
+<p>These capabilities are critical for organizations running large-scale training pipelines or shared AI platforms.</p>
+<h1 class="wp-block-heading">Canonical Kubernetes: a platform for cloud-native AI infrastructure</h1>
+<p>Running modern AI workloads requires more than GPUs and schedulers. It requires a Kubernetes platform that is secure, easy to operate, and capable of supporting large-scale, hardware-accelerated workloads.</p>
+<p>Canonical provides a Kubernetes distribution designed to deliver exactly that. Canonical Kubernetes is a lightweight, secure, and opinionated Kubernetes distribution that includes all the components required to deploy and operate a production-ready cluster. It bundles the essential services needed for Kubernetes clusters, including the container runtime, networking (CNI), DNS, ingress, and other operational components, so that teams can deploy and manage clusters with minimal operational overhead.  ￼</p>
+<p>By building directly on upstream Kubernetes, Canonical Kubernetes maintains compatibility with the broader cloud-native ecosystem while simplifying lifecycle management. Security updates and upstream Kubernetes releases are delivered in a streamlined way, allowing teams to stay current without the operational complexity typically associated with cluster maintenance. Canonical Kubernetes is designed to support deployments across a wide range of environments; from small clusters used for experimentation to large enterprise deployments operating across multiple regions. The platform integrates naturally with Canonical’s broader open infrastructure stack and benefits from the reliability and security of Ubuntu.  </p>
+<p>For organizations running AI workloads, this provides a stable foundation on which the NVIDIA GPU ecosystem can operate. Components such as the GPU Operator, the DRA driver, and advanced schedulers can be deployed on top of Canonical Kubernetes to enable GPU-accelerated machine learning pipelines, distributed training clusters, and scalable inference platforms.</p>
+<p>Together, Canonical Kubernetes and the evolving NVIDIA AI infrastructure ecosystem provide the building blocks needed to run modern AI infrastructure using open, cloud-native technologies.</p>
+<h2 class="wp-block-heading">Why the CNCF donation matters</h2>
+<p>The donation of the DRA driver to the CNCF represents a significant step toward making advanced GPU orchestration a first-class citizen of the Kubernetes ecosystem. It accelerates the adoption of Kubernetes-native resource models for GPUs, encourages community-driven innovation, and strengthens the foundation for large-scale AI workloads. As AI infrastructure becomes increasingly central to modern platforms, open collaboration around core technologies like GPU scheduling and resource allocation will play a key role in shaping the next generation of cloud-native systems.</p>
+<h2 class="wp-block-heading">About Canonical </h2>
+<p>Canonical, the publisher of Ubuntu, provides security, support, and services. Our portfolio covers critical systems, from the smallest devices to the largest clouds, from the kernel to containers, from databases to AI. With customers that include top tech brands, emerging startups, governments and home users, Canonical delivers trusted open source for everyone. </p>
+<p>Learn more at <a href="https://canonical.com/">https://canonical.com/</a> </p>
+<h2 class="wp-block-heading">Learn more</h2>
+<h2 class="wp-block-heading">Visit us at KubeCon Amsterdam 2026 at Booth 220 in Hall 2.</h2>
+<p>Find out more about <a href="https://ubuntu.com/nvidia">Canonical’s collaboration with NVIDIA.</a></p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -473,8 +483,8 @@ $</code></pre>
 <li>[USN-8096-2] Linux kernel (FIPS) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010307.html" class="inline-onebox">[USN-8096-2] Linux kernel (FIPS) vulnerabilities</a></li>
 <li>[USN-8098-2] Linux kernel (GCP) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010309.html" class="inline-onebox">[USN-8098-2] Linux kernel (GCP) vulnerabilities</a></li>
 <li>[USN-8093-1] libssh vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010310.html" class="inline-onebox">[USN-8093-1] libssh vulnerability</a></li>
-<li>[USN-8102-1] snapd vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010311.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010311.html</a></li>
-<li>[USN-8094-2] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010312.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010312.html</a></li>
+<li>[USN-8102-1] snapd vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010311.html" class="inline-onebox">[USN-8102-1] snapd vulnerability</a></li>
+<li>[USN-8094-2] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010312.html" class="inline-onebox">[USN-8094-2] Linux kernel vulnerabilities</a></li>
 <li>[USN-8095-3] Linux kernel (Real-time) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010315.html" class="inline-onebox">[USN-8095-3] Linux kernel (Real-time) vulnerabilities</a></li>
 <li>[USN-8096-3] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010313.html" class="inline-onebox">[USN-8096-3] Linux kernel vulnerabilities</a></li>
 <li>[USN-8096-4] Linux kernel (Real-time) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-March/010314.html" class="inline-onebox">[USN-8096-4] Linux kernel (Real-time) vulnerabilities</a></li>
@@ -2938,7 +2948,7 @@ be able to extend my test suite to all major platforms and operating systems.</p
 
 
 <p>Thanks to everyone who was involved in this release, so far upgrades have been very smooth!</p>
-<img decoding="async" src="https://analytics.jonathancarter.org/piwik.php?idsite=1&amp;rec=1&amp;url=https%3A%2F%2Fjonathancarter.org%2F2025%2F08%2F10%2Fdebian-13%2F&amp;action_name=Debian+13&amp;urlref=https%3A%2F%2Fjonathancarter.org%2Ffeed%2F" style="border:0;width:0;height:0" width="0" height="0" alt="" />]]></description>
+<img decoding="async" src="https://analytics.jonathancarter.org/piwik.php?idsite=1&amp;rec=1&amp;url=https%3A%2F%2Fjonathancarter.org%2F2025%2F08%2F10%2Fdebian-13%2F&amp;action_name=Debian%2013&amp;urlref=https%3A%2F%2Fjonathancarter.org%2Ffeed%2F" style="border:0;width:0;height:0" width="0" height="0" alt="" />]]></description>
       <source url="https://jonathancarter.org/feed">Jonathan Carter</source>
     </item>
     <item>
