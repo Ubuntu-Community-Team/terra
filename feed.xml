@@ -6,19 +6,18 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 26 Mar 2026 02:39:46 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2026 02:41:34 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Canonical at KubeCon Europe 2026: NVIDIA donates the GPU DRA driver to the CNCF</title>
+      <title>Canonical welcomes NVIDIA’s donation of the GPU DRA driver to CNCF</title>
       <link>https://ubuntu.com//blog/canonical-nvidia-kubecon-2026</link>
       <guid isPermaLink="true">https://ubuntu.com//blog/canonical-nvidia-kubecon-2026</guid>
       <pubDate>Tue, 24 Mar 2026 15:21:03 GMT</pubDate>
-      <description><![CDATA[<h1 class="wp-block-heading">Previewing at KubeCon 2026: Canonical welcomes NVIDIA’s donation of the GPU DRA driver to CNCF.</h1>
-<p>At KubeCon Europe in Amsterdam, <a href="https://blogs.nvidia.com/blog/nvidia-at-kubecon-2026">NVIDIA announced that it will donate the GPU Dynamic Resource Allocation (DRA) Driver to the Cloud Native Computing Foundation (CNCF)</a>. This marks an important milestone for the Kubernetes ecosystem and for the future of AI infrastructure.</p>
+      <description><![CDATA[<p>At KubeCon Europe in Amsterdam, <a href="https://blogs.nvidia.com/blog/nvidia-at-kubecon-2026">NVIDIA announced that it will donate the GPU Dynamic Resource Allocation (DRA) Driver to the Cloud Native Computing Foundation (CNCF)</a>. This marks an important milestone for the Kubernetes ecosystem and for the future of AI infrastructure.</p>
 <p>For years, GPUs have been central to modern machine learning and high-performance computing workloads, yet integrating them into Kubernetes has required specialized tooling and vendor-specific components. The donation of the DRA driver represents a shift toward deeper standardization of GPU orchestration in cloud-native environments. By bringing this technology into the CNCF ecosystem, NVIDIA is helping ensure that advanced GPU scheduling capabilities evolve in the open, alongside the broader Kubernetes community.</p>
 <p>This contribution strengthens Kubernetes as the platform for large-scale AI workloads and provides a foundation for more flexible, programmable GPU resource management. To understand why this matters, it helps to look at the broader NVIDIA GPU ecosystem that powers AI workloads on Kubernetes.</p>
-<h1 class="wp-block-heading">The NVIDIA GPU ecosystem for kubernetes</h1>
+<h1 class="wp-block-heading">The NVIDIA GPU ecosystem for Kubernetes</h1>
 <p>As of 2026, the NVIDIA GPU stack in Kubernetes is organized into three major layers: the GPU Operator, the Modern Resource Stack built around DRA, and advanced orchestration capabilities such as the Kubernetes AI (KAI) Scheduler. Together, these components transform GPUs from simple hardware accelerators into fully orchestrated infrastructure resources.</p>
 <h2 class="wp-block-heading">The GPU operator: automating GPU infrastructure</h2>
 <p><a href="https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html">The NVIDIA GPU Operator</a> automates the lifecycle management of the software required for GPUs to function inside a Kubernetes cluster. Instead of requiring administrators to manually configure drivers, runtimes, and monitoring tools, the operator deploys and manages these components automatically. This provides a consistent, production-ready environment for GPU workloads.</p>
@@ -57,20 +56,20 @@
 <li><strong>Gang scheduling for distributed training: </strong>Large training jobs often require dozens or hundreds of GPUs simultaneously. KAI ensures these jobs start only when the required resources are available, preventing partially allocated clusters that sit idle.</li>
 </ul>
 <p>These capabilities are critical for organizations running large-scale training pipelines or shared AI platforms.</p>
+<h2 class="wp-block-heading">Why the CNCF donation matters</h2>
+<p>The donation of the DRA driver to the CNCF represents a significant step toward making advanced GPU orchestration a first-class citizen of the Kubernetes ecosystem. It accelerates the adoption of Kubernetes-native resource models for GPUs, encourages community-driven innovation, and strengthens the foundation for large-scale AI workloads. As AI infrastructure becomes increasingly central to modern platforms, open collaboration around core technologies like GPU scheduling and resource allocation will play a key role in shaping the next generation of cloud-native systems.</p>
 <h1 class="wp-block-heading">Canonical Kubernetes: a platform for cloud-native AI infrastructure</h1>
 <p>Running modern AI workloads requires more than GPUs and schedulers. It requires a Kubernetes platform that is secure, easy to operate, and capable of supporting large-scale, hardware-accelerated workloads.</p>
 <p>Canonical provides a Kubernetes distribution designed to deliver exactly that. Canonical Kubernetes is a lightweight, secure, and opinionated Kubernetes distribution that includes all the components required to deploy and operate a production-ready cluster. It bundles the essential services needed for Kubernetes clusters, including the container runtime, networking (CNI), DNS, ingress, and other operational components, so that teams can deploy and manage clusters with minimal operational overhead.  ￼</p>
 <p>By building directly on upstream Kubernetes, Canonical Kubernetes maintains compatibility with the broader cloud-native ecosystem while simplifying lifecycle management. Security updates and upstream Kubernetes releases are delivered in a streamlined way, allowing teams to stay current without the operational complexity typically associated with cluster maintenance. Canonical Kubernetes is designed to support deployments across a wide range of environments; from small clusters used for experimentation to large enterprise deployments operating across multiple regions. The platform integrates naturally with Canonical’s broader open infrastructure stack and benefits from the reliability and security of Ubuntu.  </p>
 <p>For organizations running AI workloads, this provides a stable foundation on which the NVIDIA GPU ecosystem can operate. Components such as the GPU Operator, the DRA driver, and advanced schedulers can be deployed on top of Canonical Kubernetes to enable GPU-accelerated machine learning pipelines, distributed training clusters, and scalable inference platforms.</p>
 <p>Together, Canonical Kubernetes and the evolving NVIDIA AI infrastructure ecosystem provide the building blocks needed to run modern AI infrastructure using open, cloud-native technologies.</p>
-<h2 class="wp-block-heading">Why the CNCF donation matters</h2>
-<p>The donation of the DRA driver to the CNCF represents a significant step toward making advanced GPU orchestration a first-class citizen of the Kubernetes ecosystem. It accelerates the adoption of Kubernetes-native resource models for GPUs, encourages community-driven innovation, and strengthens the foundation for large-scale AI workloads. As AI infrastructure becomes increasingly central to modern platforms, open collaboration around core technologies like GPU scheduling and resource allocation will play a key role in shaping the next generation of cloud-native systems.</p>
-<h2 class="wp-block-heading">About Canonical </h2>
-<p>Canonical, the publisher of Ubuntu, provides security, support, and services. Our portfolio covers critical systems, from the smallest devices to the largest clouds, from the kernel to containers, from databases to AI. With customers that include top tech brands, emerging startups, governments and home users, Canonical delivers trusted open source for everyone. </p>
-<p>Learn more at <a href="https://canonical.com/">https://canonical.com/</a> </p>
-<h2 class="wp-block-heading">Learn more</h2>
-<h2 class="wp-block-heading">Visit us at KubeCon Amsterdam 2026 at Booth 220 in Hall 2.</h2>
-<p>Find out more about <a href="https://ubuntu.com/nvidia">Canonical’s collaboration with NVIDIA.</a></p>]]></description>
+<h2 class="wp-block-heading">Further reading</h2>
+<ul>
+<li>Find out more about <a href="https://ubuntu.com/nvidia">Canonical’s collaboration with NVIDIA</a></li>
+<li><a href="https://canonical.com/blog/canonical-announces-it-will-distribute-nvidia-doca-ofed-in-ubuntu">Canonical announces it will distribute NVIDIA DOCA-OFED in Ubuntu</a></li>
+<li><a href="https://canonical.com/blog/nvidia-vera-rubin-ubuntu-support">Canonical announces Ubuntu support for the NVIDIA Rubin platform</a></li>
+</ul>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
