@@ -6,9 +6,60 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 28 Mar 2026 02:31:35 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2026 02:45:51 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lubuntu Resolute Beta Released!</title>
+      <link>https://lubuntu.me/lubuntu-resolute-beta-released/</link>
+      <guid isPermaLink="true">https://lubuntu.me/lubuntu-resolute-beta-released/</guid>
+      <pubDate>Fri, 27 Mar 2026 22:24:52 GMT</pubDate>
+      <description><![CDATA[Thanks to all the hard work from our contributors, Lubuntu 26.04 Beta has been released. With the codename Resolute Raccoon, Lubuntu 26.04 will be the 30th release of Lubuntu, the sixteenth release of Lubuntu with LXQt as the default desktop environment. Support lifespan With 26.04 being an LTS release, it will follow the standard LTS support period of three years, which [&#8230;]]]></description>
+      <source url="http://lubuntu.me/feed/?mrss=off">Lubuntu Blog</source>
+    </item>
+    <item>
+      <title>The &amp;#8220;scanner report has to be green&amp;#8221; trap </title>
+      <link>https://ubuntu.com//blog/stability-backports-and-hidden-risks-of-the-bleeding-edge</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/stability-backports-and-hidden-risks-of-the-bleeding-edge</guid>
+      <pubDate>Fri, 27 Mar 2026 13:24:50 GMT</pubDate>
+      <description><![CDATA[<h2 class="wp-block-heading">Stability, backports, and hidden risks of the bleeding edge</h2>
+<p>In the modern DevSecOps world, CISOs are constantly looking for signals in the noise, and the outputs of security scanners often carry a lot of weight. A security scan that returns a “zero CVE” report often unlocks promotion to production; a single red flag can block a release.</p>
+<p>This binary view of security has birthed two diametrically opposed philosophies. On one side, we have the long-term support  (LTS) approach: stay on a battle-tested version and backport specific security fixes. On the other hand, we have the push-the-latest approach: stay ahead of the CVEs by constantly moving to the latest version upstream.</p>
+<p>In this article, I will compare the pros and cons of the “push the latest” approach and the “LTS approach”, and argue that while “rolling forward” makes your scanners happy, it might be making your infrastructure more fragile.</p>
+<h2 class="wp-block-heading"><strong>The case for the backport: stability is the security pillar</strong></h2>
+<p>The LTS model is built on the principle of minimal change. For instance, when a vulnerability is found, Canonical security engineers extract the minimal set of changes required to fix the issue and apply it to the older versions.</p>
+<p>The benefit of this model is stability: you get the security fix without the “feature churn.” Your APIs don’t change, your configuration files don’t break, and your application behavior remains predictable. Stability isn’t just about APIs. It’s about resource consumption. An LTS backport doesn’t suddenly double your memory usage or add new background telemetry – something the ‘latest’ version might do without warning.</p>
+<p>However, this approach might be a challenge for vulnerability management because many security scanners rely primarily on version strings. Because some of these tools may not always have immediate visibility into the specific, surgical patches backported to an older version, they might flag a package as vulnerable based simply on its version number alone. This creates “CVE noise” and security teams have to then spend hours writing exceptions and ignore lists, to justify why the scanner’s report is a non-issue. </p>
+<p>To bridge this gap, <a href="https://canonical.com/blog/canonical-announces-ubuntu-security-research-alliance-program">we collaborate with the top security scanner partners </a>to share deep-level vulnerability data. By providing this visibility, we ensure their tools can accurately recognize backported fixes, significantly reducing the manual burden on security teams to investigate and justify these reports.</p>
+<h2 class="wp-block-heading"><strong>The flaws of the “push the latest” approach</strong></h2>
+<p>Some vendors solve the problem by simply using the latest version of everything. As long as you are on the latest version, the scanner sees no known vulnerabilities. It feels like magic: you get a clean report and your auditors are happy. </p>
+<p>However, “push the latest” approach operates on a dangerous assumption: that “newer” is always “safer.” Let’s examine some of the negative points and risks of this approach.</p>
+<h3 class="wp-block-heading">1. The “Unknown Unknown” risk</h3>
+<p>A CVE is a <em>known</em> vulnerability. When you use an older, widely-deployed version of a package (like those in Ubuntu LTS), you are likely using code that has been “seasoned” by years of global production use. </p>
+<p>In contrast, when you pull the latest version of a package that was released 48 hours ago, you are the first line of testing of a bleeding edge. You have potentially traded a <em>known</em> vulnerability (which might already be patched and backported) for an <em>unknown,</em> undiscovered, and unfixed vulnerability in the latest version.</p>
+<h3 class="wp-block-heading">2. The XZ Utils cautionary tale</h3>
+<p>The XZ Utils backdoor (CVE-2024-3094) is the ultimate rebuttal to the “always latest” philosophy. In this infamous example, the malicious code was injected into the latest “bleeding edge” versions of the tool. Every new line of code is a potential new vulnerability.</p>
+<p>Users of distributions like Debian Stable or Ubuntu LTS were protected by default, not because they were smarter, but because their reliance on proven, distribution-vetted code acted as a mandatory <em>cooling-off perio</em>d for the global supply chain. In comparison, the “push the latest” model of rapid ingestion creates a highway for these types of sophisticated attacks to reach production.</p>
+<h3 class="wp-block-heading">3. Introducing breaking changes inadvertently</h3>
+<p>If you’re using the “push the latest” model, the stability of your environment also gets hit, because your dependencies are constantly shifting. A minor version update upstream might include a “fix” that changes how a library handles memory or network timeouts.</p>
+<p>If your image rebuilds every morning with the “latest” packages, you may find your application failing in production due to a regression that was never caught in your CI/CD pipeline, simply because the upstream developers changed a default setting you relied on. Furthermore, if you miss even a single update cycle, this fragile house of cards collapses, leaving you to wonder if your environment was ever truly stable to begin with.</p>
+<h2 class="wp-block-heading"><strong>Security versus compliance</strong></h2>
+<p>When you consider the debate of the “LTS approach” vs “push the latest”, it becomes clear where the real source of the tension really lies: in the balance between security and <em>naive </em>compliance.</p>
+<p>Vendors who champion the “push the latest” model haven’t necessarily fixed the problem; they’ve just shifted the risk. By building custom, rolling-release operating systems stripped of historical stability, they promise instant patching. At the expense of the LTS promise of guaranteed compatibility. </p>
+<p>In the container world, they argue that breaking changes don’t matter because containers are ephemeral. However, while containers may be ephemeral, software contracts are not. Your application relies on stable APIs, ABIs, and library behaviors. When you blindly target the latest, you are constantly shifting the ground beneath your application. It doesn’t matter how fast a container can restart if the new upstream package it just pulled fundamentally breaks your app’s dependencies. A fast crash is still an outage.</p>
+<h2 class="wp-block-heading"><strong>Conclusion</strong></h2>
+<p>The choice comes down to what you value more: a quiet scanner or a quiet night on-call. While chasing upstream versions offers the instant gratification of a green dashboard, it does so by offloading the vetting process to your production environment.</p>
+<p>True security requires the vital work of backporting – fixing vulnerabilities without introducing volatility. In a world where supply chain attacks are the new frontier, stable, battle-tested code isn’t just a convenience. It is your most critical defensive layer.</p>
+<p>Are we actually more secure, or are we just tired of looking at red dots on a dashboard? By backporting CVE fixes, Ubuntu Pro acknowledges that code needs time to be trusted. In a world where supply chain attacks are the new frontier, stable and tested code might just be the most secure feature you have.</p>
+<p><strong>Further reading</strong></p>
+<ul>
+<li><a href="https://ubuntu.com/blog/hot-code-burns">Why chasing “Zero CVEs” can be a trap, and how stability is perhaps the best security feature</a></li>
+<li><a href="https://ubuntu.com/security/vulnerability-management">Moving beyond the scan: Explore Ubuntu’s toolkit for robust, stable vulnerability management.</a></li>
+<li><a href="https://ubuntu.com/blog/how-to-avoid-package-end-of-life-through-backporting">Why backporting is the gold standard for maintaining security without breaking production</a></li>
+<li><a href="https://ubuntu.com/blog/how-to-conduct-a-vulnerability-assessment">Canonical’s guide on how to conduct a vulnerability assessment that accounts for backporting and reduces false positives</a></li>
+</ul>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>Ubuntu Studio 26.04 LTS Beta Released</title>
       <link>https://ubuntustudio.org/2026/03/ubuntu-studio-26-04-lts-beta-released/</link>
@@ -244,69 +295,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 <h2 id="summary" class="relative group">Summary <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#summary" aria-label="Anchor">#</a></span></h2><p>I am really excited to deepen our already productive relationship with the Trifecta Tech Foundation to make these transitions viable for the wider ecosystem. We&rsquo;ll be working hard on testing and integration to ensure seamless migration paths, and heavily document the changes ahead of the 26.10 and 27.04 releases.</p>
 <p>Stay tuned!</p>]]></description>
       <source url="https://jnsgr.uk/tags/ubuntu/index.xml">Jon Seager</source>
-    </item>
-    <item>
-      <title>Canonical welcomes NVIDIA’s donation of the GPU DRA driver to CNCF</title>
-      <link>https://ubuntu.com//blog/canonical-nvidia-kubecon-2026</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/canonical-nvidia-kubecon-2026</guid>
-      <pubDate>Tue, 24 Mar 2026 15:21:03 GMT</pubDate>
-      <description><![CDATA[<p>At KubeCon Europe in Amsterdam, <a href="https://blogs.nvidia.com/blog/nvidia-at-kubecon-2026">NVIDIA announced that it will donate the GPU Dynamic Resource Allocation (DRA) Driver to the Cloud Native Computing Foundation (CNCF)</a>. This marks an important milestone for the Kubernetes ecosystem and for the future of AI infrastructure.</p>
-<p>For years, GPUs have been central to modern machine learning and high-performance computing workloads, yet integrating them into Kubernetes has required specialized tooling and vendor-specific components. The donation of the DRA driver represents a shift toward deeper standardization of GPU orchestration in cloud-native environments. By bringing this technology into the CNCF ecosystem, NVIDIA is helping ensure that advanced GPU scheduling capabilities evolve in the open, alongside the broader Kubernetes community.</p>
-<p>This contribution strengthens Kubernetes as the platform for large-scale AI workloads and provides a foundation for more flexible, programmable GPU resource management. To understand why this matters, it helps to look at the broader NVIDIA GPU ecosystem that powers AI workloads on Kubernetes.</p>
-<h1 class="wp-block-heading">The NVIDIA GPU ecosystem for Kubernetes</h1>
-<p>As of 2026, the NVIDIA GPU stack in Kubernetes is organized into three major layers: the GPU Operator, the Modern Resource Stack built around DRA, and advanced orchestration capabilities such as the Kubernetes AI (KAI) Scheduler. Together, these components transform GPUs from simple hardware accelerators into fully orchestrated infrastructure resources.</p>
-<h2 class="wp-block-heading">The GPU operator: automating GPU infrastructure</h2>
-<p><a href="https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html">The NVIDIA GPU Operator</a> automates the lifecycle management of the software required for GPUs to function inside a Kubernetes cluster. Instead of requiring administrators to manually configure drivers, runtimes, and monitoring tools, the operator deploys and manages these components automatically. This provides a consistent, production-ready environment for GPU workloads.</p>
-<p>Typical components deployed by the operator include:</p>
-<ul>
-<li><strong>NVIDIA Driver</strong><strong>:</strong> The kernel modules and userspace libraries required for GPU operation are installed through a containerized driver manager.</li>
-<li><strong>NVIDIA Container Toolkit:</strong> This component integrates GPUs with container runtimes such as containerd or CRI-O, allowing containers to access GPU hardware and CUDA libraries on the node.</li>
-<li><strong>GPU Access Layer:</strong> Clusters traditionally used the NVIDIA device plugin to request GPUs using simple integer values. With the introduction of the DRA driver, clusters can adopt the new Kubernetes-native resource model instead. The GPU driver will install and manage the DRA driver for GPUs in an upcoming release. The use of the device plugin and DRA driver in the same cluster is and will remain mutually exclusive. </li>
-<li><strong>DCGM Exporter</strong><strong>:</strong> Exports telemetry such as power usage, temperature, and utilization metrics to Prometheus for monitoring.</li>
-<li><strong>GPU Feature Discovery (GFD):</strong> automatically labels Kubernetes nodes with GPU capabilities, such as memory size or CUDA support.</li>
-<li><strong>NVIDIA MIG Manager:</strong> allows modern GPUs such as <a href="https://www.nvidia.com/en-us/data-center/h100/">NVIDIA H100</a>, <a href="https://www.nvidia.com/en-us/data-center/h200/">NVIDIA H200</a>, and <a href="https://www.nvidia.com/en-us/data-center/technologies/blackwell-architecture/">NVIDIA Blackwell</a> to be partitioned into multiple logical GPU instances using Multi-Instance GPU (MIG) technology.</li>
-</ul>
-<p>The GPU Operator therefore acts as the operational backbone of GPU infrastructure in Kubernetes clusters.</p>
-<h2 class="wp-block-heading">The DRA driver: a modern resource model for GPUs</h2>
-<p>The DRA driver represents the next generation of GPU resource management for Kubernetes. Historically, Kubernetes treated GPUs as simple integer resources. A workload would request something like nvidia.com/gpu:1. While effective, this model lacked the expressiveness needed for modern AI workloads.</p>
-<p>DRA introduces a richer model based on ResourceClaims, enabling applications to request very specific hardware capabilities rather than just a count of GPUs.  ￼</p>
-<p>Examples include:</p>
-<ul>
-<li>Requesting GPUs connected through <a href="https://www.nvidia.com/en-us/data-center/nvlink/">NVIDIA NVLink</a></li>
-<li>Requesting a specific GPU slice</li>
-<li>Allocating GPUs across nodes that share memory domains</li>
-</ul>
-<p>This level of control becomes essential for modern training workloads, which often rely on tightly coupled GPU communication.</p>
-<p>DRA also introduces several important capabilities:</p>
-<ul>
-<li><strong>ComputeDomains:</strong> This abstraction enables multi-node <a href="https://www.nvidia.com/en-us/data-center/nvlink/">NVIDIA NVLink</a> communication. Systems (such as GB200) can allow workloads across multiple nodes to behave as if they are running on a single massive GPU.  </li>
-<li><strong>Container Device Interface (CDI):</strong> Instead of relying on environment variables such as NVIDIA_VISIBLE_DEVICES, CDI injects devices into containers through a standardized interface, improving reliability and portability.  </li>
-</ul>
-<p>With the DRA driver moving to the CNCF, these capabilities become part of a broader open ecosystem for accelerator orchestration.</p>
-<h2 class="wp-block-heading">The KAI scheduler: AI-aware scheduling</h2>
-<p>Running AI workloads efficiently requires more than just allocating GPUs. It requires scheduling decisions that understand how AI jobs behave. The KAI Scheduler adds a layer of intelligence on top of Kubernetes scheduling. It builds on top of the GPU Operator and the DRA driver to enable more advanced resource coordination.  ￼</p>
-<p>Key capabilities include:</p>
-<ul>
-<li><strong>Fractional GPU allocation:</strong> Multiple workloads can share a GPU using memory partitioning or time slicing.</li>
-<li><strong>Hierarchical queuing:</strong> Teams can be assigned GPU quotas, and the scheduler manages fairness and prioritization within those quotas.</li>
-<li><strong>Gang scheduling for distributed training: </strong>Large training jobs often require dozens or hundreds of GPUs simultaneously. KAI ensures these jobs start only when the required resources are available, preventing partially allocated clusters that sit idle.</li>
-</ul>
-<p>These capabilities are critical for organizations running large-scale training pipelines or shared AI platforms.</p>
-<h2 class="wp-block-heading">Why the CNCF donation matters</h2>
-<p>The donation of the DRA driver to the CNCF represents a significant step toward making advanced GPU orchestration a first-class citizen of the Kubernetes ecosystem. It accelerates the adoption of Kubernetes-native resource models for GPUs, encourages community-driven innovation, and strengthens the foundation for large-scale AI workloads. As AI infrastructure becomes increasingly central to modern platforms, open collaboration around core technologies like GPU scheduling and resource allocation will play a key role in shaping the next generation of cloud-native systems.</p>
-<h1 class="wp-block-heading">Canonical Kubernetes: a platform for cloud-native AI infrastructure</h1>
-<p>Running modern AI workloads requires more than GPUs and schedulers. It requires a Kubernetes platform that is secure, easy to operate, and capable of supporting large-scale, hardware-accelerated workloads.</p>
-<p>Canonical provides a Kubernetes distribution designed to deliver exactly that. Canonical Kubernetes is a lightweight, secure, and opinionated Kubernetes distribution that includes all the components required to deploy and operate a production-ready cluster. It bundles the essential services needed for Kubernetes clusters, including the container runtime, networking (CNI), DNS, ingress, and other operational components, so that teams can deploy and manage clusters with minimal operational overhead.  ￼</p>
-<p>By building directly on upstream Kubernetes, Canonical Kubernetes maintains compatibility with the broader cloud-native ecosystem while simplifying lifecycle management. Security updates and upstream Kubernetes releases are delivered in a streamlined way, allowing teams to stay current without the operational complexity typically associated with cluster maintenance. Canonical Kubernetes is designed to support deployments across a wide range of environments; from small clusters used for experimentation to large enterprise deployments operating across multiple regions. The platform integrates naturally with Canonical’s broader open infrastructure stack and benefits from the reliability and security of Ubuntu.  </p>
-<p>For organizations running AI workloads, this provides a stable foundation on which the NVIDIA GPU ecosystem can operate. Components such as the GPU Operator, the DRA driver, and advanced schedulers can be deployed on top of Canonical Kubernetes to enable GPU-accelerated machine learning pipelines, distributed training clusters, and scalable inference platforms.</p>
-<p>Together, Canonical Kubernetes and the evolving NVIDIA AI infrastructure ecosystem provide the building blocks needed to run modern AI infrastructure using open, cloud-native technologies.</p>
-<h2 class="wp-block-heading">Further reading</h2>
-<ul>
-<li>Find out more about <a href="https://ubuntu.com/nvidia">Canonical’s collaboration with NVIDIA</a></li>
-<li><a href="https://canonical.com/blog/canonical-announces-it-will-distribute-nvidia-doca-ofed-in-ubuntu">Canonical announces it will distribute NVIDIA DOCA-OFED in Ubuntu</a></li>
-<li><a href="https://canonical.com/blog/nvidia-vera-rubin-ubuntu-support">Canonical announces Ubuntu support for the NVIDIA Rubin platform</a></li>
-</ul>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>How taboo shapes knowledge production on Wikipedia</title>
@@ -2613,14 +2601,6 @@ to achieve, or I missed some of the goals.</p>
 
 <p class="wp-block-paragraph">Thank you for reading this, and I hope this reaches the people I&#8217;m trying to reach and have it speak for those who either won&#8217;t speak-up or don&#8217;t think they can make a difference.</p>]]></description>
       <source url="https://ericheickmeyer.com/category/planet-ubuntu/feed/">Erich Eickmeyer</source>
-    </item>
-    <item>
-      <title>Lubuntu 25.10 (Questing Quokka) Released!</title>
-      <link>https://lubuntu.me/lubuntu-25-10-questing-quokka-released/</link>
-      <guid isPermaLink="true">https://lubuntu.me/lubuntu-25-10-questing-quokka-released/</guid>
-      <pubDate>Thu, 09 Oct 2025 14:05:30 GMT</pubDate>
-      <description><![CDATA[The Lubuntu Team is proud to announce Lubuntu 25.10, codenamed Questing Quokka. Lubuntu 25.10 is the 29th release of Lubuntu, the 15th release of Lubuntu with LXQt as the default desktop environment. Download and Support Lifespan With 25.10 being an interim release, it will follow the standard non-LTS support period of nine months; this means [&#8230;]]]></description>
-      <source url="http://lubuntu.me/feed/?mrss=off">Lubuntu Blog</source>
     </item>
     <item>
       <title>Ubuntu Budgie 25.10 release notes</title>
