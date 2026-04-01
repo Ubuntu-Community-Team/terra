@@ -6,184 +6,76 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Tue, 31 Mar 2026 00:39:07 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 00:43:34 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Simplify bare metal operations for sovereign clouds</title>
-      <link>https://ubuntu.com//blog/simplify-bare-metal-operations-for-sovereign-clouds</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/simplify-bare-metal-operations-for-sovereign-clouds</guid>
-      <pubDate>Mon, 30 Mar 2026 21:10:20 GMT</pubDate>
-      <description><![CDATA[<p>The way enterprises are thinking about their infrastructure has changed. </p>
-<p>Digital sovereignty of all kinds – data sovereignty, operational sovereignty, and software sovereignty – have begun to dominate the infrastructure discussion. Today, these abstract terms have become practical concerns for platform teams. Changing regulations, geopolitical uncertainty, and growing concerns about vendor dependency are forcing organizations to take a closer look at where their infrastructure runs, and who truly controls it.</p>
-<p>We’ve discussed how to achieve <a href="https://canonical.com/blog/sovereign-cloud-confidential-computing">enhanced data security in your sovereign cloud</a> previously. However, in this blog, we’ll be diving into an underexplored topic: the metal underlying sovereign clouds. We’ll consider sovereignty and how it relates to infrastructure, highlighting the reasons why avoiding vendor dependence is so important, and how bare metal automation can help to make sovereignty sustainable.</p>
-<h2 class="wp-block-heading">Sovereignty: getting control of your metal</h2>
-<p>Most enterprises aiming to improve their control over their data and infrastructure begin with data sovereignty. Data residency, encryption, access controls, and compliance frameworks are the most visible requirements, and they are usually the first to be addressed. These measures are necessary, but they only answer part of the question. For a deep dive into the factors driving sovereignty, and why data sovereignty isn’t enough, check out our <a href="https://canonical.com/solutions/infrastructure/sovereign-cloud">webpage</a> and our whitepaper, <a href="https://ubuntu.com/engage/sovereign-cloud-guide?_gl=1*1tfaiqh*_gcl_au*MTg1OTM5OTY2My4xNzcwNjMyNjM3">“Sovereign cloud: the essential guide for enterprises.”</a></p>
-<p>For sovereign clouds, a specific aspect is often overlooked: the ability to provision, change, and recover infrastructure independently, without relying on vendor-specific tooling. Control on paper does not always translate into control in practice, especially below the operating system.</p>
-<figure class="wp-block-image size-large"><img alt="" height="683" loading="lazy" sizes="(min-width: 1024px) 1024px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1024/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fef44%2FIT-Infrastructure-_-Server-scaled-1-1024x683.jpg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fef44%2FIT-Infrastructure-_-Server-scaled-1-1024x683.jpg 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fef44%2FIT-Infrastructure-_-Server-scaled-1-1024x683.jpg 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fef44%2FIT-Infrastructure-_-Server-scaled-1-1024x683.jpg 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fef44%2FIT-Infrastructure-_-Server-scaled-1-1024x683.jpg 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fef44%2FIT-Infrastructure-_-Server-scaled-1-1024x683.jpg 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1024/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fef44%2FIT-Infrastructure-_-Server-scaled-1-1024x683.jpg 1024w" width="1024"/></figure>
-<h2 class="wp-block-heading">Operational dependency is a sovereignty risk</h2>
-<p>The weakest point in many sovereign cloud designs lives beneath the layers that platform teams usually focus on. Firmware, bootloaders, out-of-band management interfaces, and provisioning workflows are frequently invisible to application teams, and often poorly documented.</p>
-<p>Having control over your infrastructure is not limited to where your hardware is located, or who owns it; it’s also crucial to consider how it is operated. When those processes depend on proprietary tools, vendor-specific interfaces, or undocumented workflows, the operational dependency becomes a real risk.</p>
-<p>These dependencies are often invisible until something changes: a vendor contract ends, hardware needs to be upgraded to newer or more capable machines, or key platform engineers leave the organization. Suddenly, the ability to operate the infrastructure independently disappears.</p>
-<p>Several common risks show up at the bare metal layer. Firstly, you cannot audit what you do not control. When provisioning is manual or handled by third parties, it becomes difficult to maintain a clear view of what is actually running on each server. Firmware versions, boot settings, network configuration, and management interfaces differ from machine to machine and are outside the scope of most platforms.</p>
-<p>Secondly, having unclear foundations makes it harder to manage what is built on top. The reliability of encryption, access policies, and application security relies on a stable and predictable inventory and provisioning process. Because of this, operational dependency becomes a structural risk. Manual workflows, proprietary provisioning tools, or knowledge concentrated in a small team create hidden dependencies that don’t scale well.</p>
-<p>Finally, slow provisioning makes it harder to maintain sovereignty over time. Sovereign platforms need to scale, recover, and evolve. When bringing new hardware online takes too long or requires manual coordination, maintaining control becomes harder with every change.</p>
-<p>When building your sovereign cloud, it is important to avoid these traps. A sovereign platform must be something the organization can operate, evolve, and recover on its own terms, even as people, vendors, and hardware change.</p>
-<h2 class="wp-block-heading">Bare metal automation makes sovereignty sustainable</h2>
-<p>Bare metal automation addresses these risks by bringing consistency to the lowest layer of the stack. Instead of treating physical servers as special cases, it treats them as flexible programmable assets, establishing the same processes from virtual machines to bare metal.</p>
-<p>In particular, bare metal automation provides several specific capabilities that matter for sovereign clouds:</p>
-<ul>
-<li><strong>Transparent hardware inventory</strong>: Servers and their internal hardware capabilities are discovered, inventoried and commissioned, providing a single source of truth. This is essential when infrastructure ownership and configuration must be demonstrable to regulators and auditors, supporting robust compliance within a sovereign cloud.</li>
-<li><strong>Repeatable provisioning: </strong>Servers are provisioned the same way every time, using defined and versioned processes. This makes the infrastructure easier to rebuild when sovereignty depends on reproducibility instead of trust.</li>
-<li><strong>Clear ownership of the provisioning pipeline: </strong>The organization controls how machines are discovered, configured, and brought into service, without relying on vendor-specific tooling or external actors, preserving operational control over the physical layer.</li>
-<li><strong>Faster, more reliable operations: </strong>New hardware can be added, replaced, or repurposed quickly, allowing sovereign platforms to scale, recover, and evolve without losing control during routine changes or exceptional events..</li>
-<li><strong>Hardware testing before and after production: </strong>Hardware needs to be tested before going into production, helping ensure that only known, compliant machines are part of the sovereign infrastructure.</li>
-<li><strong>Less dependence on tribal knowledge</strong>: Operational knowledge is captured in systems and processes rather than living only in people’s heads, reducing the risk that sovereignty depends on specific individuals rather than the organisation itself.</li>
-</ul>
-<p>Together, these capabilities turn sovereignty into something that can be maintained over time. Control of the physical layer becomes explicit, verifiable, and repeatable, which is exactly what sovereign cloud initiatives depend on as they move from initial deployment to long-term operation.</p>
-<h2 class="wp-block-heading">Closing the gap with MAAS</h2>
-<p>Bare metal automation platforms exist to address this exact problem. <a href="https://canonical.com/maas">Canonical MAAS</a> is an open source platform that provides a central control plane for managing and provisioning physical servers using infrastructure-as-code principles. It offers a consistent, cloud-like management experience for pools of physical servers across heterogeneous hardware environments, making it easier for platform teams to apply the same operational practices everywhere.</p>
-<figure class="wp-block-image size-full"><img alt="" height="946" loading="lazy" sizes="(min-width: 1681px) 1681px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10a5%2FMAAS-deploy_any_os.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10a5%2FMAAS-deploy_any_os.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10a5%2FMAAS-deploy_any_os.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10a5%2FMAAS-deploy_any_os.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10a5%2FMAAS-deploy_any_os.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10a5%2FMAAS-deploy_any_os.png 1920w" width="1681"/><figcaption class="wp-element-caption">Deploy any OS on any HW with MAAS</figcaption></figure>
-<p>Several aspects of MAAS are particularly relevant in the sovereign cloud context. Together, they address the need for demonstrable control, operational independence, and repeatability at the physical layer, which are crucial for sovereign cloud initiatives:</p>
-<ul>
-<li><strong>End-to-end lifecycle control</strong>: MAAS automates the full lifecycle of physical machines, from discovery and commissioning to deployment, reuse, and decommissioning. Using standard out-of-band management interfaces such as IPMI or RedFish, it keeps power control and provisioning across a <a href="https://ubuntu.com/certified?category=Server">wide range of certified hardware</a> without the need of vendor-specific tooling.</li>
-<li><strong>Infrastructure as code for bare metal: </strong>A stable, well-defined API allows hardware to be managed programmatically and integrated into existing workflows. Treating physical infrastructure as code makes provisioning repeatable, auditable, and easier to evolve without relying on manual intervention.</li>
-<li><strong>Hardware validation at scale: </strong>Built-in diagnostics allow machines to be tested before they enter production and again when they are recycled or repurposed. This helps maintain a healthy and compliant pool of servers, which is essential for predictable operations and reliable recovery.</li>
-<li><strong>Accurate inventory and configuration awareness: </strong>Detailed hardware inventory makes it possible to place workloads based on real capabilities.</li>
-<li><strong>Integrated network configuration and services</strong>: MAAS configures server network interfaces with bridges, VLANs, bonds and addresses, and it integrates highly available, open source DHCP and DNS services.</li>
-</ul>
-<p>Taken together, these capabilities address the gaps that often undermine sovereign cloud efforts at the physical layer, and they give platform teams a way to operate bare metal with the same level of control, visibility, and discipline they expect from higher layers of the stack.</p>
-<h2 class="wp-block-heading">Conclusions and next steps</h2>
-<p>Sovereign clouds only work if control can be maintained over time. Data protection and application-level controls are important, but they depend on how the infrastructure underneath is built and operated. When the physical layer is opaque or hard to manage, sovereignty is difficult to implement.</p>
-<p>Bare metal management is where many of these issues surface. Automating this layer reduces the dependency on vendors and individuals, makes infrastructure easier to audit, and allows platforms to evolve without losing control. </p>
-<p>For organizations serious about sovereign infrastructure, this is not about adding another tool. The core idea is to establish the foundational layer in a way that sustains long-term sovereignty.</p>
-<p>MAAS is designed to help teams bring that level of control to physical infrastructure. If you are thinking about your cloud sovereignty strategy and rethinking how you run bare metal today, it is worth taking the time to see <a href="https://canonical.com/maas/how-maas-works">how MAAS works</a> and what problems it can remove from daily operations.<br/>You can <a href="https://canonical.com/maas/docs/maas-in-thirty-minutes">try MAAS</a> on your own and decide whether it fits your platform. If you want help designing or running MAAS at scale, Canonical also provides professional support. <a href="https://canonical.com/maas/contact-us">Reach out</a> if you would like to discuss your requirements or take the next step.</p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+      <title>Quote #75514</title>
+      <link>https://mako.cc/copyrighteous/quote-75514</link>
+      <guid isPermaLink="true">https://mako.cc/copyrighteous/quote-75514</guid>
+      <pubDate>Tue, 31 Mar 2026 21:13:00 GMT</pubDate>
+      <description><![CDATA[<p>Although I never submitted to it, I made several appearances in the now-defunct quote database on bash.org (QDB). I&#8217;m dealing with a broken keyboard now, and went to dig hard to find <a href="https://web.archive.org/web/20221210050632/http://bash.org/?75514">this classic in the Wayback machine</a>. I thought I would put it back on the web:</p>
+
+
+
+<pre class="wp-block-code"><code><p class="quote">&lt;mako> my letter "eye" stopped worng
+&lt;luca> k, too?
+&lt;mako> yeah
+&lt;luca> sounds like a mountain dew spill
+&lt;mako> and comma
+&lt;mako> those three
+&lt;mako> ths s horrble
+&lt;luca> tme for a new eyboard
+&lt;luca> 've successfully taen my eyboard apart and fxed t by cleanng t wth alcohol
+&lt;mako> stop mang fun of me
+&lt;mako> ths s a laptop!</p></code></pre>
+
+
+
+<p>It was, in fact, horrble.</p>
+
+
+
+<p></p>]]></description>
+      <source url="http://mako.cc/copyrighteous/?flav=rss">Benjamin Mako Hill</source>
     </item>
     <item>
-      <title>Announcing Incus 6.23</title>
-      <link>https://stgraber.org/2026/03/30/announcing-incus-6-23/</link>
-      <guid isPermaLink="true">https://stgraber.org/2026/03/30/announcing-incus-6-23/</guid>
-      <pubDate>Mon, 30 Mar 2026 16:48:46 GMT</pubDate>
-      <description><![CDATA[<p>The Incus team is pleased to announce the release of Incus 6.23!</p>
-
-
-
-<p>This release is going to be our last 6.x release before Incus 7.0 LTS which is due out on April 30th.</p>
-
-
-
-<p>It’s also quite a busy release with a good mix of security issues (mostly thanks to an ongoing analysis by <a href="https://7asecurity.com">7asecurity</a>), bug fixes and performance improvements and then a very good selection of features from expanding our OS support for VMs to adding more flexible instance storage with dependent volumes!</p>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://linuxcontainers.org/incus/try-it/"><img fetchpriority="high" decoding="async" width="1024" height="530" src="https://stgraber.org/wp-content/uploads/2026/03/image-1-1024x530.png" alt="" class="wp-image-1857" srcset="https://stgraber.org/wp-content/uploads/2026/03/image-1-1024x530.png 1024w, https://stgraber.org/wp-content/uploads/2026/03/image-1-300x155.png 300w, https://stgraber.org/wp-content/uploads/2026/03/image-1-768x398.png 768w, https://stgraber.org/wp-content/uploads/2026/03/image-1.png 1300w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
-
-
-
-<p>This fixes the following security issues:</p>
-
-
-
-<ul class="wp-block-list">
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-q9vp-3wcg-8p4x">CVE-2026-33711</a> (low)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-p8mm-23gg-jc9r">CVE-2026-33542</a> (moderate)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-vg76-xmhg-j5x3">CVE-2026-33743</a> (moderate)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-453r-g2pg-cxxq">CVE-2026-33898</a> (high)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-83xr-5xxr-mh92">CVE-2026-33897</a> (critical)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-q4q8-7f2j-9h9f">CVE-2026-33945</a> (critical)</li>
-</ul>
-
-
-
-<p>On the feature front, the highlights for this release are:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Dependent storage volumes</li>
-
-
-
-<li>FreeBSD VM support</li>
-
-
-
-<li>Reworked CLI parser</li>
-
-
-
-<li>Support for disabling DHCP announcement of the gateway</li>
-
-
-
-<li>Support for ipv4.dhcp.gateway on OVN networks</li>
-
-
-
-<li>Support for io.bus on OVN NICs</li>
-
-
-
-<li>VM agent lifecycle events</li>
-
-
-
-<li>Reworked incus file pull and incus storage volume file pull</li>
-
-
-
-<li>Project related metrics</li>
-
-
-
-<li>Instance low-level repair API</li>
-</ul>
-
-
-
-<p>The full announcement and changelog can be <a href="https://discuss.linuxcontainers.org/t/incus-6-23-has-been-released/26447" target="_blank" rel="noreferrer noopener">found here</a>.<br>And for those who prefer videos, here&#8217;s the release <a href="https://www.youtube.com/watch?v=PGo03etJsMY">overview video</a>:</p>
-
-
-
-<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe title="Introducing Incus 6.23!" width="640" height="360" src="https://www.youtube.com/embed/PGo03etJsMY?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div></figure>
-
-
-
-<p>You can take the latest release of Incus up for a spin through our online demo service at: <a href="https://linuxcontainers.org/incus/try-it/" target="_blank" rel="noreferrer noopener">https://linuxcontainers.org/incus/try-it/</a></p>
-
-
-
-<p>And as always, my company is offering commercial support on Incus, ranging from by-the-hour support contracts to one-off services on things like initial migration from LXD, review of your deployment to squeeze the most out of Incus or even feature sponsorship. You&#8217;ll find all details of that here: <a href="https://zabbly.com/incus">https://zabbly.com/incus</a></p>
-
-
-
-<p>Donations towards my work on this and other open source projects is also always appreciated, you can  find me on <a href="https://github.com/sponsors/stgraber">Github Sponsors</a>, <a href="https://patreon.com/stgraber">Patreon</a> and <a href="https://ko-fi.com/stgraber">Ko-fi</a>.</p>
-
-
-
-<p>Enjoy!</p>
-
-
-<p><!-- /wp:post-content --></p>]]></description>
-      <source url="https://stgraber.org/category/planet-ubuntu/feed/">Stéphane Graber</source>
+      <title>How to manage Ubuntu fleets using on-premises Active Directory and ADSys</title>
+      <link>https://ubuntu.com//blog/manage-ubuntu-fleets-active-directory</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/manage-ubuntu-fleets-active-directory</guid>
+      <pubDate>Tue, 31 Mar 2026 08:30:50 GMT</pubDate>
+      <description><![CDATA[<figure class="wp-block-image size-full"><img alt="" height="720" loading="lazy" sizes="(min-width: 1280px) 1280px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 1280w" width="1280"/></figure>
+<p>The “hybrid fleet” is today’s reality: organizations diversify operating systems while Microsoft Active Directory (AD) remains the dominant identity “source of truth.” IT administrators must ensure Linux machines, like Ubuntu desktops and servers, behave as first-class citizens in this environment. Efficient Linux management demands unified identity and policy management, ensuring that local authentication mechanisms and system configuration on Ubuntu endpoints respect the central authority of AD.</p>
+<h2 class="wp-block-heading">AD and the System Security Services Daemon (SSSD)</h2>
+<p>For Ubuntu, the SSSD acts as the foundational technology for Active Directory integration. Instead of disparate config files or legacy LDAP scripts, SSSD has long provided a modular architecture that abstracts the complexities of backend providers.</p>
+<p>When configured with the AD provider, SSSD communicates natively with domain controllers using standard protocols: Kerberos for authentication and LDAP for directory queries. SSSD automatically maps SID-to-UID/GID, translating Windows Security Identifiers (SIDs) into Linux-compatible numeric User IDs (UIDs) and Group IDs (GIDs) for file access. This eliminates the need to manually extend the AD schema with Portable Operating System Interface (POSIX) attributes, cutting deployment friction significantly.</p>
+<p>Enterprise fleets, especially mobile workstations, need reliable offline access. SSSD delivers this by caching password hashes locally via <code>cache_credentials</code> and <code>offline_credentials_expiration</code>, keeping users authenticated – even when disconnected from the corporate network.</p>
+<h2 class="wp-block-heading">The power of Group Policy Objects (GPOs) with Active Directory System Services (ADSys)</h2>
+<p>SSSD handles identity (“who”), but historically couldn’t manage configuration (“what”) with the same depth as Windows clients. That gap is where ADSys becomes the core value proposition for the enterprise.</p>
+<p>ADSys is a native Group Policy Object (GPO) client for Ubuntu, letting IT administrators use existing AD knowledge and infrastructure to manage Ubuntu fleets. Active Directory Policies apply at two points: computer policies at boot, and user policies at login. This mirrors the Windows management experience, ensuring interoperability between Linux and Windows, without requiring parallel infrastructure management tools.</p>
+<h2 class="wp-block-heading">Quick reference: ADSys capabilities</h2>
+<p>ADSys supports the following management capabilities:</p>
+<figure class="wp-block-table"><table><tbody><tr><td><strong>Feature</strong></td><td><strong>Description</strong></td></tr><tr><td>Privileges management</td><td>Centrally grant or revoke sudo privileges for AD users and groups without manually editing local /etc/sudoers files on individual machines.</td></tr><tr><td>Script execution</td><td>Automate configuration by scheduling shell scripts to execute at system startup, shutdown, user login, or user logout to remediate configuration drift.</td></tr><tr><td>Desktop configuration</td><td>Enforce specific desktop settings (e.g., screen lock timeouts, wallpaper, application access) via. the dconf settings framework.</td></tr><tr><td>AppArmor management</td><td>Enforce custom AppArmor profiles to restrict application capabilities system-wide, enhancing the security posture of the endpoint.</td></tr></tbody></table></figure>
+<p>Learn more in our technical <a href="https://documentation.ubuntu.com/adsys/stable/">documentation</a>.</p>
+<h2 class="wp-block-heading">Compliance and security with certificate auto-enrollment</h2>
+<p>Integrating local authentication with Active Directory is not only an enterprise compliance and security requirement, but also a convenience. Centralizing identity enforces security and governance policies, password complexity, and account lockout thresholds, consistently across the entire heterogeneous fleet.</p>
+<p>ADSys also supports certificate auto-enrollment from Active Directory Certificate Services (AD CS). Clients enroll for machine certificates, which the certmonger daemon continuously monitors and refreshes, improving the security of communication and supporting compliance with encryption standards within legacy corporate networks.</p>
+<h2 class="wp-block-heading">The Ubuntu Pro advantage</h2>
+<p>All of ADSys features are provided by <a href="https://ubuntu.com/pro">Ubuntu Pro</a>. An Ubuntu Pro subscription provides access to the ADSys client and the administrative templates (.ADMX/.ADML) needed to expose Ubuntu-specific settings in the Windows Group Policy Management Console.</p>
+<p>SSSD’s authentication combined with ADSys’s policy enforcement gives Canonical’s solution a decisive advantage: it maximizes existing AD infrastructure investment while putting Ubuntu systems on the path to compliance, backed by the long-term support (LTS) enterprise environments demand.</p>
+<h2 class="wp-block-heading">Learn more about identity management </h2>
+<p>In our newly released whitepaper we provide actionable blueprints and technical specifications to architect, define, and enforce robust identity management controls across your entire server and desktop fleet, regardless of operating system.</p>
+<p> We provide a technical examination of modern identity paradigms, including detailed configurations for managing access to cloud and on-premise Linux infrastructure, and practical strategies for seamless and secure integration with legacy AD Domain Services. Furthermore, the paper offers a detailed analysis of the advantages and implementation steps for using SSH certificates for frictionless, auditable SSH authentication, moving beyond simple key management. </p>
+<p><a href="https://ubuntu.com/engage/ubuntu-enterprise-identity-management">Read the Ubuntu Enterprise Identity Management whitepaper</a>.</p>
+<h3 class="wp-block-heading">Further reading</h3>
+<ul>
+<li><a href="https://documentation.ubuntu.com/adsys/latest/">ADSys documentation</a></li>
+<li><a href="https://documentation.ubuntu.com/authd/stable-docs/">Authd documentation</a></li>
+<li><a href="https://snapcraft.io/authd-msentraid">Authd for Entra ID on Snapcraft</a></li>
+<li><a href="https://snapcraft.io/authd-google">Authd for Google IAM on Snapcraft</a></li>
+<li><a href="https://snapcraft.io/authd-oidc">Authd for OIDC on Snapcraft</a></li>
+</ul>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Lubuntu Resolute Beta Released!</title>
@@ -192,6 +84,150 @@
       <pubDate>Fri, 27 Mar 2026 22:24:52 GMT</pubDate>
       <description><![CDATA[Thanks to all the hard work from our contributors, Lubuntu 26.04 Beta has been released. With the codename Resolute Raccoon, Lubuntu 26.04 will be the 30th release of Lubuntu, the sixteenth release of Lubuntu with LXQt as the default desktop environment. Support lifespan With 26.04 being an LTS release, it will follow the standard LTS support period of three years, which [&#8230;]]]></description>
       <source url="http://lubuntu.me/feed/?mrss=off">Lubuntu Blog</source>
+    </item>
+    <item>
+      <title>Ubuntu Studio 26.04 LTS Beta Released</title>
+      <link>https://ubuntustudio.org/2026/03/ubuntu-studio-26-04-lts-beta-released/</link>
+      <guid isPermaLink="true">https://ubuntustudio.org/2026/03/ubuntu-studio-26-04-lts-beta-released/</guid>
+      <pubDate>Thu, 26 Mar 2026 23:45:55 GMT</pubDate>
+      <description><![CDATA[<div class="wp-block-image"><figure class="aligncenter size-full is-resized"><img loading="lazy" src="https://ubuntustudio.org/wp-content/uploads/2026/03/1a4a/betabanner.jpg" alt="" class="wp-image-3071" width="600" height="223"/></figure></div>
+
+
+
+<p>The Ubuntu Studio team is pleased to announce the beta release of Ubuntu Studio 26.04 LTS, codenamed &#8220;Resolute Raccoon&#8221;.</p>
+
+
+
+<p>While this beta is reasonably free of any showstopper installer bugs, you will find some bugs within. This image is, however, mostly representative of what you will find when Ubuntu Studio 26.04 LTS is released on April 17, 2026.</p>
+
+
+
+<p><strong>As an LTS release, Ubuntu Studio 26.04 will be supported for 3 years until April 2029.</strong>&nbsp;We encourage everyone to try this image and report bugs to improve our final release.</p>
+
+
+
+<h2 id="special-notes">Special Notes</h2>
+
+
+
+<p>The Ubuntu Studio 26.04 LTS disk image (ISO) exceeds 4 GB and cannot be downloaded to some file systems such as FAT32 and may not be readable when burned to a DVD. For this reason, we recommend downloading to a compatible file system. When creating a boot medium, we recommend&nbsp;<a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu#1-overview">creating a bootable USB stick</a>&nbsp;with the ISO image or burning to a Dual-Layer DVD.</p>
+
+
+
+<p>Images can be obtained from this link:&nbsp;<a href="https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/beta/">https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/beta/</a></p>
+
+
+
+<p>Full updated information, including Upgrade Instructions, are available in the&nbsp;<a href="https://discourse.ubuntu.com/t/ubuntu-studio-26-04-lts-release-notes/">Release Notes</a>.</p>
+
+
+
+<p>Please note that upgrading from 24.04 LTS before the release of 26.04.1, due August 2026, is unsupported.</p>
+
+
+
+<h2 id="only-install-what-you-need">Only Install What You Need</h2>
+
+
+
+<p>A common piece of feedback we hear is that people prefer to start with a lean base and install only the tools they actually use, rather than getting an overwhelming number of pre-installed packages. We hear you.</p>
+
+
+
+<p>Ubuntu Studio includes a&nbsp;<strong>minimal install</strong>&nbsp;option in the installer, and has since 24.10! This gives you the Ubuntu Studio desktop experience: the theme, the audio configuration and the optimized settings without the full suite of creative applications. From there, you can use&nbsp;<strong>Ubuntu Studio Installer</strong>&nbsp;to add exactly the workflows you want: audio, graphics, video, photography, or publishing; à la carte.</p>
+
+
+
+<p>Alternatively, if you&#8217;re already running Kubuntu, Ubuntu, Lubuntu, Xubuntu, or any other&nbsp;<a href="https://ubuntu.com/desktop/flavours">official Ubuntu flavor</a>, you don&#8217;t have to reinstall at all. Just install the&nbsp;<a href="https://ubuntustudio.org/ubuntu-studio-installer">Ubuntu Studio Installer</a>&nbsp;package and pick the components you need. This has always been an option, but we want to make sure everyone knows about it.</p>
+
+
+
+<p>The full install remains available for those who want a complete creative workstation out of the box, and that&#8217;s a perfectly valid choice too.</p>
+
+
+
+<h2 id="new-features-this-release">New Features This Release</h2>
+
+
+
+<p>This is an LTS release, which means stability and polish have been the primary focus. That said, there&#8217;s a lot that&#8217;s new and improved since 24.04 LTS.</p>
+
+
+
+<div class="wp-block-image"><figure class="alignright size-full is-resized"><img loading="lazy" src="https://ubuntustudio.org/wp-content/uploads/2026/03/56a8/screenshot2604.jpg" alt="" class="wp-image-3076" width="381" height="238"/></figure></div>
+
+
+
+<ul><li><strong>Three Desktop Layouts:</strong>&nbsp;As&nbsp;<a href="https://ubuntustudio.org/2025/12/coming-to-26-04-lts-three-layouts/">previously announced</a>, Ubuntu Studio 26.04 LTS now ships with three selectable desktop layouts: the classic Ubuntu Studio top panel, a macOS-like layout with a global menu and bottom dock, and a new Windows 10-like bottom panel layout. This gives users coming from any platform a familiar starting point.</li><li><strong>By Popular Vote: </strong>Our community decided in a vote on Ubuntu Discourse to make the bottom panel (traditional) layout the default. The classic top panel remains as an alternate look-and-feel theme.</li><li><strong>Ubuntu Studio Installer and Audio Configuration completely rewritten:</strong>&nbsp;Both tools have been rewritten from scratch in Python with dual GTK4 and Qt6 UI backends. The application automatically detects your desktop environment and launches the appropriate interface. Ubuntu Studio Audio Configuration now includes FFADO support for FireWire audio devices and PipeWire buffer/sample-rate configuration via dropdown menus instead of text entry. Both tools include translations for 21 languages.</li><li><strong>New Borealis sound theme</strong>&nbsp;replaces the Ocean sound theme. This is the sound theme Ubuntu Studio used clear back in the early (7.10 Gutsy Gibbon) days, and now it&#8217;s back!</li><li><strong>Live session improvements:</strong>&nbsp;The screensaver and lock screen are now inhibited during the entire live session, fixing a long-standing annoyance where the screen would lock and prompt for a non-existent password.</li><li><strong>Loopino</strong>&nbsp;is a new lightweight audio sampler plugin (LV2/CLAP/VST2) for loading, trimming, and looping audio files with drag-and-drop support and on-the-fly recording.</li><li><strong>Plasma PipeWire Settings</strong>&nbsp;is a new Plasma applet for managing PipeWire configuration directly from the system tray.</li><li><strong>snd-hdspe</strong>&nbsp;is a new DKMS kernel driver for RME HDSPe MADI, AES, RayDAT, AIO, and AIO Pro PCIe sound cards, available in the repositories for those who need it.</li><li><strong>DistroAV</strong>&nbsp;(formerly OBS-NDI) is now available in the repositories for network audio/video in OBS Studio using NDI technology.</li><li><strong>PipeWire</strong>&nbsp;continues to improve with every release and remains the default audio server.</li></ul>
+
+
+
+<h2 id="major-package-upgrades">Major Package Upgrades</h2>
+
+
+
+<ul><li>OBS Studio version 32.1.0</li><li>FreeShow version 1.5.9 (snap)</li><li>QPrompt version 2.0.1</li><li>RaySession version 0.17.4</li><li>Patchance version 1.3.2</li><li>Geonkick version 3.7.0</li><li>BChoppr version 1.12.8</li><li>harpwise version 6.34.4</li><li>blender version 5.0.1</li></ul>
+
+
+
+<p>There are many other improvements, too numerous to list here. We encourage you to look around the freely-downloadable ISO image.</p>
+
+
+
+<h2 id="known-issues">Known Issues</h2>
+
+
+
+<ul><li>There is a minor cosmetic issue in the splash screen when transitioning from the install session to the live desktop session when running the .iso image in that it shows the default KDE Plasma splash as opposed to the Ubuntu Studio splash. This does not occur after installation, and is corrected in later builds.</li><li>You will be prompted, upon first login of any new user, to reboot to apply proper audio configurations for audio production. This is intentional and is a workaround for the installer&#8217;s inability to&nbsp;<a href="https://launchpad.net/bugs/2063899">configure the first user as part of the &#8220;audio&#8221; group or for new users to be added to the audio group automatically.</a></li><li>Official Ubuntu Studio release notes can be found at&nbsp;<a href="https://discourse.ubuntu.com/t/ubuntu-studio-26-04-lts-release-notes/">https://discourse.ubuntu.com/t/ubuntu-studio-26-04-lts-release-notes/</a></li><li>Further known issues, mostly pertaining to the desktop environment, can be found at&nbsp;<a href="https://wiki.ubuntu.com/ResoluteRaccoon/ReleaseNotes/Kubuntu">https://wiki.ubuntu.com/ResoluteRaccoon/ReleaseNotes/Kubuntu</a></li><li>Additionally, the main Ubuntu release notes contain more generic issues:&nbsp;<a href="https://discourse.ubuntu.com/t/resolute-raccoon-release-notes/">https://discourse.ubuntu.com/t/resolute-raccoon-release-notes/</a></li></ul>
+
+
+
+<h2 id="how-you-can-help">How You Can Help</h2>
+
+
+
+<p>Please test using the test cases on&nbsp;<a href="https://iso.qa.ubuntu.com/">https://iso.qa.ubuntu.com</a>. All you need is a&nbsp;<a href="https://launchpad.net/">Launchpad</a>&nbsp;account to get started.</p>
+
+
+
+<p>Additionally, we need financial contributions. Our project lead, Erich Eickmeyer, is working long hours on this project and trying to generate a part-time income.&nbsp;<a href="https://ubuntustudio.org/contribute/">Go here</a>&nbsp;to see how you can contribute financially (options are also in the sidebar).</p>
+
+
+
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+
+
+
+<p><strong>Q: Does Ubuntu Studio contain snaps?</strong>&nbsp;A: Yes. Mozilla&#8217;s distribution agreement with Canonical changed, and Ubuntu was forced to no longer distribute Firefox in a native .deb package. We have found that, after numerous improvements, Firefox now performs just as well as the native .deb package did.</p>
+
+
+
+<p>Thunderbird is also a snap in order for the maintainers to get security patches delivered faster. This is done by the Thunderbird team in cooperation with Canonical.</p>
+
+
+
+<p>Additionally, FreeShow is an Electron-based application. Electron-based applications cannot be packaged in the Ubuntu repositories in that they cannot be packaged in a traditional Debian source package. While such apps do have a build system to create a .deb binary package, it circumvents the source package build system in Launchpad, which is required when packaging for Ubuntu. However, Electron apps also have a facility for creating snaps, which can be uploaded and included. Therefore, for FreeShow to be included in Ubuntu Studio, it had to be packaged as a snap.</p>
+
+
+
+<p>Also, to keep theming consistent, all included themes are snapped in addition to the included .deb versions so that snaps stay consistent with our themes.</p>
+
+
+
+<p>We are working with Canonical to make sure that the quality of snaps goes up with each release, so we please ask that you give snaps a chance instead of writing them off completely.</p>
+
+
+
+<p><strong>Q: If I install this Beta release, will I have to reinstall when the final release comes out?</strong>&nbsp;A: No. If you keep it updated, your installation will automatically become the final release.</p>
+
+
+
+<p><strong>Q: Will you make an ISO with {my favorite desktop environment}?</strong>&nbsp;A: To do so would require creating an entirely new flavor of Ubuntu, which would require going through the Official Ubuntu Flavor application process. Since we&#8217;re completely volunteer-run, we don&#8217;t have the time or resources to do this. Instead, we recommend you download the&nbsp;<a href="https://ubuntu.com/download/flavours">official flavor for the desktop environment of your choice</a>&nbsp;and use&nbsp;<a href="https://ubuntustudio.org/ubuntu-studio-installer">Ubuntu Studio Installer</a>&nbsp;to get Ubuntu Studio — which does&nbsp;<em>not</em>&nbsp;convert that flavor to Ubuntu Studio but adds its benefits.</p>
+
+
+
+<p><strong>Q: What if I don&#8217;t want all these packages installed on my machine?</strong>&nbsp;A: See the &#8220;Only Install What You Need&#8221; section above. Use the minimal install option and then add only the workflows you want with Ubuntu Studio Installer.</p>]]></description>
+      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
     </item>
     <item>
       <title>E375 a Idade Dos Cangaceiros</title>
@@ -788,98 +824,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
             <p><small>1 post - 1 participant</small></p>
             <p><a href="https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-937/78987">Read full topic</a></p>]]></description>
       <source url="https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss">Ubuntu Weekly News</source>
-    </item>
-    <item>
-      <title>How taboo shapes knowledge production on Wikipedia</title>
-      <link>https://mako.cc/copyrighteous/how-taboo-shapes-knowledge-production-on-wikipedia</link>
-      <guid isPermaLink="true">https://mako.cc/copyrighteous/how-taboo-shapes-knowledge-production-on-wikipedia</guid>
-      <pubDate>Mon, 23 Mar 2026 09:33:53 GMT</pubDate>
-      <description><![CDATA[<p class="has-small-font-size"><em><strong>Note:</strong> I have not published blog posts about my academic papers over the past few years. To ensure that my blog contains a more comprehensive record of my published papers and to surface them for folks who missed them, I will periodically (re) publish blog posts about some &#8220;older&#8221; published projects. This post draws material from <a href="https://blog.communitydata.science/lets-talk-about-taboo-a-new-paper-on-how-taboo-shapes-activity-on-wikipedia/">a previously published post</a> by <a href="https://zarine.net/">Kaylea Champion</a> on <a href="https://blog.communitydata.science/">the Community Data Science Blog</a>.</em></p>
-
-
-
-<p id="block-419f7d04-082e-4c82-8605-89baefb2ee2d">Taboo subjects—such as sexuality and mental health—are as important to discuss as they are difficult to raise in conversation. Although many people turn to online resources for information on taboo subjects, censorship and low-quality information are common in search results. In two papers I recently published at CSCW—both led by Kaylea Champion—we presented a series of analyses showing how taboo shapes the process of collaborative knowledge building on English Wikipedia.</p>
-
-
-
-<p id="block-419f7d04-082e-4c82-8605-89baefb2ee2d">The first study is a quantitative analysis showing that articles on taboo subjects are much more popular and are the subject of more vandalism than articles on non-taboo topics. In surprising news, we also found that they were edited more often and were of higher quality!</p>
-
-
-
-<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe class="youtube-player" width="525" height="296" src="https://www.youtube.com/embed/aWJn6ZbogXY?version=3&#038;rel=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;fs=1&#038;hl=en-US&#038;autohide=2&#038;wmode=transparent" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation allow-popups-to-escape-sandbox"></iframe>
-</div><figcaption class="wp-element-caption">Short video of Kaylea&#8217;s presentation of the work given at Wikimania in August 2023.</figcaption></figure>
-
-
-
-<p id="block-2779c102-6740-41cc-a53f-e3fbe94131db">The first challenge we faced in conducting this work was identifying taboo articles. Kaylea had a brilliant idea for a new computational approach to doing so without relying on our individual intuitions about what qualifies as taboo (something we understood would be highly specific to our own culture, class, etc). Her approach was to make use of an insight from linguistics: <em>people develop euphemisms as ways to talk about taboos</em> (i.e., think about all the euphemisms we&#8217;ve devised for death, or sex, or menstruation, or mental health).</p>
-
-
-
-<p id="block-2779c102-6740-41cc-a53f-e3fbe94131db">We used this insight to build a new machine-learning classifier based on English Wiktionary definitions. If a &#8216;sense&#8217; of a word was tagged as euphemistic, we treated the words in the definition as indicators of taboo. The end result was a series of words and phrases that most powerfully differentiate taboo from non-taboo. We then did a simple match between those words and phrases and the titles of Wikipedia articles. The topics were taboo enough that we were a little uncomfortable discussing them in our meetings! We built a comparison sample of articles whose titles are words that, like our taboo articles, appear in Wiktionary definitions.</p>
-
-
-
-<p>In the first paper, we used this new dataset to test a series of hypotheses about how taboo shapes collaborative production in Wikipedia. Our initial hypotheses were based on the idea that taboo information is often in high demand but that Wikipedians might be reluctant to associate their names (or usernames) with taboo topics. The result, we argued, would be articles that were in high demand but of low quality. </p>
-
-
-
-<p>We found that taboo articles are thriving on Wikipedia! In summary, we found that in comparison to non-taboo articles:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Taboo articles are more popular  (<em>as expected</em>).</li>
-
-
-
-<li>Taboo articles receive more contributions (<em>contrary to expectations</em>).</li>
-
-
-
-<li>Taboo articles receive more low-quality contributions (<em>as expected</em>).</li>
-
-
-
-<li>Taboo articles are higher quality (<em>contrary to expectations</em>).</li>
-
-
-
-<li>Taboo article contributors are more likely to contribute without an account (<em>as expected</em>), and have less experience (<em>as expected</em>), but that accountholders are more likely to make themselves more identifiable by having a user page, disclosing their gender, and making themselves emailable (<em>all three of these are contrary to expectation</em>!).</li>
-</ul>
-
-
-
-<figure class="wp-block-image"><img fetchpriority="high" decoding="async" width="916" height="889" src="https://mako.cc/copyrighteous/wp-content/uploads/2026/03/screenshot-20260323_180937.png" alt="" class="wp-image-3352" srcset="https://mako.cc/copyrighteous/wp-content/uploads/2026/03/screenshot-20260323_180937.png 916w, https://mako.cc/copyrighteous/wp-content/uploads/2026/03/screenshot-20260323_180937-300x291.png 300w, https://mako.cc/copyrighteous/wp-content/uploads/2026/03/screenshot-20260323_180937-768x745.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /><figcaption class="wp-element-caption">Image of the estimated qualiy of articles of the four articles in the second mixed-methods paper. Extreme dips reflect periods of frequent vandalism.</figcaption></figure>
-
-
-
-<p>Kaylea attempted to understand these somewhat confusing results by designing a fantastic mixed-methods analysis that sought to unpack some of the nuance missing in the quantitative analysis by delving deep into the &#8220;life histories&#8221; of four articles on English Wikipedia: two on taboo topics related to women&#8217;s anatomy (<a href="https://en.wikipedia.org/wiki/Clitoris">Clitoris</a> and <a href="https://en.wikipedia.org/wiki/Menstruation">Menstration</a>) and two nontaboo articles chosen for comparison (<a href="https://en.wikipedia.org/wiki/Cell_membrane">Cell membrance</a> and <a href="https://en.wikipedia.org/wiki/Philip_Pullman">Philip Pullman</a>).</p>
-
-
-
-<p>Although the findings from the analysis can be difficult to summarize succinctly (as with many qualitative studies), we showed how the taboo example articles&#8217; success was hard-won amid real challenges and attacks. The paper describes how challenges were overcome through resilient leadership, often provided by a single dedicated individual. The paper provides a template for how taboo can be—and frequently is—overcome by dedicated Wikipedians in ways that provide useful knowledge resources in real demand.</p>
-
-
-
-<p>For more details, visualizations, statistics, and more, we hope you&#8217;ll take a look at our papers, both linked below.</p>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-
-
-<p class="has-small-font-size">The full citation for the papers are: (1) Champion, Kaylea, and Benjamin Mako Hill. 2023. “Taboo and Collaborative Knowledge Production: Evidence from Wikipedia.” <em>Proceedings of the ACM on Human-Computer Interaction</em> 7 (CSCW2): 299:1-299:25. <a href="https://doi.org/10.1145/3610090">https://doi.org/10.1145/3610090</a>. (2) Champion, Kaylea, and Benjamin Mako Hill. 2024. “Life Histories of Taboo Knowledge Artifacts.” <em>Proceedings of the ACM: Human-Computer Interaction</em> 8 (CSCW2): 505:1-505:32. <a href="https://doi.org/10.1145/3687044">https://doi.org/10.1145/3687044</a>. </p>
-
-
-
-<p class="has-small-font-size">We have also released <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/5OKEEO">replication materials for the paper</a>, including all the data and code used to conduct the analyses.</p>
-
-
-
-<p class="has-small-font-size">This blog post and the paper it describes are collaborative work by <a href="https://kayleachampion.com/">Kaylea Champion</a> and <a href="https://mako.cc/academic/">Benjamin Mako Hill</a>.</p>]]></description>
-      <source url="http://mako.cc/copyrighteous/?flav=rss">Benjamin Mako Hill</source>
     </item>
     <item>
       <title>Ubuntu installer selects a single keyboard layout, cannot type English during installation</title>
