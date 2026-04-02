@@ -329,27 +329,6 @@
     "imageUrl": null
   },
   {
-    "sourceName": "Scarlett Gately Moore",
-    "sourceUrl": "https://www.scarlettgatelymoore.dev/category/open-source-software/feed/",
-    "title": "I love KDE too much to retire! Snap beta releases trickling in. Stay tuned.",
-    "link": "https://www.scarlettgatelymoore.dev/i-love-kde-too-much-to-retire-snap-beta-releases-trickling-in-stay-tuned/",
-    "date": "2026-01-10T16:54:12.000Z",
-    "snippet": "A short but sweet note to say I am coming out of my short retirement to help with snaps again. My time is extremely limited, however we are working hard on getting snaps on CI and I have some newer snaps in &#8211;beta trickling in for testing. You must install kf6-core24 from beta as well to test them ( this will likely break older kde snaps in the process so beware. ) This is slow going as I work on them during my hour lunch at day job and spare stolen moments. KDE is coming up on its 30th bir...",
-    "contentHtml": "<figure class=\"wp-block-image aligncenter size-full\"><img fetchpriority=\"high\" decoding=\"async\" width=\"424\" height=\"600\" src=\"https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde.png\" alt=\"\" class=\"wp-image-1816\" srcset=\"https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde.png 424w, https://www.scarlettgatelymoore.dev/wp-content/uploads/424px-Mascot_konqi-dev-kde-212x300.png 212w\" sizes=\"(max-width: 424px) 100vw, 424px\" /></figure>\n\n\n\n<p class=\"wp-block-paragraph\">A short but sweet note to say I am coming out of my short retirement to help with snaps again. My time is extremely limited, however we are working hard on getting snaps on CI and I have some newer snaps in &#8211;beta trickling in for testing. You must install kf6-core24 from beta as well to test them ( this will likely break older kde snaps in the process so beware. ) This is slow going as I work on them during my hour lunch at day job and spare stolen moments. KDE is coming up on its 30th birthday!!! How cool is that!</p>\n\n\n\n<p class=\"wp-block-paragraph\">I <img src=\"https://s.w.org/images/core/emoji/17.0.2/72x72/2764.png\" alt=\"❤\" class=\"wp-smiley\" style=\"height: 1em; max-height: 1em;\" /> KDE</p>\n\n\n\n<p class=\"wp-block-paragraph\">Like my work? Consider a donation. Thank you!</p>\n\n\n\n<a class=\"dbox-donation-page-button\" href=\"https://donorbox.org/open-source-work?\" style=\"background: rgb(18, 138, 237); color: rgb(255, 255, 255); text-decoration: none; font-family: Verdana, sans-serif; display: flex; gap: 8px; width: fit-content; font-size: 16px; border-radius: 5px; line-height: 24px; padding: 8px 24px;\"><img decoding=\"async\" src=\"https://donorbox.org/images/white_logo.svg\">Donate</a>",
-    "author": "sgmoore",
-    "categories": [
-      "KDE",
-      "Kubuntu",
-      "Linux",
-      "Open Source Software",
-      "Packaging",
-      "snaps",
-      "Software",
-      "Software development"
-    ],
-    "imageUrl": null
-  },
-  {
     "sourceName": "Colin Watson",
     "sourceUrl": "https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml",
     "title": "Free software activity in November 2025",
