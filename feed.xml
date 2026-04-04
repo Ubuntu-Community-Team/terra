@@ -6,9 +6,29 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 03 Apr 2026 00:39:08 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2026 00:36:22 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu Summit 26.04 is coming: Save the date and share your story!</title>
+      <link>https://ubuntu.com//blog/ubuntu-summit-26-04-is-coming-save-the-date-and-share-your-story</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/ubuntu-summit-26-04-is-coming-save-the-date-and-share-your-story</guid>
+      <pubDate>Fri, 03 Apr 2026 08:17:52 GMT</pubDate>
+      <description><![CDATA[<figure class="wp-block-image size-full"><img alt="" height="2160" loading="lazy" sizes="(min-width: 3840px) 3840px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_3840/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png 1920w" width="3840"/></figure>
+<p>Following the incredible success of Ubuntu Summit 25.10, we are thrilled to announce that <a href="https://ubuntu.com/summit">Ubuntu Summit 26.04</a> is officially on the horizon.</p>
+<p>If you are new to the Ubuntu community, every new release of Ubuntu comes with an Ubuntu Summit – an event that takes place twice a year and serves as a showcase of the absolute best in open source innovation from around the world. Our hub in London hosts the talks, which are then streamed live, across the world. </p>
+<p>Whether you are a seasoned open source innovator, or you just installed your very first open source operating system, this summit is built for you. We are bringing the global circle of friends together once again, and we want you to be a part of it.</p>
+<h2 class="wp-block-heading"><strong>Why you should submit a talk</strong> 📝</h2>
+<p>The Ubuntu Summit is a showcase for the innovative and the ambitious! We are looking to spotlight the projects that are challenging the status quo, and demonstrating that the best engineering can be done in the open. If your work is pushing the boundaries of technology, this is your perfect stage to amplify its impact. Stepping up to the podium means putting your project directly in front of a massive, highly engaged audience that is always hungry for new solutions. Bring your biggest ideas and your deepest technical dives, and watch your work resonate across the global tech community. </p>
+<p>Your presentation will not only captivate the room, but will also reach developers worldwide through our channels, driving awareness and sparking meaningful conversations long after the closing keynote.</p>
+<p>The <a href="https://ubu.link/ubuntusummit-cfp">Call for Papers is officially open</a>, so submit your proposal today and let us help you share your vision with the world.</p>
+<h2 class="wp-block-heading"><strong>Bring the Summit to your city</strong> <strong>🌍</strong></h2>
+<p>The magic of the Ubuntu community happens when people connect. That is why Ubuntu Summit Extended is back!</p>
+<p>Ubuntu Summit Extended events are local gatherings that coincide with the Ubuntu Summit. Bring the energy of the Ubuntu Summit right to your living room, your local hackerspace, or your university. Hosting an Ubuntu Summit Extended event is simply about gathering a few friends, throwing the stream on a screen, and sharing some food and ideas. We had watch parties across the world last year, and we want to see even more local communities light up the map with the orange circle of friends for the Ubuntu Summit 26.04. Ready to host? <a href="https://ubu.link/ubuntusummit-extended">Register your Ubuntu Summit Extended event today</a>.</p>
+<h2 class="wp-block-heading"><strong>Your next steps</strong> <strong>📅</strong></h2>
+<p>The clock is ticking, and we are ready to see what you will bring to the table. Head over to the <a href="https://ubuntu.com/summit">Ubuntu Summit website</a> to submit your talk proposal or register your local Extended watch party.</p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>Quote #75514</title>
       <link>https://mako.cc/copyrighteous/quote-75514</link>
@@ -38,44 +58,6 @@
 
 <p></p>]]></description>
       <source url="http://mako.cc/copyrighteous/?flav=rss">Benjamin Mako Hill</source>
-    </item>
-    <item>
-      <title>How to manage Ubuntu fleets using on-premises Active Directory and ADSys</title>
-      <link>https://ubuntu.com//blog/manage-ubuntu-fleets-active-directory</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/manage-ubuntu-fleets-active-directory</guid>
-      <pubDate>Tue, 31 Mar 2026 08:30:50 GMT</pubDate>
-      <description><![CDATA[<figure class="wp-block-image size-full"><img alt="" height="720" loading="lazy" sizes="(min-width: 1280px) 1280px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F1ac4%2FBlog-Managing-Ubuntu-fleets-using-Active-Directory.png 1280w" width="1280"/></figure>
-<p>The “hybrid fleet” is today’s reality: organizations diversify operating systems while Microsoft Active Directory (AD) remains the dominant identity “source of truth.” IT administrators must ensure Linux machines, like Ubuntu desktops and servers, behave as first-class citizens in this environment. Efficient Linux management demands unified identity and policy management, ensuring that local authentication mechanisms and system configuration on Ubuntu endpoints respect the central authority of AD.</p>
-<h2 class="wp-block-heading">AD and the System Security Services Daemon (SSSD)</h2>
-<p>For Ubuntu, the SSSD acts as the foundational technology for Active Directory integration. Instead of disparate config files or legacy LDAP scripts, SSSD has long provided a modular architecture that abstracts the complexities of backend providers.</p>
-<p>When configured with the AD provider, SSSD communicates natively with domain controllers using standard protocols: Kerberos for authentication and LDAP for directory queries. SSSD automatically maps SID-to-UID/GID, translating Windows Security Identifiers (SIDs) into Linux-compatible numeric User IDs (UIDs) and Group IDs (GIDs) for file access. This eliminates the need to manually extend the AD schema with Portable Operating System Interface (POSIX) attributes, cutting deployment friction significantly.</p>
-<p>Enterprise fleets, especially mobile workstations, need reliable offline access. SSSD delivers this by caching password hashes locally via <code>cache_credentials</code> and <code>offline_credentials_expiration</code>, keeping users authenticated – even when disconnected from the corporate network.</p>
-<h2 class="wp-block-heading">The power of Group Policy Objects (GPOs) with Active Directory System Services (ADSys)</h2>
-<p>SSSD handles identity (“who”), but historically couldn’t manage configuration (“what”) with the same depth as Windows clients. That gap is where ADSys becomes the core value proposition for the enterprise.</p>
-<p>ADSys is a native Group Policy Object (GPO) client for Ubuntu, letting IT administrators use existing AD knowledge and infrastructure to manage Ubuntu fleets. Active Directory Policies apply at two points: computer policies at boot, and user policies at login. This mirrors the Windows management experience, ensuring interoperability between Linux and Windows, without requiring parallel infrastructure management tools.</p>
-<h2 class="wp-block-heading">Quick reference: ADSys capabilities</h2>
-<p>ADSys supports the following management capabilities:</p>
-<figure class="wp-block-table"><table><tbody><tr><td><strong>Feature</strong></td><td><strong>Description</strong></td></tr><tr><td>Privileges management</td><td>Centrally grant or revoke sudo privileges for AD users and groups without manually editing local /etc/sudoers files on individual machines.</td></tr><tr><td>Script execution</td><td>Automate configuration by scheduling shell scripts to execute at system startup, shutdown, user login, or user logout to remediate configuration drift.</td></tr><tr><td>Desktop configuration</td><td>Enforce specific desktop settings (e.g., screen lock timeouts, wallpaper, application access) via. the dconf settings framework.</td></tr><tr><td>AppArmor management</td><td>Enforce custom AppArmor profiles to restrict application capabilities system-wide, enhancing the security posture of the endpoint.</td></tr></tbody></table></figure>
-<p>Learn more in our technical <a href="https://documentation.ubuntu.com/adsys/stable/">documentation</a>.</p>
-<h2 class="wp-block-heading">Compliance and security with certificate auto-enrollment</h2>
-<p>Integrating local authentication with Active Directory is not only an enterprise compliance and security requirement, but also a convenience. Centralizing identity enforces security and governance policies, password complexity, and account lockout thresholds, consistently across the entire heterogeneous fleet.</p>
-<p>ADSys also supports certificate auto-enrollment from Active Directory Certificate Services (AD CS). Clients enroll for machine certificates, which the certmonger daemon continuously monitors and refreshes, improving the security of communication and supporting compliance with encryption standards within legacy corporate networks.</p>
-<h2 class="wp-block-heading">The Ubuntu Pro advantage</h2>
-<p>All of ADSys features are provided by <a href="https://ubuntu.com/pro">Ubuntu Pro</a>. An Ubuntu Pro subscription provides access to the ADSys client and the administrative templates (.ADMX/.ADML) needed to expose Ubuntu-specific settings in the Windows Group Policy Management Console.</p>
-<p>SSSD’s authentication combined with ADSys’s policy enforcement gives Canonical’s solution a decisive advantage: it maximizes existing AD infrastructure investment while putting Ubuntu systems on the path to compliance, backed by the long-term support (LTS) enterprise environments demand.</p>
-<h2 class="wp-block-heading">Learn more about identity management </h2>
-<p>In our newly released whitepaper we provide actionable blueprints and technical specifications to architect, define, and enforce robust identity management controls across your entire server and desktop fleet, regardless of operating system.</p>
-<p> We provide a technical examination of modern identity paradigms, including detailed configurations for managing access to cloud and on-premise Linux infrastructure, and practical strategies for seamless and secure integration with legacy AD Domain Services. Furthermore, the paper offers a detailed analysis of the advantages and implementation steps for using SSH certificates for frictionless, auditable SSH authentication, moving beyond simple key management. </p>
-<p><a href="https://ubuntu.com/engage/ubuntu-enterprise-identity-management">Read the Ubuntu Enterprise Identity Management whitepaper</a>.</p>
-<h3 class="wp-block-heading">Further reading</h3>
-<ul>
-<li><a href="https://documentation.ubuntu.com/adsys/latest/">ADSys documentation</a></li>
-<li><a href="https://documentation.ubuntu.com/authd/stable-docs/">Authd documentation</a></li>
-<li><a href="https://snapcraft.io/authd-msentraid">Authd for Entra ID on Snapcraft</a></li>
-<li><a href="https://snapcraft.io/authd-google">Authd for Google IAM on Snapcraft</a></li>
-<li><a href="https://snapcraft.io/authd-oidc">Authd for OIDC on Snapcraft</a></li>
-</ul>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Announcing Incus 6.23</title>
@@ -5904,29 +5886,6 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 <li><a href="https://github.com/helm/charts/tree/master/stable/external-dns#configuration">The full list of configuration details for the ExternalDNS Helm&nbsp;chart</a></li>
 </ul>]]></description>
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
-    </item>
-    <item>
-      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
-      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
-      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
-      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
-<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
-<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
-<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
-<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
-<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
-<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
-<blockquote>
-<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
-</blockquote>
-<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
-<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
-We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
-So, please sync with this change (and sorry :)).</p>
-<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
-<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
-      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
     </item>
     <item>
       <title>Rise and fall of libclamav</title>
