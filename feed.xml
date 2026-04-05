@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 04 Apr 2026 00:36:22 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2026 00:41:26 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -3375,6 +3375,46 @@ mirror and follow the instructions above.</p>]]></description>
       <source url="https://blog.slyon.de/category/ubuntu/feed/">Lukas Märdian</source>
     </item>
     <item>
+      <title>git revert name and Akademy</title>
+      <link>https://jriddell.org/2024/09/12/git-revert-name-and-akademy/</link>
+      <guid isPermaLink="true">https://jriddell.org/2024/09/12/git-revert-name-and-akademy/</guid>
+      <pubDate>Thu, 12 Sep 2024 14:33:09 GMT</pubDate>
+      <description><![CDATA[<p>I reverted my name back to Jonathan Riddell and have now made a new uid for my PGP key, you can get the updated one on <a href="https://keyserver.ubuntu.com/pks/lookup?op=vindex&amp;search=0xd7574483bb57b18d">keyserver.ubuntu.com</a> or <a href="https://jriddell.org/contact/">my contact page</a> or <a href="https://launchpad.net/~jr">my Launchpad page</a>. </p>
+
+
+
+<p>Here&#8217;s some pics from Akademy</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-1.png"><img width="939" height="1024" src="https://jriddell.org/wp-content/uploads/2024/09/image-1-939x1024.png" alt="" class="wp-image-1595" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-1-939x1024.png 939w, https://jriddell.org/wp-content/uploads/2024/09/image-1-275x300.png 275w, https://jriddell.org/wp-content/uploads/2024/09/image-1-768x837.png 768w, https://jriddell.org/wp-content/uploads/2024/09/image-1.png 941w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></figure>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-2.png"><img loading="lazy" width="1024" height="781" src="https://jriddell.org/wp-content/uploads/2024/09/image-2-1024x781.png" alt="" class="wp-image-1596" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-2-1024x781.png 1024w, https://jriddell.org/wp-content/uploads/2024/09/image-2-300x229.png 300w, https://jriddell.org/wp-content/uploads/2024/09/image-2-768x586.png 768w, https://jriddell.org/wp-content/uploads/2024/09/image-2.png 1292w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></figure>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-3.png"><img loading="lazy" width="1024" height="780" src="https://jriddell.org/wp-content/uploads/2024/09/image-3-1024x780.png" alt="" class="wp-image-1597" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-3-1024x780.png 1024w, https://jriddell.org/wp-content/uploads/2024/09/image-3-300x229.png 300w, https://jriddell.org/wp-content/uploads/2024/09/image-3-768x585.png 768w, https://jriddell.org/wp-content/uploads/2024/09/image-3.png 1291w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></figure>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-4.png"><img loading="lazy" width="1024" height="639" src="https://jriddell.org/wp-content/uploads/2024/09/image-4-1024x639.png" alt="" class="wp-image-1598" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-4-1024x639.png 1024w, https://jriddell.org/wp-content/uploads/2024/09/image-4-300x187.png 300w, https://jriddell.org/wp-content/uploads/2024/09/image-4-768x479.png 768w, https://jriddell.org/wp-content/uploads/2024/09/image-4-1536x958.png 1536w, https://jriddell.org/wp-content/uploads/2024/09/image-4.png 1577w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></figure>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-5.png"><img loading="lazy" width="1024" height="639" src="https://jriddell.org/wp-content/uploads/2024/09/image-5-1024x639.png" alt="" class="wp-image-1599" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-5-1024x639.png 1024w, https://jriddell.org/wp-content/uploads/2024/09/image-5-300x187.png 300w, https://jriddell.org/wp-content/uploads/2024/09/image-5-768x479.png 768w, https://jriddell.org/wp-content/uploads/2024/09/image-5-1536x958.png 1536w, https://jriddell.org/wp-content/uploads/2024/09/image-5.png 1577w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /></a></figure>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-6.png"><img loading="lazy" width="659" height="1024" src="https://jriddell.org/wp-content/uploads/2024/09/image-6-659x1024.png" alt="" class="wp-image-1600" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-6-659x1024.png 659w, https://jriddell.org/wp-content/uploads/2024/09/image-6-193x300.png 193w, https://jriddell.org/wp-content/uploads/2024/09/image-6.png 693w" sizes="(max-width: 659px) 100vw, 659px" /></a></figure>
+
+
+
+<figure class="wp-block-image size-full"><a href="https://jriddell.org/wp-content/uploads/2024/09/image-7.png"><img loading="lazy" width="562" height="810" src="https://jriddell.org/wp-content/uploads/2024/09/image-7.png" alt="" class="wp-image-1601" srcset="https://jriddell.org/wp-content/uploads/2024/09/image-7.png 562w, https://jriddell.org/wp-content/uploads/2024/09/image-7-208x300.png 208w" sizes="(max-width: 562px) 100vw, 562px" /></a></figure>]]></description>
+      <source url="http://jriddell.org/feed/?tag=planetubuntu">Jonathan Riddell</source>
+    </item>
+    <item>
       <title>Freedesktop Specs Website Update</title>
       <link>https://blog.tenstral.net/2024/08/freedesktop-specs-website-update.html</link>
       <guid isPermaLink="true">https://blog.tenstral.net/2024/08/freedesktop-specs-website-update.html</guid>
@@ -3432,7 +3472,7 @@ mirror and follow the instructions above.</p>]]></description>
       <link>https://rossgammon68.wordpress.com/2023/11/05/ubuntu-summit-2023/</link>
       <guid isPermaLink="true">https://rossgammon68.wordpress.com/2023/11/05/ubuntu-summit-2023/</guid>
       <pubDate>Sun, 05 Nov 2023 16:01:16 GMT</pubDate>
-      <description><![CDATA[<p><img data-attachment-id="1853" data-permalink="https://rossgammon68.wordpress.com/2023/11/05/ubuntu-summit-2023/ubuntusummit2023/" data-orig-file="https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg" data-orig-size="875,656" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="UbuntuSummit2023" data-image-description="" data-image-caption="" data-medium-file="https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg?w=300" data-large-file="https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg?w=440" class="alignnone size-full wp-image-1853" src="https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg?w=440" alt="UbuntuSummit2023"   srcset="https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg 875w, https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg?w=150&amp;h=112 150w, https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg?w=300&amp;h=225 300w, https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg?w=768&amp;h=576 768w" sizes="(max-width: 875px) 100vw, 875px" /></p>
+      <description><![CDATA[<p><img data-attachment-id="1853" data-permalink="https://rossgammon68.wordpress.com/2023/11/05/ubuntu-summit-2023/ubuntusummit2023/" data-orig-file="https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg" data-orig-size="875,656" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="UbuntuSummit2023" data-image-description="" data-image-caption="" data-large-file="https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg?w=440" class="alignnone size-full wp-image-1853" src="https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg?w=440" alt="UbuntuSummit2023"   srcset="https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg 875w, https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg?w=150&amp;h=112 150w, https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg?w=300&amp;h=225 300w, https://rossgammon68.wordpress.com/wp-content/uploads/2023/11/ubuntusummit2023.jpg?w=768&amp;h=576 768w" sizes="(max-width: 875px) 100vw, 875px" /></p>
 <p>I am currently attending the Ubuntu Summit 2023 in Riga, Latvia. This is the first time I have deliberately attended an Ubuntu event. Back in 2013, I accidentally walked through what I believe was the last Ubuntu Developers Summit in Copenhagen, when I was showing some friends around Bella Sky in Copenhagen.</p>
 <p>This time I was asked by Erich Eickmeyer if I would like to join him as a member of the <a href="https://ubuntustudio.org/">Ubuntu Studio</a> team. It has been fantastic to meet him and <span class="speaker-item-inline">Eylul Dogrue</span>l from the Ubuntu Studio team. It was also fantastic to meet or see in person other members of the Linux Audio community, and other Ubuntu and Canonical people that have helped me with my Ubuntu contributions along the way.</p>
 <p>Here are the talks I attended and meetings I had related to Ubuntu Studio:</p>
@@ -5886,6 +5926,29 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 <li><a href="https://github.com/helm/charts/tree/master/stable/external-dns#configuration">The full list of configuration details for the ExternalDNS Helm&nbsp;chart</a></li>
 </ul>]]></description>
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
+    </item>
+    <item>
+      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
+      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
+      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
+      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
+      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
+<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
+<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
+<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
+<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
+<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
+<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
+<blockquote>
+<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
+</blockquote>
+<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
+<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
+We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
+So, please sync with this change (and sorry :)).</p>
+<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
+<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
+      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
     </item>
     <item>
       <title>Rise and fall of libclamav</title>
