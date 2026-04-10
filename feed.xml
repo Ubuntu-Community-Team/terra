@@ -6,49 +6,84 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 09 Apr 2026 00:33:51 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:40:17 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ubuntu Pro comes to Nutanix bare-metal Kubernetes</title>
-      <link>https://ubuntu.com//blog/ubuntu-pro-on-nutanix-bare-metal-kubernetes</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/ubuntu-pro-on-nutanix-bare-metal-kubernetes</guid>
-      <pubDate>Wed, 08 Apr 2026 12:45:17 GMT</pubDate>
-      <description><![CDATA[<h2 class="wp-block-heading">Nutanix and Canonical expand partnership to offer more choice for containerized workloads</h2>
-<p>Enterprise Kubernetes® is maturing into a highly flexible, multi-architecture model. As AI/ML and data-intensive workloads continue to demand maximum hardware throughput, organizations are seeking the performance of bare metal without sacrificing the operational consistency of cloud platforms.</p>
-<p>To meet this demand, Nutanix and Canonical have extended the availability of Ubuntu Pro to Nutanix Kubernetes Platform (NKP) instances running on bare metal, including the newly <a href="https://www.nutanix.com/press-releases/2026/nutanix-introduces-nkp-metal-bringing-bare-metal-kubernetes-to-its-platform">announced</a> NKP Metal solution. This enablement builds on the <a href="https://www.nutanix.com/blog/nutanix-and-canonical-partner-to-simplify-kubernetes-deployments-with-nkp-and-ubuntu-pro">partnership</a> announced in 2025, in which the Ubuntu operating system with security patching was made available for NKP instances running on VMs. The security patching is part of Ubuntu Pro, Canonical’s comprehensive subscription for open source security and support and includes up to 15 years of patching and maintenance, tools to simplify compliance hardening, and live kernel patching. The expansion to bare metal ensures the security maintenance and streamlined compliance support provided by Ubuntu Pro on NKP is made available to users running containers on bare metal, as well as users in mixed environments.</p>
-<h3 class="wp-block-heading">Nutanix Kubernetes Platform on bare metal</h3>
-<p>With NKP on bare metal, customers can take advantage of an architecture designed to help eliminate the performance overhead resource constraints associated with traditional hypervisors. This design delivers  the full performance of the underlying silicon for demanding containerized workloads. NKP has always been supported for bare metal deployments, and the newly added support for Ubuntu Pro will bring even greater security to these implementations.</p>
-<p>“Our customers need the flexibility to run containers where their workloads demand, whether in VMs or directly on bare metal,” said Dan Ciruli, General Manager of cloud native at Nutanix. “By bringing Ubuntu Pro to NKP on bare metal, we’re providing a hardened, enterprise-ready foundation so organizations can meet application requirements without forcing a choice, unifying container deployments across both VMs and bare metal for maximum flexibility.”</p>
-<h3 class="wp-block-heading">Streamlining security and compliance</h3>
-<p>Through the partnership, Ubuntu is integrated and validated with NKP to provide a seamless, securely designed experience. Organizations can opt to add Ubuntu Pro, Canonical’s comprehensive subscription for open source security, confident  in the knowledge that they will benefit from the full range of features, including:</p>
+      <title>Intentional leadership at Canonical</title>
+      <link>https://ubuntu.com//blog/intentional-leadership-at-canonical</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/intentional-leadership-at-canonical</guid>
+      <pubDate>Thu, 09 Apr 2026 12:12:06 GMT</pubDate>
+      <description><![CDATA[<p><em>In this article, Keirthana TS, a Senior Technical Author at Canonical, breaks down what leadership means to her and how she understood the power of intentional leadership through her journey at Canonical.</em></p>
+<p>My colleague, Maksim Beliaev, recently wrote about our <a href="https://canonical.com/blog/hiring-the-canonical-way">hiring principles</a>. In this article, I want to build on his points by talking more about what <em>leadership </em>means at Canonical, and how the different kinds of leadership roles complement each other.</p>
+<h2 class="wp-block-heading">Setting expectations right</h2>
+<p>My journey at Canonical taught me that leadership is not earned just by tenure. It is a discipline that can be developed and embodied through intent. What do I mean by this? I’m not saying that Canonical doesn’t have specialized leadership or management positions: we do, and they play a vital role. What I mean is that there is nothing holding individuals back from being leaders in their own domains, and having a positive impact on others. In fact, this is actively encouraged, and it is what I call <em>intentional leadership</em>.</p>
+<p>Career progression at Canonical is based on our <a href="https://canonical.com/careers/company-culture/progression#:~:text=framework">leveling framework</a>, which groups contributors into <em>specialists, seniors, and managers. </em>In each of these tracks, there is scope to lead and be impactful: through technical depth (for specialists), driving people to achieve outcomes (senior), and shaping and steering organizational plans (manager). The question is: what brings out the spark in <em>you? </em>And what happens when these different leadership types exist in the same team dynamic?</p>
+<h2 class="wp-block-heading">Understanding and identifying the right role</h2>
+<p>Which of the three roles was right for me? Well, it took me some time to understand. When I first became a Senior Technical Author, I thought about it just in terms of how the role was defined for me and what others expected of me. </p>
+<p>As I worked towards my aspiration, I realized that I should also look inward: I needed to be deliberate with my intent, and reflect on what change I wanted to bring about in my team and how I could work with other leaders in the team. So I set about observing the different leadership dynamics within Canonical. As I learnt the basics, I was curious how these roles would compete with each other for influence. I want to share a couple of experiences that piqued my curiosity. </p>
+<h2 class="wp-block-heading">Accelerating efficiency: when Seniors and Specialists lead together</h2>
+<p>I’ve noticed a consistent “compounding effect” on team output that only happens when a Senior and a Specialist work together. Think of it as a bridge: the Senior builds the structure and ensures the path is clear, while the Specialist paves the road and guides the traffic.</p>
+<p>Take our recent push to overhaul documentation analytics. We had a tight six-month window to hit our SEO targets. This required leadership on two fronts:</p>
+<p><strong>A Senior’s strategic leadership</strong><br/>I focused on the “macro” environment. My role was to advocate for the team’s needs, standardize tool access, and build a foundational knowledge base. By leveling the playing field, I ensured no team member was left behind by technical barriers or a lack of context.</p>
+<p><strong>A Specialist’s technical leadership</strong><br/>While I provided the infrastructure, the Specialists became the “boots on the ground” leaders. They translated high-level marketing goals into “day-one” workflows, clearing technical ambiguities and demonstrating exactly how SEO best practices looked in practice.</p>
+<p>I provided the macro environment and bootstrapping and the Specialist provided precision. Neither of us could have reached the objective alone; it was the overlap of our distinct leadership styles that turned a daunting goal into a team-wide success.</p>
+<h2 class="wp-block-heading">Influencing team culture: when Managers and Seniors lead together</h2>
+<p>Let’s take another example. While Seniors and Specialists compound their skills to deliver efficiency, when Manager and Seniors collaborate, it’s about culture. </p>
+<p>I saw this dynamic transform our team culture during a critical shift in our release cycles. We were shipping frequently, but our process was fragile: a “single point of failure” where one person owned everything, from testing to release notes. It wasn’t scalable, and it was high-risk. Fixing this required leadership at two different levels:</p>
+<p><strong>A Senior’s operational leadership</strong><br/>I focused on the “how.” I designed a new, robust execution model that moved us away from individual dependency toward team-wide participation. I introduced a team roster and failsafe automation, ensuring every team member gained the hands-on experience needed to ship with confidence. My leadership was about technical resilience and mentoring the team through the transition.</p>
+<p><strong>A Manager’s strategic leadership</strong><br/>While I overhauled the internal mechanics, my Manager focused on the “when” and the “why.” He provided the essential timeline that allowed us to implement these changes without missing a single existing commitment. By filtering customer requests and aligning our new capacity with Canonical’s business priorities, he ensured the team wasn’t overwhelmed by the shift.</p>
+<p>I led the internal transformation, but my Manager led the external alignment. By leading together, we didn’t just fix a broken process; we matured the team’s culture, proving we could deliver higher quality without sacrificing our promises to the business.</p>
+<h2 class="wp-block-heading">Intentional leadership doesn’t compete, it compounds</h2>
+<figure class="wp-block-image size-full"><img alt="" height="1109" loading="lazy" sizes="(min-width: 1906px) 1906px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1906/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Faa15%2Fleadership_roles_venn_diagram.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Faa15%2Fleadership_roles_venn_diagram.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Faa15%2Fleadership_roles_venn_diagram.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Faa15%2Fleadership_roles_venn_diagram.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Faa15%2Fleadership_roles_venn_diagram.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Faa15%2Fleadership_roles_venn_diagram.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1906/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Faa15%2Fleadership_roles_venn_diagram.png 1906w" width="1906"/></figure>
+<p>These experiences helped me understand the circle of influence for my role. I realized that having different kinds of leadership roles at Canonical was quite intentional. These roles are not designed to compete for influence, instead to compound it. With that epiphany, I found myself changing the way I work to influence key decisions. I realized that I was being invited to take a seat at the table and demonstrate how to bring about a lasting change, <em>using my strengths</em>, and that has been the most fulfilling part of my journey.</p>
+<p>I invite you to try intentional leadership as part of your career aspirations. It removes ambiguity. It replaces hierarchy with purpose. It sends an unmistakable message to professionals aspiring to grow at Canonical:</p>
+<p><em>Leadership is not a title you wait for, but a responsibility you choose.</em></p>
+<h2 class="wp-block-heading">Further reading</h2>
 <ul>
-<li>Security maintenance and hardening of the operating system, for up to 15 years. This is bundled with NKP for all control nodes, as part of Canonical’s Ubuntu Pro commitment. This is designed to help harden the orchestration layer from the moment of deployment.</li>
-</ul>
-<ul>
-<li>Customers can extend Ubuntu Pro to worker nodes, delivering a consistent security posture across the entire cluster.</li>
-</ul>
-<ul>
-<li>For highly regulated sectors such as healthcare, financial institutions or federal government, Ubuntu Pro helps align with FIPS 140 and STIG requirements through tools for automated hardening. Additionally, support for air-gapped environments helps support high-reliability requirements  in disconnected sites.</li>
-</ul>
-<ul>
-<li>With Canonical Livepatch, teams can apply critical kernel security updates without reboots, allowing continuous uptime for significant periods.</li>
-</ul>
-<p>“Dependable enterprise Kubernetes requires a cohesive and coherent approach, starting from the operating system and extending throughout the stack,” said Mark Lewis, VP of Application Services at Canonical. “This partnership delivers seamless, full-stack support between Nutanix and Canonical, providing customers with a transparent and simple pricing model alongside the long-term security commitment of Ubuntu Pro, fully optimized for high-performance bare-metal deployments.”</p>
-<h3 class="wp-block-heading">Beyond the OS: build your own containers</h3>
-<p>While Ubuntu provides the foundation, Canonical’s broader ecosystem helps developers further reduce their attack surface and streamline the path to production.</p>
-<p>With <a href="https://ubuntu.com/containers/chiseled">Chisel</a>, teams can build chiseled Ubuntu images: ultra-minimal containers that contain only the necessary runtime libraries. By stripping away shells and package managers, Chisel significantly reduces the attack surface, enhancing the overall security posture. While these tools are independent of the NKP partnership, they are a great fit for organizations aiming for a lean, secure, and performant stack on Nutanix bare-metal.</p>
-<p>Chisel supports the entire development process. By providing secure language runtimes and integrated tools like Python, Canonical helps support a smoother, more protected path from writing code to deploying it in a cluster. Complementing this hardened “code-to-cluster” path, Canonical provides a full-stack environment for AI and data. This integration of MLOps solutions and data platforms on NKP supports enterprises in building a secure, supported ecosystem for even their most complex workloads.</p>
-<h3 class="wp-block-heading">Getting started with Ubuntu Pro on NKP bare metal</h3>
-<p>Early access to Ubuntu Pro for NKP on bare metal is available now, with General Availability (GA) scheduled for later this year, subject to change. </p>
-<p> <a aria-label=" (opens in a new tab)" class="p-button--small p-button--positive" href="https://canonical.com/#get-in-touch" rel="noreferrer noopener" target="_blank">Contact us to join the Early Access program</a></p>
-<h3 class="wp-block-heading">Further reading</h3>
-<ul>
-<li>Discover the benefits of <a href="https://ubuntu.com/pro">Ubuntu Pro</a></li>
-<li>Find out more about <a href="https://ubuntu.com/containers/chiseled">chiseled</a> Ubuntu containers</li>
-<li>Learn more about Canonical’s <a href="https://www.nutanix.com/blog/nutanix-and-canonical-partner-to-simplify-kubernetes-deployments-with-nkp-and-ubuntu-pro">partnership</a> with Nutanix</li>
+<li><a href="https://canonical.com/blog/hiring-the-canonical-way">Hiring the Canonical way: trust, humanity, and remote-first thinking</a></li>
+<li><a href="https://canonical.com/blog/how-to-get-a-job-at-canonical">How to get a job at Canonical</a></li>
 </ul>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
+    <item>
+      <title>E376 O Oráculo Do Cenáculo</title>
+      <link>https://podcastubuntuportugal.org/e376/</link>
+      <guid isPermaLink="true">https://podcastubuntuportugal.org/e376/</guid>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Santa Páscoa a todos, crentes e não crentes na Palavra do Software Livre, abençoado seja o NextCloud e as pastas partilhadas que deviam ser fáceis em Ubuntu&hellip;e todavia&hellip; Desta vez conseguimos insultar várias comunidades e pessoas em particular, o que não é de somenos. Insultámos a Oracle, quase toda a comunidade de utilizadores de Mint (que o Diogo foi ajudar, na sua modesta magnanimidade); trouxémos más notícias sobre Ubuntu Mate; rimos muito com Virtualbox, uma verdadeira matrioska de porcarias; e conseguimos insultar gratuitamente pessoas que são portadoras de Snapofobia. Mas também recomendámos um youtuber português interessante (Hat Rat) e promovemos o NextCloud como o canivete Suíço que resolve tudo. E encontrámos mais uma situação para fazermos queixinhas à CNPD.</p>
+<p>Já sabem: oiçam, subscrevam e partilhem!</p>
+<ul>
+<li>Virtual Box: <a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a></li>
+<li>Virt-manager: <a href="https://virt-manager.org/">https://virt-manager.org/</a></li>
+<li>Hat Rat: <a href="https://www.youtube.com/@hatrat">https://www.youtube.com/@hatrat</a></li>
+<li>Hat Rat sobre o que há e não há no Windows versus Linux: <a href="https://www.youtube.com/watch?v=PW9cwjOw61M">https://www.youtube.com/watch?v=PW9cwjOw61M</a></li>
+<li>Cooperativa Rizoma: <a href="https://www.rizomacoop.pt/">https://www.rizomacoop.pt/</a></li>
+<li>Dia da Independência Digital: <a href="https://eventos.coletivos.org/event/digital-independence-day-dia-da-independencia-digital-2">https://eventos.coletivos.org/event/digital-independence-day-dia-da-independencia-digital-2</a></li>
+<li>Linux Mint: <a href="https://www.linuxmint.com/">https://www.linuxmint.com/</a></li>
+<li>RGPD: <a href="https://eur-lex.europa.eu/PT/legal-content/summary/general-data-protection-regulation-gdpr.html">https://eur-lex.europa.eu/PT/legal-content/summary/general-data-protection-regulation-gdpr.html</a></li>
+<li>CNPD: <a href="https://www.cnpd.pt/">https://www.cnpd.pt/</a></li>
+<li>Sobre Snaps: <a href="https://snapcraft.io/about">https://snapcraft.io/about</a></li>
+<li>Requisitos de instalação de Ubuntu: <a href="https://help.ubuntu.com/community/Installation/SystemRequirements">https://help.ubuntu.com/community/Installation/SystemRequirements</a></li>
+<li>Gnome Tweaks: <a href="https://github.com/GNOME/gnome-tweaks">https://github.com/GNOME/gnome-tweaks</a></li>
+<li>Ubuntu Mate: <a href="https://ubuntu-mate.org/">https://ubuntu-mate.org/</a></li>
+<li>Martin Winpress quer passar o testemunho do Ubuntu Mate:
+&ndash; <a href="https://www.omgubuntu.co.uk/2026/03/ubuntu-mate-needs-new-maintainer">https://www.omgubuntu.co.uk/2026/03/ubuntu-mate-needs-new-maintainer</a>
+&ndash; <a href="https://www.phoronix.com/news/Ubuntu-MATE-Needs-Leader">https://www.phoronix.com/news/Ubuntu-MATE-Needs-Leader</a></li>
+<li>Carestia de Vida:
+&ndash; <a href="https://www.raspberrypi.com/news/a-new-3gb-raspberry-pi-4-for-83-75-and-more-memory-driven-price-increases/">https://www.raspberrypi.com/news/a-new-3gb-raspberry-pi-4-for-83-75-and-more-memory-driven-price-increases/</a>
+&ndash; <a href="https://www.phoronix.com/news/Framework-Memory-Costs-April">https://www.phoronix.com/news/Framework-Memory-Costs-April</a></li>
+<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
+<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
+<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
+</ul>
+<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
+<p>Este episódio foi produzido por Diogo Constantino, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
+O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
+Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados.
+Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
+A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
+      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
     </item>
     <item>
       <title>Quote #75514</title>
@@ -1084,58 +1119,6 @@
       <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
     </item>
     <item>
-      <title>E375 a Idade Dos Cangaceiros</title>
-      <link>https://podcastubuntuportugal.org/e375/</link>
-      <guid isPermaLink="true">https://podcastubuntuportugal.org/e375/</guid>
-      <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>VAI TUDO PRESO! Para lá das aventuras tecnológicas do costume (não lambam terminais de alta tensão), brincámos com KVM, magnetrões, navegadores que não funcionam, Snaps e Steam em Ubuntu Touch (sim, leram bem), como o Nextcloud faz tudo e só não tira bicas, pusemos água na fervura com os disparates da Mozilla e a pancadaria que grassa na Internet a propósito de IA no Firefox, vimos as últimas notícias e a agenda de eventos - e a propósito de Verificação de Idade para <em>pRoTeGEr aS cRiAnçAS</em>, ainda perorámos longamente sobre o facto de a comunidade de Software Livre vir a ser associada ao banditismo, cangaço e malandragem; enfim, de serem um bando de foras-da-lei.</p>
-<p>Já sabem: oiçam, subscrevam e partilhem!</p>
-<ul>
-<li>LCD Porto: <a href="https://lcdporto.org">https://lcdporto.org</a></li>
-<li>Jitsi Meet: <a href="https://meet.jit.si/O">https://meet.jit.si/O</a></li>
-<li>VDO Ninja: <a href="https://vdo.ninja/">https://vdo.ninja/</a></li>
-<li>NextCloud Talk: <a href="https://nextcloud.com/talk/">https://nextcloud.com/talk/</a></li>
-<li>Críticas ácidas e análise ao Firefox: <a href="https://cloud.nerdzoom.media/s/Q8qzSpcPBa8FrTs?dir=/&amp;editing=false&amp;openfile=true">https://cloud.nerdzoom.media/s/Q8qzSpcPBa8FrTs?dir=/&amp;editing=false&amp;openfile=true</a></li>
-<li>Podcast Thundercast: <a href="https://share.transistor.fm/s/4db3895e">https://share.transistor.fm/s/4db3895e</a></li>
-<li>Office Hours Thunderbird: <a href="https://blog.thunderbird.net/2026/03/video-meet-the-new-support-team/">https://blog.thunderbird.net/2026/03/video-meet-the-new-support-team/</a></li>
-<li>Último «snapshot» do Ubuntu 26.04 Resolute Racoon: <a href="https://discourse.ubuntu.com/t/resolute-snapshot-4-released/77687">https://discourse.ubuntu.com/t/resolute-snapshot-4-released/77687</a></li>
-<li>Novo site para testes de Ubuntu:
-<ul>
-<li><a href="https://discourse.ubuntu.com/t/retiring-the-iso-tracker-introducing-tests-ubuntu-com-for-26-04-lts/78683">https://discourse.ubuntu.com/t/retiring-the-iso-tracker-introducing-tests-ubuntu-com-for-26-04-lts/78683</a></li>
-<li><a href="https://tests.ubuntu.com/">https://tests.ubuntu.com/</a></li>
-</ul>
-</li>
-<li>Linus Sebastian descobre tarde e mal as maravilhas de Linux: <a href="https://www.youtube.com/watch?v=N008PVQPCd0">https://www.youtube.com/watch?v=N008PVQPCd0</a></li>
-<li>O KDE Connect é muito fixe: <a href="https://kdeconnect.kde.org/">https://kdeconnect.kde.org/</a></li>
-<li>UB Connect, o KDE Connect para Ubuntu Touch: <a href="https://open-store.io/app/ubconnect">https://open-store.io/app/ubconnect</a></li>
-<li>Ubuntu Touch começou o trabalho para a versão 26.04 e outros desenvolvimentos: <a href="https://youtu.be/QlcfHVeRRf0">https://youtu.be/QlcfHVeRRf0</a></li>
-<li>Serviço de mail da Proton no Ubuntu Touch: <a href="https://open-store.io/app/projectmoon.hydronium">https://open-store.io/app/projectmoon.hydronium</a></li>
-<li>Proton: <a href="https://proton.me">https://proton.me</a></li>
-<li>Sam Time parodia o Ubuntu Touch: <a href="https://youtu.be/CeuvLg6_f-E">https://youtu.be/CeuvLg6_f-E</a></li>
-<li>Christopher Barnatt desanca as leis patetas de Verificação de Idade em Sistemas Operativos: <a href="https://youtu.be/ud7NEaHKP-k">https://youtu.be/ud7NEaHKP-k</a></li>
-<li>Uma das muitas versões de «1984», de George Orwell: <a href="https://youtu.be/vxk4zkSM4Dk">https://youtu.be/vxk4zkSM4Dk</a></li>
-<li>E um documentário muito catita sobre tudo isso: <a href="https://youtu.be/5tKAaEqoJq0">https://youtu.be/5tKAaEqoJq0</a></li>
-<li>Semeando o pânico moral: <a href="https://expresso.pt/sociedade/2026-03-19-sem-acordo-na-ue-plataformas-podem-deixar-de-detetar-abuso-infantil-online-ja-em-abril-05b98c0e">https://expresso.pt/sociedade/2026-03-19-sem-acordo-na-ue-plataformas-podem-deixar-de-detetar-abuso-infantil-online-ja-em-abril-05b98c0e</a></li>
-<li>No Reino Unido, o disparate: <a href="https://www.openrightsgroup.org/press-releases/mps-give-ministers-powers-to-restrict-entire-internet/">https://www.openrightsgroup.org/press-releases/mps-give-ministers-powers-to-restrict-entire-internet/</a></li>
-<li>A hidra de sete cabeças Chat Control chumba outra vez: <a href="https://www.patrick-breyer.de/en/historic-chat-control-vote-in-the-eu-parliament-meps-vote-to-end-untargeted-mass-scanning-of-private-chats/">https://www.patrick-breyer.de/en/historic-chat-control-vote-in-the-eu-parliament-meps-vote-to-end-untargeted-mass-scanning-of-private-chats/</a></li>
-<li><a href="https://www.publico.pt/2026/03/10/mundo/noticia/deputados-britanicos-rejeitam-proibicao-redes-sociais-menores-16-anos-2167371">https://www.publico.pt/2026/03/10/mundo/noticia/deputados-britanicos-rejeitam-proibicao-redes-sociais-menores-16-anos-2167371</a></li>
-<li>«Perigoso e Inaceitável»: <a href="https://www.euronews.com/next/2026/03/02/dangerous-and-socially-unacceptable-experts-warn-against-rushed-rollout-of-online-age-chec">https://www.euronews.com/next/2026/03/02/dangerous-and-socially-unacceptable-experts-warn-against-rushed-rollout-of-online-age-chec</a></li>
-<li>Na FOSDEM: <a href="https://fosdem.org/2026/schedule/event/VKYL3P-age-verification-threat-to-open-source/">https://fosdem.org/2026/schedule/event/VKYL3P-age-verification-threat-to-open-source/</a></li>
-<li>No Discord, a procissão vai no adro: <a href="https://www.ibtimes.co.uk/discord-age-verification-security-breach-1780591">https://www.ibtimes.co.uk/discord-age-verification-security-breach-1780591</a></li>
-<li>Muitas dúvidas: <a href="https://restofworld.org/2026/social-media-age-verification-tools/">https://restofworld.org/2026/social-media-age-verification-tools/</a></li>
-<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
-<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
-<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
-</ul>
-<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
-<p>Este episódio foi produzido por Diogo Constantino, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
-O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
-Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm as seguintes licenças: Imagine Corporate (loop ver.1) by AudioCoffee &ndash; <a href="https://freesound.org/s/728209/">https://freesound.org/s/728209/</a> &ndash; License: Attribution NonCommercial 4.0; Electric Shock.wav by kev_durr &ndash; <a href="https://freesound.org/s/425327/">https://freesound.org/s/425327/</a> &ndash; License: Attribution 4.0; Breaking news intro music by humanoide9000 &ndash; <a href="https://freesound.org/s/760770/">https://freesound.org/s/760770/</a> &ndash; License: Attribution 4.0.
-Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
-A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
-      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
-    </item>
-    <item>
       <title>ntpd-rs: it's about time!</title>
       <link>https://jnsgr.uk/2026/03/ntpd-rs-its-about-time/</link>
       <guid isPermaLink="true">https://jnsgr.uk/2026/03/ntpd-rs-its-about-time/</guid>
@@ -1208,7 +1191,7 @@ $</code></pre>
 
 
 
-<figure class="wp-block-image size-large"><a href="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?ssl=1"><img data-recalc-dims="1" fetchpriority="high" decoding="async" width="1024" height="535" data-attachment-id="54178" data-permalink="https://blog.simos.info/ubuntu-installer-selects-a-single-keyboard-layout-cannot-type-english-during-installation/image-18/" data-orig-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?fit=1704%2C890&amp;ssl=1" data-orig-size="1704,890" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?fit=300%2C157&amp;ssl=1" data-large-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?fit=1024%2C535&amp;ssl=1" src="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?resize=1024%2C535&#038;ssl=1" alt="" class="wp-image-54178" srcset="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?resize=1024%2C535&amp;ssl=1 1024w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?resize=300%2C157&amp;ssl=1 300w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?resize=768%2C401&amp;ssl=1 768w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?resize=1536%2C802&amp;ssl=1 1536w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?w=1704&amp;ssl=1 1704w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+<figure class="wp-block-image size-large"><a href="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?ssl=1"><img data-recalc-dims="1" fetchpriority="high" decoding="async" width="1024" height="535" data-attachment-id="54178" data-permalink="https://blog.simos.info/ubuntu-installer-selects-a-single-keyboard-layout-cannot-type-english-during-installation/image-18/" data-orig-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?fit=1704%2C890&amp;ssl=1" data-orig-size="1704,890" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image" data-image-description="" data-image-caption="" data-large-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?fit=1024%2C535&amp;ssl=1" src="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?resize=1024%2C535&#038;ssl=1" alt="" class="wp-image-54178" srcset="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?resize=1024%2C535&amp;ssl=1 1024w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?resize=300%2C157&amp;ssl=1 300w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?resize=768%2C401&amp;ssl=1 768w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?resize=1536%2C802&amp;ssl=1 1536w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-3.png?w=1704&amp;ssl=1 1704w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
 
 
 
@@ -1254,7 +1237,7 @@ $</code></pre>
 
 
 
-<figure class="wp-block-image size-large"><a href="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?ssl=1"><img data-recalc-dims="1" decoding="async" width="1024" height="641" data-attachment-id="54179" data-permalink="https://blog.simos.info/ubuntu-installer-selects-a-single-keyboard-layout-cannot-type-english-during-installation/image-19/" data-orig-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?fit=1438%2C900&amp;ssl=1" data-orig-size="1438,900" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?fit=300%2C188&amp;ssl=1" data-large-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?fit=1024%2C641&amp;ssl=1" src="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=1024%2C641&#038;ssl=1" alt="" class="wp-image-54179" srcset="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=1024%2C641&amp;ssl=1 1024w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=300%2C188&amp;ssl=1 300w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=768%2C481&amp;ssl=1 768w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?w=1438&amp;ssl=1 1438w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+<figure class="wp-block-image size-large"><a href="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?ssl=1"><img data-recalc-dims="1" decoding="async" width="1024" height="641" data-attachment-id="54179" data-permalink="https://blog.simos.info/ubuntu-installer-selects-a-single-keyboard-layout-cannot-type-english-during-installation/image-19/" data-orig-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?fit=1438%2C900&amp;ssl=1" data-orig-size="1438,900" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image" data-image-description="" data-image-caption="" data-large-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?fit=1024%2C641&amp;ssl=1" src="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=1024%2C641&#038;ssl=1" alt="" class="wp-image-54179" srcset="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=1024%2C641&amp;ssl=1 1024w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=300%2C188&amp;ssl=1 300w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=768%2C481&amp;ssl=1 768w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?w=1438&amp;ssl=1 1438w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
 
 
 <h2 class="wp-block-heading" id="conclusion">Conclusion</h2>
