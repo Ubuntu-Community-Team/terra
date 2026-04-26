@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 25 Apr 2026 02:44:33 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2026 03:21:21 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -569,7 +569,7 @@
 <p>For industrial and embedded use cases, Ubuntu 26.04 LTS integrates the IgH EtherCAT Master module and Generic Ethernet driver into the kernel. EtherCAT is a real-time industrial networking protocol, and the IgH Master driver brings microsecond-level timing precision natively into the OS, removing a significant integration burden for engineers building motion control systems, robotics platforms, or complex factory automation.</p>
 <p>With optimized images across AWS, Azure, Google Cloud, IBM Cloud and Oracle Cloud, developers and enterprises can rely on Ubuntu 26.04 LTS for their most demanding public cloud workloads.</p>
 <h2 class="wp-block-heading"><strong>Enterprise security and manageability</strong></h2>
-<p>Ubuntu 26.04 LTS is the first LTS to expand the number of memory safe system components. In practice, this means new kernel drivers and subsystems written in Rust, as well as <code>sudo-rs</code> and <code>uutils</code> <code>coreutils</code> bringing memory-safe reimplementations of foundational system tools such as <code>sudo</code>, <code>ls</code>, <code>cp</code>, and <code>mv</code>.</p>
+<p>Ubuntu 26.04 LTS is the first LTS to expand the number of memory safe system components. In practice, this means new kernel drivers and subsystems written in Rust, as well as <code>sudo-rs</code> and <code>uutils</code> <code>coreutils</code> bringing memory-safe reimplementations of foundational system tools such as <code>sudo</code> and<code>ls</code>.</p>
 <blockquote class="p-pull-quote--small">
 <p class="p-pull-quote__quote">Ubuntu 26.04 LTS is an exciting example of what becomes possible when a major Linux distro makes a serious, sustained commitment to memory safety. By adopting Rust across the kernel, sudo, and core system utilities, Canonical is raising the security baseline for millions of enterprise users worldwide. The Rust Foundation is proud to support the language ecosystem that makes this kind of infrastructure work possible, and we look forward to seeing Ubuntu 26.04 LTS set a new standard for production-grade Linux.</p>
 <span class="p-pull-quote__citation">Dr. Rebecca Rumbul, Executive Director &amp; CEO, the Rust Foundation</span>
@@ -1666,7 +1666,9 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 <p>Why would you need to type English during the installation? Because you need to create a default user account. You need to type your name (it&#8217;s OK to type this in your own language), the name of the computer and your username (both must be in English) and your password (preferably in English).</p>
 
 
-<h2 class="wp-block-heading" id="identifying-the-issue">Identifying the issue</h2>
+
+<h2 id="identifying-the-issue" class="wp-block-heading">Identifying the issue</h2>
+
 
 
 <p>The Ubuntu installer detected the language and automatically suggests to use the local keyboard layout. </p>
@@ -1696,7 +1698,9 @@ $</code></pre>
 $</code></pre>
 
 
-<h2 class="wp-block-heading" id="identifying-the-source-of-the-issue">Identifying the source of the issue</h2>
+
+<h2 id="identifying-the-source-of-the-issue" class="wp-block-heading">Identifying the source of the issue</h2>
+
 
 
 <p>The new installer configures the keyboard layout at this location. And it configures a single keyboard layout. </p>
@@ -1710,7 +1714,9 @@ $</code></pre>
 <p>It appears that the installer does not have knowledge of the preferred default keyboard layouts. </p>
 
 
-<h2 class="wp-block-heading" id="workarounds">Workarounds</h2>
+
+<h2 id="workarounds" class="wp-block-heading">Workarounds</h2>
+
 
 
 <p>This has been happening in Ubuntu 24.04 LTS and apparently I did not notice a report from a user complaining about it. I had to install Ubuntu myself with the local language to figure this out. </p>
@@ -1732,7 +1738,9 @@ $</code></pre>
 <figure class="wp-block-image size-large"><a href="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?ssl=1"><img data-recalc-dims="1" decoding="async" width="1024" height="641" data-attachment-id="54179" data-permalink="https://blog.simos.info/ubuntu-installer-selects-a-single-keyboard-layout-cannot-type-english-during-installation/image-19/" data-orig-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?fit=1438%2C900&amp;ssl=1" data-orig-size="1438,900" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image" data-image-description="" data-image-caption="" data-large-file="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?fit=1024%2C641&amp;ssl=1" src="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=1024%2C641&#038;ssl=1" alt="" class="wp-image-54179" srcset="https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=1024%2C641&amp;ssl=1 1024w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=300%2C188&amp;ssl=1 300w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?resize=768%2C481&amp;ssl=1 768w, https://i0.wp.com/blog.simos.info/wp-content/uploads/2026/03/image-4.png?w=1438&amp;ssl=1 1438w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
 
 
-<h2 class="wp-block-heading" id="conclusion">Conclusion</h2>
+
+<h2 id="conclusion" class="wp-block-heading">Conclusion</h2>
+
 
 
 <p>There are three bug reports on this issue, <a href="https://github.com/canonical/ubuntu-desktop-provision/issues/408">https://github.com/canonical/ubuntu-desktop-provision/issues/408</a> and <a href="https://bugs.launchpad.net/ubuntu-desktop-provision/+bug/2018943">https://bugs.launchpad.net/ubuntu-desktop-provision/+bug/2018943</a> and <a href="https://github.com/canonical/ubuntu-desktop-provision/issues/1103">https://github.com/canonical/ubuntu-desktop-provision/issues/1103</a> </p>
@@ -6369,29 +6377,6 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 <li><a href="https://github.com/helm/charts/tree/master/stable/external-dns#configuration">The full list of configuration details for the ExternalDNS Helm&nbsp;chart</a></li>
 </ul>]]></description>
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
-    </item>
-    <item>
-      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
-      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
-      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
-      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
-<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
-<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
-<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
-<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
-<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
-<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
-<blockquote>
-<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
-</blockquote>
-<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
-<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
-We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
-So, please sync with this change (and sorry :)).</p>
-<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
-<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
-      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
     </item>
     <item>
       <title>Rise and fall of libclamav</title>
