@@ -6,26 +6,41 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 29 Apr 2026 03:30:19 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 03:31:25 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Why Web Engineering is great</title>
-      <link>https://ubuntu.com//blog/why-web-engineering-is-great</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/why-web-engineering-is-great</guid>
-      <pubDate>Mon, 27 Apr 2026 12:32:29 GMT</pubDate>
-      <description><![CDATA[<p>Like many software engineers, one of my first software development experiences started with creating my own web page. Since that time 20+ years ago, a lot has changed in the web landscape. Having worked a lot in web since then, I’d like to take a moment to reflect on what I think makes web great!</p>
-<h2 class="wp-block-heading">Accessibility</h2>
-<p>One thing I appreciate tremendously about web is how accessible it is. Almost any device with a screen can be used to consume from the web: blogs, social media, productivity tools, games, media streaming, … there’s a universe at your hands, requiring only a browser to access. Projects like ChromeOS reflect how wholesome the experience on the web is.<br/>This ease of accessibility is invaluable for consumers, but also for you as a developer creating an experience for your audience.</p>
-<h2 class="wp-block-heading">Quality is Key</h2>
-<p>One premise for being accessible is web being available in the first place. Web engineering is often not only about what happens in the browser, but also what happens behind the scenes. I see quality engineering and DevOps as very close if not embedded disciplines, and here’s why:<br/>Other software developers may rely on more forgiving ways of distributing their work. If the current version of a program is buggy, users may simply install an older version. Also unoptimized, unsecure applications often don’t pose a big problem.<br/>The presence of bugs or performance bottlenecks however are big concerns for web developers. Users will be stuck with a new buggy version of a web application. The inability to serve web due to security incidents, high traffic and/or performance bottlenecks is of great concern and can have tech companies lose face.<br/>Therefore, I see the consistent, frictionless delivery of secure, performant quality software as a core aspect of web. Considerations for scaling large, critical frontend projects led to architectures such as micro-frontends, drawing a parallel to advancements in backend development.</p>
-<h2 class="wp-block-heading">Drive for Innovation</h2>
-<p>In web engineering, there’s a very interesting friction that can be experienced between the core technologies HTML, JS and CSS and the tools, libraries and frameworks that complement it. Quite a few years back, tech like jQuery, SCSS or Babel made up for shortcomings of the available core technologies and browser capabilities. Nowadays, the core technologies are powerful enough by themselves for developing complex projects. Also the compatibility of different browsers is normally not a concern anymore, browsers may only suffer feature lag.<br/>However, I believe it’s not only HTML, JS and CSS catching up with innovation in web, it’s also those core technologies and web standards pushing for innovation: Web components will likely bring new dynamics on a stage dominated by React and WebGPU will open the door for new classes of applications in the browser.</p>
-<h2 class="wp-block-heading">Back to Basics</h2>
-<p>Web involves a lot of tech, which is also a very exciting aspect. There’s much more besides CI/CD and the core technologies, libraries and frameworks: the browsers with their own engines and capabilities, accessibility, REST APIs, networking, cloud, often a good portion of backend development, … what the users interact with is only the tip of the iceberg.<br/>But already the interplay of HTML, JS and CSS makes web exciting. With the modern capabilities of each of these technologies, there are different valid ways to solve a problem. Thinking about a solution with the most elegant usage of HTML, JS and CSS stimulates my engineering mind!<br/>New capabilities also allow us to re-think existing solutions: Ever thought of implementing a nested dropdown menu purely in CSS?</p>
-<h2 class="wp-block-heading">Canonical’s Web Team</h2>
-<p>Working as Engineering Manager in Canonical’s web team brings me also to reflect on what makes web great in our company.<br/>What’s exciting besides Canonical’s highly international environment and being surrounded by truly great and bright people?<br/>Our web team is structured in tribes, each working on their projects. With that, there’s a great breadth of project types and technological challenges that go with them. While all tribes work with great focus on their own projects, there’s also plenty of room for interacting with web engineers of other tribes and exchanging experiences and knowledge.<br/>We’ve also struck a great balance between building on top of our tested, proven tech stack and having free space for experimentation with new technologies. This supports us in carrying out great work while doing state-of-the-art web engineering.<br/>If you would like to find out more about the team please read <a href="https://ubuntu.com/blog/topics/design">our blog</a> and <a href="https://canonical.com/careers/web-and-design#overview">description of the team</a>. We’re always looking for great new talent!</p>
-<p>In short: web is great and web at Canonical even more so. I’m excited to see what the future web landscape holds for us!</p>]]></description>
+      <title>Run NVIDIA Nemotron 3 Nano Omni locally in a single command</title>
+      <link>https://ubuntu.com//blog/nvidia-nemotron-3-nano-omni</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/nvidia-nemotron-3-nano-omni</guid>
+      <pubDate>Tue, 28 Apr 2026 16:04:56 GMT</pubDate>
+      <description><![CDATA[<p>Today, NVIDIA introduced the NVIDIA Nemotron™ 3 Nano Omni, a highly-efficient multimodal model designed to understand and reason across video, audio, images, and language. </p>
+<p>Canonical is enabling immediate access to Nemotrom 3 Nano Omni through inference snaps: pre-packaged AI inference runtimes distributed as snap packages for consistent deployment across systems. Developers and enterprises can deploy the model seamlessly across NVIDIA-enabled environments with a single command:</p>
+<pre class="wp-block-code"><code>sudo snap install nemotron-3-nano-omni</code></pre>
+<p>With the Nemotron 3 Nano Omni delivered through inference snaps, deployment shifts from a complex integration task to a repeatable, standardized operation. A single install produces a consistent, production-grade runtime that scales across environments without rework, enabling teams to focus on building and operating agentic applications rather than managing infrastructure.</p>
+<h2 class="wp-block-heading">What is Nemotron 3 Nano Omni?</h2>
+<p>NVIDIA Nemotron 3 Nano Omni is an open multimodal foundation model that unifies reasoning across text, images, video, audio, and documents within a single architecture. It features a 256K token context window and a hybrid mixture of experts (MoE) architecture optimized for high multimodal throughput and accuracy. </p>
+<p>Nemotron 3 Nano Omni powers perception sub-agents, giving agentic systems “eyes and ears” while maintaining a unified multimodal context across steps. There is no need to stitch together separate vision, speech, and language models, reducing latency and orchestration complexity.</p>
+<h3 class="wp-block-heading">Easy deployment with inference snaps</h3>
+<p><a href="https://documentation.ubuntu.com/inference-snaps/">Inference snaps</a> bundle models, dependencies, and execution environments so inference workloads can run reproducibly on edge devices, workstations or servers – without manual setup.</p>
+<p>Canonical inference snaps  provide a direct path from local installation to a production deployment. To get started, simply run:</p>
+<pre class="wp-block-code"><code>sudo snap install nemotron-3-nano-omni</code></pre>
+<p>This installs a fully packaged, production-ready inference stack, including the model, runtime, and optimizations; no manual configuration required.</p>
+<p>Inference snaps provide:</p>
+<ul>
+<li><strong>Zero-friction deployment:</strong> no dependency resolution, no environment drift, no custom build pipelines</li>
+<li><strong>Consistent runtime across environments:</strong> identical behavior on cloud, on-premises, and edge systems</li>
+<li><strong>Secure, confined execution</strong>: strict isolation with automatic updates and verified distribution</li>
+<li><strong>Optimized performance out of the box</strong>: pre-tuned for supported hardware</li>
+<li><strong>Simplified operations</strong>: standardized packaging reduces maintenance, patching, and upgrade complexity</li>
+</ul>
+<p>For enterprises, this translates into significantly faster deployment times, saving weeks of integration and validation work, and enabling scalable AI infrastructure with a single portable artifact. </p>
+<p>Learn more at: <a href="https://github.com/canonical/inference-snaps">https://github.com/canonical/inference-snaps</a> </p>
+<h2 class="wp-block-heading">About Canonical </h2>
+<p>Canonical, the publisher of Ubuntu, provides open source security, support, and services. Our portfolio covers critical systems, from the smallest devices to the largest clouds, from the kernel to containers, from databases to AI. With customers that include top tech brands, emerging startups, governments and home users, Canonical delivers trusted open source for everyone. </p>
+<p>Learn more at <a href="https://canonical.com/">https://canonical.com/</a> </p>
+<h2 class="wp-block-heading">Learn more</h2>
+<p>Find out more about <a href="https://ubuntu.com/nvidia">Canonical’s collaboration with NVIDIA.</a></p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -2481,6 +2496,145 @@ python-certifi for the Python&nbsp;team.</p>
   (merged and&nbsp;uploaded)</li>
 </ul>]]></description>
       <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
+    </item>
+    <item>
+      <title>Think you can’t interpose static binaries with LD_PRELOAD? Think again!</title>
+      <link>https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</link>
+      <guid isPermaLink="true">https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</guid>
+      <pubDate>Thu, 20 Nov 2025 20:56:17 GMT</pubDate>
+      <description><![CDATA[<div class="wp-block-media-text alignwide is-vertically-aligned-center" style="grid-template-columns:21% auto"><figure class="wp-block-media-text__media"><img fetchpriority="high" decoding="async" width="4614" height="4001" src="https://balintreczey.hu/blog/wp-content/uploads/2023/04/firebuild-logo.svg" alt="" class="wp-image-853 size-thumbnail"/></figure><div class="wp-block-media-text__content">
+<p>Well, you are right, you can&#8217;t. At least not directly. This is well documented in many projects relying on interposing binaries, like faketime.</p>
+
+
+
+<p> </p>
+</div></div>
+
+
+
+<p></p>
+
+
+
+<p>But what if we could write something that would take a static binary, replace at least the direct syscalls with ones going through libc and load it with the dynamic linker? We are in luck, because the excellent QEMU project has a user space emulator! It can be compiled as a dynamically linked executable, honors LD_PRELOAD and uses the host libc&#8217;s syscall &#8211; well, at least sometimes. Sometimes syscalls just bypass libc.</p>
+
+
+
+<p>The missing piece was a way to make QEMU always take the interposable path and call the host libc instead of using an arch-specifix assembly routine (`safe_syscall_base`) to construct the syscall and going directly to the kernel. Luckily, this turned out to be doable. A small patch later, QEMU gained a switch that forces all syscalls through libc. Suddenly, our static binaries started looking a lot more dynamic!</p>
+
+
+
+<pre class="wp-block-code"><code>$ faketime '2008-12-24 08:15:42'  qemu-x86_64 ./test_static_clock_gettime
+2008-12-24 08:15:42.725404654
+$ file test_static_clock_gettime 
+test_clock_gettime: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, ...</code></pre>
+
+
+
+<p>With this in place, Firebuild can finally wrap even those secretive statically linked tools. QEMU runs them, libc catches their syscalls, <code>LD_PRELOAD</code> injects <code>libfirebuild.so</code>, and from there the usual interposition magic happens. The result: previously uncachable build steps can now be traced, cached, and shortcut just like their dynamic friends.</p>
+
+
+
+<p>There is one more problem though. Why would the static binaries deep in the build be run by QEMU? Firebuild also intercepts the `exec()` calls and now it rewrites them on the fly whenever the executed binary would be statically linked!</p>
+
+
+
+<pre class="wp-block-code"><code>$ firebuild -d comm bash -c ./test_static
+...
+FIREBUILD: fd 9.1: ({ExecedProcess 161077.1, running, "bash -c ./test_static", fds=&#91;0: {FileFD ofd={FileO
+FD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOFD #3 type=FD_PIPE_OUT w} {Pipe #0} close_o
+n_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=FD_PIPE_OUT w} {Pipe #1} close_on_popen=fal
+se cloexec=false}, 3: {FileFD NULL} /* times 2 */]})
+{
+    "&#91;FBBCOMM_TAG]": "exec",
+    "file": "test_static",
+    "// fd": null,
+    "// dirfd": null,
+    "arg": &#91;
+        "./test_static"
+    ],
+    "env": &#91;
+        "SHELL=/bin/bash",
+ ...
+        "FB_SOCKET=/tmp/firebuild.cpMn75/socket",
+        "_=./test_static"
+    ],
+    "with_p": false,
+    "// path": null,
+    "utime_u": 0,
+    "stime_u": 1017
+}
+FIREBUILD: -> proc_ic_msg()  (message_processor.cc:782)  proc={ExecedProcess 161077.1, running, "bash -c 
+./test_static", fds=&#91;0: {FileFD ofd={FileOFD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOF
+D #3 type=FD_PIPE_OUT w} {Pipe #0} close_on_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=F
+D_PIPE_OUT w} {Pipe #1} close_on_popen=false cloexec=false}, 3: {FileFD NULL} /* times 2 */]}, fd_conn=9.
+1, tag=exec, ack_num=0
+FIREBUILD:   -> send_fbb()  (utils.cc:292)  conn=9.1, ack_num=0 fd_count=0
+Sending message with ancillary fds &#91;]:
+{
+    "&#91;FBBCOMM_TAG]": "rewritten_args",
+    "arg": &#91;
+        "/usr/bin/qemu-user-interposable",
+        "-libc-syscalls",
+        "./test_static"
+    ],
+    "path": "/usr/bin/qemu-user-interposable"
+}
+...
+FIREBUILD: -> accept_ic_conn()  (firebuild.cc:139)  listener=6
+...
+FIREBUILD: fd 9.2: ({Process NULL})
+{
+    "&#91;FBBCOMM_TAG]": "scproc_query",
+    "pid": 161077,
+    "ppid": 161073,
+    "cwd": "/home/rbalint/projects/firebuild/test",
+    "arg": &#91;
+        "/usr/bin/qemu-user-interposable",
+        "-libc-syscalls",
+        "./test_static"
+    ],
+    "env_var": &#91;
+        "CCACHE_DISABLE=1",
+...
+        "SHELL=/bin/bash",
+        "SHLVL=0",
+        "_=./test_static"
+    ],
+    "umask": "0002",
+    "jobserver_fds": &#91;],
+    "// jobserver_fifo": null,
+    "executable": "/usr/bin/qemu-user-interposable",
+    "// executed_path": null,
+    "// original_executed_path": null,
+    "libs": &#91;
+        "/lib/x86_64-linux-gnu/libatomic.so.1",
+        "/lib/x86_64-linux-gnu/libc.so.6",
+        "/lib/x86_64-linux-gnu/libglib-2.0.so.0",
+        "/lib/x86_64-linux-gnu/libm.so.6",
+        "/lib/x86_64-linux-gnu/libpcre2-8.so.0",
+        "/lib64/ld-linux-x86-64.so.2"
+    ],
+    "version": "0.8.5.1"
+}
+</code></pre>
+
+
+
+<p>The QEMU patch is <a href="https://lists.gnu.org/archive/html/qemu-devel/2025-11/msg02559.html">forwarded to qemu-devel</a>. If it lands, anyone using QEMU user-mode emulation could benefit — not just Firebuild.</p>
+
+
+
+<p>For Firebuild users, though, the impact is immediate. Toolchains that mix dynamic and static helpers? Cross-builds that pull in odd little statically linked utilities? Previously “invisible” steps in your builds? All now fair game for caching.</p>
+
+
+
+<p><a href="https://github.com/firebuild/firebuild/releases/tag/v0.8.5">Firebuild 0.8.5</a> ships this new capability out of the box. Just update, make sure you’re using a patched QEMU, and enjoy the feeling of watching even static binaries fall neatly into place in your cached build graph. Ubuntu users can get the prebuilt patched QEMU packages from the <a href="https://launchpad.net/~firebuild/+archive/ubuntu/stable">Firebuild PPA</a> already. </p>
+
+
+
+<p>Static binaries, welcome to the party!</p>]]></description>
+      <source url="https://balintreczey.hu/blog/tag/ubuntu/feed/">Balint Reczey</source>
     </item>
     <item>
       <title>It's NOT always DNS.</title>
