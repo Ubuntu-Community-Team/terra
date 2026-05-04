@@ -6,9 +6,68 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sun, 03 May 2026 03:33:59 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2026 03:32:30 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixes available for CVE-2026-31431 (Copy Fail) Linux Kernel Local Privilege Escalation Vulnerability</title>
+      <link>https://ubuntu.com//blog/copy-fail-vulnerability-fixes-available</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/copy-fail-vulnerability-fixes-available</guid>
+      <pubDate>Thu, 30 Apr 2026 16:04:50 GMT</pubDate>
+      <description><![CDATA[<p>A local privilege escalation (LPE) vulnerability affecting the Linux kernel has been publicly disclosed on April 29, 2026. The vulnerability has been assigned CVE ID <a href="https://ubuntu.com/security/CVE-2026-31431">CVE-2026-31431</a> and is referred to as Copy Fail. The affected component is a kernel module that provides hardware-accelerated cryptographic functions: <code>algif_aead</code>. The vulnerability affects all Ubuntu releases before Resolute (26.04).</p>
+<p>The vulnerability has a CVSS 3.1 score of 7.8, corresponding to a severity of HIGH.</p>
+<p>The Ubuntu Security Team has released mitigations which disable the affected Linux kernel module in the <code>kmod</code> package. Linux kernel packages which implement the proposed patch will be released.</p>
+<h2 class="wp-block-heading">Impact</h2>
+<h3 class="wp-block-heading">Deployments without container workloads</h3>
+<p>On hosts that do not run container workloads, the vulnerability allows a local user to elevate privileges to the root user. The published exploit executes in this type of deployment.</p>
+<h3 class="wp-block-heading">Container deployments</h3>
+<p>In container deployments that may execute potentially-malicious workloads, the vulnerability may facilitate container escape scenarios. A proof-of-concept exploit has not been published yet.</p>
+<h2 class="wp-block-heading">Mitigation regression risk</h2>
+<p>The mitigation disables a kernel module that is used for hardware-accelerated cryptography. Applications should gracefully fallback to userspace cryptographic functions, but there is a risk that some do not have this functionality.</p>
+<p>Similarly, already running applications may be affected if the module is disabled and unloaded and a reboot may be required to trigger the fallback functionality.</p>
+<h2 class="wp-block-heading">Affected releases</h2>
+<p>The vulnerability fix will be distributed through the Linux kernel image packages. A mitigation which disables the affected module is distributed through the <code>kmod</code> package. The mitigation will not be necessary once the kernel is updated.</p>
+<figure class="wp-block-table"><table><tbody><tr><td><strong>Release</strong></td><td><strong>Package Name</strong></td><td><strong>Fixed Version</strong></td></tr><tr><td>Trusty (14.04)</td><td>linux</td><td>Only 4.15 kernel versions affected.<br/>3.13 and 4.4 kernel kernel versions are not affected.</td></tr><tr><td></td><td>kmod</td><td>15-0ubuntu7+esm1</td></tr><tr><td>Xenial (16.04)</td><td>linux</td><td>Only 4.15 kernel versions affected.<br/>4.4 kernel kernel versions are not affected.</td></tr><tr><td></td><td>kmod</td><td>22-1ubuntu5.2+esm1</td></tr><tr><td>Bionic (18.04)</td><td>linux</td><td>Affected</td></tr><tr><td></td><td>kmod</td><td>24-1ubuntu3.5+esm1</td></tr><tr><td>Focal (20.04)</td><td>linux</td><td>Affected</td></tr><tr><td></td><td>kmod</td><td>27-1ubuntu2.1+esm1</td></tr><tr><td>Jammy (22.04)</td><td>linux</td><td>Affected</td></tr><tr><td></td><td>kmod</td><td>29-1ubuntu1.1</td></tr><tr><td>Noble (24.04)</td><td>linux</td><td>Affected</td></tr><tr><td></td><td>kmod</td><td>31+20240202-2ubuntu7.2</td></tr><tr><td>Questing (25.10)</td><td>linux</td><td>Affected</td></tr><tr><td></td><td>kmod</td><td>34.2-2ubuntu1.1</td></tr><tr><td>Resolute (26.04)</td><td>linux</td><td>Not affected</td></tr><tr><td></td><td>kmod</td><td>No update needed</td></tr></tbody></table></figure>
+<h1 class="wp-block-heading">How to check if you are impacted</h1>
+<p>On your system, run the following command to get the version of the currently running kernel and compare the listed version to the corresponding table above.</p>
+<pre class="wp-block-code"><code>uname -r</code></pre>
+<p>The list of installed kernel packages can be obtained using the following command:</p>
+<pre class="wp-block-code"><code>dpkg -l 'linux-image*' | grep ^ii</code></pre>
+<p>To obtain the version of the <code>kmod</code> package that contains the mitigation, run the following command and compare the listed version to the table above.</p>
+<pre class="wp-block-code"><code>dpkg -l kmod</code></pre>
+<h2 class="wp-block-heading">Security updates</h2>
+<p>We recommend you upgrade all packages:</p>
+<pre class="wp-block-code"><code>sudo apt update &amp;&amp; sudo apt upgrade</code></pre>
+<p>If this is not possible, the affected component can be targeted:</p>
+<pre class="wp-block-code"><code>sudo apt update &amp;&amp; sudo apt install --only-upgrade kmod</code></pre>
+<p>The unattended-upgrades feature is enabled by default for Ubuntu 16.04 LTS onwards. This service:  </p>
+<ul>
+<li>Applies new security updates every 24 hours automatically.</li>
+<li>If you have this enabled, the patches above will be automatically applied within 24 hours of being available.</li>
+</ul>
+<p>Rebooting the system will ensure that the mitigation is applied, irrespective of the current state. If this is not possible, ensuring the module is not loaded will suffice and not require a system reboot.</p>
+<p>In order to avoid a reboot, first unload the module, in case it is already loaded:</p>
+<pre class="wp-block-code"><code>sudo rmmod algif_aead 2&gt;/dev/null </code></pre>
+<p>Check whether the module is still loaded:</p>
+<pre class="wp-block-code"><code>grep -qE '^algif_aead ' /proc/modules &amp;&amp; echo "Affected module is loaded" || echo "Affected module is NOT loaded"</code></pre>
+<p>Unloading the module could affect currently running applications. Similarly, if it is currently in use, removing the module might fail. In these instances, reboot the system should trigger the applications to fallback to non-accelerated cryptographic functions:</p>
+<pre class="wp-block-code"><code>sudo reboot</code></pre>
+<h2 class="wp-block-heading">Manual mitigation (alternative)</h2>
+<p>If you cannot apply the userspace mitigation through an upgrade of the <code>kmod</code> package, you can configure it manually on your system using the instructions in this section.</p>
+<p>Block the module by creating a <code>/etc/modprobe.d/manual-disable-algif_aead.conf</code> file. This is the same action that the kmod update performs.</p>
+<pre class="wp-block-code"><code>echo "install algif_aead /bin/false" | sudo tee /etc/modprobe.d/manual-disable-algif_aead.conf</code></pre>
+<p>Unload the module, in case it is already loaded:</p>
+<pre class="wp-block-code"><code>sudo rmmod algif_aead 2&gt;/dev/null </code></pre>
+<p>Check whether the module is still loaded:</p>
+<pre class="wp-block-code"><code>grep -qE '^algif_aead ' /proc/modules &amp;&amp; echo "Affected module is loaded" || echo "Affected module is NOT loaded"</code></pre>
+<p>Unloading the module could affect currently running applications. Similarly, if it is currently in use, removing the module might fail. In these instances, a system reboot should trigger the applications to fallback to non-accelerated cryptographic functions:</p>
+<pre class="wp-block-code"><code>sudo reboot</code></pre>
+<h1 class="wp-block-heading">Disabling the mitigation</h1>
+<p>If you have the <code>kmod</code> mitigation installed and wish to disable it due to application compatibility issues, you can comment out the module disabling configuration file and reboot the host:</p>
+<pre class="wp-block-code"><code>sudo sed -i 's/^/#/' /etc/modprobe.d/disable-algif_aead.conf</code></pre>
+<pre class="wp-block-code"><code>sudo reboot</code></pre>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>The future of AI in Ubuntu</title>
       <link>https://jnsgr.uk/2026/04/ai-in-ubuntu/</link>
