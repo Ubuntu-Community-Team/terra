@@ -6,85 +6,235 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 06 May 2026 00:46:27 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 00:50:04 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to use Ubuntu on Windows</title>
-      <link>https://ubuntu.com//blog/how-to-use-ubuntu-on-windows</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/how-to-use-ubuntu-on-windows</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>Why run Ubuntu on Windows? It’s about getting the best of both worlds. Many organizations rely on Windows applications, enterprise software, and policy configurations; but for developers and system administrators, Ubuntu’s native command-line tools, package managers, and server environments are invaluable. Likewise, with its broad ecosystem of machine learning tools and libraries, and silicon optimizations, Ubuntu is ideally suited for AI workloads.</p>
-<figure class="wp-block-image size-full"><img alt="" height="325" loading="lazy" sizes="(min-width: 720px) 720px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_720/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F2dc5%2Fwsl-blog.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F2dc5%2Fwsl-blog.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F2dc5%2Fwsl-blog.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F2dc5%2Fwsl-blog.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_720/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F2dc5%2Fwsl-blog.png 720w" width="720"/></figure>
-<p>To drill down into a more specific example: for developers in regulated industries with tightly brokered elevated privileges, building applications with Node.js, Python, and other toolchains can lead to development hurdles on Windows. Navigating privilege and access control discrepancies requires specialized skillsets, and may change development timelines. By installing Ubuntu within Windows, organizations can avoid this complexity. Microsoft and Canonical’s management tooling complement one another, providing a comprehensive suite of turnkey compliance, auditing, hardening, and security capabilities.</p>
-<p>The beauty of this ecosystem is that there is no single “right” way to do it, because different users have different needs: from simple script execution to locally simulating production environments, there are multiple ways to bridge Windows and Ubuntu. Each virtualization solution for Ubuntu in Windows comes with varying degrees of centralized management, and risk mitigation capabilities. In this article, I will explore the best ways to run Ubuntu on Windows, breaking down how each method works, so you can choose the exact right setup for your workflow.</p>
-<h2 class="wp-block-heading">Building reproducible environments</h2>
-<p>Manually reconfiguring a new virtual machine is time consuming: run commands to install packages, wait for the packages to install, and then configure them when the installation completes. Virtual machines used for development purposes need additional configurations, such as SSH keys for interacting with git repositories and access to other Linux environments, configuring AI assistants, and setting up workspaces where coding and prototyping happens. All of these time consuming activities can be automated through <a href="https://cloud-init.io/">cloud-init</a>, which is supported by all the virtualization solutions mentioned in this article. Building reproducible environments with cloud-init is the industry standard practice for configuring virtual machines. Multipass and Ubuntu on WSL support cloud-init natively, and Hyper-V and VirtualBox support cloud-init through the <a href="https://docs.cloud-init.io/en/latest/reference/datasources/nocloud.html">NoCloud</a> method.</p>
-<p>The NoCloud method entails creating an ISO which includes cloud-init configuration files. Follow these steps to generate a NoCloud ISO image if you are on Ubuntu:</p>
-<ol>
-<li>Create two <a href="https://docs.cloud-init.io/en/latest/reference/datasources/nocloud.html#runtime-configurations">runtime configuration</a> files: <code>user-data</code> and <code>meta-data</code>. The contents of the user-data file must be valid cloud-init YAML. The <code>meta-data</code> file can be empty.</li>
-<li>In Ubuntu on WSL install the genoisoimage package:<br/><code>apt install genoisoimage</code></li>
-<li>Create a small ISO file (labeled <code>cidata</code>) containing the <code>user-data</code> and <code>meta-data</code> runtime configuration files:<br/><code>mkisofs -output seed.iso -volid cidata -joliet -rock user-data meta-data</code></li>
-</ol>
-<h2 class="wp-block-heading">Ubuntu on Hyper-V</h2>
-<p>Hyper-V is Microsoft’s native hypervisor technology that enables hardware virtualization, enabling you to create and manage multiple virtual machines (VMs) on a single Windows physical host. It is a Type 1 hypervisor – meaning that it runs directly on bare metal hardware – commonly used for server virtualization in data centers and running isolated virtual environments on Windows 10 or 11. Hyper-V is included in Windows Pro and Enterprise editions. </p>
-<p>If you need deep separation between the Linux environment and the Windows file system, and also want to run Canonical’s Ubuntu kernels in your virtual machines, Hyper-V is the native Windows solution. Virtual machines can be <a href="https://ubuntu.com/server/docs/how-to/virtualisation/ubuntu-on-hyper-v/">installed on Hyper-V from an Ubuntu ISO</a>. Alternatively, a vhdx disk image can be used, and Ubuntu can be configured with cloud-init:</p>
-<ol>
-<li>Go to Canonical’s official repository: <a href="https://cloud-images.ubuntu.com/">cloud-images.ubuntu.com</a> and download the file ending in .img for your architecture (e.g., <a href="https://cloud-images.ubuntu.com/releases/resolute/release/ubuntu-26.04-server-cloudimg-amd64.vmdk">ubuntu-26.04-server-cloudimg-amd64.vmdk</a>).</li>
-<li>In Ubuntu install the <a href="https://manpages.ubuntu.com/manpages/resolute/man1/qemu-img.1.html">qemu-utils</a> package:<br/><code>apt install qemu-utils</code></li>
-<li>Use qemu-utils to convert the vmdk image to the vhdx format, for Hyper-V:<br/><code>qemu-img convert -f vmdk -O vhdx ubuntu-26.04-server-cloudimg-amd64.vmdk ubuntu-26.04-server-cloudimg-amd64.vhdx</code></li>
-<li>Create a new virtual machine in Hyper-V and choose the resulting vhdx file under “Connect a Virtual Disk”.</li>
-<li>Attach this ISO to the VM’s virtual DVD drive before the first boot.</li>
-<li>The Ubuntu virtual machine in Hyper-V will detect the ISO file in the virtual DVD drive as it turns on, and will run your configuration.</li>
-</ol>
-<h2 class="wp-block-heading">Ubuntu on VirtualBox</h2>
-<p>Oracle VirtualBox is a general-purpose full virtualization software which works on computers powered by x86_64 and arm chips. It’s commonly used in laptops, desktops, and servers. VirtualBox is an application that runs on top of Windows, which makes it a Type 2 hypervisor. It relies on Windows to manage hardware resources like the CPU, RAM, and networking. VirtualBox provides passthrough USB support, but can have limited performance for disk I/O or CPU-bound tasks, and has no high performance GPU capabilities. This means that VirtualBox is not optimized for AI workloads. There is a feature called PCI passthrough which allows a VirtualBox VM to assume complete control of a physical GPU, but the GPU access would then be limited to a single virtual machine.</p>
-<p>Virtual machines can be installed on VirtualBox from an Ubuntu ISO. Alternatively, a vmdk disk image can be used, and Ubuntu can be configured with cloud-init using the NoCloud method, and the <code>seed.iso</code> as described above.</p>
-<p><strong>While it is possible to use either Hyper-V or VirtualBox as standalone solutions for running Ubuntu on Windows, you can also use WSL or Canonical’s Multipass to make virtualized instances more accessible and manageable.</strong></p>
-<h2 class="wp-block-heading">Multipass</h2>
-<p>Multipass is a mini-cloud for your Windows, macOS, or Linux workstation. On Windows, it can use either VirtualBox or Hyper-V behind the scenes. You can manage everything through a simple Multipass CLI and UI, making it the fastest way to spin up ephemeral or long-running Ubuntu instances that can run as background services. The Multipass daemon (<a href="https://documentation.ubuntu.com/multipass/stable/explanation/service/">multipassd</a>) is set to start automatically at system boot and will restore persistent Ubuntu instances after a restart. This happens at the service/daemon level, not requiring a user login.</p>
-<p>When launching a Multipass VM, <a href="https://docs.cloud-init.io/en/latest/howto/launch_multipass.html">user-data can be passed by adding the <code>--cloud-init</code> flag</a> with an appropriate YAML file containing the user-data. Multipass supports cloud-init natively, and does not require the NoCloud method.</p>
-<h2 class="wp-block-heading">Ubuntu on WSL</h2>
-<p>All Windows editions (except Windows 10 and 11 S Mode or certain legacy IoT builds) include WSL, which utilizes a specialized Hyper-V subset to host a high-performance Linux VM.</p>
-<p>WSL is a feature of the Windows operating system that enables you to run a Linux file system, along with Linux command-line tools and GUI apps, directly on Windows, alongside your traditional Windows desktop and apps. WSL uses the Virtual Machine Platform component in Hyper-V to run the Linux kernel. It provides full Linux system call compatibility, with high performance. A system call (syscall) is the way a program asks the operating system’s kernel to do something, like opening a file or starting a network connection. This means your Linux binaries no longer rely on a translation layer to talk to Windows; it’s the difference between using a translator and speaking the native language. With the Linux kernel available inside a lightweight utility VM, when an app makes a syscall, it’s talking to a real Linux engine, resulting in near 100% compatibility with Linux software. Because the Linux kernel manages its own virtual hard disk (ext4), operations like git clone, npm install, or compiling large codebases happen at speeds comparable to a native Linux machine.</p>
-<p>WSL uses a technology called GPU Paravirtualization (vGPU). Instead of the Linux kernel competing with Windows for control of the graphics card, Windows shares the GPU. The dxgkrnl driver projects a virtual abstraction of the GPU into the WSL instance. For tasks using NVIDIA CUDA, performance on WSL2 can be comparable to native Linux (<a href="https://developer.nvidia.com/blog/leveling-up-cuda-performance-on-wsl2-with-new-enhancements/#:~:text=For%20the%20Blender%20benchmark%2C%20WSL2,on%20any%20of%20those%20benchmarks">within 1%</a>) for large, long-running workloads. This compatibility enables you to run Linux GUI apps via Windows Subsystem for Linux GUI (WSLg) with hardware acceleration, meaning they feel smooth rather than laggy. While GPU access is excellent, direct hardware access to things like proprietary USB devices or specialized serial ports may require troubleshooting compared to native Linux.</p>
-<p><a href="https://ubuntu.com/wsl">Ubuntu on WSL</a> supports cloud-init natively:</p>
-<ol>
-<li>Create a directory at <code>%USERPROFILE%\.cloud-init\</code></li>
-<li>Create a file named <code>&lt;DistroName&gt;.user-data</code> (e.g., <code>Ubuntu-26.04.user-data</code>).</li>
-</ol>
-<p>When you first run <code>wsl --install Ubuntu-26.04</code>, WSL will pick up this file and automate your setup.</p>
-<h2 class="wp-block-heading">Enable Ubuntu Pro for WSL with Microsoft Intune</h2>
-<p>Microsoft Intune is a cloud-based endpoint management solution that can manage configurations of Windows computers. Microsoft Intune can execute commands within a WSL instance by leveraging PowerShell scripts that interact with the wsl.exe executable. You can enable and manage WSL using Microsoft Intune by using the “Settings Catalog” to configure settings or by deploying the WSL MSI app. </p>
-<div class="p-card" style="background-color: #E5E5E5;">
-<h4 class="p-card__title">Pair Canonical Landscape and Microsoft Intune</h4>
-<p><a href="https://ubuntu.com/landscape">Canonical Landscape</a> goes beyond arbitrary command execution in WSL instances, and provides enterprise features for configuration, compliance, hardening, auditing, patching, reporting, and inventory of users and software. Pairing Microsoft Intune with Ubuntu, and using Landscape for managing WSL at scale enables developers to accelerate their workflows in even the most tightly regulated environments.</p>
-<a href="https://ubuntu.com/landscape#get-in-touch"><p class="p-button--positive">Contact Us</p></a>
+      <title>Three weeks to go: A sneak peek of the Ubuntu Summit 26.04 experience</title>
+      <link>https://ubuntu.com//blog/three-weeks-to-go-a-sneak-peek-of-the-ubuntu-summit-26-04-experience</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/three-weeks-to-go-a-sneak-peek-of-the-ubuntu-summit-26-04-experience</guid>
+      <pubDate>Wed, 06 May 2026 10:26:53 GMT</pubDate>
+      <description><![CDATA[<figure class="wp-block-image size-full"><img alt="" height="2160" loading="lazy" sizes="(min-width: 3840px) 3840px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_3840/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5a5b%2FUbuntuSummit2026_3840x2160.png 1920w" width="3840"/></figure>
+<p>The countdown to the Ubuntu Summit is officially on! We are just three weeks away from Ubuntu Summit 26.04, and the orange energy levels in our community channels are peaking. We’ve been reviewing the talk submissions, and have been blown away by the passion and creativity of our circle of friends. Once again, the schedule is packed with sessions that prove open source technology is truly everywhere.</p>
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-layout-1 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://discourse.ubuntu.com/t/register-for-ubuntu-summit/65270" rel="noreferrer noopener" target="_blank">Register for the Ubuntu Summit</a></div>
 </div>
-<p>Ubuntu Pro for WSL is Windows software that provides turnkey security maintenance and enterprise support for Ubuntu 24.04 LTS and Ubuntu 26.04 LTS WSL instances in Windows. The Ubuntu Pro for WSL Windows software works with free and paid Ubuntu Pro subscriptions. Installing Ubuntu Pro for WSL ensures that anyone using Ubuntu on WSL is always security maintained, in addition to enabling comprehensive management and insights through <a href="https://ubuntu.com/landscape">Landscape</a>, Canonical’s systems management solution for Ubuntu.</p>
-<p>The Ubuntu Pro for WSL software is packaged as an MSI application. Installing and configuring MSI packages is natively supported by Microsoft Intune and Active Directory. The simplest method for installing Ubuntu Pro for WSL using Microsoft Intune is to deploy it as a line-of-business (LOB) app. In a regulated environment where WSL is enabled, the Ubuntu Pro for WSL .msi file should be chosen as a Required (automatically installed) package in Microsoft Intune. The most secure location to store the Ubuntu Pro for WSL agent configurations is the Windows Registry. Remediation scripts can be used in Microsoft Intune, where a detection script checks for the necessary keys and values, and a remediation script can set missing or deviated values, ensuring continuous compliance.</p>
-<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="304" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/I2Wl467pHrQ?feature=oembed" title="Landscape Demo: Register Windows workstations" width="540"></iframe>
-</div><figcaption class="wp-element-caption">This video shows how the Ubuntu Pro for WSL software can be installed on a Windows machine</figcaption></figure>
-<p>Navigate to your Microsoft Intune admin center portal, and then select: <strong>Devices</strong> &gt; <strong>Configuration Profiles</strong> &gt; <strong>Create</strong> &gt; <strong>New Policy</strong> &gt; <strong>Windows 10 and later</strong> &gt; <strong>Settings Catalog</strong>. Create a name for the new policy and search for “Windows Subsystem for Linux” to see and add the full list of available settings. Important WSL-specific settings include:</p>
-<ul>
-<li><strong>Allow the Inbox version of the Windows Subsystem for Linux</strong>: <strong>Enabled</strong> if you want to self-host the WSL images internally, instead of downloading them from the Microsoft Store.</li>
-<li><strong>Allow WSL1</strong>: <strong>Disabled</strong> because Landscape’s enterprise management capabilities for WSL are only available in WSL2.</li>
-</ul>
-<h2 class="wp-block-heading">Ubuntu Pro for WSL in controlled environments</h2>
-<p>Ubuntu Pro for Windows contains the user configurations that define root (sudo and su) privileges in cloud-init.yaml. Microsoft recently built native <a href="https://learn.microsoft.com/en-us/entra/msal/dotnet/acquiring-tokens/desktop-mobile/linux-dotnet-sdk-wsl?tabs=ubuntudep">Entra ID integration directly into WSL</a> to secure the launching of WSL instances, and this integration is managed via Microsoft Intune. This combination provides control over who can use Ubuntu on WSL, and if root privileges are granted in Ubuntu on WSL. When you use the Entra ID login for Linux VMs extension in Azure, Entra ID controls who can launch Ubuntu on WSL. It does this via Azure Role-Based Access Control (RBAC). Entra ID’s sign-in logs will tell you when a user authenticated to the Linux machine, but it stops there. It will not log the commands they type after a successful session begins.</p>
-<p>The actual tracking of sudo and su is done by the Linux operating system itself. Whenever a user escalates privileges, Ubuntu logs this activity to its local system logs at <code>/var/log/auth.log</code>. To track this activity centrally, you need to bridge the gap between the local Linux logs and your cloud environment. Install the Azure Monitor Agent (AMA), configure a Data Collection Rule (DCR) in Azure to instruct the AMA to collect the authpriv syslog facility (which contains the sudo and su events and send these logs to an Azure Log Analytics Workspace. Connect your Log Analytics Workspace to Microsoft Sentinel (Microsoft’s SIEM). You can now write KQL (Kusto Query Language) queries to alert your security team every time someone successfully or unsuccessfully executes sudo or su.</p>
-<p>Between the controls available in Microsoft Intune and Landscape, it is possible to centrally provision WSL instances for users. Users are able to self-service the creation of new, compliant instances, and administrators are able to survey a Windows estate for compliance within the WSL instances. Ubuntu Pro for WSL ensures <a href="https://ubuntu.com/security/esm">Expanded Security Maintenance (ESM)</a> is enabled, providing CVE security updates that can be applied subject to administrative policy. Canonical provides up to 15 years of CVE security patching for software packaged and published through Ubuntu’s repositories. Ubuntu Pro subscriptions also cover security maintenance for popular toolchains on WSL, such as Python, Go, Rust, and more. This turnkey solution ensures security vulnerabilities are patched quickly and reliably, making WSL a viable, compliant option for enterprise environments.</p>
-<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="304" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/oIu7kSeiQh4?feature=oembed" title="Landscape Demo: set up WSL profiles" width="540"></iframe>
-</div><figcaption class="wp-element-caption">This video shows how you can use Landscape to provision and manage WSL instances on Windows workstations</figcaption></figure>
-<h2 class="wp-block-heading">Next steps</h2>
-<ol>
-<li>Watch the webinar: <a href="https://ubuntu.com/engage/ubuntu-on-wsl-enterprise">Ubuntu on WSL in the enterprise</a></li>
-<li><a href="https://ubuntu.com/download/wsl">Download Ubuntu Pro for WSL</a></li>
-<li><a href="https://documentation.ubuntu.com/wsl/stable/">Read the Ubuntu Pro for WSL documentation</a></li>
-</ol>]]></description>
+<h2 class="wp-block-heading">A taste of the schedule</h2>
+<p>Seeing the final lineup of all the upcoming Summit talks has made us realize just how beautifully geeky this event is going to be. <a href="https://discourse.ubuntu.com/t/ubuntu-summit-26-04-timetable/81507" rel="noreferrer noopener" target="_blank">This timetable</a> is a true hacker paradise! We are incredibly excited to give you a quick sneak peek at a few sessions we cannot wait to attend.</p>
+<p><a href="https://discourse.ubuntu.com/t/building-the-internet-computer/79577" rel="noreferrer noopener" target="_blank">Nariman Jelveh</a> challenges us with the thought provoking question: “What if your entire computer lived in the browser, and the whole stack was open source?”. Are you sold? We certainly are and can’t wait to see what he will show us. </p>
+<p><a href="https://discourse.ubuntu.com/t/hands-on-meshtastic/79497" rel="noreferrer noopener" target="_blank">Jonathan Bennett</a> will give us a glimpse into the amazing world of Meshtastic, and then take us on a breathtaking adventure with a live demo. </p>
+<p><a href="https://discourse.ubuntu.com/t/gleam-and-the-value-of-small/80331" rel="noreferrer noopener" target="_blank">Giacomo Cavalieri</a> will take us on a journey with his talk “Gleam, and the value of small”. This incredible open source project has taken the world of open source by storm… by keeping things small, focused, and precise.</p>
+<h2 class="wp-block-heading">The hallway track is local</h2>
+<p>As we get closer to the event, we want to remind you that the best seat of the Ubuntu Summit might just be right in your own city.</p>
+<p>Communities around the world are organizing local meetups to watch the stream together, debate the talks, and build local connections. The Ubuntu Summit Extended events are multiplying, so check the <a href="https://discourse.ubuntu.com/c/community/events/11" rel="noreferrer noopener" target="_blank">Ubuntu Discourse</a> to find an Extended event near you. If there is not one yet, you still have time to invite a few friends over and <a href="https://ubu.link/ubuntusummit-extended" rel="noreferrer noopener" target="_blank">create your own summit experience</a>!</p>
+<h2 class="wp-block-heading">Join the conversation</h2>
+<p>Make sure you are registered on the<a href="https://ubuntu.com/summit"> Ubuntu Summit website</a> to get all the latest updates and streaming links. If you want to see exactly what makes this event so special, now is the perfect time to catch up on the incredible sessions from last year. Dive into the magic and watch the full collection of previous talks right now on the <a href="https://www.youtube.com/playlist?list=PLwFSk464RMxmyKN2yob1dcIbrUuJupDQQ">Ubuntu Summit 25.10 YouTube playlist</a>.</p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
+    <item>
+      <title>Announcing Incus 7.0 LTS</title>
+      <link>https://stgraber.org/2026/05/05/announcing-incus-6-23-2/</link>
+      <guid isPermaLink="true">https://stgraber.org/2026/05/05/announcing-incus-6-23-2/</guid>
+      <pubDate>Wed, 06 May 2026 03:04:52 GMT</pubDate>
+      <description><![CDATA[<p>It’s with great pride and pleasure that the Incus team is announcing the release of Incus 7.0 LTS!</p>
+
+
+
+<p><a href="https://linuxcontainers.org/incus/">Incus</a> is a modern system container, application container and virtual machine manager. It’s released under the Apache 2.0 license and is run as a community led Open Source project as part of the <a href="https://linuxcontainers.org">Linux Containers</a> organization.</p>
+
+
+
+<p>Incus provides a cloud-like environment, creating instances from <a href="https://images.linuxcontainers.org">our premade images</a> or any OCI registry and offers a wide variety of features, including the ability to seamlessly cluster servers together.</p>
+
+
+
+<p>It supports multiple different local or remote storage options, traditional or fully distributed networking and offers most common cloud features, including a <a href="https://linuxcontainers.org/incus/docs/main/rest-api-spec/">full REST API</a> and <a href="https://linuxcontainers.org/incus/docs/main/third_party/">integrations</a> with common tooling like Ansible, Terraform/OpenTofu, Packr, Kubernetes Cluster API and more!</p>
+
+
+
+<p>This is the second LTS release for Incus with Incus 6.0 LTS now entering its security-only phase for the remaining 3 years of its 5 years lifespan.</p>
+
+
+
+<p>Incus 7.0 LTS joins <a href="https://discuss.linuxcontainers.org/t/lxc-7-0-lts-has-been-released/26612/1">LXC 7.0 LTS</a> and <a href="https://discuss.linuxcontainers.org/t/lxcfs-7-0-lts-has-been-released/26607/1">LXCFS 7.0 LTS</a> in wrapping up this round of LTS releases.</p>
+
+
+
+<p>Just like its sister projects, Incus 7.0 LTS will be supported until <strong>June 2031</strong>.</p>
+
+
+
+<p>The first 2 years will feature bug and security fixes as well as minor usability improvements, delivered through occasional point releases (7.0.x). After that initial two years, Incus 7.0 LTS will move to security only maintenance for the remaining of its 5 years of support.</p>
+
+
+
+<p>A total of 204 individuals contributed to Incus between the 6.0 LTS and 7.0 LTS releases with 45 contributing between the 6.23 and 7.0 LTS releases.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://linuxcontainers.org/incus/try-it/"><img fetchpriority="high" decoding="async" width="1024" height="335" src="https://stgraber.org/wp-content/uploads/2026/05/image-1024x335.png" alt="" class="wp-image-1867" srcset="https://stgraber.org/wp-content/uploads/2026/05/image-1024x335.png 1024w, https://stgraber.org/wp-content/uploads/2026/05/image-300x98.png 300w, https://stgraber.org/wp-content/uploads/2026/05/image-768x251.png 768w, https://stgraber.org/wp-content/uploads/2026/05/image.png 1482w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<p>This release fixes the following security issues:</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-8gw4-p4wq-4hcv">CVE-2026-35527</a> (Moderate)</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-gc7j-g665-rxr9">CVE-2026-40195</a> (Moderate)</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-r7w7-mmxr-47r9">CVE-2026-40197</a> (Moderate)</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-4m88-wxj4-9qj6">CVE-2026-40251</a> (Moderate)</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-fwj8-62r8-8p8m">CVE-2026-41647</a> (Moderate)</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-x5r6-jr56-89pv">CVE-2026-41684</a> (Moderate)</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-98vh-x9cx-9cfp">CVE-2026-41685</a> (Moderate)</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-c839-4qxr-j4x3">CVE-2026-40243</a> (Low)</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-67wx-r9xr-x75x">CVE-2026-41648</a> (Low)</li>
+</ul>
+
+
+
+<p>Breaking changes:</p>
+
+
+
+<ul class="wp-block-list">
+<li>New minimum system requirements</li>
+
+
+
+<li>Removal of CGroupV1 support</li>
+
+
+
+<li>Removal of xtables support</li>
+
+
+
+<li>Incus CLI changes, removing handling for older syntax</li>
+</ul>
+
+
+
+<p>New features for those coming from Incus 6.23:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Minio replaced by built-in S3 listener</li>
+
+
+
+<li>Server shutdown action</li>
+
+
+
+<li>Low level backup API</li>
+
+
+
+<li>Storage pool project restriction</li>
+
+
+
+<li>Placement scriptlet call on cluster rebalance</li>
+
+
+
+<li>File transfer commands now aligned with cp</li>
+
+
+
+<li>&#8211;reuse flag in incus image copy</li>
+</ul>
+
+
+
+<p>New features for those coming from Incus 6.0.6 LTS:</p>
+
+
+
+<ul class="wp-block-list">
+<li>All of the new features listed above</li>
+
+
+
+<li>Application containers (OCI)</li>
+
+
+
+<li>Dependent storage volumes</li>
+
+
+
+<li>Network address sets</li>
+
+
+
+<li>Linstor storage driver</li>
+
+
+
+<li>TrueNAS storage driver</li>
+
+
+
+<li>CPU baseline definition in cluster groups</li>
+</ul>
+
+
+
+<p>The full announcement and changelog can be <a href="https://discuss.linuxcontainers.org/t/incus-7-0-lts-has-been-released/26641" target="_blank" rel="noreferrer noopener">found here</a>.<br>And for those who prefer videos, here&#8217;s the release <a href="https://www.youtube.com/watch?v=Fp0l84fSeP0">overview video</a>:</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="Introducing Incus 7.0 LTS!" width="640" height="360" src="https://www.youtube.com/embed/Fp0l84fSeP0?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p>You can take the latest release of Incus up for a spin through our online demo service at: <a href="https://linuxcontainers.org/incus/try-it/" target="_blank" rel="noreferrer noopener">https://linuxcontainers.org/incus/try-it/</a></p>
+
+
+
+<p>And as always, my company is offering commercial support on Incus, ranging from by-the-hour support contracts to one-off services on things like initial migration from LXD, review of your deployment to squeeze the most out of Incus or even feature sponsorship. You&#8217;ll find all details of that here: <a href="https://zabbly.com/incus">https://zabbly.com/incus</a></p>
+
+
+
+<p>Donations towards my work on this and other open source projects is also always appreciated, you can  find me on <a href="https://github.com/sponsors/stgraber">Github Sponsors</a>, <a href="https://patreon.com/stgraber">Patreon</a> and <a href="https://ko-fi.com/stgraber">Ko-fi</a>.</p>
+
+
+
+<p>Enjoy!</p>
+
+
+<p><!-- /wp:post-content --></p>]]></description>
+      <source url="https://stgraber.org/category/planet-ubuntu/feed/">Stéphane Graber</source>
     </item>
     <item>
       <title>Ubuntu Weekly Newsletter Issue 942</title>
@@ -1590,131 +1740,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 
 <p></p>]]></description>
       <source url="http://mako.cc/copyrighteous/?flav=rss">Benjamin Mako Hill</source>
-    </item>
-    <item>
-      <title>Announcing Incus 6.23</title>
-      <link>https://stgraber.org/2026/03/30/announcing-incus-6-23/</link>
-      <guid isPermaLink="true">https://stgraber.org/2026/03/30/announcing-incus-6-23/</guid>
-      <pubDate>Mon, 30 Mar 2026 16:48:46 GMT</pubDate>
-      <description><![CDATA[<p>The Incus team is pleased to announce the release of Incus 6.23!</p>
-
-
-
-<p>This release is going to be our last 6.x release before Incus 7.0 LTS which is due out on April 30th.</p>
-
-
-
-<p>It’s also quite a busy release with a good mix of security issues (mostly thanks to an ongoing analysis by <a href="https://7asecurity.com">7asecurity</a>), bug fixes and performance improvements and then a very good selection of features from expanding our OS support for VMs to adding more flexible instance storage with dependent volumes!</p>
-
-
-
-<figure class="wp-block-image size-large"><a href="https://linuxcontainers.org/incus/try-it/"><img fetchpriority="high" decoding="async" width="1024" height="530" src="https://stgraber.org/wp-content/uploads/2026/03/image-1-1024x530.png" alt="" class="wp-image-1857" srcset="https://stgraber.org/wp-content/uploads/2026/03/image-1-1024x530.png 1024w, https://stgraber.org/wp-content/uploads/2026/03/image-1-300x155.png 300w, https://stgraber.org/wp-content/uploads/2026/03/image-1-768x398.png 768w, https://stgraber.org/wp-content/uploads/2026/03/image-1.png 1300w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
-
-
-
-<p>This fixes the following security issues:</p>
-
-
-
-<ul class="wp-block-list">
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-q9vp-3wcg-8p4x">CVE-2026-33711</a> (low)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-p8mm-23gg-jc9r">CVE-2026-33542</a> (moderate)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-vg76-xmhg-j5x3">CVE-2026-33743</a> (moderate)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-453r-g2pg-cxxq">CVE-2026-33898</a> (high)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-83xr-5xxr-mh92">CVE-2026-33897</a> (critical)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-q4q8-7f2j-9h9f">CVE-2026-33945</a> (critical)</li>
-</ul>
-
-
-
-<p>On the feature front, the highlights for this release are:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Dependent storage volumes</li>
-
-
-
-<li>FreeBSD VM support</li>
-
-
-
-<li>Reworked CLI parser</li>
-
-
-
-<li>Support for disabling DHCP announcement of the gateway</li>
-
-
-
-<li>Support for ipv4.dhcp.gateway on OVN networks</li>
-
-
-
-<li>Support for io.bus on OVN NICs</li>
-
-
-
-<li>VM agent lifecycle events</li>
-
-
-
-<li>Reworked incus file pull and incus storage volume file pull</li>
-
-
-
-<li>Project related metrics</li>
-
-
-
-<li>Instance low-level repair API</li>
-</ul>
-
-
-
-<p>The full announcement and changelog can be <a href="https://discuss.linuxcontainers.org/t/incus-6-23-has-been-released/26447" target="_blank" rel="noreferrer noopener">found here</a>.<br>And for those who prefer videos, here&#8217;s the release <a href="https://www.youtube.com/watch?v=PGo03etJsMY">overview video</a>:</p>
-
-
-
-<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe title="Introducing Incus 6.23!" width="640" height="360" src="https://www.youtube.com/embed/PGo03etJsMY?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div></figure>
-
-
-
-<p>You can take the latest release of Incus up for a spin through our online demo service at: <a href="https://linuxcontainers.org/incus/try-it/" target="_blank" rel="noreferrer noopener">https://linuxcontainers.org/incus/try-it/</a></p>
-
-
-
-<p>And as always, my company is offering commercial support on Incus, ranging from by-the-hour support contracts to one-off services on things like initial migration from LXD, review of your deployment to squeeze the most out of Incus or even feature sponsorship. You&#8217;ll find all details of that here: <a href="https://zabbly.com/incus">https://zabbly.com/incus</a></p>
-
-
-
-<p>Donations towards my work on this and other open source projects is also always appreciated, you can  find me on <a href="https://github.com/sponsors/stgraber">Github Sponsors</a>, <a href="https://patreon.com/stgraber">Patreon</a> and <a href="https://ko-fi.com/stgraber">Ko-fi</a>.</p>
-
-
-
-<p>Enjoy!</p>
-
-
-<p><!-- /wp:post-content --></p>]]></description>
-      <source url="https://stgraber.org/category/planet-ubuntu/feed/">Stéphane Graber</source>
     </item>
     <item>
       <title>Ubuntu installer selects a single keyboard layout, cannot type English during installation</title>
@@ -6436,6 +6461,29 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 <li><a href="https://github.com/helm/charts/tree/master/stable/external-dns#configuration">The full list of configuration details for the ExternalDNS Helm&nbsp;chart</a></li>
 </ul>]]></description>
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
+    </item>
+    <item>
+      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
+      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
+      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
+      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
+      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
+<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
+<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
+<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
+<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
+<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
+<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
+<blockquote>
+<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
+</blockquote>
+<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
+<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
+We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
+So, please sync with this change (and sorry :)).</p>
+<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
+<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
+      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
     </item>
     <item>
       <title>Rise and fall of libclamav</title>
