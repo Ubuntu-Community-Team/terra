@@ -6,9 +6,138 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sun, 10 May 2026 03:36:48 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2026 03:50:56 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu Studio’s New Home: What’s Changing and Why</title>
+      <link>https://ubuntustudio.org/2026/05/ubuntu-studios-new-home-whats-changing-and-why/</link>
+      <guid isPermaLink="true">https://ubuntustudio.org/2026/05/ubuntu-studios-new-home-whats-changing-and-why/</guid>
+      <pubDate>Sun, 10 May 2026 02:25:40 GMT</pubDate>
+      <description><![CDATA[<div class="wp-block-image">
+<figure class="alignright size-medium"><img decoding="async" width="300" height="160" src="https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-300x160.png?wsr" alt="Homepage of Ubuntu Studio showcasing a content creation studio with various creative tools including musical instruments, a camera, and editing software elements." class="wp-image-5119" srcset="https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-300x160.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-1024x545.png 1024w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-768x409.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-1536x817.png 1536w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-1200x639.png 1200w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2.png 1554w" sizes="(max-width: 300px) 100vw, 300px" /></figure>
+</div>
+
+
+<p class="wp-block-paragraph">Ubuntu Studio&#8217;s web presence has been spread across several Canonical-hosted systems for a long time: the main website on an old Canonical web server, the Ubuntu Community Help Wiki at <code>help.ubuntu.com/community/UbuntuStudio</code>, and the Ubuntu Developer Wiki at <code>wiki.ubuntu.com/UbuntuStudio</code>. Those platforms served their purpose, but each had become a poor fit for how the project actually works today.</p>
+
+
+
+<h2 class="wp-block-heading">What&#8217;s Moving</h2>
+
+
+
+<p class="wp-block-paragraph"><strong>The main Ubuntu Studio website</strong> has already moved away from Canonical hosting and onto its current home. That move was driven by necessity: Canonical shut down the old web server that had hosted the site, so Ubuntu Studio needed a new home for its primary web presence. This has been a mostly transparent process and most users would never have noticed a difference.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-medium is-resized"><img fetchpriority="high" decoding="async" width="300" height="233" src="https://ubuntustudio.org/wp-content/uploads/2026/05/image-300x233.png?wsr" alt="Screenshot of the Ubuntu Studio Community Help page, featuring sections for user and developer wikis, support information, and links to contributions and resources." class="wp-image-5113" style="width:197px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/05/image-300x233.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-768x597.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/05/image.png 945w" sizes="(max-width: 300px) 100vw, 300px" /></figure>
+</div>
+
+
+<p class="wp-block-paragraph"><strong>The Community Help Wiki</strong> — the place where users have always gone to find answers about audio configuration, hardware support, the Audio Handbook, and getting started with Ubuntu Studio — is being mirrored and maintained directly on ubuntustudio.org at <code>/help/</code>. Every page you&#8217;re used to is coming with us: the Pro Audio Intro, the Ubuntu Studio Audio Handbook and all its chapters, the FAQ, hardware support information, terminal basics, troubleshooting guides, and community information. Most of this is outdated now, and we need help to bring it up to modernization.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-medium is-resized"><img decoding="async" width="300" height="214" src="https://ubuntustudio.org/wp-content/uploads/2026/05/image-1-300x214.png?wsr" alt="Screenshot of the Ubuntu Studio developer wiki homepage featuring navigation links, a welcome message, and information about the Ubuntu Studio project and community." class="wp-image-5116" style="width:255px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/05/image-1-300x214.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-1-768x548.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-1.png 933w" sizes="(max-width: 300px) 100vw, 300px" /></figure>
+</div>
+
+
+<p class="wp-block-paragraph"><strong>The Developer Wiki</strong> — home to the team&#8217;s internal processes, release planning, testing documentation, artwork resources, and packaging and development notes — is moving to ubuntustudio.org at <code>/wiki/</code>. The full section structure is preserved: Testing, PR &amp; Support, Artwork, Packaging/Development, Documentation, and Organization are all there. This information is also outdated.</p>
+
+
+
+<h2 class="wp-block-heading">Why Now</h2>
+
+
+
+<p class="wp-block-paragraph">The website move and the wiki move do not have exactly the same origin.</p>
+
+
+
+<p class="wp-block-paragraph">For the main website, the trigger was straightforward: Canonical shut down the old web server that hosted it. Ubuntu Studio had to move the site in order to keep a public home on the web.</p>
+
+
+
+<p class="wp-block-paragraph">For the help and developer wikis, the issue was the editing experience and maintenance burden. The old MoinMoin-based wiki workflow is cumbersome, slow, and awkward to work with. Its markup is not standard Markdown, which makes editing, reviewing, and migrating content more difficult than it should be. Over time, that friction made it harder to keep pages current, fix outdated instructions, and encourage casual contributors to improve documentation.</p>
+
+
+
+<p class="wp-block-paragraph">Meanwhile, ubuntustudio.org has been running on WordPress for some time, and the team has been using GitHub for development work. By routing our documentation through a GitHub repository — using the Git it Write plugin to publish markdown directly to WordPress — we get something we&#8217;ve never really had before: a documentation workflow that fits naturally alongside our other development work. Pull requests, issue tracking, version history, and a low barrier to entry for new contributors all come with it.</p>
+
+
+
+<h2 class="wp-block-heading">What This Means for Contributors</h2>
+
+
+
+<p class="wp-block-paragraph">If you&#8217;ve ever wanted to fix something on the old wiki and been put off by the process, this is your opening. The content lives in a <a href="https://github.com/UbuntuStudio-Official/ubuntustudio-website">public GitHub repository</a>. Find the file, fix the text, open a pull request. That&#8217;s it.</p>
+
+
+
+<p class="wp-block-paragraph">The content is organized into buckets that map to the old wiki structure:</p>
+
+
+
+<ul class="wp-block-list">
+<li><code>help/content/support/</code> — support pages (FAQ, hardware, audio configuration, etc.)</li>
+
+
+
+<li><code>help/content/handbook/</code> — the Audio Handbook and Pro Audio Intro</li>
+
+
+
+<li><code>help/content/community/</code> — IRC, mailing lists, joining the team</li>
+
+
+
+<li><code>help/content/reference/</code> — resources, links, wiki guide</li>
+
+
+
+<li><code>wiki/content/ubuntu-studio/</code> — developer wiki pages</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">If you&#8217;re editing a page that has outdated information, and there&#8217;s plenty of it, particularly around the old PulseAudio/JACK workflow that predates PipeWire — this is the place to update it.</p>
+
+
+
+<h2 class="wp-block-heading">What Isn&#8217;t Changing</h2>
+
+
+
+<p class="wp-block-paragraph">The old wiki pages at <code>help.ubuntu.com</code> and <code>wiki.ubuntu.com</code> aren&#8217;t going anywhere immediately. Canonical maintains those as part of Ubuntu infrastructure, and they&#8217;ll continue to exist. Our goal isn&#8217;t to break any existing bookmarks or search results, it&#8217;s to have a home where we can keep things current.</p>
+
+
+
+<p class="wp-block-paragraph">We&#8217;re also not rewriting the documentation wholesale. The content of the mirrored pages is as faithful to the originals as it can be, with updates where the old guidance referred to software or workflows that no longer apply to current Ubuntu Studio releases.</p>
+
+
+
+<h2 class="wp-block-heading">Where to Find Everything</h2>
+
+
+
+<ul class="wp-block-list">
+<li>Help pages: <a href="https://ubuntustudio.org/help/">ubuntustudio.org/help/</a></li>
+
+
+
+<li>Developer wiki: <a href="https://ubuntustudio.org/wiki/">ubuntustudio.org/wiki/</a></li>
+
+
+
+<li>GitHub repository: <a href="https://github.com/UbuntuStudio-Official/ubuntustudio-website">github.com/UbuntuStudio-Official/ubuntustudio-website</a></li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">If you find something wrong, missing, or out of date — open a pull request, or file an issue and let the team know.</p>]]></description>
+      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
+    </item>
     <item>
       <title>Dirty Frag Linux kernel local privilege escalation vulnerability mitigations</title>
       <link>https://ubuntu.com//blog/dirty-frag-linux-vulnerability-fixes-available</link>
@@ -1167,517 +1296,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
       <source url="https://jnsgr.uk/tags/ubuntu/index.xml">Jon Seager</source>
     </item>
     <item>
-      <title>Ubuntu Studio 26.04 LTS Released</title>
-      <link>https://ubuntustudio.org/2026/04/ubuntu-studio-26-04-lts-released/</link>
-      <guid isPermaLink="true">https://ubuntustudio.org/2026/04/ubuntu-studio-26-04-lts-released/</guid>
-      <pubDate>Thu, 23 Apr 2026 17:23:27 GMT</pubDate>
-      <description><![CDATA[<div class="wp-block-image">
-<figure class="aligncenter size-full"><img fetchpriority="high" decoding="async" width="800" height="297" src="https://ubuntustudio.org/wp-content/uploads/2026/04/banner.jpg?wsr" alt="Ubuntu Studio 26.04 LTS logo featuring a stylized raccoon illustration and the text 'Resolute Raccoon' on a dark background." class="wp-image-3510" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/banner.jpg 800w, https://ubuntustudio.org/wp-content/uploads/2026/04/banner-300x111.jpg 300w, https://ubuntustudio.org/wp-content/uploads/2026/04/banner-768x285.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph">The Ubuntu Studio team is pleased to announce Ubuntu Studio 26.04 LTS, code-named &#8220;Resolute Raccoon.&#8221; This marks Ubuntu Studio&#8217;s 38th release.</p>
-
-
-
-<p class="wp-block-paragraph">This Long-Term Support (LTS) release is supported for 3 years, through April 2029.<br>An Ubuntu Studio LTS arrives once every two years. This is more than a routine update: it is a long-horizon milestone for creators, educators, studios, and production systems that prioritize dependability.</p>
-
-
-
-<p class="wp-block-paragraph">This release reflects months of development, packaging, design, testing, and community feedback, all focused on making Ubuntu Studio production-ready from first boot.<br>Whether you record music, edit video, design graphics, or publish layouts, the goal is simple: stay out of your way and let your creativity lead. That shows up in practical improvements across this release, from desktop layout choice and modernized setup tools to updated defaults and day-to-day polish.</p>
-
-
-
-<p class="wp-block-paragraph">For full technical details, known issues, and upgrade instructions, please see the <a href="https://discourse.ubuntu.com/t/ubuntu-studio-26-04-lts-release-notes/">Ubuntu Studio 26.04 LTS Release Notes</a>.</p>
-
-
-
-<p class="wp-block-paragraph">You can download Ubuntu Studio 26.04 LTS from the <a href="https://ubuntustudio.org/download">download page</a>.</p>
-
-
-
-<h2 class="wp-block-heading">Why This LTS Is Special</h2>
-
-
-
-<ul class="wp-block-list">
-<li>You can trace a clear through-line across recent LTS cycles: <a href="https://ubuntustudio.org/2020/04/ubuntu-studio-20-04-lts-released/">20.04 LTS</a> was the last Xfce-based LTS and set up the desktop transition, <a href="https://ubuntustudio.org/2022/04/ubuntu-studio-22-04-lts-released/">22.04 LTS</a> stabilized the Plasma era, and <a href="https://ubuntustudio.org/2024/04/ubuntu-studio-24-04-lts-released/">24.04 LTS</a> introduced the new Subiquity/Flutter installer generation and PipeWire 1.0 maturity.</li>
-
-
-
-<li>Ubuntu Studio 26.04 LTS builds on that foundation with practical workflow improvements instead of a single marquee feature: three selectable desktop layouts, fully rewritten Installer and Audio Configuration tools (Python with GTK4 and Qt6 frontends), and broader translation coverage.</li>
-
-
-
-<li>It also brings forward ideas that were future-looking in earlier cycles, especially minimal-install flexibility and easier post-install workflow selection, while adding production-focused updates like FFADO support, easier PipeWire tuning, and new default additions such as Loopino and Plasma PipeWire Settings.</li>
-
-
-
-<li>As with prior Ubuntu Studio LTS releases, this cycle carries a three-year support window, through April 2029.</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">Major Highlights</h2>
-
-
-
-<h3 class="wp-block-heading">Three desktop layouts, one familiar home</h3>
-
-
-
-<p class="wp-block-paragraph">This release includes three selectable desktop layouts:</p>
-
-
-
-<ul class="wp-block-list">
-<li>The classic Ubuntu Studio top-panel layout</li>
-
-
-
-<li>A macOS-like layout with global menu and dock</li>
-
-
-
-<li>A Windows-like bottom-panel layout</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Creators coming from different platforms get a familiar starting point and a faster path to feeling at home.</p>
-
-
-
-<p class="wp-block-paragraph">The default layout for new installs was selected by community vote. For background on the design direction, see <a href="https://ubuntustudio.org/2025/12/coming-to-26-04-lts-three-layouts/">Coming to 26.04 LTS: Three Layouts</a>.</p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-large"><img decoding="async" width="1024" height="138" src="https://ubuntustudio.org/wp-content/uploads/2026/04/image-3-1024x138.png?wsr" alt="Screenshot of Ubuntu Studio desktop environments including Ubuntu Studio, Ubuntu Studio Classic, Ubuntu Studio Classic Dark, Ubuntu Studio Dark, Ubuntu Studio Dark macOS alike, and Ubuntu Studio macOS alike." class="wp-image-3522" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/image-3-1024x138.png 1024w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-3-300x40.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-3-768x104.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-3.png 1186w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-</div>
-
-
-<h3 class="wp-block-heading">Installer and configuration tools modernized</h3>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-full is-resized"><img decoding="async" width="730" height="737" src="https://ubuntustudio.org/wp-content/uploads/2026/04/image-5.png?wsr" alt="Screenshot of the Ubuntu Studio Installer interface, displaying a list of installation packages with checkmarks indicating selected options for audio, graphics, photography, video, and wallpapers, along with options for publishing and music education." class="wp-image-3526" style="aspect-ratio:0.990562476406191;width:180px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/image-5.png 730w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-5-297x300.png 297w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-5-150x150.png?crop=1 150w" sizes="(max-width: 730px) 100vw, 730px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph"><a href="https://ubuntustudio.org/ubuntu-studio-installer">Ubuntu Studio Installer</a> and <a href="https://ubuntustudio.org/audio-configuration/">Ubuntu Studio Audio Configuration</a> were completely rewritten, with modern interfaces and desktop-aware behavior.</p>
-
-
-
-<p class="wp-block-paragraph">This is more than a visual refresh. Both tools were rebuilt from the ground up in Python with dual GTK4 and Qt6 frontends, and automatically select the interface that best matches your desktop environment.</p>
-
-
-
-<p class="wp-block-paragraph">Internationalization also took a major leap forward: both tools now include translations across 21 languages, helping more creators configure their systems comfortably in their preferred language.</p>
-
-
-
-<h3 class="wp-block-heading">Audio production gets more powerful</h3>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-full is-resized"><img loading="lazy" decoding="async" width="596" height="361" src="https://ubuntustudio.org/wp-content/uploads/2026/04/image-4.png?wsr" alt="Ubuntu Studio Audio Configuration window with options to configure audio settings, change kernel boot parameters, start a dummy audio device, or disable PipeWire-JACK." class="wp-image-3524" style="width:296px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/image-4.png 596w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-4-300x182.png 300w" sizes="auto, (max-width: 596px) 100vw, 596px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph"><a href="https://ubuntustudio.org/audio-configuration/">Ubuntu Studio Audio Configuration</a> now includes built-in support for FFADO FireWire devices and simpler PipeWire tuning through menus instead of manual entry.</p>
-
-
-
-<p class="wp-block-paragraph">For musicians and engineers using professional FireWire interfaces, FFADO support improves compatibility with legacy-but-still-essential studio hardware without extra manual setup.</p>
-
-
-
-<p class="wp-block-paragraph">PipeWire sample-rate and buffer controls are now easier to access and adjust quickly, making low-latency tuning far more approachable for both new and experienced users.</p>
-
-
-
-<h3 class="wp-block-heading">Better defaults for creators</h3>
-
-
-
-<p class="wp-block-paragraph">VLC is now the default media player, offering broad format compatibility and a familiar, dependable playback experience for day-to-day media review.</p>
-
-
-
-<p class="wp-block-paragraph"><a href="https://launchpad.net/ubuntu/+source/vmpk">vmpk</a> now replaces jack-keyboard, giving MIDI-focused users a more modern and flexible virtual keyboard workflow.</p>
-
-
-
-<h3 class="wp-block-heading">More quality-of-life improvements across the release</h3>
-
-
-
-<p class="wp-block-paragraph">Beyond the headline features, this release includes several practical improvements that make daily use smoother:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Live sessions now inhibit lock screen/screensaver to prevent interruptions during testing or demos</li>
-
-
-
-<li>SDDM and splash visuals were refined for a cleaner login and boot experience</li>
-
-
-
-<li>Desktop menus include translation coverage improvements</li>
-
-
-
-<li>Theme metadata updates improve Plasma 6 compatibility and consistency</li>
-
-
-
-<li>Key workflow tools were substantially updated, including QPrompt, RaySession, and Patchance</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">New in 26.04 LTS</h2>
-
-
-<div class="wp-block-image">
-<figure class="alignright is-resized"><img loading="lazy" decoding="async" width="465" height="517" src="https://ubuntustudio.org/wp-content/uploads/2026/04/pwsettings.png" alt="A screenshot of the Pipewire Settings interface displaying options for Quantum (1024) and Sample Rate (48000), along with a latency measurement of 21.33 ms and a refresh button." class="wp-image-3528" style="width:233px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/pwsettings.png 465w, https://ubuntustudio.org/wp-content/uploads/2026/04/pwsettings-270x300.png 270w" sizes="auto, (max-width: 465px) 100vw, 465px" /></figure>
-</div>
-
-
-<ul class="wp-block-list">
-<li><p>Three selectable desktop layouts with community-voted default</p></li>
-
-
-
-<li><p>Rewritten Installer and Audio Configuration tools with expanded language support<span style="font-size: revert; color: initial;">.</span></p></li>
-
-
-
-<li><p>Improved audio workflow controls, including FFADO support and easier PipeWire tuning</p></li>
-
-
-
-<li><p>New packages:</p>
-<ul class="wp-block-list">
-<li><p><strong style="background-color: rgb(255, 255, 255); color: initial;"><a href="https://launchpad.net/ubuntu/+source/loopino">Loopino</a></strong><span style="background-color: rgb(255, 255, 255); color: initial;"> — A lightweight creative audio sampler with drag-and-drop sample loading, on-the-fly recording, a full ADSR envelope, filters, and effects. Available as a standalone application, CLAP plugin, and VST2 plugin, making it a flexible addition to any audio production workflow.</span></p></li>
-
-
-
-<li><p><strong style="color: initial;"><a href="https://launchpad.net/ubuntu/+source/distroav">DistroAV</a></strong><span style="color: initial;"> — Formerly known as obs-ndi, DistroAV brings NDI (Network Audio/Video) support to OBS Studio, enabling high-quality, low-latency multi-track audio and video streaming over a local network. A natural fit for live streaming and networked A/V production setups. Not installed by default; install it by running </span><code style="background-color: rgb(255, 255, 255); color: initial;">sudo apt install distroav</code><span style="color: initial;"> in a terminal</span>.</p></li>
-
-
-
-<li><p><strong style="color: initial;"><a href="https://launchpad.net/ubuntu/+source/snd-hdspe">snd-hdspe</a></strong><span style="color: initial;"> — An updated ALSA kernel driver for RME HDSPe PCIe sound cards (MADI, AES, RayDAT, AIO, and AIO Pro). This maintained fork of the original driver brings compatibility with newer kernels and expands hardware control through standard ALSA interfaces, giving professional RME users a reliable path forward. Not installed by default; if you have supported RME hardware, install it by running </span><code style="color: initial; background-color: rgba(0, 0, 0, 0.2);">sudo apt install alsa-hdspe-dkms</code><span style="color: initial;"> in a terminal.</span></p></li>
-
-
-
-<li><p><strong style="color: initial;"><a href="https://launchpad.net/ubuntu/+source/plasma-pipewire-settings">Plasma PipeWire Settings</a></strong><span style="color: initial;"> — A KDE Plasma 6 panel widget for adjusting PipeWire quantum and sample rate on the fly, without touching configuration files. It is included by default and shown in the system tray by default, pairing with Ubuntu Studio Audio Configuration so the most common adjustments are always within reach.</span></p></li>
-
-
-
-<li><p><strong style="color: initial;"><a href="https://launchpad.net/ubuntu/+source/plasma-window-title-applet">Plasma Window Title Applet</a></strong><span style="color: initial;"> — A Plasma 6 panel applet that displays the active window title. Used in the macOS-like desktop layout to complete the global-menu experience.</span></p></li>
-</ul>
-</li>
-</ul>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="781" src="https://ubuntustudio.org/wp-content/uploads/2026/04/image-6-1024x781.png?wsr" alt="Screenshot of a document scanning software interface showing options like scan resolution, mode, and source. The main area indicates 'This document contains no pages yet' with a prompt to click the Scan button to add one." class="wp-image-3530" style="aspect-ratio:1.3111558638522165;width:219px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/image-6-1024x781.png 1024w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-6-300x229.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-6-768x586.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-6.png 1180w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
-</div>
-
-
-<ul class="wp-block-list">
-<li><p>Notable package changes:</p>
-<ul class="wp-block-list">
-<li><p><strong style="background-color: rgb(255, 255, 255); color: initial;"><a href="https://launchpad.net/ubuntu/+source/skanpage">Skanpage</a></strong><span style="background-color: rgb(255, 255, 255); color: initial;"> replaces Skanlite for scanning, offering multi-page document scanning and straightforward saving to common formats.</span></p></li>
-
-
-
-<li><p><strong style="color: initial;"><a href="https://launchpad.net/ubuntu/+source/rubberband">rubberband-lv2</a></strong><span style="color: initial;"> replaces rubberband-ladspa, providing high-quality time-stretching and pitch-shifting as an LV2 plugin aligned with the broader move away from LADSPA.</span></p></li>
-
-
-
-<li><p>Minimal installation workflow with modular post-install creative tool selection</p></li>
-</ul>
-</li>
-
-
-
-<li><p>Quality-of-life polish across live session behavior, translations, and desktop consistency</p></li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">Minimal Install: Your Studio, Your Way</h2>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-full is-resized"><img loading="lazy" decoding="async" width="1024" height="768" src="https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938.png?wsr" alt="Installation options for Ubuntu Studio, featuring a laptop illustration with two options: 'Ubuntu Studio Desktop (minimized)' and 'Ubuntu Studio Desktop.'" class="wp-image-3532" style="width:315px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938.png 1024w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-300x225.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-768x576.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-800x600.png?crop=1 800w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-600x450.png?crop=1 600w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-400x300.png?crop=1 400w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-200x150.png?crop=1 200w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph">One topic we often see in community discussions is package &#8220;bloat&#8221;: some users want everything preinstalled, while others prefer to start lean and add tools only as needed.</p>
-
-
-
-<p class="wp-block-paragraph">Both approaches are fully supported.</p>
-
-
-
-<p class="wp-block-paragraph">If you want a lightweight starting point, choose the minimal install option during installation. This option has been available since 24.10. You will get the Ubuntu Studio desktop experience, theming, and core configuration, then add only the workflows you want using <a href="https://ubuntustudio.org/ubuntu-studio-installer">Ubuntu Studio Installer</a> (audio, video, graphics, photography, and publishing).</p>
-
-
-
-<p class="wp-block-paragraph">If you want a complete creative workstation out of the box, the full install remains available.</p>
-
-
-
-<p class="wp-block-paragraph">You can also start from any <a href="https://ubuntu.com/download/flavours">official Ubuntu flavor</a> and add Ubuntu Studio workflows without reinstalling.</p>
-
-
-
-<h2 class="wp-block-heading">Special Notes</h2>
-
-
-
-<p class="wp-block-paragraph">The Ubuntu Studio 26.04 LTS disk image (ISO) exceeds 4 GB and cannot be reliably written to some file systems such as FAT32, and may not be readable when burned to a standard DVD.</p>
-
-
-
-<p class="wp-block-paragraph">We recommend using a compatible file system for downloads and <a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu">creating a bootable USB stick</a>.</p>
-
-
-
-<p class="wp-block-paragraph">Minimum installation media requirements:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Dual-Layer DVD or 8 GB USB drive</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Release images are available <a href="https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/">here</a>.</p>
-
-
-
-<h2 class="wp-block-heading">Featured Creative Apps</h2>
-
-
-
-<p class="wp-block-paragraph">Ubuntu Studio 26.04 LTS ships with a strong cross-discipline toolkit for creators working in audio, video, graphics, and publishing.</p>
-
-
-
-<p class="wp-block-paragraph">Highlights include:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Blender 5.0.1</li>
-
-
-
-<li>Kdenlive 25.12.3</li>
-
-
-
-<li>Krita 6.0.1</li>
-
-
-
-<li>GIMP 3.2.2</li>
-
-
-
-<li>Ardour 9.0.0</li>
-
-
-
-<li>OBS Studio 32.1.0</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">For the complete software version list and source package references, see the <a href="https://discourse.ubuntu.com/t/ubuntu-studio-26-04-lts-release-notes/">release notes</a>.</p>
-
-
-
-<p class="wp-block-paragraph">Whether your work is audio engineering, filmmaking, digital painting, motion graphics, podcasting, or publishing, the full Ubuntu Studio stack is ready to support it.</p>
-
-
-
-<h2 class="wp-block-heading">Upgrade Notes</h2>
-
-
-
-<p class="wp-block-paragraph">Upgrades from Ubuntu Studio 25.10 are expected to be enabled shortly after release. Upgrades from Ubuntu Studio 24.04 LTS are expected to be enabled with the release of 26.04.1 LTS in August 2026.</p>
-
-
-
-<p class="wp-block-paragraph">Detailed upgrade instructions are available in the <a href="https://discourse.ubuntu.com/t/ubuntu-studio-26-04-lts-release-notes/">release notes</a>.</p>
-
-
-
-<h2 class="wp-block-heading">Known Issues</h2>
-
-
-
-<p class="wp-block-paragraph">Ubuntu Studio shares KDE Plasma and core Ubuntu components with other Ubuntu flavors. Some known issues overlap with Kubuntu and Ubuntu:</p>
-
-
-
-<ul class="wp-block-list">
-<li><a href="https://wiki.ubuntu.com/ResoluteRaccoon/ReleaseNotes/Kubuntu">Kubuntu release notes</a></li>
-
-
-
-<li><a href="https://documentation.ubuntu.com/release-notes/26.04/">Ubuntu release notes</a></li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Additionally, on first login for a newly created user, a reboot prompt for applying audio-production group configuration is expected behavior (tracked at <a href="https://launchpad.net/bugs/2063899">Launchpad bug #2063899</a>).</p>
-
-
-
-<h2 class="wp-block-heading">Thank You</h2>
-
-
-
-<p class="wp-block-paragraph">Ubuntu Studio is built by a volunteer community of developers, testers, artists, translators, documenters, and users. Thank you to everyone who tested pre-releases, reported bugs, submitted improvements, and helped shape this LTS.</p>
-
-
-
-<h3 class="wp-block-heading">In Memory of Steve Langasek</h3>
-
-
-
-<p class="wp-block-paragraph">We want to give special recognition to Steve Langasek, who passed away in January 2025.</p>
-
-
-
-<p class="wp-block-paragraph">Known to many as vorlon, Steve&#8217;s impact on Ubuntu, Debian, Ubuntu Studio, and the wider Linux community is difficult to overstate. His work, guidance, and support helped countless contributors and projects over many years.</p>
-
-
-
-<p class="wp-block-paragraph">In Ubuntu community tributes, he has been remembered as &#8220;a great mind, mentor and conscience.&#8221; If you have not read it yet, <a href="https://discourse.ubuntu.com/t/remembering-and-thanking-steve-langasek/52665">Remembering and thanking Steve Langasek</a> is a powerful reflection on his legacy.</p>
-
-
-
-<p class="wp-block-paragraph">For this cycle in particular, Steve was responsible for the codename &#8220;Resolute Raccoon,&#8221; as noted during the community codename activity at <a href="https://discourse.ubuntu.com/t/guess-the-release-26-04-r/61559">Guess the release 26.04 &#8211; R</a>. We are honored to carry that name in this release and dedicate this moment of thanks to his memory.</p>
-
-
-
-<h3 class="wp-block-heading">Contributors</h3>
-
-
-
-<p class="wp-block-paragraph">Special thanks this cycle go to many familiar contributors from prior releases, including:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Eylul Dogruel</strong>: artwork and visual design</li>
-
-
-
-<li><strong>Ross Gammon</strong>: upstream Debian development and testing</li>
-
-
-
-<li><strong>Sebastien Ramacher</strong>: upstream Debian development</li>
-
-
-
-<li><strong>Dennis Braun</strong>: upstream Debian development</li>
-
-
-
-<li><strong>Rik Mills</strong>: Plasma and Kubuntu collaboration</li>
-
-
-
-<li><strong>Scarlett Moore</strong>: Plasma and Kubuntu collaboration</li>
-
-
-
-<li><strong>Aaron Rainbolt</strong>: Plasma and Kubuntu collaboration</li>
-
-
-
-<li><strong>Michael Mikowski</strong>: Plasma and Kubuntu collaboration</li>
-
-
-
-<li><strong>Len Ovens</strong>: testing and workflow insight, support and help</li>
-
-
-
-<li><strong>Mauro Gaspari</strong>: tutorials, promotion, and documentation</li>
-
-
-
-<li><strong>Utkarsh Gupta</strong>: Ubuntu Release Team support and collaboration</li>
-
-
-
-<li><strong>Florent &#8220;Skia&#8221; Jacquet</strong>: Ubuntu Release Team support and collaboration</li>
-
-
-
-<li><strong>Michael Hudson-Doyle</strong>: Ubuntu Release Team support and collaboration</li>
-
-
-
-<li><strong>Erich Eickmeyer</strong>: project leadership, packaging, and direction</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">And to everyone in the Ubuntu Studio community: thank you for your trust, your feedback, your patience, and your passion.</p>
-
-
-
-<h2 class="wp-block-heading">Support Ubuntu Studio</h2>
-
-
-
-<p class="wp-block-paragraph">Ubuntu Studio is built by volunteers, but volunteer work still comes with real costs.</p>
-
-
-
-<p class="wp-block-paragraph">As outlined in <a href="https://discourse.ubuntu.com/t/ubuntu-studio-needs-donations/80295">Ubuntu Studio Needs Donations</a>, the project is now covering additional monthly expenses due to a web hosting provider change. This release cycle also included a large amount of development work, including fixing long-standing bugs and rewriting both Ubuntu Studio Installer and Ubuntu Studio Audio Configuration from the ground up.</p>
-
-
-
-<p class="wp-block-paragraph">If Ubuntu Studio helps your creative work, your teaching, your studio, or your community, please consider supporting the project financially. Donations help keep the infrastructure running and make it easier to keep improving the tools, packaging, and user experience that go into each release.</p>
-
-
-
-<p class="wp-block-paragraph">You can support Ubuntu Studio here:</p>
-
-
-
-<p class="wp-block-paragraph"><a href="https://ubuntustudio.org/contribute/">https://ubuntustudio.org/contribute/</a></p>
-
-
-
-<h2 class="wp-block-heading">Get Involved</h2>
-
-
-
-<p class="wp-block-paragraph">Ubuntu Studio is a community project driven by volunteers. If you would like to contribute your time through packaging, documentation, testing, user support, or promotion, we would love your help:</p>
-
-
-
-<p class="wp-block-paragraph"><a href="https://ubuntustudio.org/contribute/">https://ubuntustudio.org/contribute/</a></p>]]></description>
-      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
-    </item>
-    <item>
       <title>Lubuntu 26.04 LTS Released!</title>
       <link>https://lubuntu.me/lubuntu-26-04-lts-released/</link>
       <guid isPermaLink="true">https://lubuntu.me/lubuntu-26-04-lts-released/</guid>
@@ -2814,6 +2432,145 @@ python-certifi for the Python&nbsp;team.</p>
   (merged and&nbsp;uploaded)</li>
 </ul>]]></description>
       <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
+    </item>
+    <item>
+      <title>Think you can’t interpose static binaries with LD_PRELOAD? Think again!</title>
+      <link>https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</link>
+      <guid isPermaLink="true">https://balintreczey.hu/blog/think-you-cant-interpose-static-binaries-with-ld_preload-think-again/</guid>
+      <pubDate>Thu, 20 Nov 2025 20:56:17 GMT</pubDate>
+      <description><![CDATA[<div class="wp-block-media-text alignwide is-vertically-aligned-center" style="grid-template-columns:21% auto"><figure class="wp-block-media-text__media"><img fetchpriority="high" decoding="async" width="4614" height="4001" src="https://balintreczey.hu/blog/wp-content/uploads/2023/04/firebuild-logo.svg" alt="" class="wp-image-853 size-thumbnail"/></figure><div class="wp-block-media-text__content">
+<p>Well, you are right, you can&#8217;t. At least not directly. This is well documented in many projects relying on interposing binaries, like faketime.</p>
+
+
+
+<p> </p>
+</div></div>
+
+
+
+<p></p>
+
+
+
+<p>But what if we could write something that would take a static binary, replace at least the direct syscalls with ones going through libc and load it with the dynamic linker? We are in luck, because the excellent QEMU project has a user space emulator! It can be compiled as a dynamically linked executable, honors LD_PRELOAD and uses the host libc&#8217;s syscall &#8211; well, at least sometimes. Sometimes syscalls just bypass libc.</p>
+
+
+
+<p>The missing piece was a way to make QEMU always take the interposable path and call the host libc instead of using an arch-specifix assembly routine (`safe_syscall_base`) to construct the syscall and going directly to the kernel. Luckily, this turned out to be doable. A small patch later, QEMU gained a switch that forces all syscalls through libc. Suddenly, our static binaries started looking a lot more dynamic!</p>
+
+
+
+<pre class="wp-block-code"><code>$ faketime '2008-12-24 08:15:42'  qemu-x86_64 ./test_static_clock_gettime
+2008-12-24 08:15:42.725404654
+$ file test_static_clock_gettime 
+test_clock_gettime: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, ...</code></pre>
+
+
+
+<p>With this in place, Firebuild can finally wrap even those secretive statically linked tools. QEMU runs them, libc catches their syscalls, <code>LD_PRELOAD</code> injects <code>libfirebuild.so</code>, and from there the usual interposition magic happens. The result: previously uncachable build steps can now be traced, cached, and shortcut just like their dynamic friends.</p>
+
+
+
+<p>There is one more problem though. Why would the static binaries deep in the build be run by QEMU? Firebuild also intercepts the `exec()` calls and now it rewrites them on the fly whenever the executed binary would be statically linked!</p>
+
+
+
+<pre class="wp-block-code"><code>$ firebuild -d comm bash -c ./test_static
+...
+FIREBUILD: fd 9.1: ({ExecedProcess 161077.1, running, "bash -c ./test_static", fds=&#91;0: {FileFD ofd={FileO
+FD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOFD #3 type=FD_PIPE_OUT w} {Pipe #0} close_o
+n_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=FD_PIPE_OUT w} {Pipe #1} close_on_popen=fal
+se cloexec=false}, 3: {FileFD NULL} /* times 2 */]})
+{
+    "&#91;FBBCOMM_TAG]": "exec",
+    "file": "test_static",
+    "// fd": null,
+    "// dirfd": null,
+    "arg": &#91;
+        "./test_static"
+    ],
+    "env": &#91;
+        "SHELL=/bin/bash",
+ ...
+        "FB_SOCKET=/tmp/firebuild.cpMn75/socket",
+        "_=./test_static"
+    ],
+    "with_p": false,
+    "// path": null,
+    "utime_u": 0,
+    "stime_u": 1017
+}
+FIREBUILD: -> proc_ic_msg()  (message_processor.cc:782)  proc={ExecedProcess 161077.1, running, "bash -c 
+./test_static", fds=&#91;0: {FileFD ofd={FileOFD #0 type=FD_PIPE_IN r} cloexec=false}, 1: {FileFD ofd={FileOF
+D #3 type=FD_PIPE_OUT w} {Pipe #0} close_on_popen=false cloexec=false}, 2: {FileFD ofd={FileOFD #4 type=F
+D_PIPE_OUT w} {Pipe #1} close_on_popen=false cloexec=false}, 3: {FileFD NULL} /* times 2 */]}, fd_conn=9.
+1, tag=exec, ack_num=0
+FIREBUILD:   -> send_fbb()  (utils.cc:292)  conn=9.1, ack_num=0 fd_count=0
+Sending message with ancillary fds &#91;]:
+{
+    "&#91;FBBCOMM_TAG]": "rewritten_args",
+    "arg": &#91;
+        "/usr/bin/qemu-user-interposable",
+        "-libc-syscalls",
+        "./test_static"
+    ],
+    "path": "/usr/bin/qemu-user-interposable"
+}
+...
+FIREBUILD: -> accept_ic_conn()  (firebuild.cc:139)  listener=6
+...
+FIREBUILD: fd 9.2: ({Process NULL})
+{
+    "&#91;FBBCOMM_TAG]": "scproc_query",
+    "pid": 161077,
+    "ppid": 161073,
+    "cwd": "/home/rbalint/projects/firebuild/test",
+    "arg": &#91;
+        "/usr/bin/qemu-user-interposable",
+        "-libc-syscalls",
+        "./test_static"
+    ],
+    "env_var": &#91;
+        "CCACHE_DISABLE=1",
+...
+        "SHELL=/bin/bash",
+        "SHLVL=0",
+        "_=./test_static"
+    ],
+    "umask": "0002",
+    "jobserver_fds": &#91;],
+    "// jobserver_fifo": null,
+    "executable": "/usr/bin/qemu-user-interposable",
+    "// executed_path": null,
+    "// original_executed_path": null,
+    "libs": &#91;
+        "/lib/x86_64-linux-gnu/libatomic.so.1",
+        "/lib/x86_64-linux-gnu/libc.so.6",
+        "/lib/x86_64-linux-gnu/libglib-2.0.so.0",
+        "/lib/x86_64-linux-gnu/libm.so.6",
+        "/lib/x86_64-linux-gnu/libpcre2-8.so.0",
+        "/lib64/ld-linux-x86-64.so.2"
+    ],
+    "version": "0.8.5.1"
+}
+</code></pre>
+
+
+
+<p>The QEMU patch is <a href="https://lists.gnu.org/archive/html/qemu-devel/2025-11/msg02559.html">forwarded to qemu-devel</a>. If it lands, anyone using QEMU user-mode emulation could benefit — not just Firebuild.</p>
+
+
+
+<p>For Firebuild users, though, the impact is immediate. Toolchains that mix dynamic and static helpers? Cross-builds that pull in odd little statically linked utilities? Previously “invisible” steps in your builds? All now fair game for caching.</p>
+
+
+
+<p><a href="https://github.com/firebuild/firebuild/releases/tag/v0.8.5">Firebuild 0.8.5</a> ships this new capability out of the box. Just update, make sure you’re using a patched QEMU, and enjoy the feeling of watching even static binaries fall neatly into place in your cached build graph. Ubuntu users can get the prebuilt patched QEMU packages from the <a href="https://launchpad.net/~firebuild/+archive/ubuntu/stable">Firebuild PPA</a> already. </p>
+
+
+
+<p>Static binaries, welcome to the party!</p>]]></description>
+      <source url="https://balintreczey.hu/blog/tag/ubuntu/feed/">Balint Reczey</source>
     </item>
     <item>
       <title>It's NOT always DNS.</title>
@@ -6347,29 +6104,6 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
     </item>
     <item>
-      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
-      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
-      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
-      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
-<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
-<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
-<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
-<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
-<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
-<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
-<blockquote>
-<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
-</blockquote>
-<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
-<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
-We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
-So, please sync with this change (and sorry :)).</p>
-<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
-<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
-      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
-    </item>
-    <item>
       <title>Rise and fall of libclamav</title>
       <link>https://skitterman.wordpress.com/2019/01/31/rise-and-fall-of-libclamav/</link>
       <guid isPermaLink="true">https://skitterman.wordpress.com/2019/01/31/rise-and-fall-of-libclamav/</guid>
@@ -6759,6 +6493,825 @@ More to come about <b>ubuntu-archive-assistant</b>. There are other subcommands 
 <a class="twitter-timeline" href="https://twitter.com/flisol_bogota?ref_src=twsrc%5Etfw" data-link-color="#E95F28">Tweets by flisol_bogota</a> </p>
 <p><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fjhosman.com%2Fen%2Flocoteams%2Fflisol-bogota-2018%2F&amp;linkname=Flisol%20Bogot%C3%A1%202018" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fjhosman.com%2Fen%2Flocoteams%2Fflisol-bogota-2018%2F&amp;linkname=Flisol%20Bogot%C3%A1%202018" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_tumblr" href="https://www.addtoany.com/add_to/tumblr?linkurl=https%3A%2F%2Fjhosman.com%2Fen%2Flocoteams%2Fflisol-bogota-2018%2F&amp;linkname=Flisol%20Bogot%C3%A1%202018" title="Tumblr" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=https%3A%2F%2Fjhosman.com%2Fen%2Flocoteams%2Fflisol-bogota-2018%2F&amp;linkname=Flisol%20Bogot%C3%A1%202018" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share#url=https%3A%2F%2Fjhosman.com%2Fen%2Flocoteams%2Fflisol-bogota-2018%2F&#038;title=Flisol%20Bogot%C3%A1%202018" data-a2a-url="https://jhosman.com/en/locoteams/flisol-bogota-2018/" data-a2a-title="Flisol Bogotá 2018"></a></p>]]></description>
       <source url="http://feeds.feedburner.com/Jhosmanenglish">Jhosman Lizarazo</source>
+    </item>
+    <item>
+      <title>Debugging the debugger</title>
+      <link>https://chriscoulson.me.uk/blog/?p=295</link>
+      <guid isPermaLink="true">https://chriscoulson.me.uk/blog/?p=295</guid>
+      <pubDate>Wed, 02 May 2018 21:02:46 GMT</pubDate>
+      <description><![CDATA[<p>I use gdb quite often, but until recently I&#8217;ve never really needed to understand how it works or debug it before. I thought I&#8217;d document a recent issue I decided to take a look at &#8211; perhaps someone else will find it interesting or useful.</p>
+<p>We run the rust testsuite when building rustc packages in Ubuntu. When preparing updates to rust 1.25 recently for Ubuntu 18.04 LTS, I hit a bunch of test failures on armhf which all looked very similar. Here&#8217;s an example test failure:</p>
+<pre><code>---- [debuginfo-gdb] debuginfo/borrowed-c-style-enum.rs stdout ----
+
+NOTE: compiletest thinks it is using GDB with native rust support
+executing "/&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/stage2/bin/rustc" "/&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/src/test/debuginfo/borrowed-c-style-enum.rs" "-L" "/&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/test/debuginfo" "--target=armv7-unknown-linux-gnueabihf" "-C" "prefer-dynamic" "-o" "/&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/test/debuginfo/borrowed-c-style-enum.stage2-armv7-unknown-linux-gnueabihf" "-Crpath" "-Zmiri" "-Zunstable-options" "-Lnative=/&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/native/rust-test-helpers" "-g" "-L" "/&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/test/debuginfo/borrowed-c-style-enum.stage2-armv7-unknown-linux-gnueabihf.gdb.aux"
+------stdout------------------------------
+
+------stderr------------------------------
+
+------------------------------------------
+NOTE: compiletest thinks it is using GDB version 8001000
+executing "/usr/bin/gdb" "-quiet" "-batch" "-nx" "-command=/&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/test/debuginfo/borrowed-c-style-enum.debugger.script"
+------stdout------------------------------
+GNU gdb (Ubuntu 8.1-0ubuntu3) 8.1.0.20180409-git
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+&lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+Find the GDB manual and other documentation resources online at:
+&lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Breakpoint 1 at 0xcc4: file /&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/src/test/debuginfo/borrowed-c-style-enum.rs, line 61.
+
+Program received signal SIGSEGV, Segmentation fault.
+0xf77c9f4e in ?? () from /lib/ld-linux-armhf.so.3
+
+------stderr------------------------------
+/&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/test/debuginfo/borrowed-c-style-enum.debugger.script:10: Error in sourced command file:
+No symbol 'the_a_ref' in current context
+
+------------------------------------------
+
+error: line not found in debugger output: $1 = borrowed_c_style_enum::ABC::TheA
+status: exit code: 0
+command: "/usr/bin/gdb" "-quiet" "-batch" "-nx" "-command=/&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/test/debuginfo/borrowed-c-style-enum.debugger.script"
+stdout:
+------------------------------------------
+GNU gdb (Ubuntu 8.1-0ubuntu3) 8.1.0.20180409-git
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+&lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+Find the GDB manual and other documentation resources online at:
+&lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Breakpoint 1 at 0xcc4: file /&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/src/test/debuginfo/borrowed-c-style-enum.rs, line 61.
+
+Program received signal SIGSEGV, Segmentation fault.
+0xf77c9f4e in ?? () from /lib/ld-linux-armhf.so.3
+
+------------------------------------------
+stderr:
+------------------------------------------
+/&lt;&lt;BUILDDIR&gt;&gt;/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/test/debuginfo/borrowed-c-style-enum.debugger.script:10: Error in sourced command file:
+No symbol 'the_a_ref' in current context
+
+------------------------------------------
+
+thread '[debuginfo-gdb] debuginfo/borrowed-c-style-enum.rs' panicked at 'explicit panic', tools/compiletest/src/runtest.rs:2891:9
+note: Run with `RUST_BACKTRACE=1` for a backtrace.
+</code></pre>
+<p>The failing tests are all running some commands in gdb, and the inferior (tracee) is crashing inside the dynamic loader (/lib/ld-linux-armhf.so.3) before running any rust code.</p>
+<p>I managed to recreate this test failure on an armhf box, but when I installed the debug symbols for the dynamic loader (contained in the libc6-dbg package) so that I could attempt to debug these crashes, the failing tests all started to pass.</p>
+<p>A quick search on the internet shows that I&#8217;m not the first person to hit this issue &#8211; for example, <a href="https://launchpad.net/bugs/1576432">this bug</a> reported in April 2016. According to the comments, the workaround is the same &#8211; installing the debug symbols for the dynamic loader (by installing the libc6-dbg package). This obviously isn&#8217;t right and I don&#8217;t particularly like walking away from something like this without understanding it, so I decided to spend some time trying to figure out what is going on.</p>
+<p>This first thing I did was to load the missing debug symbols manually in gdb after hitting the crash, in order to hopefully get a useful backtrace:</p>
+<pre><code>$ gdb build/armv7-unknown-linux-gnueabihf/test/debuginfo/borrowed-c-style-enum.stage2-armv7-unknown-linux-gnueabihf
+...
+(gdb) run                                           
+Starting program: /home/ubuntu/src/rustc/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/test/debuginfo/borrowed-c-style-enum.stage2-armv7-unknown-linux-gnueabihf
+
+Program received signal SIGSEGV, Segmentation fault.
+0xf77c9f4e in ?? () from /lib/ld-linux-armhf.so.3
+(gdb) info sharedlibrary
+From        To          Syms Read   Shared Object Library                                                
+0xf77c7a40  0xf77dadd0  Yes (*)     /lib/ld-linux-armhf.so.3                                             
+0xf771ce90  0xf778e288  No          /home/ubuntu/src/rustc/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/test/debuginfo/../../stage2/lib/rustlib/armv7-unknown-linux-gnueabihf/lib/libstd-42d13165275d0302.so
+0xf76c91f0  0xf76d394c  No          /lib/arm-linux-gnueabihf/libgcc_s.so.1
+0xf75dad80  0xf7687a90  No          /lib/arm-linux-gnueabihf/libc.so.6
+0xf75b1a14  0xf75b2410  No          /lib/arm-linux-gnueabihf/libdl.so.2
+0xf759c810  0xf759edf0  No          /lib/arm-linux-gnueabihf/librt.so.1
+0xf757a210  0xf7585214  No          /lib/arm-linux-gnueabihf/libpthread.so.0
+(*): Shared library is missing debugging information.
+(gdb) add-symbol-file ~/libc6-syms/usr/lib/debug/lib/arm-linux-gnueabihf/ld-2.27.so 0xf77c7a40
+add symbol table from file "/home/ubuntu/libc6-syms/usr/lib/debug/lib/arm-linux-gnueabihf/ld-2.27.so" at
+        .text_addr = 0xf77c7a40
+(y or n) y
+Reading symbols from /home/ubuntu/libc6-syms/usr/lib/debug/lib/arm-linux-gnueabihf/ld-2.27.so...done.
+(gdb) bt full
+#0  dl_main (phdr=&lt;optimized out&gt;, phnum=&lt;optimized out&gt;, user_entry=&lt;optimized out&gt;, auxv=&lt;optimized out&gt;) at rtld.c:2275
+        cnt = 1
+        afct = 0x0
+        head = &lt;optimized out&gt;
+        ph = &lt;optimized out&gt;
+        mode = &lt;optimized out&gt;
+        main_map = &lt;optimized out&gt;
+        file_size = 4294899100
+        file = &lt;optimized out&gt;
+        has_interp = &lt;optimized out&gt;
+        i = &lt;optimized out&gt;
+        prelinked = &lt;optimized out&gt;
+        rtld_is_main = &lt;optimized out&gt;
+        tcbp = &lt;optimized out&gt;
+        __PRETTY_FUNCTION__ = &lt;error reading variable __PRETTY_FUNCTION__ (Cannot access memory at address 0x15810)&gt;
+        first_preload = &lt;optimized out&gt;
+        r = &lt;optimized out&gt;
+        rtld_ehdr = &lt;optimized out&gt;
+        rtld_phdr = &lt;optimized out&gt;
+        cnt = &lt;optimized out&gt;
+        need_security_init = &lt;optimized out&gt;
+        count_modids = &lt;optimized out&gt;
+        preloads = &lt;optimized out&gt;
+        npreloads = &lt;optimized out&gt;
+        preload_file = &lt;error reading variable preload_file (Cannot access memory at address 0x157fc)&gt;
+        rtld_multiple_ref = &lt;optimized out&gt;
+        was_tls_init_tp_called = &lt;optimized out&gt;&lt;/details&gt;
+#1  0xf77d76d0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0xfffef6b1, dl_main=0xf77c872d &lt;dl_main&gt;) at ../elf/dl-sysdep.c:253
+        phdr = &lt;optimized out&gt;
+        phnum = &lt;optimized out&gt;
+        user_entry = 4197241
+        av = &lt;optimized out&gt;
+#2  0xf77c8260 in _dl_start_final (arg=0xfffef6b1) at rtld.c:414
+        start_addr = &lt;optimized out&gt;
+        start_addr = &lt;optimized out&gt;
+#3  _dl_start (arg=0xfffef6b1) at rtld.c:521
+        entry = &lt;optimized out&gt;
+#4  0xf77c7b90 in ?? () from /lib/ld-linux-armhf.so.3
+        library_path = &lt;error reading variable library_path (Cannot access memory at address 0x28920)&gt;
+        version_info = &lt;error reading variable version_info (Cannot access memory at address 0x28918)&gt;
+        any_debug = &lt;error reading variable any_debug (Cannot access memory at address 0x28914)&gt;
+        _dl_rtld_libname = &lt;error reading variable _dl_rtld_libname (Cannot access memory at address 0x298a8)&gt;
+        _dl_rtld_libname2 = &lt;error reading variable _dl_rtld_libname2 (Cannot access memory at address 0x298b4)&gt;
+        tls_init_tp_called = &lt;error reading variable tls_init_tp_called (Cannot access memory at address 0x29898)&gt;
+        audit_list = &lt;error reading variable audit_list (Cannot access memory at address 0x298a4)&gt;
+        preloadlist = &lt;error reading variable preloadlist (Cannot access memory at address 0x2891c)&gt;
+        _dl_skip_args = &lt;error reading variable _dl_skip_args (Cannot access memory at address 0x2994c)&gt;
+        audit_list_string = &lt;error reading variable audit_list_string (Cannot access memory at address 0x29968)&gt;
+        __stack_chk_guard = &lt;error reading variable __stack_chk_guard (Cannot access memory at address 0x28968)&gt;
+        _rtld_global = &lt;error reading variable _rtld_global (Cannot access memory at address 0x29060)&gt;
+        _rtld_global_ro = &lt;error reading variable _rtld_global_ro (Cannot access memory at address 0x28970)&gt;
+        _dl_argc = &lt;error reading variable _dl_argc (Cannot access memory at address 0x28910)&gt;
+        __GI__dl_argv = &lt;error reading variable __GI__dl_argv (Cannot access memory at address 0x29894)&gt;
+        __pointer_chk_guard_local = &lt;error reading variable __pointer_chk_guard_local (Cannot access memory at address 0x28964)&gt;
+</code></pre>
+<p>You can grab the glibc source and see that the dynamic loader ends up here in elf/rtld.c:</p>
+<pre><code>if (__glibc_unlikely (GLRO(dl_naudit) &gt; 0))
+  {
+    struct link_map *head = GL(dl_ns)[LM_ID_BASE]._ns_loaded;
+    /* Do not call the functions for any auditing object.  */
+    if (head-&gt;l_auditing == 0)
+      {
+        struct audit_ifaces *afct = GLRO(dl_audit);
+        for (unsigned int cnt = 0; cnt &lt; GLRO(dl_naudit); ++cnt)
+          {
+            if (afct-&gt;activity != NULL) // ##CRASHES HERE##
+              afct-&gt;activity (&amp;head-&gt;l_audit[cnt].cookie, LA_ACT_CONSISTENT);
+
+            afct = afct-&gt;next;
+          }
+      }
+  }
+</code></pre>
+<p>The reason for the crash is that <code>afct</code> is NULL:</p>
+<pre><code>(gdb) p $_siginfo
+$1 = {si_signo = 11, si_errno = 0, si_code = 1, _sifields = {_pad = {0, 56, 19628232, 19628288, -156661788, 0, 80, 19811416, -156663808, -157316581, 104, 1073741824, 19811416, 96, 19811408, 80, -156661788, 14, 
+      19551104, 96, 104, 13358248, 19551584, 19552160, 19552232, 19811488, 32, 128, 64}, _kill = {si_pid = 0, si_uid = 56}, _timer = {si_tid = 0, si_overrun = 56, si_sigval = {sival_int = 19628232, 
+        sival_ptr = 0x12b80c8}}, _rt = {si_pid = 0, si_uid = 56, si_sigval = {sival_int = 19628232, sival_ptr = 0x12b80c8}}, _sigchld = {si_pid = 0, si_uid = 56, si_status = 19628232, si_utime = 19628288, 
+      si_stime = -156661788}, _sigfault = {si_addr = 0x0}, _sigpoll = {si_band = 0, si_fd = 56}}}
+(gdb) p afct
+$2 = (struct audit_ifaces *) 0x0
+</code></pre>
+<p>A quick look through the dynamic loader code shows that this condition should be impossible to hit.</p>
+<p>As the crash doesn&#8217;t happen with debug symbols, I thought I would attempt to debug it without the symbols. First of all, I set a breakpoint at the start of <code>dl_main</code> by specifying it at offset 0xcec in the <code>.text</code> section:</p>
+<pre><code>$ gdb build/armv7-unknown-linux-gnueabihf/test/debuginfo/borrowed-c-style-enum.stage2-armv7-unknown-linux-gnueabihf
+...
+(gdb) starti
+Starting program: /home/ubuntu/src/rustc/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/test/debuginfo/borrowed-c-style-enum.stage2-armv7-unknown-linux-gnueabihf
+
+Program stopped.
+0xf77c7b80 in ?? () from /lib/ld-linux-armhf.so.3
+(gdb) info sharedlibrary
+From        To          Syms Read   Shared Object Library
+0xf77c7a40  0xf77dadd0  Yes (*)     /lib/ld-linux-armhf.so.3
+(*): Shared library is missing debugging information.
+(gdb) break *0xf77c872c
+Breakpoint 1 at 0xf77c872c
+(gdb) cont
+Continuing.
+
+Program received signal SIGSEGV, Segmentation fault.
+0xf77da458 in ?? () from /lib/ld-linux-armhf.so.3
+</code></pre>
+<p>Huh? It&#8217;s now crashed at a different place, without hitting our breakpoint at the start of <code>dl_main</code>. Loading the debug symbols again shows us where:</p>
+<pre><code>(gdb) add-symbol-file ~/libc6-syms/usr/lib/debug/lib/arm-linux-gnueabihf/ld-2.27.so 0xf77c7a40
+add symbol table from file "/home/ubuntu/libc6-syms/usr/lib/debug/lib/arm-linux-gnueabihf/ld-2.27.so" at
+        .text_addr = 0xf77c7a40
+(y or n) y
+Reading symbols from /home/ubuntu/libc6-syms/usr/lib/debug/lib/arm-linux-gnueabihf/ld-2.27.so...done.
+(gdb) bt
+#0  ?? () at ../sysdeps/arm/armv7/multiarch/memcpy_impl.S:654 from /lib/ld-linux-armhf.so.3
+#1  0xf77c871e in handle_ld_preload (preloadlist=&lt;optimized out&gt;, main_map=0x0) at rtld.c:848
+#2  0x00000000 in ?? ()
+Backtrace stopped: previous frame identical to this frame (corrupt stack?)
+</code></pre>
+<p>This doesn&#8217;t make much sense, but the fact that setting a breakpoint has altered the program flow is our first clue.</p>
+<p>On Linux, gdb interacts with the inferior using the <a href="http://man7.org/linux/man-pages/man2/ptrace.2.html">ptrace</a> system call. The next thing I wanted to try was running gdb in <a href="https://linux.die.net/man/1/strace">strace</a> in order to capture the ptrace syscalls, so that I could compare differences afterwards and see if I could find any more clues.</p>
+<p>I created the following simple gdb command file:</p>
+<pre><code>file /home/ubuntu/src/rustc/rustc-1.25.0+dfsg1+llvm/build/armv7-unknown-linux-gnueabihf/test/debuginfo/borrowed-c-style-enum.stage2-armv7-unknown-linux-gnueabihf
+run
+quit
+</code></pre>
+<p>I then ran gdb with this file inside strace, with the symbols for the dynamic loader installed. Here&#8217;s the log up until the point at which gdb calls <code>PTRACE_CONT</code>:</p>
+<pre><code>$ strace -t -eptrace gdb -quiet -batch -nx -command=~/test.script
+13:08:35 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=21136, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+...
+13:08:35 ptrace(PTRACE_GETREGS, 21137, NULL, 0xffd6afec) = 0
+13:08:35 ptrace(PTRACE_GETSIGINFO, 21137, NULL, {si_signo=SIGTRAP, si_code=SI_USER, si_pid=21137, si_uid=1000}) = 0
+13:08:35 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=21137, si_uid=1000, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+13:08:35 ptrace(PTRACE_CONT, 21137, 0x1, SIG_0) = 0
+13:08:35 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=21137, si_uid=1000, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+13:08:35 ptrace(PTRACE_GETREGS, 21137, NULL, 0xffd6afec) = 0
+13:08:35 ptrace(PTRACE_GETSIGINFO, 21137, NULL, {si_signo=SIGTRAP, si_code=SI_USER, si_pid=21137, si_uid=1000}) = 0
+13:08:35 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=21138, si_uid=1000, si_status=SIGSTOP, si_utime=0, si_stime=0} ---
+13:08:35 ptrace(PTRACE_SETOPTIONS, 21138, NULL, PTRACE_O_TRACESYSGOOD) = 0
+13:08:35 ptrace(PTRACE_SETOPTIONS, 21138, NULL, PTRACE_O_TRACEFORK) = 0
+13:08:35 ptrace(PTRACE_SETOPTIONS, 21138, NULL, PTRACE_O_TRACEFORK|PTRACE_O_TRACEVFORKDONE) = 0
+13:08:35 ptrace(PTRACE_CONT, 21138, NULL, SIG_0) = 0
+13:08:35 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=21138, si_uid=1000, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+13:08:35 ptrace(PTRACE_GETEVENTMSG, 21138, NULL, [21139]) = 0
+13:08:35 ptrace(PTRACE_KILL, 21139)     = 0
+13:08:35 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_KILLED, si_pid=21139, si_uid=1000, si_status=SIGKILL, si_utime=0, si_stime=0} ---
+13:08:35 ptrace(PTRACE_SETOPTIONS, 21138, NULL, PTRACE_O_EXITKILL) = 0
+13:08:35 ptrace(PTRACE_KILL, 21138)     = 0
+13:08:35 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=21138, si_uid=1000, si_status=SIGCHLD, si_utime=0, si_stime=0} ---
+13:08:35 ptrace(PTRACE_KILL, 21138)     = 0
+13:08:35 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_KILLED, si_pid=21138, si_uid=1000, si_status=SIGKILL, si_utime=0, si_stime=0} ---
+13:08:35 ptrace(PTRACE_SETOPTIONS, 21137, NULL, PTRACE_O_TRACESYSGOOD|PTRACE_O_TRACEFORK|PTRACE_O_TRACEVFORK|PTRACE_O_TRACECLONE|PTRACE_O_TRACEEXEC|PTRACE_O_TRACEVFORKDONE|PTRACE_O_EXITKILL) = 0
+13:08:35 ptrace(PTRACE_GETREGSET, 21137, NT_PRSTATUS, [{iov_base=0xffd6b3b4, iov_len=72}]) = 0
+13:08:35 ptrace(PTRACE_GETVFPREGS, 21137, NULL, 0xffd6b298) = 0
+13:08:35 ptrace(PTRACE_GETREGSET, 21137, NT_PRSTATUS, [{iov_base=0xffd6b36c, iov_len=72}]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0x411efc, [NULL]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0x411efc, [NULL]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77c9a44, [0x4c18bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77c9a44, [0x4c18bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77c9a44, [0x4c18bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77c9a44, [0x4c18bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77c9a44, [0x4c18bf00]) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77c9a44, 0x4c18de01) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77c9ef8, [0xf00cbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77c9ef8, [0xf00cbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77c9ef8, [0xf00cbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77c9ef8, [0xf00cbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77c9ef8, [0xf00cbf00]) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77c9ef8, 0xf00cde01) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb5b8, [0x603cbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb5b8, [0x603cbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb5b8, [0x603cbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb5b8, [0x603cbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb5b8, [0x603cbf00]) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77cb5b8, 0x603cde01) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb220, [0x4639bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb220, [0x4639bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb220, [0x4639bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb220, [0x4639bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb220, [0x4639bf00]) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77cb220, 0x4639de01) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5310, [0xbf00e71c]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5310, [0xbf00e71c]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5310, [0xbf00e71c]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5310, [0xbf00e71c]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5310, [0xbf00e71c]) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77d5310, 0xde01e71c) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5bb0, [0x6d7bbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5bb0, [0x6d7bbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5bb0, [0x6d7bbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5bb0, [0x6d7bbf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5bb0, [0x6d7bbf00]) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77d5bb0, 0x6d7bde01) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5d90, [0xe681bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5d90, [0xe681bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5d90, [0xe681bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5d90, [0xe681bf00]) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5d90, [0xe681bf00]) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77d5d90, 0xe681de01) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77c9a44, [0x4c18de01]) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77c9a44, 0x4c18bf00) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb5b8, [0x603cde01]) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77cb5b8, 0x603cbf00) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77cb220, [0x4639de01]) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77cb220, 0x4639bf00) = 0
+13:08:35 ptrace(PTRACE_PEEKTEXT, 21137, 0xf77d5bb0, [0x6d7bde01]) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77d5bb0, 0x6d7bbf00) = 0
+13:08:35 ptrace(PTRACE_CONT, 21137, 0x1, SIG_0) = 0
+</code></pre>
+<p>First of all, notice that there are several <code>PTRACE_POKEDATA</code> calls. These are used by gdb to write to memory locations in the process that we&#8217;re debugging, eg, to set breakpoints. For more information about how breakpoints work in gdb, <a href="https://blog.0x972.info/?d=2014/11/13/10/40/50-how-does-a-debugger-work">this</a> blog post has some good information. Basically, gdb writes an invalid instruction to the breakpoint location and this causes a <code>SIGTRAP</code> when executed, which is intercepted by gdb. When you continue over the breakpoint, gdb writes the original instruction back, single-steps over it, re-writes the invalid instruction and then continues execution.</p>
+<p>This is an obvious way in which gdb can interfere with our process and make it crash, so I focused on these calls. I&#8217;ve filtered them out below:</p>
+<pre><code>13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77c9a44, 0x4c18de01) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77c9ef8, 0xf00cde01) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77cb5b8, 0x603cde01) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77cb220, 0x4639de01) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77d5310, 0xde01e71c) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77d5bb0, 0x6d7bde01) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77d5d90, 0xe681de01) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77c9a44, 0x4c18bf00) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77cb5b8, 0x603cbf00) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77cb220, 0x4639bf00) = 0
+13:08:35 ptrace(PTRACE_POKEDATA, 21137, 0xf77d5bb0, 0x6d7bbf00) = 0
+</code></pre>
+<p>Notice that the first 7 of these write the same 2-byte sequence &#8211; 0xde01. These are breakpoints in code that is running in Thumb mode (see <code>arm_linux_thumb_le_breakpoint</code> in gdb/arm-linux-tdep.c in the gdb source code). 0xde01 in Thumb mode is an undefined instruction.</p>
+<p>(Note that the write to 0xf77d5310 is actually a breakpoint at 0xf77d5312, as 0xde01 appears in the 2 higher order bytes and this is little-endian).</p>
+<p>We aren&#8217;t inserting any breakpoints ourselves &#8211; these breakpoints are set automatically by gdb to monitor various events in the dynamic loader during startup. This is something I wasn&#8217;t aware of before debugging this.</p>
+<p>It may be useful to know how gdb determines the addresses on which to set breakpoints at startup. The dynamic loader exports various events as SystemTap probes, and data about these is stored in the <code>.note.stapsdt</code> ELF section. We can inspect this using <code>readelf</code>:</p>
+<pre><code>$ readelf -n /lib/ld-linux-armhf.so.3
+
+Displaying notes found in: .note.gnu.build-id                                                            
+  Owner                 Data size       Description                          
+  GNU                  0x00000014       NT_GNU_BUILD_ID (unique build ID bitstring)                      
+    Build ID: 3f3b9b4bfea2654f2cedf6db2d120b4e3a39ea7e                      
+
+Displaying notes found in: .note.stapsdt                                                                 
+  Owner                 Data size       Description 
+  stapsdt              0x00000032       NT_STAPSDT (SystemTap probe descriptors)                         
+    Provider: rtld                                           
+    Name: init_start                                
+    Location: 0x00002a44, Base: 0x00017b9c, Semaphore: 0x00000000                                        
+    Arguments: -4@.L1204 4@[r7, #52]                      
+  stapsdt              0x0000002e       NT_STAPSDT (SystemTap probe descriptors)                         
+    Provider: rtld                                  
+    Name: init_complete                                              
+    Location: 0x00002ef8, Base: 0x00017b9c, Semaphore: 0x00000000                                        
+    Arguments: -4@.L1207 4@r4                                           
+  stapsdt              0x0000002e       NT_STAPSDT (SystemTap probe descriptors)                         
+    Provider: rtld
+    Name: map_failed
+    Location: 0x00004220, Base: 0x00017b9c, Semaphore: 0x00000000
+    Arguments: -4@[sp, #20] 4@r5
+  stapsdt              0x00000035       NT_STAPSDT (SystemTap probe descriptors)
+    Provider: rtld
+    Name: map_start
+    Location: 0x000045b8, Base: 0x00017b9c, Semaphore: 0x00000000
+    Arguments: -4@[r7, #252] 4@[r7, #72]
+  stapsdt              0x0000003c       NT_STAPSDT (SystemTap probe descriptors)
+    Provider: rtld
+    Name: map_complete
+    Location: 0x0000e020, Base: 0x00017b9c, Semaphore: 0x00000000
+    Arguments: -4@[fp, #20] 4@[r7, #36] 4@r4
+  stapsdt              0x00000036       NT_STAPSDT (SystemTap probe descriptors)
+    Provider: rtld
+    Name: reloc_start
+    Location: 0x0000e09e, Base: 0x00017b9c, Semaphore: 0x00000000
+    Arguments: -4@[fp, #20] 4@[r7, #36]
+  stapsdt              0x0000003e       NT_STAPSDT (SystemTap probe descriptors)
+    Provider: rtld
+    Name: reloc_complete
+    Location: 0x0000e312, Base: 0x00017b9c, Semaphore: 0x00000000
+    Arguments: -4@[fp, #20] 4@[r7, #36] 4@r4
+  stapsdt              0x00000037       NT_STAPSDT (SystemTap probe descriptors)
+    Provider: rtld
+    Name: unmap_start
+    Location: 0x0000ebb0, Base: 0x00017b9c, Semaphore: 0x00000000
+    Arguments: -4@[r7, #104] 4@[r7, #80]
+  stapsdt              0x0000003a       NT_STAPSDT (SystemTap probe descriptors)
+    Provider: rtld
+    Name: unmap_complete
+    Location: 0x0000ed90, Base: 0x00017b9c, Semaphore: 0x00000000
+    Arguments: -4@[r7, #104] 4@[r7, #80]
+  stapsdt              0x00000029       NT_STAPSDT (SystemTap probe descriptors)
+    Provider: rtld
+    Name: setjmp
+    Location: 0x0001201c, Base: 0x00017b9c, Semaphore: 0x00000000
+    Arguments: 4@r0 -4@r1 4@r14
+  stapsdt              0x00000029       NT_STAPSDT (SystemTap probe descriptors)
+    Provider: rtld
+    Name: longjmp
+    Location: 0x00012088, Base: 0x00017b9c, Semaphore: 0x00000000
+    Arguments: 4@r0 -4@r1 4@r4
+  stapsdt              0x00000031       NT_STAPSDT (SystemTap probe descriptors)
+    Provider: rtld
+    Name: longjmp_target
+    Location: 0x000120ba, Base: 0x00017b9c, Semaphore: 0x00000000
+    Arguments: 4@r0 -4@r1 4@r14
+</code></pre>
+<p>GDB uses this information to map events to breakpoint addresses. You can read a bit more about gdb&#8217;s linker interface <a href="https://sourceware.org/gdb/wiki/LinkerInterface">here</a>, and more about userspace SystemTap probes <a href="https://sourceware.org/systemtap/wiki/UserSpaceProbeImplementation">here</a>.</p>
+<p>With a base address of 0xf77c7000, we can look at the <code>PTRACE_POKEDATA</code> calls and see that the addresses map to these probes:</p>
+<ul>
+<li>0xf77c9a44 => <code>init_start</code></li>
+<li>0xf77c9ef8 => <code>init_complete</code></li>
+<li>0xf77cb5b8 => <code>map_start</code></li>
+<li>0xf77cb220 => <code>map_failed</code></li>
+<li>0xf77d5312 => <code>reloc_complete</code></li>
+<li>0xf77d5bb0 => <code>unmap_start</code></li>
+<li>0xf77d5d90 => <code>unmap_complete</code></li>
+</ul>
+<p>This is consistent with the <code>probe_info</code> array in gdb/solib-svr4.c in the gdb source code.</p>
+<p>I then ran gdb inside strace again, this time without the symbols for the dynamic loader installed. Here&#8217;s the log up until the point at which the inferior process crashes:</p>
+<pre><code>$ strace -t -eptrace gdb -quiet -batch -nx -command=~/test.script
+13:01:50 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=21098, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+...
+13:01:50 ptrace(PTRACE_GETREGS, 21099, NULL, 0xffb84a9c) = 0                                                                                                                                                       
+13:01:50 ptrace(PTRACE_GETSIGINFO, 21099, NULL, {si_signo=SIGTRAP, si_code=SI_USER, si_pid=21099, si_uid=1000}) = 0
+13:01:50 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=21099, si_uid=1000, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+13:01:50 ptrace(PTRACE_CONT, 21099, 0x1, SIG_0) = 0                                                      
+13:01:50 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=21099, si_uid=1000, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+13:01:50 ptrace(PTRACE_GETREGS, 21099, NULL, 0xffb84a9c) = 0
+13:01:50 ptrace(PTRACE_GETSIGINFO, 21099, NULL, {si_signo=SIGTRAP, si_code=SI_USER, si_pid=21099, si_uid=1000}) = 0
+13:01:50 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=21100, si_uid=1000, si_status=SIGSTOP, si_utime=0, si_stime=0} ---
+13:01:50 ptrace(PTRACE_SETOPTIONS, 21100, NULL, PTRACE_O_TRACESYSGOOD) = 0
+13:01:50 ptrace(PTRACE_SETOPTIONS, 21100, NULL, PTRACE_O_TRACEFORK) = 0
+13:01:50 ptrace(PTRACE_SETOPTIONS, 21100, NULL, PTRACE_O_TRACEFORK|PTRACE_O_TRACEVFORKDONE) = 0
+13:01:50 ptrace(PTRACE_CONT, 21100, NULL, SIG_0) = 0
+13:01:50 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=21100, si_uid=1000, si_status=SIGTRAP, si_utime=0, si_stime=0} ---
+13:01:50 ptrace(PTRACE_GETEVENTMSG, 21100, NULL, [21101]) = 0
+13:01:50 ptrace(PTRACE_KILL, 21101)     = 0
+13:01:50 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_KILLED, si_pid=21101, si_uid=1000, si_status=SIGKILL, si_utime=0, si_stime=0} ---
+13:01:50 ptrace(PTRACE_SETOPTIONS, 21100, NULL, PTRACE_O_EXITKILL) = 0
+13:01:50 ptrace(PTRACE_KILL, 21100)     = 0
+13:01:50 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=21100, si_uid=1000, si_status=SIGCHLD, si_utime=0, si_stime=0} ---
+13:01:50 ptrace(PTRACE_KILL, 21100)     = 0
+13:01:50 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_KILLED, si_pid=21100, si_uid=1000, si_status=SIGKILL, si_utime=0, si_stime=0} ---
+13:01:50 ptrace(PTRACE_SETOPTIONS, 21099, NULL, PTRACE_O_TRACESYSGOOD|PTRACE_O_TRACEFORK|PTRACE_O_TRACEVFORK|PTRACE_O_TRACECLONE|PTRACE_O_TRACEEXEC|PTRACE_O_TRACEVFORKDONE|PTRACE_O_EXITKILL) = 0
+13:01:50 ptrace(PTRACE_GETREGSET, 21099, NT_PRSTATUS, [{iov_base=0xffb84e64, iov_len=72}]) = 0
+13:01:50 ptrace(PTRACE_GETVFPREGS, 21099, NULL, 0xffb84d48) = 0
+13:01:50 ptrace(PTRACE_GETREGSET, 21099, NT_PRSTATUS, [{iov_base=0xffb84e1c, iov_len=72}]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0x411efc, [NULL]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0x411efc, [NULL]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77c9a44, [0x4c18bf00]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77c9a44, [0x4c18bf00]) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77c9a44, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77c9ef8, [0xf00cbf00]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77c9ef8, [0xf00cbf00]) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77c9ef8, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77cb5b8, [0x603cbf00]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77cb5b8, [0x603cbf00]) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77cb5b8, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77cb220, [0x4639bf00]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77cb220, [0x4639bf00]) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77cb220, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77d5310, [0xbf00e71c]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77d5314, [0x4620e776]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77d5310, [0xbf00e71c]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77d5314, [0x4620e776]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77d5310, [0xbf00e71c]) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77d5310, 0x1f0e71c) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77d5314, [0x4620e776]) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77d5314, 0x4620e7f0) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77d5bb0, [0x6d7bbf00]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77d5bb0, [0x6d7bbf00]) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77d5bb0, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77d5d90, [0xe681bf00]) = 0
+13:01:50 ptrace(PTRACE_PEEKTEXT, 21099, 0xf77d5d90, [0xe681bf00]) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77d5d90, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77c9a44, 0x4c18bf00) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77cb5b8, 0x603cbf00) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77cb220, 0x4639bf00) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77d5bb0, 0x6d7bbf00) = 0
+13:01:50 ptrace(PTRACE_CONT, 21099, 0x1, SIG_0) = 0
+13:01:50 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_TRAPPED, si_pid=21099, si_uid=1000, si_status=SIGSEGV, si_utime=0, si_stime=0} ---
+</code></pre>
+<p>Focusing again on the <code>PTRACE_POKEDATA</code> calls:</p>
+<pre><code>13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77c9a44, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77c9ef8, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77cb5b8, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77cb220, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77d5310, 0x1f0e71c) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77d5314, 0x4620e7f0) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77d5bb0, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77d5d90, 0xe7f001f0) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77c9a44, 0x4c18bf00) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77cb5b8, 0x603cbf00) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77cb220, 0x4639bf00) = 0
+13:01:50 ptrace(PTRACE_POKEDATA, 21099, 0xf77d5bb0, 0x6d7bbf00) = 0
+</code></pre>
+<p>We see writes to the same 7 addresses where breakpoints were set during the first run, but now there&#8217;s a different byte sequence and an extra write. This time, gdb is writing a 4-byte sequence &#8211; 0xe7f001f0 to 6 addresses. These are breakpoints for code running in ARM mode (see <code>eabi_linux_arm_le_breakpoint</code> in gdb/arm-linux-tdep.c in the gdb source code). The 2 writes to 0xf77d5310 and 0xf77d5314 are a single breakpoint at 0xf77d5312 (there are 2 writes because it is not on a 4-byte boundary).</p>
+<p>Checking the ARMv7 reference manual shows that 0xe7f001f0 is an undefined instruction in ARM mode. However, this byte sequence is decoded as the following valid instructions in Thumb mode:</p>
+<pre><code>lsl r0, r6, #7
+b #-16
+</code></pre>
+<p>So, it takes the contents of r6, does a logical shift left by 7, writes it to r0 and then does an unconditional branch backwards by 16 bytes. This is quite likely going to cause our program (in this case, the dynamic loader) to go off the rails and crash with a less than useful stacktrace, which is the behaviour we&#8217;re seeing.</p>
+<h1>Why is this happening?</h1>
+<p>The next step was to figure out why gdb is inserting the ARM breakpoint instruction sequence instead of the Thumb one. To do this, I needed to understand where the breakpoints are written, and grepping the source code suggests the <code>PTRACE_POKEDATA</code> calls happen in <code>inf_ptrace_peek_poke</code> in gdb/inf-ptrace.c (actually, you won&#8217;t find <code>PTRACE_POKEDATA</code> here &#8211; it&#8217;s <code>PT_WRITE_D</code> which is defined in /usr/include/sys/ptrace.h).</p>
+<p>Running gdb inside gdb with the dynamic loader debug symbols installed and setting a breakpoint on <code>inf_ptrace_peek_poke</code> shows me the call stack. Note that I set a breakpoint by line number, as <code>inf_ptrace_peek_poke</code> is inlined and it was the only way I could get the conditional breakpoint to work:</p>
+<pre><code>$ gdb --args gdb --command=~/test.script
+...                                                                                                                                                                
+(gdb) break ./gdb/inf-ptrace.c:578 if writebuf != 0x0                                                                                                                                                              
+Breakpoint 1 at 0x51218: file ./gdb/inf-ptrace.c, line 578.                                                                                                                                                        
+(gdb) run                                                                                                                                                                                                          
+Starting program: /usr/bin/gdb --command=\~/test.script                                                                                                                                                            
+Cannot parse expression `.L1207 4@r4'.                                                                                                                                                                             
+warning: Probes-based dynamic linker interface failed.                                                   
+Reverting to original interface.                                                                                                                                                                                   
+
+[Thread debugging using libthread_db enabled]                                                                                                                                                                      
+Using host libthread_db library "/lib/arm-linux-gnueabihf/libthread_db.so.1".                                                                                                                                      
+GNU gdb (Ubuntu 8.1-0ubuntu3) 8.1.0.20180409-git                                                         
+Copyright (C) 2018 Free Software Foundation, Inc.                                                        
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;                                                                                                                                      
+This is free software: you are free to change and redistribute it.                                                                                                                                                 
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"                                                                                                                                         
+and "show warranty" for details.                                                                                                                                                                                   
+This GDB was configured as "arm-linux-gnueabihf".                                                        
+Type "show configuration" for configuration details.                                                     
+For bug reporting instructions, please see:                                                              
+&lt;http://www.gnu.org/software/gdb/bugs/&gt;.                                                                 
+Find the GDB manual and other documentation resources online at:
+&lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+
+Breakpoint 1, inf_ptrace_xfer_partial (ops=&lt;optimized out&gt;, object=&lt;optimized out&gt;, annex=&lt;optimized out&gt;, readbuf=0x0, writebuf=0x6b29fc &lt;arm_linux_thumb_le_breakpoint&gt;     "\001\336", offset=4152138308, len=2,
+    xfered_len=0xfffeee18) at ./gdb/inf-ptrace.c:578
+578     ./gdb/inf-ptrace.c: No such file or directory.
+(gdb) p/x offset
+$1 = 0xf77c9a44
+(gdb) bt
+#0  inf_ptrace_xfer_partial (ops=&lt;optimized out&gt;, object=&lt;optimized out&gt;, annex=&lt;optimized out&gt;, readbuf=0x0, writebuf=0x6b29fc &lt;arm_linux_thumb_le_breakpoint&gt; "\001\336", offset=4152138308, len=2,
+    xfered_len=0xfffeee18) at ./gdb/inf-ptrace.c:578
+#1  0x00457512 in linux_xfer_partial (ops=0x8306e0, object=&lt;optimized out&gt;, annex=0x0, readbuf=0x0, writebuf=0x6b29fc &lt;arm_linux_thumb_le_breakpoint&gt; "\001\336", offset=4152138308, len=2, xfered_len=0xfffeee18)
+    at ./gdb/linux-nat.c:4280
+#2  0x004576da in linux_nat_xfer_partial (ops=0x8306e0, object=TARGET_OBJECT_MEMORY, annex=&lt;optimized out&gt;, readbuf=0x0, writebuf=0x6b29fc &lt;arm_linux_thumb_le_breakpoint&gt; "\001\336", offset=4152138308, len=2,
+    xfered_len=0xfffeee18) at ./gdb/linux-nat.c:3908
+#3  0x005f64f4 in raw_memory_xfer_partial (ops=ops@entry=0x8306e0, readbuf=readbuf@entry=0x0, writebuf=writebuf@entry=0x6b29fc &lt;arm_linux_thumb_le_breakpoint&gt; "\001\336", memaddr=4152138308, len=len@entry=2,
+    xfered_len=xfered_len@entry=0xfffeee18) at ./gdb/target.c:1064
+#4  0x005f6a98 in target_xfer_partial (ops=ops@entry=0x8306e0, object=object@entry=TARGET_OBJECT_RAW_MEMORY, annex=annex@entry=0x0, readbuf=readbuf@entry=0x0,
+    writebuf=writebuf@entry=0x6b29fc &lt;arm_linux_thumb_le_breakpoint&gt; "\001\336", offset=4152138308, len=&lt;optimized out&gt;, xfered_len=xfered_len@entry=0xfffeee18) at ./gdb/target.c:1298
+#5  0x005f7030 in target_write_partial (xfered_len=0xfffeee18, len=2, offset=&lt;optimized out&gt;, buf=0x6b29fc &lt;arm_linux_thumb_le_breakpoint&gt; "\001\336", annex=0x0, object=TARGET_OBJECT_RAW_MEMORY, ops=0x8306e0)
+    at ./gdb/target.c:1554
+#6  target_write_with_progress (ops=0x8306e0, object=object@entry=TARGET_OBJECT_RAW_MEMORY, annex=annex@entry=0x0, buf=buf@entry=0x6b29fc &lt;arm_linux_thumb_le_breakpoint&gt; "\001\336", offset=4152138308,
+    len=len@entry=2, progress=progress@entry=0x0, baton=baton@entry=0x0) at ./gdb/target.c:1821
+#7  0x005f70d2 in target_write (len=2, offset=2, buf=0x6b29fc &lt;arm_linux_thumb_le_breakpoint&gt; "\001\336", annex=0x0, object=TARGET_OBJECT_RAW_MEMORY, ops=&lt;optimized out&gt;) at ./gdb/target.c:1847
+#8  target_write_raw_memory (memaddr=memaddr@entry=4152138308, myaddr=myaddr@entry=0x6b29fc &lt;arm_linux_thumb_le_breakpoint&gt; "\001\336", len=len@entry=2) at ./gdb/target.c:1473
+#9  0x00590c8e in default_memory_insert_breakpoint (gdbarch=&lt;optimized out&gt;, bp_tgt=0x9236f0) at ./gdb/mem-break.c:66
+#10 0x004de3aa in bkpt_insert_location (bl=0x923698) at ./gdb/breakpoint.c:12525
+#11 0x004e8426 in insert_bp_location (bl=bl@entry=0x923698, tmp_error_stream=tmp_error_stream@entry=0xfffef07c, disabled_breaks=disabled_breaks@entry=0xfffeefec,
+    hw_breakpoint_error=hw_breakpoint_error@entry=0xfffeeff0, hw_bp_error_explained_already=hw_bp_error_explained_already@entry=0xfffeeff4) at ./gdb/breakpoint.c:2553
+#12 0x004e9556 in insert_breakpoint_locations () at ./gdb/breakpoint.c:2977
+#13 update_global_location_list (insert_mode=insert_mode@entry=UGLL_MAY_INSERT) at ./gdb/breakpoint.c:12177
+#14 0x004ea0a0 in update_global_location_list_nothrow (insert_mode=UGLL_MAY_INSERT) at ./gdb/breakpoint.c:12215
+#15 0x004ea484 in create_solib_event_breakpoint_1 (insert_mode=UGLL_MAY_INSERT, address=address@entry=4152138308, gdbarch=gdbarch@entry=0x0) at ./gdb/breakpoint.c:7555
+#16 create_solib_event_breakpoint (gdbarch=gdbarch@entry=0x928fb0, address=address@entry=4152138308) at ./gdb/breakpoint.c:7562
+#17 0x004497bc in svr4_create_probe_breakpoints (objfile=0x933888, probes=0xfffef148, gdbarch=0x928fb0) at ./gdb/solib-svr4.c:2089
+#18 svr4_create_solib_event_breakpoints (gdbarch=0x928fb0, address=&lt;optimized out&gt;) at ./gdb/solib-svr4.c:2173
+#19 0x00449c5c in enable_break (from_tty=&lt;optimized out&gt;, info=&lt;optimized out&gt;) at ./gdb/solib-svr4.c:2465
+#20 svr4_solib_create_inferior_hook (from_tty=&lt;optimized out&gt;) at ./gdb/solib-svr4.c:3057
+#21 0x0056bba6 in post_create_inferior (target=0x801084 &lt;current_target&gt;, from_tty=from_tty@entry=0) at ./gdb/infcmd.c:469
+#22 0x0056c736 in run_command_1 (args=&lt;optimized out&gt;, from_tty=0, run_how=RUN_NORMAL) at ./gdb/infcmd.c:665
+#23 0x00465334 in cmd_func (cmd=&lt;optimized out&gt;, args=&lt;optimized out&gt;, from_tty=&lt;optimized out&gt;) at ./gdb/cli/cli-decode.c:1886
+#24 0x006062a6 in execute_command (p=&lt;optimized out&gt;, p@entry=0x880f10 "run", from_tty=0) at ./gdb/top.c:630
+#25 0x00548760 in command_handler (command=0x880f10 "run") at ./gdb/event-top.c:583
+#26 0x00606a66 in read_command_file (stream=stream@entry=0x874ae0) at ./gdb/top.c:424
+#27 0x004684e2 in script_from_file (stream=stream@entry=0x874ae0, file=file@entry=0xfffef7d0 "~/test.script") at ./gdb/cli/cli-script.c:1592
+#28 0x004639bc in source_script_from_stream (file_to_open=0xfffef7d0 "~/test.script", file=0xfffef7d0 "~/test.script", stream=0x874ae0) at ./gdb/cli/cli-cmds.c:568
+#29 source_script_with_search (file=0xfffef7d0 "~/test.script", from_tty=&lt;optimized out&gt;, search_path=&lt;optimized out&gt;) at ./gdb/cli/cli-cmds.c:604
+#30 0x0058821a in catch_command_errors (command=0x463a89 &lt;source_script(char const*, int)&gt;, arg=0xfffef7d0 "~/test.script", from_tty=1) at ./gdb/main.c:379
+#31 0x00588ea0 in captured_main_1 (context=&lt;optimized out&gt;) at ./gdb/main.c:1125
+#32 captured_main (data=&lt;optimized out&gt;) at ./gdb/main.c:1147
+#33 gdb_main (args=&lt;optimized out&gt;) at ./gdb/main.c:1173
+#34 0x004343ac in main (argc=&lt;optimized out&gt;, argv=&lt;optimized out&gt;) at ./gdb/gdb.c:32
+</code></pre>
+<p>Frame 9 (<code>default_memory_insert_breakpoint</code>) looks like it will probably be interesting to us. Taking a look at what it does:</p>
+<pre><code>int
+default_memory_insert_breakpoint (struct gdbarch *gdbarch,
+                  struct bp_target_info *bp_tgt)
+{
+  CORE_ADDR addr = bp_tgt-&gt;placed_address;
+  const unsigned char *bp;
+  gdb_byte *readbuf;
+  int bplen;
+  int val;
+
+  /* Determine appropriate breakpoint contents and size for this address.  */
+  bp = gdbarch_sw_breakpoint_from_kind (gdbarch, bp_tgt-&gt;kind, &amp;bplen);
+
+  /* Save the memory contents in the shadow_contents buffer and then
+     write the breakpoint instruction.  */
+  readbuf = (gdb_byte *) alloca (bplen);
+  val = target_read_memory (addr, readbuf, bplen);
+  if (val == 0)
+    {
+       ...
+      bp_tgt-&gt;shadow_len = bplen;
+      memcpy (bp_tgt-&gt;shadow_contents, readbuf, bplen);
+
+      val = target_write_raw_memory (addr, bp, bplen);
+    }
+
+  return val;
+}
+</code></pre>
+<p>The call to <code>gdbarch_sw_breakpoint_from_kind</code> appears to return the bytes written for our breakpoint. <code>gdbarch_sw_breakpoint_from_kind</code> delegates to <code>arm_sw_breakpoint_from_kind</code> in gdb/arm-tdep.c. (The <code>gdbarch_</code> functions provides a way for architecture independent code in gdb to call functions specific to the architecture associated with the target). Taking a look at what this does:</p>
+<pre><code>static const gdb_byte *
+arm_sw_breakpoint_from_kind (struct gdbarch *gdbarch, int kind, int *size)
+{
+  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
+
+  switch (kind)
+    {
+    case ARM_BP_KIND_ARM:
+      *size = tdep-&gt;arm_breakpoint_size;
+      return tdep-&gt;arm_breakpoint;
+    case ARM_BP_KIND_THUMB:
+      *size = tdep-&gt;thumb_breakpoint_size;
+      return tdep-&gt;thumb_breakpoint;
+    case ARM_BP_KIND_THUMB2:
+      *size = tdep-&gt;thumb2_breakpoint_size;
+      return tdep-&gt;thumb2_breakpoint;
+    default:
+      gdb_assert_not_reached ("unexpected arm breakpoint kind");
+    }
+}
+</code></pre>
+<p>So, <code>arm_breakpoint_from_kind</code> returns an ARM, Thumb or Thumb2 breakpoint instruction sequence depending on the value of <code>kind</code>. If we switch to frame 9, we should be able to inspect the value of <code>kind</code>:</p>
+<pre><code>(gdb) f 9
+#9  0x00590c8e in default_memory_insert_breakpoint (gdbarch=&lt;optimized out&gt;, bp_tgt=0x9236f0) at ./gdb/mem-break.c:66
+66      ./gdb/mem-break.c: No such file or directory.
+(gdb) p bp_tgt-&gt;kind
+$2 = 2
+</code></pre>
+<p>2 is <code>ARM_BP_KIND_THUMB</code>, so this appears to check out. Moving further up the stack, we find that <code>kind</code> is determined in frame 10 (<code>bkpt_insert_location</code> in gdb/breakpoint.c). Let&#8217;s have a look at what that does:</p>
+<pre><code>static int
+bkpt_insert_location (struct bp_location *bl)
+{
+  CORE_ADDR addr = bl-&gt;target_info.reqstd_address;
+
+  bl-&gt;target_info.kind = breakpoint_kind (bl, &amp;addr);
+  bl-&gt;target_info.placed_address = addr;
+
+  if (bl-&gt;loc_type == bp_loc_hardware_breakpoint)
+    return target_insert_hw_breakpoint (bl-&gt;gdbarch, &amp;bl-&gt;target_info);
+  else
+    return target_insert_breakpoint (bl-&gt;gdbarch, &amp;bl-&gt;target_info);
+}
+</code></pre>
+<p>This calls <code>breakpoint_kind</code>, which delegates to <code>arm_breakpoint_kind_from_pc</code> in gdb/arm-tdep.c via <code>gdbarch_breakpoint_kind_from_pc</code>. <code>arm_breakpoint_kind_from_pc</code> maps the breakpoint address to an instruction set and returns one of three values &#8211; <code>ARM_BP_KIND_ARM</code>, <code>ARM_BP_KIND_THUMB</code> or <code>ARM_BP_KIND_THUMB2</code>. From looking at <code>arm_breakpoint_kind_from_pc</code>, we can see the most interesting part is a call to <code>arm_pc_is_thumb</code>. Let&#8217;s have a look at how this works:</p>
+<pre><code>int
+arm_pc_is_thumb (struct gdbarch *gdbarch, CORE_ADDR memaddr)
+{
+  struct bound_minimal_symbol sym;
+  char type;
+  ...
+
+  /* If bit 0 of the address is set, assume this is a Thumb address.  */
+  if (IS_THUMB_ADDR (memaddr))
+    return 1;
+</code></pre>
+<p>So, first of all it checks whether bit 0 of the breakpoint address is set. Looking at the SystemTap probes in <code>.note.stapsdt</code> from our earlier <code>readelf</code> output, we can see that this is not the case for any probe. Following on:</p>
+<pre><code>  /* If the user wants to override the symbol table, let him.  */
+  if (strcmp (arm_force_mode_string, "arm") == 0)
+    return 0;
+  if (strcmp (arm_force_mode_string, "thumb") == 0)
+    return 1;
+
+  /* ARM v6-M and v7-M are always in Thumb mode.  */
+  if (gdbarch_tdep (gdbarch)-&gt;is_m)
+    return 1;
+</code></pre>
+<p>We&#8217;re not forcing the mode and this isn&#8217;t ARM v6-M or v7-M, so, continuing:</p>
+<pre><code>  /* If there are mapping symbols, consult them.  */
+  type = arm_find_mapping_symbol (memaddr, NULL);
+  if (type)
+    return type == 't';
+</code></pre>
+<p><code>arm_find_mapping_symbol</code> tries to find a mapping symbol associated with the breakpoint address. Mapping symbols are a special type of symbol used to identify transitions between ARM and Thumb instruction sets (see <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0474f/CHDGFCDI.html">this</a> information). Breaking here in gdb shows that there isn&#8217;t a mapping symbol associated with the <code>init_start</code> probe:</p>
+<pre><code>(gdb) break ./gdb/arm-tdep.c:434
+Breakpoint 2 at 0x43ec3c: file ./gdb/arm-tdep.c, line 434.
+(gdb) run
+...
+
+Breakpoint 2, arm_pc_is_thumb (gdbarch=gdbarch@entry=0x928fb0, memaddr=memaddr@entry=4152138308) at ./gdb/arm-tdep.c:434
+434     ./gdb/arm-tdep.c: No such file or directory.
+(gdb) p/x memaddr
+$2 = 0xf77c9a44
+(gdb) p type
+$3 = 0 '\000'
+</code></pre>
+<p>So, continuing to the next step:</p>
+<pre><code>  /* Thumb functions have a "special" bit set in minimal symbols.  */
+  sym = lookup_minimal_symbol_by_pc (memaddr);
+  if (sym.minsym)
+    return (MSYMBOL_IS_SPECIAL (sym.minsym));
+</code></pre>
+<p><code>lookup_minimal_symbol_by_pc</code> tries to map the breakpoint address to a function symbol. <code>MSYMBOL_IS_SPECIAL(sym.minsym)</code> expands to <code>sym.minsym-&gt;target_flag_1</code> and is 1 if bit 0 of the symbol&#8217;s target address is set, indicating that the function is called in Thumb mode (see <code>arm_elf_make_msymbol_special</code> in gdb/arm-tdep.c for where this is set). Breaking here in gdb shows that this succeeds:</p>
+<pre><code>(gdb) break ./gdb/arm-tdep.c:439
+Breakpoint 3 at 0x43ec54: file ./gdb/arm-tdep.c, line 439.
+(gdb) cont
+Continuing.
+
+Breakpoint 3, arm_pc_is_thumb (gdbarch=gdbarch@entry=0x928fb0, memaddr=memaddr@entry=4152138308) at ./gdb/arm-tdep.c:439
+439     in ./gdb/arm-tdep.c
+(gdb) p sym.minsym
+$4 = (minimal_symbol *) 0x964278
+(gdb) p *sym.minsym
+$5 = {mginfo = {name = 0x952ff8 "dl_main", value = {ivalue = 5932, block = 0x172c, bytes = 0x172c &lt;error: Cannot access memory at address 0x172c&gt;, address = 5932, common_block = 0x172c, chain = 0x172c}, 
+    language_specific = {obstack = 0x0, demangled_name = 0x0}, language = language_auto, ada_mangled = 0, section = 10}, size = 10516, filename = 0x949a48 "rtld.c", type = mst_file_text, created_by_gdb = 0, 
+  target_flag_1 = 1, target_flag_2 = 0, has_size = 1, hash_next = 0x0, demangled_hash_next = 0x0}
+(gdb) p sym.minsym-&gt;target_flag_1
+$6 = 1
+</code></pre>
+<p>It indicates that the <code>init_start</code> probe is in <code>dl_main</code>, and that it is called in Thumb mode.</p>
+<p>We can use readelf to inspect the symbol table and verify that this is correct:</p>
+<pre><code>$ readelf -s libc6-syms/usr/lib/debug/lib/arm-linux-gnueabihf/ld-2.27.so | grep dl_main
+    42: 0000172d 10516 FUNC LOCAL DEFAULT 11 dl_main
+</code></pre>
+<p>Note that bit 0 of the target address is set.</p>
+<p>If <code>lookup_minimal_symbol_by_pc</code> fails, then we&#8217;re basically out of luck and <code>arm_pc_is_thumb</code> will return 0 (indicating that the breakpoint address is in an area that is executing ARM instructions). But this depends on the <code>.symtab</code> ELF section being present, so there is an obvious issue here as this is stripped from the binary in the build (and shipped in a separate debug object).</p>
+<p>I then ran gdb in gdb without the dynamic loader symbols installed and set a breakpoint on <code>default_memory_insert_breakpoint</code>:</p>
+<pre><code>$ gdb --args gdb --batch --command=~/test.script
+(gdb) set debug-file-directory /home/ubuntu/libc6-syms/usr/lib/debug/:/usr/lib/debug/                                                                                                                             
+(gdb) break default_memory_insert_breakpoint(gdbarch*, bp_target_info*)                                  
+Breakpoint 1 at 0x190c34: file ./gdb/mem-break.c, line 39.                                                                                                                                                         
+(gdb) run                                                                                                                                                                                                          
+Starting program: /usr/bin/gdb --batch --command=\~/test.script                                                                                                                                                    
+Cannot parse expression `.L1207 4@r4'.                                                                                                                                                                             
+warning: Probes-based dynamic linker interface failed.                                                   
+Reverting to original interface.                                                                         
+
+[Thread debugging using libthread_db enabled]                                                                                                                                                                      
+Using host libthread_db library "/lib/arm-linux-gnueabihf/libthread_db.so.1".                                                                                                                                      
+
+Breakpoint 1, default_memory_insert_breakpoint (gdbarch=0x9288c0, bp_tgt=0x922fe8) at ./gdb/mem-break.c:39
+39      ./gdb/mem-break.c: No such file or directory.
+(gdb) bt
+#0  default_memory_insert_breakpoint (gdbarch=0x9288c0, bp_tgt=0x922fe8) at ./gdb/mem-break.c:39         
+#1  0x004de3aa in bkpt_insert_location (bl=0x922f90) at ./gdb/breakpoint.c:12525
+#2  0x004e8426 in insert_bp_location (bl=bl@entry=0x922f90, tmp_error_stream=tmp_error_stream@entry=0xfffef07c, disabled_breaks=disabled_breaks@entry=0xfffeefec,
+    hw_breakpoint_error=hw_breakpoint_error@entry=0xfffeeff0, hw_bp_error_explained_already=hw_bp_error_explained_already@entry=0xfffeeff4) at ./gdb/breakpoint.c:2553
+#3  0x004e9556 in insert_breakpoint_locations () at ./gdb/breakpoint.c:2977
+#4  update_global_location_list (insert_mode=insert_mode@entry=UGLL_MAY_INSERT) at ./gdb/breakpoint.c:12177
+#5  0x004ea0a0 in update_global_location_list_nothrow (insert_mode=UGLL_MAY_INSERT) at ./gdb/breakpoint.c:12215
+#6  0x004ea484 in create_solib_event_breakpoint_1 (insert_mode=UGLL_MAY_INSERT, address=address@entry=4152138308, gdbarch=gdbarch@entry=0x0) at ./gdb/breakpoint.c:7555
+#7  create_solib_event_breakpoint (gdbarch=gdbarch@entry=0x9288c0, address=address@entry=4152138308) at ./gdb/breakpoint.c:7562
+#8  0x004497bc in svr4_create_probe_breakpoints (objfile=0x933238, probes=0xfffef148, gdbarch=0x9288c0) at ./gdb/solib-svr4.c:2089
+#9  svr4_create_solib_event_breakpoints (gdbarch=0x9288c0, address=&lt;optimized out&gt;) at ./gdb/solib-svr4.c:2173
+#10 0x00449c5c in enable_break (from_tty=&lt;optimized out&gt;, info=&lt;optimized out&gt;) at ./gdb/solib-svr4.c:2465
+#11 svr4_solib_create_inferior_hook (from_tty=&lt;optimized out&gt;) at ./gdb/solib-svr4.c:3057
+#12 0x0056bba6 in post_create_inferior (target=0x801084 &lt;current_target&gt;, from_tty=from_tty@entry=0) at ./gdb/infcmd.c:469
+#13 0x0056c736 in run_command_1 (args=&lt;optimized out&gt;, from_tty=0, run_how=RUN_NORMAL) at ./gdb/infcmd.c:665
+#14 0x00465334 in cmd_func (cmd=&lt;optimized out&gt;, args=&lt;optimized out&gt;, from_tty=&lt;optimized out&gt;) at ./gdb/cli/cli-decode.c:1886
+#15 0x006062a6 in execute_command (p=&lt;optimized out&gt;, p@entry=0x874758 "run", from_tty=0) at ./gdb/top.c:630
+#16 0x00548760 in command_handler (command=0x874758 "run") at ./gdb/event-top.c:583
+#17 0x00606a66 in read_command_file (stream=stream@entry=0x875da8) at ./gdb/top.c:424
+#18 0x004684e2 in script_from_file (stream=stream@entry=0x875da8, file=file@entry=0xfffef7d0 "~/test.script") at ./gdb/cli/cli-script.c:1592
+#19 0x004639bc in source_script_from_stream (file_to_open=0xfffef7d0 "~/test.script", file=0xfffef7d0 "~/test.script", stream=0x875da8) at ./gdb/cli/cli-cmds.c:568
+#20 source_script_with_search (file=0xfffef7d0 "~/test.script", from_tty=&lt;optimized out&gt;, search_path=&lt;optimized out&gt;) at ./gdb/cli/cli-cmds.c:604
+#21 0x0058821a in catch_command_errors (command=0x463a89 &lt;source_script(char const*, int)&gt;, arg=0xfffef7d0 "~/test.script", from_tty=0) at ./gdb/main.c:379
+#22 0x00588ea0 in captured_main_1 (context=&lt;optimized out&gt;) at ./gdb/main.c:1125
+#23 captured_main (data=&lt;optimized out&gt;) at ./gdb/main.c:1147
+#24 gdb_main (args=&lt;optimized out&gt;) at ./gdb/main.c:1173
+#25 0x004343ac in main (argc=&lt;optimized out&gt;, argv=&lt;optimized out&gt;) at ./gdb/gdb.c:32
+(gdb) p/x bp_tgt-&gt;placed_address
+$1 = 0xf77c9a44
+(gdb) p bp_tgt-&gt;kind
+$2 = 4
+</code></pre>
+<p>Sure enough, <code>default_memory_insert_breakpoint</code> is called this time with <code>kind == 4</code> (<code>ARM_BP_KIND_ARM</code>) which seems to be incorrect. Setting a breakpoint in <code>arm_pc_is_thumb</code> again, we can verify that the reason for this is that the call to <code>lookup_minimal_symbol_by_pc</code> fails:</p>
+<pre><code>(gdb) break ./gdb/arm-tdep.c:439                                                                                                                                                                                   
+Breakpoint 1 at 0x3ec54: file ./gdb/arm-tdep.c, line 439.                                                                                                                                                          
+(gdb) run
+Starting program: /usr/bin/gdb --command=\~/test.script                                                  
+Cannot parse expression `.L1207 4@r4'.                                                                   
+warning: Probes-based dynamic linker interface failed.                                                   
+Reverting to original interface.                    
+
+[Thread debugging using libthread_db enabled]       
+Using host libthread_db library "/lib/arm-linux-gnueabihf/libthread_db.so.1".
+GNU gdb (Ubuntu 8.1-0ubuntu3) 8.1.0.20180409-git
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+&lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+Find the GDB manual and other documentation resources online at:
+&lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+
+Breakpoint 1, arm_pc_is_thumb (gdbarch=0x928fb0, memaddr=4152138308) at ./gdb/arm-tdep.c:439
+439     ./gdb/arm-tdep.c: No such file or directory.
+(gdb) p/x memaddr
+$1 = 0xf77c9a44
+(gdb) p sym.minsym
+$2 = (minimal_symbol *) 0x0
+</code></pre>
+<p>This results in <code>arm_pc_is_thumb</code> returning 0 and <code>arm_breakpoint_kind_from_pc</code> returning <code>ARM_BP_KIND_ARM</code>, which results in <code>arm_sw_breakpoint_from_kind</code> returning the wrong breakpoint instruction sequence.</p>
+<h1>TL;DR</h1>
+<p>GDB causes a crash in the dynamic loader (ld.so) on armv7 if ld.so has been stripped of its symbol table, because it is unable to correctly determine the appropriate instruction set when inserting probe event breakpoints.</p>
+<p>If you&#8217;ve got to the end of this (congratulations), then you&#8217;re probably going to be disappointed to hear that I&#8217;m not sure what the proper fix is &#8211; this isn&#8217;t really my area of expertise. For the rustc package, I just added a <code>Build-Depends: libc6-dbg [armhf]</code> as a workaround for now, and that might even be the correct fix. But, it&#8217;s certainly nicer to understand why it didn&#8217;t work in the first place.</p>
+<div class="bottomcontainerBox" style="">
+			<div style="float:left; width:85px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fchriscoulson.me.uk%2Fblog%2F%3Fp%3D295&amp;layout=button_count&amp;show_faces=false&amp;width=85&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:85px; height:21px;"></iframe></div>
+			<div style="float:left; width:80px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<g:plusone size="medium" href="https://chriscoulson.me.uk/blog/?p=295"></g:plusone>
+			</div>
+			<div style="float:left; width:95px;padding-right:10px; margin:4px 4px 4px 4px;height:30px;">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://chriscoulson.me.uk/blog/?p=295"  data-text="Debugging the debugger" data-count="horizontal" data-via="chrisccoulson"></a>
+			</div>			
+			</div><div style="clear:both"></div><div style="padding-bottom:4px;"></div>]]></description>
+      <source url="http://www.chriscoulson.me.uk/blog/?feed=rss2&amp;cat=3">Chris Coulson</source>
     </item>
     <item>
       <title>Spaces – uncomplicating your network</title>
