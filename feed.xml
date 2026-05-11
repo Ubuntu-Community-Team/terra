@@ -6,9 +6,138 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sun, 10 May 2026 00:53:30 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2026 00:53:45 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu Studio’s New Home: What’s Changing and Why</title>
+      <link>https://ubuntustudio.org/2026/05/ubuntu-studios-new-home-whats-changing-and-why/</link>
+      <guid isPermaLink="true">https://ubuntustudio.org/2026/05/ubuntu-studios-new-home-whats-changing-and-why/</guid>
+      <pubDate>Sun, 10 May 2026 02:25:40 GMT</pubDate>
+      <description><![CDATA[<div class="wp-block-image">
+<figure class="alignright size-medium"><img decoding="async" width="300" height="160" src="https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-300x160.png?wsr" alt="Homepage of Ubuntu Studio showcasing a content creation studio with various creative tools including musical instruments, a camera, and editing software elements." class="wp-image-5119" srcset="https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-300x160.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-1024x545.png 1024w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-768x409.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-1536x817.png 1536w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-1200x639.png 1200w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2.png 1554w" sizes="(max-width: 300px) 100vw, 300px" /></figure>
+</div>
+
+
+<p class="wp-block-paragraph">Ubuntu Studio&#8217;s web presence has been spread across several Canonical-hosted systems for a long time: the main website on an old Canonical web server, the Ubuntu Community Help Wiki at <code>help.ubuntu.com/community/UbuntuStudio</code>, and the Ubuntu Developer Wiki at <code>wiki.ubuntu.com/UbuntuStudio</code>. Those platforms served their purpose, but each had become a poor fit for how the project actually works today.</p>
+
+
+
+<h2 class="wp-block-heading">What&#8217;s Moving</h2>
+
+
+
+<p class="wp-block-paragraph"><strong>The main Ubuntu Studio website</strong> has already moved away from Canonical hosting and onto its current home. That move was driven by necessity: Canonical shut down the old web server that had hosted the site, so Ubuntu Studio needed a new home for its primary web presence. This has been a mostly transparent process and most users would never have noticed a difference.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-medium is-resized"><img fetchpriority="high" decoding="async" width="300" height="233" src="https://ubuntustudio.org/wp-content/uploads/2026/05/image-300x233.png?wsr" alt="Screenshot of the Ubuntu Studio Community Help page, featuring sections for user and developer wikis, support information, and links to contributions and resources." class="wp-image-5113" style="width:197px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/05/image-300x233.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-768x597.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/05/image.png 945w" sizes="(max-width: 300px) 100vw, 300px" /></figure>
+</div>
+
+
+<p class="wp-block-paragraph"><strong>The Community Help Wiki</strong> — the place where users have always gone to find answers about audio configuration, hardware support, the Audio Handbook, and getting started with Ubuntu Studio — is being mirrored and maintained directly on ubuntustudio.org at <code>/help/</code>. Every page you&#8217;re used to is coming with us: the Pro Audio Intro, the Ubuntu Studio Audio Handbook and all its chapters, the FAQ, hardware support information, terminal basics, troubleshooting guides, and community information. Most of this is outdated now, and we need help to bring it up to modernization.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-medium is-resized"><img decoding="async" width="300" height="214" src="https://ubuntustudio.org/wp-content/uploads/2026/05/image-1-300x214.png?wsr" alt="Screenshot of the Ubuntu Studio developer wiki homepage featuring navigation links, a welcome message, and information about the Ubuntu Studio project and community." class="wp-image-5116" style="width:255px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/05/image-1-300x214.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-1-768x548.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-1.png 933w" sizes="(max-width: 300px) 100vw, 300px" /></figure>
+</div>
+
+
+<p class="wp-block-paragraph"><strong>The Developer Wiki</strong> — home to the team&#8217;s internal processes, release planning, testing documentation, artwork resources, and packaging and development notes — is moving to ubuntustudio.org at <code>/wiki/</code>. The full section structure is preserved: Testing, PR &amp; Support, Artwork, Packaging/Development, Documentation, and Organization are all there. This information is also outdated.</p>
+
+
+
+<h2 class="wp-block-heading">Why Now</h2>
+
+
+
+<p class="wp-block-paragraph">The website move and the wiki move do not have exactly the same origin.</p>
+
+
+
+<p class="wp-block-paragraph">For the main website, the trigger was straightforward: Canonical shut down the old web server that hosted it. Ubuntu Studio had to move the site in order to keep a public home on the web.</p>
+
+
+
+<p class="wp-block-paragraph">For the help and developer wikis, the issue was the editing experience and maintenance burden. The old MoinMoin-based wiki workflow is cumbersome, slow, and awkward to work with. Its markup is not standard Markdown, which makes editing, reviewing, and migrating content more difficult than it should be. Over time, that friction made it harder to keep pages current, fix outdated instructions, and encourage casual contributors to improve documentation.</p>
+
+
+
+<p class="wp-block-paragraph">Meanwhile, ubuntustudio.org has been running on WordPress for some time, and the team has been using GitHub for development work. By routing our documentation through a GitHub repository — using the Git it Write plugin to publish markdown directly to WordPress — we get something we&#8217;ve never really had before: a documentation workflow that fits naturally alongside our other development work. Pull requests, issue tracking, version history, and a low barrier to entry for new contributors all come with it.</p>
+
+
+
+<h2 class="wp-block-heading">What This Means for Contributors</h2>
+
+
+
+<p class="wp-block-paragraph">If you&#8217;ve ever wanted to fix something on the old wiki and been put off by the process, this is your opening. The content lives in a <a href="https://github.com/UbuntuStudio-Official/ubuntustudio-website">public GitHub repository</a>. Find the file, fix the text, open a pull request. That&#8217;s it.</p>
+
+
+
+<p class="wp-block-paragraph">The content is organized into buckets that map to the old wiki structure:</p>
+
+
+
+<ul class="wp-block-list">
+<li><code>help/content/support/</code> — support pages (FAQ, hardware, audio configuration, etc.)</li>
+
+
+
+<li><code>help/content/handbook/</code> — the Audio Handbook and Pro Audio Intro</li>
+
+
+
+<li><code>help/content/community/</code> — IRC, mailing lists, joining the team</li>
+
+
+
+<li><code>help/content/reference/</code> — resources, links, wiki guide</li>
+
+
+
+<li><code>wiki/content/ubuntu-studio/</code> — developer wiki pages</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">If you&#8217;re editing a page that has outdated information, and there&#8217;s plenty of it, particularly around the old PulseAudio/JACK workflow that predates PipeWire — this is the place to update it.</p>
+
+
+
+<h2 class="wp-block-heading">What Isn&#8217;t Changing</h2>
+
+
+
+<p class="wp-block-paragraph">The old wiki pages at <code>help.ubuntu.com</code> and <code>wiki.ubuntu.com</code> aren&#8217;t going anywhere immediately. Canonical maintains those as part of Ubuntu infrastructure, and they&#8217;ll continue to exist. Our goal isn&#8217;t to break any existing bookmarks or search results, it&#8217;s to have a home where we can keep things current.</p>
+
+
+
+<p class="wp-block-paragraph">We&#8217;re also not rewriting the documentation wholesale. The content of the mirrored pages is as faithful to the originals as it can be, with updates where the old guidance referred to software or workflows that no longer apply to current Ubuntu Studio releases.</p>
+
+
+
+<h2 class="wp-block-heading">Where to Find Everything</h2>
+
+
+
+<ul class="wp-block-list">
+<li>Help pages: <a href="https://ubuntustudio.org/help/">ubuntustudio.org/help/</a></li>
+
+
+
+<li>Developer wiki: <a href="https://ubuntustudio.org/wiki/">ubuntustudio.org/wiki/</a></li>
+
+
+
+<li>GitHub repository: <a href="https://github.com/UbuntuStudio-Official/ubuntustudio-website">github.com/UbuntuStudio-Official/ubuntustudio-website</a></li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">If you find something wrong, missing, or out of date — open a pull request, or file an issue and let the team know.</p>]]></description>
+      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
+    </item>
     <item>
       <title>Dirty Frag Linux kernel local privilege escalation vulnerability mitigations</title>
       <link>https://ubuntu.com//blog/dirty-frag-linux-vulnerability-fixes-available</link>
@@ -1165,517 +1294,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 <h3 id="summary" class="relative group">Summary <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#summary" aria-label="Anchor">#</a></span></h3><p>Throughout 2026 we&rsquo;ll be working on enabling access to frontier AI for Ubuntu users in a way that is deliberate, secure, and aligned with our open source values. By focusing on the combination of education for our engineers, our existing knowledge of building resilient systems and our strengthening silicon partnerships, we will deliver efficient local inference, powerful accessibility features, and a context-aware OS that makes Ubuntu meaningfully more capable for the people who rely on it</p>
 <p>Ubuntu is not becoming an AI product, but it can become stronger with thoughtful AI integration.</p>]]></description>
       <source url="https://jnsgr.uk/tags/ubuntu/index.xml">Jon Seager</source>
-    </item>
-    <item>
-      <title>Ubuntu Studio 26.04 LTS Released</title>
-      <link>https://ubuntustudio.org/2026/04/ubuntu-studio-26-04-lts-released/</link>
-      <guid isPermaLink="true">https://ubuntustudio.org/2026/04/ubuntu-studio-26-04-lts-released/</guid>
-      <pubDate>Thu, 23 Apr 2026 17:23:27 GMT</pubDate>
-      <description><![CDATA[<div class="wp-block-image">
-<figure class="aligncenter size-full"><img fetchpriority="high" decoding="async" width="800" height="297" src="https://ubuntustudio.org/wp-content/uploads/2026/04/banner.jpg?wsr" alt="Ubuntu Studio 26.04 LTS logo featuring a stylized raccoon illustration and the text 'Resolute Raccoon' on a dark background." class="wp-image-3510" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/banner.jpg 800w, https://ubuntustudio.org/wp-content/uploads/2026/04/banner-300x111.jpg 300w, https://ubuntustudio.org/wp-content/uploads/2026/04/banner-768x285.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph">The Ubuntu Studio team is pleased to announce Ubuntu Studio 26.04 LTS, code-named &#8220;Resolute Raccoon.&#8221; This marks Ubuntu Studio&#8217;s 38th release.</p>
-
-
-
-<p class="wp-block-paragraph">This Long-Term Support (LTS) release is supported for 3 years, through April 2029.<br>An Ubuntu Studio LTS arrives once every two years. This is more than a routine update: it is a long-horizon milestone for creators, educators, studios, and production systems that prioritize dependability.</p>
-
-
-
-<p class="wp-block-paragraph">This release reflects months of development, packaging, design, testing, and community feedback, all focused on making Ubuntu Studio production-ready from first boot.<br>Whether you record music, edit video, design graphics, or publish layouts, the goal is simple: stay out of your way and let your creativity lead. That shows up in practical improvements across this release, from desktop layout choice and modernized setup tools to updated defaults and day-to-day polish.</p>
-
-
-
-<p class="wp-block-paragraph">For full technical details, known issues, and upgrade instructions, please see the <a href="https://discourse.ubuntu.com/t/ubuntu-studio-26-04-lts-release-notes/">Ubuntu Studio 26.04 LTS Release Notes</a>.</p>
-
-
-
-<p class="wp-block-paragraph">You can download Ubuntu Studio 26.04 LTS from the <a href="https://ubuntustudio.org/download">download page</a>.</p>
-
-
-
-<h2 class="wp-block-heading">Why This LTS Is Special</h2>
-
-
-
-<ul class="wp-block-list">
-<li>You can trace a clear through-line across recent LTS cycles: <a href="https://ubuntustudio.org/2020/04/ubuntu-studio-20-04-lts-released/">20.04 LTS</a> was the last Xfce-based LTS and set up the desktop transition, <a href="https://ubuntustudio.org/2022/04/ubuntu-studio-22-04-lts-released/">22.04 LTS</a> stabilized the Plasma era, and <a href="https://ubuntustudio.org/2024/04/ubuntu-studio-24-04-lts-released/">24.04 LTS</a> introduced the new Subiquity/Flutter installer generation and PipeWire 1.0 maturity.</li>
-
-
-
-<li>Ubuntu Studio 26.04 LTS builds on that foundation with practical workflow improvements instead of a single marquee feature: three selectable desktop layouts, fully rewritten Installer and Audio Configuration tools (Python with GTK4 and Qt6 frontends), and broader translation coverage.</li>
-
-
-
-<li>It also brings forward ideas that were future-looking in earlier cycles, especially minimal-install flexibility and easier post-install workflow selection, while adding production-focused updates like FFADO support, easier PipeWire tuning, and new default additions such as Loopino and Plasma PipeWire Settings.</li>
-
-
-
-<li>As with prior Ubuntu Studio LTS releases, this cycle carries a three-year support window, through April 2029.</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">Major Highlights</h2>
-
-
-
-<h3 class="wp-block-heading">Three desktop layouts, one familiar home</h3>
-
-
-
-<p class="wp-block-paragraph">This release includes three selectable desktop layouts:</p>
-
-
-
-<ul class="wp-block-list">
-<li>The classic Ubuntu Studio top-panel layout</li>
-
-
-
-<li>A macOS-like layout with global menu and dock</li>
-
-
-
-<li>A Windows-like bottom-panel layout</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Creators coming from different platforms get a familiar starting point and a faster path to feeling at home.</p>
-
-
-
-<p class="wp-block-paragraph">The default layout for new installs was selected by community vote. For background on the design direction, see <a href="https://ubuntustudio.org/2025/12/coming-to-26-04-lts-three-layouts/">Coming to 26.04 LTS: Three Layouts</a>.</p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-large"><img decoding="async" width="1024" height="138" src="https://ubuntustudio.org/wp-content/uploads/2026/04/image-3-1024x138.png?wsr" alt="Screenshot of Ubuntu Studio desktop environments including Ubuntu Studio, Ubuntu Studio Classic, Ubuntu Studio Classic Dark, Ubuntu Studio Dark, Ubuntu Studio Dark macOS alike, and Ubuntu Studio macOS alike." class="wp-image-3522" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/image-3-1024x138.png 1024w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-3-300x40.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-3-768x104.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-3.png 1186w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-</div>
-
-
-<h3 class="wp-block-heading">Installer and configuration tools modernized</h3>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-full is-resized"><img decoding="async" width="730" height="737" src="https://ubuntustudio.org/wp-content/uploads/2026/04/image-5.png?wsr" alt="Screenshot of the Ubuntu Studio Installer interface, displaying a list of installation packages with checkmarks indicating selected options for audio, graphics, photography, video, and wallpapers, along with options for publishing and music education." class="wp-image-3526" style="aspect-ratio:0.990562476406191;width:180px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/image-5.png 730w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-5-297x300.png 297w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-5-150x150.png?crop=1 150w" sizes="(max-width: 730px) 100vw, 730px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph"><a href="https://ubuntustudio.org/ubuntu-studio-installer">Ubuntu Studio Installer</a> and <a href="https://ubuntustudio.org/audio-configuration/">Ubuntu Studio Audio Configuration</a> were completely rewritten, with modern interfaces and desktop-aware behavior.</p>
-
-
-
-<p class="wp-block-paragraph">This is more than a visual refresh. Both tools were rebuilt from the ground up in Python with dual GTK4 and Qt6 frontends, and automatically select the interface that best matches your desktop environment.</p>
-
-
-
-<p class="wp-block-paragraph">Internationalization also took a major leap forward: both tools now include translations across 21 languages, helping more creators configure their systems comfortably in their preferred language.</p>
-
-
-
-<h3 class="wp-block-heading">Audio production gets more powerful</h3>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-full is-resized"><img loading="lazy" decoding="async" width="596" height="361" src="https://ubuntustudio.org/wp-content/uploads/2026/04/image-4.png?wsr" alt="Ubuntu Studio Audio Configuration window with options to configure audio settings, change kernel boot parameters, start a dummy audio device, or disable PipeWire-JACK." class="wp-image-3524" style="width:296px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/image-4.png 596w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-4-300x182.png 300w" sizes="auto, (max-width: 596px) 100vw, 596px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph"><a href="https://ubuntustudio.org/audio-configuration/">Ubuntu Studio Audio Configuration</a> now includes built-in support for FFADO FireWire devices and simpler PipeWire tuning through menus instead of manual entry.</p>
-
-
-
-<p class="wp-block-paragraph">For musicians and engineers using professional FireWire interfaces, FFADO support improves compatibility with legacy-but-still-essential studio hardware without extra manual setup.</p>
-
-
-
-<p class="wp-block-paragraph">PipeWire sample-rate and buffer controls are now easier to access and adjust quickly, making low-latency tuning far more approachable for both new and experienced users.</p>
-
-
-
-<h3 class="wp-block-heading">Better defaults for creators</h3>
-
-
-
-<p class="wp-block-paragraph">VLC is now the default media player, offering broad format compatibility and a familiar, dependable playback experience for day-to-day media review.</p>
-
-
-
-<p class="wp-block-paragraph"><a href="https://launchpad.net/ubuntu/+source/vmpk">vmpk</a> now replaces jack-keyboard, giving MIDI-focused users a more modern and flexible virtual keyboard workflow.</p>
-
-
-
-<h3 class="wp-block-heading">More quality-of-life improvements across the release</h3>
-
-
-
-<p class="wp-block-paragraph">Beyond the headline features, this release includes several practical improvements that make daily use smoother:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Live sessions now inhibit lock screen/screensaver to prevent interruptions during testing or demos</li>
-
-
-
-<li>SDDM and splash visuals were refined for a cleaner login and boot experience</li>
-
-
-
-<li>Desktop menus include translation coverage improvements</li>
-
-
-
-<li>Theme metadata updates improve Plasma 6 compatibility and consistency</li>
-
-
-
-<li>Key workflow tools were substantially updated, including QPrompt, RaySession, and Patchance</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">New in 26.04 LTS</h2>
-
-
-<div class="wp-block-image">
-<figure class="alignright is-resized"><img loading="lazy" decoding="async" width="465" height="517" src="https://ubuntustudio.org/wp-content/uploads/2026/04/pwsettings.png" alt="A screenshot of the Pipewire Settings interface displaying options for Quantum (1024) and Sample Rate (48000), along with a latency measurement of 21.33 ms and a refresh button." class="wp-image-3528" style="width:233px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/pwsettings.png 465w, https://ubuntustudio.org/wp-content/uploads/2026/04/pwsettings-270x300.png 270w" sizes="auto, (max-width: 465px) 100vw, 465px" /></figure>
-</div>
-
-
-<ul class="wp-block-list">
-<li><p>Three selectable desktop layouts with community-voted default</p></li>
-
-
-
-<li><p>Rewritten Installer and Audio Configuration tools with expanded language support<span style="font-size: revert; color: initial;">.</span></p></li>
-
-
-
-<li><p>Improved audio workflow controls, including FFADO support and easier PipeWire tuning</p></li>
-
-
-
-<li><p>New packages:</p>
-<ul class="wp-block-list">
-<li><p><strong style="background-color: rgb(255, 255, 255); color: initial;"><a href="https://launchpad.net/ubuntu/+source/loopino">Loopino</a></strong><span style="background-color: rgb(255, 255, 255); color: initial;"> — A lightweight creative audio sampler with drag-and-drop sample loading, on-the-fly recording, a full ADSR envelope, filters, and effects. Available as a standalone application, CLAP plugin, and VST2 plugin, making it a flexible addition to any audio production workflow.</span></p></li>
-
-
-
-<li><p><strong style="color: initial;"><a href="https://launchpad.net/ubuntu/+source/distroav">DistroAV</a></strong><span style="color: initial;"> — Formerly known as obs-ndi, DistroAV brings NDI (Network Audio/Video) support to OBS Studio, enabling high-quality, low-latency multi-track audio and video streaming over a local network. A natural fit for live streaming and networked A/V production setups. Not installed by default; install it by running </span><code style="background-color: rgb(255, 255, 255); color: initial;">sudo apt install distroav</code><span style="color: initial;"> in a terminal</span>.</p></li>
-
-
-
-<li><p><strong style="color: initial;"><a href="https://launchpad.net/ubuntu/+source/snd-hdspe">snd-hdspe</a></strong><span style="color: initial;"> — An updated ALSA kernel driver for RME HDSPe PCIe sound cards (MADI, AES, RayDAT, AIO, and AIO Pro). This maintained fork of the original driver brings compatibility with newer kernels and expands hardware control through standard ALSA interfaces, giving professional RME users a reliable path forward. Not installed by default; if you have supported RME hardware, install it by running </span><code style="color: initial; background-color: rgba(0, 0, 0, 0.2);">sudo apt install alsa-hdspe-dkms</code><span style="color: initial;"> in a terminal.</span></p></li>
-
-
-
-<li><p><strong style="color: initial;"><a href="https://launchpad.net/ubuntu/+source/plasma-pipewire-settings">Plasma PipeWire Settings</a></strong><span style="color: initial;"> — A KDE Plasma 6 panel widget for adjusting PipeWire quantum and sample rate on the fly, without touching configuration files. It is included by default and shown in the system tray by default, pairing with Ubuntu Studio Audio Configuration so the most common adjustments are always within reach.</span></p></li>
-
-
-
-<li><p><strong style="color: initial;"><a href="https://launchpad.net/ubuntu/+source/plasma-window-title-applet">Plasma Window Title Applet</a></strong><span style="color: initial;"> — A Plasma 6 panel applet that displays the active window title. Used in the macOS-like desktop layout to complete the global-menu experience.</span></p></li>
-</ul>
-</li>
-</ul>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="781" src="https://ubuntustudio.org/wp-content/uploads/2026/04/image-6-1024x781.png?wsr" alt="Screenshot of a document scanning software interface showing options like scan resolution, mode, and source. The main area indicates 'This document contains no pages yet' with a prompt to click the Scan button to add one." class="wp-image-3530" style="aspect-ratio:1.3111558638522165;width:219px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/image-6-1024x781.png 1024w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-6-300x229.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-6-768x586.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/04/image-6.png 1180w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
-</div>
-
-
-<ul class="wp-block-list">
-<li><p>Notable package changes:</p>
-<ul class="wp-block-list">
-<li><p><strong style="background-color: rgb(255, 255, 255); color: initial;"><a href="https://launchpad.net/ubuntu/+source/skanpage">Skanpage</a></strong><span style="background-color: rgb(255, 255, 255); color: initial;"> replaces Skanlite for scanning, offering multi-page document scanning and straightforward saving to common formats.</span></p></li>
-
-
-
-<li><p><strong style="color: initial;"><a href="https://launchpad.net/ubuntu/+source/rubberband">rubberband-lv2</a></strong><span style="color: initial;"> replaces rubberband-ladspa, providing high-quality time-stretching and pitch-shifting as an LV2 plugin aligned with the broader move away from LADSPA.</span></p></li>
-
-
-
-<li><p>Minimal installation workflow with modular post-install creative tool selection</p></li>
-</ul>
-</li>
-
-
-
-<li><p>Quality-of-life polish across live session behavior, translations, and desktop consistency</p></li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">Minimal Install: Your Studio, Your Way</h2>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-full is-resized"><img loading="lazy" decoding="async" width="1024" height="768" src="https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938.png?wsr" alt="Installation options for Ubuntu Studio, featuring a laptop illustration with two options: 'Ubuntu Studio Desktop (minimized)' and 'Ubuntu Studio Desktop.'" class="wp-image-3532" style="width:315px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938.png 1024w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-300x225.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-768x576.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-800x600.png?crop=1 800w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-600x450.png?crop=1 600w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-400x300.png?crop=1 400w, https://ubuntustudio.org/wp-content/uploads/2026/04/Screenshot_20260422_222938-200x150.png?crop=1 200w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph">One topic we often see in community discussions is package &#8220;bloat&#8221;: some users want everything preinstalled, while others prefer to start lean and add tools only as needed.</p>
-
-
-
-<p class="wp-block-paragraph">Both approaches are fully supported.</p>
-
-
-
-<p class="wp-block-paragraph">If you want a lightweight starting point, choose the minimal install option during installation. This option has been available since 24.10. You will get the Ubuntu Studio desktop experience, theming, and core configuration, then add only the workflows you want using <a href="https://ubuntustudio.org/ubuntu-studio-installer">Ubuntu Studio Installer</a> (audio, video, graphics, photography, and publishing).</p>
-
-
-
-<p class="wp-block-paragraph">If you want a complete creative workstation out of the box, the full install remains available.</p>
-
-
-
-<p class="wp-block-paragraph">You can also start from any <a href="https://ubuntu.com/download/flavours">official Ubuntu flavor</a> and add Ubuntu Studio workflows without reinstalling.</p>
-
-
-
-<h2 class="wp-block-heading">Special Notes</h2>
-
-
-
-<p class="wp-block-paragraph">The Ubuntu Studio 26.04 LTS disk image (ISO) exceeds 4 GB and cannot be reliably written to some file systems such as FAT32, and may not be readable when burned to a standard DVD.</p>
-
-
-
-<p class="wp-block-paragraph">We recommend using a compatible file system for downloads and <a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu">creating a bootable USB stick</a>.</p>
-
-
-
-<p class="wp-block-paragraph">Minimum installation media requirements:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Dual-Layer DVD or 8 GB USB drive</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Release images are available <a href="https://cdimage.ubuntu.com/ubuntustudio/releases/26.04/release/">here</a>.</p>
-
-
-
-<h2 class="wp-block-heading">Featured Creative Apps</h2>
-
-
-
-<p class="wp-block-paragraph">Ubuntu Studio 26.04 LTS ships with a strong cross-discipline toolkit for creators working in audio, video, graphics, and publishing.</p>
-
-
-
-<p class="wp-block-paragraph">Highlights include:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Blender 5.0.1</li>
-
-
-
-<li>Kdenlive 25.12.3</li>
-
-
-
-<li>Krita 6.0.1</li>
-
-
-
-<li>GIMP 3.2.2</li>
-
-
-
-<li>Ardour 9.0.0</li>
-
-
-
-<li>OBS Studio 32.1.0</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">For the complete software version list and source package references, see the <a href="https://discourse.ubuntu.com/t/ubuntu-studio-26-04-lts-release-notes/">release notes</a>.</p>
-
-
-
-<p class="wp-block-paragraph">Whether your work is audio engineering, filmmaking, digital painting, motion graphics, podcasting, or publishing, the full Ubuntu Studio stack is ready to support it.</p>
-
-
-
-<h2 class="wp-block-heading">Upgrade Notes</h2>
-
-
-
-<p class="wp-block-paragraph">Upgrades from Ubuntu Studio 25.10 are expected to be enabled shortly after release. Upgrades from Ubuntu Studio 24.04 LTS are expected to be enabled with the release of 26.04.1 LTS in August 2026.</p>
-
-
-
-<p class="wp-block-paragraph">Detailed upgrade instructions are available in the <a href="https://discourse.ubuntu.com/t/ubuntu-studio-26-04-lts-release-notes/">release notes</a>.</p>
-
-
-
-<h2 class="wp-block-heading">Known Issues</h2>
-
-
-
-<p class="wp-block-paragraph">Ubuntu Studio shares KDE Plasma and core Ubuntu components with other Ubuntu flavors. Some known issues overlap with Kubuntu and Ubuntu:</p>
-
-
-
-<ul class="wp-block-list">
-<li><a href="https://wiki.ubuntu.com/ResoluteRaccoon/ReleaseNotes/Kubuntu">Kubuntu release notes</a></li>
-
-
-
-<li><a href="https://documentation.ubuntu.com/release-notes/26.04/">Ubuntu release notes</a></li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">Additionally, on first login for a newly created user, a reboot prompt for applying audio-production group configuration is expected behavior (tracked at <a href="https://launchpad.net/bugs/2063899">Launchpad bug #2063899</a>).</p>
-
-
-
-<h2 class="wp-block-heading">Thank You</h2>
-
-
-
-<p class="wp-block-paragraph">Ubuntu Studio is built by a volunteer community of developers, testers, artists, translators, documenters, and users. Thank you to everyone who tested pre-releases, reported bugs, submitted improvements, and helped shape this LTS.</p>
-
-
-
-<h3 class="wp-block-heading">In Memory of Steve Langasek</h3>
-
-
-
-<p class="wp-block-paragraph">We want to give special recognition to Steve Langasek, who passed away in January 2025.</p>
-
-
-
-<p class="wp-block-paragraph">Known to many as vorlon, Steve&#8217;s impact on Ubuntu, Debian, Ubuntu Studio, and the wider Linux community is difficult to overstate. His work, guidance, and support helped countless contributors and projects over many years.</p>
-
-
-
-<p class="wp-block-paragraph">In Ubuntu community tributes, he has been remembered as &#8220;a great mind, mentor and conscience.&#8221; If you have not read it yet, <a href="https://discourse.ubuntu.com/t/remembering-and-thanking-steve-langasek/52665">Remembering and thanking Steve Langasek</a> is a powerful reflection on his legacy.</p>
-
-
-
-<p class="wp-block-paragraph">For this cycle in particular, Steve was responsible for the codename &#8220;Resolute Raccoon,&#8221; as noted during the community codename activity at <a href="https://discourse.ubuntu.com/t/guess-the-release-26-04-r/61559">Guess the release 26.04 &#8211; R</a>. We are honored to carry that name in this release and dedicate this moment of thanks to his memory.</p>
-
-
-
-<h3 class="wp-block-heading">Contributors</h3>
-
-
-
-<p class="wp-block-paragraph">Special thanks this cycle go to many familiar contributors from prior releases, including:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Eylul Dogruel</strong>: artwork and visual design</li>
-
-
-
-<li><strong>Ross Gammon</strong>: upstream Debian development and testing</li>
-
-
-
-<li><strong>Sebastien Ramacher</strong>: upstream Debian development</li>
-
-
-
-<li><strong>Dennis Braun</strong>: upstream Debian development</li>
-
-
-
-<li><strong>Rik Mills</strong>: Plasma and Kubuntu collaboration</li>
-
-
-
-<li><strong>Scarlett Moore</strong>: Plasma and Kubuntu collaboration</li>
-
-
-
-<li><strong>Aaron Rainbolt</strong>: Plasma and Kubuntu collaboration</li>
-
-
-
-<li><strong>Michael Mikowski</strong>: Plasma and Kubuntu collaboration</li>
-
-
-
-<li><strong>Len Ovens</strong>: testing and workflow insight, support and help</li>
-
-
-
-<li><strong>Mauro Gaspari</strong>: tutorials, promotion, and documentation</li>
-
-
-
-<li><strong>Utkarsh Gupta</strong>: Ubuntu Release Team support and collaboration</li>
-
-
-
-<li><strong>Florent &#8220;Skia&#8221; Jacquet</strong>: Ubuntu Release Team support and collaboration</li>
-
-
-
-<li><strong>Michael Hudson-Doyle</strong>: Ubuntu Release Team support and collaboration</li>
-
-
-
-<li><strong>Erich Eickmeyer</strong>: project leadership, packaging, and direction</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">And to everyone in the Ubuntu Studio community: thank you for your trust, your feedback, your patience, and your passion.</p>
-
-
-
-<h2 class="wp-block-heading">Support Ubuntu Studio</h2>
-
-
-
-<p class="wp-block-paragraph">Ubuntu Studio is built by volunteers, but volunteer work still comes with real costs.</p>
-
-
-
-<p class="wp-block-paragraph">As outlined in <a href="https://discourse.ubuntu.com/t/ubuntu-studio-needs-donations/80295">Ubuntu Studio Needs Donations</a>, the project is now covering additional monthly expenses due to a web hosting provider change. This release cycle also included a large amount of development work, including fixing long-standing bugs and rewriting both Ubuntu Studio Installer and Ubuntu Studio Audio Configuration from the ground up.</p>
-
-
-
-<p class="wp-block-paragraph">If Ubuntu Studio helps your creative work, your teaching, your studio, or your community, please consider supporting the project financially. Donations help keep the infrastructure running and make it easier to keep improving the tools, packaging, and user experience that go into each release.</p>
-
-
-
-<p class="wp-block-paragraph">You can support Ubuntu Studio here:</p>
-
-
-
-<p class="wp-block-paragraph"><a href="https://ubuntustudio.org/contribute/">https://ubuntustudio.org/contribute/</a></p>
-
-
-
-<h2 class="wp-block-heading">Get Involved</h2>
-
-
-
-<p class="wp-block-paragraph">Ubuntu Studio is a community project driven by volunteers. If you would like to contribute your time through packaging, documentation, testing, user support, or promotion, we would love your help:</p>
-
-
-
-<p class="wp-block-paragraph"><a href="https://ubuntustudio.org/contribute/">https://ubuntustudio.org/contribute/</a></p>]]></description>
-      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
     </item>
     <item>
       <title>Lubuntu 26.04 LTS Released!</title>
