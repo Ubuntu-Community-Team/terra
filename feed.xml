@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Mon, 11 May 2026 00:53:45 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2026 00:49:03 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -143,8 +143,8 @@
       <link>https://ubuntu.com//blog/dirty-frag-linux-vulnerability-fixes-available</link>
       <guid isPermaLink="true">https://ubuntu.com//blog/dirty-frag-linux-vulnerability-fixes-available</guid>
       <pubDate>Fri, 08 May 2026 11:57:24 GMT</pubDate>
-      <description><![CDATA[<p>Two local privilege escalation (LPE) vulnerabilities affecting the Linux kernel have been publicly disclosed on May 7, 2026. One of the vulnerabilities has been assigned the ID: <a href="https://ubuntu.com/security/CVE-2026-43284">CVE-2026-43284</a>. The other CVE ID is pending. Both are referred to as “Dirty Frag.” The affected components are Linux kernel modules. The first vulnerability impacts the modules that provide support for ESP (Encapsulating Security Protocol), one of the protocols used for IPsec (Internet Protocol Security). The second vulnerability impacts the modules that provide support for RxRPC, a protocol used for AFS (Andrew File System), a distributed file system. The vulnerabilities affect multiple Linux distributions, including all Ubuntu releases.</p>
-<p>The vulnerabilities do not have CVSS scores assigned in the CVE List or NVD, but are assessed by Canonical to have a CVSS 3.1 score of 7.8, corresponding to a severity of HIGH.</p>
+      <description><![CDATA[<p>Two local privilege escalation (LPE) vulnerabilities affecting the Linux kernel have been publicly disclosed on May 7, 2026. The vulnerabilities have been assigned the IDs <a href="https://ubuntu.com/security/CVE-2026-43284">CVE-2026-43284</a> and <a href="https://ubuntu.com/security/CVE-2026-43500">CVE-2026-43500</a> and are referred to as “Dirty Frag.” The affected components are Linux kernel modules. The first vulnerability impacts the modules that provide support for ESP (Encapsulating Security Protocol), one of the protocols used for IPsec (Internet Protocol Security). The second vulnerability impacts the modules that provide support for RxRPC, a protocol used for AFS (Andrew File System), a distributed file system. The vulnerabilities affect multiple Linux distributions, including all Ubuntu releases.</p>
+<p>CVE-2026-43284 is assessed by the <a href="http://kernel.org">kernel.org</a> CNA to have a CVSS 3.1 score of 8.8 (HIGH). CVE-2026-43500 does not have CVSS scores assigned in the CVE List or NVD, but is assessed by Canonical to have a CVSS 3.1 score of 7.8, corresponding to a severity of HIGH.</p>
 <p>This post describes mitigations that disable the affected modules and can be applied when Linux kernel packages which implement the proposed patch will be released.</p>
 <h2 class="wp-block-heading">Impact</h2>
 <h3 class="wp-block-heading">Deployments without container workloads</h3>
