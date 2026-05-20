@@ -6,128 +6,45 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Tue, 19 May 2026 00:56:46 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 00:58:38 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Finding the blind spot: How Canonical hunts logic flaws with AI</title>
-      <link>https://ubuntu.com//blog/finding-the-blind-spot-how-canonical-hunts-logic-flaws-with-ai</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/finding-the-blind-spot-how-canonical-hunts-logic-flaws-with-ai</guid>
-      <pubDate>Fri, 15 May 2026 08:53:19 GMT</pubDate>
-      <description><![CDATA[<p>The recent unveiling of <a href="https://red.anthropic.com/2026/mythos-preview/">Anthropic’s Claude Mythos preview</a> has radically shifted the cybersecurity landscape. We are now in an era where AI can autonomously discover and exploit zero-day vulnerabilities in mature codebases at machine speed. Perhaps the most exciting revelation from the Mythos preview was the demonstration that frontier models can now successfully reason about complex, <em>domain-specific business logic bugs</em> – a class of vulnerabilities historically reserved for human security researchers.</p>
-<p>Earlier this year, I began developing an internal AI-powered auditing agent called Redhound to proactively hunt for these exact blind spots. Built on frontier models, Redhound puts that reasoning to work against our own codebases at Canonical.</p>
-<p>Redhound has already proven its value, recently uncovering <strong>three critical logic vulnerabilities</strong> in LXD, our container and virtual machine manager. These bugs had survived years of manual review and static analysis. Redhound found them in under a day of unsupervised analysis.</p>
-<p>Below, I break down the mechanics of this adversarial pipeline, the technical details of the three zero-days (now patched and disclosed), and how agentic auditing changes the way we secure infrastructure.</p>
-<h2 class="wp-block-heading">The bugs that fall through every other tool</h2>
-<p><strong>Static analysis</strong> handles pattern-matching problems well: injection sinks, unsafe API calls, and dangerous concatenations. Modern scanners were built to find these problems, and they do that work reliably.</p>
-<p>What these scanners cannot do is reason about what is missing: for example, a checklist that names three fields when the data structure has four; or a validation that reads one file while the operation it gates uses a different one. These are not sloppy code errors; they are exploitable gaps in code that reads correctly to a careful reviewer. Because the line that would close the gap does not exist in the source, a tool looking for patterns has nothing to match against.</p>
-<p><strong>Dynamic analysis </strong>and fuzzing fail for a related reason: they need a runtime signal – a crash, a panic, a sanitizer trip. A request that should have been denied but succeeds looks identical to a legitimate one. There is nothing for the fuzzer to trip on.</p>
-<p><strong>Manual review and penetration testing</strong> catch these bugs, but the work is time-consuming and demands substantial domain expertise. Finding the vulnerabilities by hand means combing through hundreds of thousands of lines that are correct, waiting to notice the one that isn’t. Mature codebases survive years of this and still ship logic bugs.</p>
-<p>These are the bugs Redhound goes after: the code does exactly what it was written to do, but that does not map to the intent of the security model.</p>
-<h2 class="wp-block-heading">How Redhound works</h2>
-<p>Redhound audits our codebases the way a determined human attacker would: reading a project end-to-end, generating adversarial hypotheses, dispatching agents to investigate each one, and running a separate round of agents to refute them.</p>
-<p>The pipeline runs in five conceptual phases:</p>
-<ol>
-<li><strong>Deterministic Recon</strong>: Before any agent reads a single line, static-analysis tooling maps the codebase. This includes every function, type, and call edge; every HTTP, gRPC, and CLI entry point; and categorized security signals (auth, crypto, deserialization, injection).</li>
-</ol>
-<ol start="2">
-<li><strong>Threat Modeling</strong>: An agent reads the recon graph and identifies what an attacker would want (e.g., host root, cross-tenant access, a cluster admin certificate) and maps the trust boundaries between an outside attacker and each target.</li>
-</ol>
-<ol start="3">
-<li><strong>Iterative Loop</strong>: Each cycle, a red-team agent generates a batch of attack hypotheses. Each hypothesis is dispatched to a separate investigator agent given the relevant slice of the call graph. The investigator either finds a concrete exploit path or reports the hypothesis as false.</li>
-</ol>
-<ol start="4">
-<li><strong>Debunking</strong>: This is the most critical design decision. Every confirmed-looking finding is handed to a “debunker” agent with the exact opposite objective. Its job is to independently read the source and find the runtime guard that kills the attack – with no anchoring from the investigator’s confidence.</li>
-</ol>
-<ol start="5">
-<li><strong>Impact Assessment</strong>: A technical fault in the code does not automatically equate to a security vulnerability. This final agent cross-references any finding that survives the debunker against the original threat model and the application’s defined trust boundaries. By evaluating the precise attacker prerequisites and calculating the actual privilege gain, the assessor ensures that the pipeline escalates only verifiable, high-impact exploits rather than purely theoretical issues.</li>
-</ol>
-<p>Only findings that survive the debunker reach a human reviewer. Redhound then generates a draft report and a runnable proof-of-concept (PoC) exploit to streamline the validation process.</p>
-<h2 class="wp-block-heading">Three classes of bug</h2>
-<p>The three findings are a useful sample because they represent three different classes of logic flaws. All three were assigned a final CVSS 3.1 score of <strong>9.1</strong> during coordinated disclosure.</p>
-<figure class="wp-block-table"><table><thead><tr><th><strong>Vulnerability</strong></th><th><strong>CWE / Class</strong></th><th><strong>Attacker gains</strong></th><th><strong>Why hard to find</strong></th></tr></thead><tbody><tr><td>Certificate type escalation (CVE-2026-34179)</td><td>CWE-915 (mass assignment)</td><td>Restricted certificate user to host root</td><td>A missing authorization check – no pattern marks what is not there</td></tr><tr><td>VM low-level option bypass (CVE-2026-34177)</td><td>CWE-184 (incomplete denylist)</td><td>Restricted project user to host root</td><td>An unlisted key is indistinguishable from an intentionally permitted one</td></tr><tr><td>Backup restore desync (CVE-2026-34178)</td><td>CWE-20 (improper input validation)</td><td>Restricted project user to host root</td><td>Two data flows from one input diverge across four files</td></tr></tbody></table></figure>
-<p>Each finding below shows what Redhound actually produced: the structured metadata, the title verbatim, and the concrete trace generated by the investigator agent.</p>
-<h3 class="wp-block-heading">Certificate type escalation (CVE-2026-34179)</h3>
-<p>This flaw resides in the certificate update logic where the system fails to validate the certificate “type”. A restricted certificate user can effectively grant themselves Cluster Admin privileges by bypassing type checks during a certificate update.</p>
-<p>Finding details:</p>
+      <title>CVE-2026-46333 (ssh-keysign-pwn) Linux kernel vulnerability mitigations</title>
+      <link>https://ubuntu.com//blog/ssh-keysign-pwn-linux-vulnerability-fixes-available</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/ssh-keysign-pwn-linux-vulnerability-fixes-available</guid>
+      <pubDate>Tue, 19 May 2026 18:20:06 GMT</pubDate>
+      <description><![CDATA[<p>An information disclosure security vulnerability in the Linux kernel was publicly disclosed on May 15th, 2026. The vulnerability was reported by Qualys and <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=36d49bba19f2c19c933d13b25dcf4eb607a030b3">fixed</a> in the mainline Linux kernel tree. A proof-of-concept exploit was published soon after public disclosure. The ID <a href="https://ubuntu.com/security/CVE-2026-46333">CVE-2026-46333</a> was assigned, but the vulnerability is also referred to as “ssh-keysign-pwn”, based on the proof-of-concept exploit.</p>
+<p>The vulnerability is a race condition that can result in the disclosure of sensitive files to unprivileged local users. The exploit demonstrates this by disclosing the contents of the <code>/etc/shadow</code> file (containing hashed local user passwords) and OpenSSH server host private keys (which could facilitate SSH on-path attacks or impact SSH host-based authentication).</p>
+<p><a href="https://ubuntu.com/security/CVE-2026-46333">CVE-2026-46333</a> has been assigned a CVSS 3.1 score of 5.5 by CISA, corresponding to a severity of Medium. Canonical agrees with this assessment. The Ubuntu Priority assigned is High, due to the disclosure of sensitive local information to unprivileged users.</p>
+<p>This post describes a mitigation that disables the ability to exploit the vulnerability, at a cost of being unable to run debugging tools (such as gdb and gcore) as unprivileged users.</p>
+<h1 class="wp-block-heading">Impact</h1>
+<p>The vulnerability allows disclosure of files opened by a suid or sgid executable to an unprivileged attacker that invokes the suid or sgid executable. The race condition occurs as the privileged process exits, which requires the executable to keep the sensitive files open when exiting. During a short window, an unprivileged attacker can inspect an invoked privileged process using the <code>ptrace()</code> system call.</p>
+<p>The demonstrated exploits include:</p>
 <ul>
-<li><strong>Title</strong>: “Restricted user can change certificate type to ‘server’ via legacy API, escalating to ProtocolCluster admin”</li>
-<li><strong>Finding ID</strong>: thread-041</li>
-<li><strong>Severity</strong>: Critical (confidence: exploitable)</li>
-<li><strong>Privilege gain</strong>: 10/10</li>
-<li><strong>Ease of exploitation</strong>: 9/10</li>
-<li><strong>Prerequisite prevalence</strong>: 8/10</li>
-<li><strong>Attacker profile</strong>: ap-002 (Authenticated restricted user)</li>
-<li><strong>Source agent</strong>: thread-follower; survived the debunker</li>
-<li><strong>CVSS 3.1</strong>: 9.1 (assigned during disclosure)</li>
+<li>The ability to read the contents of the <code>/etc/shadow</code> file via the sgid <code>/usr/bin/chage</code>. The file contains hashed local user passwords and would require an additional brute-force attack in order to retrieve the plain-text passwords. The <a href="https://documentation.ubuntu.com/security/security-features/cryptography/password-hashing/#password-hashing">algorithms used by Ubuntu</a> are considered strong against such attacks, but require passwords that conform to current best practices.</li>
+<li>The ability to read the OpenSSH server host private keys via the suid <code>/usr/lib/openssh/ssh-keysign</code>. These are used by the OpenSSH server to prove its identity to clients and ensure that an <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">on-path attack</a> does not compromise SSH connections. Additionally, the OpenSSH host keys are used for <a href="https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Host-based_Authentication">host-based authentication</a> and their disclosure could lead to user impersonation on deployments that use this uncommon authentication method.</li>
 </ul>
-<p>Exploitation trace on <a href="https://github.com/canonical/lxd/tree/lxd-6.7">LXD 6.7</a> (eight steps, generated by the investigator):</p>
-<ol>
-<li>certificates.go:49 – restricted TLS user sends PUT /1.0/certificates/&lt;own-fingerprint&gt; with type=’server’, keeping name / restricted / projects identical. Passes allowAuthenticated.</li>
-<li>certificates.go:960 – caller-supplied type converted to TypeServer.</li>
-<li>certificates.go:975 – EntitlementCanEdit check denies (user is restricted).</li>
-<li>certificates.go:992 – guard checks Restricted / Name / Projects against the original record.<strong> Type is not checked.</strong></li>
-<li>certificates.go:1003-1009 – rebuilds the struct with original Restricted / Name / Certificate, but uses caller-supplied reqDBType.</li>
-<li>certificates.go:1073 – UpdateCertificate writes Type=TypeServer to the database.</li>
-<li>certificates.go:1099 – identity cache refreshed via s.UpdateIdentityCache().</li>
-<li>daemon.go:587 – next handshake matches as ProtocolCluster, Trusted=true. The restricted user is now cluster admin.</li>
-</ol>
-<p>Also produced for this finding: full code-location evidence and a debunker review that found no defense.</p>
-<h3 class="wp-block-heading">VM low-level option bypass (CVE-2026-34177)</h3>
-<p>This bypass allows for arbitrary QEMU configuration injection by exploiting an incomplete blocklist in restricted projects. In combination with another finding, which identified that <code>raw.apparmor</code> is also not restricted, this allows a restricted user to escape to host root.</p>
-<p>Finding details:</p>
+<p>On container deployments, the information that can be disclosed is strictly within the confines of the container and, generally, unlikely to be useful to an attacker.</p>
+<h1 class="wp-block-heading">Affected releases</h1>
+<p>In Ubuntu, the vulnerability fix will be distributed through the Linux kernel image packages. Until the Linux kernel security update is available, a mitigation can be applied according to the instructions below. The mitigation will impact debuggers, such as gdb. The mitigation will not be necessary once the kernel is updated.</p>
+<figure class="wp-block-table"><table><tbody><tr><td><strong>Release</strong></td><td><strong>Package Name</strong></td><td><strong>Fixed Version</strong></td></tr><tr><td>Trusty Tahr (14.04 LTS)</td><td>linux</td><td>Affected</td></tr><tr><td>Xenial Xerus (16.04 LTS)</td><td>linux</td><td>Affected</td></tr><tr><td>Bionic Beaver (18.04 LTS)</td><td>linux</td><td>Affected</td></tr><tr><td>Focal Fossa (20.04 LTS)</td><td>linux</td><td>Affected</td></tr><tr><td>Jammy Jellyfish (22.04 LTS)</td><td>linux</td><td>Affected</td></tr><tr><td>Noble Numbat (24.04 LTS)</td><td>linux</td><td>Affected</td></tr><tr><td>Questing Quokka (25.10)</td><td>linux</td><td>Affected</td></tr><tr><td>Resolute Raccoon (26.04 LTS)</td><td>linux</td><td>Affected</td></tr></tbody></table></figure>
+<h1 class="wp-block-heading">How to check if you are impacted</h1>
+<p>All of the releases from the table above are impacted.</p>
+<h1 class="wp-block-heading">Manual mitigation</h1>
+<p>The mitigation disables the ability of unprivileged users to attach to other processes using the <code>ptrace()</code> system call. This is generally used by debuggers. The <a href="https://documentation.ubuntu.com/security/security-features/process-memory/#ptrace-scope">kernel.yama.ptrace_scope</a> sysctl can be used to restrict the situations in which the affected system call can be used. On Ubuntu, the sysctl parameter defaults to the value <code>1</code>, which imposes an ancestor-descendant relationship between the attacker’s process and the victim. The scope can be further restricted with one of the following values:</p>
 <ul>
-<li><strong>Title</strong>: “raw.qemu.conf bypasses restricted.virtual-machines.lowlevel project restriction, allowing arbitrary QEMU config injection”</li>
-<li><strong>Finding ID</strong>: thread-009</li>
-<li><strong>Severity</strong>: High (confidence: exploitable)</li>
-<li><strong>Privilege gain</strong>: 8/10</li>
-<li><strong>Ease of exploitation</strong>: 8/10</li>
-<li><strong>Prerequisite prevalence</strong>: 8/10</li>
-<li><strong>Attacker profile</strong>: ap-002 (Authenticated restricted user with a VM in a restricted project)</li>
-<li><strong>Source agent</strong>: thread-follower; survived the debunker</li>
-<li><strong>CVSS 3.1</strong>: 9.1 (assigned during disclosure)</li>
+<li><code><strong>2</strong></code>: this disallows the use of the <code>ptrace()</code> system call for users without the <code>CAP_SYS_PTRACE</code> privilege, which is the case for most users. As such, an attacker would not normally have this capability,. Debugging tools that utilize ptrace, such as gdb and gcore, will be impacted for unprivileged users.</li>
+<li><code><strong>3</strong></code>: this disables attaching to processes using <code>ptrace()</code> altogether. Debugging tools that utilize ptrace, such as gdb and gcore, will be impacted for all users, including privileged ones.</li>
 </ul>
-<p>Exploitation trace on <a href="https://github.com/canonical/lxd/tree/lxd-6.7">LXD 6.7</a> (four steps, generated by the investigator):</p>
-<ol>
-<li>lxd/project/limits/permissions.go:779 – restricted user in a restricted project (restricted.virtual-machines.lowlevel=block by default) sets raw.qemu.conf on a VM via PUT /1.0/instances/{name}. entityConfigChecker calls isVMLowLevelOptionForbidden(‘raw.qemu.conf’), which returns false because the key is not in the four-element blocklist.</li>
-<li>lxd/instance/instancetype/instance.go:1140 – config-key validation accepts the value (validate.IsAny).</li>
-<li>lxd/instance/drivers/driver_qemu.go:3905 – on VM start, generateQemuConfigFile calls qemuRawCfgOverride as the last config transformation; the attacker’s content is parsed and appended to the QEMU config file.</li>
-<li>lxd/instance/drivers/driver_qemu.go:1535 – QEMU is launched with -readconfig pointing at the modified file. The injected [chardev] and [mon] sections create a QEMU monitor socket on the host filesystem.</li>
-</ol>
-<p>Also produced for this finding: full code-location evidence and a debunker review that searched for a runtime guard on the unlisted key and found none.</p>
-<h3 class="wp-block-heading">Backup restore desynchronization (CVE-2026-34178)</h3>
-<p>This vulnerability exploits the discrepancy between how LXD validates a backup index and how it actually imports the internal backup configuration. This desynchronization allows an attacker to sneak forbidden security configurations past the project’s restriction checks.</p>
-<p>Finding details:</p>
-<ul>
-<li><strong>Title</strong>: “Backup restore config injection via index.yaml/backup.yaml desynchronization bypasses all project restriction checks”</li>
-<li><strong>Finding ID</strong>: thread-086</li>
-<li><strong>Severity</strong>: High (confidence: exploitable)</li>
-<li><strong>Privilege gain</strong>: 8/10</li>
-<li><strong>Ease of exploitation</strong>: 7/10</li>
-<li><strong>Prerequisite prevalence</strong>: 8/10</li>
-<li><strong>Attacker profile</strong>: ap-002 (Authenticated restricted user with CanCreateInstances in a restricted project)</li>
-<li><strong>Source agent</strong>: thread-follower; survived the debunker</li>
-<li><strong>CVSS</strong> <strong>3.1</strong>: 9.1 (assigned during disclosure)</li>
-</ul>
-<p>Exploitation trace on <a href="https://github.com/canonical/lxd/tree/lxd-6.7">LXD 6.7</a> (seven steps, generated by the investigator):</p>
-<ol>
-<li>instances_post.go:1170 – restricted user sends POST /1.0/instances with a crafted backup tar. index.yaml has Instance.Config={}; backup/container/backup.yaml has Instance.Config={‘security.privileged’: ‘true’, ‘raw.lxc’: ‘lxc.mount.auto.proc=rw:mixed’}.</li>
-<li>backup/backup_info.go:69 – GetInfo reads index.yaml from the tar and decodes into Info.Config. Clean configuration; no forbidden keys.</li>
-<li>instances_post.go:885 – limits.AllowInstanceCreation checks bInfo.Config.Instance.Writable() (from index.yaml) against project restrictions. Check passes.</li>
-<li>storage/drivers/generic_vfs.go:952 – CreateInstanceFromBackup extracts the tar, writing the tampered backup/container/backup.yaml to mountPath/backup.yaml.</li>
-<li>backup/backup_config_utils.go:236 – UpdateInstanceConfig reads backup.yaml, updates only Name and Project, writes back. security.privileged=true and raw.lxc survive.</li>
-<li>api_internal.go:784 – internalImportFromBackup reads backup.yaml from disk; backupConf.Instance.Config now holds the forbidden keys.</li>
-<li>api_internal.go:946 – instance.CreateInternal writes the instance to the database with security.privileged=true and raw.lxc. A privileged container exists inside a restricted project; UID 0 inside maps to UID 0 on the host.</li>
-</ol>
-<p>Also produced for this finding: full code-location evidence across four source files and a debunker review that searched for a missing reconciliation step and found none.</p>
-<p>None of these findings is exotic. Missing fields in allowlists, short denylists, divergent validation paths – these exist in every mature codebase. The difficulty has always been identifying where to focus across a few hundred thousand lines of code.</p>
-<h2 class="wp-block-heading">What this changes in practice</h2>
-<p>Redhound does not replace the tools we already run. SAST, fuzzing, dependency scanning, and human review keep doing what they do well, and Redhound feeds into the same review pipeline.</p>
-<p>What changes is what each review can reach. Audits begin from an attack-surface map, candidate findings with full exploitation traces, and a record of hypotheses already debunked. Logic bugs that have historically survived years of expert scrutiny become tractable, and reviewer judgment is spent where it matters most: assessing real-world impact, and engineering architectural fixes.</p>
-<h2 class="wp-block-heading">What’s next</h2>
-<p>Internally at Canonical, tools like Redhound are now becoming a part of how we work every day, not only as a single audit but introducing it as a recurring practice. Our goal is to incorporate agentic security auditing into our existing processes to elevate the security posture of Canonical’s products across the board.</p>
-<h2 class="wp-block-heading">Disclosure</h2>
-<p>All three findings were disclosed to the LXD team, fixed in coordinated releases, and assigned CVEs <a href="https://ubuntu.com/security/CVE-2026-34177">CVE-2026-34177</a>, <a href="https://ubuntu.com/security/CVE-2026-34178">CVE-2026-34178,</a> and <a href="https://ubuntu.com/security/CVE-2026-34179">CVE-2026-34179</a>. Thanks to the LXD team for triaging and patching all three.</p>]]></description>
+<p>Please note that if the sysctl is set to the value <code>3</code>, it cannot be changed without a system reboot.</p>
+<p>The following instructions change the currently running value of the <code>kernel.yama.ptrace_scope</code> sysctl and configure a drop-in file (<code>/etc/sysctl.d/99-CVE-2026-46333.conf</code>) to retain the value across reboots. We consider setting the to the value 2 to be a sufficient mitigation. If you wish to use the value <code>3</code>, you can adjust the command accordingly.</p>
+<pre class="wp-block-code"><code>echo kernel.yama.ptrace_scope=2 | sudo tee /etc/sysctl.d/99-CVE-2026-46333.conf
+sudo sysctl -p /etc/sysctl.d/99-CVE-2026-46333.conf</code></pre>
+<h1 class="wp-block-heading">Disabling the mitigation</h1>
+<p>Once kernel updates are available and installed, the mitigation can be removed:</p>
+<pre class="wp-block-code"><code>sudo rm /etc/sysctl.d/99-CVE-2026-46333.conf<br/>sudo sysctl kernel.yama.ptrace_scope=1</code></pre>
+<p>We recommend you do not set this parameter to the value <code>0</code>, as doing so would disable the protections provided by the feature, as explained <a href="https://documentation.ubuntu.com/security/common-mistakes/dangerous-sysctls/#kernel-yama-ptrace-scope">here</a>.</p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
