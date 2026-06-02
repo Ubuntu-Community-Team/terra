@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Mon, 01 Jun 2026 04:22:50 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 04:16:06 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -6635,6 +6635,35 @@ So, please sync with this change (and sorry :)).</p>
 
 <p class="wp-block-paragraph"><a href="https://reddit.com/r/ploos" class="embedly-card external" data-card-recommend="0" data-card-width="100%">https://reddit.com/r/ploos</a></p>]]></description>
       <source url="http://blogs.gnome.org/mneptok/feed/">Kurt von Finck</source>
+    </item>
+    <item>
+      <title>Announcing the Ubuntu 18.10 Free Culture Showcase winners</title>
+      <link>https://www.nhaines.com/blog/2018/09/28/announcing-ubuntu-18.10-free-culture-showcase-winners/</link>
+      <guid isPermaLink="true">https://www.nhaines.com/blog/2018/09/28/announcing-ubuntu-18.10-free-culture-showcase-winners/</guid>
+      <pubDate>Fri, 28 Sep 2018 07:00:00 GMT</pubDate>
+      <description><![CDATA[<p>October approaches, and Ubuntu marches steadly along the road from one LTS to another.  Ubuntu 18.10 is another step in Ubuntu’s future.  And now it’s time to unveil a small part of that change: the community wallpapers to be included in Ubuntu 18.10!</p>
+
+<p>Every cycle, talented artists around the world create media and release it under licenses that encourage sharing and adaptation. This cycle we had some amazing images submitted to the <a href="https://www.flickr.com/groups/ubuntu-fcs-1810/">Ubuntu 18.10 Free Culture Showcase</a> photo pool on Flickr, where all eligible submissions can be found.  The competition was fierce; narrowing down the options to the final selections was painful!</p>
+
+<p>But there can be only 12, and the final images that will be included in Ubuntu 18.10 are:</p>
+
+<ul>
+  <li><a href="https://www.flickr.com/photos/155485295@N04/28898305427/in/pool-ubuntu-fcs-1810/">Cosmic Cuttlefish</a> by Jim Coleman</li>
+  <li><a href="https://www.flickr.com/photos/143512932@N03/29085424897/in/pool-ubuntu-fcs-1810/">Spring Flowers</a> by MK4-MI01</li>
+  <li><a href="https://www.flickr.com/photos/mendhak/37748450101/in/pool-ubuntu-fcs-1810/">Carriage Return</a> by mendhak</li>
+  <li><a href="https://www.flickr.com/photos/153219066@N06/41387651640/in/pool-ubuntu-fcs-1810/">Ubuntu Party de Paris</a> by Marcos Costales</li>
+  <li><a href="https://www.flickr.com/photos/98223780@N05/41846068390/in/pool-ubuntu-fcs-1810/">Tapiola, Espoo Cultural Center</a> by Agostino Faedda</li>
+  <li><a href="https://www.flickr.com/photos/14287735@N05/42055551820/in/pool-ubuntu-fcs-1810/">Fairground at Night</a> by martin</li>
+  <li><a href="https://www.flickr.com/photos/tomas_sobek/42346768035/in/pool-ubuntu-fcs-1810/">Milky Way before the dawn</a> by Tomas Sobek</li>
+  <li><a href="https://www.flickr.com/photos/38121135@N05/42996830034/in/pool-ubuntu-fcs-1810/">Black sand beach</a> by Mads Rosendahl</li>
+  <li><a href="https://www.flickr.com/photos/simosx/43736940061/in/pool-ubuntu-fcs-1810/">The Image of Mount Parnassus</a> by simosx</li>
+  <li><a href="https://www.flickr.com/photos/bernhardhanakam/44033490521/in/pool-ubuntu-fcs-1810/">Morning</a> by Bernhard Hanakam</li>
+  <li><a href="https://www.flickr.com/photos/155984160@N07/43295035514/in/pool-ubuntu-fcs-1810/">Encounter</a> by Lzardjin</li>
+  <li><a href="https://www.flickr.com/photos/134476822@N04/43642256642/in/pool-ubuntu-fcs-1810/">touche de vert</a> by François Cante</li>
+</ul>
+
+<p>A big congratulations to the winners, and thanks to everyone who submitted a wallpaper.  You can find these wallpapers (along with dozens of other stunning wallpapers) today at the links above, or in your desktop wallpaper list after you upgrade to or install Ubuntu 18.10 on October 18th.</p>]]></description>
+      <source url="https://www.nhaines.com/feed.xml">Nathan Haines</source>
     </item>
     <item>
       <title>NVIDIA PRIME in Ubuntu 18.04 and 18.10, and a call for testing</title>
