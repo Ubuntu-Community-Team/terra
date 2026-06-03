@@ -6,9 +6,39 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Tue, 02 Jun 2026 01:03:14 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 01:09:29 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu and Ubuntu Pro on Azure Cobalt 200 VMs</title>
+      <link>https://ubuntu.com//blog/ubuntu-azure-cobalt-200-vms</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/ubuntu-azure-cobalt-200-vms</guid>
+      <pubDate>Tue, 02 Jun 2026 18:58:00 GMT</pubDate>
+      <description><![CDATA[<p>At Build 2026, Microsoft announced the <a href="https://aka.ms/Cobalt200VMs">preview of Azure Cobalt 200</a>, the second generation of its custom Arm silicon for cloud-native and agentic AI workloads. Ubuntu and Ubuntu Pro are available on Cobalt 200 from the start of preview, so your existing Ubuntu workloads run on Cobalt 200 with little or no change. Moving to this new generation of Azure silicon is a change of hardware, not a change of platform.</p>
+<h2 class="wp-block-heading"><strong>The same Ubuntu you already run</strong></h2>
+<p>Adoption is straightforward because the operating system does not change. Cobalt 200 uses the same 64-bit Arm architecture as Cobalt 100, and Ubuntu has run on Arm64 across the stack for years:</p>
+<ul>
+<li>More than 95% of the Ubuntu archive is built and tested for Arm, so the tools, libraries, and applications you depend on are already available.</li>
+<li>Major languages and runtimes, including .NET, Java, Python, Rust, and C++, provide Arm-native versions.</li>
+<li>Official Ubuntu images and Ubuntu Pro are available on both x86 and Arm, so you operate one platform, not two.</li>
+</ul>
+<p>For most teams, running on Cobalt 200 is a deployment decision, not an engineering project.</p>
+<h2 class="wp-block-heading"><strong>Built for cloud-native and agentic AI</strong></h2>
+<p>Cobalt 200 is designed for scale-out, cloud-native workloads, and its new VM families extend that reach to memory-intensive and storage-dense services. These are the workloads the Ubuntu ecosystem is already built around: open-source databases, in-memory caches, real-time analytics, microservices, media processing, and containerized services.</p>
+<p>Agentic AI is a clear focus of this generation, and it is also a focus for Ubuntu. These workloads create and run many execution sandboxes concurrently, the kind of dense, scale-out compute Cobalt 200 is built for. Combined with Cobalt 200 features such as memory encryption enabled by default and built-in acceleration for compression and encryption, Ubuntu provides an efficient foundation for agentic services on Azure.</p>
+<h2 class="wp-block-heading"><strong>Ready for production with Ubuntu Pro</strong></h2>
+<p>Running production workloads on new silicon means keeping them secure and maintained over the long term. <a href="https://ubuntu.com/azure/pro">Ubuntu Pro</a> provides:</p>
+<ul>
+<li>Up to 15 years of security maintenance for the Ubuntu base OS and thousands of open-source packages.</li>
+<li>Kernel Livepatch, available on Arm64 from<a href="https://canonical.com/blog/canonical-releases-ubuntu-26-04-lts-resolute-raccoon"> Ubuntu 26.04 LTS (Resolute Raccoon)</a> onward, applies critical and high-severity kernel fixes without rebooting, so long-running database, analytics, and AI services stay available.</li>
+<li>Landscape for fleet management, automated patching, and audit reporting across your Azure estate.</li>
+</ul>
+<p>Ubuntu Pro on Arm is the same offering you run on x86, so the operating model you already use across Azure carries over unchanged when these workloads move into production.</p>
+<h2 class="wp-block-heading"><strong>Get started</strong></h2>
+<p>Azure Cobalt 200 VMs are available in preview now. Request access through the <a href="https://aka.ms/Cobalt200VMs-signup">Cobalt 200 preview signup form</a>, then deploy Ubuntu using the Azure portal, CLI, SDKs, PowerShell, or your existing tooling, and enable Ubuntu Pro for long-term security maintenance and Livepatch. To learn more about Ubuntu on Azure, visit <a href="https://ubuntu.com/azure">ubuntu.com/azure</a>.</p>
+<p>Ubuntu has been available on Azure Cobalt since the first generation, and we look forward to seeing what teams build on Cobalt 200.</p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>Announcing Incus 7.1</title>
       <link>https://stgraber.org/2026/06/01/announcing-incus-7-1/</link>
@@ -123,39 +153,219 @@
       <source url="https://stgraber.org/category/planet-ubuntu/feed/">Stéphane Graber</source>
     </item>
     <item>
-      <title>How Canonical Support solves hard Linux performance bugs  – even in 12-year old code</title>
-      <link>https://ubuntu.com//blog/support-solves-bugs-in-12-year-old-code</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/support-solves-bugs-in-12-year-old-code</guid>
-      <pubDate>Mon, 01 Jun 2026 13:56:59 GMT</pubDate>
-      <description><![CDATA[<p>Some support cases are straightforward. Others lead deep into legacy code, where a single logic bug can quietly turn a routine command into a major performance problem. This series looks at how Canonical Support and Sustaining Engineering work together to investigate, patch, and upstream difficult issues that standard troubleshooting alone cannot solve. In this second post, a 12-year-old bug in libnss-db caused <a href="https://manpages.ubuntu.com/manpages/resolute/man1/getent.1.html"><code>getent</code></a> enumeration to slow to a crawl – and showed how far expert support can go when a customer brings the right evidence and the right question.</p>
-<figure class="wp-block-image size-full"><img alt="" height="445" loading="lazy" sizes="(min-width: 2048px) 2048px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_2048/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F50f5%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F50f5%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F50f5%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F50f5%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F50f5%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F50f5%2Fimage.png 1920w" width="2048"/></figure>
-<h1 class="wp-block-heading">What went wrong</h1>
-<p>Getent is a standard Linux command used to query the system’s name service for information such as users, groups, hosts, and services. In this case, it was being used to enumerate groups on Ubuntu, and a customer reported severe performance problems when using the `nssdb` backend. The `nssdb` backend is one way Linux can provide that information, by reading account and group data from Berkeley DB files instead of from LDAP, local flat files, or other identity sources. </p>
-<p>In an environment with more than 24,000 user and group entries, enumeration had become so slow that the backend was effectively unusable. The slowdown was severe enough to block practical use of the system for the customer’s workload.<strong> </strong>The customer had already tested alternatives and found they did not deliver the performance profile they needed.</p>
-<h1 class="wp-block-heading">Starting with the evidence</h1>
-<p>Solving frequent issues in new packages is hard enough, but this investigation was made harder by something different: the problem lived in an older component that had not been actively touched in more than 12 years . </p>
-<p>The customer had already narrowed the issue to libnss-db: a component behind the nssdb backend, a legacy name service library that implements nssdb. They also pointed to one small but important piece of logic: <code>stayopen</code>.</p>
-<h1 class="wp-block-heading">Reproducing the slowdown</h1>
-<p>The Canonical support engineer soon determined that <code>stayopen</code> handling was the likely source. Stayopen is a flag that determines whether the database connection remains open across repeated lookups or is reopened for each operation.</p>
-<p>The support engineer reproduced the issue and confirmed that the performance degradation was both real and severe. However, what initially looked like a generic lookup slowdown turned out to be repeated database activity during enumeration, with the cost of each operation compounding across a very large directory. At that scale, the result was a system that could no longer complete the work in a reasonable time.</p>
-<p>To truly understand the problem, the next step required a closer inspection of the software’s source code. That result shifted the investigation from surface-level troubleshooting to source-level analysis. Solving the problem meant examining libnss-db itself: an independent package whose C source had remained largely unchanged for more than a decade.</p>
-<h1 class="wp-block-heading">Digging into legacy C code</h1>
-<p>At that point, the work became a code-level deep dive for our Support team. Our engineer traced how libnss-db handled Berkeley DB access during enumeration and followed the control flow through code that, in some places, was roughly 12 years old.</p>
-<p>Our engineer soon found the source of all the problems: a logic bug in how the library handled database connections during enumeration. This was not the kind of issue that can be solved with a quick setting change or a routine package update. The library was repeatedly opening and closing the database files instead of keeping the connection open throughout the enumeration sequence.</p>
-<h1 class="wp-block-heading">The line of code that mattered</h1>
-<p>That open-close cycle had a dramatic effect at scale. During a single enumeration, it triggered 48,422 repeated disk reads, creating a major performance bottleneck and slowing the system far beyond what the customer could accept.  The cost was large enough to overwhelm the lookup path entirely.</p>
-<p>The customer’s suspicion about <code>stayopen</code> turned out to be exactly right. Once that behavior was confirmed in the code, our engineer created a patch to force the database connection to remain open during enumeration.</p>
-<h1 class="wp-block-heading">How performance was restored</h1>
-<p>The fix improved the lookup behavior immediately. By keeping the database open across the full enumeration sequence, it eliminated the repeated disk reads and restored performance for the customer.</p>
-<p>After validating the patch provided by a member of our Support team, the case was escalated to Canonical Sustaining Engineering so the issue could be tracked formally and moved toward a broader fix. A Launchpad bug was then created to document the problem and propose the change upstream, including for newer Ubuntu releases such as Noble.</p>
-<h1 class="wp-block-heading">Why this case stands out</h1>
-<p>This case is a good example of what technical support looks like when the answer is deeper than a package upgrade, a configuration change, or a standard workaround. Those are usually faster options because they can solve problems without changing the software itself. Here, however, the issue lived in the code, so a deeper investigation was required.<strong> </strong>The resolution depended on careful reproduction, close collaboration with a technically knowledgeable customer, and a willingness to read through old source code until the underlying behavior was fully understood.</p>
-<p>It also highlights the practical value of long-term support. Even though this issue lived in an old component that had long since fallen outside the attention of most of the broader community, it was still possible to investigate, patch, and escalate it because the customer had an Ubuntu Pro with Support subscription. That combination of long-term security maintenance and direct engineering expertise made it possible to solve a problem that otherwise might have remained unresolved.</p>
-<p>If you’re looking to understand how Canonical Support works, or explore the value, stability, and reliability it can bring to your organization and systems, we recommend you <a href="http://ubuntu.com/support">visit our dedicated Support page.</a></p>
-<p>And if you’re looking for help with a custom project, or just want to find out what your available support options are, please don’t hesitate to <a href="https://ubuntu.com/support/contact-us">contact us</a>.  </p>
-<h2 class="wp-block-heading">More from this series</h2>
-<p><a href="https://canonical.com/blog/when-an-upstream-change-broke-smartcard-fips-authentication-and-how-we-fixed-it">When an upstream change broke smartcard FIPS authentication and how we fixed it </a></p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+      <title>Ubuntu Summit 26.04: Personal Highlights</title>
+      <link>https://jnsgr.uk/2026/06/ubuntu-summit-26/</link>
+      <guid isPermaLink="true">https://jnsgr.uk/2026/06/ubuntu-summit-26/</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<blockquote>
+<p>This article was originally posted <a href="https://discourse.ubuntu.com/t/ubuntu-summit-26-04-personal-highlights/83660" target="_blank" rel="noreferrer">on the Ubuntu Discourse</a>, and is reposted here. I welcome comments and further discussion in that thread.</p>
+</blockquote>
+<p>Last week I attended <a href="https://ubuntu.com/summit" target="_blank" rel="noreferrer">Ubuntu Summit 26.04</a>. Ubuntu Summit is Canonical&rsquo;s twice-yearly &ldquo;showcase for innovative and ambitious&rdquo; work across Ubuntu, open source, and the wider technology ecosystem.</p>
+<p>The format remained the same as the <a href="https://jnsgr.uk/2025/11/ubuntu-summit-25/" target="_blank" rel="noreferrer">Ubuntu Summit 25.10</a>: a focused programme of talks, demos and community sessions, streamed for a wider audience. While many of the talks are anchored around Ubuntu or Canonical, this is not a requirement for submission.</p>
+<p>The <a href="https://www.youtube.com/playlist?list=PLwFSk464RMxkkvScqDkfHLIx8ox0hDIDV" target="_blank" rel="noreferrer">Ubuntu Summit 26.04 playlist</a> already includes the <a href="https://www.youtube.com/watch?v=jvJo8bOT7Lk" target="_blank" rel="noreferrer">opening keynote</a>, where I talked through AI in Ubuntu and the Ubuntu 26.04 LTS release. Some individual talk recordings are also available already, with the remaining recordings expected to follow in the coming days.</p>
+<p>In this post I&rsquo;ll highlight some of my favourite moments of the Summit, starting with the launch of <a href="https://ubuntu.com/workshop" target="_blank" rel="noreferrer">Canonical Workshop</a>, before moving through a few talks. If any of these catch your interest, you can see <a href="https://discourse.ubuntu.com/t/ubuntu-summit-26-04-timetable/81507" target="_blank" rel="noreferrer">when they aired</a> and follow the links through to the individual talk submissions!</p>
+<h2 id="canonical-workshop" class="relative group">Canonical Workshop <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#canonical-workshop" aria-label="Anchor">#</a></span></h2><p><a href="01.png">
+<figure>
+<picture
+class="mx-auto my-0 rounded-md"
+>
+<source
+srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/01_hu_72a795264cf5cd03.webp 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/01_hu_4af8239dbab12052.webp 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/01_hu_98d5ff4326987810.webp 1024w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/01_hu_3c36c4482e31ad7.webp 1280w
+"
+sizes="100vw"
+type="image/webp"
+/>
+<img
+width="1280"
+height="720"
+class="mx-auto my-0 rounded-md"
+alt="Canonical Workshop launch graphic"
+loading="lazy" decoding="async"
+src="https://jnsgr.uk/2026/06/ubuntu-summit-26/01_hu_664b47b6dbb2b695.png" srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/01_hu_7cc1da2f2bb379bc.png 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/01_hu_664b47b6dbb2b695.png 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/01_hu_688f65ef5f6abd30.png 1024w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/01.png 1280w
+"
+sizes="100vw"
+/>
+</picture>
+</figure>
+</a></p>
+<p>Before getting into the talks, the first highlight for me was the public launch of <a href="https://ubuntu.com/workshop" target="_blank" rel="noreferrer">Canonical Workshop</a>. The launch was covered <a href="https://canonical.com/blog/introducing-workshop-sandboxed-development-environments" target="_blank" rel="noreferrer">on the Canonical blog</a>, and the <a href="https://www.youtube.com/watch?v=ppElEgR_wEU" target="_blank" rel="noreferrer">Summit recording</a> is already available.</p>
+<p>I&rsquo;ve been heavily involved in Workshop for the last three years, working with the brilliant <a href="https://github.com/dmitry-lyfar" target="_blank" rel="noreferrer">Dmitry Lyfar</a> (project lead) and Canonical&rsquo;s CTO, <a href="https://github.com/niemeyer" target="_blank" rel="noreferrer">Gustavo Niemeyer</a>. Up until now, Workshop has been developed in a private GitHub repository, so announcing it publicly at the Summit was the perfect way for the project to go public!</p>
+<p>The thing I like about Workshop is that it turns messy development environments into something repeatable and sandboxed, launchable with a single command. The original motivation was for simplifying work with silicon SDKs and other complex vendor toolchains where setting up the right environment can be painful, fragile and hard to reproduce.</p>
+<p>Workshop helps teams package and reproduce their development environments, automate tasks in the codebase, and keep local and CI environments aligned - and it&rsquo;s based on technology (LXD, ZFS) that&rsquo;s already present on the vast majority of Ubuntu machines.</p>
+<p>As it happens, Workshop turns out to be a perfect fit for the agentic engineering boom. Agents need contained workspaces, clear boundaries around host access, and environments that can be torn down, recreated and shared without much ceremony. Workshop gives that workflow a natural home on Ubuntu, while also making day-to-day developer environment management feel much more pleasant.</p>
+<p>I implore you to have a play with Workshop - I think Dmitry and team have done an incredibly classy job of Workshop, and they&rsquo;re poised and ready to respond to any feedback you might have!</p>
+<h2 id="building-the-internet-computer" class="relative group">Building the &ldquo;Internet Computer&rdquo; <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#building-the-internet-computer" aria-label="Anchor">#</a></span></h2><p><a href="02.jpeg">
+<figure>
+<picture
+class="mx-auto my-0 rounded-md"
+>
+<source
+srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/02_hu_1ef4ff7928fedce0.webp 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/02_hu_5579f320c43e97ea.webp 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/02_hu_11aa0d10f7808d1e.webp 960w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/02_hu_11aa0d10f7808d1e.webp 960w
+"
+sizes="100vw"
+type="image/webp"
+/>
+<img
+width="960"
+height="540"
+class="mx-auto my-0 rounded-md"
+alt="opening slide for building the internet computer talk"
+loading="lazy" decoding="async"
+src="https://jnsgr.uk/2026/06/ubuntu-summit-26/02_hu_62d12ac43861f85b.jpeg" srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/02_hu_4353264fcc352238.jpeg 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/02_hu_62d12ac43861f85b.jpeg 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/02.jpeg 960w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/02.jpeg 960w
+"
+sizes="100vw"
+/>
+</picture>
+</figure>
+</a></p>
+<p><a href="https://discourse.ubuntu.com/t/building-the-internet-computer/79577" target="_blank" rel="noreferrer">Building the &ldquo;Internet Computer&rdquo;</a> was delivered by <a href="https://github.com/jelveh" target="_blank" rel="noreferrer">Nariman Jelveh</a>, founder of <a href="https://puter.com/" target="_blank" rel="noreferrer">Puter</a>, and was an excellent way to kick off the Summit: technically ambitious and wonderfully articulated.</p>
+<p>Puter is an open source &ldquo;internet OS&rdquo;: a desktop environment, filesystem, authentication layer, app hosting platform and set of cloud services that run in the browser. That description might sound like an old idea resurfacing, but the interesting part of the talk was in the detail.</p>
+<p>Nariman walked through how Puter is made to feel like a native environment while remaining a web platform, including the distributed filesystem, application sandboxing, and an API layer that enables developers to build against Puter as a <em>platform</em> rather than just a website.</p>
+<p>The <a href="https://www.youtube.com/watch?v=itPl9r9-LqE" target="_blank" rel="noreferrer">recording is already available</a> if you want to watch the talk back.</p>
+<h2 id="bootc-for-ubuntu-hosts" class="relative group">bootc for Ubuntu hosts <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#bootc-for-ubuntu-hosts" aria-label="Anchor">#</a></span></h2><p><a href="03.png">
+<figure>
+<picture
+class="mx-auto my-0 rounded-md"
+>
+<source
+srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/03_hu_3b8b13bae8e0e833.webp 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/03_hu_1b730610c96f7078.webp 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/03_hu_7d00bdfd2ef7e4ce.webp 960w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/03_hu_7d00bdfd2ef7e4ce.webp 960w
+"
+sizes="100vw"
+type="image/webp"
+/>
+<img
+width="960"
+height="540"
+class="mx-auto my-0 rounded-md"
+alt="opening slide for bootc and Ubuntu hosts talk"
+loading="lazy" decoding="async"
+src="https://jnsgr.uk/2026/06/ubuntu-summit-26/03_hu_a5076bd532019155.png" srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/03_hu_34562260f24e8d18.png 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/03_hu_a5076bd532019155.png 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/03.png 960w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/03.png 960w
+"
+sizes="100vw"
+/>
+</picture>
+</figure>
+</a></p>
+<p><a href="https://discourse.ubuntu.com/t/bootc-use-your-container-knowledge-and-infrastructure-to-build-and-deploy-your-ubuntu-hosts/79498" target="_blank" rel="noreferrer">bootc: Use Your Container Knowledge and Infrastructure to Build and Deploy Your Ubuntu Hosts</a> was given by <a href="https://github.com/jmarrero" target="_blank" rel="noreferrer">Joseph Marrero Corchado</a>, a Principal Software Engineer at Red Hat.</p>
+<p>The <code>bootc</code> pitch is straightforward: we already have mature workflows for building, testing, versioning and promoting OCI images, so why not apply more of that machinery to building and delivering operating systems? Rather than configuring a machine after installation and then trying to control drift with layers of automation, <code>bootc</code> lets you describe a bootable host as a container image and promote it through the same kind of pipeline you might already use for applications.</p>
+<p>This was a particularly interesting talk to feature at the Summit, because Canonical is heading a different way for its implementation of an &ldquo;immutable&rdquo; offering for Ubuntu through Ubuntu Core. I wrote in detail about both Ubuntu Core and <code>bootc</code> in <a href="https://jnsgr.uk/2025/09/immutable-linux-paradox/" target="_blank" rel="noreferrer">a previous blog post</a> if you&rsquo;d like more detail on the trade-offs.</p>
+<p>What I love is that this difference didn&rsquo;t prevent the talk from appearing at the Summit. I understand that there is an audience for Ubuntu + <code>bootc</code>, and even if Canonical doesn&rsquo;t wish to pursue that path, I&rsquo;m delighted that it exists in a community-maintained form and I&rsquo;ll be following along closely!</p>
+<p>The <a href="https://www.youtube.com/watch?v=1EkaitzSFFw" target="_blank" rel="noreferrer">recording is available on YouTube</a>. Joseph also shared an <a href="https://github.com/jmarrero/ubuntu-bootc/blob/main/GUIDE.md" target="_blank" rel="noreferrer">Ubuntu 26.04 with bootc getting started guide</a> after the talk.</p>
+<h2 id="gleam-and-the-value-of-small" class="relative group">Gleam and the value of small <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#gleam-and-the-value-of-small" aria-label="Anchor">#</a></span></h2><p><a href="04.jpeg">
+<figure>
+<picture
+class="mx-auto my-0 rounded-md"
+>
+<source
+srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/04_hu_cad575191fc2c101.webp 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/04_hu_c72b07d24b892f4a.webp 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/04_hu_ba91f4a6a887d397.webp 960w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/04_hu_ba91f4a6a887d397.webp 960w
+"
+sizes="100vw"
+type="image/webp"
+/>
+<img
+width="960"
+height="540"
+class="mx-auto my-0 rounded-md"
+alt="opening slide for gleam and the value of small talk"
+loading="lazy" decoding="async"
+src="https://jnsgr.uk/2026/06/ubuntu-summit-26/04_hu_373ee0090b8402d2.jpeg" srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/04_hu_a259c487c79ed5d3.jpeg 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/04_hu_373ee0090b8402d2.jpeg 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/04.jpeg 960w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/04.jpeg 960w
+"
+sizes="100vw"
+/>
+</picture>
+</figure>
+</a></p>
+<p><a href="https://discourse.ubuntu.com/t/gleam-and-the-value-of-small/80331" target="_blank" rel="noreferrer">Gleam and the value of small</a> by <a href="https://github.com/giacomocavalieri" target="_blank" rel="noreferrer">Giacomo Cavalieri</a> was one of the standout presentations of the Summit for me, both in content and format. Rarely have I seen a conference talk delivered with such passion and panache. Giacomo was a phenomenal presenter and their slides were <em>outstanding</em>, too.</p>
+<p>Gleam is a friendly, statically typed language for the Erlang VM and JavaScript runtimes. The talk&rsquo;s core argument was that the pursuit of being small is not just an aesthetic choice for a programming language: it is a maintenance strategy, a community strategy, and a way of protecting the long-term health of a project that does not have a large corporate owner behind it.</p>
+<p>Rather than trying to sell Gleam through an exhaustive feature tour, Giacomo used the language&rsquo;s restraint as the subject of the talk: fewer moving parts, clear trade-offs, and a project culture that treats every new feature as a future maintenance commitment.</p>
+<p>Many open source projects struggle not because they lack ideas, but because they accumulate too many of them without the maintainers to carry them in the long term, and Giacomo&rsquo;s talk provided a robust narrative to combat this problem. I&rsquo;m definitely going to be having a play with Gleam! 😉</p>
+<h2 id="collabora-office-as-a-snap" class="relative group">Collabora Office as a snap <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#collabora-office-as-a-snap" aria-label="Anchor">#</a></span></h2><p><a href="05.jpeg">
+<figure>
+<picture
+class="mx-auto my-0 rounded-md"
+>
+<source
+srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/05_hu_768a72c2d8c46352.webp 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/05_hu_a99f4ea09b25d46d.webp 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/05_hu_b08283e6b1fe9e24.webp 960w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/05_hu_b08283e6b1fe9e24.webp 960w
+"
+sizes="100vw"
+type="image/webp"
+/>
+<img
+width="960"
+height="540"
+class="mx-auto my-0 rounded-md"
+alt="opening slide for one codebase two worlds talk"
+loading="lazy" decoding="async"
+src="https://jnsgr.uk/2026/06/ubuntu-summit-26/05_hu_9f337ca5262e6f31.jpeg" srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/05_hu_73c42c414103e2c9.jpeg 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/05_hu_9f337ca5262e6f31.jpeg 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/05.jpeg 960w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/05.jpeg 960w
+"
+sizes="100vw"
+/>
+</picture>
+</figure>
+</a></p>
+<p><a href="https://discourse.ubuntu.com/t/one-codebase-two-worlds-bringing-the-browser-to-the-desktop/82466" target="_blank" rel="noreferrer">One Codebase, Two Worlds? Bringing the Browser to the Desktop</a> was delivered by <a href="https://people.gnome.org/~michael/" target="_blank" rel="noreferrer">Michael Meeks</a>, who works in <a href="https://www.collaboraonline.com/" target="_blank" rel="noreferrer">Collabora</a>&rsquo;s Office division.</p>
+<p>The talk walked through the problem of taking an established browser-based solution and bringing it to the Linux desktop without throwing away the work that made the browser version successful. That tension is common: users want desktop apps to feel native, but engineering teams often want to avoid maintaining entirely separate products for web and desktop, or having to learn the intricacies of the many different packaging formats available for Linux machines.</p>
+<p>What I liked about this talk was how it highlighted some of the core benefits of Snaps and the ecosystem around them. Atomic updates, confinement, and the ability to build once and ship across many Linux distributions all help reduce the packaging burden, while still giving users a desktop application rather than asking them to live entirely in a browser tab.</p>
+<p>I have a soft spot for talks that sit at the intersection of product and engineering concerns, and this was very much that. It was a great example of where good desktop packaging is not merely an implementation detail, but changed what is fundamentally practical for an upstream project to offer.</p>
+<p>The <a href="https://www.youtube.com/watch?v=3DkNh636ANE" target="_blank" rel="noreferrer">recording is available as &ldquo;Snapping a Giant Office for the Linux Desktop&rdquo;</a>.</p>
+<h2 id="arm-performix" class="relative group">Arm Performix <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#arm-performix" aria-label="Anchor">#</a></span></h2><p><a href="07.jpeg">
+<figure>
+<picture
+class="mx-auto my-0 rounded-md"
+>
+<source
+srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/07_hu_20b61f8ad48a4c9f.webp 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/07_hu_98eb6fd31f0aae73.webp 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/07_hu_e1b080e2c78c19d9.webp 960w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/07_hu_e1b080e2c78c19d9.webp 960w
+"
+sizes="100vw"
+type="image/webp"
+/>
+<img
+width="960"
+height="540"
+class="mx-auto my-0 rounded-md"
+alt="opening slide for level up your code on arm and ubuntu talk"
+loading="lazy" decoding="async"
+src="https://jnsgr.uk/2026/06/ubuntu-summit-26/07_hu_87255e4b1cf122c9.jpeg" srcset="https://jnsgr.uk/2026/06/ubuntu-summit-26/07_hu_6a177a6e4003cfc1.jpeg 330w,https://jnsgr.uk/2026/06/ubuntu-summit-26/07_hu_87255e4b1cf122c9.jpeg 660w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/07.jpeg 960w
+,https://jnsgr.uk/2026/06/ubuntu-summit-26/07.jpeg 960w
+"
+sizes="100vw"
+/>
+</picture>
+</figure>
+</a></p>
+<p><a href="https://discourse.ubuntu.com/t/level-up-your-code-on-arm-and-ubuntu/79868" target="_blank" rel="noreferrer">Level Up your code on Arm and Ubuntu</a> by <a href="https://github.com/dhaikney" target="_blank" rel="noreferrer">David Haikney</a> focused on performance engineering for Arm platforms running Ubuntu.</p>
+<p>Arm is now present across a wide spread of systems, from edge devices to cloud platforms, and that makes performance work more important than ever. Porting code is one step but understanding how it behaves on real hardware, where it spends time, and how it can be tuned is the next.</p>
+<p>Software is sometimes &ldquo;naively&rdquo; ported to Arm platforms - where original codebases have often benefited from years of optimisation to utilise SIMD instructions and the like, early ports often don&rsquo;t enjoy the same benefits. Using a profiler can quickly identify how to turn naive ports into first-class Arm implementations.</p>
+<p>David introduced <a href="https://developer.arm.com/servers-and-cloud-computing/arm-performix" target="_blank" rel="noreferrer">Arm Performix</a>, a free performance toolkit for understanding and improving real-world performance on Arm architectures, and connected that with AI-assisted development and static analysis for porting and optimization work. The talk&rsquo;s framing treated Arm enablement as an engineering workflow rather than a checkbox.</p>
+<h2 id="honorable-mentions" class="relative group">Honorable mentions <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#honorable-mentions" aria-label="Anchor">#</a></span></h2><p>There were plenty of other talks I enjoyed. <a href="https://discourse.ubuntu.com/t/minimal-rust-rocks/79639" target="_blank" rel="noreferrer">Minimal rust rocks</a> continued the Rust theme that has been growing across the Ubuntu ecosystem, and its <a href="https://www.youtube.com/watch?v=7StUGU9ZjmA" target="_blank" rel="noreferrer">recording is already available</a>. <a href="https://discourse.ubuntu.com/t/duckdb-not-quack-science/79571" target="_blank" rel="noreferrer">DuckDB: Not Quack Science</a>, which also now has a <a href="https://www.youtube.com/watch?v=q6S0Vv4u3iM" target="_blank" rel="noreferrer">recording on YouTube</a>, was a reminder of how much interesting infrastructure work is happening around data tools that are small enough to use locally but powerful enough to reshape large-scale workflows and deployments.</p>
+<p>I was also pleased to see <a href="https://discourse.ubuntu.com/t/upki-improving-certificate-revocation-on-linux/79576" target="_blank" rel="noreferrer">upki: improving certificate revocation on Linux</a> on the schedule. This is a project I&rsquo;ve written about a couple of times already: first when <a href="https://jnsgr.uk/2025/12/addressing-linuxs-missing-pki-infra/" target="_blank" rel="noreferrer">announcing upki</a> as an attempt to close Linux&rsquo;s missing CRL infrastructure, and then in <a href="https://jnsgr.uk/2026/02/upki-update/" target="_blank" rel="noreferrer">a progress update</a> covering the core revocation engine, CRLite mirroring, the C FFI, <code>rustls</code> integration and early packaging work.</p>
+<h2 id="conclusion" class="relative group">Conclusion <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#conclusion" aria-label="Anchor">#</a></span></h2><p>I really enjoyed Ubuntu Summit 26.04. It felt like a refinement on the format we trialled for the last Summit, and delivered a programme that balanced Ubuntu-specific work against a broader view of the open source world. The overall level of the talks was outstanding.</p>
+<p>That breadth is exactly what I hope the Summit continues to provide. Ubuntu is at its best when it acts as a meeting point for people building across the stack, from hardware and kernels through packaging, developer tooling, applications and community.</p>
+<p>Until next time! Ubuntu Summit 26.10 is scheduled for 12-13 November 2026.</p>]]></description>
+      <source url="https://jnsgr.uk/tags/ubuntu/index.xml">Jon Seager</source>
     </item>
     <item>
       <title>Ubuntu Weekly Newsletter Issue 946</title>
@@ -328,9 +538,9 @@
 <li>[USN-8299-1] Rclone vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010595.html" class="inline-onebox">[USN-8299-1] Rclone vulnerabilities</a></li>
 <li>[USN-8300-1] ngtcp2 vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010596.html" class="inline-onebox">[USN-8300-1] ngtcp2 vulnerability</a></li>
 <li>[USN-8291-3] Linux kernel (Low Latency) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010598.html" class="inline-onebox">[USN-8291-3] Linux kernel (Low Latency) vulnerabilities</a></li>
-<li>[USN-8296-2] Linux kernel (NVIDIA Tegra) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010599.html" class="inline-onebox">[USN-8296-2] Linux kernel (NVIDIA Tegra) vulnerabilities</a></li>
+<li>[USN-8296-2] Linux kernel (NVIDIA Tegra) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010599.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010599.html</a></li>
 <li>[USN-8301-1] SimpleEval vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010597.html" class="inline-onebox">[USN-8301-1] SimpleEval vulnerability</a></li>
-<li>[USN-8302-1] NLTK vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010601.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010601.html</a></li>
+<li>[USN-8302-1] NLTK vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010601.html" class="inline-onebox">[USN-8302-1] NLTK vulnerabilities</a></li>
 <li>[USN-8304-1] Vim vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010600.html" class="inline-onebox">[USN-8304-1] Vim vulnerabilities</a></li>
 <li>[USN-8298-1] .NET vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010602.html" class="inline-onebox">[USN-8298-1] .NET vulnerability</a></li>
 <li>[USN-8279-3] Linux kernel (NVIDIA Tegra IGX) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010603.html" class="inline-onebox">[USN-8279-3] Linux kernel (NVIDIA Tegra IGX) vulnerabilities</a></li>
@@ -342,24 +552,24 @@
 <li>[USN-8278-2] Linux kernel (Azure) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010610.html" class="inline-onebox">[USN-8278-2] Linux kernel (Azure) vulnerabilities</a></li>
 <li>[USN-8280-3] Linux kernel (IoT) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010611.html" class="inline-onebox">[USN-8280-3] Linux kernel (IoT) vulnerabilities</a></li>
 <li>[USN-8305-2] Linux kernel (Low Latency) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010609.html" class="inline-onebox">[USN-8305-2] Linux kernel (Low Latency) vulnerabilities</a></li>
-<li>[USN-8310-1] Linux kernel (Azure) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010612.html" class="inline-onebox">[USN-8310-1] Linux kernel (Azure) vulnerabilities</a></li>
+<li>[USN-8310-1] Linux kernel (Azure) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010612.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010612.html</a></li>
 <li>[USN-8307-1] ONNX vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010613.html" class="inline-onebox">[USN-8307-1] ONNX vulnerability</a></li>
 <li>[USN-8063-2] Protocol Buffers vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010614.html" class="inline-onebox">[USN-8063-2] Protocol Buffers vulnerability</a></li>
-<li>[USN-7972-2] OpenCC vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010615.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010615.html</a></li>
+<li>[USN-7972-2] OpenCC vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010615.html" class="inline-onebox">[USN-7972-2] OpenCC vulnerability</a></li>
 <li>[USN-8167-2] xdg-dbus-proxy vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010616.html" class="inline-onebox">[USN-8167-2] xdg-dbus-proxy vulnerability</a></li>
-<li>[USN-8303-1] GitPython vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010617.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010617.html</a></li>
+<li>[USN-8303-1] GitPython vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010617.html" class="inline-onebox">[USN-8303-1] GitPython vulnerabilities</a></li>
 <li>[USN-8313-1] XML-RPC for C and C++ vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010618.html" class="inline-onebox">[USN-8313-1] XML-RPC for C and C++ vulnerabilities</a></li>
-<li>[USN-8314-1] Ayttm vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010619.html" class="inline-onebox">[USN-8314-1] Ayttm vulnerabilities</a></li>
+<li>[USN-8314-1] Ayttm vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010619.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010619.html</a></li>
 <li>[USN-8318-1] libcaca vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010623.html" class="inline-onebox">[USN-8318-1] libcaca vulnerability</a></li>
 <li>[USN-8315-1] MediaWiki vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010620.html" class="inline-onebox">[USN-8315-1] MediaWiki vulnerabilities</a></li>
 <li>[USN-8317-1] GStreamer Good Plugins vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010621.html" class="inline-onebox">[USN-8317-1] GStreamer Good Plugins vulnerabilities</a></li>
-<li>[USN-8320-1] Memcached vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010622.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010622.html</a></li>
+<li>[USN-8320-1] Memcached vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010622.html" class="inline-onebox">[USN-8320-1] Memcached vulnerabilities</a></li>
 <li>[USN-8319-1] Libgcrypt vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010624.html" class="inline-onebox">[USN-8319-1] Libgcrypt vulnerabilities</a></li>
 <li>[USN-8321-1] Papers vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010625.html" class="inline-onebox">[USN-8321-1] Papers vulnerability</a></li>
-<li>[USN-8311-1] Dnsmasq vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010626.html" class="inline-onebox">[USN-8311-1] Dnsmasq vulnerability</a></li>
+<li>[USN-8311-1] Dnsmasq vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010626.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010626.html</a></li>
 <li>[USN-8322-1] Apache Commons BeanUtils vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010627.html" class="inline-onebox">[USN-8322-1] Apache Commons BeanUtils vulnerability</a></li>
 <li>[USN-8323-1] Postorius vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010630.html" class="inline-onebox">[USN-8323-1] Postorius vulnerability</a></li>
-<li>[USN-8324-1] Apache Tika vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010628.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010628.html</a></li>
+<li>[USN-8324-1] Apache Tika vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010628.html" class="inline-onebox">[USN-8324-1] Apache Tika vulnerabilities</a></li>
 <li>[USN-8325-1] tgt vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010629.html" class="inline-onebox">[USN-8325-1] tgt vulnerability</a></li>
 <li>[USN-8326-1] Foomuuri vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010631.html" class="inline-onebox">[USN-8326-1] Foomuuri vulnerabilities</a></li>
 <li>[USN-8316-1] CableSwig vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-May/010632.html" class="inline-onebox">[USN-8316-1] CableSwig vulnerabilities</a></li>
@@ -936,7 +1146,6 @@
 <li>Bashing-om</li>
 <li>Chris Guiver</li>
 <li>Wild Man</li>
-<li>Cristovao Cordeiro (cjdc) - Rocks</li>
 <li>irihapeti</li>
 <li>And many others</li>
 </ul>
@@ -1529,47 +1738,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 <p class="wp-block-paragraph">If you find something wrong, missing, or out of date — open a pull request, or file an issue and let the team know.</p>]]></description>
       <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
-    </item>
-    <item>
-      <title>The future of AI in Ubuntu</title>
-      <link>https://jnsgr.uk/2026/04/ai-in-ubuntu/</link>
-      <guid isPermaLink="true">https://jnsgr.uk/2026/04/ai-in-ubuntu/</guid>
-      <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<blockquote>
-<p>This article was originally posted <a href="https://discourse.ubuntu.com/t/the-future-of-ai-in-ubuntu/81130" target="_blank" rel="noreferrer">on the Ubuntu Discourse</a>, and is reposted here. I welcome comments and further discussion in that thread.</p>
-</blockquote>
-<h3 id="introduction" class="relative group">Introduction <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a></span></h3><p>As 2026 progresses, LLM-based tools are becoming more and more ubiquitous. Adoption across the tech industry has been mixed, both in terms of which projects are embracing &ldquo;AI&rdquo; technologies, and in how companies are structuring their adoption. As a result, I&rsquo;m frequently asked about what Canonical and Ubuntu will do (or not) to incorporate AI.</p>
-<p>In this post I&rsquo;ll detail how AI will play a part in both Canonical and Ubuntu&rsquo;s future, my framework for classifying AI features in the OS, and how Canonical is currently approaching adoption internally, because I think that will help paint a picture of our intent.</p>
-<p>The bottom line is that Canonical is ramping up its use of AI tools in a focused and principled manner that favours open weight models with license terms that feel most compatible with our values, combined with open source harnesses. AI features will be landing in Ubuntu throughout the next year as we feel that they&rsquo;re of sufficient maturity and quality, with a bias toward local inference by default.</p>
-<p>AI features in Ubuntu features will come in two forms: first as a means of enhancing existing OS functionality with AI models in the background, and latterly in the form of &ldquo;AI native&rdquo; features and workflows for those who want them.</p>
-<h3 id="ai-adoption-at-canonical" class="relative group">AI Adoption at Canonical <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#ai-adoption-at-canonical" aria-label="Anchor">#</a></span></h3><p>This year Canonical has begun a more deliberate push toward education and developing competence with AI tools. We are not setting shallow metrics on token usage, or percentages of code written with AI, but rather incentivising engineers to experiment and understand where AI tools add value. Rather than force a single early-choice AI stack, we’re incentivising teams to each pick ‘something different’ and go deep, so we learn more as an org in the next six months.</p>
-<p>There are certain tasks for which AI tools are a no-brainer. In these cases, AI tools can work autonomously and produce excellent results - particularly where the work is of a mechanical nature and they&rsquo;re given the right context. In other cases, they struggle. My hope is that over the coming months, all of our engineers grow to feel competent and fluid while driving the full range of AI tools: using them where they’re effective, and avoiding them where they’re not.</p>
-<p>I will not be measuring people at Canonical by how <em>much they use AI</em>, but rather continue to measure them on <em>how well they deliver</em>. AI is not going to take software engineering jobs at Canonical, but other software engineers who are highly competent with AI tools certainly could. Using AI for its own sake is not a constructive goal for anything but increasing exposure, and it rarely yields good results in production code. Used where it’s well-optimised, and in ways that can be controlled and reviewed, it can be highly effective. I&rsquo;ve seen AI used to great effect as an educational aid, to accelerate development tasks, to create immersive prototypes as a design aid, and to help with tricky or monotonous troubleshooting.</p>
-<h3 id="treading-carefully" class="relative group">Treading carefully <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#treading-carefully" aria-label="Anchor">#</a></span></h3><p>Responsibility and transparency are at the core of our approach. Many of you will have read reports of &ldquo;<a href="https://en.wikipedia.org/wiki/AI_slop" target="_blank" rel="noreferrer">slop</a>&rdquo; pull requests and contributions that have been flung at open source projects with little care, consideration or thought. This has never been an acceptable way to contribute, and is absolutely not what is being encouraged at Canonical.</p>
-<p>There is also growing concern that over-reliance on these tools could hinder people&rsquo;s ability to learn new concepts. This is possible, and perhaps even more so than when the same point was made about StackOverflow a few years ago, but I think it comes down to team culture and expectations. In my experience, I&rsquo;ve found LLMs to be an excellent learning tool. We&rsquo;ll need to help our colleagues and open source contributors develop good instincts by training them to be skeptical and not blindly trust what comes out of the machine, and to help them understand where LLMs are both most powerful and most limited.</p>
-<p>Organisations also now have an additional set of tools and vendors to audit. Depending on your industry and customer base, there may be limitations on which models and tools can be used (if any at this point) but that&rsquo;s where access to local, offline inference and bespoke tools for LLMs to call could be invaluable.</p>
-<p>I also acknowledge that “open source” can be a loaded term in the context of LLMs. Access to model weights is meaningful, but it is not equivalent to the sort of transparency the open source community has become accustomed to. When we select models to make available in Ubuntu, we&rsquo;ll try to take a balanced view on the <em>terms</em> of the model license, not just whether the weights are open. From an Ubuntu perspective, our bias will be toward local inference, open source harnesses and models with licensing terms that are compatible with our values, with clearly defined interfaces to external services where people require them.</p>
-<p>Given the rate of adoption, we are likely to continue seeing questionable use for some time. Part of our role as long-standing members of the open source community is to stay at the forefront of what can be achieved with AI tools, then lead by example. We should be demonstrating what can be achieved through responsible and thoughtful use, and guiding new contributors toward better practices that will see them using these tools to amazing effect, and contributing to the next wave of open source for years to come.</p>
-<h3 id="implicit-vs-explicit-ai-features" class="relative group">Implicit vs. explicit AI features <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#implicit-vs-explicit-ai-features" aria-label="Anchor">#</a></span></h3><p>Over the past few weeks I&rsquo;ve begun to develop a framework to help think about different kinds of AI adoption within Ubuntu. At the centre of that is the idea of <em>explicit</em> and <em>implicit</em> AI features.</p>
-<p>Implicit AI is about enhancing existing operating system features with the use of AI, without introducing new mental models for users. One exciting example of this is bringing first-class speech-to-text and text-to-speech to Ubuntu. I don&rsquo;t see these as &ldquo;AI features&rdquo;, I see them as critical accessibility features that can be dramatically improved through the adoption of LLMs with minimal (if any) drawbacks. Much of this can be achieved with local inference using open source harnesses and open weight models, which are both accurate and efficient for this use case.</p>
-<p>Explicit AI features are those which are more obviously AI-centric, and could include more &ldquo;agentic&rdquo; workflows. This could be for authoring new documents or applications, automating troubleshooting workflows or even personal automation tasks such as targeted daily news briefings. With this comes a big responsibility for us to ensure that the relevant security and confinement controls are in place to prevent unwanted side-effects.</p>
-<p>Implicit AI features will improve what Ubuntu already does; explicit AI will be introduced as new features.</p>
-<h3 id="access-to-local-inference" class="relative group">Access to local inference <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#access-to-local-inference" aria-label="Anchor">#</a></span></h3><p>I&rsquo;ve written about <a href="https://jnsgr.uk/2026/01/developing-with-ai-on-ubuntu/#inference-snaps" target="_blank" rel="noreferrer">inference snaps</a> in the past (and <a href="https://www.youtube.com/watch?v=0CYm-KCw7yY" target="_blank" rel="noreferrer">presented</a> more detail at a recent <a href="https://ainativedev.io/" target="_blank" rel="noreferrer">AI Native Dev</a> meetup), but the bottom line is that inference snaps provide simplified local access to inference with models that have been specifically optimised for your hardware. The combination of Ubuntu&rsquo;s widespread adoption and Canonical&rsquo;s partnership with silicon companies has enabled us to deliver a high performance foundational inference capability for the distribution with very little cognitive overhead for our users. It’s easier to <code>snap install nemotron-3-nano</code> than juggle Ollama, Huggingface and a sea of model quantisations, and the snap will give you the optimised bits for your particular silicon if that silicon company has contributed them.</p>
-<p>Inference snaps are subjected to the same <a href="https://snapcraft.io/docs/explanation/security/snap-confinement/" target="_blank" rel="noreferrer">confinement</a> rules as other snaps, which should give users the confidence that the models do not have indiscriminate access to their machines or data.</p>
-<p>Previously, to benefit from the full power of LLMs, you had to skew to higher parameter models. Recent developments in models like <a href="https://deepmind.google/models/gemma/gemma-4/" target="_blank" rel="noreferrer">Gemma 4</a> and <a href="https://qwen.ai/blog?id=qwen3.6-35b-a3b" target="_blank" rel="noreferrer">Qwen-3.6-35B-A3B</a> demonstrate advanced capabilities such as tool-calling which enable LLMs to search the web, interact with external APIs and file systems, troubleshoot live systems and fundamentally reason about topics that lie outside of their initial training data.</p>
-<p>What comes next for inference snaps is scaling: we&rsquo;ll be ramping up our teams to make sure we keep up with the latest model releases, and increasing the number of optimised variants for as many silicon platforms as possible.</p>
-<h3 id="context-aware-operating-system" class="relative group">Context-aware operating system <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#context-aware-operating-system" aria-label="Anchor">#</a></span></h3><p>Beyond features like text-to-speech or enhanced screen reading, users are becoming increasingly accustomed to working with agents. I love the idea that all the power and capability that Linux has acquired over the past few years could become more accessible to more people.</p>
-<p>We&rsquo;re making plans on how to integrate agentic workflows into Ubuntu for those who want it in a way that feels tasteful, aligned with our user base and respectful of our privacy and security values. What&rsquo;s clear even at this early stage is that the investments we&rsquo;ve made into confined packaging with Snaps, and some of the consolidation we&rsquo;ve done of core system functions into Ubuntu will really help us deliver on this goal safely.</p>
-<p>The Linux desktop ecosystem is famously fragmented, and in some ways that fragmentation has contributed to its success. Over the years, many smart people have been motivated to scratch an itch, and built excellent software to do so, but integrating all those parts has always been the challenge and this can lead to a frustrating experience for some users. If we&rsquo;re careful about how we employ LLMs in a system context, they could demystify the capabilities of a modern Linux workstation and bring them to a much wider audience.</p>
-<p>But why limit this to the desktop? If you&rsquo;re an <a href="https://en.wikipedia.org/wiki/Site_reliability_engineering" target="_blank" rel="noreferrer">Site Reliability Engineer (SRE)</a> administering a fleet of Ubuntu machines, there are countless ways in which an LLM might help, whether it&rsquo;s interpreting logs during an incident to speed up root cause analysis, or performing a series of scheduled maintenance tasks with strict guard rails. I&rsquo;d like to build a capability that feels at home on <em>any</em> Ubuntu machine with the right interface for the type of machine.</p>
-<p>Delegating elements of Site Reliability Engineering to an agent does not necessarily introduce an entirely new class of risk; it should inherit the constraints of existing production systems. Well-run production environments already rely on strict access controls, audit trails, and clear separation between observation and action. My aim is for Ubuntu to expose the primitives needed for agents to operate within existing boundaries, whether that be read-only analysis, tightly scoped permissions for any actions, and full auditability of decisions and outcomes. In that sense, the challenge is less about “trusting the agents”, and more about building trust in the same guardrails we already apply to any production system.</p>
-<p>Imagine being able to ask your Linux machine to troubleshoot a Wi-Fi connection issue, or to stand up an open source software forge that&rsquo;s pre-configured, secured, and reachable over TLS. One could easily imagine using such a capability as a gateway for controlling your Linux machine from other devices through a variety of mediums - be that a mobile app, text messaging, voice commands or otherwise.</p>
-<h3 id="efficiency-and-performance" class="relative group">Efficiency and performance <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#efficiency-and-performance" aria-label="Anchor">#</a></span></h3><p>Access to local inference is somewhat tied to access to capable hardware. We&rsquo;re doing our best to make it easy to consume open weight models on commodity hardware, but these smaller parameter models can&rsquo;t yet compete with the larger models for many tasks. I see this as a mostly temporary issue. There will always be bigger models and smaller models, and those with more compute will be able to get more done than those with less compute, but the gap will begin to close.</p>
-<p>Silicon manufacturers around the world are heads-down building consumer-grade silicon with ever-improving inference capabilities, and what today seems like it&rsquo;s only possible with access to a frontier AI factory will become significantly more accessible in the coming months and years.</p>
-<p>We must consider both performance and efficiency in the conversation. It&rsquo;s easy to compare tokens per second on a large model in the cloud with what you see on your local machine, but the advantage of native accelerators for these workloads is that the power draw will also fall dramatically - which again lowers the bar to entry. We&rsquo;re not going to get there overnight, but I&rsquo;d like Ubuntu to be ready when we <em>are</em> there, and our <a href="https://canonical.com/partners/silicon" target="_blank" rel="noreferrer">silicon partnerships</a> and enablement initiatives play an increasingly important role in making that a reality.</p>
-<h3 id="summary" class="relative group">Summary <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#summary" aria-label="Anchor">#</a></span></h3><p>Throughout 2026 we&rsquo;ll be working on enabling access to frontier AI for Ubuntu users in a way that is deliberate, secure, and aligned with our open source values. By focusing on the combination of education for our engineers, our existing knowledge of building resilient systems and our strengthening silicon partnerships, we will deliver efficient local inference, powerful accessibility features, and a context-aware OS that makes Ubuntu meaningfully more capable for the people who rely on it</p>
-<p>Ubuntu is not becoming an AI product, but it can become stronger with thoughtful AI integration.</p>]]></description>
-      <source url="https://jnsgr.uk/tags/ubuntu/index.xml">Jon Seager</source>
     </item>
     <item>
       <title>Lubuntu 26.04 LTS Released!</title>
@@ -6261,6 +6429,29 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
     </item>
     <item>
+      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
+      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
+      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
+      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
+      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
+<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
+<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
+<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
+<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
+<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
+<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
+<blockquote>
+<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
+</blockquote>
+<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
+<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
+We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
+So, please sync with this change (and sorry :)).</p>
+<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
+<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
+      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
+    </item>
+    <item>
       <title>Rise and fall of libclamav</title>
       <link>https://skitterman.wordpress.com/2019/01/31/rise-and-fall-of-libclamav/</link>
       <guid isPermaLink="true">https://skitterman.wordpress.com/2019/01/31/rise-and-fall-of-libclamav/</guid>
@@ -6488,42 +6679,6 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 
 <p>A big congratulations to the winners, and thanks to everyone who submitted a wallpaper.  You can find these wallpapers (along with dozens of other stunning wallpapers) today at the links above, or in your desktop wallpaper list after you upgrade to or install Ubuntu 18.10 on October 18th.</p>]]></description>
       <source url="https://www.nhaines.com/feed.xml">Nathan Haines</source>
-    </item>
-    <item>
-      <title>NVIDIA PRIME in Ubuntu 18.04 and 18.10, and a call for testing</title>
-      <link>https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</link>
-      <guid isPermaLink="true">https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</guid>
-      <pubDate>Thu, 20 Sep 2018 09:19:48 GMT</pubDate>
-      <description><![CDATA[<p class="wp-block-paragraph"><strong>Ubuntu 18.04</strong> marked the transition to a new, more granular, packaging of the NVIDIA drivers, which, unfortunately, combined with a <a href="https://bugs.launchpad.net/bugs/1777099">change in <g class="gr_ gr_3 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="3" data-gr-id="3">logind</g></a>, and with the previous migration from Lightdm to Gdm3, caused <strong>(Intel+NVIDIA) hybrid laptops</strong> to stop working the way they used to in Ubuntu 16.xx and older.</p>
-
-
-
-<p class="wp-block-paragraph">The following are the <strong>main issues</strong> experienced by our users:</p>
-
-
-
-<ul class="wp-block-list"><li>An increase in power consumption when using the power saving profile (i.e. when the discrete GPU is off).</li><li>The inability to switch between power profiles on log out (thus requiring a reboot).</li></ul>
-
-
-
-<p class="wp-block-paragraph">We have backported a commit to solve the <a href="https://bugs.launchpad.net/bugs/1777099">problem with logind</a>, and I have worked on a few changes in gpu-manager, and in the other key components, to improve the experience when using <strong>Gdm3</strong>.</p>
-
-
-
-<p class="has-background has-light-green-cyan-background-color wp-block-paragraph"><strong>NOTE:</strong> fixes for <strong>Lightdm</strong>, and for <strong>SDDM</strong> still need some work, and will be made available in the next update.</p>
-
-
-
-<p class="wp-block-paragraph">Both issues should be fixed in <strong>Ubuntu 18.10</strong>, and I have backported my work to <strong>Ubuntu 18.04</strong>, which is now <a href="https://bugs.launchpad.net/ubuntu/+source/nvidia-prime/+bug/1778011">available for testing.</a></p>
-
-
-
-<p class="wp-block-paragraph">If you run <strong>Ubuntu 18.04</strong>, own a hybrid laptop with an Intel and an NVIDIA GPU (supported by the <strong>390 NVIDIA driver</strong>),  <strong>we would love to get your feedback</strong> on the updates in Ubuntu 18.04.</p>
-
-
-
-<p class="wp-block-paragraph">If you are interested, head over to the <a href="https://bugs.launchpad.net/ubuntu/+source/nvidia-prime/+bug/1778011">bug report</a>, follow the instructions at the end of the bug <g class="gr_ gr_3 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-del replaceWithoutSep" id="3" data-gr-id="3">description,</g> and let us know about your experience.</p>]]></description>
-      <source url="http://albertomilone.com/wordpress/?feed=rss2">Alberto Milone</source>
     </item>
     <item>
       <title>Help needed to improve proposed migration</title>
