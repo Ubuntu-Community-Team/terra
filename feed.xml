@@ -6,54 +6,80 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 05 Jun 2026 04:03:56 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2026 03:48:08 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>RISC-V profiles &amp;#8211; why is RVA23 significant?</title>
-      <link>https://ubuntu.com//blog/risc-v-profiles-why-is-rva23-significant</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/risc-v-profiles-why-is-rva23-significant</guid>
-      <pubDate>Wed, 03 Jun 2026 16:00:21 GMT</pubDate>
-      <description><![CDATA[<h2 class="wp-block-heading">Introduction</h2>
-<p>One of the important offerings of the RISC-V Instruction Set Architecture (ISA) is the ability to customize and extend the base instruction set. An initial reaction to hearing this is often to worry about software portability and compatibility, since if every RISC-V CPU  offers a slightly different set of instructions, software won’t be portable. </p>
-<p>This risk is that customization becomes fragmentation, which is why RISC-V offers sets of standardized extensions to help with software compatibility and portability. These are indicated with a letter or string, such as ‘F’ for floating point, or ‘V’ for vectors. There is also a number to indicate whether the device is 32-bit or 64-bit. So a CPU might be “RV64IMAC”, which means a 64-bit CPU where Integer (I), Multiply (M), Atomics (A) and Compressed (C) extensions are supported.</p>
-<p>To execute correctly, software has to be compiled to match the hardware, or a subset of it (as an example, for code compiled as RV64IMA, it doesn’t matter whether the hardware supports the ‘C’ extension or not, but it must support at least RV64IMA). For binary portability (the ability to run compiled binaries on different hardware) to scale, there are two options. The first is that all software would have to be written with a minimal set of extensions, which is undesirable as it would limit performance and code size. To avoid these limitations, the second option is for the ecosystem to agree on common groups of extensions that all software can target. RISC-V International calls these “profiles”.</p>
-<p>RISC-V first introduced profiles with RVI20 and RVA20, and since then RVA22 and RVA23 have also been ratified. This blog will examine the RVA23 profile, including its features, and explain why these features are important for Ubuntu. We’ll also go over how they support the scaling of the RISC-V ecosystem. A future blog will discuss how custom instructions can be supported in Ubuntu.</p>
-<h2 class="wp-block-heading">What is a profile?</h2>
-<p>As explained above, a profile is a set of ratified extensions.  An extension is given an identifying code, from a single letter (we saw I, M, A, and C earlier) to a string such as “zicsr”. These are concatenated together to form a description of the implementation. However this can become unwieldy, making profiles become a simpler way to describe a more complex feature set. For example, RVA23 expanded would be something like: </p>
-<p>rv64gc_zicsr_zicntr_zihpm_zicbom_zicbop_zicboz_zicond_zimop_zcmop_zfh_zfa_zawrs_zbc_zvfh_<br/>zvfhmin_zvbc_zvkg_zvkned_zvknha_zvknhb_zvksed_zvksh_zvkn_zvknc_zvknf_zvkng_zvks_zvksc_zvksf_<br/>zvksg_zvl128b_zihintpause_zihintntl_svpbmt_svinval_svade_sstc_sscofpmf_ssccptr_sscounterenw_<br/>shvstvecd_shvswatpa_shgatpa_shcounterenw_shvsvinval_shvstvala_shvsvpbmt_shvsvade</p>
-<p>Which is a bit of a mouthful to keep repeating! A profile solves the above problem as it sets a standard for what needs to be included in a CPU implementation . The above wouldn’t need repeating: all of those extensions would be included by default whenever you see “RVA23”.</p>
-<p><a href="https://riscv.atlassian.net/wiki/spaces/WPMU/pages/462258208/RISC-V+Profiles+Development+Process">Profiles</a> are defined by the RISC-V Profiles Task group where experts from across the industry agree on what features make sense to include by considering the target application space for that profile. </p>
-<h2 class="wp-block-heading">The importance of profiles for ecosystem growth</h2>
-<p>For RISC-V to thrive and grow, it needs a strong software ecosystem. While developers and enthusiasts might be willing to compile code from scratch for every different CPU, this quickly becomes limiting for larger organizations. Profiles create a target that both software and hardware developers can agree on, guaranteeing portability of software compiled to target RVA23 across different implementations. So an RVA23 compatible binary should be able to run on any RVA23 CPU.</p>
-<h2 class="wp-block-heading">Limitations of Profiles</h2>
-<p>While Profiles guarantee a level of binary compatibility, there are aspects of system behaviour that they don’t cover. These include initial boot, device discovery and peripheral drivers. While the code for these will still all be RVA23 compliant, it may not be portable between different implementations. RISC-V International technical working groups are also acutely aware of this, and working on specifications such as the <a href="https://github.com/riscv-non-isa/riscv-server-platform">Server Platform Specification</a> to address items such as interrupt controllers and secure boot, which are outside of the ISA profile specification. For end users developing applications, this is less likely to be a concern, but it does matter to operating system developers or those working on bare metal.</p>
-<h2 class="wp-block-heading">Key features for modern Linux</h2>
-<p>RVA23 introduced two key features that were missing from earlier profiles:</p>
-<ol>
-<li>Hypervisor</li>
-<li>Vectors</li>
-</ol>
-<p>While it was possible for earlier RISC-V implementations to include these as extensions, they were not mandated, so software couldn’t rely on them to be included by default. By moving them into the profile specification for RVA23, software can be optimized to make use of these features. Now let’s look at the benefits of each feature in more detail:</p>
-<h3 class="wp-block-heading">Hypervisors</h3>
-<p>Hypervisors are widely used in many applications. They provide a way for a single physical CPU to emulate multiple virtual machines (VMs) while providing isolation between them. Many end applications don’t need a whole physical CPU to themselves, so this allows for more efficient use of physical CPUs while also providing security between the separate VMs. In a datacentre where a physical CPU might have tens of processor cores, hypervisors are essential to allow efficient scaling.</p>
-<p>Even in small scale clusters of machines, hypervisors and VMs can be used to provide functionality such as machine migration, snapshots and isolation.. Several Canonical products make use of the hypervisor, and we see mature support for virtualization as a requirement for RISC-V to scale to applications beyond embedded devices.</p>
-<h3 class="wp-block-heading">Vectors</h3>
-<p>While hypervisors are important for scaling to large workloads, vector instructions are about accelerating individual workloads, especially those that are math-intensive. Adding vectors to a CPU incurs a significant amount of additional silicon area, but for workloads that make use of them, this also provides a large performance improvement.</p>
-<p>While vectors are typically associated with heavy math tasks like machine learning and image processing, even the operating system itself uses them for basic chores like copying memory. And for vectors to be available to user space, the kernel still has to be aware of the register file and associated state to manage context switches, so support is needed at the operating system level.</p>
-<p>RISC-V made a conscious design choice for the vector extensions to be scalable. This means that implementations can choose an appropriate vector length and the software will run without needing changes or recompilation. So a smaller in-order CPU might use 64 or 128-bit vectors in hardware, while a server class CPU could use 256 or even wider vectors without needing to recompile code. As with the hypervisor, we see vectors as essential for modern high performance processors from desktop to server.</p>
-<p>For smaller embedded systems, power is often a concern and even small implementations of vectors may consume significant area and power. For this reason the RVB23 profile is also being developed, which removes some of the required features from RVA23.</p>
-<h2 class="wp-block-heading">Why now?</h2>
-<p>Hardware and software are interdependent, and with any new technology they need to be co-developed. Sometimes hardware takes the “build it and they will come” approach, while in other cases it becomes apparent that the hardware is on the way, and techniques such as emulation can be used to develop the software before there is any hardware available. The latter approach also has the benefit of reducing the time to market since software is available as soon as the hardware ships.</p>
-<p>When we announced support for RVA23 in our Ubuntu 25.10 release, there were some questions about the lack of available silicon, but the direction of travel for the industry was obvious and we wanted to be at the forefront of it. When SpacemiT announced their K3 silicon earlier this year, <a href="https://canonical.com/blog/spacemit-announces-availability-of-ubuntu-on-k3-k1-series">we were ready to support it</a>. I’m sure we’ll see more RVA23 silicon through this year and beyond.</p>
-<h2 class="wp-block-heading">Conclusion</h2>
-<p>For the RISC-V ecosystem to scale successfully, it needs a stable base profile which is suitable for modern workloads covering use cases up to data centers and servers. The RVA23 profile provides that, and it’s why Canonical moved to requiring RVA23 from Ubuntu 25.10. The Ubuntu 26.04 release introduces Long Term Support (LTS), providing 5 years of support for any user, and up to 15 years of support through Ubuntu Pro. But for those early adopters of RISC-V, we will continue to provide Ubuntu 24.04 LTS which requires the RVA20 profile. This itself will get the same level of LTS support as any other Ubuntu LTS release. </p>
-<h2 class="wp-block-heading">Further reading</h2>
+      <title>A look into Ubuntu Core 26: Deploying AI models on Renesas RZ/V series for production</title>
+      <link>https://ubuntu.com//blog/ubuntu-core-26-ai-renesas</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/ubuntu-core-26-ai-renesas</guid>
+      <pubDate>Thu, 04 Jun 2026 12:36:11 GMT</pubDate>
+      <description><![CDATA[<p>Welcome to this blog series which explores innovative uses of Ubuntu Core. Throughout this series, Canonical’s Engineers will show what you can build with our releases, highlighting the features and tools available to you.</p>
+<p>In this blog, Asa Mirzaieva, engineer from the Silicon Alliances team, will show you how to deploy optimised AI models on Renesas RZ/V series hardware using the Dynamically Reconfigurable Processor for AI (DRP-AI). </p>
+<p>Deploying AI models for edge inference on specialized MPUs is particularly useful for developers looking to balance high performance with extremely low power consumption. Coupled with Ubuntu Core’s architecture, developers have an end-to-end infrastructure for managing a secure, modular deployment.</p>
+<p>By the end of this blog, you’ll know how to package, load, and run AI inference models on Renesas DRP-AI using snaps.</p>
+<h2 class="wp-block-heading"><strong>AI inference on Renesas DRP-AI</strong></h2>
+<p>If you aren’t familiar with <a href="https://www.renesas.com/en/design-resources/boards-kits/rz-v2h-evk">Renesas’ RZ/V</a> series, the main takeaway is that these microprocessors feature a dedicated AI accelerator called DRP-AI. This dynamically reconfigurable processor accelerates the heavy lifting of neural network inference, such as feature extraction and classification, while maintaining exceptional power efficiency. To fully understand how this acceleration is achieved, we must look at how DRP-AI dynamically reconfigures its internal dataflow to match the network architecture, contrasting sharply with traditional sequential CPU processing.</p>
+<figure class="wp-block-image size-full"><img alt="" height="282" loading="lazy" sizes="(min-width: 962px) 962px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_962/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5937%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5937%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5937%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5937%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5937%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5937%2Fimage.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_962/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F5937%2Fimage.png 962w" width="962"/></figure>
+<h2 class="wp-block-heading"><strong>Packaging and Deploying Edge AI with Ubuntu Core</strong></h2>
+<p>In a nutshell, running AI workloads at the edge involves preparing the model, integrating it with the runtime and application, and ensuring it can be reliably deployed on target devices, as seen on the diagram below.</p>
+<p>The diagram shows this workflow for Renesas RZ/V platforms: development and packaging are done on a host system (such as your laptop or build server running Ubuntu), while deployment targets the RZ/V device running Ubuntu Core.</p>
+<p>On this host system, models are compiled with the DRP-AI toolchain and packaged together with the runtime and the application into a snap; this snap is then deployed to the target device as a complete AI solution</p>
+<figure class="wp-block-image size-full"><img alt="" height="863" loading="lazy" sizes="(min-width: 1600px) 1600px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1600/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F985f%2Frenesas.webp" srcset="https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F985f%2Frenesas.webp 460w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F985f%2Frenesas.webp 620w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F985f%2Frenesas.webp 1036w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F985f%2Frenesas.webp 1681w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F985f%2Frenesas.webp 1920w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1600/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F985f%2Frenesas.webp 1600w" width="1600"/></figure>
+<p>The following sections walk through each step in detail: from model compilation with DRP-AI TVM to packaging and running inference on the device.</p>
+<h3 class="wp-block-heading"><strong>Compiling with DRP-AI TVM</strong></h3>
+<p>Just like other advanced AI pipelines, DRP-AI TVM requires you to compile your model (such as ONNX) to generate Runtime Model Data. The stack leverages the EdgeCortix MERA Compiler Framework to map your AI model into a highly efficient instruction set that the CPU and DRP-AI hardware can process collaboratively.</p>
+<p>Because model compilation relies on specific SDKs and the EdgeCortix MERA Compiler Framework, this step is typically performed on a dedicated host machine (or Docker container) and is not handled by our runtime snap.</p>
+<p>For step-by-step instructions on how to set up your environment and compile your ONNX models, please refer to the official <a href="https://github.com/renesas-rz/rzv_drp-ai_tvm/tree/main/tutorials">DRP-AI TVM Compiling Tutorials</a> provided by Renesas.</p>
+<p>Once your model has been pruned, optimized, and compiled on your host environment, the next step is getting both the runtime binaries and the compiled model onto your board.</p>
+<h3 class="wp-block-heading"><strong>Packaging your AI application in a snap</strong></h3>
+<p>To run inference securely and reliably, we package the applications into a snap. Canonical has created an example repository, <a href="https://github.com/canonical/rzv_drp-ai_tvm_snap/">rzv_drp-ai_tvm_snap</a>, which bundles the upstream Renesas example applications so they can be easily installed and managed via snapd.</p>
+<p>In the snap, we package three major components:</p>
 <ul>
-<li><a href="https://docs.riscv.org/reference/profiles/rva23/_attachments/rva23-profile.pdf">RISC-V RVA23 profile specification</a></li>
-<li><a href="https://riscv.atlassian.net/wiki/spaces/HOME/pages/16154769/RISC-V+Technical+Specifications#RVA23-Profile">RISC-V profiles documentation</a></li>
+<li>The DRP-AI TVM runtime library (libdrp_tvm_rt.so and its dependencies)</li>
+<li>The compiled tutorial application (tutorial_app_v2ml)</li>
+<li>The pre-compiled AI model data (located in the project’s models/ directory)</li>
+</ul>
+<p>Thanks to Snapcraft’s advanced tooling, you can cross-compile the entire application for arm64 right from an amd64 host.</p>
+<p>Once built, you can transfer your resulting snap to your RZ/V2L board and install it. Currently, accessing hardware interfaces relies on devmode confinement:</p>
+<pre class="wp-block-code"><code>sudo snap install --devmode rzv-drp-ai-tvm-examples_*.snap</code></pre>
+<h3 class="wp-block-heading"><strong>Under the Hood: The snapcraft.yaml File</strong></h3>
+<p>The magic behind this secure, cross-compiled package is the snapcraft.yaml file. This single declarative file dictates how the AI application is built and packaged. Here is a simplified snippet of how it orchestrates the three major components:</p>
+<pre class="wp-block-code"><code>name: rzv-drp-ai-tvm-examples<br/>base: core24<br/>confinement: devmode<br/><br/>apps:<br/>  tutorial-app:<br/>    command: usr/bin/launch-tutorial.sh<br/><br/>parts:<br/>  tvm-runtime:<br/>    plugin: nil<br/>    source: [https://github.com/renesas-rz/rzv_drp-ai_tvm.git](https://github.com/renesas-rz/rzv_drp-ai_tvm.git)<br/>    override-prime: |<br/>      craftctl default<br/>      # 1. Install runtime library<br/>      cp -a $CRAFT_PART_SRC/obj/build_runtime/v2m/lib/* $CRAFT_PRIME/usr/lib/<br/>      # 2. Install the compiled model<br/>      cp -a ${CRAFT_PROJECT_DIR}/models/ $CRAFT_PRIME/usr/bin/<br/><br/>  tutorial-app:<br/>    after: [tvm-runtime]<br/>    plugin: cmake<br/>    source: ${CRAFT_PROJECT_DIR}/../parts/tvm-runtime/src/apps<br/>    override-prime: |<br/>      craftctl default<br/>      # 3. Install compiled binary<br/>      cp -a $CRAFT_PART_BUILD/tutorial_app_v2ml $CRAFT_PRIME/usr/bin/<br/></code></pre>
+<p>This configuration maps directly to the major components we discussed:</p>
+<ul>
+<li><strong>Component 1: The Runtime Library:</strong> Handled by the tvm-runtime part. It fetches the upstream Renesas DRP-AI TVM source code and copies the pre-built TVM runtime libraries into the snap’s runtime path.</li>
+<li><strong>Component 2: The Compiled Model:</strong> Also handled in the tvm-runtime part. The locally prepared AI model data is pulled directly from the project’s models/ folder into the snap so it’s readily available at runtime.</li>
+<li><strong>Component 3: The Tutorial Application:</strong> Handled by the tutorial-app part. It uses the cmake plugin to cross-compile the C++ tutorial application specifically for the arm64 architecture, placing the final tutorial_app_v2ml binary into the snap.</li>
+</ul>
+<h3 class="wp-block-heading"><strong>Installing the snap</strong></h3>
+<p>Run the following command after the successful build of the snap (XXX stands for the version).</p>
+<p>devmode is required to access the DRP-AI devices from within the snap.</p>
+<pre class="wp-block-code"><code>sudo snap install rzv-drp-ai-tvm-examplesXXX.snap --devmode</code></pre>
+<h3 class="wp-block-heading"><strong>Running the Inference Examples</strong></h3>
+<p>After the snap is installed, running the pre-packaged application is as simple as calling the snap command.</p>
+<p>To run the ResNet18/ResNet50 image-classification inference (assuming you’ve provided the compiled model data and input files to the board):</p>
+<pre class="wp-block-code"><code>rzv-drp-ai-tvm-examples.tutorial-app<br/></code></pre>
+<p>Make sure to use 640×480 bmp images with the default ONNX model.</p>
+<p>That’s it! You can completely separate your AI models from your application logic and firmware, providing a modular approach to updates. When you improve your model, Ubuntu Core and the Snap Store will help you deliver these updates reliably and securely over the air.</p>
+<p>Thanks to Ubuntu Core, you can just focus on your development and not worry about the infrastructure on how to update devices in the field or maintain system security.</p>
+<h2 class="wp-block-heading"><strong>What’s next?</strong></h2>
+<p>The Renesas DRP-AI accelerator offers a tremendous advantage for edge AI devices, delivering high-speed inference without severe power penalties. Their value for deploying embedded AI devices is indisputable.</p>
+<p>Now is your turn. Why don’t you try packaging your optimized DRP-AI models using snaps? Through this, you will see the benefits for yourself of the infrastructure to manage and deploy software at the edge. With Ubuntu Core, you can build your production image with your targeted snaps and hardware. This will empower you to easily flash devices in production lines. Plus, in your image, you can define what user experience you want to bring, keeping your model and intellectual property secure in its sandbox.</p>
+<ul>
+<li><a href="https://documentation.ubuntu.com/inference-snaps/">Getting started with inference snaps</a></li>
 </ul>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
+    <item>
+      <title>I think I lost my voice</title>
+      <link>https://thepcspy.com/read/losing-your-voice/</link>
+      <guid isPermaLink="true">https://thepcspy.com/read/losing-your-voice/</guid>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>I used to write fairly prolifically, blogging here, arguing on forums, chatting on IRC, fighting to be the rightest on Ask Ubuntu, even sharing life events on Facebook. I <em>revelled</em> in posting online, and the intercourse that followed.</p>
+<p>I realise I’ve gone mute over 15 years. Despite having more knowledge than ever, having even more opinions on this chaotic world, I just can’t seem to express them as freely as I used to.</p>
+<p>Addressing the causes succinctly now would likely mean this never gets posted. It’s far from unimportant, but writing something <strong>now</strong> is more important. This post is an attempt to restart the fires, that these words siphon out more.</p>]]></description>
+      <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
     </item>
     <item>
       <title>Announcing Incus 7.1</title>
@@ -1467,56 +1493,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 <p>Apparently, such issues are bound to appear more often. They require mitigations, apply the updated packages when they are ready, and then remove the mitigations. This is a Local Privilege Escalation (LPE) security vulnerability, which means that it affects vulnerable systems when a malicious user already has access to that system.</p>
 <div class="saboxplugin-wrap" itemtype="http://schema.org/Person" itemscope itemprop="author"><div class="saboxplugin-tab"><div class="saboxplugin-gravatar"><img alt='Simos Xenitellis' src='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=100&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=200&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' itemprop="image"/></div><div class="saboxplugin-authorname"><a href="https://blog.simos.info/author/simos/" class="vcard author" rel="author"><span class="fn">Simos Xenitellis</span></a></div><div class="saboxplugin-desc"><div itemprop="description"></div></div><div class="saboxplugin-web "><a href="https://blog.simos.info/" target="_self" >blog.simos.info/</a></div><div class="clearfix"></div></div></div>]]></description>
       <source url="https://blog.simos.info/category/planet-ubuntu/feed/?mrss=off">Simos Xenitellis</source>
-    </item>
-    <item>
-      <title>Private snap manifests</title>
-      <link>https://blog.launchpad.net/general/private-snap-manifests</link>
-      <guid isPermaLink="true">https://blog.launchpad.net/general/private-snap-manifests</guid>
-      <pubDate>Wed, 13 May 2026 07:57:41 GMT</pubDate>
-      <description><![CDATA[<p>As part of our ongoing commitment to security and transparency, we are pleased to announce an improved approach to snap manifest generation for private projects. This update specifically addresses the long-standing technical block that suppressed the creation of <code>manifest.yaml</code> files during private snap builds, an important component for generating accurate Software Bills of Materials (SBOMs).</p>
-
-
-
-<h2>The challenge of secret exposure</h2>
-
-
-
-<p>Previously, manifest generation for private builds was deliberately disabled as a protective measure. The primary security concern was that including a snap manifest in a binary snap could inadvertently expose sensitive source credentials or internal build configurations.</p>
-
-
-
-<p>While effective at preventing data leaks, this restriction also created significant hurdles for users wanting to produce SBOMs. Given that access to these private snaps is limited to those with explicit authorization, the risk of data and secret leakage is significantly reduced, allowing us to decommission the previous suppression mechanism.</p>
-
-
-
-<h2>What this means for developers</h2>
-
-
-
-<p>For private snaps built on Launchpad, the <code>manifest.yaml</code> will now automatically be included in binary snaps by default during the build process.</p>
-
-
-
-<h2>Looking ahead</h2>
-
-
-
-<p>We are continuing to refine our offering, providing more and better features that support enhanced security and efficiency.</p>
-
-
-
-<p>We invite you to share your feedback on this change by reaching out&nbsp; to us:</p>
-
-
-<ul>
-<li>Matrix: #launchpad:ubuntu.com</li>
-<li>Email: feedback@launchpad.net</li>
-<li>Ask a question: https://answers.launchpad.net/launchpad</li>
-</ul>
-
-
-<p></p>]]></description>
-      <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
       <title>2026 LiveCD Memory Usage Compare</title>
@@ -4698,27 +4674,6 @@ Into empty area / &ldquo;Clipboard to file&rdquo; menu: Will create the file cli
 
 <p>I encourage you to help us test the release candidates and report bugs that you find. If you figure out how to fix a bug, we still <a href="https://wiki.ubuntu.com/SponsorshipProcess">sponsor</a> bug fixes. If you are an Ubuntu contributor, I highly encourage you to attend an Ubuntu Summit if you can. The first Ubuntu Summit in years will be in 3 weeks in Prague, but the intent is for the Ubuntu Summits to be recurring events again.</p>]]></description>
       <source url="https://jeremy.bicha.net/category/ubuntu/feed/?mrss=off">Jeremy Bicha</source>
-    </item>
-    <item>
-      <title>Save £23,265 with *one weird trick!*</title>
-      <link>https://thepcspy.com/read/ten-years-23k-saved/</link>
-      <guid isPermaLink="true">https://thepcspy.com/read/ten-years-23k-saved/</guid>
-      <pubDate>Wed, 20 Jul 2022 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>Tobacconists hate him.</p>
-<p>It’s that time of the year. I never really know who this sort of post is <em>for</em>. Maybe it’s for you, maybe for it’s for me one dark day in the future, but…</p>
-<h2 id="%F0%9F%8E%89-i-stopped-smoking-ten-years-ago!" tabindex="-1">🎉  <a href="https://thepcspy.com/read/breaking-the-habit/">I stopped smoking</a> <em><strong>ten years</strong></em> ago!</h2>
-<p>If somebody as flimsy-willed as me can stop smoking, <em><strong>you can stop smoking too</strong></em>. I’m not going to labour the “it kills you” thing, but it is so here’s the financial breakdown for any fellow cheapskates.</p>
-<div class="rim">
-<pre class="language-text"><code class="language-text">  10 years =  3,652 days<br />   @13/day = 47,476 cigs<br />           =  2,374 packs<br /><br />2012 price =  £7.10 /pack<br />2022 price = £12.50 /pack<br />Mean price =  £9.80 /pack</code></pre>
-</div>
-<p>I’ve not smoked <strong>£23,265.20</strong>.</p>
-<p>If I’d regularly deposited that into an investment account, a 2% return that would be £25k and 5% would be almost £30k.</p>
-<p>I’d say I feel fantastic but I <em>am</em> also ten years older. I gained two children a dog, and everything hurts. <strong>But I don’t smoke</strong>. I don’t feel the urge to smoke, and haven’t for years. I never have to stand outdoors on cold, wet nights to smoke. I don’t panic when I’m running out of cigarettes. And that means a lot.</p>
-<h2 id="it%E2%80%99s-easier-to-just-not-smoke" tabindex="-1">It’s easier to <em>just not smoke</em></h2>
-<p>You might not be convinced and that’s because we’re all told <em>it’s really hard to stop smoking</em>. All the time. Even by people who want smokers to quit, as if it’s something that takes a run-up, an intake of bravery and team-cajoling. It’s not hard; just stop smoking the bloody things.</p>
-<p>The rest is understanding your body and addiction, that smoking never made you feel better, it only made <em>not smoking</em> feel worse. As soon as you cut that cycle, your body recalibrates. As soon as you realise that, the infinitesimal cost of quitting seems worth it.</p>
-<p>If you’re trying to quit and you’re not finding it easy, stick with it. If you need help understanding addiction, <a href="https://www.amazon.co.uk/dp/0615482155">Allen Carr’s Easy Way to Stop Smoking</a> has an eerily convincing narrative that plods through the feelings every smoker goes through. I never finished it —I convinced myself I didn’t want to quit— but it was absolutely the basis for the voice in my head that let me quit later on.</p>]]></description>
-      <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
     </item>
     <item>
       <title>finding binary differences</title>
