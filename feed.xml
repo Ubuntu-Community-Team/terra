@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 06 Jun 2026 00:57:28 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2026 01:03:22 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -43,24 +43,28 @@
       <link>https://thepcspy.com/read/freecad-got-good/</link>
       <guid isPermaLink="true">https://thepcspy.com/read/freecad-got-good/</guid>
       <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<figure></figure>
+      <description><![CDATA[<p>A testament to Open Source tenacity, is this <em>Free</em> <abbr>CAD</abbr> software Good Enough™ to compete with the big boys?</p>
+
+<figure><img src="/read/freecad-got-good/overview.avif" alt="An overview of FreeCAD" loading="lazy" decoding="async" /></figure>
 <p>If you have a 3D printer, you know you can only go so far printing others’ designs. Eventually you need something that isn’t out there for you. Custom-fit containers. Replacement parts. Shims accurate to 0.2mm. Problems you solve with a little bit of plastic in the right shape. And for that you need <abbr>CAD</abbr>, able to design anything from a building to a circuit board.</p>
 <p>You might be familiar with YouTubers peddling Fusion and OnShape, and there are lots more options but precious few for Linux.</p>
 <p>I first tried <a href="https://www.freecad.org/">FreeCAD</a> about a decade ago. It wasn’t a smooth experience. A stubbornly blue interface, a quagmire of obtuse icons and panels. It was overbearing, unpretty, and crashed so frequently I just gave up. I haven’t been following its development until very recently, since I started needing design software, but the last few years of FreeCAD’s 23 year history has seen some incredible leaps in usability and stability.</p>
-<p>
-
-</p>
+<p><img src="/read/freecad-got-good/oled-mount.avif" alt="" />
+<img src="/read/freecad-got-good/torch-button.avif" alt="" />
+<img src="/read/freecad-got-good/tumbler-gear.avif" alt="" /></p>
 <p>Since picking it up, I’ve made a flurry of things. From low-tolerance electronics mounts to quick-and-dirty parts for a torch. I’ve even replicated household items like drawer knobs and curtain rail holders that have broken and aren’t easily replaceable. The freedom to identify a problem, measure everything out with your Verniers and have a solution printing out within the hour is the most futuristic thing available.</p>
-<p>
-
-</p>
-<p>I won’t pretend it’s that easy. <strong>You <em>do</em> have to learn how to use it</strong>. I watched seventy-thousand hours of YouTube, split over two channels:</p>
+<p><img src="/read/freecad-got-good/lamp-stand.avif" alt="" />
+<img src="/read/freecad-got-good/drawer-knob.avif" alt="" />
+<img src="/read/freecad-got-good/curtain-rail.avif" alt="" /></p>
+<p>I won’t pretend it’s all easy, <strong>you <em>still</em> have to learn how to use it</strong>, but that’s true of all <abbr>CAD</abbr> packages. Thankfully there is a large and helpful community around FreeCAD that can get you up to speed pretty quickly:</p>
 <ul>
 <li><a href="https://youtube.com/@deltahedra3D">Deltahedra</a> got me <em>interested</em> in FreeCAD through lots and lots of shorter-format feature videos. There are lots of feature-updates as FreeCAD gets improvements, and there’s nothing like a “quick hacks” video for improving your own workflow.</li>
 <li><a href="https://www.youtube.com/@MangoJellySolutions">MangoJelly Solutions</a> does everything Deltahedra does, but also does <em>excellent</em> long-format project videos.</li>
+<li><a href="https://www.tootalltoby.com/">Too Tall Toby</a> has a superb collection of spec drawings for you to recreate in a timed environment. FreeCAD isn’t the only tool you can use for these, but I’ve found that it hasn’t stopped me beating the average times. Many TTT challenges also have tutorial videos for FreeCAD.</li>
+<li><a href="https://www.craftsmanspace.com/freecad-tutorials">Craftmanspace</a> maintains a collection of tutorial videos from various sources. It’s a good resource for targeting specific workbenches.</li>
 </ul>
-<p>Once you have some familiarity with the Part Design and Sketcher tools, you can start making things. If you want to practice on imaginary jobs, <a href="https://www.tootalltoby.com/">Too Tall Toby</a> has a superb collection of spec drawings for you to recreate in a timed environment. FreeCAD isn’t the only tool you can use for these, and I’ve found that it hasn’t stopped me beating the average times.</p>
-<p>I’m not nearly expert enough to actually talk you through even a tenth of what FreeCAD has to offer, but I can tell you it’s plenty Good Enough™ to make stuff now. I strongly suggest you give it a shot. If you need a harder sales-pitch, here are 30 reasons from Deltahedra:</p>
+<p>Once you have some familiarity with the Part Design and Sketcher workbenches, you can start making stuff and sending it to your printer (or a third party print service).</p>
+<p>I’m not nearly expert enough to actually talk you through even a tenth of what FreeCAD has to offer, but I can tell you it’s plenty Good Enough™ to make stuff now. I strongly suggest you give it a shot and <a href="https://www.freecad.org/downloads.php">download FreeCAD</a>. If you need a hard pitch, here are 30 reasons from Deltahedra:</p>
 <div>
   
 </div>]]></description>
@@ -8868,16 +8872,6 @@ On the reliability front new systems won't be added to the infrastructure if the
 <p>I would like to recommend this person of Microsoft to have a look at the new version  of <a title="guadalinexedu.org" href="http://www.guadalinexedu.org/" target="_blank">Guadalinex Edu</a> (available in few days) and then ask him what do they think is the best for  kids? Perhaps  motivation, enthusiasm and hard work of the entire free software  community can exceed 9.5 billion invested by Microsoft. Don&#8217;t worry about kids, you must be worried about <a title="Ubuntu bug #1" href="https://bugs.launchpad.net/ubuntu/+bug/1" target="_blank">the day</a> when these children reach the professional market and the quality and freedom of the free software used at schools will have more weight than all the investment you are doing in your proprietary software.</p>
 <p>:wq</p>]]></description>
       <source url="http://antoniosanchez.wordpress.com/category/planet-ubuntu/feed/atom">Antonio Sánchez</source>
-    </item>
-    <item>
-      <title>Webling und Android</title>
-      <link>http://blog.diener.li/allgemein/webling-und-android/</link>
-      <guid isPermaLink="true">http://blog.diener.li/allgemein/webling-und-android/</guid>
-      <pubDate>Mon, 09 Nov 2009 14:27:34 GMT</pubDate>
-      <description><![CDATA[<p>Ja ich habe seit Kurzem auch so einen kleinen Alleskönner als Handy. Auch wenn ich meinen <a title="Openmoko Freerunner" href="http://wiki.openmoko.org/wiki/Neo_FreeRunner/de" target="_blank">Freerunner</a> sehr mag, auf mein neues Spielzeug ist einfach mehr Verlass. Da mein altes Handy einem Wasserschaden (kein Kommentar) zum Opfer fiel, besorgte ich mir ein <a title="HTC Hero" href="http://www.htc.com/de/product.aspx" target="_blank">HTC Hero</a> mit <a title="Google Android" href="http://www.google.ch/intl/de_ch/mobile/android/" target="_blank">Google Android</a>. Ein <a title="Apple iPhone" href="http://www.apple.com/de/iphone/" target="_blank">iPhone</a> wollte ich nicht und ich bereue es bis heute nicht. Mein kleiner Held ist nicht nur die Hälfte so teuer, sondern bringt auch alles mit was ich brauche.</p>
-<p>Nun aber zum Wesentlichen. Etwas vom dümmsten an Handys war bislang die Portierung der Kontakte auf das neue Gerät. Umso erfreuter war ich, dass es dieses Mal sehr einfach ging. Da Android nun mal von Google kommt, unterstützt es natürlich auch Synchronisation mit dem Kalender, den Mails und den Kontakten von Google. Wenn man mal die Bedenken bezüglich der &#8222;Datenkrake&#8220; Google aussen vor lässt und sich auf die funktionellen Fakten bezieht, dann ist das mehr als nur optimal. Angenommen man benutzt bereits die genannten Google Dienste bereits, muss man auf dem Android lediglich seine Kontodaten angeben und alles regelt sich von selbst.</p>
-<p>Wie einige von euch wahrscheinlich wissen, bin ich Teilhaber von <a title="uSystems GmbH" href="http://www.usystems.ch/" target="_blank">uSystems GmbH</a>, die unter anderem eine <a title="webling.ch - verwaltet deinen Verein" href="http://www.webling.ch" target="_blank">Vereinsverwaltungssoftware</a> entwickelt. Die nennt sich Webling und kann eigentlich viel mehr, aber in diesem Beispiel brauche ich sie nur als Adressverwaltung. Denn seit einiger Zeit habe ich mir eine persönliche Instanz davon unter den Nagel gerissen und brauche es um die Kontaktdaten meiner Freunde zu verwalten. So habe ich einen zentralen Ort, wo ich von überall darauf Zugriff habe. Warum ich das erwähne? Nun Webling kann Daten nicht nur Importieren, sondern auch in diversen Formaten exportieren. Hier zeigt sich wieder mal, dass gewisse simple und bereits recht alte Standards auch heute noch immer super sind. Denn Webling bietet unter anderem die Möglichkeit in eine <a title="CSV Dateiformat auf Wikipedia DE" href="http://de.wikipedia.org/wiki/CSV_%28Dateiformat%29" target="_blank">CSV-Datei</a> zu exportieren und Google wiederum diese zu importieren. Und da die Google Kontakte ja mit meinem Handy synchronisiert werden, habe ich nun sofort alle meine Kontakte auch auf meinem Handy. Und sollte ich mal einen neuen Kontakt nicht importiert haben, so kann ich jederzeit von überall über den <a title="Webling.ch - News" href="http://www.webling.ch/news.php" target="_blank">neuen</a> Webling Mobile Client auch per Handy auf alle Daten zugreifen. Sehr praktisch sag ich da nur!  <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> (Auch wenn ich natürlich etwas voreingenommen bin.)</p>]]></description>
-      <source url="http://blog.diener.li/feed">Carlos Diener - emonkey</source>
     </item>
     <item>
       <title>UDS Karmic &amp;#8211; Day One</title>
