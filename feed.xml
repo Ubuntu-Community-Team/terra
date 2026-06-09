@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Mon, 08 Jun 2026 04:18:36 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 03:49:56 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -45,17 +45,17 @@
       <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[<p>A testament to Open Source tenacity, is this <em>Free</em> <abbr>CAD</abbr> software Good Enough™ to compete with the big boys?</p>
 
-<figure><img src="/read/freecad-got-good/overview.avif" alt="An overview of FreeCAD" loading="lazy" decoding="async" /></figure>
+<figure><img src="https://thepcspy.com/read/freecad-got-good/overview.avif" alt="An overview of FreeCAD" loading="lazy" decoding="async" /></figure>
 <p>If you have a 3D printer, you know you can only go so far printing others’ designs. Eventually you need something that isn’t out there for you. Custom-fit containers. Replacement parts. Shims accurate to 0.2mm. Problems you solve with a little bit of plastic in the right shape. And for that you need <abbr>CAD</abbr>, able to design anything from a building to a circuit board.</p>
 <p>You might be familiar with YouTubers peddling Fusion and OnShape, and there are lots more options but precious few for Linux.</p>
 <p>I first tried <a href="https://www.freecad.org/">FreeCAD</a> about a decade ago. It wasn’t a smooth experience. A stubbornly blue interface, a quagmire of obtuse icons and panels. It was overbearing, unpretty, and crashed so frequently I just gave up. I haven’t been following its development until very recently, since I started needing design software, but the last few years of FreeCAD’s 23 year history has seen some incredible leaps in usability and stability.</p>
-<p><img src="/read/freecad-got-good/oled-mount.avif" alt="" />
-<img src="/read/freecad-got-good/torch-button.avif" alt="" />
-<img src="/read/freecad-got-good/tumbler-gear.avif" alt="" /></p>
+<p><img src="https://thepcspy.com/read/freecad-got-good/oled-mount.avif" alt="" />
+<img src="https://thepcspy.com/read/freecad-got-good/torch-button.avif" alt="" />
+<img src="https://thepcspy.com/read/freecad-got-good/tumbler-gear.avif" alt="" /></p>
 <p>Since picking it up, I’ve made a flurry of things. From low-tolerance electronics mounts to quick-and-dirty parts for a torch. I’ve even replicated household items like drawer knobs and curtain rail holders that have broken and aren’t easily replaceable. The freedom to identify a problem, measure everything out with your Verniers and have a solution printing out within the hour is the most futuristic thing available.</p>
-<p><img src="/read/freecad-got-good/lamp-stand.avif" alt="" />
-<img src="/read/freecad-got-good/drawer-knob.avif" alt="" />
-<img src="/read/freecad-got-good/curtain-rail.avif" alt="" /></p>
+<p><img src="https://thepcspy.com/read/freecad-got-good/lamp-stand.avif" alt="" />
+<img src="https://thepcspy.com/read/freecad-got-good/drawer-knob.avif" alt="" />
+<img src="https://thepcspy.com/read/freecad-got-good/curtain-rail.avif" alt="" /></p>
 <p>I won’t pretend it’s all easy, <strong>you <em>still</em> have to learn how to use it</strong>, but that’s true of all <abbr>CAD</abbr> packages. Thankfully there is a large and helpful community around FreeCAD that can get you up to speed pretty quickly:</p>
 <ul>
 <li><a href="https://youtube.com/@deltahedra3D">Deltahedra</a> got me <em>interested</em> in FreeCAD through lots and lots of shorter-format feature videos. There are lots of feature-updates as FreeCAD gets improvements, and there’s nothing like a “quick hacks” video for improving your own workflow.</li>
