@@ -6,36 +6,75 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 10 Jun 2026 04:00:54 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 04:14:53 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Beyond tokens per watt – using Ubuntu 26.04 LTS for AI</title>
-      <link>https://ubuntu.com//blog/beyond-tokens-per-watt</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/beyond-tokens-per-watt</guid>
-      <pubDate>Fri, 05 Jun 2026 10:44:14 GMT</pubDate>
-      <description><![CDATA[<p>Tokens per watt (TpW) – the measure of useful AI work produced per watt of energy consumed – is the metric at top of mind for CEOs, heads of AI, and infrastructure teams alike. With the tremendous cost of GPU clusters, extracting as much value as possible from the expense is critical.</p>
-<p>But in the pursuit of tokens, it’s important to remember that hardware efficiency isn’t the only factor influencing data center operating costs, or the output of useful, revenue-generating AI work. While TpW is crucial, we also need to consider time-to-value and the impact of human productivity, which are largely determined at the software level.</p>
-<p>We’re shaping Ubuntu to be the software foundation for efficient AI, and in this article, I’ll share some examples of what we mean when we say that we are optimizing Ubuntu for AI. With Ubuntu 26.04 LTS, we’re not just helping organizations get more from their hardware, we’re also making life easier and more productive for teams that rely on and support the AI stack. </p>
-<h2 class="wp-block-heading">An OS that’s optimized for silicon</h2>
-<p>How do you squeeze more tokens from your hardware? The prevailing wisdom is to prioritize model optimization, GPU utilization, time to first token, and tokens per second. However, it’s also essential to have a software layer that enables you to make the most of your silicon.</p>
-<p>The host operating system plays a central role in the AI infrastructure stack. That’s “central” not just in the sense that it’s important, but also in the sense that it sits in the center of the stack, acting as the bridge between the hardware and software. The OS manages the underlying compute, so it’s responsible for ensuring you can take full advantage of your GPUs and other AI accelerators.</p>
-<p>With that in mind, Canonical <a href="https://canonical.com/partners/silicon">partners with silicon vendors</a> (such as NVIDIA, AMD, Intel, Arm, and Qualcomm, as well as RISC-V platforms) to optimize Ubuntu across all major architectures. This optimization helps to ensure that the maximum watts are spent on AI workloads rather than OS overhead. </p>
-<p>We also work with partners to <a href="https://ubuntu.com/certified">certify hardware</a>. By providing standardized, pre-integrated secure boot enablement and firmware delivery, Canonical enables organizations to avoid having to do custom OS engineering for every new piece of hardware they add to their stack. Enterprises can get to value faster, and save on engineering resources.</p>
-<h2 class="wp-block-heading">Single command toolkit integrations</h2>
-<p>Let’s continue on that theme of accelerating time-to-value and enhancing human productivity. Even in the age of AI, Ubuntu remains a Linux for human beings, and a core pillar of our philosophy is minimizing the friction involved in deploying and operating AI infrastructure for our users.</p>
-<p>To that end, we’re collaborating with NVIDIA and AMD to integrate and distribute key AI solutions with Ubuntu. Starting with Ubuntu 26.04 LTS, users can get <a href="https://canonical.com/blog/canonical-announces-it-will-support-and-distribute-nvidia-cuda-in-ubuntu">NVIDIA CUDA</a>, <a href="https://canonical.com/blog/canonical-amd-rocm-ai-ml-hpc-libraries">AMD ROCm</a>, and <a href="https://canonical.com/blog/canonical-announces-it-will-distribute-nvidia-doca-ofed-in-ubuntu">NVIDIA DOCA-OFED</a> each with a single command. </p>
-<h3 class="wp-block-heading">GPGPU frameworks</h3>
-<p>NVIDIA CUDA and AMD ROCm are frameworks for general-purpose computing on graphics processing units (GPGPU). They are the critical software layers that enable developers to harness the massive throughput of NVIDIA and AMD GPUs for AI workloads.</p>
-<p>Historically, installing these frameworks required multi-step processes, and navigating dependency and compatibility issues could often prove challenging, especially for inexperienced users. But with Ubuntu 26.04 LTS, NVIDIA CUDA or AMD ROCm can each be installed with just one <strong>apt install </strong>command. </p>
-<p>The new distribution model can save teams hours or even days on GPGPU framework setup, so organizations can start gaining value from GPUs faster. Canonical also ensures that users have smooth upgrade paths, so they can be confident when updating, and get the benefits of the latest features of these platforms.</p>
-<p>Have questions about AMD ROCm on Ubuntu? <a href="https://ubuntu.com/blog/amd-rocm-on-ubuntu">We’ve just published a deep dive.</a></p>
-<h3 class="wp-block-heading">High-performance networking</h3>
-<p>For organizations with large-scale <a href="https://canonical.com/knowledge/data-and-ai-ml/what-is-an-ai-factory">AI factories</a> and HPC clusters, NVIDIA DOCA-OFED is among the go-to high-performance networking stacks. However, traditionally, the tradeoff for enabling ultra-low latency and high-throughput data transfers was the complexity of setup and maintenance. System administrators had to manage networking drivers through external installers or complex manual builds, potentially leading to version conflicts or kernel mismatch issues during OS updates.</p>
-<p>Now that NVIDIA DOCA-OFED can be installed seamlessly, the entire lifecycle management is simplified. Alongside rapid installation, the new workflow solves common operational pain points like kernel drift, driver incompatibility, and CI breakage following kernel or OS upgrades. Infrastructure teams can deliver speed and stability, while saving resources.</p>
-<h2 class="wp-block-heading">Optimized for hardware and humans</h2>
-<p>Jon Seager, Canonical’s VP of Engineering, has written recently about <a href="https://discourse.ubuntu.com/t/the-future-of-ai-in-ubuntu/81130">the future of AI in Ubuntu</a>. He signs off by stating that “Ubuntu is not becoming an AI product.” But what we are committed to is making Ubuntu an <em>enabler</em> for AI. Whether it’s at the silicon level with deep optimization for every architecture, or at the user level with streamlined toolkit adoption and lifecycle management, Ubuntu is the software layer that underpins an effective AI infrastructure strategy. It can help you get more tokens per watt, and beyond that, it can help you get to value faster and help bring down the operating costs for your stack.</p>
-<p>If you’d like to learn more about AI infrastructure best practices, and how Ubuntu can fit into your AI strategy, <a href="https://ubuntu.com/engage/open-source-ai-infrastructure">read the enterprise guide to private AI infrastructure</a>.</p>]]></description>
+      <title>What is RDMA over Converged Ethernet (RoCE)?</title>
+      <link>https://ubuntu.com//blog/what-is-rdma-over-converged-ethernet-roce</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/what-is-rdma-over-converged-ethernet-roce</guid>
+      <pubDate>Tue, 09 Jun 2026 15:05:05 GMT</pubDate>
+      <description><![CDATA[<p>Previous articles walked through <a href="https://ubuntu.com/blog/what-is-rdma">RDMA (Remote Direct Memory Access)</a> as a programming model and InfiniBand as the fabric that was built around it. Both led to the same conclusion, even if it was never stated outright: moving data, not compute, becomes the bottleneck once systems scale.</p>
+<p>So what happens when you want RDMA, but you’re already running an Ethernet network you’re not keen to replace? That’s usually where RDMA over Converged Ethernet (RoCE) enters the conversation.</p>
+<p>At first, it sounds straightforward. Keep the RDMA semantics, keep the verbs model (the low-level RDMA API used to post send/receive and memory operations), just run it over Ethernet. In reality, it works a bit like fitting a racing engine into a standard road car. You can do it, but the rest of the system has to be able to keep up. In this article, we’ll explore what RoCE is, how it works, and when to use it.</p>
+<h1 class="wp-block-heading">What is RoCE?</h1>
+<p>RDMA over Converged Ethernet (RoCE) runs the RDMA programming model over standard Ethernet networks. Applications use the same verbs interface to read and write directly to remote memory, bypassing the kernel and minimizing CPU involvement. The change is in the transport: instead of a purpose-built InfiniBand fabric, RDMA operations are carried over Ethernet.</p>
+<p>RoCE exists in two variants. RoCEv1 operates within a single Layer 2 broadcast domain. RoCEv2 encapsulates RDMA traffic in UDP/IP, which makes it routable across Layer 3 networks. In practice, deployments standardize on RoCEv2 because it fits leaf–spine designs, network segmentation, and multi-rack scale.</p>
+<p>While the programming model does not change, the network behavior does. Ethernet does not guarantee lossless delivery by default, so RoCE relies on additional mechanisms to control congestion and avoid drops. That design choice shifts responsibility from the application to the network. Performance and predictability now depend on how the Ethernet fabric is designed, configured, and operated.</p>
+<p>This is the key idea to keep in mind. RDMA is the model. RoCE is one way to implement it on top of Ethernet.</p>
+<h2 class="wp-block-heading">Where RoCE fits</h2>
+<p>RoCE is most relevant in environments where Ethernet is already the dominant networking model and introducing a separate fabric would increase operational complexity, not only because it introduces additional infrastructure, but also because it brings a different networking model, tooling, and operational expertise that teams may not already have in place. It allows RDMA to be introduced incrementally, without changing how the network is provisioned or managed at a high level.</p>
+<p>In practice, this shows up in distributed storage systems, database clusters, and accelerator-driven workloads that are deployed on top of standard Ethernet infrastructure. In these environments, the ability to reuse the existing network is often as important as the performance characteristics themselves. In many cases, this direction reflects a practical compromise: pushing beyond application performance limits while avoiding a full redesign of the network stack from scratch.</p>
+<h2 class="wp-block-heading">Ethernet versus InfiniBand behavior</h2>
+<p>To understand why RoCE behaves differently in practice, it helps to compare the two worlds it bridges: InfiniBand, where RDMA was designed to run, and Ethernet, where it is being adapted.</p>
+<p>InfiniBand enforces lossless communication as part of the fabric. Flow control and congestion management are integrated into the transport, which keeps latency stable under load.</p>
+<p>Ethernet follows a different model, where packet loss is expected and recovery is handled by higher layers. That choice is not accidental; it comes from how Ethernet evolved. Early Ethernet was designed as a shared medium, with many hosts contending for the same wire. Simplicity and cost mattered more than strict delivery guarantees, so the network pushed complexity up the stack. If a frame collided or a buffer overflowed, it was cheaper to drop it and let higher layers retry than to coordinate every sender and receiver in real time.</p>
+<p>That design scaled well as speeds increased and switching replaced hubs. The network stayed simple and fast, while protocols like TCP took on responsibility for reliability, ordering, and congestion control. It works well for web traffic, storage over IP, and most enterprise workloads, where a lost packet can be retransmitted without much consequence.</p>
+<p>RDMA changes that assumption. It expects the network to behave predictably and avoid drops altogether, because retransmissions break latency guarantees and disrupt fine-grained communication patterns. RoCE therefore has to retrofit loss-avoidance mechanisms onto a transport that was never designed to be strictly lossless in the first place. RoCE bridges that gap by introducing a set of mechanisms that approximate lossless behavior for RDMA traffic.</p>
+<p>At this point, it helps to step back and ask why these additional mechanisms are needed in the first place. Ethernet did not suddenly become problematic; the workload changed.</p>
+<h1 class="wp-block-heading">Why RDMA stresses Ethernet</h1>
+<p>The key challenge with RoCE is that RDMA expects a predictable, near-lossless transport, while Ethernet was originally designed around best-effort delivery. Most of the additional mechanisms around RoCE exist to bridge that gap.</p>
+<p>RDMA traffic patterns tend to be highly synchronized and bursty. Distributed training jobs and tightly coupled HPC workloads often trigger collective operations where many nodes exchange data simultaneously. This creates what operators call “incast”: multiple senders targeting the same receiver or the same set of links at once. Switch buffers fill rapidly, and in a traditional Ethernet network that would simply lead to packet drops.</p>
+<p>TCP tolerates that behavior because retransmission is built into the transport. RDMA does not. A single dropped packet can stall a queue pair and introduce latency spikes that ripple through the entire workload.</p>
+<p>Priority flow control (PFC) was introduced to avoid drops by pausing traffic before queues overflow. The problem is that the pause applies to the ingress port and priority class, not only to the congested flow itself. Unrelated traffic can therefore be blocked as well. This phenomenon, known as head-of-line blocking, is one of the reasons RoCE fabrics can become unstable under congestion.</p>
+<p>Load balancing creates additional pressure. Ethernet fabrics typically rely on equal-cost multipath (ECMP) hashing to spread flows across multiple paths, but synchronized AI and HPC traffic patterns do not distribute evenly. Large flows can land on the same links while other paths remain underutilized, concentrating congestion inside a subset of the fabric.</p>
+<p>Mechanisms such as explicit congestion notification (ECN), data center bridging (DCB), and later data center quantized congestion notification (DCQCN) were introduced to make this behavior manageable. ECN marks packets before queues overflow so endpoints can slow down gradually. DCB defines how traffic classes are isolated and prioritized across the fabric. DCQCN builds on those signals to regulate sender rates dynamically.</p>
+<p>RoCE performance thus depends heavily on how the Ethernet network is engineered. A well-tuned fabric can achieve latency and throughput close to InfiniBand. A poorly tuned one can become unpredictable under load. Queue thresholds, ECN marking points, PFC priorities, maximum transmission unit (MTU) values, and network interface card (NIC) parameters all interact, which is why production RoCE deployments often require careful validation and iterative tuning under realistic traffic conditions.</p>
+<h2 class="wp-block-heading">Can RoCE share the same fabric as IP traffic?</h2>
+<p>The mechanisms described above already push Ethernet close to its limits under synchronized RDMA workloads. When the same fabric also carries general IP traffic, those effects can become harder to control and easier to trigger.</p>
+<p>Can RoCEv2 coexistence with standard Ethernet and IP traffic be maintained without affecting performance? RDMA traffic assumes a controlled, near-lossless environment. IP traffic assumes packet loss and recovery. Bringing both together requires explicit separation within the same network, typically through traffic classes, buffer allocation, and scheduling policy.</p>
+<p>Some environments operate a fully converged fabric, where all traffic shares the same infrastructure. This approach reduces hardware footprint but increases sensitivity to configuration errors, as congestion in one class can affect others. Other environments introduce logical separation, using VLANs or QoS classes to isolate RDMA traffic while keeping a shared physical network. The most conservative approach is a dedicated fabric, where RDMA traffic is completely isolated from other workloads.</p>
+<p>Operational experience tends to favor some form of isolation. It reduces the number of variables involved when diagnosing performance issues and makes behavior easier to reason about under load.</p>
+<h1 class="wp-block-heading">Evolving congestion control</h1>
+<p>While RoCE can deliver excellent performance, large deployments also expose some of the weaker aspects of Ethernet under sustained congestion and synchronized traffic. Congestion spreads more easily, synchronized traffic patterns create hotspots, and mechanisms such as PFC can stabilize the fabric in one situation while amplifying instability in another.</p>
+<p>Large AI training clusters pushed these issues into the spotlight once deployments started scaling into thousands of GPUs. In her OCP Global Summit 2022 keynote, Alexis Bjorlin, then VP of Infrastructure at Meta, explained that communication overhead and tail latency were directly affecting training efficiency: around 30% of AI training time was spent in networking and, for some benchmark models, more than 50%. That drove investment into topology-aware collectives, routing, and congestion management. At that scale, the network becomes part of the distributed compute system rather than simple transport infrastructure.</p>
+<p>The industry response has focused on making Ethernet behave more predictably under large-scale RDMA traffic, while reducing dependence on mechanisms such as PFC.</p>
+<p>A few notable examples illustrate where things are heading:</p>
+<ul>
+<li>NVIDIA Spectrum-X keeps the RoCE model, but tightly integrates Spectrum switches, BlueField DPUs, adaptive routing, telemetry, and congestion control into a single Ethernet platform optimized for AI clusters.</li>
+<li>The Ultra Ethernet Consortium (UEC), formed in 2023 under the Linux Foundation, takes a more open approach. Its specifications focus on stronger congestion signaling, multipathing, packet spraying, and transports that tolerate out-of-order delivery.</li>
+<li>Google’s Falcon transport, opened through OCP in 2023, moves even further away from traditional RoCE designs. It introduces hardware-assisted retransmission, programmable congestion control, and multipath transport semantics intended to work efficiently on lossy Ethernet fabrics.</li>
+<li>Broadcom’s Scale-Up Ethernet (SUE) framework focuses on tightly coupled accelerator domains using mechanisms such as credit-based flow control, topology-aware routing, and in-network collectives. Recent products such as Tomahawk Ultra and Thor Ultra align closely with the broader UEC direction.</li>
+</ul>
+<p>RoCE exposed how difficult it is to make traditional Ethernet behave predictably under synchronized RDMA traffic at large scale. These newer approaches are all attempts to reduce that sensitivity, either by tightening integration around RoCE itself or by moving toward new Ethernet transport models designed specifically for AI and HPC communication patterns.</p>
+<h1 class="wp-block-heading">The Canonical perspective</h1>
+<p>RoCE depends on alignment across the entire software and hardware stack. Kernel drivers, user space libraries, NIC firmware, and the way workloads are attached to the network all contribute to the final behavior.</p>
+<p>On Ubuntu, that alignment starts with upstream RDMA plumbing that operators already recognize. The <a href="https://launchpad.net/ubuntu/+source/rdma-core">rdma-core</a> stack provides libibverbs and its providers, which expose a consistent RDMA programming interface regardless of whether the underlying transport is InfiniBand or RoCE. It also includes connection management and tooling such as <a href="https://manpages.ubuntu.com/manpages/resolute/man1/ibv_devinfo.1.html">ibv_devinfo</a> and <a href="https://manpages.ubuntu.com/manpages/resolute/man1/rping.1.html">rping</a>. In the kernel, the mlx5 driver family (for NVIDIA/Mellanox ConnectX), irdma (Intel E810/Columbiaville), bnxt_re (Broadcom NetXtreme-E), and ice/ixgbe (Intel NICs) backends expose RoCEv2 capabilities consistently. Features such as SR-IOV, VF representors, and devlink are available out of the box, which matters when you need to reason about queues, rate limiting, or firmware settings without stepping outside the distribution.</p>
+<p>Day‑to‑day operations tend to rely on a small set of Linux primitives that are easy to overlook but critical for RoCE. <a href="https://manpages.ubuntu.com/manpages/resolute/man8/ethtool.8.html">ethtool</a> and <a href="https://manpages.ubuntu.com/manpages/resolute/man8/devlink-health.8.html">devlink-health</a> expose NIC capabilities and health. <a href="https://manpages.ubuntu.com/manpages/resolute/man8/tc.8.html">tc</a> with <a href="https://manpages.ubuntu.com/manpages/bionic//man8/tc-mqprio.8.html">mqprio</a> shape traffic classes. They are used to map RoCE traffic to a dedicated priority, enable PFC on that class, and tune queue bandwidth. <a href="https://manpages.ubuntu.com/manpages/resolute/man7/cgroups.7.html">cgroups</a> and CPU pinning keep data paths predictable to isolate RDMA poller threads or user-space data plane processes on specific cores and reduce scheduler jitter. All of this while standard Linux networking tools remain part of the workflow for inspecting and configuring the underlying Ethernet interfaces that carry RoCE traffic. When things misbehave, counters exposed through /sys/class/infiniband (used for both InfiniBand and RoCE devices), ethtool -S, and switch telemetry are what let you correlate queue pressure with application latency.</p>
+<p>Driver and firmware cohesion is where many deployments struggle. Ubuntu tracks rdma-core and kernel changes together, which reduces surprises when kernels move. Where vendor features matter, NVIDIA DOCA-OFED is available through Ubuntu packaging so platform teams can use advanced capabilities on BlueField or ConnectX without forking the base system. The same applies to Intel and Broadcom stacks, which are validated against LTS kernels rather than treated as one-off add-ons.</p>
+<p>This matters even more as Ethernet fabrics continue to evolve for AI and HPC workloads. Canonical works closely with silicon vendors, switch manufacturers, and ecosystem partners to follow developments around technologies such as Spectrum-X, Ultra Ethernet, Falcon, and next-generation RoCE congestion control. The goal is not simply hardware enablement. It is making sure Ubuntu and the surrounding cloud-native stack can expose those capabilities consistently through upstream kernels, drivers, orchestration tooling, and CNCF integrations as the ecosystem evolves.</p>
+<p>On the orchestration side, RDMA is rarely something a single process “just uses.” It has to be surfaced cleanly to containers and VMs, which is where SR-IOV VFs, device plugins, and CNI integrations come into play. Canonical keeps close to CNCF projects here, so the platform can consume what vendors and the community already provide rather than inventing a parallel stack. In practice, that means platform teams can bring in components such as NVIDIA’s Network Operator, SR-IOV-focused operators, RDMA device plugins, and Multus-based secondary networking. Ubuntu provides the predictable host layer that allows those components to work together consistently. These pieces take care of discovering devices, carving out VFs, and attaching them to workloads, while Ubuntu underneath keeps the drivers, kernel interfaces, and networking behavior consistent enough that those higher layers behave as expected.</p>
+<p>Bare-metal provisioning with MAAS and lifecycle management with Juju fit into the same picture. They let platform teams model NIC firmware, kernel parameters, and network configuration alongside the workload, rather than treating RDMA as a special case configured by hand. In practice, this reduces drift. And with RoCE, drift is often what turns a stable cluster into one with unpredictable tail latency.</p>
+<p>Observability ties it all together. RDMA issues rarely show up as hard failures; they surface as latency spread, queue buildup, or uneven throughput. Having a consistent set of kernel drivers, user-space tools, and metrics on Ubuntu makes it possible to trace those symptoms back to specific queues, links, or policies, which is what ultimately keeps a RoCE deployment usable under load.</p>
+<h1 class="wp-block-heading">Designing and operating RoCE in practice</h1>
+<p>RoCE aligns with Ethernet and integrates naturally into existing environments, which is precisely why it keeps coming up in design discussions. It allows teams to push performance further without introducing a parallel networking stack. At the same time, that flexibility comes with a shift in responsibility. The network no longer guarantees behavior by construction. It has to be engineered, observed, and continuously validated.</p>
+<p>Most teams follow a similar path, even if they describe it differently. They start by validating whether RDMA is actually the right tool for their workload. Not every distributed system benefits from it, and some behave better with simpler transport models. From there, the focus moves quickly to the network: topology consistency, traffic isolation, buffer tuning, and congestion control are not optional details. They are part of the application design.</p>
+<p>This is also where many projects stall. RoCE works well in controlled environments, then becomes unpredictable when scaled or mixed with other traffic. That gap is rarely about hardware capability. It is about how the system is put together and how much visibility teams have into its behavior.</p>
+<p>This is the point where it usually makes sense to step back and look at the full stack rather than individual components. The NIC, the kernel, the switch configuration, and the orchestration layer all interact. Treating them separately often leads to local optimizations and global instability. Treating them as a system tends to produce more consistent results.</p>
+<p>From a practical standpoint, the next step is not to choose between RoCE and something else in isolation. It is to validate the workload, test the network behavior under realistic conditions, and understand where variability comes from. That work tends to surface quickly whether the existing Ethernet fabric can support the requirements or whether a more controlled approach is needed.</p>
+<p>The right approach depends on context. Some deployments converge successfully on RoCE with careful design. Others decide that a more tightly controlled fabric is the better option. What matters is having the data and the operational understanding to make that decision with confidence.</p>
+<p>If you are exploring RDMA over Ethernet today, this is exactly the kind of problem Canonical works on with customers and partners. From enabling RDMA stacks on Ubuntu, to validating performance across different NICs and switches, to integrating those capabilities into production platforms, the focus is on making these systems behave predictably under real workloads rather than synthetic benchmarks.</p>
+<p>If you are evaluating RoCE, next-generation Ethernet fabrics, or AI/HPC networking architectures on Ubuntu, get in touch with Canonical to discuss your requirements and deployment goals.</p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -1700,6 +1739,56 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 <p>Apparently, such issues are bound to appear more often. They require mitigations, apply the updated packages when they are ready, and then remove the mitigations. This is a Local Privilege Escalation (LPE) security vulnerability, which means that it affects vulnerable systems when a malicious user already has access to that system.</p>
 <div class="saboxplugin-wrap" itemtype="http://schema.org/Person" itemscope itemprop="author"><div class="saboxplugin-tab"><div class="saboxplugin-gravatar"><img alt='Simos Xenitellis' src='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=100&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=200&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' itemprop="image"/></div><div class="saboxplugin-authorname"><a href="https://blog.simos.info/author/simos/" class="vcard author" rel="author"><span class="fn">Simos Xenitellis</span></a></div><div class="saboxplugin-desc"><div itemprop="description"></div></div><div class="saboxplugin-web "><a href="https://blog.simos.info/" target="_self" >blog.simos.info/</a></div><div class="clearfix"></div></div></div>]]></description>
       <source url="https://blog.simos.info/category/planet-ubuntu/feed/?mrss=off">Simos Xenitellis</source>
+    </item>
+    <item>
+      <title>Private snap manifests</title>
+      <link>https://blog.launchpad.net/general/private-snap-manifests</link>
+      <guid isPermaLink="true">https://blog.launchpad.net/general/private-snap-manifests</guid>
+      <pubDate>Wed, 13 May 2026 07:57:41 GMT</pubDate>
+      <description><![CDATA[<p>As part of our ongoing commitment to security and transparency, we are pleased to announce an improved approach to snap manifest generation for private projects. This update specifically addresses the long-standing technical block that suppressed the creation of <code>manifest.yaml</code> files during private snap builds, an important component for generating accurate Software Bills of Materials (SBOMs).</p>
+
+
+
+<h2>The challenge of secret exposure</h2>
+
+
+
+<p>Previously, manifest generation for private builds was deliberately disabled as a protective measure. The primary security concern was that including a snap manifest in a binary snap could inadvertently expose sensitive source credentials or internal build configurations.</p>
+
+
+
+<p>While effective at preventing data leaks, this restriction also created significant hurdles for users wanting to produce SBOMs. Given that access to these private snaps is limited to those with explicit authorization, the risk of data and secret leakage is significantly reduced, allowing us to decommission the previous suppression mechanism.</p>
+
+
+
+<h2>What this means for developers</h2>
+
+
+
+<p>For private snaps built on Launchpad, the <code>manifest.yaml</code> will now automatically be included in binary snaps by default during the build process.</p>
+
+
+
+<h2>Looking ahead</h2>
+
+
+
+<p>We are continuing to refine our offering, providing more and better features that support enhanced security and efficiency.</p>
+
+
+
+<p>We invite you to share your feedback on this change by reaching out&nbsp; to us:</p>
+
+
+<ul>
+<li>Matrix: #launchpad:ubuntu.com</li>
+<li>Email: feedback@launchpad.net</li>
+<li>Ask a question: https://answers.launchpad.net/launchpad</li>
+</ul>
+
+
+<p></p>]]></description>
+      <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
       <title>2026 LiveCD Memory Usage Compare</title>
