@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 10 Jun 2026 01:02:58 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 01:02:37 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -1739,6 +1739,56 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 <p>Apparently, such issues are bound to appear more often. They require mitigations, apply the updated packages when they are ready, and then remove the mitigations. This is a Local Privilege Escalation (LPE) security vulnerability, which means that it affects vulnerable systems when a malicious user already has access to that system.</p>
 <div class="saboxplugin-wrap" itemtype="http://schema.org/Person" itemscope itemprop="author"><div class="saboxplugin-tab"><div class="saboxplugin-gravatar"><img alt='Simos Xenitellis' src='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=100&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=200&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' itemprop="image"/></div><div class="saboxplugin-authorname"><a href="https://blog.simos.info/author/simos/" class="vcard author" rel="author"><span class="fn">Simos Xenitellis</span></a></div><div class="saboxplugin-desc"><div itemprop="description"></div></div><div class="saboxplugin-web "><a href="https://blog.simos.info/" target="_self" >blog.simos.info/</a></div><div class="clearfix"></div></div></div>]]></description>
       <source url="https://blog.simos.info/category/planet-ubuntu/feed/?mrss=off">Simos Xenitellis</source>
+    </item>
+    <item>
+      <title>Private snap manifests</title>
+      <link>https://blog.launchpad.net/general/private-snap-manifests</link>
+      <guid isPermaLink="true">https://blog.launchpad.net/general/private-snap-manifests</guid>
+      <pubDate>Wed, 13 May 2026 07:57:41 GMT</pubDate>
+      <description><![CDATA[<p>As part of our ongoing commitment to security and transparency, we are pleased to announce an improved approach to snap manifest generation for private projects. This update specifically addresses the long-standing technical block that suppressed the creation of <code>manifest.yaml</code> files during private snap builds, an important component for generating accurate Software Bills of Materials (SBOMs).</p>
+
+
+
+<h2>The challenge of secret exposure</h2>
+
+
+
+<p>Previously, manifest generation for private builds was deliberately disabled as a protective measure. The primary security concern was that including a snap manifest in a binary snap could inadvertently expose sensitive source credentials or internal build configurations.</p>
+
+
+
+<p>While effective at preventing data leaks, this restriction also created significant hurdles for users wanting to produce SBOMs. Given that access to these private snaps is limited to those with explicit authorization, the risk of data and secret leakage is significantly reduced, allowing us to decommission the previous suppression mechanism.</p>
+
+
+
+<h2>What this means for developers</h2>
+
+
+
+<p>For private snaps built on Launchpad, the <code>manifest.yaml</code> will now automatically be included in binary snaps by default during the build process.</p>
+
+
+
+<h2>Looking ahead</h2>
+
+
+
+<p>We are continuing to refine our offering, providing more and better features that support enhanced security and efficiency.</p>
+
+
+
+<p>We invite you to share your feedback on this change by reaching out&nbsp; to us:</p>
+
+
+<ul>
+<li>Matrix: #launchpad:ubuntu.com</li>
+<li>Email: feedback@launchpad.net</li>
+<li>Ask a question: https://answers.launchpad.net/launchpad</li>
+</ul>
+
+
+<p></p>]]></description>
+      <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
       <title>2026 LiveCD Memory Usage Compare</title>
@@ -9124,16 +9174,6 @@ On the reliability front new systems won't be added to the infrastructure if the
 <p>I would like to recommend this person of Microsoft to have a look at the new version  of <a title="guadalinexedu.org" href="http://www.guadalinexedu.org/" target="_blank">Guadalinex Edu</a> (available in few days) and then ask him what do they think is the best for  kids? Perhaps  motivation, enthusiasm and hard work of the entire free software  community can exceed 9.5 billion invested by Microsoft. Don&#8217;t worry about kids, you must be worried about <a title="Ubuntu bug #1" href="https://bugs.launchpad.net/ubuntu/+bug/1" target="_blank">the day</a> when these children reach the professional market and the quality and freedom of the free software used at schools will have more weight than all the investment you are doing in your proprietary software.</p>
 <p>:wq</p>]]></description>
       <source url="http://antoniosanchez.wordpress.com/category/planet-ubuntu/feed/atom">Antonio Sánchez</source>
-    </item>
-    <item>
-      <title>Webling und Android</title>
-      <link>http://blog.diener.li/allgemein/webling-und-android/</link>
-      <guid isPermaLink="true">http://blog.diener.li/allgemein/webling-und-android/</guid>
-      <pubDate>Mon, 09 Nov 2009 14:27:34 GMT</pubDate>
-      <description><![CDATA[<p>Ja ich habe seit Kurzem auch so einen kleinen Alleskönner als Handy. Auch wenn ich meinen <a title="Openmoko Freerunner" href="http://wiki.openmoko.org/wiki/Neo_FreeRunner/de" target="_blank">Freerunner</a> sehr mag, auf mein neues Spielzeug ist einfach mehr Verlass. Da mein altes Handy einem Wasserschaden (kein Kommentar) zum Opfer fiel, besorgte ich mir ein <a title="HTC Hero" href="http://www.htc.com/de/product.aspx" target="_blank">HTC Hero</a> mit <a title="Google Android" href="http://www.google.ch/intl/de_ch/mobile/android/" target="_blank">Google Android</a>. Ein <a title="Apple iPhone" href="http://www.apple.com/de/iphone/" target="_blank">iPhone</a> wollte ich nicht und ich bereue es bis heute nicht. Mein kleiner Held ist nicht nur die Hälfte so teuer, sondern bringt auch alles mit was ich brauche.</p>
-<p>Nun aber zum Wesentlichen. Etwas vom dümmsten an Handys war bislang die Portierung der Kontakte auf das neue Gerät. Umso erfreuter war ich, dass es dieses Mal sehr einfach ging. Da Android nun mal von Google kommt, unterstützt es natürlich auch Synchronisation mit dem Kalender, den Mails und den Kontakten von Google. Wenn man mal die Bedenken bezüglich der &#8222;Datenkrake&#8220; Google aussen vor lässt und sich auf die funktionellen Fakten bezieht, dann ist das mehr als nur optimal. Angenommen man benutzt bereits die genannten Google Dienste bereits, muss man auf dem Android lediglich seine Kontodaten angeben und alles regelt sich von selbst.</p>
-<p>Wie einige von euch wahrscheinlich wissen, bin ich Teilhaber von <a title="uSystems GmbH" href="http://www.usystems.ch/" target="_blank">uSystems GmbH</a>, die unter anderem eine <a title="webling.ch - verwaltet deinen Verein" href="http://www.webling.ch" target="_blank">Vereinsverwaltungssoftware</a> entwickelt. Die nennt sich Webling und kann eigentlich viel mehr, aber in diesem Beispiel brauche ich sie nur als Adressverwaltung. Denn seit einiger Zeit habe ich mir eine persönliche Instanz davon unter den Nagel gerissen und brauche es um die Kontaktdaten meiner Freunde zu verwalten. So habe ich einen zentralen Ort, wo ich von überall darauf Zugriff habe. Warum ich das erwähne? Nun Webling kann Daten nicht nur Importieren, sondern auch in diversen Formaten exportieren. Hier zeigt sich wieder mal, dass gewisse simple und bereits recht alte Standards auch heute noch immer super sind. Denn Webling bietet unter anderem die Möglichkeit in eine <a title="CSV Dateiformat auf Wikipedia DE" href="http://de.wikipedia.org/wiki/CSV_%28Dateiformat%29" target="_blank">CSV-Datei</a> zu exportieren und Google wiederum diese zu importieren. Und da die Google Kontakte ja mit meinem Handy synchronisiert werden, habe ich nun sofort alle meine Kontakte auch auf meinem Handy. Und sollte ich mal einen neuen Kontakt nicht importiert haben, so kann ich jederzeit von überall über den <a title="Webling.ch - News" href="http://www.webling.ch/news.php" target="_blank">neuen</a> Webling Mobile Client auch per Handy auf alle Daten zugreifen. Sehr praktisch sag ich da nur!  <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> (Auch wenn ich natürlich etwas voreingenommen bin.)</p>]]></description>
-      <source url="http://blog.diener.li/feed">Carlos Diener - emonkey</source>
     </item>
     <item>
       <title>UDS Karmic &amp;#8211; Day One</title>
