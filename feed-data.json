@@ -344,9 +344,9 @@
     "categories": [
       "KDE",
       "Qt",
-      "tooling",
+      "cpp",
       "debugging",
-      "cpp"
+      "tooling"
     ],
     "imageUrl": null
   },
