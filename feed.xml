@@ -6,48 +6,34 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 17 Jun 2026 01:05:41 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2026 01:04:37 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Template: Streamlining open source design contributions</title>
-      <link>https://ubuntu.com//blog/template-streamlining-open-source-design-contributions</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/template-streamlining-open-source-design-contributions</guid>
-      <pubDate>Tue, 16 Jun 2026 13:09:44 GMT</pubDate>
-      <description><![CDATA[<figure class="wp-block-image size-full"><img alt="" height="550" loading="lazy" sizes="(min-width: 926px) 926px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_926/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F0163%2FTemplate_-Streamline-Open-Source-Design-Contributions.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F0163%2FTemplate_-Streamline-Open-Source-Design-Contributions.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F0163%2FTemplate_-Streamline-Open-Source-Design-Contributions.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F0163%2FTemplate_-Streamline-Open-Source-Design-Contributions.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F0163%2FTemplate_-Streamline-Open-Source-Design-Contributions.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_926/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F0163%2FTemplate_-Streamline-Open-Source-Design-Contributions.png 926w" width="926"/></figure>
-<p>As designers working at Canonical, we’re always thinking about open source. We believe that encouraging more designers to contribute to open source  benefits everyone, from the project maintainers to the end users themselves.  </p>
-<p>In the 2025 edition of FOSSBackstage conference, we presented our research findings on  <a href="https://www.youtube.com/watch?v=5kq2emKppSc&amp;list=PLq-odUc2x7i-vFcBUZoDxTz9Vyu0Joq0X&amp;index=46">why designers don’t get involved in open source projects </a>and found a particular breakdown between designers and project maintainers. </p>
-<p>The truth is that designers often struggle to find projects they can contribute to. When they do find a project, the design requirements often are unclear or very limited. Meanwhile, project maintainers struggle to articulate their design needs or may not even know when to ask for design support. </p>
-<p>To bridge this gap, we created a <a href="https://drive.google.com/open?id=11kQqpy4WqvqYDe9VS547uoTI4CfXriaBhTQMhYR5uo0">template for a design contribution brief for open source projects.</a> This template will help maintainers to clearly articulate their needs and give designers the essential information they need to contribute. </p>
-<h2 class="wp-block-heading">What’s in the contribution brief?</h2>
-<p>The brief has 5 sections, one for each area that can cause friction when maintainers try to onboard a designer to a project. The brief includes questions and examples that help maintainers add context to their contribution requirements, so a designer can pick up a project more easily. Here’s what each section covers:</p>
-<ol>
-<li><strong>About the project: </strong>enables maintainers to get designers up to speed with a project overview, vision, target audience, and progress tracking. This section ensures everyone is on the same page about the project’s goals and context.</li>
-<li><strong>About the design contribution needed:</strong> here’s where you detail the specific design contributions – from UX and UI, to graphic design and accessibility audits. Explain why you need the contribution, what user needs are, and what design skills are essential.</li>
-<li><strong>Logistics</strong>: outline deadlines, priority levels, and timelines to keep everyone organized and on track.</li>
-<li><strong>Team</strong>: introduce the project team and their roles, highlight any existing designers or contributors.</li>
-<li><strong>Communications: </strong>specify how the team communicates (for example, asynchronously, synchronously), preferred communication platforms, preferred language, and any support for onboarding contributors.</li>
-</ol>
-<h2 class="wp-block-heading">Why use the contribution brief?</h2>
-<h3 class="wp-block-heading">Benefits for project maintainers:</h3>
-<ol>
-<li><strong>Set clear expectations:</strong> the template breaks down project expectations to help maintainers articulate what they’re really looking for, and help designers understand the expectations. This makes it easier to communicate design needs and expectations to potential contributors.</li>
-<li><strong>Streamline your process:</strong> adding all the information to a centralized place makes it easy to reference and saves time and effort. The template addresses the most commonly asked questions, which reduces the need to repeat the same things in different channels. </li>
-<li><strong>Attract the right contributors:</strong> clearly articulating design needs helps attract people with the right skills and experience. Maintainers can tag their issues with specific labels and maximize their chance to reach the right audience.</li>
-</ol>
-<h3 class="wp-block-heading">Benefits for designers:</h3>
-<ol>
-<li><strong>Understand the project:</strong> designers can quickly grasp the project’s vision, goals, and target audience, without getting in touch or looking for information in more than one place.</li>
-<li><strong>Know your requirements:</strong> a specific scope makes it easier to know where to start and how much work will need to be done. The template helps clarify what design contributions are required and the expected outcomes.</li>
-<li><strong>Streamline your onboarding:</strong> the template makes it easier to understand how the team communicates and where designers can get support quickly.</li>
-</ol>
-<h2 class="wp-block-heading">How to use the template</h2>
-<p><a href="https://drive.google.com/open?id=11kQqpy4WqvqYDe9VS547uoTI4CfXriaBhTQMhYR5uo0">Open the template</a>, make a copy and attach it to your project. We will continue to refine the<a href="https://drive.google.com/open?id=11kQqpy4WqvqYDe9VS547uoTI4CfXriaBhTQMhYR5uo0"> template</a>, so try it out and <a href="https://canonical.design/sauce">tell us what you thought</a>.<br/><br/></p>
-<p></p>
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-<h3 class="wp-block-heading"><strong>Join the Canonical design team</strong></h3>
-<p>We’re looking for designers who care about craft and how systems work under the hood. At Canonical, design sits at the intersection of UX, engineering, and open source where we shape cohesive, accessible experiences across cloud, desktop, and IoT products.</p>
-<p>If you enjoy solving complex problems and turning technical depth into clarity, explore our open roles: <strong><a href="https://canonical.com/careers/web-and-design" rel="noreferrer noopener" target="_blank">canonical.com/careers</a></strong></p>]]></description>
+      <title>Validating real-world skills through Canonical Academy</title>
+      <link>https://ubuntu.com//blog/validating-real-world-skills-through-canonical-academy</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/validating-real-world-skills-through-canonical-academy</guid>
+      <pubDate>Wed, 17 Jun 2026 13:12:52 GMT</pubDate>
+      <description><![CDATA[<p>In an increasingly volatile job market, standing out from the competition is vital. For many in the open source community, formal recognition for self-taught skills is a significant challenge. These skills are often built through hands-on hobbies, side projects, and deep community contributions. While the market is flooded with certificates and certifications, most fail to reliably measure practical execution, or fall behind the rapid pace of industry changes. Others demand a time commitment that busy professionals simply cannot afford.</p>
+<p>Self-paced or instructor-led courses offer certificates of participation that acknowledge time spent rather than competence demonstrated. Meanwhile, traditional professional certifications often rely on dense, theoretical, multiple-choice formats. These are expensive, time-consuming, and they leave both the candidate and the employer unsure if real-world capability was actually proven. Even respected hands-on exams can suffer from diminishing industry relevance if their subject matter fails to update alongside modern, remote-first workflows.</p>
+<h2 class="wp-block-heading">A new standard for professional qualifications</h2>
+<p>As the company behind Ubuntu, Canonical has always focused on making complex systems accessible to everyone. When we looked at the engineering certification landscape, we saw an opportunity to design a highly credible, data-driven framework. This framework is built specifically for the needs of modern enterprises and professionals. The result is Canonical Academy.</p>
+<p>We moved away from isolated tests to introduce structured, job-based <strong>Qualifications</strong>. Each qualification maps directly to a professional role. It is achieved by passing a series of modular, real-world exams. This design ensures deep coverage of both foundational industry standards and specific, modern operational methodologies.</p>
+<p>To ensure our curriculum reflects absolute professional relevance, our process begins with an extensive Job Task Analysis (JTA). This analysis surveys industry experts to map exactly what employers expect from technical professionals. We established our initial focus on the System Administrator (SysAdmin) track. These fundamental operational skills form the bedrock for roles spanning from DevOps engineers to data scientists.</p>
+<h2 class="wp-block-heading">Built with rigor, monitored for quality</h2>
+<p>To turn these functional performance expectations into reality, we assemble diverse panels of subject matter experts (SMEs). These experts come from Canonical support, operations, core engineering, and the open source community. Together, we build realistic, multi-node lab environments and write intelligent grading scripts. Rather than forcing a single rigid solution, our grading architecture evaluates the end state of a system. This enables test-takers to showcase their personal problem-solving style and task execution efficiency.</p>
+<p>What truly differentiates Canonical Academy is our commitment to continuous structural quality:</p>
+<ul>
+<li><strong>LTS alignment:</strong> Exams are continuously updated and versioned alongside every Ubuntu Long Term Supported (LTS) release. This ensures your credentials remain strictly aligned with enterprise production environments.</li>
+<li><strong>Psychometric rigor:</strong> Every single exam item is monitored using advanced instructional design metrics. This maintains consistent difficulty and eliminates measurement bias across different question variations.</li>
+<li><strong>Accessible and secure delivery:</strong> Delivered entirely through a standard web browser, our platform combines hands-on terminal realism with secure remote proctoring. No need to clear half a day to travel to a physical testing center.</li>
+</ul>
+<h2 class="wp-block-heading">The path forward: modular learning and continuous growth</h2>
+<p>By breaking our qualifications down into modular exams, professionals can validate their skills at their own pace and budget.</p>
+<p>Our rollout roadmap is designed to systematically validate skills across the full spectrum of systems administration:</p>
+<figure class="wp-block-table"><table><tbody><tr><td><strong>Exam Track</strong></td><td><strong>Focus Areas</strong></td><td><strong>Status</strong></td></tr><tr><td><strong>Using Linux Terminal</strong></td><td>Navigating filesystems, file management, basic security, and command-line mechanics.</td><td><strong>Available now</strong></td></tr><tr><td><strong>Using Ubuntu Desktop</strong></td><td>Package management, application essentials, and desktop administration.</td><td><strong>Available now</strong></td></tr><tr><td><strong>Using Ubuntu Server</strong></td><td>Job control, services setup and management, server security, and basic server deployment</td><td><strong>General Availability coming soon</strong></td></tr><tr><td><strong>Using DevOps Principles</strong></td><td>System automation and deployment, management of updates and patches, application and system monitoring, and troubleshooting connected systems.</td><td><strong>Beta coming soon</strong></td></tr></tbody></table></figure>
+<p>Ultimately, a qualification from Canonical Academy is more than just a badge to display on a resume. It is verifiable proof of competency engineered by the publishers of Ubuntu. Whether you are an individual aiming to prove self-taught expertise, an educator expanding student employability, or an enterprise leader looking to benchmark your engineering team’s capabilities, Canonical Academy provides the pathway to validated open source skills.</p>
+<p>Join us on the journey, explore our tracks, and take your next exam at <a href="https://canonical.com/academy">canonical.com/academy</a>.</p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -1193,11 +1179,11 @@ sizes="100vw"
       <link>https://blog.simos.info/learning-about-exploits-through-the-safety-of-incus/</link>
       <guid isPermaLink="true">https://blog.simos.info/learning-about-exploits-through-the-safety-of-incus/</guid>
       <pubDate>Wed, 20 May 2026 22:06:25 GMT</pubDate>
-      <description><![CDATA[<p>The last few weeks have been quite busy with vulnerabilities that affect all sort of operating systems. It&#8217;s the age of AI, and AI tools help identify yet another class of security vulnerabilities. Several of those vulnerabilities are released while the updates are not ready yet. There exist mitigations though, and it&#8217;s important to do the mitigations until the package updates are ready. </p>
+      <description><![CDATA[<p class="wp-block-paragraph">The last few weeks have been quite busy with vulnerabilities that affect all sort of operating systems. It&#8217;s the age of AI, and AI tools help identify yet another class of security vulnerabilities. Several of those vulnerabilities are released while the updates are not ready yet. There exist mitigations though, and it&#8217;s important to do the mitigations until the package updates are ready. </p>
 
 
 
-<p>We are looking into the <code><a href="https://github.com/0xdeadbeefnetwork/ssh-keysign-pwn">ssh-keysign-pwn</a></code> security vulnerability. Here, a unprivileged process can debug (<code>ptrace</code>) a privileged child process, and in doing so, can exploit a situation where the parent gets access to the file descriptor of a file that was opened by that privileged child process. It&#8217;s a timing attack, which means that the exploit has to try it many times until the conditions are right to get hold of the file descriptor. The vulnerability lies in the Linux kernel, therefore, you are watching for a Linux kernel update to fix this. </p>
+<p class="wp-block-paragraph">We are looking into the <code><a href="https://github.com/0xdeadbeefnetwork/ssh-keysign-pwn">ssh-keysign-pwn</a></code> security vulnerability. Here, a unprivileged process can debug (<code>ptrace</code>) a privileged child process, and in doing so, can exploit a situation where the parent gets access to the file descriptor of a file that was opened by that privileged child process. It&#8217;s a timing attack, which means that the exploit has to try it many times until the conditions are right to get hold of the file descriptor. The vulnerability lies in the Linux kernel, therefore, you are watching for a Linux kernel update to fix this. </p>
 
 
 
@@ -1205,7 +1191,7 @@ sizes="100vw"
 
 
 
-<p>Let&#8217;s give it a go. We are launching an Ubuntu VM, get a shell in there, clone the exploit repository, install the dependencies and compile. This type of vulnerability can safely run in a virtual machine and does not affect the host. </p>
+<p class="wp-block-paragraph">Let&#8217;s give it a go. We are launching an Ubuntu VM, get a shell in there, clone the exploit repository, install the dependencies and compile. This type of vulnerability can safely run in a virtual machine and does not affect the host. </p>
 
 
 
@@ -1241,7 +1227,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 
 
-<p>The binaries <code>chage_pwn</code> and <code>sshkeysign_pwn</code> work on existing privileged (SUID) binaries on a typical Linux distribution. Whereas <code>exploit_vuln_target</code> is an educational exploit that works on a simplified vulnerable program (also provided) to demonstrate the issue. We look into all three. </p>
+<p class="wp-block-paragraph">The binaries <code>chage_pwn</code> and <code>sshkeysign_pwn</code> work on existing privileged (SUID) binaries on a typical Linux distribution. Whereas <code>exploit_vuln_target</code> is an educational exploit that works on a simplified vulnerable program (also provided) to demonstrate the issue. We look into all three. </p>
 
 
 
@@ -1249,7 +1235,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 
 
-<p>Here is <code>chage</code>, a SUID program (note the <code>s</code>), which has been setup to allow access to the <code>/etc/shadow</code> file that holds all the passwords. The purpose of this program is to show or change the <em>age</em> of passwords. That file, <code>/etc/shadow</code> is not readable by common users. </p>
+<p class="wp-block-paragraph">Here is <code>chage</code>, a SUID program (note the <code>s</code>), which has been setup to allow access to the <code>/etc/shadow</code> file that holds all the passwords. The purpose of this program is to show or change the <em>age</em> of passwords. That file, <code>/etc/shadow</code> is not readable by common users. </p>
 
 
 
@@ -1259,11 +1245,11 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 
 
-<p>When you run <code>chage</code> without any parameters, the program will exit, without attempting to open the <code>/etc/shadow</code> file. That&#8217;s not so useful. </p>
+<p class="wp-block-paragraph">When you run <code>chage</code> without any parameters, the program will exit, without attempting to open the <code>/etc/shadow</code> file. That&#8217;s not so useful. </p>
 
 
 
-<p>However, when you use the <code>-l</code> parameter, the program reads the <code>/etc/shadow</code> file and there&#8217;s a very short window where the file descriptor is exposed to a malicious parent process (<code>chage_pwn</code> in this case). Here we have asked <code>chage</code> to show the age information for the <code>root</code> account. We are not even supposed to read the age information of another account, therefore we get a <em>Permission denied</em> error and the program exits. However, inside <code>chage</code>, the <code>/etc/shadow</code> file has been opened! It does not matter that we have asked to show the age information for a privileged account; for the sake of the exploit we could well have asked to view the age information of the <code>ubuntu</code> user, which we are able to do.</p>
+<p class="wp-block-paragraph">However, when you use the <code>-l</code> parameter, the program reads the <code>/etc/shadow</code> file and there&#8217;s a very short window where the file descriptor is exposed to a malicious parent process (<code>chage_pwn</code> in this case). Here we have asked <code>chage</code> to show the age information for the <code>root</code> account. We are not even supposed to read the age information of another account, therefore we get a <em>Permission denied</em> error and the program exits. However, inside <code>chage</code>, the <code>/etc/shadow</code> file has been opened! It does not matter that we have asked to show the age information for a privileged account; for the sake of the exploit we could well have asked to view the age information of the <code>ubuntu</code> user, which we are able to do.</p>
 
 
 
@@ -1273,7 +1259,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 
 
-<p>And now the output of the <code>chage_pwn</code> exploit. We are running it over the default username, which is <code>root</code>. If we omitted here the username, the exploit would use that username. It takes several tens of seconds for the exploit to work. In this run, it worked on round 16 and on try 112.</p>
+<p class="wp-block-paragraph">And now the output of the <code>chage_pwn</code> exploit. We are running it over the default username, which is <code>root</code>. If we omitted here the username, the exploit would use that username. It takes several tens of seconds for the exploit to work. In this run, it worked on round 16 and on try 112.</p>
 
 
 
@@ -1288,7 +1274,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$</code></pre>
 
 
 
-<p>Same thing with another account. For some reason it takes longer, about a minute or so. More rounds and more tries. </p>
+<p class="wp-block-paragraph">Same thing with another account. For some reason it takes longer, about a minute or so. More rounds and more tries. </p>
 
 
 
@@ -1304,7 +1290,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$</code></pre>
 
 
 
-<p>Ubuntu systems use <code>sudo</code>, which means that by default the accounts don&#8217;t have a particular password; they are all locked. Some users would set a password, and in such a case, the password would be compromised. </p>
+<p class="wp-block-paragraph">Ubuntu systems use <code>sudo</code>, which means that by default the accounts don&#8217;t have a particular password; they are all locked. Some users would set a password, and in such a case, the password would be compromised. </p>
 
 
 
@@ -1312,7 +1298,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$</code></pre>
 
 
 
-<p>This one will read the file <code>/etc/ssh/ssh_host_ecdsa_key</code>, which is not readable by unprivileged users. </p>
+<p class="wp-block-paragraph">This one will read the file <code>/etc/ssh/ssh_host_ecdsa_key</code>, which is not readable by unprivileged users. </p>
 
 
 
@@ -1322,7 +1308,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 
 
-<p>The privileged application (SUID) is `/usr/lib/openssh/ssh-keysign`. When it runs, it runs as the owner of the file, that is, as <em>root</em>.</p>
+<p class="wp-block-paragraph">The privileged application (SUID) is `/usr/lib/openssh/ssh-keysign`. When it runs, it runs as the owner of the file, that is, as <em>root</em>.</p>
 
 
 
@@ -1332,7 +1318,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$</code></pre>
 
 
 
-<p>Let&#8217;s run it. It just prints a message and exits. However, it has opened the host key file, and there was a slim window of opportunity for a parent process to get access to that file descriptor. </p>
+<p class="wp-block-paragraph">Let&#8217;s run it. It just prints a message and exits. However, it has opened the host key file, and there was a slim window of opportunity for a parent process to get access to that file descriptor. </p>
 
 
 
@@ -1342,7 +1328,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$</code></pre>
 
 
 
-<p>Let&#8217;s run it. The output appears in about ten to twenty seconds. This is the host key of the virtual machine, and it&#8217;s unreadable by unprivileged users. </p>
+<p class="wp-block-paragraph">Let&#8217;s run it. The output appears in about ten to twenty seconds. This is the host key of the virtual machine, and it&#8217;s unreadable by unprivileged users. </p>
 
 
 
@@ -1358,7 +1344,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$</code></pre>
 
 
 
-<p>If a malicious user managed to read the host key and happen to have access to the network, they can perform man-in-the-middle attacks against network connections to this host. </p>
+<p class="wp-block-paragraph">If a malicious user managed to read the host key and happen to have access to the network, they can perform man-in-the-middle attacks against network connections to this host. </p>
 
 
 
@@ -1366,7 +1352,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$</code></pre>
 
 
 
-<p>This educational exploit works on a vulnerable SUID application that is also provided. It&#8217;s the file <code>vuln_target.c</code>. It opens the (normally) unreadable file <code>/etc/shadow</code> and does not bother closing it. It even calls <code>pause()</code>, which will pause the vulnerable target until a Unix signal is received. This makes it so easy to exploit. </p>
+<p class="wp-block-paragraph">This educational exploit works on a vulnerable SUID application that is also provided. It&#8217;s the file <code>vuln_target.c</code>. It opens the (normally) unreadable file <code>/etc/shadow</code> and does not bother closing it. It even calls <code>pause()</code>, which will pause the vulnerable target until a Unix signal is received. This makes it so easy to exploit. </p>
 
 
 
@@ -1397,7 +1383,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 
 
-<p>After compilation, it has to be installed as SUID and owned by <code>root</code>.</p>
+<p class="wp-block-paragraph">After compilation, it has to be installed as SUID and owned by <code>root</code>.</p>
 
 
 
@@ -1408,7 +1394,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 
 
-<p>Finally, we run the exploit. It shows the message <code>alive: EPERM on fd 3</code>. It worked half-way. It should show the contents of <code>/etc/shadow</code> but it does not. </p>
+<p class="wp-block-paragraph">Finally, we run the exploit. It shows the message <code>alive: EPERM on fd 3</code>. It worked half-way. It should show the contents of <code>/etc/shadow</code> but it does not. </p>
 
 
 
@@ -1418,7 +1404,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 
 
-<p>Apparently, there is a timing issue and in the exploit code there is a hard-coded delay. If you change the delay (i.e. reduce it), you can get it to work. </p>
+<p class="wp-block-paragraph">Apparently, there is a timing issue and in the exploit code there is a hard-coded delay. If you change the delay (i.e. reduce it), you can get it to work. </p>
 
 
 
@@ -1439,7 +1425,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 
 
-<p>A mitigation is to disable the ability to debug/trace. Either only allow to power users or disable it for all. See <a href="https://ubuntu.com/blog/ssh-keysign-pwn-linux-vulnerability-fixes-available">https://ubuntu.com/blog/ssh-keysign-pwn-linux-vulnerability-fixes-available</a> for the details.</p>
+<p class="wp-block-paragraph">A mitigation is to disable the ability to debug/trace. Either only allow to power users or disable it for all. See <a href="https://ubuntu.com/blog/ssh-keysign-pwn-linux-vulnerability-fixes-available">https://ubuntu.com/blog/ssh-keysign-pwn-linux-vulnerability-fixes-available</a> for the details.</p>
 
 
 
@@ -1447,7 +1433,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 
 
-<p>Apparently, such issues are bound to appear more often. They require mitigations, apply the updated packages when they are ready, and then remove the mitigations. This is a Local Privilege Escalation (LPE) security vulnerability, which means that it affects vulnerable systems when a malicious user already has access to that system.</p>
+<p class="wp-block-paragraph">Apparently, such issues are bound to appear more often. They require mitigations, apply the updated packages when they are ready, and then remove the mitigations. This is a Local Privilege Escalation (LPE) security vulnerability, which means that it affects vulnerable systems when a malicious user already has access to that system.</p>
 <div class="saboxplugin-wrap" itemtype="http://schema.org/Person" itemscope itemprop="author"><div class="saboxplugin-tab"><div class="saboxplugin-gravatar"><img alt='Simos Xenitellis' src='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=100&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=200&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' itemprop="image"/></div><div class="saboxplugin-authorname"><a href="https://blog.simos.info/author/simos/" class="vcard author" rel="author"><span class="fn">Simos Xenitellis</span></a></div><div class="saboxplugin-desc"><div itemprop="description"></div></div><div class="saboxplugin-web "><a href="https://blog.simos.info/" target="_self" >blog.simos.info/</a></div><div class="clearfix"></div></div></div>]]></description>
       <source url="https://blog.simos.info/category/planet-ubuntu/feed/?mrss=off">Simos Xenitellis</source>
     </item>
@@ -4079,240 +4065,6 @@ mirror and follow the instructions above.</p>]]></description>
 
 <p class="wp-block-paragraph">Thank you to everyone who contributed to OpenStack&nbsp;2023.2 Bobcat!</p>]]></description>
       <source url="https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off">Corey Bryant</source>
-    </item>
-    <item>
-      <title>Building a NAS</title>
-      <link>https://apebox.org/wordpress/tech/1325</link>
-      <guid isPermaLink="true">https://apebox.org/wordpress/tech/1325</guid>
-      <pubDate>Tue, 12 Sep 2023 21:33:05 GMT</pubDate>
-      <description><![CDATA[<h2 class="wp-block-heading">The status quo</h2>
-
-
-
-<p>Back in 2015, I bought an off-the-shelf NAS, a QNAP TS-453mini, to act as my file store and Plex server. I had previously owned a Synology box, and whilst I liked the Synology OS and experience, the hardware was underwhelming. I loaded up the successor QNAP with four 5TB drives in RAID10, and moved all my files over (after some initial DoA drive issues were handled).</p>
-
-
-
-<figure class="wp-block-image size-medium"><img fetchpriority="high" decoding="async" width="550" height="550" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png" alt="QNAP TS-453mini product photo" class="wp-image-1329" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-150x150.png 150w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-768x768.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3.png 850w" sizes="(max-width: 550px) 100vw, 550px" /><figcaption class="wp-element-caption">QNAP TS-453mini product photo</figcaption></figure>
-
-
-
-<p>That thing has been in service for about 8 years now, and it&#8217;s been&#8230; a mixed bag. It was definitely more powerful than the predecessor system, but it was clear that QNAP&#8217;s OS was not up to the same standard as Synology&#8217;s &#8211; perhaps best exemplified by &#8220;HappyGet 2&#8221;, the QNAP webapp for downloading videos from streaming services like YouTube, whose icon is a straight rip-off of StarCraft 2. On its own, meaningless &#8211; but a bad omen for overall software quality</p>
-
-
-
-<span id="more-1325"></span>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="884" height="172" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png" alt="The logo for QNAP HappyGet 2 and Blizzard's Starcraft 2 side by side" class="wp-image-1328" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png 884w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-550x107.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-768x149.png 768w" sizes="(max-width: 884px) 100vw, 884px" /><figcaption class="wp-element-caption">The logo for QNAP HappyGet 2 and Blizzard&#8217;s StarCraft 2 side by side</figcaption></figure>
-
-
-
-<p>Additionally, the embedded Celeron processor in the NAS turned out to be an issue for some cases. It turns out, when playing back videos with subtitles, most Plex clients do not support subtitles properly &#8211; instead they rely on the Plex server doing JIT transcoding to bake the subtitles directly into the video stream. I discovered this with some Blu-Ray rips of Game of Thrones &#8211; some episodes would play back fine on my smart TV, but episodes with subtitled Dothraki speech would play at only 2 or 3 frames per second.</p>
-
-
-
-<p>The final straw was a ransomware attack, which went through all my data and locked every file below a 60MiB threshold. Practically all my music gone. A substantial collection of downloaded files, all gone. Some of these files had been carried around since my college days &#8211; digital rarities, or at least digital detritus I felt a real sense of loss at having to replace. This episode was caused by a ransomware targeting specific vulnerabilities in the QNAP OS, not an error on my part.</p>
-
-
-
-<p>So, I decided to start planning a replacement with:</p>
-
-
-
-<ul class="wp-block-list">
-<li>A non-garbage OS, whilst still being a NAS-appliance type offering (not an off-the-shelf Linux server distro)</li>
-
-
-
-<li>Full remote management capabilities</li>
-
-
-
-<li>A small form factor comparable to off-the-shelf NAS</li>
-
-
-
-<li>A powerful modern CPU capable of transcoding high resolution video</li>
-
-
-
-<li>All flash storage, no spinning rust</li>
-</ul>
-
-
-
-<p>At the time, no consumer NAS offered everything (The Asustor FS6712X exists now, but didn&#8217;t when this project started), so I opted to go for a full DIY rather than an appliance &#8211; not the first time I&#8217;ve jumped between appliances and DIY for home storage.</p>
-
-
-
-<h2 class="wp-block-heading">Selecting the core of the system</h2>
-
-
-
-<p>There aren&#8217;t many companies which will sell you a small motherboard with IPMI. Supermicro is a bust, so is Tyan. But ASRock Rack, the server division of third-tier motherboard vendor ASRock, delivers. Most of their boards aren&#8217;t actually compliant Mini-ITX size, they&#8217;re a proprietary &#8220;Deep Mini-ITX&#8221; with the regular screw holes, but 40mm of extra length (and a commensurately small list of compatible cases). But, thankfully, they do have a tiny selection of boards without the extra size, and I stumbled onto the <a href="https://www.asrockrack.com/general/productdetail.asp?Model=X570D4I-2T">X570D4I-2T</a>, a board with an AMD AM4 socket and the mature X570 chipset. This board can use <em>any</em> AMD Ryzen chip (before the latest-gen Ryzen 7000 series); has built in dual 10 gigabit ethernet; IPMI; four (laptop-sized) RAM slots with full ECC support; one M.2 slot for NVMe SSD storage; a PCIe 16x slot (generally for graphics cards, but we live in a world of possibilities); and up to 8 SATA drives OR a couple more NVMe SSDs. It&#8217;s astonishingly well featured, just a shame it costs about $450 compared to a good consumer-grade Mini ITX AM4 board costing less than half that.</p>
-
-
-
-<p>I was so impressed with the offering, in fact, that I crowed about it on Mastodon and ended up securing ASRock another sale, with someone else looking into a very similar project to mine around the same timespan.</p>
-
-
-
-<p>The next question was the CPU. An important feature of a system expected to run 24/7 is low power, and AM4 chips can consume as much as 130W under load, out of the box. At the other end, some models can require as little as 35W under load &#8211; the OEM-only &#8220;GE&#8221; suffix chips, which are readily found for import on eBay. In their &#8220;PRO&#8221; variant, they also support ECC (all non-G Ryzen chips support ECC, but only Pro G chips do). The top of the range 8 core Ryzen 7 PRO 5750GE is prohibitively expensive, but the slightly weaker 6 core <a href="https://www.amd.com/en/products/apu/amd-ryzen-5-pro-5650ge">Ryzen 5 PRO 5650GE</a> was affordable, and one arrived quickly from Hong Kong. Supplemented with a couple of cheap 16 GiB SODIMM sticks of DDR4 PC-3200 direct from Micron for under $50 a piece, that left only cooling as an unsolved problem to get a bootable test system.</p>
-
-
-
-<p>The official support list for the X570D4I-2T only includes two rackmount coolers, both expensive and hard to source. The reason for such a small list is the non standard cooling layout of the board &#8211; instead of an AM4 hole pattern with the standard plastic AM4 retaining clips, it has an Intel 115x hole pattern with a non-standard backplate (Intel 115x boards have no backplate, the stock Intel 115x cooler attaches to the holes with push pins). As such every single cooler compatibility list excludes this motherboard. However, the backplate is only secured with a mild glue &#8211; with minimal pressure and a plastic prying tool it can be removed, giving compatibility with any 115x cooler (which is basically any CPU cooler for more than a decade). I picked an oversized low profile <a href="http://thermalright.com/product/axp120-x67-black-argb/">Thermalright AXP120-X67</a> hoping that its 120mm fan would cool the nearby MOSFETs and X570 chipset too.</p>
-
-
-
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg" alt="" class="wp-image-1333" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Thermalright AXP120-X67, AMD Ryzen 5 PRO 5650GE, ASRock Rack X570D4I-2T, all assembled and running on a flat surface</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Testing up to this point</h2>
-
-
-
-<p>Using a spare ATX power supply, I had enough of a system built to explore the IPMI and UEFI instances, and run MemTest86 to validate my progress. The memory test ran without a hitch and confirmed the ECC was working, although it also showed that the memory was only running at 2933 MT/s instead of the rated 3200 MT/s (a limit imposed by the motherboard, as higher speeds are considered overclocking). The IPMI interface isn&#8217;t the best I&#8217;ve ever used by a long shot, but it&#8217;s minimum viable and allowed me to configure the basics and boot from media entirely via a Web browser.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="905" height="819" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png" alt="" class="wp-image-1341" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png 905w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-550x498.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-768x695.png 768w" sizes="auto, (max-width: 905px) 100vw, 905px" /><figcaption class="wp-element-caption">Memtest86 showing test progress, taken from IPMI remote control window</figcaption></figure>
-
-
-
-<p>One sad discovery, however, which I&#8217;ve never seen documented before, on PCIe bifurcation.</p>
-
-
-
-<p>With PCI Express, you have a number of &#8220;lanes&#8221; which are allocated in groups by the motherboard and CPU manufacturer. For Ryzen prior to Ryzen 7000, that&#8217;s 16 lanes in one slot for the graphics card; 4 lanes in one M.2 connector for an SSD; then 4 lanes connecting the CPU to the chipset, which can offer whatever it likes for peripherals or extra lanes (bottlenecked by that shared 4x link to the CPU, if it comes down to it).</p>
-
-
-
-<p>It&#8217;s possible, with motherboard and CPU support, to split PCIe groups up &#8211; for example an 8x slot could be split into two 4x slots (eg allowing two NVMe drives in an adapter card &#8211; NVME drives these days all use 4x). However with a &#8220;Cezanne&#8221; Ryzen with integrated graphics, the 16x graphics card slot cannot be split into four 4x slots (ie used for for NVMe drives) &#8211; the most bifurcation it allows is 8x4x4x, which is useless in a NAS.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="897" height="806" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png" alt="" class="wp-image-1336" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png 897w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-550x494.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-768x690.png 768w" sizes="auto, (max-width: 897px) 100vw, 897px" /><figcaption class="wp-element-caption">Screenshot of PCIe 16x slot bifurcation options in UEFI settings, taken from IPMI remote control window</figcaption></figure>
-
-
-
-<p>As such, I had to abandon any ideas of an all-NVMe NAS I was considering: the 16x slot split into four 4x, combined with two 4x connectors fed by the X570 chipset, to a total of 6 NVMe drives. 7.6TB U.2 enterprise disks are remarkably affordable (cheaper than consumer SATA 8TB drives), but alas, I was locked out by my 5650GE. Thankfully I found out before spending hundreds on a U.2 hot swap bay. The NVMe setup would be nearly 10x as fast as SATA SSDs, but at least the SATA SSD route would still outperform any spinning rust choice on the market (including the fastest 10K RPM SAS drives)</p>
-
-
-
-<h2 class="wp-block-heading">Containing the core</h2>
-
-
-
-<p>The next step was to pick a case and power supply. A lot of NAS cases require an SFX (rather than ATX) size supply, so I ordered a modular <a href="https://www.silverstonetek.com/en/product/info/power-supplies/SX500-G/">SX500</a> unit from Silverstone. Even if I ended up with a case requiring ATX, it&#8217;s easy to turn an SFX power supply into ATX, and the worst result is you have less space taken up in your case, hardly the worst problem to have.</p>
-
-
-
-<p>That said, on to picking a case. There&#8217;s only one brand with any cachet making ITX NAS cases, Silverstone. They have three choices in an appropriate size: <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS01-HS/">CS01-HS</a>, <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS280/">CS280</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/DS380/">DS380</a>. The problem is, these cases are all badly designed garbage. Take the CS280 as an example, the case with the most space for a CPU cooler. Here&#8217;s how close together the hotswap bay (right) and power supply (left) are:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="568" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png" alt="" class="wp-image-1343" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-550x391.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-768x545.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
-
-
-
-<p>With actual cables connected, the cable clearance problem is even worse:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="533" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png" alt="" class="wp-image-1344" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-550x366.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-768x512.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
-
-
-
-<p>Remember, this is the <em>best</em> of the three cases for internal layout, the one with the least restriction on CPU cooler height. And it&#8217;s garbage! Total hot garbage! I decided therefore to completely skip the NAS case market, and instead purchase a 5.25&#8243;-to-2.5&#8243; hot swap bay adapter from Icy Dock, and put it in an ITX gamer case with a 5.25&#8243; bay. This is no longer a served market &#8211; 5.25&#8243; bays are extinct since nobody uses CD/DVD drives anymore. The ones on the market are really new old stock from 2014-2017: The <a href="https://www.fractal-design.com/products/cases/core/core-500/black/">Fractal Design Core 500</a>, <a href="https://www.coolermaster.com/catalog/cases/mini-itx/elite130/">Cooler Master Elite 130</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/SUGO14/">Silverstone SUGO 14</a>. Of the three, the Fractal is the best rated so I opted to get that one &#8211; however it seems the global supply of &#8220;new old stock&#8221; fully dried up in the two weeks between me making a decision and placing an order &#8211; leaving only the Silverstone case.</p>
-
-
-
-<p>Icy Dock have a selection of 8-bay 2.5&#8243; SATA 5.25&#8243; hot swap chassis choices in their ToughArmor MB998 series. I opted for the <a href="https://global.icydock.com/product_169.html">ToughArmor MB998IP-B</a>, to reduce cable clutter &#8211; it requires only two SFF-8611-to-SF-8643 cables from the motherboard to serve all eight bays, which should make airflow less of a mess. The X570D4I-2T doesn&#8217;t have any SATA ports on board, instead it has two SFF-8611 OCuLink ports, each supporting 4 PCI Express lanes OR 4 SATA connectors via a breakout cable. I had hoped to get the ToughArmor MB118VP-B and run six U.2 drives, but as I said, the PCIe bifurcation issue with Ryzen &#8220;G&#8221; chips meant I wouldn&#8217;t be able to run all six bays successfully.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg" alt="" class="wp-image-1348" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">NAS build in Silverstone SUGO 14, mid build, panels removed</figcaption></figure>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg" alt="" class="wp-image-1349" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">Silverstone SUGO 14 from the front, with hot swap bay installed</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Actual storage for the storage server</h2>
-
-
-
-<p>My concept for the system always involved a fast boot/cache drive in the motherboard&#8217;s M.2 slot, non-redundant (just backups of the config if the worst were to happen) and separate storage drives somewhere between 3.8 and 8 TB each (somewhere from $200-$350). As a boot drive, I selected the <a href="https://www.intel.com/content/www/us/en/products/sku/211868/intel-optane-ssd-p1600x-series-58gb-m-2-80mm-pcie-3-0-x4-3d-xpoint/specifications.html">Intel Optane SSD P1600X 58G</a>, available for under $35 and rated for 228 years between failures (or 11,000 complete drive rewrite cycles).</p>
-
-
-
-<p>So, on to the big expensive choice: storage drives. I narrowed it down to two contenders: new-old-stock Intel D3-S4510 3.84TB enterprise drives, at about $200, or Samsung 870 QVO 8TB consumer drives, at about $375. I did spend a long time agonizing over the specification differences, the ZFS usage reports, the expected lifetime endurance figures, but in reality, it came down to price &#8211; $1600 of expensive drives vs $3200 of even more expensive drives. That&#8217;s 27TB of usable capacity in RAID-Z1, or 23TB in RAID-Z2. For comparison, I&#8217;m using about 5TB of the old NAS, so that&#8217;s a LOT of overhead for expansion.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg" alt="" class="wp-image-1355" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Storage SSD loaded into hot swap sled</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Booting up</h2>
-
-
-
-<p>Bringing it all together is the OS. I wanted an &#8220;appliance&#8221; NAS OS rather than self-administering a Linux distribution, and after looking into the surrounding ecosystems, decided on <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> (the beta of the 2023 release, based on Debian 12).</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="600" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png" alt="" class="wp-image-1353" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-550x322.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-768x450.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1536x900.png 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image.png 2013w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">TrueNAS Dashboard screenshot in browser window</figcaption></figure>
-
-
-
-<p>I set up RAID-Z1, and with zero tuning (other than enabling auto-TRIM), got the following performance numbers:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>19.3k</td><td>75.6 MiB/s</td></tr><tr><td>4k random reads</td><td>36.1k</td><td>141 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>2300 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>3800 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Results using fio parameters <a href="https://support.huaweicloud.com/intl/en-us/evs_faq/evs_faq_0019.html#evs_faq_0019__section273349017162">suggested by Huawei</a></figcaption></figure>
-
-
-
-<p>And for comparison, the maximum theoretical numbers quoted by Intel for a single drive:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>16k</td><td>?</td></tr><tr><td>4k random reads</td><td>90k</td><td>?</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>280 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>560 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Numbers quoted by Intel SSD successors <a href="https://www.solidigm.com/products/data-center/d3/s4510.html">Solidigm</a>.</figcaption></figure>
-
-
-
-<p>Finally, the numbers reported on the old NAS with four 7200 RPM hard disks in RAID 10:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>430</td><td>1.7 MiB/s</td></tr><tr><td>4k random reads</td><td>8006</td><td>32 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>311 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>566 MiB/s</td></tr></tbody></table></figure>
-
-
-
-<p>Performance seems pretty OK. There&#8217;s always going to be an overhead to RAID. I&#8217;ll settle for the 45x improvement on random writes vs. its predecessor, and 4.5x improvement on random reads. The sequential write numbers are gonna be impacted by the size of the ZFS cache (50% of RAM, so 16 GiB), but the rest should be a reasonable indication of true performance.</p>
-
-
-
-<p>It took me a little while to fully understand the TrueNAS permissions model, but I finally got Plex configured to access data from the same place as my SMB shares, which have anonymous read-only access or authenticated write access for myself and my wife, working fine via both Linux and Windows.</p>
-
-
-
-<p>And&#8230; that&#8217;s it! I built a NAS. I intend to add some fans and more RAM, but that&#8217;s the build. Total spent: about $3000, which sounds like an unreasonable amount, but it&#8217;s actually less than a comparable Synology DiskStation DS1823xs+ which has 4 cores instead of 6, first-generation AMD Zen instead of Zen 3, 8 GiB RAM instead of 32 GiB, no hardware-accelerated video transcoding, etc. And it would have been a whole lot less fun!</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg" alt="" class="wp-image-1364" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">The final system, powered up</figcaption></figure>
-
-
-
-<p>(Also posted on <a href="https://pcpartpicker.com/b/fYhtt6">PCPartPicker</a>)</p>]]></description>
-      <source url="http://apebox.org/wordpress/tag/ubuntu/feed/">Jo Shields</source>
     </item>
     <item>
       <title>Understanding vm.swappiness: Improving Linux Performance and Memory Management</title>
@@ -8958,17 +8710,17 @@ Reboot your pi, and make sure everything works together. &nbsp;</div>
 <p>The dvd drives are now in place, they&#8217;ve turned out rather well for a first attempt at stealthing</p>
 <p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010674.jpg"><img data-attachment-id="176" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010674/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010674.jpg" data-orig-size="2829,2806" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010674" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010674.jpg?w=545" class="alignnone size-medium wp-image-176" alt="P1010674" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010674.jpg?w=300&#038;h=297" width="300" height="297" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010674.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010674.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010674.jpg?w=150 150w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
 <p>The CPU came in a rather large, aluminium tin.</p>
-<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg"><img loading="lazy" data-attachment-id="177" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010679/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg" data-orig-size="1477,1753" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010679" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg?w=545" class="alignnone size-medium wp-image-177" alt="P1010679" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg?w=252&#038;h=300" width="252" height="300" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg?w=252 252w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg?w=504 504w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg?w=126 126w" sizes="(max-width: 252px) 100vw, 252px" /></a></p>
+<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg"><img loading="lazy" data-attachment-id="177" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010679/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg" data-orig-size="1477,1753" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010679" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg?w=545" class="alignnone size-medium wp-image-177" alt="P1010679" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg?w=252&#038;h=300" width="252" height="300" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg?w=252 252w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg?w=504 504w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010679.jpg?w=126 126w" sizes="auto, (max-width: 252px) 100vw, 252px" /></a></p>
 <p>My favourite part of this is the lid opens up into two separate pieces</p>
-<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg"><img loading="lazy" data-attachment-id="178" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010682/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg" data-orig-size="1407,771" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010682" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg?w=545" class="alignnone size-medium wp-image-178" alt="P1010682" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg?w=300&#038;h=164" width="300" height="164" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg?w=150 150w" sizes="(max-width: 300px) 100vw, 300px" /></a><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg"><img loading="lazy" data-attachment-id="179" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010683/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg" data-orig-size="1406,779" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010683" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg?w=545" class="alignnone size-medium wp-image-179" alt="P1010683" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg?w=300&#038;h=166" width="300" height="166" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg?w=150 150w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg"><img loading="lazy" data-attachment-id="178" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010682/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg" data-orig-size="1407,771" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010682" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg?w=545" class="alignnone size-medium wp-image-178" alt="P1010682" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg?w=300&#038;h=164" width="300" height="164" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010682.jpg?w=150 150w" sizes="auto, (max-width: 300px) 100vw, 300px" /></a><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg"><img loading="lazy" data-attachment-id="179" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010683/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg" data-orig-size="1406,779" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010683" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg?w=545" class="alignnone size-medium wp-image-179" alt="P1010683" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg?w=300&#038;h=166" width="300" height="166" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010683.jpg?w=150 150w" sizes="auto, (max-width: 300px) 100vw, 300px" /></a></p>
 <p>One of which is a rather strange, but cute, print.</p>
-<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg"><img loading="lazy" data-attachment-id="180" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010685/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg" data-orig-size="2156,1354" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010685" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg?w=545" class="alignnone size-medium wp-image-180" alt="P1010685" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg?w=300&#038;h=188" width="300" height="188" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg?w=150 150w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg"><img loading="lazy" data-attachment-id="180" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010685/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg" data-orig-size="2156,1354" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010685" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg?w=545" class="alignnone size-medium wp-image-180" alt="P1010685" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg?w=300&#038;h=188" width="300" height="188" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010685.jpg?w=150 150w" sizes="auto, (max-width: 300px) 100vw, 300px" /></a></p>
 <p>The underside of the cpu. If a computer part could be un-photogenic, this is it.</p>
-<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg"><img loading="lazy" data-attachment-id="181" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010688/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg" data-orig-size="1626,821" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010688" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg?w=545" class="alignnone size-medium wp-image-181" alt="P1010688" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg?w=300&#038;h=151" width="300" height="151" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg?w=150 150w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg"><img loading="lazy" data-attachment-id="181" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010688/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg" data-orig-size="1626,821" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010688" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg?w=545" class="alignnone size-medium wp-image-181" alt="P1010688" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg?w=300&#038;h=151" width="300" height="151" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010688.jpg?w=150 150w" sizes="auto, (max-width: 300px) 100vw, 300px" /></a></p>
 <p>The cooler still needs a clean, but i&#8217;ll save that for when it is being painted</p>
-<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg"><img loading="lazy" data-attachment-id="182" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010690/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg" data-orig-size="1386,1143" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010690" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg?w=545" class="alignnone size-medium wp-image-182" alt="P1010690" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg?w=300&#038;h=247" width="300" height="247" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg?w=150 150w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg"><img loading="lazy" data-attachment-id="182" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010690/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg" data-orig-size="1386,1143" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010690" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg?w=545" class="alignnone size-medium wp-image-182" alt="P1010690" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg?w=300&#038;h=247" width="300" height="247" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010690.jpg?w=150 150w" sizes="auto, (max-width: 300px) 100vw, 300px" /></a></p>
 <p>The other new this week, is i&#8217;ve received 200 Kubuntu stickers. I will send these free to anyone in Australia who is willing to pay postage. <a href="mailto:noskcaj@ubuntu.com" target="_blank">Email me</a> for my address if you would like some.</p>
-<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg"><img loading="lazy" data-attachment-id="183" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010692/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg" data-orig-size="2086,1995" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010692" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg?w=545" class="alignnone size-medium wp-image-183" alt="P1010692" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg?w=300&#038;h=286" width="300" height="286" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg?w=150 150w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a style="line-height:1.5;font-style:inherit;font-weight:inherit;" href="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg"><img loading="lazy" data-attachment-id="183" data-permalink="https://noskcaj10.wordpress.com/2013/12/18/the-ubuntu-pc-case-mod-pt-9-the-cpu-kubuntu-stickers/p1010692/" data-orig-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg" data-orig-size="2086,1995" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="P1010692" data-image-description="" data-image-caption="" data-large-file="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg?w=545" class="alignnone size-medium wp-image-183" alt="P1010692" src="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg?w=300&#038;h=286" width="300" height="286" srcset="https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg?w=300 300w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg?w=600 600w, https://noskcaj10.wordpress.com/wp-content/uploads/2013/12/p1010692.jpg?w=150 150w" sizes="auto, (max-width: 300px) 100vw, 300px" /></a></p>
 <p>I still need someone who cn make me the itx mount, but i&#8217;m starting to give up on that.</p>
 <p>To sponsor me, email me at noskcaj@ubuntu.com<br />
 Current sponsor(s): IceModz.com , linux.org.au<br />
