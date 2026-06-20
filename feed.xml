@@ -6,9 +6,33 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 19 Jun 2026 01:10:49 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2026 01:00:09 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Launchpad security advisory: Fix applied for unsafe tar file extraction vulnerability</title>
+      <link>https://blog.launchpad.net/general/launchpad-security-advisory-fix-applied-for-unsafe-tar-file-extraction-vulnerability</link>
+      <guid isPermaLink="true">https://blog.launchpad.net/general/launchpad-security-advisory-fix-applied-for-unsafe-tar-file-extraction-vulnerability</guid>
+      <pubDate>Fri, 19 Jun 2026 08:00:10 GMT</pubDate>
+      <description><![CDATA[<p>We received a private report from a security researcher describing a vulnerability affecting Launchpad. The vulnerability involved the unsafe processing of tar files at build upload and custom upload. We investigated promptly and deployed a fix shortly after the report. The reporting party has confirmed the issue is no longer exploitable.</p>
+
+
+
+<p>Following remediation, we completed additional review and monitoring. We found no evidence of malicious exploitation. No user action is required.</p>
+
+
+
+<p>We are sharing this update as part of our ongoing commitment to transparency and security.</p>
+
+
+
+<p>We thank <code>splitline</code> (@_splitline_) and the DEVCORE Research Team for privately reporting this issue.</p>
+
+
+
+<p></p>]]></description>
+      <source url="http://news.launchpad.net/feed">Launchpad News</source>
+    </item>
     <item>
       <title>So you need to add microcontrollers to your fleet: now what?</title>
       <link>https://ubuntu.com//blog/microcontrollers-ubuntu-core-golioth</link>
@@ -35,7 +59,7 @@
 <p>The most natural integration point is the <strong>gateway pattern</strong>: an Ubuntu Core device acting as the local hub for a cluster of MCU nodes, forwarding data to the Golioth cloud. Because Golioth’s gateway software is packaged as a snap – the same containerized packaging format used throughout Ubuntu Core – you can deploy it with a single command on any Ubuntu-based edge device. </p>
 <p>As an example of where Ubuntu Core and Golioth meet, let’s take a demo we ran at Embedded World 2026. In this setup, the Golioth Snap runs as an isolated, strictly confined system process alongside your other Ubuntu Core applications.  The gateway device handles local protocol translation (BLE, serial, Wi-Fi HaLoW, wired, etc), applies Golioth’s Pouch protocol to encrypt and package the data, and forwards it to the Golioth cloud. The MCU nodes never need their own internet connection: they just need to reach the gateway. </p>
 <figure class="wp-block-embed aligncenter is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="304" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/38yf9U1ehzI?feature=oembed" title="Golioth Edge Inference using Bluetooth and Qualcomm hardware is a Snap" width="540"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="304" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/38yf9U1ehzI?feature=oembed" title="Golioth Edge Inference using Bluetooth and Qualcomm hardware as a Snap" width="540"></iframe>
 </div></figure>
 <figure class="wp-block-pullquote has-text-align-left"><blockquote><p><strong>More about Golioth Pouch</strong><br/><a href="https://github.com/golioth/pouch">Pouch</a> is Golioth’s transport-agnostic application layer protocol that enables secure and efficient transmission of data between intermittently offline nodes across multiple network hops. Pouch allows for highly constrained MCU devices (&lt; 100 KB flash and memory) to communicate with the Golioth cloud platform, whether directly over protocols like CoAP, HTTP, or MQTT, or indirectly via a gateway over BLE, serial, etc.</p></blockquote></figure>
 <p>This architecture scales well. A single Qualcomm Dragonwing™ IQ9 running Ubuntu, for instance, can simultaneously host a heavy-duty local AI model, run your existing business applications as Snaps, and operate as a Golioth gateway for dozens of nearby Bluetooth MCU nodes. </p>
@@ -1496,56 +1520,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 <p class="wp-block-paragraph">Apparently, such issues are bound to appear more often. They require mitigations, apply the updated packages when they are ready, and then remove the mitigations. This is a Local Privilege Escalation (LPE) security vulnerability, which means that it affects vulnerable systems when a malicious user already has access to that system.</p>
 <div class="saboxplugin-wrap" itemtype="http://schema.org/Person" itemscope itemprop="author"><div class="saboxplugin-tab"><div class="saboxplugin-gravatar"><img alt='Simos Xenitellis' src='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=100&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/fadb0e15964fa5c57144f8b9bccf3985281d04e3817a69d0885c0b911d66c59d?s=200&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' itemprop="image"/></div><div class="saboxplugin-authorname"><a href="https://blog.simos.info/author/simos/" class="vcard author" rel="author"><span class="fn">Simos Xenitellis</span></a></div><div class="saboxplugin-desc"><div itemprop="description"></div></div><div class="saboxplugin-web "><a href="https://blog.simos.info/" target="_self" >blog.simos.info/</a></div><div class="clearfix"></div></div></div>]]></description>
       <source url="https://blog.simos.info/category/planet-ubuntu/feed/?mrss=off">Simos Xenitellis</source>
-    </item>
-    <item>
-      <title>Private snap manifests</title>
-      <link>https://blog.launchpad.net/general/private-snap-manifests</link>
-      <guid isPermaLink="true">https://blog.launchpad.net/general/private-snap-manifests</guid>
-      <pubDate>Wed, 13 May 2026 07:57:41 GMT</pubDate>
-      <description><![CDATA[<p>As part of our ongoing commitment to security and transparency, we are pleased to announce an improved approach to snap manifest generation for private projects. This update specifically addresses the long-standing technical block that suppressed the creation of <code>manifest.yaml</code> files during private snap builds, an important component for generating accurate Software Bills of Materials (SBOMs).</p>
-
-
-
-<h2>The challenge of secret exposure</h2>
-
-
-
-<p>Previously, manifest generation for private builds was deliberately disabled as a protective measure. The primary security concern was that including a snap manifest in a binary snap could inadvertently expose sensitive source credentials or internal build configurations.</p>
-
-
-
-<p>While effective at preventing data leaks, this restriction also created significant hurdles for users wanting to produce SBOMs. Given that access to these private snaps is limited to those with explicit authorization, the risk of data and secret leakage is significantly reduced, allowing us to decommission the previous suppression mechanism.</p>
-
-
-
-<h2>What this means for developers</h2>
-
-
-
-<p>For private snaps built on Launchpad, the <code>manifest.yaml</code> will now automatically be included in binary snaps by default during the build process.</p>
-
-
-
-<h2>Looking ahead</h2>
-
-
-
-<p>We are continuing to refine our offering, providing more and better features that support enhanced security and efficiency.</p>
-
-
-
-<p>We invite you to share your feedback on this change by reaching out&nbsp; to us:</p>
-
-
-<ul>
-<li>Matrix: #launchpad:ubuntu.com</li>
-<li>Email: feedback@launchpad.net</li>
-<li>Ask a question: https://answers.launchpad.net/launchpad</li>
-</ul>
-
-
-<p></p>]]></description>
-      <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
       <title>2026 LiveCD Memory Usage Compare</title>
@@ -9889,6 +9863,16 @@ On the reliability front new systems won't be added to the infrastructure if the
 <p>I would like to recommend this person of Microsoft to have a look at the new version  of <a title="guadalinexedu.org" href="http://www.guadalinexedu.org/" target="_blank">Guadalinex Edu</a> (available in few days) and then ask him what do they think is the best for  kids? Perhaps  motivation, enthusiasm and hard work of the entire free software  community can exceed 9.5 billion invested by Microsoft. Don&#8217;t worry about kids, you must be worried about <a title="Ubuntu bug #1" href="https://bugs.launchpad.net/ubuntu/+bug/1" target="_blank">the day</a> when these children reach the professional market and the quality and freedom of the free software used at schools will have more weight than all the investment you are doing in your proprietary software.</p>
 <p>:wq</p>]]></description>
       <source url="http://antoniosanchez.wordpress.com/category/planet-ubuntu/feed/atom">Antonio Sánchez</source>
+    </item>
+    <item>
+      <title>Webling und Android</title>
+      <link>http://blog.diener.li/allgemein/webling-und-android/</link>
+      <guid isPermaLink="true">http://blog.diener.li/allgemein/webling-und-android/</guid>
+      <pubDate>Mon, 09 Nov 2009 14:27:34 GMT</pubDate>
+      <description><![CDATA[<p>Ja ich habe seit Kurzem auch so einen kleinen Alleskönner als Handy. Auch wenn ich meinen <a title="Openmoko Freerunner" href="http://wiki.openmoko.org/wiki/Neo_FreeRunner/de" target="_blank">Freerunner</a> sehr mag, auf mein neues Spielzeug ist einfach mehr Verlass. Da mein altes Handy einem Wasserschaden (kein Kommentar) zum Opfer fiel, besorgte ich mir ein <a title="HTC Hero" href="http://www.htc.com/de/product.aspx" target="_blank">HTC Hero</a> mit <a title="Google Android" href="http://www.google.ch/intl/de_ch/mobile/android/" target="_blank">Google Android</a>. Ein <a title="Apple iPhone" href="http://www.apple.com/de/iphone/" target="_blank">iPhone</a> wollte ich nicht und ich bereue es bis heute nicht. Mein kleiner Held ist nicht nur die Hälfte so teuer, sondern bringt auch alles mit was ich brauche.</p>
+<p>Nun aber zum Wesentlichen. Etwas vom dümmsten an Handys war bislang die Portierung der Kontakte auf das neue Gerät. Umso erfreuter war ich, dass es dieses Mal sehr einfach ging. Da Android nun mal von Google kommt, unterstützt es natürlich auch Synchronisation mit dem Kalender, den Mails und den Kontakten von Google. Wenn man mal die Bedenken bezüglich der &#8222;Datenkrake&#8220; Google aussen vor lässt und sich auf die funktionellen Fakten bezieht, dann ist das mehr als nur optimal. Angenommen man benutzt bereits die genannten Google Dienste bereits, muss man auf dem Android lediglich seine Kontodaten angeben und alles regelt sich von selbst.</p>
+<p>Wie einige von euch wahrscheinlich wissen, bin ich Teilhaber von <a title="uSystems GmbH" href="http://www.usystems.ch/" target="_blank">uSystems GmbH</a>, die unter anderem eine <a title="webling.ch - verwaltet deinen Verein" href="http://www.webling.ch" target="_blank">Vereinsverwaltungssoftware</a> entwickelt. Die nennt sich Webling und kann eigentlich viel mehr, aber in diesem Beispiel brauche ich sie nur als Adressverwaltung. Denn seit einiger Zeit habe ich mir eine persönliche Instanz davon unter den Nagel gerissen und brauche es um die Kontaktdaten meiner Freunde zu verwalten. So habe ich einen zentralen Ort, wo ich von überall darauf Zugriff habe. Warum ich das erwähne? Nun Webling kann Daten nicht nur Importieren, sondern auch in diversen Formaten exportieren. Hier zeigt sich wieder mal, dass gewisse simple und bereits recht alte Standards auch heute noch immer super sind. Denn Webling bietet unter anderem die Möglichkeit in eine <a title="CSV Dateiformat auf Wikipedia DE" href="http://de.wikipedia.org/wiki/CSV_%28Dateiformat%29" target="_blank">CSV-Datei</a> zu exportieren und Google wiederum diese zu importieren. Und da die Google Kontakte ja mit meinem Handy synchronisiert werden, habe ich nun sofort alle meine Kontakte auch auf meinem Handy. Und sollte ich mal einen neuen Kontakt nicht importiert haben, so kann ich jederzeit von überall über den <a title="Webling.ch - News" href="http://www.webling.ch/news.php" target="_blank">neuen</a> Webling Mobile Client auch per Handy auf alle Daten zugreifen. Sehr praktisch sag ich da nur!  <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> (Auch wenn ich natürlich etwas voreingenommen bin.)</p>]]></description>
+      <source url="http://blog.diener.li/feed">Carlos Diener - emonkey</source>
     </item>
     <item>
       <title>UDS Karmic &amp;#8211; Day One</title>
