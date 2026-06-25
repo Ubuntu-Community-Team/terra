@@ -6,34 +6,49 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 24 Jun 2026 00:53:39 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2026 00:58:00 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Canonical announces live kernel patching for Arm64</title>
-      <link>https://ubuntu.com//blog/canonical-announces-live-kernel-patching-for-arm64</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/canonical-announces-live-kernel-patching-for-arm64</guid>
-      <pubDate>Tue, 23 Jun 2026 00:01:00 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://ubuntu.com/security/livepatch">Canonical Livepatch</a> now officially supports Arm64, further expanding its security patching automation capabilities.</p>
-<p>For the first time, Ubuntu on an Arm64 machine can apply critical kernel updates, without service interruption or rebooting. Starting with Ubuntu Core 26 for Arm64, and for Ubuntu Core 20 and onwards for AMD64 machines, a wider range of devices and cloud virtual machines can achieve timely vulnerability remediation through Canonical Livepatch. This enhancement will strengthen the security of systems that aren’t security maintained daily or weekly, and provides an operational advantage for organizations working towards <a href="https://canonical.com/solutions/open-source-security/cyber-resilience-act">Cyber Resilience Act (CRA)</a> compliance.</p>
-<p>Getting to this point was no small feat. In this article, we’ll be looking back at the significant technical hurdles that stood in the way just a few years ago, so we can fully appreciate the meaning of this milestone. </p>
-<h2 class="wp-block-heading">2023: the beginning</h2>
-<p>In late 2023, we conducted a comprehensive gap analysis to determine what it would take to bring live kernel patching to Arm64 processors. At the time, while Ubuntu provided Arm64 builds for nearly every released kernel, the ecosystem simply wasn’t ready to support live kernel patching on this architecture.</p>
-<p>Live kernel patching requires the kernel to know exactly when it is safe to switch a running task to patched code. This relies heavily on reliable kernel stack traces (CONFIG_HAVE_RELIABLE_STACKTRACE). The upstream Arm64 kernel lacked a stable, fully accepted implementation for reliable kernel stack traces at the time. Furthermore, the toolchain required to compile and compare unpatched and patched kernels, including GCC, objdump, and Kpatch, lacked mature Arm64 support. While pull requests and patches existed (some dating back to 2021), they were still under intense discussion and not fully merged upstream.</p>
-<h2 class="wp-block-heading">2024–2026: the work really starts</h2>
-<p>With the proliferation of high-performance Arm processors in cloud environments and increase in complex edge devices, solving this puzzle became an industry-wide imperative. Turning that 2023 gap analysis into today’s reality required a monumental, coordinated effort between engineers at major OS publishers, hyperscalers, silicon vendors, and the broader open source community. Once the toolchain prerequisites, kernel consistency model for Arm64, and the implementation of reliable stack trace checks were finally merged upstream, the critical safety net required to swap code in a running kernel was officially in place. </p>
-<p>In anticipation of these upstream developments, our engineers ensured that Livepatch server and client were capable of distributing and managing arm64 live kernel patches. Once we had the tooling from upstream to produce loadable, cumulative kernel modules for Arm64 processors, we began testing, and putting our kernel build infrastructure through its paces.</p>
-<p>Behind the scenes, our infrastructure teams went to work. Building live kernel patches requires compiling two copies of the Linux kernel because we test patches cumulatively for many kernels, on many Ubuntu versions, and on many architectures, the testing process represents an enormous computational requirement over time. Engineers orchestrate build farms to compile live kernel patches on target architectures, using the same compiler as the kernel. </p>
-<p>For performance and correctness, we do not use architecture emulation for building or testing live kernel patches. We expanded our build farms with dedicated Arm64 instances, boosting performance to handle the heavy computational load of native compilation across hundreds of rolling kernel patches. We also built entirely new, architecture-specific regression test suites to guarantee that an Arm64 livepatch would be as stable as our AMD64 patches. Finally, we overhauled our livepatch distribution network and clients, ensuring seamless, multi-architecture delivery. In late February the Arm64 Livepatch client for Ubuntu 26.04 LTS and Ubuntu Core 26 was applying live kernel patches in our test environments.</p>
-<h2 class="wp-block-heading">The present, and where we’re going next</h2>
-<p>Today, the culmination of all this live kernel patching work for Arm64 is available in Ubuntu 26.04 LTS and Ubuntu Core 26. </p>
-<p>We have closed the technical gaps of recent years, replaced by a robust, scalable pipeline that delivers rebootless security patches directly to your Arm64 infrastructure. Whether you are managing a fleet of remote edge devices or scaling out Arm-based cloud servers, and your systems are not security patched and rebooted daily or weekly, then Canonical Livepatch serves as a key tool for maintaining a trusted and available fleet.</p>
-<h2 class="wp-block-heading">Related articles</h2>
-<ul>
-<li><a href="https://ubuntu.com/blog/how-is-livepatch-safeguarded-against-bad-actors">How is Livepatch safeguarded against bad actors?</a></li>
-<li><a href="https://ubuntu.com/blog/mythbusting-the-scope-of-livepatch-protection">Mythbusting the scope of Livepatch protection</a></li>
-<li><a href="https://ubuntu.com/blog/live-linux-kernel-patching-with-progressive-timestamped-rollouts">Live Linux kernel patching with progressive timestamped rollouts</a></li>
-</ul>]]></description>
+      <title>Anbox Cloud on C4A metal: Android, at scale, without friction</title>
+      <link>https://ubuntu.com//blog/anbox-cloud-on-c4a-metal-android-at-scale-without-friction</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/anbox-cloud-on-c4a-metal-android-at-scale-without-friction</guid>
+      <pubDate>Wed, 24 Jun 2026 11:31:26 GMT</pubDate>
+      <description><![CDATA[<h2 class="wp-block-heading">Why C4A metal is a great place to run Android and why Anbox Cloud makes that practical.</h2>
+<p>If you’ve spent even a small portion of time working with Android development at scale, you’ve likely encountered some pinch points.</p>
+<p>The platform was built for Arm-based devices, mobile physical hardware, and tightly controlled system environments. Cloud platforms, on the other hand, are optimized for abstraction, elasticity, and shared infrastructure. Anbox Cloud has already bridged this gap, enabling Android developers to scale virtual instances in the cloud efficiently. </p>
+<p>Yet, even with this flexibility, some use cases and workloads, like system-level Android development or large-scale Cuttlefish farms, call for native Arm performance and direct hardware access. For years, developers had to choose between genuine Android execution with physical device labs and cloud efficiency.</p>
+<p>With the launch of Google Cloud’s new Axion-based bare-metal instance, C4A metal, that trade-off starts to disappear. C4A-metal brings native Arm hardware directly into the cloud, without the performance limitations or complexity of nested virtualization. For Android workloads, this is a big deal.</p>
+<p>And it’s the perfect fit with Anbox Cloud.</p>
+<figure class="wp-block-image size-full"><img alt="" height="721" loading="lazy" sizes="(min-width: 1280px) 1280px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F174c%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F174c%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F174c%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F174c%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F174c%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F174c%2Fimage.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1280/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F174c%2Fimage.png 1280w" width="1280"/></figure>
+<p>Anbox Cloud is Canonical’s platform for running Android at scale in cloud environments. It was built to manage, scale, and stream large numbers of Android instances reliably, whether for testing, CI/CD integration, automation, or interactive remote access.</p>
+<p>On C4A metal, Anbox Cloud can run and orchestrate large fleets of Android systems directly on Arm hardware. There’s nothing special to configure, no alternative workflows to learn. You provision C4A metal, deploy Anbox Cloud, and Android workloads run exactly as you would expect, only now with native performance and cloud elasticity.</p>
+<blockquote class="wp-block-quote">
+<p>“Anbox Cloud’s support for fully virtualized Android provides an execution environment that closely matches the assumptions of AOSP and reference platforms such as Cuttlefish,” says Alistair Delva from Google’s Cloud Android team. “By allowing full Android system images, including the kernel, to run unmodified on scalable cloud and bare-metal infrastructure, such as C4A metal, Anbox Cloud enables system-level Android development, validation, and compliance workflows to move to the cloud with a level of fidelity that has traditionally required physical device labs. This combination of platform fidelity and cloud-scale operation represents a meaningful step forward for how Android systems can be built, tested, and operated.” </p>
+</blockquote>
+<p>From a developer’s point of view, this is where things get interesting. Android instances start quickly, can be scaled up and down programmatically and effortlessly, and can be accessed remotely through streaming when needed. From a platform point of view, everything is automated, observable, and reproducible.</p>
+<p>It just works.</p>
+<h1 class="wp-block-heading">Scalable Cuttlefish environments, finally done right</h1>
+<p>One of the most compelling use cases for C4A metal is running large-scale Cuttlefish environments.</p>
+<p>Android Cuttlefish is widely used for Android platform development and system validation, but it has traditionally been difficult to scale. Physical labs don’t grow on demand, and running virtual devices on top of virtual machines quickly becomes inefficient and non-representative.</p>
+<p>C4A metal removes that bottleneck. Anbox Cloud can launch and manage many Cuttlefish-based Android systems directly on bare metal, with no nested virtualization. The result is a cloud-native Cuttlefish farm that behaves like real hardware but scales like cloud infrastructure.</p>
+<p>For Android platform teams, automotive OEMs, and system developers, this means faster feedback cycles, higher parallelism, and far less operational overhead.</p>
+<h1 class="wp-block-heading">Not just bare metal: one platform across C4A and N4A</h1>
+<p>Bare metal is powerful, but it’s not the whole story.</p>
+<p>Thanks to our close collaboration with Google Cloud, Anbox Cloud is designed to run across the Axion portfolio. Teams can use C4A metal for high-fidelity system testing while running build pipelines, orchestration services, and supporting infrastructure on C4A or N4A instances. The same Anbox Cloud deployment can span all of these environments without changing tools or workflows.</p>
+<p>This flexibility is the real value. You don’t need to choose between realism and efficiency up front. You can place each part of your Android workflow on the infrastructure that fits it best, and still operate everything as a single, coherent platform.</p>
+<h1 class="wp-block-heading">A natural fit for modern Android development</h1>
+<p>Android was built for Arm. C4A metal brings Arm-native bare metal into the cloud. Anbox Cloud connects the two with a platform that knows how to run, scale, and stream Android reliably.</p>
+<p>Together, they make Android development simpler, faster, and more scalable, without asking teams to compromise on performance or fidelity.</p>
+<p>As Android workloads continue to grow beyond apps into full systems and platforms, having infrastructure that matches Android’s assumptions matters. With C4A metal and Anbox Cloud, that infrastructure is finally available as an on-demand cloud service.</p>
+<p>Try Anbox Cloud on C4A metal now and stay tuned for further developments in our upcoming releases. For detailed instructions on how to upgrade your existing deployment, please refer to the <a href="https://documentation.ubuntu.com/anbox-cloud/en/latest/howto/update/upgrade-anbox/#howto-upgrade-anbox-cloud">Anbox Cloud documentation.</a></p>
+<h1 class="wp-block-heading"><strong>Further reading</strong></h1>
+<p><a href="https://canonical.com/anbox-cloud">Learn more about Anbox Cloud or contact our team to discuss your use case</a></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<p>Android is a trademark of Google LLC.</p>
+<p>Anbox Cloud uses assets available through the Android Open Source Project.</p>
+<p>The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the<a href="https://creativecommons.org/licenses/by/3.0/"> Creative Commons</a> 3.0 Attribution License.</p>
+<p></p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
