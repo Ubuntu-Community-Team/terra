@@ -6,9 +6,150 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Mon, 29 Jun 2026 04:13:50 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 03:55:38 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Announcing Incus 7.2</title>
+      <link>https://stgraber.org/2026/06/29/announcing-incus-7-2/</link>
+      <guid isPermaLink="true">https://stgraber.org/2026/06/29/announcing-incus-7-2/</guid>
+      <pubDate>Mon, 29 Jun 2026 04:32:40 GMT</pubDate>
+      <description><![CDATA[<p class="wp-block-paragraph">The Incus team is pleased to announce the release of Incus 7.2!</p>
+
+
+
+<p class="wp-block-paragraph">It’s another pretty busy release for us with a varied set of new features across the board as well as the usual set of performance improvements and bugfixes.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://linuxcontainers.org/incus/try-it/"><img fetchpriority="high" decoding="async" width="1024" height="499" src="https://stgraber.org/wp-content/uploads/2026/06/image-1024x499.png" alt="" class="wp-image-1887" srcset="https://stgraber.org/wp-content/uploads/2026/06/image-1024x499.png 1024w, https://stgraber.org/wp-content/uploads/2026/06/image-300x146.png 300w, https://stgraber.org/wp-content/uploads/2026/06/image-768x374.png 768w, https://stgraber.org/wp-content/uploads/2026/06/image-1536x748.png 1536w, https://stgraber.org/wp-content/uploads/2026/06/image-2048x998.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<p class="wp-block-paragraph">This fixes the following security issues:</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-2q3f-q5pq-g8wv">CVE-2026-48749</a> (critical) &#8211; Arbitrary file read+write on host via <code>rootfs/</code> symlink in malicious image</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-73hr-m85f-64v9">CVE-2026-48750</a> (critical) &#8211; Arbitrary file write on host via <code>exec-output</code> symlink in crafted image</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-48q5-w887-33wv">CVE-2026-48751</a> (critical) &#8211; Restricted project bypass leading to arbitrary command execution</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-vxp5-584q-c479">CVE-2026-48752</a> (critical) &#8211; Arbitrary file read+write on host via <code>templates/</code> symlink in malicious image</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-v6mj-8pf4-hhw4">CVE-2026-48755</a> (critical) &#8211; Argument injection in backup compression algorithm leading to arbitrary file write and command execution</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-f6m5-xw2g-xc4x">CVE-2026-48769</a> (critical) &#8211; Arbitrary file write on client due to trusted image hash</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-64f3-v33m-w89f">CVE-2026-55621</a> (high) &#8211; Project restriction bypass for custom volume copy across projects</li>
+
+
+
+<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-c9f5-j9c3-mhrg">CVE-2026-55622</a> (high) &#8211; Project restriction bypass in instance copy across projects</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">On the feature front, the highlights for this release are:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Per-instance SELinux integration</li>
+
+
+
+<li>New incus default CLI command</li>
+
+
+
+<li>Filtered server info by default</li>
+
+
+
+<li>Keepalive timeout from the CLI</li>
+
+
+
+<li>Better OS-specific handling of CLI configuration</li>
+
+
+
+<li>Standalone server certificate update</li>
+
+
+
+<li>Static network configuration for OCI containers</li>
+
+
+
+<li>Per-instance BGP route advertisement</li>
+
+
+
+<li>Dynamic addresses in proxy NAT mode</li>
+
+
+
+<li>Expanded NBD access to VMs</li>
+
+
+
+<li>Btrfs compression for storage volumes</li>
+
+
+
+<li>InfiniBand SR-IOV GUID configuration</li>
+
+
+
+<li>Websocket origin restriction</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">The full announcement and changelog can be <a href="https://discuss.linuxcontainers.org/t/incus-7-2-has-been-released/26879" target="_blank" rel="noreferrer noopener">found here</a>.<br>And for those who prefer videos, here&#8217;s the release <a href="https://www.youtube.com/watch?v=rcldqF6SpXA">overview video</a>:</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="Introducing Incus 7.2!" width="640" height="360" src="https://www.youtube.com/embed/rcldqF6SpXA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">You can take the latest release of Incus up for a spin through our online demo service at: <a href="https://linuxcontainers.org/incus/try-it/" target="_blank" rel="noreferrer noopener">https://linuxcontainers.org/incus/try-it/</a></p>
+
+
+
+<p class="wp-block-paragraph">And as always, my company is offering commercial support on Incus, ranging from by-the-hour support contracts to one-off services on things like initial migration from LXD, review of your deployment to squeeze the most out of Incus or even feature sponsorship. You&#8217;ll find all details of that here: <a href="https://zabbly.com/incus">https://zabbly.com/incus</a></p>
+
+
+
+<p class="wp-block-paragraph">Donations towards my work on this and other open source projects is also always appreciated, you can  find me on <a href="https://github.com/sponsors/stgraber">Github Sponsors</a>, <a href="https://patreon.com/stgraber">Patreon</a> and <a href="https://ko-fi.com/stgraber">Ko-fi</a>.</p>
+
+
+
+<p class="wp-block-paragraph">Enjoy!</p>
+
+
+<p><!-- /wp:post-content --></p>]]></description>
+      <source url="https://stgraber.org/category/planet-ubuntu/feed/">Stéphane Graber</source>
+    </item>
     <item>
       <title>Challenges designers face in open source (and how to fix them)</title>
       <link>https://ubuntu.com//blog/challenges-designers-face-in-open-source-and-how-to-fix-them</link>
@@ -873,119 +1014,6 @@ libfftw3-double3</code></pre>
 <p>If you’ve ever wondered what the dangers of a [practically] unmoderated platform in the hands of a billionaire “free-speech absolutist” could possibly be for your day-to-day life, here it is. Elon doesn’t appear to care who says what. Ads don’t appear to be vetted. As long as your bots pay their dues, and pay the ad fare, you can shove your dirty little opinions into the eyeballs of whomever you like.</p>
 <p>Just as an echo chamber, X was dangerous, but it’s becoming clearer and clearer that it’s now just toxic to any democratic process. With so many bots on the platform, and so many real political campaigners pretending to be somewhere they’re not, the time when you can have an honest discussion has gone.</p>]]></description>
       <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
-    </item>
-    <item>
-      <title>Announcing Incus 7.1</title>
-      <link>https://stgraber.org/2026/06/01/announcing-incus-7-1/</link>
-      <guid isPermaLink="true">https://stgraber.org/2026/06/01/announcing-incus-7-1/</guid>
-      <pubDate>Tue, 02 Jun 2026 00:05:15 GMT</pubDate>
-      <description><![CDATA[<p class="wp-block-paragraph">The Incus team is pleased to announce the release of Incus 7.1!</p>
-
-
-
-<p class="wp-block-paragraph">This is our first monthly feature release since Incus 7.0 LTS and it’s a pretty busy one as we’ve had some time to clear our backlog a bit.</p>
-
-
-
-<figure class="wp-block-image"><a href="https://linuxcontainers.org/incus/try-it/"><img decoding="async" src="https://discuss.linuxcontainers.org/uploads/default/original/2X/4/4043696f5c717bfb0242221bbe1b01c426f4d7a2.png" alt="image"/></a></figure>
-
-
-
-<p class="wp-block-paragraph">This fixes the following security issues:</p>
-
-
-
-<ul class="wp-block-list">
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-ccjc-4qc3-jxqc">CVE-2026-48753</a> (critical)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-8g7m-96c8-8wwc">CVE-2026-47753</a> (low)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-4xg6-52mh-fpw8">CVE-2026-48754</a> (low)</li>
-
-
-
-<li><a href="https://github.com/lxc/incus/security/advisories/GHSA-xhqx-mgh3-3h7q">CVE-2026-48756</a> (low)</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">On the feature front, the highlights for this release are:</p>
-
-
-
-<ul class="wp-block-list">
-<li>Rebuilding custom storage volumes</li>
-
-
-
-<li>Explicit CPU topology for virtual machines</li>
-
-
-
-<li>Custom TPM platform certificate</li>
-
-
-
-<li>Volume creation on attach</li>
-
-
-
-<li>File system creation options for storage</li>
-
-
-
-<li>Low-level LINSTOR configuration</li>
-
-
-
-<li>IP ranges in network address sets</li>
-
-
-
-<li>Multicast snooping control on bridge networks</li>
-
-
-
-<li>Multiple addresses per remote</li>
-
-
-
-<li>S3 object storage improvements</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">The full announcement and changelog can be <a href="https://discuss.linuxcontainers.org/t/incus-7-1-has-been-released/26750" target="_blank" rel="noreferrer noopener">found here</a>.<br>And for those who prefer videos, here&#8217;s the release <a href="https://www.youtube.com/watch?v=p4ZxwFSgeJ8">overview video</a>:</p>
-
-
-
-<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-<iframe title="Introducing Incus 7.1!" width="640" height="360" src="https://www.youtube.com/embed/p4ZxwFSgeJ8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div></figure>
-
-
-
-<p class="wp-block-paragraph">You can take the latest release of Incus up for a spin through our online demo service at: <a href="https://linuxcontainers.org/incus/try-it/" target="_blank" rel="noreferrer noopener">https://linuxcontainers.org/incus/try-it/</a></p>
-
-
-
-<p class="wp-block-paragraph">And as always, my company is offering commercial support on Incus, ranging from by-the-hour support contracts to one-off services on things like initial migration from LXD, review of your deployment to squeeze the most out of Incus or even feature sponsorship. You&#8217;ll find all details of that here: <a href="https://zabbly.com/incus">https://zabbly.com/incus</a></p>
-
-
-
-<p class="wp-block-paragraph">Donations towards my work on this and other open source projects is also always appreciated, you can  find me on <a href="https://github.com/sponsors/stgraber">Github Sponsors</a>, <a href="https://patreon.com/stgraber">Patreon</a> and <a href="https://ko-fi.com/stgraber">Ko-fi</a>.</p>
-
-
-
-<p class="wp-block-paragraph">Enjoy!</p>
-
-
-<p><!-- /wp:post-content --></p>]]></description>
-      <source url="https://stgraber.org/category/planet-ubuntu/feed/">Stéphane Graber</source>
     </item>
     <item>
       <title>Ubuntu Summit 26.04: Personal Highlights</title>
@@ -8746,6 +8774,16 @@ On the reliability front new systems won't be added to the infrastructure if the
 <p>I would like to recommend this person of Microsoft to have a look at the new version  of <a title="guadalinexedu.org" href="http://www.guadalinexedu.org/" target="_blank">Guadalinex Edu</a> (available in few days) and then ask him what do they think is the best for  kids? Perhaps  motivation, enthusiasm and hard work of the entire free software  community can exceed 9.5 billion invested by Microsoft. Don&#8217;t worry about kids, you must be worried about <a title="Ubuntu bug #1" href="https://bugs.launchpad.net/ubuntu/+bug/1" target="_blank">the day</a> when these children reach the professional market and the quality and freedom of the free software used at schools will have more weight than all the investment you are doing in your proprietary software.</p>
 <p>:wq</p>]]></description>
       <source url="http://antoniosanchez.wordpress.com/category/planet-ubuntu/feed/atom">Antonio Sánchez</source>
+    </item>
+    <item>
+      <title>Webling und Android</title>
+      <link>http://blog.diener.li/allgemein/webling-und-android/</link>
+      <guid isPermaLink="true">http://blog.diener.li/allgemein/webling-und-android/</guid>
+      <pubDate>Mon, 09 Nov 2009 14:27:34 GMT</pubDate>
+      <description><![CDATA[<p>Ja ich habe seit Kurzem auch so einen kleinen Alleskönner als Handy. Auch wenn ich meinen <a title="Openmoko Freerunner" href="http://wiki.openmoko.org/wiki/Neo_FreeRunner/de" target="_blank">Freerunner</a> sehr mag, auf mein neues Spielzeug ist einfach mehr Verlass. Da mein altes Handy einem Wasserschaden (kein Kommentar) zum Opfer fiel, besorgte ich mir ein <a title="HTC Hero" href="http://www.htc.com/de/product.aspx" target="_blank">HTC Hero</a> mit <a title="Google Android" href="http://www.google.ch/intl/de_ch/mobile/android/" target="_blank">Google Android</a>. Ein <a title="Apple iPhone" href="http://www.apple.com/de/iphone/" target="_blank">iPhone</a> wollte ich nicht und ich bereue es bis heute nicht. Mein kleiner Held ist nicht nur die Hälfte so teuer, sondern bringt auch alles mit was ich brauche.</p>
+<p>Nun aber zum Wesentlichen. Etwas vom dümmsten an Handys war bislang die Portierung der Kontakte auf das neue Gerät. Umso erfreuter war ich, dass es dieses Mal sehr einfach ging. Da Android nun mal von Google kommt, unterstützt es natürlich auch Synchronisation mit dem Kalender, den Mails und den Kontakten von Google. Wenn man mal die Bedenken bezüglich der &#8222;Datenkrake&#8220; Google aussen vor lässt und sich auf die funktionellen Fakten bezieht, dann ist das mehr als nur optimal. Angenommen man benutzt bereits die genannten Google Dienste bereits, muss man auf dem Android lediglich seine Kontodaten angeben und alles regelt sich von selbst.</p>
+<p>Wie einige von euch wahrscheinlich wissen, bin ich Teilhaber von <a title="uSystems GmbH" href="http://www.usystems.ch/" target="_blank">uSystems GmbH</a>, die unter anderem eine <a title="webling.ch - verwaltet deinen Verein" href="http://www.webling.ch" target="_blank">Vereinsverwaltungssoftware</a> entwickelt. Die nennt sich Webling und kann eigentlich viel mehr, aber in diesem Beispiel brauche ich sie nur als Adressverwaltung. Denn seit einiger Zeit habe ich mir eine persönliche Instanz davon unter den Nagel gerissen und brauche es um die Kontaktdaten meiner Freunde zu verwalten. So habe ich einen zentralen Ort, wo ich von überall darauf Zugriff habe. Warum ich das erwähne? Nun Webling kann Daten nicht nur Importieren, sondern auch in diversen Formaten exportieren. Hier zeigt sich wieder mal, dass gewisse simple und bereits recht alte Standards auch heute noch immer super sind. Denn Webling bietet unter anderem die Möglichkeit in eine <a title="CSV Dateiformat auf Wikipedia DE" href="http://de.wikipedia.org/wiki/CSV_%28Dateiformat%29" target="_blank">CSV-Datei</a> zu exportieren und Google wiederum diese zu importieren. Und da die Google Kontakte ja mit meinem Handy synchronisiert werden, habe ich nun sofort alle meine Kontakte auch auf meinem Handy. Und sollte ich mal einen neuen Kontakt nicht importiert haben, so kann ich jederzeit von überall über den <a title="Webling.ch - News" href="http://www.webling.ch/news.php" target="_blank">neuen</a> Webling Mobile Client auch per Handy auf alle Daten zugreifen. Sehr praktisch sag ich da nur!  <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> (Auch wenn ich natürlich etwas voreingenommen bin.)</p>]]></description>
+      <source url="http://blog.diener.li/feed">Carlos Diener - emonkey</source>
     </item>
     <item>
       <title>UDS Karmic &amp;#8211; Day One</title>
