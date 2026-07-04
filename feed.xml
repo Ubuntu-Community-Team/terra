@@ -6,9 +6,43 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 03 Jul 2026 03:26:34 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 03:19:40 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The pandemic of incomplete OpenSSL error handling</title>
+      <link>https://blog.jak-linux.org/2026/07/03/openssl-pandemic/</link>
+      <guid isPermaLink="true">https://blog.jak-linux.org/2026/07/03/openssl-pandemic/</guid>
+      <pubDate>Fri, 03 Jul 2026 15:54:22 GMT</pubDate>
+      <description><![CDATA[<p>Recently a person reported a bug in APT saying that TLS is failing on FIPS
+systems with MD5 errors, and suggested we call <code>ERR_clear_error()</code> around
+TLS operations.</p>
+<p>Like any serious software engineer would do, I said No. Just because one component
+failed to handle its errors does not mean I can go around and discard all errors
+in another place - the program should have failed earlier (or discarded the error
+when it was determined to be safe).</p>
+<p>Little did I know that people have for years been using this approach as a best
+practice: Codebases everywhere are littered with calls to <code>ERR_clear_error()</code>
+before performing TLS, and upstream themselves suggest to do just that.</p>
+<p>This is a major, systemic, pandemic of incomplete error handling. We cannot
+just discard unrelated errors if they become inconvenient. The code that
+caused the error needs to be fixed to handle it.</p>
+<p>This isn&rsquo;t all. It seems many authors are not familiar with libraries using a
+stack of errors, and there is a second anti-pattern:</p>
+<p>Call an OpenSSL operation, check the top-level error, and then discard all
+errors if deemed &ldquo;not too bad&rdquo;. This has the same problem: Unrelated errors
+get silently discarded.</p>
+<p>I would strongly encourage everyone to inspect their code bases for any calls
+to <code>ERR_clear_error()</code> and whether they are safe or one of the bad patterns
+above (or maybe you find a new pattern). You may want to use error stack
+functionality of<code>ERR_set_mark</code> (<a href="https://docs.openssl.org/3.4/man3/ERR_set_mark/">https://docs.openssl.org/3.4/man3/ERR_set_mark/</a>)
+to essentially &ldquo;push&rdquo; and &ldquo;pop&rdquo; an error context of your own as a guard around
+multiple OpenSSL operations.</p>
+<p>To the OpenSSL authors, I would suggest not encouraging devastating security
+practices that fundamentally break any trust in software.</p>
+<p>We need to do better than this.</p>]]></description>
+      <source url="https://blog.jak-linux.org/post/index.xml">Julian Andres Klode</source>
+    </item>
     <item>
       <title>DirtyClone Linux kernel local privilege escalation vulnerability fixes available</title>
       <link>https://ubuntu.com//blog/dirtyclone-linux-vulnerability-fixes-available</link>
@@ -2745,90 +2779,6 @@ because of DNSSEC, or since we&rsquo;re on the topic, a
 for us to be cracking jokes anytime a program makes a DNS request.</p>
 <p>We can do better.</p>]]></description>
       <source url="http://notes.pault.ag/feeds/all-en.atom.xml">Paul Tagliamonte</source>
-    </item>
-    <item>
-      <title>Sound Removals</title>
-      <link>https://blog.jak-linux.org/2025/10/18/sound-removals/</link>
-      <guid isPermaLink="true">https://blog.jak-linux.org/2025/10/18/sound-removals/</guid>
-      <pubDate>Sat, 18 Oct 2025 19:37:17 GMT</pubDate>
-      <description><![CDATA[<h2 id="problem-statement">Problem statement</h2>
-<p>Currently if you have an automatically installed package A (= 1) where</p>
-<ul>
-<li>A (= 1) Depends B (= 1)</li>
-<li>A (= 2) Depends B (= 2)</li>
-</ul>
-<p>and you upgrade B from 1 to 2; then  you can:</p>
-<ol>
-<li>Remove A (= 1)</li>
-<li>Upgrade A to version 2</li>
-</ol>
-<p>If A was installed by a chain initiated by Recommends (say X Rec Y, Y Depends A), the solver sometimes preferred removing A (and anything depending on it until it got).</p>
-<p>I have a fix pending to introduce eager Recommends which fixes the practical case, but
-this is still not <em>sound</em>.</p>
-<p>In fact we can show that the solver produces the wrong result for small
-minimal test cases, as well as the right result for some others without the
-fix (hooray?).</p>
-<p>Ensuring sound removals is more complex, and first of all it begs the question: When
-is a removal sound? This, of course, is on us to define.</p>
-<p>An easy case can be found in the <a href="https://www.debian.org/doc/debian-policy/ch-relationships.html#replacing-whole-packages-forcing-their-removal">Debian policy, 7.6.2 &ldquo;Replacing whole packages, forcing their removal&rdquo;</a>:</p>
-<p>If <code>B (= 2)</code> declares a <code>Conflicts: A (= 1)</code> and <code>Replaces: A (= 1)</code>, then the removal
-is valid. However this is incomplete as well, consider it declares <code>Conflicts: A (&lt; 1)</code>
-and <code>Replaces: A (&lt; 1)</code>; the solution to remove A rather than upgrade it would still
-be wrong.</p>
-<p>This indicates that we should only allow removing <code>A</code> if the conflicts could not be solved
-by upgrading it.</p>
-<p>The other case to explore is package removals. If B is removed, A should be removed as well;
-however it there is another package X that <code>Provides: B (= 1)</code> and it is marked for install,
-A should not be removed. That said, the solver is not allowed to install X to satisfy the
-depends <code>B (= 1)</code> - only to satisfy other dependencies [we do not want to get into endless
-loops where we switch between alternatives to keep reverse dependencies installed].</p>
-<h2 id="proposed-solution">Proposed solution</h2>
-<p>To solve this, I propose the following definition:</p>
-<p><strong>Definition (sound removal)</strong>: A removal of package <code>P</code> is sound if either:</p>
-<ol>
-<li>A version <code>v</code> is installed that <em>package-conflicts</em> with B.</li>
-<li>A package <code>Q</code> is removed and the installable versions of P <em>package-depends</em> on Q.</li>
-</ol>
-<p>where the other definitions are:</p>
-<p><strong>Definition (installable version)</strong>: A version <code>v</code> is installable if either it is installed,
-or it is newer than an installed version of the same package (you may wish to change this to
-accomodate downgrades, or require strict pinning, but here be dragons).</p>
-<p><strong>Definition (package-depends):</strong> A version <code>v</code> <em>package-depends</em> on a package B if either:</p>
-<ol>
-<li>there exists a dependency in <code>v</code> that can be solved by any version of <code>B</code>, or</li>
-<li>there exists a package <code>C</code> where <code>v package-depends C</code> and <code>any (c in C) package-depends B</code> (transitivity)</li>
-</ol>
-<p><strong>Definition (package-conflicts):</strong> A version <code>v</code> <em>package-conflicts</em> with an installed package <code>B</code> if either:</p>
-<ol>
-<li>it declares a conflicts against an installable version of B; or</li>
-<li>there exists a package <code>C</code> where <code>v package-conflicts C</code>,
-and <code>b package-depends C</code> for installable versions b.</li>
-</ol>
-<h2 id="translating-this-into-a-modified-sat-solver">Translating this into a (modified) SAT solver</h2>
-<p>One approach may be to implement the logic in the conflict analysis that drives backtracking, i.e.
-we assume a package <code>A</code> and when we reach <code>not A</code>, we analyse if the implication graph for <code>not A</code>
-constitutes a sound removal, and then replace the assumption <code>A</code> with the assumption
-<code>A or &quot;learned reason</code>.</p>
-<p>However, while this seems a plausible mechanism for a DPLL solver, for a modern CDCL solver,  it&rsquo;s
-not immediately evident how to analyse whether <code>not A</code> is sound if the reason for it is a learned
-clause, rather than a problem clause.</p>
-<p>Instead we propose a static encoding of the rules into a slightly modified SAT solver:</p>
-<p>Given c1, &hellip;, cn that transitive-conflicts A and D1, &hellip;, Dn that A package-depends on,
-introduce the rule:</p>
-<p><code>A unless c1 or c2 or  ... cn ... or not D1 or not D2 ... or not Dn</code></p>
-<p>Rules of the form <code>A... unless B...</code> - where <code>A...</code> and <code>B...</code> are CNF - are
-intuitively the same as <code>A... or B...</code>, however the semantic here is different:
-We are not allowed to select <code>B...</code> to satisfy this clause.</p>
-<p>This requires a SAT solver that tracks a reason for each literal being assigned,
-such as solver3, rather than a SAT solver like MiniSAT that only tracks reasons across
-propagation (solver3 may track <code>A depends B or C</code> as the reason for <code>B</code> without evaluating
-<code>C</code>, whereas MiniSAT would only track it as the reason given <code>not C</code>).</p>
-<h2 id="is-it-actually-sound">Is it actually sound?</h2>
-<p>The proposed definition of a sound removal may still proof unsound as I either missed
-something in the conclusion of the proposed definition that violates my goal I set out
-to achieve, or I missed some of the goals.</p>
-<p>I challenge you to find cases that cause removals that look wrong :D</p>]]></description>
-      <source url="https://blog.jak-linux.org/post/index.xml">Julian Andres Klode</source>
     </item>
     <item>
       <title>Why I Won’t Be Attending or Speaking at Ubuntu Summit 25.10</title>
@@ -8270,6 +8220,49 @@ $<br />
 
 <p><strong>Update:</strong> See also the <a href="https://01.org/openstack/openstacksummitvancouverbc2015/rule-stack-vancouver-results">summary of the contest</a> from the organizers.</p>]]></description>
       <source url="http://www.vuntz.net/journal/rss.php?lang=en">Vincent Untz</source>
+    </item>
+    <item>
+      <title>Here’s how to patch Ubuntu 8.04 or anything where you have to build bash from source</title>
+      <link>https://leftyfb.com/2014/09/25/heres-how-to-patch-ubuntu-8-04-or-anything-where-you-have-to-build-bash-from-source/</link>
+      <guid isPermaLink="true">https://leftyfb.com/2014/09/25/heres-how-to-patch-ubuntu-8-04-or-anything-where-you-have-to-build-bash-from-source/</guid>
+      <pubDate>Thu, 25 Sep 2014 17:03:01 GMT</pubDate>
+      <description><![CDATA[<p>UPDATED: I have updated the post to include the post from <a href="http://leftyfb.com/2014/09/25/heres-how-to-patch-ubuntu-8-04-or-anything-where-you-have-to-build-bash-from-source/#comment-1614053262">gb3</a> as well as additional patches and some tests</p>
+<p>Just a quick post to help those who might be running older/unsupported distributions of linux, mainly Ubuntu 8.04 who need to patch their version of bash due to the recent exploit here:</p>
+<p>http://thehackernews.com/2014/09/bash-shell-vulnerability-shellshock.html</p>
+<p>I found this post and can confirm it works:</p>
+<p>https://news.ycombinator.com/item?id=8364385</p>
+<p>Here are the steps(make a backup of /bin/bash just in case):</p>
+<pre>#assume that your sources are in /src
+cd /src
+wget http://ftp.gnu.org/gnu/bash/bash-4.3.tar.gz
+#download all patches
+for i in $(seq -f "%03g" 1 28); do wget http://ftp.gnu.org/gnu/bash/bash-4.3-patches/bash43-$i; done
+tar zxvf bash-4.3.tar.gz
+cd bash-4.3
+#apply all patches
+for i in $(seq -f "%03g" 1 28);do patch -p0 &lt; ../bash43-$i; done
+#build and install
+./configure --prefix=/ &amp;&amp; make &amp;&amp; make install
+cd ../../
+rm -r src</pre>
+<p>To test for exploits CVE-2014-6271, CVE-2014-7169, CVE-2014-7186, and CVE-2014-7187 I have found the following information at <a href="http://serverfault.com/a/631450">this link</a></p>
+<p>To check for the CVE-2014-6271 vulnerability</p>
+<pre class="lang-sh prettyprint prettyprinted"><code><span class="pln">env x</span><span class="pun">=</span><span class="str">'() { :;}; echo vulnerable'</span><span class="pln"> bash </span><span class="pun">-</span><span class="pln">c </span><span class="str">"echo this is a test"</span></code></pre>
+<p>it should NOT echo back the word vulnerable.</p>
+<hr />
+<p>To check for the CVE-2014-7169 vulnerability<br />
+(warning: if yours fails it will make or overwrite a file called <code>/tmp/echo</code> that you can delete after, and need to delete before testing again )</p>
+<pre class="lang-sh prettyprint prettyprinted"><code><span class="pln">cd </span><span class="pun">/</span><span class="pln">tmp</span><span class="pun">;</span><span class="pln"> env X</span><span class="pun">=</span><span class="str">'() { (a)=&gt;\' bash -c "echo date"; cat echo</span></code></pre>
+<p>it should say the word date then complain with a message like <code>cat: echo: No such file or directory</code>. If instead it tells you what the current datetime is then your system is vulnerable.</p>
+<hr />
+<p>To check for CVE-2014-7186</p>
+<pre class="lang-sh prettyprint prettyprinted"><code><span class="pln">bash </span><span class="pun">-</span><span class="pln">c </span><span class="str">'true &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF &lt;&lt;EOF'</span> <span class="pun">||</span><span class="pln"> echo </span><span class="str">"CVE-2014-7186 vulnerable, redir_stack"</span></code></pre>
+<p>it should NOT echo back the text <code>CVE-2014-7186 vulnerable, redir_stack</code>.</p>
+<hr />
+<p>To check for CVE-2014-7187</p>
+<pre class="lang-sh prettyprint prettyprinted"><code><span class="pun">(</span><span class="kwd">for</span><span class="pln"> x </span><span class="kwd">in</span> <span class="pun">{</span><span class="lit">1.</span><span class="pun">.</span><span class="lit">200</span><span class="pun">}</span> <span class="pun">;</span> <span class="kwd">do</span><span class="pln"> echo </span><span class="str">"for x$x in ; do :"</span><span class="pun">;</span> <span class="kwd">done</span><span class="pun">;</span> <span class="kwd">for</span><span class="pln"> x </span><span class="kwd">in</span> <span class="pun">{</span><span class="lit">1.</span><span class="pun">.</span><span class="lit">200</span><span class="pun">}</span> <span class="pun">;</span> <span class="kwd">do</span><span class="pln"> echo </span><span class="kwd">done</span> <span class="pun">;</span> <span class="kwd">done</span><span class="pun">)</span> <span class="pun">|</span><span class="pln"> bash </span><span class="pun">||</span><span class="pln"> echo </span><span class="str">"CVE-2014-7187 vulnerable, word_lineno"</span></code></pre>
+<p>it should NOT echo back the text <code>CVE-2014-7187 vulnerable, word_lineno</code>.</p>]]></description>
+      <source url="http://leftyfb.com/?feed=rss2&amp;cat=4">Mike Rushton</source>
     </item>
     <item>
       <title>Open Source Conference 2014 Kansai@Kyoto</title>
