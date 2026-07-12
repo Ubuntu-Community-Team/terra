@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 11 Jul 2026 02:51:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 03:15:26 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -1635,39 +1635,25 @@ libfftw3-double3</code></pre>
       <guid isPermaLink="true">https://thepcspy.com/read/whats-happened/</guid>
       <pubDate>Fri, 12 Jun 2026 00:00:00 GMT</pubDate>
       <description><![CDATA[<p>Foreign money is interfering in UK elections again, but I can’t remember it ever being <em>this</em> obvious.</p>
-
-
-![](tall/Screenshot_20260612-072919.avif){.rimxs}
-
-If you're in the UK and you've been on *The Site Previously Known as Twitter* in the last few days, you've probably seen an advertisement featuring an AI depiction of Nigel Farage beating, strangling, mugging, shooting, and having his shoes licked by the Bank of England's governor, Andrew Bailey. These all link through to a fake BBC News page that reports Farage is a big mean tough guy demanding the Bank does what he says.
-
-I wouldn't for a second suggest that Nigel or Reform are paying to make their weasel look tough, ***but someone is***.
-
-This morning, scrolling through my "Following" tab, I saw around 20 ads on this theme. These were all from foreign-held (India, Saudi, South African, Russian, Uganda, Viet Nam, etc) premium accounts that proclaim themselves "social media influencers". They all post a couple of nature pictures, and then post these political adverts.
-
-![](tall/Screenshot_20260612-072530.avif)
-![](tall/Screenshot_20260612-072910.avif)
-![](tall/Screenshot_20260612-072744.avif)
-![](tall/Screenshot_20260612-072602.avif)
-{.picblock}
-
-![](tall/Screenshot_20260612-072513.avif)
-![](tall/Screenshot_20260612-072623.avif)
-![](tall/Screenshot_20260612-072542.avif)
-![](tall/Screenshot_20260612-072505.avif)
-{.picblock}
-
-![](short/Screenshot_20260612-072615.avif)
-![](short/Screenshot_20260612-072729.avif)
-![](short/Screenshot_20260612-072802.avif)
-![](short/Screenshot_20260612-072738.avif)
-{.picblock}
-
-And this has been going on for nearly week.
-
-If you've ever wondered what the dangers of a [practically] unmoderated platform in the hands of a billionaire "free-speech absolutist" could possibly be for your day-to-day life, here it is. Elon doesn't appear to care who says what. Ads don't appear to be vetted. As long as your bots pay their dues, and pay the ad fare, you can shove your dirty little opinions into the eyeballs of whomever you like.
-
-Just as an echo chamber, X was dangerous, but it's becoming clearer and clearer that it's now just toxic to any democratic process. With so many bots on the platform, and so many real political campaigners pretending to be somewhere they're not, the time when you can have an honest discussion has gone.]]></description>
+ <figure><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;class&quot;:&quot;rimxs&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072919.avif&quot;,&quot;index&quot;:0}"></figure>
+<p>If you’re in the UK and you’ve been on <em>The Site Previously Known as Twitter</em> in the last few days, you’ve probably seen an advertisement featuring an AI depiction of Nigel Farage beating, strangling, mugging, shooting, and having his shoes licked by the Bank of England’s governor, Andrew Bailey. These all link through to a fake BBC News page that reports Farage is a big mean tough guy demanding the Bank does what he says.</p>
+<p>I wouldn’t for a second suggest that Nigel or Reform are paying to make their weasel look tough, <em><strong>but someone is</strong></em>.</p>
+<p>This morning, scrolling through my “Following” tab, I saw around 20 ads on this theme. These were all from foreign-held (India, Saudi, South African, Russian, Uganda, Viet Nam, etc) premium accounts that proclaim themselves “social media influencers”. They all post a couple of nature pictures, and then post these political adverts.</p>
+<p class="picblock"><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072530.avif&quot;,&quot;index&quot;:0}">
+<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072910.avif&quot;,&quot;index&quot;:0}">
+<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072744.avif&quot;,&quot;index&quot;:0}">
+<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072602.avif&quot;,&quot;index&quot;:0}"></p>
+<p class="picblock"><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072513.avif&quot;,&quot;index&quot;:0}">
+<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072623.avif&quot;,&quot;index&quot;:0}">
+<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072542.avif&quot;,&quot;index&quot;:0}">
+<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072505.avif&quot;,&quot;index&quot;:0}"></p>
+<p class="picblock"><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;short/Screenshot_20260612-072615.avif&quot;,&quot;index&quot;:0}">
+<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;short/Screenshot_20260612-072729.avif&quot;,&quot;index&quot;:0}">
+<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;short/Screenshot_20260612-072802.avif&quot;,&quot;index&quot;:0}">
+<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;short/Screenshot_20260612-072738.avif&quot;,&quot;index&quot;:0}"></p>
+<p>And this has been going on for nearly week.</p>
+<p>If you’ve ever wondered what the dangers of a [practically] unmoderated platform in the hands of a billionaire “free-speech absolutist” could possibly be for your day-to-day life, here it is. Elon doesn’t appear to care who says what. Ads don’t appear to be vetted. As long as your bots pay their dues, and pay the ad fare, you can shove your dirty little opinions into the eyeballs of whomever you like.</p>
+<p>Just as an echo chamber, X was dangerous, but it’s becoming clearer and clearer that it’s now just toxic to any democratic process. With so many bots on the platform, and so many real political campaigners pretending to be somewhere they’re not, the time when you can have an honest discussion has gone.</p>]]></description>
       <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
     </item>
     <item>
@@ -4907,31 +4893,31 @@ Into empty area / &ldquo;Clipboard to file&rdquo; menu: Will create the file cli
       <link>https://jeremy.bicha.net/2022/10/17/ubuntu-bug-fix-anniversary/</link>
       <guid isPermaLink="true">https://jeremy.bicha.net/2022/10/17/ubuntu-bug-fix-anniversary/</guid>
       <pubDate>Mon, 17 Oct 2022 13:54:46 GMT</pubDate>
-      <description><![CDATA[<p>I first installed Ubuntu when Ubuntu 6.06 LTS &#8220;Dapper Drake&#8221; was released. I was brand new to Linux. This was Ubuntu&#8217;s first LTS release; the very first release of Ubuntu was only a year and a half before. I was impressed by how usable and useful the system was. It soon became my primary home operating system and I wanted to help make it better.</p>
+      <description><![CDATA[<p class="wp-block-paragraph">I first installed Ubuntu when Ubuntu 6.06 LTS &#8220;Dapper Drake&#8221; was released. I was brand new to Linux. This was Ubuntu&#8217;s first LTS release; the very first release of Ubuntu was only a year and a half before. I was impressed by how usable and useful the system was. It soon became my primary home operating system and I wanted to help make it better.</p>
 
 
 
-<p>On October 15, 2009, I was <a rel="noreferrer noopener" href="https://irclogs.ubuntu.com/2009/10/15/%23edubuntu.html#t16:16" target="_blank">helping test</a> the release candidates ISOs for the Ubuntu 9.10 release. Specifically, I tested Edubuntu. Edubuntu has since been discontinued but at the time it was an official Ubuntu flavor preloaded with lots of education apps. One of those education apps was <a rel="noreferrer noopener" href="https://moodle.org/" target="_blank">Moodle</a>, an e-learning platform.</p>
+<p class="wp-block-paragraph">On October 15, 2009, I was <a rel="noreferrer noopener" href="https://irclogs.ubuntu.com/2009/10/15/%23edubuntu.html#t16:16" target="_blank">helping test</a> the release candidates ISOs for the Ubuntu 9.10 release. Specifically, I tested Edubuntu. Edubuntu has since been discontinued but at the time it was an official Ubuntu flavor preloaded with lots of education apps. One of those education apps was <a rel="noreferrer noopener" href="https://moodle.org/" target="_blank">Moodle</a>, an e-learning platform.</p>
 
 
 
-<p>When testing Moodle, I found that a default installation would make Moodle impossible to use locally. I figured out how to fix this issue. This was really exciting: I finally found an Ubuntu bug I knew how to fix. I filed the <a rel="noreferrer noopener" href="https://launchpad.net/bugs/452622" target="_blank">bug report</a>.</p>
+<p class="wp-block-paragraph">When testing Moodle, I found that a default installation would make Moodle impossible to use locally. I figured out how to fix this issue. This was really exciting: I finally found an Ubuntu bug I knew how to fix. I filed the <a rel="noreferrer noopener" href="https://launchpad.net/bugs/452622" target="_blank">bug report</a>.</p>
 
 
 
-<p>This was very late in the Ubuntu 9.10 release process and Ubuntu was in the <a rel="noreferrer noopener" href="https://wiki.ubuntu.com/FinalFreeze" target="_blank">Final Freeze</a> state. In Final Freeze, every upload to packages included in the default install need to be individually approved by a member of the Ubuntu Release Team. Also, I didn&#8217;t have upload rights to Ubuntu. Jordan Mantha (<em>LaserJock</em>), an Edubuntu maintainer, sponsored my bug fix upload.</p>
+<p class="wp-block-paragraph">This was very late in the Ubuntu 9.10 release process and Ubuntu was in the <a rel="noreferrer noopener" href="https://wiki.ubuntu.com/FinalFreeze" target="_blank">Final Freeze</a> state. In Final Freeze, every upload to packages included in the default install need to be individually approved by a member of the Ubuntu Release Team. Also, I didn&#8217;t have upload rights to Ubuntu. Jordan Mantha (<em>LaserJock</em>), an Edubuntu maintainer, sponsored my bug fix upload.</p>
 
 
 
-<p>I also forwarded my patch <a href="https://bugs.debian.org/551402">to Debian</a>.</p>
+<p class="wp-block-paragraph">I also forwarded my patch <a href="https://bugs.debian.org/551402">to Debian</a>.</p>
 
 
 
-<p>While trying to figure out what wasn&#8217;t working with Moodle, I stumbled across a packaging bug. Edubuntu provided a choice of MySQL or PostgreSQL for the system default database. MySQL was the default, but if PostgreSQL were chosen instead, Moodle wouldn&#8217;t work. I figured out how to fix <a rel="noreferrer noopener" href="https://launchpad.net/bugs/440098" target="_blank">this bug</a> too a week later. Jordan sponsored this upload and Steve Langasek from the Release Team approved it so it also was able to be fixed before 9.10 was released.</p>
+<p class="wp-block-paragraph">While trying to figure out what wasn&#8217;t working with Moodle, I stumbled across a packaging bug. Edubuntu provided a choice of MySQL or PostgreSQL for the system default database. MySQL was the default, but if PostgreSQL were chosen instead, Moodle wouldn&#8217;t work. I figured out how to fix <a rel="noreferrer noopener" href="https://launchpad.net/bugs/440098" target="_blank">this bug</a> too a week later. Jordan sponsored this upload and Steve Langasek from the Release Team approved it so it also was able to be fixed before 9.10 was released.</p>
 
 
 
-<p>Although the first bug was new to 9.10 because of a behavior change in a low-level dependency, this PostgreSQL bug existed in stable Ubuntu releases. Therefore, I prepared <a href="https://wiki.ubuntu.com/StableReleaseUpdates" target="_blank" rel="noreferrer noopener">Stable Release Updates </a>for Ubuntu 9.04 and Ubuntu 8.04 LTS.</p>
+<p class="wp-block-paragraph">Although the first bug was new to 9.10 because of a behavior change in a low-level dependency, this PostgreSQL bug existed in stable Ubuntu releases. Therefore, I prepared <a href="https://wiki.ubuntu.com/StableReleaseUpdates" target="_blank" rel="noreferrer noopener">Stable Release Updates </a>for Ubuntu 9.04 and Ubuntu 8.04 LTS.</p>
 
 
 
@@ -4939,23 +4925,23 @@ Into empty area / &ldquo;Clipboard to file&rdquo; menu: Will create the file cli
 
 
 
-<p>Six months later, I was able to attend my first Ubuntu Developer Summit. I was living in Bahrain (in the Middle East) at the time and a trip to Belgium seemed easier to me than if I were living in the United States where I usually live. This was the Ubuntu Developer Summit where planning for Ubuntu 10.10 took place. I like to believe that I helped with the naming since I <a href="https://wiki.ubuntu.com/DevelopmentCodeNames?action=diff&amp;rev1=594&amp;rev2=595">added</a> <em>Maverick</em> to the wiki page where people contribute suggestions.</p>
+<p class="wp-block-paragraph">Six months later, I was able to attend my first Ubuntu Developer Summit. I was living in Bahrain (in the Middle East) at the time and a trip to Belgium seemed easier to me than if I were living in the United States where I usually live. This was the Ubuntu Developer Summit where planning for Ubuntu 10.10 took place. I like to believe that I helped with the naming since I <a href="https://wiki.ubuntu.com/DevelopmentCodeNames?action=diff&amp;rev1=594&amp;rev2=595">added</a> <em>Maverick</em> to the wiki page where people contribute suggestions.</p>
 
 
 
-<p>I did not apply for financial sponsorship to attend and I stayed in a budget hotel on the other side of Brussels. The <a href="https://wiki.ubuntu.com/UDS-M" target="_blank" rel="noreferrer noopener">event venue</a> was on the outskirts of Brussels so there wasn&#8217;t a direct bus or metro line to get there. I rented a car. I didn&#8217;t yet have a smartphone and I had a LOT of trouble navigating to and from the site every day. I learned then that it&#8217;s best to stay close to the conference site since a lot of the event is actually in the unstructured time in the evenings. Fortunately, I managed to arrive in time for Mark Shuttleworth&#8217;s keynote where the Unity desktop was first announced. This was released in Ubuntu 10.10 in the Ubuntu Netbook Remix and became the default for Ubuntu Desktop in Ubuntu 11.04.</p>
+<p class="wp-block-paragraph">I did not apply for financial sponsorship to attend and I stayed in a budget hotel on the other side of Brussels. The <a href="https://wiki.ubuntu.com/UDS-M" target="_blank" rel="noreferrer noopener">event venue</a> was on the outskirts of Brussels so there wasn&#8217;t a direct bus or metro line to get there. I rented a car. I didn&#8217;t yet have a smartphone and I had a LOT of trouble navigating to and from the site every day. I learned then that it&#8217;s best to stay close to the conference site since a lot of the event is actually in the unstructured time in the evenings. Fortunately, I managed to arrive in time for Mark Shuttleworth&#8217;s keynote where the Unity desktop was first announced. This was released in Ubuntu 10.10 in the Ubuntu Netbook Remix and became the default for Ubuntu Desktop in Ubuntu 11.04.</p>
 
 
 
-<p>Ubuntu&#8217;s switch to Unity provided me with a huge opportunity. In April 2011, GNOME 3.0 was released. I wanted to try it but it wasn&#8217;t yet packaged in Ubuntu or Debian. It was suggested that I could help work on packaging the major new version in a <a rel="noreferrer noopener" href="https://help.launchpad.net/Packaging/PPA" target="_blank">PPA</a>. The PPA was convenient because I was able to get permission to upload there easier than being able to upload directly to Ubuntu. My contributions there then enabled me to get upload rights to the Ubuntu Desktop packages later that year.</p>
+<p class="wp-block-paragraph">Ubuntu&#8217;s switch to Unity provided me with a huge opportunity. In April 2011, GNOME 3.0 was released. I wanted to try it but it wasn&#8217;t yet packaged in Ubuntu or Debian. It was suggested that I could help work on packaging the major new version in a <a rel="noreferrer noopener" href="https://help.launchpad.net/Packaging/PPA" target="_blank">PPA</a>. The PPA was convenient because I was able to get permission to upload there easier than being able to upload directly to Ubuntu. My contributions there then enabled me to get upload rights to the Ubuntu Desktop packages later that year.</p>
 
 
 
-<p>At a later Ubuntu Developer Summit, it was suggested that I start an official Ubuntu flavor for GNOME. So along with Tim Lunn (<em>darkxst</em>), I co-founded Ubuntu GNOME. Years later, Canonical stopped actively developing Unity; instead, Ubuntu GNOME was merged into Ubuntu Desktop.</p>
+<p class="wp-block-paragraph">At a later Ubuntu Developer Summit, it was suggested that I start an official Ubuntu flavor for GNOME. So along with Tim Lunn (<em>darkxst</em>), I co-founded Ubuntu GNOME. Years later, Canonical stopped actively developing Unity; instead, Ubuntu GNOME was merged into Ubuntu Desktop.</p>
 
 
 
-<p>Along the way, I became an <a href="https://wiki.ubuntu.com/UbuntuDevelopers#Ubuntu_Core_Developers" target="_blank" rel="noreferrer noopener">Ubuntu Core Developer</a> and a <a href="https://wiki.debian.org/DebianDeveloper" target="_blank" rel="noreferrer noopener">Debian Developer</a>. And in January 2022, I joined Canonical on the Desktop Team. This all still feels amazing to me. It took me a long time to be comfortable calling myself a developer!</p>
+<p class="wp-block-paragraph">Along the way, I became an <a href="https://wiki.ubuntu.com/UbuntuDevelopers#Ubuntu_Core_Developers" target="_blank" rel="noreferrer noopener">Ubuntu Core Developer</a> and a <a href="https://wiki.debian.org/DebianDeveloper" target="_blank" rel="noreferrer noopener">Debian Developer</a>. And in January 2022, I joined Canonical on the Desktop Team. This all still feels amazing to me. It took me a long time to be comfortable calling myself a developer!</p>
 
 
 
@@ -4963,11 +4949,11 @@ Into empty area / &ldquo;Clipboard to file&rdquo; menu: Will create the file cli
 
 
 
-<p>My first Ubuntu bugfix was 13 years ago this week. Because Ubuntu historically uses alphabetical adjective animal release names, 13 years means that we have rolled around to the letter K again! Later today, we begin release candidate ISO testing for Ubuntu 22.10 &#8220;Kinetic Kudu&#8221;.</p>
+<p class="wp-block-paragraph">My first Ubuntu bugfix was 13 years ago this week. Because Ubuntu historically uses alphabetical adjective animal release names, 13 years means that we have rolled around to the letter K again! Later today, we begin release candidate ISO testing for Ubuntu 22.10 &#8220;Kinetic Kudu&#8221;.</p>
 
 
 
-<p>I encourage you to help us test the release candidates and report bugs that you find. If you figure out how to fix a bug, we still <a href="https://wiki.ubuntu.com/SponsorshipProcess">sponsor</a> bug fixes. If you are an Ubuntu contributor, I highly encourage you to attend an Ubuntu Summit if you can. The first Ubuntu Summit in years will be in 3 weeks in Prague, but the intent is for the Ubuntu Summits to be recurring events again.</p>]]></description>
+<p class="wp-block-paragraph">I encourage you to help us test the release candidates and report bugs that you find. If you figure out how to fix a bug, we still <a href="https://wiki.ubuntu.com/SponsorshipProcess">sponsor</a> bug fixes. If you are an Ubuntu contributor, I highly encourage you to attend an Ubuntu Summit if you can. The first Ubuntu Summit in years will be in 3 weeks in Prague, but the intent is for the Ubuntu Summits to be recurring events again.</p>]]></description>
       <source url="https://jeremy.bicha.net/category/ubuntu/feed/?mrss=off">Jeremy Bicha</source>
     </item>
     <item>
