@@ -6,57 +6,33 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Tue, 14 Jul 2026 02:37:18 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 02:35:28 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Januscape vulnerability CVE-2026-53359 mitigations available</title>
-      <link>https://ubuntu.com//blog/januscape-linux-vulnerability-mitigations-available</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/januscape-linux-vulnerability-mitigations-available</guid>
-      <pubDate>Sat, 11 Jul 2026 20:00:00 GMT</pubDate>
-      <description><![CDATA[<h2 class="wp-block-heading">Introduction</h2>
-<p>A local privilege escalation (LPE) vulnerability affecting the Linux kernel was publicly disclosed on July 6, 2026. The vulnerability was assigned CVE ID <a href="https://ubuntu.com/security/CVE-2026-53359">CVE-2026-53359</a> and is referred to as Januscape. This vulnerability affects all Ubuntu releases.</p>
-<p>Neither NVD nor <a href="http://kernel.org">Kernel.org</a> have published their own CVSS scores for this issue; we calculated it as CVSS 4 8.4 and have seen others publish CVSS 3 7.8, 8.8, and CVSS 4 9.3.</p>
-<p>The vulnerability affects nested virtualization in the KVM system on Intel and AMD x86_64 systems. Other architectures are not affected. A Proof of Concept exploit was published that demonstrates crashing a hypervisor host from a guest. Some reports claim that a full exploit exists.</p>
-<p>The fix must be installed in the hypervisor’s kernel: if you are using a cloud service provider with a hypervisor based on Linux KVM on Intel or AMD hardware and you can use nested virtualization, your VM or host may be compromised by another tenant. If your cloud service provider does not allow nested virtualization, you are not affected by this issue.</p>
-<p>If you run hypervisors yourself, your attack surface is from root in your guest virtual machines.</p>
-<p>Linux kernel packages which implement the proposed patch will be released. Until security updates are available, you can disable nested virtualization to prevent abuse of this issue. This might disrupt your legitimate work and you should weigh the pros and cons before using this mitigation.</p>
-<p>This post describes how to disable nested virtualization.</p>
-<h2 class="wp-block-heading">Which Ubuntu releases are affected by CVE-2026-53359?</h2>
-<figure class="wp-block-table"><table><tbody><tr><td><strong>Release</strong></td><td><strong>Package Name</strong></td><td><strong>Remediation status</strong></td></tr><tr><td>Trusty (14.04)</td><td>linux</td><td>Fix pending</td></tr><tr><td></td><td></td><td></td></tr><tr><td>Xenial (16.04)</td><td>linux</td><td>Fix pending</td></tr><tr><td></td><td></td><td></td></tr><tr><td>Bionic (18.04)</td><td>linux</td><td>Fix pending</td></tr><tr><td></td><td></td><td></td></tr><tr><td>Focal (20.04)</td><td>linux</td><td>Fix pending</td></tr><tr><td></td><td></td><td></td></tr><tr><td>Jammy (22.04)</td><td>linux</td><td>Fix pending</td></tr><tr><td></td><td></td><td></td></tr><tr><td>Noble (24.04)</td><td>linux</td><td>Fix pending</td></tr><tr><td></td><td></td><td></td></tr><tr><td>Resolute (26.04)</td><td>linux</td><td>Fix pending</td></tr><tr><td></td><td></td><td></td></tr></tbody></table></figure>
-<h2 class="wp-block-heading">How to check if you are impacted by CVE-2026-53359</h2>
-<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained"><div class="wp-block-group__inner-container">
-<pre class="wp-block-code"><code>
-grep . /sys/module/kvm_{amd,intel}/parameters/nested
-# 1 or Y means you are impacted. 0 or N means mitigated.
-# One or two "No such file or directory" is expected.
-# Two "No such file or directory" does not itself mean
-# you are safe -- the module may still be loaded later.</code></pre>
-<h2 class="wp-block-heading">Impact of CVE-2026-53359</h2>
-<h3 class="wp-block-heading">Deployments without virtualization workloads</h3>
-<p>Even if you do not have virtual machines running now, system services such as libvirt, lxd, multipass, incus, etc may allow users to create virtual machines in future. An attacker could use the ability provided by these services to create virtual machines and perform local privilege escalation (LPE) by exploiting this vulnerability. Device node permissions may also allow users the necessary permissions to exploit the vulnerability. Inspect the output of namei -l /dev/kvm and getfacl /dev/kvm to see the permissions on the usual device node. You should ensure that only privileged users can write to the /dev/kvm device. The default on Ubuntu is that /dev/kvm is only writable by the superuser (root) and the kvm group. Only privileged users are added to the kvm group.</p>
-<h3 class="wp-block-heading">Deployments with container workloads</h3>
-<p>Unprivileged containers do not have sufficient permissions to start KVM-accelerated virtual machines and are thus not a vector for concern. Privileged containers may have sufficient permissions to start KVM-accelerated virtual machines and should not be considered safe. These should be treated as per the ‘Deployments without virtualization workloads’ section, above.</p>
-<h3 class="wp-block-heading">Deployments with virtualization workloads</h3>
-<p>Any process or user inside a virtual machine that can cause kernel module loading – or supply a new kernel – can manipulate page tables sufficiently to crash or potentially exploit the host or exploit other guest virtual machines on the host.</p>
-<h2 class="wp-block-heading">How to apply mitigations for CVE-2026-53359</h2>
-<p>You can disable virtualization nesting on your hosts:</p>
-<pre class="wp-block-code"><code># unload modules, both are harmless
-sudo rmmod kvm_amd ; sudo rmmod kvm_intel
-# look to see if any configuration file forces nesting on
-grep nested /etc/modprobe.d/*
-# disable nesting for the implementations of KVM in both AMD and Intel processors
-echo 'options kvm_amd nested=0' | sudo tee /etc/modprobe.d/nested.conf
-echo 'options kvm_intel nested=0' | sudo tee -a /etc/modprobe.d/nested.conf
-
-# reload modules if necessary, both are harmless
-sudo modprobe kvm_amd ; sudo modprobe kvm_intel</code></pre>
-</div></div>
-<h2 class="wp-block-heading">Further reading</h2>
-<ul>
-<li><a href="https://github.com/V4bel/Januscape/blob/main/assets/write-up.md">Technical writeup by exploit author Hyunwoo Kim</a></li>
-<li><a href="https://ubuntu.com/security/disclosure-policy">Read Ubuntu’s disclosure policy</a></li>
-</ul>]]></description>
+      <title>MAAS installation: bare metal provisioning is easier than ever</title>
+      <link>https://ubuntu.com//blog/maas-installation-bare-metal-provisioning-is-easier-than-ever</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/maas-installation-bare-metal-provisioning-is-easier-than-ever</guid>
+      <pubDate>Tue, 14 Jul 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[<p><a href="https://canonical.com/maas">MAAS</a> brings cloud-like automation to physical servers. It helps teams discover, commission, deploy, and repurpose machines from a central control plane, turning bare metal into a programmable resource.</p>
+<p>But to experience that value, users first need to get MAAS up and running. That path is now cleaner and easier to follow. <a href="https://canonical.com/maas/docs/latest/how-to-guides/get-started/install-maas/">We’ve created new documentation</a> to help you get started, providing a more direct installation and configuration workflow, using the MAAS snap and the PostgreSQL snap to simplify the setup of a complete MAAS environment.</p>
+<p>This improvement makes it easier to try MAAS in a lab, build a proof of concept, or prepare a small deployment before moving to larger production environments.</p>
+<p>In this blog, we’ll walk through what has changed, why it matters, and how the new documentation helps users start exploring MAAS faster.</p>
+<h2 class="wp-block-heading">Installing MAAS: where we came from</h2>
+<p>There are several ways to start with MAAS, depending on what you want to achieve. For a quick first look, the <a href="https://canonical.com/maas/tutorials/build-a-maas-and-lxd-environment-in-30-minutes-with-multipass-on-ubuntu#1-a-potential-maas-test-setup">“Build a MAAS and LXD environment in 30 minutes with Multipass” tutorial</a> provides a fully sandboxed environment that runs on a PC or laptop. This is a great way to understand MAAS, explore the UI, and see the basic machine lifecycle without affecting a real network or connecting physical servers. In this workflow, users rely on the maas-test-db helper – however, this doesn’t reflect production workflows.</p>
+<p>At some point, users need to experience MAAS with real hardware. Bare metal automation is about discovering, commissioning, deploying, and repurposing physical machines, and that is where a more realistic installation becomes useful.</p>
+<h2 class="wp-block-heading">The new process: a clearer first step into bare metal provisioning</h2>
+<p>The new documentation focuses on provisioning actual machines through a series of how-to articles. The core installation model remains familiar: users install MAAS, provide a <a href="https://canonical.com/data/postgresql">PostgreSQL</a> database, initialize the service, create an administrator account, and access MAAS through the CLI or the web UI. </p>
+<p>The <a href="https://canonical.com/maas/docs/latest/how-to-guides/get-started/">“Get started” guide</a> walks you through using the MAAS snap and PostgreSQL snap directly for a single-machine deployment in region+rack mode. This creates something closer to a standard MAAS setup than our previous workflows enabled, as well as being  a practical setup for a homelab, a small proof of concept, or a small production environment. By following the steps, you’ll create a complete MAAS environment, without needing to design a more complex topology from the beginning.</p>
+<figure class="wp-block-image size-full"><img alt="" height="120" loading="lazy" sizes="(min-width: 653px) 653px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_653/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F749e%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F749e%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F749e%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F749e%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_653/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F749e%2Fimage.png 653w" width="653"/></figure>
+<p>This workflow is more direct, reducing the amount of manual package and service setup. The result is a smoother first experience: users can spend less time assembling the platform, and more time exploring what MAAS actually does. </p>
+<p>After installation, users can move directly into the “<a href="https://canonical.com/maas/docs/latest/how-to-guides/get-started/configure-maas/">Configure MAAS” guide</a>, which explains the basic configuration needed to make MAAS useful: logging in, setting up the initial network services, and preparing the environment to manage machines. For a first deployment, this usually means setting an upstream DNS server, identifying the subnet that MAAS will manage, selecting the rack controller that will provide DHCP, defining a dynamic IP range, enabling DHCP on the relevant VLAN, and setting the gateway for the subnet.</p>
+<p>This keeps the first deployment focused on learning the MAAS workflow, instead of making early architectural decisions that may only matter in larger environments.</p>
+<p>These are foundational steps. They connect MAAS to the network where machines will boot, receive addresses, and later move through discovery, commissioning, and deployment. By presenting them as part of the same getting-started flow, the documentation makes the first real-hardware experience easier to follow from beginning to end.</p>
+<h2 class="wp-block-heading">Start your MAAS journey</h2>
+<p>Getting started with MAAS is now simpler. The new documentation gives users a clearer path from installation to initial configuration, and from there to the first real experience of managing physical machines.</p>
+<p>For many users, this is the right first step: the new documentation is a series of how-to articles, simple enough for a lab or proof of concept, but realistic enough to understand how MAAS works with real hardware. And when the environment needs to grow, the documentation also covers more advanced options, such as <a href="https://canonical.com/maas/docs/latest/how-to-guides/get-started/configure-postgresql-for-remote-connections/">configuring PostgreSQL for remote connections</a>.</p>
+<p>If you want to try MAAS, start with the new “<a href="https://canonical.com/maas/docs/latest/how-to-guides/get-started/">Get started with MAAS” guide</a>. Install MAAS, configure the basics, connect your machines, and begin exploring bare metal automation.</p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -1171,6 +1147,169 @@ Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Migue
 Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
 A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
       <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
+    </item>
+    <item>
+      <title>Introducing pkgcli: A nicer command-line interface for PackageKit</title>
+      <link>https://blog.tenstral.net/2026/06/introducing-pkgcli-a-nicer-command-line-interface-for-packagekit.html</link>
+      <guid isPermaLink="true">https://blog.tenstral.net/2026/06/introducing-pkgcli-a-nicer-command-line-interface-for-packagekit.html</guid>
+      <pubDate>Sun, 14 Jun 2026 06:22:00 GMT</pubDate>
+      <description><![CDATA[<p class="wp-block-paragraph">For almost two decades, the <a href="https://github.com/PackageKit/PackageKit">PackageKit</a> package management abstraction layer has shipped with <code>pkcon</code> as its command-line client. <code>pkcon</code> does its job, but it was always kind of a &#8220;testing&#8221; front-end for the PackageKit daemon rather than a tool designed for everyday use. The focus has instead been on the GUI tools, automatic system updates, GUI application managers and other front-ends. Its command names mirror the D-Bus API almost one-to-one (<code>get-details</code>, <code>get-updates</code>, <code>get-depends</code>), output is very plain, and there is no machine-readable mode for scripting. Most importantly though, there has been no development on it at all for almost a decade, so <code>pkcon</code> was stuck in its rudimentary state from that era.</p>
+
+
+
+<p class="wp-block-paragraph">Since a lot of changes will be coming to PackageKit, and testing the daemon and working with it from the command-line was not very pleasant anymore in 2025/2026, I decided to modernize the tool as part of my work as fellow for the <a href="https://www.sovereign.tech/">Sovereign Tech Agency</a> last year. <code>pkgcli</code> is the new command-line client for PackageKit. It is built from the ground up to be pleasant to use interactively <em>and</em> easy to drive from scripts.</p>
+
+
+
+<h2 class="wp-block-heading">Why a new tool?</h2>
+
+
+
+<p class="wp-block-paragraph">Of course, instead of introducing a new tool, I could have just expanded <code>pkcon</code> instead. The problem with that approach is that the <code>pkcon</code> utility has been around for so long and its command-line API had ossified so much, that rather than changing it and potentially breaking a lot of scripts relying on its quirks, I decided to introduce a new tool instead. <code>pkcon</code> can still be optionally compiled for people who need it in their scripts and workflows.</p>
+
+
+
+<p class="wp-block-paragraph">The goals for <code>pkgcli</code>, and the features it now has are:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Human-friendly command names.</strong> Verbs that read the way you&#8217;d describe the task, instead of mirroring the D-Bus API 1:1: <code>show</code>, <code>search</code>, <code>list-updates</code>, <code>what-provides</code>, instead of <code>get-details</code> and friends.</li>
+
+
+
+<li><strong>Readable, <span style="color: #b00020;">c</span><span style="color: #0057b8;">o</span><span style="color: #0b7a0b;">l</span><span style="color: #8a4b00;">o</span><span style="color: #6f42c1;">r</span><span style="color: #007a7a;">e</span><span style="color: #c2410c;">d</span> output</strong> by default (still respecting <a href="https://no-color.org/"><code>NO_COLOR</code></a> and degrading gracefully).</li>
+
+
+
+<li><strong>A real scripting mode.</strong> A global <code>--json</code> flag emits <a href="https://jsonlines.org/">JSONL</a> instead of fully human-readable output when possible, to make it easier to use the tool for scripting purposes.</li>
+
+
+
+<li><strong>Sensible defaults.</strong> A few defaults have been changed, such as the metadata cache-age, or automatic cleanup of unused dependencies being enabled by default. This is more in line with current defaults by other tools and frontends. We also print package information in a slightly different, more readable way.</li>
+
+
+
+<li><strong>Better handling of internationalized text</strong>. Text should now align properly in the terminal window, and we should no longer have completely chaotic text output on non-English locales (especially Chinese/Japanese).</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">Why not <code>pkgctl</code>?</h2>
+
+
+
+<p class="wp-block-paragraph">Originally, this tool was called <code>pkgctl</code>, to match other common cross-distro tool names. However, that name was already taken by an <a href="https://man.archlinux.org/man/pkgctl.1">Arch-specific distro development tool</a>. When this issue was raised, we decided to just rename our tool to <code>pkgcli</code> with the next release, to avoid the name clash on Arch Linux.</p>
+
+
+
+<h2 class="wp-block-heading">Examples!</h2>
+
+
+
+<p class="wp-block-paragraph">Here are some examples on how to use the new tool (some of which include the abridged output <code>pkgcli</code> prints).</p>
+
+
+
+<p class="wp-block-paragraph">Search for anything containing the string &#8220;editor&#8221; in name or description, then look at the details of one result:</p>
+
+
+
+<pre class="wp-block-code"><code>$ pkgcli search editor
+Querying                  &#91;████████████████████████████████████████] 100%
+<span style="color:#00a">▣</span> <span style="font-weight:bold">ace-of-penguins</span> <span style="color:#555555">1.5~rc2-7</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#00a">▣</span> <span style="font-weight:bold">acorn-fdisk</span> <span style="color:#555555">3.0.6-14</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#00a">▣</span> <span style="font-weight:bold">ardour</span> <span style="color:#555555">1:9.2.0+ds-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">audacity</span> <span style="color:#555555">3.7.7+dfsg-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">manual:debian-testing-main</span>]
+<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">audacity-data</span> <span style="color:#555555">3.7.7+dfsg-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">auto:debian-testing-main</span>]
+<span style="color:#00a">▣</span> <span style="font-weight:bold">augeas-tools</span> <span style="color:#555555">1.14.1-1.1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#00a">▣</span> <span style="font-weight:bold">emacs</span> <span style="color:#555555">1:30.2+1-3</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit</span> <span style="color:#555555">48.1-9+b1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit-common</span> <span style="color:#555555">48.1-9</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit-dev</span> <span style="color:#555555">48.1-9+b1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+&#91;...]
+
+$ pkgcli show nano
+<span style="font-weight:bold">Package:</span> nano
+<span style="font-weight:bold">Version:</span> 9.0-1
+<span style="font-weight:bold">Summary:</span> small, friendly text editor inspired by Pico
+<span style="font-weight:bold">Description:</span> GNU nano is an easy-to-use text editor originally designed as
+ a replacement for Pico, the ncurses-based editor from the non-free mailer
+ package Pine.
+&#91;...]
+<span style="font-weight:bold">URL:</span> https://www.nano-editor.org/
+<span style="font-weight:bold">Group:</span> publishing
+<span style="font-weight:bold">Installed Size:</span> 2.9 MB
+<span style="font-weight:bold">Download Size:</span> 646.0 KB</code></pre>
+
+
+
+<p class="wp-block-paragraph">Search only within package <em>names</em> rather than descriptions:</p>
+
+
+
+<pre class="wp-block-code"><code>$ pkgcli search name python3</code></pre>
+
+
+
+<p class="wp-block-paragraph">Check for updates. <code>refresh</code> updates the metadata, then <code>list-updates</code> reports what&#8217;s available:</p>
+
+
+
+<pre class="wp-block-code"><code>$ pkgcli refresh &amp;&amp; pkgcli list-updates
+Loading cache            &#91;████████████████████████████████████████] 100%
+<span style="color:#0aa">▲</span> <span style="font-weight:bold">cme</span> <span style="color:#555555">1.048-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#0aa">▲</span> <span style="font-weight:bold">gir1.2-gdm-1.0</span> <span style="color:#555555">50.1-2</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick-7-common</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick-7.q16</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#0aa">▲</span> <span style="font-weight:bold">libdlrestrictions1</span> <span style="color:#555555">0.22.0</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#0aa">▲</span> <span style="font-weight:bold">libfftw3-bin</span> <span style="color:#555555">3.3.11-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
+<span style="color:#0aa">▲</span> <span style="font-weight:bold">libfftw3-dev</span> <span style="color:#555555">3.3.11-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]</code></pre>
+
+
+
+<p class="wp-block-paragraph">Explore relationships between packages:</p>
+
+
+
+<pre class="wp-block-code"><code>$ pkgcli list-depends inkscape  <span style="color:#6b6b6b"># list what inkscape depends on</span>
+$ pkgcli list-requiring libappstream5  <span style="color:#6b6b6b"># list what requires libappstream5</span></code></pre>
+
+
+
+<p class="wp-block-paragraph">Find the package that provides a capability, here the AV1 GStreamer decoder:</p>
+
+
+
+<pre class="wp-block-code"><code>$ pkgcli what-provides "gstreamer1(decoder-video/x-av1)"
+<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">gstreamer1.0-plugins-bad</span> <span style="color:#555555">1.28.3-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">auto:debian-testing-main</span>]</code></pre>
+
+
+
+<p class="wp-block-paragraph">You can also have JSON output for most commands! Attach <code>--json</code> to any query and pipe the result straight into <a href="https://jqlang.github.io/jq/"><code>jq</code></a>. Each line is a self-contained JSON object:</p>
+
+
+
+<pre class="wp-block-code"><code>$ pkgcli --json list-updates | jq -r '.name'
+cme
+gir1.2-gdm-1.0
+imagemagick
+imagemagick-7-common
+imagemagick-7.q16
+libdlrestrictions1
+libfftw3-bin
+libfftw3-dev
+libfftw3-double3</code></pre>
+
+
+
+<h2 class="wp-block-heading">Try it</h2>
+
+
+
+<p class="wp-block-paragraph"><code>pkgcli</code> is built by default alongside the rest of PackageKit since PackageKit 1.3.4. If your distribution ships a recent enough PackageKit, it should already be on your <code>PATH</code>. You can read its man page <code>man pkgcli</code> for more information. Feedback, bug reports, and patches are <a href="https://github.com/PackageKit/PackageKit/pulls">very welcome</a>.</p>]]></description>
+      <source url="http://blog.tenstral.net/category/planet/planet-ubuntu/feed">Matthias Klumpp</source>
     </item>
     <item>
       <title>What’s happened?</title>
@@ -8092,7 +8231,7 @@ Time: 3.031 secs</code></pre>]]></description>
       <pubDate>Sat, 30 Jan 2016 23:00:00 GMT</pubDate>
       <description><![CDATA[<p>Well yes, not only reviews and tests only for products like computer but today we are also on <strong>car industry</strong> testing the new <strong>Opel Astra Elective</strong> which supports <strong>Android Auto</strong>.</p>
 <p>First of all, before I start, I want to thanks my friend Davide, who works in Opel workshop, for all of his patience and availability gave to me. Really thanks because he lets me to write this review.<br />
-Of course, I tested this all with him smartphone (OnePlus Two) and mine (Nexus 5). Screenshots made by him <img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+Of course, I tested this all with him smartphone (OnePlus Two) and mine (Nexus 5). Screenshots made by him <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
 <h2><strong>Details about new Opel Astra Elective</strong></h2>
 <p>Unfortunately in this first &#8220;episode&#8221; I will focus on use of <strong>Android Auto </strong>but, if you want to see more (explained) car&#8217;s details, you can go to Opel website: <a href="http://www.opel.com/" target="_blank" rel="noopener">http://www.opel.com/</a></p>
 <h2><strong>What is Android Auto?</strong></h2>
