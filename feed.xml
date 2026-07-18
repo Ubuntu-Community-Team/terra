@@ -6,9 +6,47 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 17 Jul 2026 02:45:52 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 02:37:07 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tracing a memory leak bug in PID 1 and contributing an upstream fix: a Linux support story</title>
+      <link>https://ubuntu.com//blog/fixing-memory-bug</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/fixing-memory-bug</guid>
+      <pubDate>Fri, 17 Jul 2026 08:04:51 GMT</pubDate>
+      <description><![CDATA[<p>Some memory leaks are straightforward to detect. A process allocates memory, forgets to free it, and grows until something breaks. This was not that kind of leak.</p>
+<p>This is the story of how Canonical Support helped a global retail organization trace the cause for an unusual memory leak originating in PID 1, the very first process started by the kernel during the system boot sequence. The memory footprint was 10 times higher than expected. By investigating the issue across three separate system layers – a misconfigured storage orchestrator, a kernel race condition, and glibc’s allocator – our team was able to identify the source and fast-track a patch. </p>
+<h2 class="wp-block-heading">The symptom that made no sense</h2>
+<p>The customer was the innovation and engineering arm of a global retail company. They were responsible for driving the company’s retail transformation –  operating a fleet of servers running as part of a Ceph storage cluster. Across several of these cluster nodes, they began observing a pattern that made no immediate sense: <code>/sbin/init</code> (a symlink to systemd, which was running as PID 1) was consuming over 50% of available system memory. On servers with 125 GB of RAM, that meant PID 1 alone was holding approximately 70 GB, when only 8 GB were expected. The systems were experiencing out-of-memory kills, with the kernel forcibly terminating processes to free up available memory to survive.</p>
+<p>Nothing in the obvious diagnostic places explained it. Memory consumption continued to grow, and was never released. The investigation didn’t point to any obvious application-level cause. The customer had ruled out the workloads running on the servers as being the issue. The problem was somewhere deeper, below the application layer.</p>
+<h2 class="wp-block-heading">Starting the investigation: getting the right artifact</h2>
+<p>The support team at Canonical’s first move was to request sos-reports from the affected nodes, the standard starting point for system-level investigation. But sos-report output, comprehensive as it is, didn’t contain anything that explained a 70 GB footprint on PID 1. The next step was more direct: the engineer requested a core dump of PID 1 itself, generated with gcore 1.</p>
+<p>This is not a routine ask. Generating a core dump of the init process (PID 1) on a running production system is the technical equivalent of performing open-heart surgery while the patient is running a marathon. PID 1 is not just any process; it is the root of the entire user-space ecosystem. If it stumbles, the whole system collapses. Because the resulting file is massive – In this case the core dump compressed from 70 GiB to less than 10 GiB, a major red flag that there was significant repetition in the memory of the process –, transferring, downloading, and analyzing it can significantly delay the start of troubleshooting, and the investigation itself can take an unpredictable amount of time. The customer uploaded it, and that artifact is what cracked the case open.</p>
+<h2 class="wp-block-heading">The diagnostic leap: from memory to mounts</h2>
+<p>Analyzing the core dump, the Canonical engineer could see directly what was occupying PID 1’s memory. The footprint was tied to mount table entries. Specifically, entries from runs of a ceph-volume Docker container. The mount table, which systemd maintains and reparses every time changes are made, had grown to millions of entries.</p>
+<p>The behavior of systemd here is by design: it watches <code>/proc/self/mountinfo</code> and reparses the full table on every change. Under normal conditions, reparsing is not an issue, but because the table was now very large, continuously regenerating it caused serious issues. Each time systemd parsed it, glibc’s allocator retained the memory rather than returning it to the kernel. The memory accumulated but was never freed.</p>
+<p>That explained the mechanism, but it didn’t yet explain why the mount table had grown so large, or why ceph-volume containers were running so frequently.</p>
+<h2 class="wp-block-heading">The second leap: a silent failure nobody knew about</h2>
+<p>This is where the investigation crossed layers.</p>
+<p>Tracing the frequency of ceph-volume container activity, the engineer identified the actual source: a cephadm process – part of the Ceph orchestration layer – was repeatedly attempting to “zap” (a destructive operation that wipes all data and metadata from a disk to reset it to a clean state) an OSD (Object Storage Daemon) that no longer existed. Because there was no Logical Volume associated with it, the operation failed every time. And every time it failed, it retried. The ceph-volume Docker container was spinning up and tearing down in a continuous loop.</p>
+<p>Nobody had flagged this because the orchestration layer in Ceph was silently failing, and the only visible symptom, the one that brought the customer to Canonical Support, was 70 GB of memory consumed by PID 1 on nodes that had nothing obviously wrong with them.</p>
+<p>Stopping the loop was the workaround. Once cephadm was corrected and the repeated zap attempts ceased, the mount/unmount thrashing stopped, the race condition stopped triggering, and memory usage stabilized. The customer confirmed that the correction resolved the immediate problem.</p>
+<p>Once a workaround was implemented, the Canonical team was able to shift their attention to finding a permanent fix. </p>
+<h2 class="wp-block-heading">From diagnosis to upstream</h2>
+<p>Canonical’s support engineers traced the bug to the upstream code and regularly engaged with  the open source community to implement a fix that extended beyond the immediate customer. By providing Linux kernel maintainers with a fully characterized bug and a verified trigger, they secured a resolution that benefited the entire open source ecosystem.</p>
+<p>By shrinking the problem to a minimal reproducer, mounting and unmounting a tmpfs in a tight loop, the team isolated the precise, reproducible mechanism: a kernel race condition. This churn caused mount table entries to intermittently spike to millions of lines, triggering continuous systemd reparsing and glibc memory retention, which resulted in the 70 GB footprint on PID 1. </p>
+<p>The patch was merged into the mainline kernel. After passing through the <a href="https://ubuntu.com/project/docs/SRU/stable-release-updates/">Stable Release Update (SRU)</a> process, the fix landed in several Ubuntu kernel releases.</p>
+<h2 class="wp-block-heading">Why this case stands out</h2>
+<p>What looked like a  memory leak wasn’t quite the whole story. While the memory was being properly freed by systemd and tracked by glibc, it became unusable to the rest of the system, effectively starving the node. The real issue was that a silent misconfiguration in a storage orchestration layer, cephadm looping on a non-existent OSD, was the trigger for a kernel-level race condition that manifested as an inexplicably large footprint. No single layer told the full story: </p>
+<ul>
+<li>The sos-report pointed toward the symptom. </li>
+<li>The core dump identified the mechanism. </li>
+<li>Tracing the container activity identified the trigger. Only then was there enough precision to take the problem upstream.</li>
+</ul>
+<p>That chain, from production symptom to cross-layer diagnosis to mainline kernel patch, is what enterprise Linux support looks like when the problem isn’t immediately obvious and doesn’t fit a known category.</p>
+<p>If you want to understand what support from Canonical can bring to complex infrastructure problems, <a href="https://ubuntu.com/support">visit our support page</a>, or, <a href="https://ubuntu.com/support/contact-us">get in touch</a>.</p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>E383 Gambiarra Do Trovão Armada Em 64</title>
       <link>https://podcastubuntuportugal.org/e383/</link>
@@ -52,32 +90,6 @@ Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Migue
 Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
 A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
       <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
-    </item>
-    <item>
-      <title>MAAS installation: bare metal provisioning is easier than ever</title>
-      <link>https://ubuntu.com//blog/maas-installation-bare-metal-provisioning-is-easier-than-ever</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/maas-installation-bare-metal-provisioning-is-easier-than-ever</guid>
-      <pubDate>Tue, 14 Jul 2026 15:00:00 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://canonical.com/maas">MAAS</a> brings cloud-like automation to physical servers. It helps teams discover, commission, deploy, and repurpose machines from a central control plane, turning bare metal into a programmable resource.</p>
-<p>But to experience that value, users first need to get MAAS up and running. That path is now cleaner and easier to follow. <a href="https://canonical.com/maas/docs/latest/how-to-guides/get-started/install-maas/">We’ve created new documentation</a> to help you get started, providing a more direct installation and configuration workflow, using the MAAS snap and the PostgreSQL snap to simplify the setup of a complete MAAS environment.</p>
-<p>This improvement makes it easier to try MAAS in a lab, build a proof of concept, or prepare a small deployment before moving to larger production environments.</p>
-<p>In this blog, we’ll walk through what has changed, why it matters, and how the new documentation helps users start exploring MAAS faster.</p>
-<h2 class="wp-block-heading">Installing MAAS: where we came from</h2>
-<p>There are several ways to start with MAAS, depending on what you want to achieve. For a quick first look, the <a href="https://canonical.com/maas/tutorials/build-a-maas-and-lxd-environment-in-30-minutes-with-multipass-on-ubuntu#1-a-potential-maas-test-setup">“Build a MAAS and LXD environment in 30 minutes with Multipass” tutorial</a> provides a fully sandboxed environment that runs on a PC or laptop. This is a great way to understand MAAS, explore the UI, and see the basic machine lifecycle without affecting a real network or connecting physical servers. In this workflow, users rely on the maas-test-db helper – however, this doesn’t reflect production workflows.</p>
-<p>At some point, users need to experience MAAS with real hardware. Bare metal automation is about discovering, commissioning, deploying, and repurposing physical machines, and that is where a more realistic installation becomes useful.</p>
-<h2 class="wp-block-heading">The new process: a clearer first step into bare metal provisioning</h2>
-<p>The new documentation focuses on provisioning actual machines through a series of how-to articles. The core installation model remains familiar: users install MAAS, provide a <a href="https://canonical.com/data/postgresql">PostgreSQL</a> database, initialize the service, create an administrator account, and access MAAS through the CLI or the web UI. </p>
-<p>The <a href="https://canonical.com/maas/docs/latest/how-to-guides/get-started/">“Get started” guide</a> walks you through using the MAAS snap and PostgreSQL snap directly for a single-machine deployment in region+rack mode. This creates something closer to a standard MAAS setup than our previous workflows enabled, as well as being  a practical setup for a homelab, a small proof of concept, or a small production environment. By following the steps, you’ll create a complete MAAS environment, without needing to design a more complex topology from the beginning.</p>
-<figure class="wp-block-image size-full"><img alt="" height="120" loading="lazy" sizes="(min-width: 653px) 653px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_653/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F749e%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F749e%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F749e%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F749e%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_653/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F749e%2Fimage.png 653w" width="653"/></figure>
-<p>This workflow is more direct, reducing the amount of manual package and service setup. The result is a smoother first experience: users can spend less time assembling the platform, and more time exploring what MAAS actually does. </p>
-<p>After installation, users can move directly into the “<a href="https://canonical.com/maas/docs/latest/how-to-guides/get-started/configure-maas/">Configure MAAS” guide</a>, which explains the basic configuration needed to make MAAS useful: logging in, setting up the initial network services, and preparing the environment to manage machines. For a first deployment, this usually means setting an upstream DNS server, identifying the subnet that MAAS will manage, selecting the rack controller that will provide DHCP, defining a dynamic IP range, enabling DHCP on the relevant VLAN, and setting the gateway for the subnet.</p>
-<p>This keeps the first deployment focused on learning the MAAS workflow, instead of making early architectural decisions that may only matter in larger environments.</p>
-<p>These are foundational steps. They connect MAAS to the network where machines will boot, receive addresses, and later move through discovery, commissioning, and deployment. By presenting them as part of the same getting-started flow, the documentation makes the first real-hardware experience easier to follow from beginning to end.</p>
-<h2 class="wp-block-heading">Start your MAAS journey</h2>
-<p>Getting started with MAAS is now simpler. The new documentation gives users a clearer path from installation to initial configuration, and from there to the first real experience of managing physical machines.</p>
-<p>For many users, this is the right first step: the new documentation is a series of how-to articles, simple enough for a lab or proof of concept, but realistic enough to understand how MAAS works with real hardware. And when the environment needs to grow, the documentation also covers more advanced options, such as <a href="https://canonical.com/maas/docs/latest/how-to-guides/get-started/configure-postgresql-for-remote-connections/">configuring PostgreSQL for remote connections</a>.</p>
-<p>If you want to try MAAS, start with the new “<a href="https://canonical.com/maas/docs/latest/how-to-guides/get-started/">Get started with MAAS” guide</a>. Install MAAS, configure the basics, connect your machines, and begin exploring bare metal automation.</p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Ubuntu Weekly Newsletter Issue 952</title>
@@ -3910,6 +3922,240 @@ mirror and follow the instructions above.</p>]]></description>
       <source url="https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off">Corey Bryant</source>
     </item>
     <item>
+      <title>Building a NAS</title>
+      <link>https://apebox.org/wordpress/tech/1325</link>
+      <guid isPermaLink="true">https://apebox.org/wordpress/tech/1325</guid>
+      <pubDate>Tue, 12 Sep 2023 21:33:05 GMT</pubDate>
+      <description><![CDATA[<h2 class="wp-block-heading">The status quo</h2>
+
+
+
+<p>Back in 2015, I bought an off-the-shelf NAS, a QNAP TS-453mini, to act as my file store and Plex server. I had previously owned a Synology box, and whilst I liked the Synology OS and experience, the hardware was underwhelming. I loaded up the successor QNAP with four 5TB drives in RAID10, and moved all my files over (after some initial DoA drive issues were handled).</p>
+
+
+
+<figure class="wp-block-image size-medium"><img fetchpriority="high" decoding="async" width="550" height="550" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png" alt="QNAP TS-453mini product photo" class="wp-image-1329" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-150x150.png 150w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-768x768.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3.png 850w" sizes="(max-width: 550px) 100vw, 550px" /><figcaption class="wp-element-caption">QNAP TS-453mini product photo</figcaption></figure>
+
+
+
+<p>That thing has been in service for about 8 years now, and it&#8217;s been&#8230; a mixed bag. It was definitely more powerful than the predecessor system, but it was clear that QNAP&#8217;s OS was not up to the same standard as Synology&#8217;s &#8211; perhaps best exemplified by &#8220;HappyGet 2&#8221;, the QNAP webapp for downloading videos from streaming services like YouTube, whose icon is a straight rip-off of StarCraft 2. On its own, meaningless &#8211; but a bad omen for overall software quality</p>
+
+
+
+<span id="more-1325"></span>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="884" height="172" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png" alt="The logo for QNAP HappyGet 2 and Blizzard's Starcraft 2 side by side" class="wp-image-1328" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png 884w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-550x107.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-768x149.png 768w" sizes="(max-width: 884px) 100vw, 884px" /><figcaption class="wp-element-caption">The logo for QNAP HappyGet 2 and Blizzard&#8217;s StarCraft 2 side by side</figcaption></figure>
+
+
+
+<p>Additionally, the embedded Celeron processor in the NAS turned out to be an issue for some cases. It turns out, when playing back videos with subtitles, most Plex clients do not support subtitles properly &#8211; instead they rely on the Plex server doing JIT transcoding to bake the subtitles directly into the video stream. I discovered this with some Blu-Ray rips of Game of Thrones &#8211; some episodes would play back fine on my smart TV, but episodes with subtitled Dothraki speech would play at only 2 or 3 frames per second.</p>
+
+
+
+<p>The final straw was a ransomware attack, which went through all my data and locked every file below a 60MiB threshold. Practically all my music gone. A substantial collection of downloaded files, all gone. Some of these files had been carried around since my college days &#8211; digital rarities, or at least digital detritus I felt a real sense of loss at having to replace. This episode was caused by a ransomware targeting specific vulnerabilities in the QNAP OS, not an error on my part.</p>
+
+
+
+<p>So, I decided to start planning a replacement with:</p>
+
+
+
+<ul class="wp-block-list">
+<li>A non-garbage OS, whilst still being a NAS-appliance type offering (not an off-the-shelf Linux server distro)</li>
+
+
+
+<li>Full remote management capabilities</li>
+
+
+
+<li>A small form factor comparable to off-the-shelf NAS</li>
+
+
+
+<li>A powerful modern CPU capable of transcoding high resolution video</li>
+
+
+
+<li>All flash storage, no spinning rust</li>
+</ul>
+
+
+
+<p>At the time, no consumer NAS offered everything (The Asustor FS6712X exists now, but didn&#8217;t when this project started), so I opted to go for a full DIY rather than an appliance &#8211; not the first time I&#8217;ve jumped between appliances and DIY for home storage.</p>
+
+
+
+<h2 class="wp-block-heading">Selecting the core of the system</h2>
+
+
+
+<p>There aren&#8217;t many companies which will sell you a small motherboard with IPMI. Supermicro is a bust, so is Tyan. But ASRock Rack, the server division of third-tier motherboard vendor ASRock, delivers. Most of their boards aren&#8217;t actually compliant Mini-ITX size, they&#8217;re a proprietary &#8220;Deep Mini-ITX&#8221; with the regular screw holes, but 40mm of extra length (and a commensurately small list of compatible cases). But, thankfully, they do have a tiny selection of boards without the extra size, and I stumbled onto the <a href="https://www.asrockrack.com/general/productdetail.asp?Model=X570D4I-2T">X570D4I-2T</a>, a board with an AMD AM4 socket and the mature X570 chipset. This board can use <em>any</em> AMD Ryzen chip (before the latest-gen Ryzen 7000 series); has built in dual 10 gigabit ethernet; IPMI; four (laptop-sized) RAM slots with full ECC support; one M.2 slot for NVMe SSD storage; a PCIe 16x slot (generally for graphics cards, but we live in a world of possibilities); and up to 8 SATA drives OR a couple more NVMe SSDs. It&#8217;s astonishingly well featured, just a shame it costs about $450 compared to a good consumer-grade Mini ITX AM4 board costing less than half that.</p>
+
+
+
+<p>I was so impressed with the offering, in fact, that I crowed about it on Mastodon and ended up securing ASRock another sale, with someone else looking into a very similar project to mine around the same timespan.</p>
+
+
+
+<p>The next question was the CPU. An important feature of a system expected to run 24/7 is low power, and AM4 chips can consume as much as 130W under load, out of the box. At the other end, some models can require as little as 35W under load &#8211; the OEM-only &#8220;GE&#8221; suffix chips, which are readily found for import on eBay. In their &#8220;PRO&#8221; variant, they also support ECC (all non-G Ryzen chips support ECC, but only Pro G chips do). The top of the range 8 core Ryzen 7 PRO 5750GE is prohibitively expensive, but the slightly weaker 6 core <a href="https://www.amd.com/en/products/apu/amd-ryzen-5-pro-5650ge">Ryzen 5 PRO 5650GE</a> was affordable, and one arrived quickly from Hong Kong. Supplemented with a couple of cheap 16 GiB SODIMM sticks of DDR4 PC-3200 direct from Micron for under $50 a piece, that left only cooling as an unsolved problem to get a bootable test system.</p>
+
+
+
+<p>The official support list for the X570D4I-2T only includes two rackmount coolers, both expensive and hard to source. The reason for such a small list is the non standard cooling layout of the board &#8211; instead of an AM4 hole pattern with the standard plastic AM4 retaining clips, it has an Intel 115x hole pattern with a non-standard backplate (Intel 115x boards have no backplate, the stock Intel 115x cooler attaches to the holes with push pins). As such every single cooler compatibility list excludes this motherboard. However, the backplate is only secured with a mild glue &#8211; with minimal pressure and a plastic prying tool it can be removed, giving compatibility with any 115x cooler (which is basically any CPU cooler for more than a decade). I picked an oversized low profile <a href="http://thermalright.com/product/axp120-x67-black-argb/">Thermalright AXP120-X67</a> hoping that its 120mm fan would cool the nearby MOSFETs and X570 chipset too.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg" alt="" class="wp-image-1333" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Thermalright AXP120-X67, AMD Ryzen 5 PRO 5650GE, ASRock Rack X570D4I-2T, all assembled and running on a flat surface</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Testing up to this point</h2>
+
+
+
+<p>Using a spare ATX power supply, I had enough of a system built to explore the IPMI and UEFI instances, and run MemTest86 to validate my progress. The memory test ran without a hitch and confirmed the ECC was working, although it also showed that the memory was only running at 2933 MT/s instead of the rated 3200 MT/s (a limit imposed by the motherboard, as higher speeds are considered overclocking). The IPMI interface isn&#8217;t the best I&#8217;ve ever used by a long shot, but it&#8217;s minimum viable and allowed me to configure the basics and boot from media entirely via a Web browser.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="905" height="819" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png" alt="" class="wp-image-1341" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png 905w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-550x498.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-768x695.png 768w" sizes="auto, (max-width: 905px) 100vw, 905px" /><figcaption class="wp-element-caption">Memtest86 showing test progress, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>One sad discovery, however, which I&#8217;ve never seen documented before, on PCIe bifurcation.</p>
+
+
+
+<p>With PCI Express, you have a number of &#8220;lanes&#8221; which are allocated in groups by the motherboard and CPU manufacturer. For Ryzen prior to Ryzen 7000, that&#8217;s 16 lanes in one slot for the graphics card; 4 lanes in one M.2 connector for an SSD; then 4 lanes connecting the CPU to the chipset, which can offer whatever it likes for peripherals or extra lanes (bottlenecked by that shared 4x link to the CPU, if it comes down to it).</p>
+
+
+
+<p>It&#8217;s possible, with motherboard and CPU support, to split PCIe groups up &#8211; for example an 8x slot could be split into two 4x slots (eg allowing two NVMe drives in an adapter card &#8211; NVME drives these days all use 4x). However with a &#8220;Cezanne&#8221; Ryzen with integrated graphics, the 16x graphics card slot cannot be split into four 4x slots (ie used for for NVMe drives) &#8211; the most bifurcation it allows is 8x4x4x, which is useless in a NAS.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="897" height="806" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png" alt="" class="wp-image-1336" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png 897w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-550x494.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-768x690.png 768w" sizes="auto, (max-width: 897px) 100vw, 897px" /><figcaption class="wp-element-caption">Screenshot of PCIe 16x slot bifurcation options in UEFI settings, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>As such, I had to abandon any ideas of an all-NVMe NAS I was considering: the 16x slot split into four 4x, combined with two 4x connectors fed by the X570 chipset, to a total of 6 NVMe drives. 7.6TB U.2 enterprise disks are remarkably affordable (cheaper than consumer SATA 8TB drives), but alas, I was locked out by my 5650GE. Thankfully I found out before spending hundreds on a U.2 hot swap bay. The NVMe setup would be nearly 10x as fast as SATA SSDs, but at least the SATA SSD route would still outperform any spinning rust choice on the market (including the fastest 10K RPM SAS drives)</p>
+
+
+
+<h2 class="wp-block-heading">Containing the core</h2>
+
+
+
+<p>The next step was to pick a case and power supply. A lot of NAS cases require an SFX (rather than ATX) size supply, so I ordered a modular <a href="https://www.silverstonetek.com/en/product/info/power-supplies/SX500-G/">SX500</a> unit from Silverstone. Even if I ended up with a case requiring ATX, it&#8217;s easy to turn an SFX power supply into ATX, and the worst result is you have less space taken up in your case, hardly the worst problem to have.</p>
+
+
+
+<p>That said, on to picking a case. There&#8217;s only one brand with any cachet making ITX NAS cases, Silverstone. They have three choices in an appropriate size: <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS01-HS/">CS01-HS</a>, <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS280/">CS280</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/DS380/">DS380</a>. The problem is, these cases are all badly designed garbage. Take the CS280 as an example, the case with the most space for a CPU cooler. Here&#8217;s how close together the hotswap bay (right) and power supply (left) are:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="568" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png" alt="" class="wp-image-1343" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-550x391.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-768x545.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>With actual cables connected, the cable clearance problem is even worse:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="533" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png" alt="" class="wp-image-1344" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-550x366.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-768x512.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>Remember, this is the <em>best</em> of the three cases for internal layout, the one with the least restriction on CPU cooler height. And it&#8217;s garbage! Total hot garbage! I decided therefore to completely skip the NAS case market, and instead purchase a 5.25&#8243;-to-2.5&#8243; hot swap bay adapter from Icy Dock, and put it in an ITX gamer case with a 5.25&#8243; bay. This is no longer a served market &#8211; 5.25&#8243; bays are extinct since nobody uses CD/DVD drives anymore. The ones on the market are really new old stock from 2014-2017: The <a href="https://www.fractal-design.com/products/cases/core/core-500/black/">Fractal Design Core 500</a>, <a href="https://www.coolermaster.com/catalog/cases/mini-itx/elite130/">Cooler Master Elite 130</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/SUGO14/">Silverstone SUGO 14</a>. Of the three, the Fractal is the best rated so I opted to get that one &#8211; however it seems the global supply of &#8220;new old stock&#8221; fully dried up in the two weeks between me making a decision and placing an order &#8211; leaving only the Silverstone case.</p>
+
+
+
+<p>Icy Dock have a selection of 8-bay 2.5&#8243; SATA 5.25&#8243; hot swap chassis choices in their ToughArmor MB998 series. I opted for the <a href="https://global.icydock.com/product_169.html">ToughArmor MB998IP-B</a>, to reduce cable clutter &#8211; it requires only two SFF-8611-to-SF-8643 cables from the motherboard to serve all eight bays, which should make airflow less of a mess. The X570D4I-2T doesn&#8217;t have any SATA ports on board, instead it has two SFF-8611 OCuLink ports, each supporting 4 PCI Express lanes OR 4 SATA connectors via a breakout cable. I had hoped to get the ToughArmor MB118VP-B and run six U.2 drives, but as I said, the PCIe bifurcation issue with Ryzen &#8220;G&#8221; chips meant I wouldn&#8217;t be able to run all six bays successfully.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg" alt="" class="wp-image-1348" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">NAS build in Silverstone SUGO 14, mid build, panels removed</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg" alt="" class="wp-image-1349" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">Silverstone SUGO 14 from the front, with hot swap bay installed</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Actual storage for the storage server</h2>
+
+
+
+<p>My concept for the system always involved a fast boot/cache drive in the motherboard&#8217;s M.2 slot, non-redundant (just backups of the config if the worst were to happen) and separate storage drives somewhere between 3.8 and 8 TB each (somewhere from $200-$350). As a boot drive, I selected the <a href="https://www.intel.com/content/www/us/en/products/sku/211868/intel-optane-ssd-p1600x-series-58gb-m-2-80mm-pcie-3-0-x4-3d-xpoint/specifications.html">Intel Optane SSD P1600X 58G</a>, available for under $35 and rated for 228 years between failures (or 11,000 complete drive rewrite cycles).</p>
+
+
+
+<p>So, on to the big expensive choice: storage drives. I narrowed it down to two contenders: new-old-stock Intel D3-S4510 3.84TB enterprise drives, at about $200, or Samsung 870 QVO 8TB consumer drives, at about $375. I did spend a long time agonizing over the specification differences, the ZFS usage reports, the expected lifetime endurance figures, but in reality, it came down to price &#8211; $1600 of expensive drives vs $3200 of even more expensive drives. That&#8217;s 27TB of usable capacity in RAID-Z1, or 23TB in RAID-Z2. For comparison, I&#8217;m using about 5TB of the old NAS, so that&#8217;s a LOT of overhead for expansion.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg" alt="" class="wp-image-1355" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Storage SSD loaded into hot swap sled</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Booting up</h2>
+
+
+
+<p>Bringing it all together is the OS. I wanted an &#8220;appliance&#8221; NAS OS rather than self-administering a Linux distribution, and after looking into the surrounding ecosystems, decided on <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> (the beta of the 2023 release, based on Debian 12).</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="600" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png" alt="" class="wp-image-1353" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-550x322.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-768x450.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1536x900.png 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image.png 2013w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">TrueNAS Dashboard screenshot in browser window</figcaption></figure>
+
+
+
+<p>I set up RAID-Z1, and with zero tuning (other than enabling auto-TRIM), got the following performance numbers:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>19.3k</td><td>75.6 MiB/s</td></tr><tr><td>4k random reads</td><td>36.1k</td><td>141 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>2300 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>3800 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Results using fio parameters <a href="https://support.huaweicloud.com/intl/en-us/evs_faq/evs_faq_0019.html#evs_faq_0019__section273349017162">suggested by Huawei</a></figcaption></figure>
+
+
+
+<p>And for comparison, the maximum theoretical numbers quoted by Intel for a single drive:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>16k</td><td>?</td></tr><tr><td>4k random reads</td><td>90k</td><td>?</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>280 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>560 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Numbers quoted by Intel SSD successors <a href="https://www.solidigm.com/products/data-center/d3/s4510.html">Solidigm</a>.</figcaption></figure>
+
+
+
+<p>Finally, the numbers reported on the old NAS with four 7200 RPM hard disks in RAID 10:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>430</td><td>1.7 MiB/s</td></tr><tr><td>4k random reads</td><td>8006</td><td>32 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>311 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>566 MiB/s</td></tr></tbody></table></figure>
+
+
+
+<p>Performance seems pretty OK. There&#8217;s always going to be an overhead to RAID. I&#8217;ll settle for the 45x improvement on random writes vs. its predecessor, and 4.5x improvement on random reads. The sequential write numbers are gonna be impacted by the size of the ZFS cache (50% of RAM, so 16 GiB), but the rest should be a reasonable indication of true performance.</p>
+
+
+
+<p>It took me a little while to fully understand the TrueNAS permissions model, but I finally got Plex configured to access data from the same place as my SMB shares, which have anonymous read-only access or authenticated write access for myself and my wife, working fine via both Linux and Windows.</p>
+
+
+
+<p>And&#8230; that&#8217;s it! I built a NAS. I intend to add some fans and more RAM, but that&#8217;s the build. Total spent: about $3000, which sounds like an unreasonable amount, but it&#8217;s actually less than a comparable Synology DiskStation DS1823xs+ which has 4 cores instead of 6, first-generation AMD Zen instead of Zen 3, 8 GiB RAM instead of 32 GiB, no hardware-accelerated video transcoding, etc. And it would have been a whole lot less fun!</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg" alt="" class="wp-image-1364" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">The final system, powered up</figcaption></figure>
+
+
+
+<p>(Also posted on <a href="https://pcpartpicker.com/b/fYhtt6">PCPartPicker</a>)</p>]]></description>
+      <source url="http://apebox.org/wordpress/tag/ubuntu/feed/">Jo Shields</source>
+    </item>
+    <item>
       <title>Understanding vm.swappiness: Improving Linux Performance and Memory Management</title>
       <link>https://coderstalk.blogspot.com/2023/07/understanding-vmswappiness-improving.html</link>
       <guid isPermaLink="true">https://coderstalk.blogspot.com/2023/07/understanding-vmswappiness-improving.html</guid>
@@ -4506,7 +4752,7 @@ $ cp $OUT/drivers/scsi/megaraid/*.o $OUT/after/
 <pre class="brush:shell">
 $ diffoscope $OUT/before/ $OUT/after/
 </pre>
-<p>If <code>diffoscope</code> output reports nothing, then we&#8217;re done. ðŸ¥³</p>
+<p>If <code>diffoscope</code> output reports nothing, then we&#8217;re done. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f973.png" alt="🥳" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
 <p>Usually, though, when source lines move around other stuff will shift too (e.g. <code>WARN</code> macros rely on line numbers, so the bug table may change contents a bit, etc), and <code>diffoscope</code> output will look noisy. To examine just the executable code, the command that <code>diffoscope</code>  used is reported in the output, and we can run it directly, but with possibly shifted line numbers not reported. i.e. running <code>objdump</code> without <code>--line-numbers</code>:</p>
 <pre class="brush:shell">
 $ ARGS="--disassemble --demangle --reloc --no-show-raw-insn --section=.text"
@@ -4539,7 +4785,8 @@ $ vi drivers/scsi/megaraid/megaraid_sas_fp.c +329
 -    size_t bytes = sizeof(*instance) + sizeof(u32) * (count - 1);
 +    size_t bytes = struct_size(instance, data, count);
 </pre>
-<p>But sometimes adding the helper usage will add binary output differences since they're performing overflow checking that might saturate at <code>SIZE_MAX</code>. To help with patch clarity, those changes can be done separately from fixing the array declaration.</p>]]></description>
+<p>But sometimes adding the helper usage will add binary output differences since they're performing overflow checking that might saturate at <code>SIZE_MAX</code>. To help with patch clarity, those changes can be done separately from fixing the array declaration.</p>
+<p style='text-align:left'>&copy; 2022 - 2023, <a href="https://outflux.net/blog/">Kees Cook</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 License</a>.<br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img decoding="async" alt="CC BY-SA 4.0" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> </p>]]></description>
       <source url="http://outflux.net/blog/archives/category/ubuntu/feed">Kees Cook</source>
     </item>
     <item>
