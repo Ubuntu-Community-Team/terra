@@ -6,9 +6,56 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 22 Jul 2026 02:46:19 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 02:52:22 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microbit: easier with extensions</title>
+      <link>https://thepcspy.com/read/microbit-easier-with-extensions/</link>
+      <guid isPermaLink="true">https://thepcspy.com/read/microbit-easier-with-extensions/</guid>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>The <a href="https://microbit.org/get-started/what-is-the-microbit/">BBC Microbit</a> is a wonderful introduction to both programming and electronics, but <a href="https://makecode.microbit.org/blocks">MakeCode’s Blocks</a> make some ideas quite hard to express.</p>
+ <figure class="rimxs"><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;microbit-drawing-2-yellow.avif&quot;,&quot;index&quot;:0}"></figure>
+<p>Introducing my 6yo to robotics, I’m conscious how important it is to keep things interesting, to keep difficulties abstracted, hidden. Buzzers, LEDs, motor controllers and servos are pretty much plug-and-play these days but <em>control</em> is harder. You want speed, direction, some buttons for features and ideally some method of feedback.</p>
+<p>The builtin BLE allows <a href="https://www.youtube.com/watch?v=QxVwzhAZq3Y">phone apps</a>, but I try to keep my kids off phones. There isn’t a proper BT stack available to the Microbit, so real controllers are out. IR is super cheap but the experience is short range and very directional. Similarly a corded remote  works <em>with caveats</em>. But none are ideal.</p>
+<h2 id="use-another-microbit">Use another Microbit.</h2>
+<p>The radio module in the Microbit is awesome. Its Nordic nRF5xxxx SoC has a proprietary low-latency communication protocol called <a href="https://nrfconnectdocs.nordicsemi.com/ncs/3.2.2/nrf/protocols/esb/index.html">Enhanced ShockBurst</a>. Microbit software builds on top of this for a super-simple message exchange format. Pick a channel and just send and receive 32byte messages.</p>
+<p>A Microbit on its own does have enough sensors to act as a HCI device: accelerometer for directions, two or three buttons depending on your version, but you still have to add batteries, and tilting isn’t the best interface. In a pinch, sure, but better options exist. I have –and would recommmend– a <a href="https://wiki.elecfreaks.com/en/microbit/expansion-board/joystick-bit-v2/">Joystick v2 Plus</a>. ~£15 buys you a x-y axes, four buttons, buzzer, vibration feedback, battery case and the plus version has handles (which you could 3d print).</p>
+<h2 id="if-its-so-good-why-use-extensions">If it’s so good, why use extensions?</h2>
+<p>We have our hardware but how do we take that input and send it to our robot? <a href="https://www.elecfreaks.com/learn-en/microbitKit/smart_cutebot/cutebot_case13.html">Elecfreaks’ example</a> would have your controller send named events for both axes, every button. 🤮</p>
+<figure><img __astro_image_="{&quot;alt&quot;:&quot;Yuck&quot;,&quot;src&quot;:&quot;elecfreaks.avif&quot;,&quot;index&quot;:0}"></figure>
+<p>You have to unpick each message separately. These messages are processed in a queue with the main forever loop, it’s possible –likely, even– you’re going to have forever loops where you’re dealing with old data. What about key combinations?</p>
+<p>In a <em>real</em> programming language, you’d pack all your data into one packet and send it off and decode it all at once. But the radio module limits us to 32bytes, and Blocks lacks a struct-like encoder, so there’s infuriatingly little we can do … without extensions.</p>
+<p>Extensions allow you to create Blocks that do stuff. In the case of my <a href="https://github.com/oliwarner/joystickbitRadio/"><strong>joystickbit-radio</strong> extension</a>, it uses a binary data structure to pack the <code>x</code> axis into the first eight bits, <code>y</code> into the next eight and each button into the following four. If we make a block that exposes that, we can just send that number using normal radio Blocks. For the user it’s as simple as dragging a few blocks:</p>
+<figure><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;joystickbit-radio-sender.avif&quot;,&quot;index&quot;:0}"></figure>
+<aside><details><summary>See what it's doing behind the scenes...</summary><p>It’s pretty simple to pack a binary format up with bitwise operators.</p><pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">let</span> value<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+value <span class="token operator">|=</span> Math<span class="token punctuation">.</span><span class="token function">idiv</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getRockerValue</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>rockerType<span class="token punctuation">.</span><span class="token constant">X</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+value <span class="token operator">|=</span> Math<span class="token punctuation">.</span><span class="token function">idiv</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getRockerValue</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>rockerType<span class="token punctuation">.</span><span class="token constant">Y</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">8</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getButton</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>JoystickBitPin<span class="token punctuation">.</span><span class="token constant">P12</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    value <span class="token operator">|=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">16</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getButton</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>JoystickBitPin<span class="token punctuation">.</span><span class="token constant">P13</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    value <span class="token operator">|=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">17</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getButton</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>JoystickBitPin<span class="token punctuation">.</span><span class="token constant">P14</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    value <span class="token operator">|=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">18</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getButton</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>JoystickBitPin<span class="token punctuation">.</span><span class="token constant">P15</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    value <span class="token operator">|=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">19</span></code></pre><p>You can’t do <em>that</em> with Blocks.</p></details></aside>
+<p>And at the other end, I’ve added some sugar. Not only does it decode, it adds events for button handling, utilities for mapping to different scales, or even tank tracking. <a href="https://makecode.microbit.org/_LKz9J6U42DCR">It makes the whole endeavour for users much, much easier</a>.</p>
+<figure><img __astro_image_="{&quot;alt&quot;:&quot;Much better&quot;,&quot;src&quot;:&quot;joystickbit-radio.avif&quot;,&quot;index&quot;:0}"></figure>
+<p>My use-case might help you, but I’m not asking you to use my extension, I’m saying <em><strong>you should write your own!</strong></em> Helping your learners before they get stuck will expose them to fun projects they wouldn’t have been able to deal with if they had to start by unpicking a right-to-left axis, or have to learn javascript before they could start. Blocks is great for discovering the Microbit API, it pays dividends to make it Good Enough™ rather than push people to harder environments.</p>
+<p>Things I used:</p>
+<ul>
+<li><a href="https://makecode.com/extensions/getting-started">https://makecode.com/extensions/getting-started</a></li>
+<li><a href="https://makecode.com/defining-blocks">https://makecode.com/defining-blocks</a></li>
+<li><a href="https://makecode.com/playground">https://makecode.com/playground</a></li>
+<li>Lead image from <a href="https://thepcspy.com/read/microbit-easier-with-extensions/microbit.org">micro Educational Foundation</a></li>
+</ul>]]></description>
+      <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
+    </item>
     <item>
       <title>Canonical announces the Enterprise Store as part of Ubuntu Pro</title>
       <link>https://ubuntu.com//blog/canonical-announces-the-enterprise-store</link>
@@ -1080,33 +1127,6 @@ trustmux pair      # generate a pairing URL and 6-digit code
 
 <p></p>]]></description>
       <source url="http://news.launchpad.net/feed">Launchpad News</source>
-    </item>
-    <item>
-      <title>What’s happened?</title>
-      <link>https://thepcspy.com/read/whats-happened/</link>
-      <guid isPermaLink="true">https://thepcspy.com/read/whats-happened/</guid>
-      <pubDate>Fri, 12 Jun 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>Foreign money is interfering in UK elections again, but I can’t remember it ever being <em>this</em> obvious.</p>
- <figure><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;class&quot;:&quot;rimxs&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072919.avif&quot;,&quot;index&quot;:0}"></figure>
-<p>If you’re in the UK and you’ve been on <em>The Site Previously Known as Twitter</em> in the last few days, you’ve probably seen an advertisement featuring an AI depiction of Nigel Farage beating, strangling, mugging, shooting, and having his shoes licked by the Bank of England’s governor, Andrew Bailey. These all link through to a fake BBC News page that reports Farage is a big mean tough guy demanding the Bank does what he says.</p>
-<p>I wouldn’t for a second suggest that Nigel or Reform are paying to make their weasel look tough, <em><strong>but someone is</strong></em>.</p>
-<p>This morning, scrolling through my “Following” tab, I saw around 20 ads on this theme. These were all from foreign-held (India, Saudi, South African, Russian, Uganda, Viet Nam, etc) premium accounts that proclaim themselves “social media influencers”. They all post a couple of nature pictures, and then post these political adverts.</p>
-<p class="picblock"><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072530.avif&quot;,&quot;index&quot;:0}">
-<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072910.avif&quot;,&quot;index&quot;:0}">
-<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072744.avif&quot;,&quot;index&quot;:0}">
-<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072602.avif&quot;,&quot;index&quot;:0}"></p>
-<p class="picblock"><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072513.avif&quot;,&quot;index&quot;:0}">
-<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072623.avif&quot;,&quot;index&quot;:0}">
-<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072542.avif&quot;,&quot;index&quot;:0}">
-<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;tall/Screenshot_20260612-072505.avif&quot;,&quot;index&quot;:0}"></p>
-<p class="picblock"><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;short/Screenshot_20260612-072615.avif&quot;,&quot;index&quot;:0}">
-<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;short/Screenshot_20260612-072729.avif&quot;,&quot;index&quot;:0}">
-<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;short/Screenshot_20260612-072802.avif&quot;,&quot;index&quot;:0}">
-<img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;short/Screenshot_20260612-072738.avif&quot;,&quot;index&quot;:0}"></p>
-<p>And this has been going on for nearly week.</p>
-<p>If you’ve ever wondered what the dangers of a [practically] unmoderated platform in the hands of a billionaire “free-speech absolutist” could possibly be for your day-to-day life, here it is. Elon doesn’t appear to care who says what. Ads don’t appear to be vetted. As long as your bots pay their dues, and pay the ad fare, you can shove your dirty little opinions into the eyeballs of whomever you like.</p>
-<p>Just as an echo chamber, X was dangerous, but it’s becoming clearer and clearer that it’s now just toxic to any democratic process. With so many bots on the platform, and so many real political campaigners pretending to be somewhere they’re not, the time when you can have an honest discussion has gone.</p>]]></description>
-      <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
     </item>
     <item>
       <title>Learning about exploits through the safety of Incus</title>
