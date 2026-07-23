@@ -6,9 +6,58 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 22 Jul 2026 02:51:11 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 03:12:23 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Canonical announces the Enterprise Store as part of Ubuntu Pro</title>
+      <link>https://ubuntu.com//blog/canonical-announces-the-enterprise-store</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/canonical-announces-the-enterprise-store</guid>
+      <pubDate>Tue, 21 Jul 2026 14:25:58 GMT</pubDate>
+      <description><![CDATA[<h3 class="wp-block-heading">Canonical introduces a new way to manage software behind firewalls and in air-gapped environments with the Enterprise Store.</h3>
+<p>The Enterprise Store makes software distribution manageable and scalable behind firewalls or in air-gapped environments. Available with an Ubuntu Pro subscription, the Enterprise Store respects the security protocols of strict environments, in a way that is controllable, auditable, and predictable. </p>
+<h2 class="wp-block-heading">What is the Enterprise Store?</h2>
+<p>The <a href="https://ubuntu.com/enterprise-store">Enterprise Store</a> is an on-premise edge proxy. It sits between your devices and Canonical’s software stores, so your systems can install and update software without needing direct outbound access from every machine. That makes it a strong fit for:</p>
+<ul>
+<li>Corporate networks with strict egress controls</li>
+<li>Air-gapped and offline environments</li>
+<li>Regulated industries that need change control and auditability </li>
+</ul>
+<p>In order to meet the needs of these strict environments, the Enterprise Store is designed around a few practical capabilities:</p>
+<ul>
+<li><strong>Local caching</strong> to speed up repeat downloads and reduce bandwidth use.</li>
+<li><strong>Air-gapped operation</strong> (offline mode) so updates can be manually transferred when there’s no internet connectivity.</li>
+<li><strong>High availability</strong> options to reduce the risk of service interruption.</li>
+<li><strong>Granular revision control</strong> so you can pin versions and avoid surprises during critical operations.</li>
+</ul>
+<h2 class="wp-block-heading">High availability</h2>
+<p>The Enterprise Store supports high availability, giving teams a more resilient way to run software distribution in production. Instead of relying on a single machine to serve every client request, organizations can deploy multiple Enterprise Store instances behind a reverse proxy, allowing traffic to be routed to another live unit if one goes down. That reduces the risk of a single-node failure interrupting access to packages, updates, or operator software across connected systems.</p>
+<p>This high-availability model is designed for real operational environments. Reverse proxies can balance traffic and run health checks across backend units, while shared services help keep states consistent across the deployment. The result is a more robust control point for software distribution: one that helps teams maintain continuity, consistency, and tighter operational control even in restricted or business-critical environments.</p>
+<h2 class="wp-block-heading">One proxy for snaps and charms</h2>
+<p>The Enterprise Store gives teams a single proxy to manage both snaps and charms, covering the full software lifecycle from delivery to operations. </p>
+<p>Snaps are self-contained Linux packages that are easy to install, update, and maintain across desktop, cloud, and IoT environments. Charms are operators: software that wraps an application and contains the logic needed to deploy, configure, scale, integrate, and manage it over time. Together, they cover both software delivery and software operations.</p>
+<p>Many organizations use snaps to package and distribute software consistently, and charms to automate deployment and lifecycle management for applications across clouds and clusters. With a unified approach to network controls and governance, the Enterprise Store helps organizations manage their entire software estate consistently. </p>
+<h2 class="wp-block-heading">Included with Ubuntu Pro</h2>
+<p>The Enterprise Store is included as part of<a href="https://canonical.com/legal/ubuntu-pro-description"> Ubuntu Pro</a>, which means anyone with an Ubuntu Pro subscription can try it. If you’re experimenting at home or in a lab, you can get started today.</p>
+<p><a href="https://canonical.com/legal/ubuntu-pro-description">Ubuntu Pro</a> is free for personal use (for up to 5 machines), so you can get hands-on with the Enterprise Store before you roll it into a broader evaluation.</p>
+<h2 class="wp-block-heading">Get started</h2>
+<p>If you want to explore and set up  the Enterprise Store:</p>
+<ol>
+<li><strong>Read the</strong><a href="https://ubuntu.com/enterprise-store"><strong> Enterprise Store overview</strong></a> to understand use cases and key features.</li>
+<li><strong>Follow the</strong><a href="https://documentation.ubuntu.com/enterprise-store/main/?utm_source=chatgpt.com"><strong> </strong><strong>documentation</strong></a>: the docs hub includes getting started guides and sections covering charm support.</li>
+<li><a href="https://ubuntu.com/contact-us/form"><strong>Reach out</strong></a><strong> to Canonical</strong> if you have commercial requirements, larger-scale rollouts, or want guidance for a regulated environment.</li>
+</ol>
+<h2 class="wp-block-heading">Talk to us about your use case</h2>
+<p>If you’re looking at the Enterprise Store for production, especially across fleets, air-gapped environments, or compliance-bound ecosystems, Canonical can help you plan an evaluation, architecture, and rollout plan.</p>
+<p><a href="https://ubuntu.com/contact-us/form">Contact us</a> and tell us about your requirements and use cases.</p>
+<h2 class="wp-block-heading">Further reading</h2>
+<ul>
+<li><a href="https://ubuntu.com/enterprise-store">Enterprise Store overview</a></li>
+<li><a href="https://documentation.ubuntu.com/enterprise-store/main/">Enterprise Store documentation</a></li>
+<li><a href="https://ubuntu.com/pro">Ubuntu Pro</a> (free for personal use)</li>
+</ul>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>New Blog</title>
       <link>http://bobthegnome.blogspot.com/2026/07/new-blog.html</link>
@@ -16,44 +65,6 @@
       <pubDate>Sun, 19 Jul 2026 20:18:23 GMT</pubDate>
       <description><![CDATA[<p>In an attempt to encourage myself to post more I have created a new blog <a href="https://robert-ancell.github.io/">Thinking Open</a>. If you want to hear my thoughts on Open Source, Ubuntu and Flutter then come on over! I'll keep Bob's development blog here as an archive but there will be no more posts.</p><p>Haere rā!</p>]]></description>
       <source url="http://bobthegnome.blogspot.com/feeds/posts/default">Robert Ancell</source>
-    </item>
-    <item>
-      <title>Tracing a memory leak bug in PID 1 and contributing an upstream fix: a Linux support story</title>
-      <link>https://ubuntu.com//blog/fixing-memory-bug</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/fixing-memory-bug</guid>
-      <pubDate>Fri, 17 Jul 2026 08:04:51 GMT</pubDate>
-      <description><![CDATA[<p>Some memory leaks are straightforward to detect. A process allocates memory, forgets to free it, and grows until something breaks. This was not that kind of leak.</p>
-<p>This is the story of how Canonical Support helped a global retail organization trace the cause for an unusual memory leak originating in PID 1, the very first process started by the kernel during the system boot sequence. The memory footprint was 10 times higher than expected. By investigating the issue across three separate system layers – a misconfigured storage orchestrator, a kernel race condition, and glibc’s allocator – our team was able to identify the source and fast-track a patch. </p>
-<h2 class="wp-block-heading">The symptom that made no sense</h2>
-<p>The customer was the innovation and engineering arm of a global retail company. They were responsible for driving the company’s retail transformation –  operating a fleet of servers running as part of a Ceph storage cluster. Across several of these cluster nodes, they began observing a pattern that made no immediate sense: <code>/sbin/init</code> (a symlink to systemd, which was running as PID 1) was consuming over 50% of available system memory. On servers with 125 GB of RAM, that meant PID 1 alone was holding approximately 70 GB, when only 8 GB were expected. The systems were experiencing out-of-memory kills, with the kernel forcibly terminating processes to free up available memory to survive.</p>
-<p>Nothing in the obvious diagnostic places explained it. Memory consumption continued to grow, and was never released. The investigation didn’t point to any obvious application-level cause. The customer had ruled out the workloads running on the servers as being the issue. The problem was somewhere deeper, below the application layer.</p>
-<h2 class="wp-block-heading">Starting the investigation: getting the right artifact</h2>
-<p>The support team at Canonical’s first move was to request sos-reports from the affected nodes, the standard starting point for system-level investigation. But sos-report output, comprehensive as it is, didn’t contain anything that explained a 70 GB footprint on PID 1. The next step was more direct: the engineer requested a core dump of PID 1 itself, generated with gcore 1.</p>
-<p>This is not a routine ask. Generating a core dump of the init process (PID 1) on a running production system is the technical equivalent of performing open-heart surgery while the patient is running a marathon. PID 1 is not just any process; it is the root of the entire user-space ecosystem. If it stumbles, the whole system collapses. Because the resulting file is massive – In this case the core dump compressed from 70 GiB to less than 10 GiB, a major red flag that there was significant repetition in the memory of the process –, transferring, downloading, and analyzing it can significantly delay the start of troubleshooting, and the investigation itself can take an unpredictable amount of time. The customer uploaded it, and that artifact is what cracked the case open.</p>
-<h2 class="wp-block-heading">The diagnostic leap: from memory to mounts</h2>
-<p>Analyzing the core dump, the Canonical engineer could see directly what was occupying PID 1’s memory. The footprint was tied to mount table entries. Specifically, entries from runs of a ceph-volume Docker container. The mount table, which systemd maintains and reparses every time changes are made, had grown to millions of entries.</p>
-<p>The behavior of systemd here is by design: it watches <code>/proc/self/mountinfo</code> and reparses the full table on every change. Under normal conditions, reparsing is not an issue, but because the table was now very large, continuously regenerating it caused serious issues. Each time systemd parsed it, glibc’s allocator retained the memory rather than returning it to the kernel. The memory accumulated but was never freed.</p>
-<p>That explained the mechanism, but it didn’t yet explain why the mount table had grown so large, or why ceph-volume containers were running so frequently.</p>
-<h2 class="wp-block-heading">The second leap: a silent failure nobody knew about</h2>
-<p>This is where the investigation crossed layers.</p>
-<p>Tracing the frequency of ceph-volume container activity, the engineer identified the actual source: a cephadm process – part of the Ceph orchestration layer – was repeatedly attempting to “zap” (a destructive operation that wipes all data and metadata from a disk to reset it to a clean state) an OSD (Object Storage Daemon) that no longer existed. Because there was no Logical Volume associated with it, the operation failed every time. And every time it failed, it retried. The ceph-volume Docker container was spinning up and tearing down in a continuous loop.</p>
-<p>Nobody had flagged this because the orchestration layer in Ceph was silently failing, and the only visible symptom, the one that brought the customer to Canonical Support, was 70 GB of memory consumed by PID 1 on nodes that had nothing obviously wrong with them.</p>
-<p>Stopping the loop was the workaround. Once cephadm was corrected and the repeated zap attempts ceased, the mount/unmount thrashing stopped, the race condition stopped triggering, and memory usage stabilized. The customer confirmed that the correction resolved the immediate problem.</p>
-<p>Once a workaround was implemented, the Canonical team was able to shift their attention to finding a permanent fix. </p>
-<h2 class="wp-block-heading">From diagnosis to upstream</h2>
-<p>Canonical’s support engineers traced the bug to the upstream code and regularly engaged with  the open source community to implement a fix that extended beyond the immediate customer. By providing Linux kernel maintainers with a fully characterized bug and a verified trigger, they secured a resolution that benefited the entire open source ecosystem.</p>
-<p>By shrinking the problem to a minimal reproducer, mounting and unmounting a tmpfs in a tight loop, the team isolated the precise, reproducible mechanism: a kernel race condition. This churn caused mount table entries to intermittently spike to millions of lines, triggering continuous systemd reparsing and glibc memory retention, which resulted in the 70 GB footprint on PID 1. </p>
-<p>The patch was merged into the mainline kernel. After passing through the <a href="https://ubuntu.com/project/docs/SRU/stable-release-updates/">Stable Release Update (SRU)</a> process, the fix landed in several Ubuntu kernel releases.</p>
-<h2 class="wp-block-heading">Why this case stands out</h2>
-<p>What looked like a  memory leak wasn’t quite the whole story. While the memory was being properly freed by systemd and tracked by glibc, it became unusable to the rest of the system, effectively starving the node. The real issue was that a silent misconfiguration in a storage orchestration layer, cephadm looping on a non-existent OSD, was the trigger for a kernel-level race condition that manifested as an inexplicably large footprint. No single layer told the full story: </p>
-<ul>
-<li>The sos-report pointed toward the symptom. </li>
-<li>The core dump identified the mechanism. </li>
-<li>Tracing the container activity identified the trigger. Only then was there enough precision to take the problem upstream.</li>
-</ul>
-<p>That chain, from production symptom to cross-layer diagnosis to mainline kernel patch, is what enterprise Linux support looks like when the problem isn’t immediately obvious and doesn’t fit a known category.</p>
-<p>If you want to understand what support from Canonical can bring to complex infrastructure problems, <a href="https://ubuntu.com/support">visit our support page</a>, or, <a href="https://ubuntu.com/support/contact-us">get in touch</a>.</p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>E383 Gambiarra Do Trovão Armada Em 64</title>
