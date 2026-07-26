@@ -6,9 +6,145 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 25 Jul 2026 02:51:18 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2026 03:16:22 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Confidential computing and the new regulatory focus on data in use</title>
+      <link>https://ubuntu.com//blog/confidential-computing-and-the-new-regulatory-focus-on-data-in-use</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/confidential-computing-and-the-new-regulatory-focus-on-data-in-use</guid>
+      <pubDate>Fri, 24 Jul 2026 15:27:34 GMT</pubDate>
+      <description><![CDATA[<p>Most organizations already understand encryption at rest and encryption in transit. These controls are mature, widely deployed, and often explicitly referenced in security frameworks.</p>
+<p>However, runtime is different: when an application processes sensitive information, that data is typically available in memory. In a traditional infrastructure model, the workload owner may need to trust a large stack of privileged components below the workload, such as the firmware, the hypervisor, the host operating system, and the infrastructure operator. For many workloads, that trust model is acceptable; however, for highly regulated workloads, it can become a problem.</p>
+<p>This issue can be seen in highly sensitive use cases, such as financial analytics, healthcare research, public sector data sharing, fraud detection, confidential AI inference, or cross-organization collaboration: In each case, the organization wants to use sensitive data, but it also needs to reduce who or what can access it during processing.</p>
+<p>Confidential computing is a hardware-backed approach to protecting data while it is being processed. It uses trusted execution environments to help isolate workloads from parts of the underlying infrastructure, reducing the amount of software and privileged access that must be trusted by default.</p>
+<p>That is where<a href="https://ubuntu.com/confidential-computing"> confidential computing</a> comes in. It does not replace encryption at rest, network encryption, access control, or vulnerability management. It complements them by extending protection into runtime.</p>
+<p>Regulations are catching up to this shift in data protection needs. And while regulators may not always use the words “confidential computing” in order to remain technology-neutral, they are increasingly asking organizations to demonstrate outcomes that confidential computing was designed to support: confidentiality, reduced third-party risk, stronger data governance, secure AI systems, and better control over sensitive workloads across cloud, edge, on-prem, and hybrid environments.</p>
+<p>In other words, confidential computing is moving from an infrastructure feature to a compliance-relevant security architecture. In the rest of this blog post, we will explore this development.</p>
+<h2 class="wp-block-heading">Data in use is becoming a recognized control area</h2>
+<p>One of the clearest signs of this change is that data in use is starting to appear as its own control area.</p>
+<p><a href="https://www.nist.gov/cyberframework">NIST Cybersecurity Framework 2.0</a> makes this explicit. Its data security category includes protections for data at rest, data in transit, and data in use. The subcategory<a href="https://csf.tools/reference/nist-cybersecurity-framework/v2-0/pr/pr-ds/pr-ds-10/"> PR.DS-10</a> states that the confidentiality, integrity, and availability of data in use should be protected.</p>
+<p>This is important because it completes the familiar data protection model. Security teams have long been asked how they protect stored data and data moving across networks. They are now being asked the same question about data during processing.</p>
+<p>The same pattern appears in US federal zero trust guidance. The<a href="https://resources.data.gov/assets/documents/Zero-Trust-DataSecurityGuide_RevisedMay2025_CIO.govVersion.pdf"> Federal Zero Trust Data Security Guide</a>, published by the CISO Council and CDO Council, includes computational isolation and confidential computing as part of the data security discussion. That is a useful signal: confidential computing is being discussed not only as a cloud feature, but as part of a broader data-centric security model.</p>
+<p>Financial regulators are moving in a similar direction. In the UK, the Prudential Regulation Authority’s<a href="https://www.bankofengland.co.uk/prudential-regulation/publication/2021/march/outsourcing-and-third-party-risk-management-ss"> SS2/21 on outsourcing and third-party risk management</a> expects regulated firms to implement robust controls for data in transit, data in memory, and data at rest. For financial institutions using external technology providers, runtime protection is becoming part of the outsourcing and third-party risk conversation.</p>
+<p>This does not mean every framework now mandates confidential computing; Most still remain technology-neutral. But the direction is clear: protecting data in use is becoming a recognized security outcome, and confidential computing is one of the most direct ways to support it.</p>
+<h2 class="wp-block-heading">Standards are catching up with the architecture</h2>
+<p>A useful signal that confidential computing is maturing is that it is now being formalized in standards and public guidance.</p>
+<p><a href="https://www.iso.org/home.html">ISO/IEC</a> is developing a dedicated confidential computing standard,<a href="https://www.iso.org/standard/88971.html"> ISO/IEC DIS 25093-1</a>, under the title “Cybersecurity , Confidential computing,  Part 1: Overview and concepts”. That is a significant development because it shows the term is moving beyond vendor-specific implementation and into international standardization.</p>
+<p><a href="https://www.nist.gov/">NIST</a> has also published guidance on hardware-enabled security and confidential computing. Its draft report,<a href="https://csrc.nist.gov/pubs/ir/8320/e/ipd"> Hardware-Enabled Security: Confidential Computing of Data in Use in Cloud Computing and AI Workloads</a>, frames confidential computing as a way to protect data while it is being processed in memory and active use, with particular relevance for cloud and AI workloads.</p>
+<p>This is important for regulated organizations because standards often become the bridge between broad legal requirements and practical technical controls. A law may require “appropriate security” – and a standard can help define what that looks like in practice.</p>
+<p>This is also happening outside of Europe and the US. China has also published<a href="https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=3EEE43349494EC27FC87B5EDA7468FB0"> GB/T 45230-2025</a>, a national standard titled “Data security technology , General framework for the confidential computing”, released in January 2025 and implemented from August 2025. It is another sign that confidential computing is becoming a formal security category rather than only a vendor term.</p>
+<h2 class="wp-block-heading">Regulation is converging on the same problem</h2>
+<p>The clearest example is the<a href="https://gdpr-info.eu/art-32-gdpr/"> GDPR</a>. GDPR does not mandate confidential computing by name. But Article 32 requires appropriate technical and organizational measures, including encryption and the ability to ensure ongoing confidentiality, integrity, availability, and resilience of processing systems and services. “Processing” is the important part here.</p>
+<p>If an organization processes sensitive personal data, then the security question cannot stop at storage and transmission. The organization also has to ask what happens while that data is actively being used. Who can access the workload? What can the host see? What is included in the trusted computing base? Can the workload prove that it is running in a protected environment before secrets are released?</p>
+<p>Confidential computing gives security teams a concrete way to answer those questions.</p>
+<p>The same pattern appears in the financial sector.<a href="https://www.eiopa.europa.eu/digital-operational-resilience-act-dora_en"> DORA</a>, the EU Digital Operational Resilience Act, has applied since January 2025, and it focuses on ICT risk, operational resilience and third-party technology dependencies. The act does not simply say “deploy confidential computing”, but it creates a regulatory environment where financial institutions need stronger evidence that sensitive workloads remain protected across outsourced ICT environments.</p>
+<p>The UK PRA’s<a href="https://www.bankofengland.co.uk/prudential-regulation/publication/2021/march/outsourcing-and-third-party-risk-management-ss"> SS2/21</a> makes the data-in-use point even more explicit by referring to robust controls for data in memory, alongside data in transit and data at rest. For sensitive financial workloads, confidential computing can become part of the control set used to reduce runtime exposure and strengthen assurance.</p>
+<p><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj/eng">NIS2</a> follows a similar logic as it requires essential and important entities to apply appropriate and proportionate cybersecurity risk-management measures. These organizations include sectors such as energy, transport, banking, health, digital infrastructure, and public administration. Many of them are modernizing through cloud, edge, and data-driven systems. Many of them are also processing data that is operationally or socially sensitive.</p>
+<p>For those sectors, runtime protection is not a niche concern. It is part of the broader question of cyber resilience.</p>
+<h2 class="wp-block-heading">Sovereignty is making runtime trust visible</h2>
+<p>Confidential computing is also becoming central to sovereign technology discussions. Sovereignty is often reduced to geography: where data is stored, where infrastructure is operated, and which jurisdiction applies. Those questions are important, but they are not the full story.</p>
+<p>A more complete sovereignty model also asks: who can technically access the workload? Can administrators inspect data while it is being processed? Can the infrastructure provider access memory? Can the tenant verify the state of the environment before releasing keys or secrets?</p>
+<p>This is where confidential computing becomes a sovereignty control rather than simply a privacy feature.</p>
+<p>The French cybersecurity agency<a href="https://cyber.gouv.fr/en"> ANSSI</a> has described confidential computing in its<a href="https://messervices.cyber.gouv.fr/guides/en-technical-position-paper-confidential-computing"> technical position paper</a> as a set of technologies for executing sensitive workloads in remote environments, complementing encryption at rest and in transit by encrypting data in use and shielding it from direct inspection by administrators on shared infrastructure.</p>
+<p>This framing acknowledges both the promise and the limitations of the technology. Confidential computing is not magic: it does not remove the need for secure software, patched systems, measured boot, key management, monitoring, or carefully designed architecture. What it does do is reduce the amount of infrastructure that has to be trusted by default.</p>
+<p>For sovereign systems, that reduction is powerful. It enables a more nuanced model: not “trust the provider completely”, and not “never run sensitive workloads on shared infrastructure”, but instead “use infrastructure with stronger technical boundaries, attestation, and cryptographic control”.</p>
+<h2 class="wp-block-heading">Healthcare shows why data in use is important</h2>
+<p>Healthcare is one of the clearest examples of why confidential computing is becoming relevant to regulation.</p>
+<p>Health data is highly sensitive, but it is also increasingly valuable for research, public health, personalized medicine, and AI. The challenge is that healthcare systems need to make data useful without making it unnecessarily exposed.</p>
+<p>The<a href="https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space-regulation-ehds_en"> European Health Data Space</a> is a good example of this change. It aims to create a framework for the use and reuse of electronic health data across the EU, including secondary use for research, innovation, policy-making, and public health. That kind of model depends on trust: patients, providers, researchers, and regulators all need confidence that sensitive data can be analyzed under strict safeguards.</p>
+<p>Traditional encryption helps protect health data when it is stored or transmitted. But research, analytics and AI workloads require data to be processed. That is the point where confidential computing becomes especially relevant.</p>
+<p>By protecting workloads and data during computation, confidential computing can help healthcare organizations build stronger technical boundaries around sensitive analysis environments. It can reduce exposure to infrastructure operators, support attestation before data or keys are released, and make it easier to design systems where data can be used without broadening the circle of trust.</p>
+<p>This does not make healthcare data sharing simple. Governance, consent, access controls, auditability, anonymization, pseudonymization, and legal safeguards are still mandatory . But confidential computing gives healthcare organizations a practical way to strengthen the processing environment itself.</p>
+<p>For healthcare, the regulatory question is no longer only “where is the data stored?” It is also “how is the data protected while it is being used?”</p>
+<h2 class="wp-block-heading">Secure data sharing needs secure processing</h2>
+<p>Another area where confidential computing fits naturally is data sharing.</p>
+<p>The<a href="https://eur-lex.europa.eu/eli/reg/2022/868/oj"> EU Data Governance Act</a> introduces the concept of secure processing environments: physical or virtual environments, combined with organizational measures, that allow data to be used while maintaining legal requirements around confidentiality, integrity, access, and supervision. This is the exact kind of problem confidential computing was built to help solve.</p>
+<p>Many organizations want to collaborate on sensitive data without exposing raw datasets more broadly than necessary. Healthcare researchers want to analyze patient data. Public sector bodies want to reuse data for policy and planning. Financial institutions want to collaborate on fraud detection. Companies want to run analytics across commercial datasets without revealing more than the computation requires.</p>
+<p>In these cases, the question is not only “is the database encrypted?” The question is “can the processing environment itself be trusted?”</p>
+<p>Confidential computing can help create stronger technical boundaries for these environments. It can support attestation before data access, reduce exposure to infrastructure administrators and help organizations design systems where sensitive data can be used with fewer parties in the trusted computing base.</p>
+<p>That makes it highly relevant to data spaces, data clean rooms, and regulated analytics.</p>
+<h2 class="wp-block-heading">AI raises the stakes for data in use</h2>
+<p>AI makes the regulatory relevance of confidential computing even clearer.</p>
+<p>AI workloads often process highly sensitive inputs: prompts, embeddings, documents, training data, fine-tuning datasets, model weights, and inference outputs. In some cases, the model itself may be valuable intellectual property. In others, the data being processed may be personal, confidential, classified, or commercially sensitive.</p>
+<p>The<a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-15"> EU AI Act</a> requires high-risk AI systems to achieve appropriate levels of accuracy, robustness and cybersecurity throughout their lifecycle. That lifecycle framing is important. Security is not a one-time property of the model. It depends on how the model is deployed, what data it processes, how it is updated, how it is monitored, and how its surrounding infrastructure is protected.</p>
+<p>Confidential computing can help secure parts of that lifecycle, especially where organizations want to run AI workloads on shared, remote, or hybrid infrastructure without exposing sensitive data or models to the underlying platform.</p>
+<p>This is why confidential AI is becoming such an important use case. It is not only about privacy. It is also about protecting intellectual property, reducing third-party risk, supporting regulated inference, and enabling organizations to adopt AI without giving up control over sensitive assets.</p>
+<p>The same idea is starting to appear in AI policy discussions beyond traditional compliance. For example, public comments related to the US<a href="https://www.federalregister.gov/documents/2025/10/28/2025-19674/american-ai-exports-program"> American AI Exports Program</a> have recommended accelerator-level confidential computing as one way to protect AI model weights and systems in export packages. That is not the same as a regulatory mandate, but it shows how confidential computing is entering wider discussions about AI security, trust, and geopolitical risk.</p>
+<h2 class="wp-block-heading">Other frameworks point in the same direction</h2>
+<p>Not every relevant framework is built around privacy, financial resilience, or AI. Some are sector-specific or industry-led, but they point to the same underlying issue.</p>
+<p>The<a href="https://www.pcisecuritystandards.org/standards/pci-dss/"> Payment Card Industry Data Security Standard</a> is designed to protect payment account data through technical and operational requirements.<a href="https://blog.pcisecuritystandards.org/just-published-pci-dss-v4-0-1"> PCI DSS v4.0.1</a> is not a confidential computing regulation, but payment environments often involve sensitive data moving through memory, applications, and processing systems. For high-risk payment workloads, runtime protection can become part of a broader defence-in-depth strategy.</p>
+<p>The<a href="https://cloudsecurityalliance.org/research/guidance"> Cloud Security Alliance</a> has also highlighted the need for cloud-native security architectures and guidance for protecting sensitive workloads in modern cloud environments. Its work is not regulation, but it often shapes how cloud providers and customers think about practical controls.</p>
+<p>Singapore’s<a href="https://www.mas.gov.sg/regulation/guidelines/technology-risk-management-guidelines"> Monetary Authority of Singapore</a> provides technology risk management guidance for financial institutions. Like DORA and PRA SS2/21, it reflects a wider financial-sector expectation: organizations need strong governance and technical controls for technology risk, especially where critical or sensitive workloads depend on third-party infrastructure.</p>
+<p>The pattern is consistent. Whether the language is data in use, data in memory, secure processing, operational resilience, cybersecurity, or zero trust, the direction is the same: sensitive data needs protection during computation, not only before and after it.</p>
+<h2 class="wp-block-heading">A new baseline for sensitive workloads</h2>
+<p>The end result of all this is clear to see: regulation is becoming more concerned with how data is processed, instead of solely focusing on where and how it is stored. Financial risk management is becoming more focused on third-party technology dependencies. AI regulation is making lifecycle security more important. Healthcare and data-sharing initiatives are making secure processing environments more important. Sovereignty discussions are moving beyond location and into technical control.</p>
+<p>All of these trends point toward the same conclusion: data in use is becoming a regulatory concern.</p>
+<p>Confidential computing will not be mandatory for every workload. It will not replace existing security controls. It will not eliminate the need to trust hardware vendors, firmware, guest software or the application itself.</p>
+<p>But for sensitive and regulated workloads, it gives organizations a way to shrink the trust boundary, strengthen runtime protection and provide stronger evidence that systems are being designed with confidentiality in mind.</p>
+<p>That is why confidential computing is becoming part of the compliance conversation. Encryption at rest and in transit gave us the first two pillars of data protection. Confidential computing adds the third: protection while data is in use.</p>
+<p>For organizations building the next generation of regulated cloud, edge, AI, and data-sharing systems, that third pillar is becoming much harder to treat as optional.</p>
+<h1 class="wp-block-heading">The role of Canonical and Ubuntu </h1>
+<p>Confidential computing is often described as a hardware capability. That is true, but it is only part of the story. Regulated organizations do not deploy processors in isolation. They deploy platforms. They need kernels, hypervisors, images, firmware, tooling, security updates, and long-term maintenance that work together.</p>
+<p>That is why the operating system is important for confidential computing. With Ubuntu 26.04 LTS, Canonical brings integrated host and guest support for both AMD SEV-SNP and Intel TDX. These are two of the main technologies used to protect confidential virtual machines, and supporting both sides of the stack is what makes confidential computing practical for real deployments.</p>
+<p>For regulated organizations, this is what turns confidential computing from a hardware feature into something they can confidently deploy at scale. If you’re interested in discussing your confidential computing needs in more detail, don’t hesitate to <a href="https://canonical.com/contact-us#get-in-touch">contact us</a>.</p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
+    <item>
+      <title>I was bought a new computer</title>
+      <link>https://www.kryogenix.org/days/2026/07/24/i-was-bought-a-new-computer/</link>
+      <guid isPermaLink="true">https://www.kryogenix.org/days/2026/07/24/i-was-bought-a-new-computer/</guid>
+      <pubDate>Fri, 24 Jul 2026 11:46:00 GMT</pubDate>
+      <description><![CDATA[<p>Twelve years ago I wrote about <a href="https://www.kryogenix.org/days/2014/03/01/i-bought-a-new-computer/">getting a new computer</a> and now I have another new one. I didn't buy this one, though; it was a fiftieth birthday present from my parents. And I'm really rather pleased with it.</p>
+<p>First, let's have a look. Of the three things I'm <em>most</em> pleased with, the first is the look of it, which is all down to the case.</p>
+<p><img src="https://www.kryogenix.org/images/fractal-terra-jade.png" alt="a compact, elegant mini computer case measuring 343 x 153 x 218 mm with a warm natural walnut wood front accent and a cool, finely textured green anodized aluminum shell"></p>
+<table>
+    <tr><th>Case</th>
+        <td><a href="https://www.fractal-design.com/products/cases/terra/terra/terra-jade/">FRACTAL TERRA Mini ITX Case (JADE)</a></td>
+    </tr>
+    <tr><th>Processor (CPU)</th>
+        <td>AMD Ryzen 7 9700X Eight Core CPU (3.8GHz-5.5GHz/40MB CACHE/AM5)</td>
+    </tr>
+    <tr><th>Motherboard</th>
+        <td>ASUS® ROG STRIX B850-I GAMING WIFI (AM5, DDR5, M.2 PCIe 5.0, Wi-Fi 7)</td>
+    </tr>
+    <tr><th>Memory (RAM)</th>
+        <td>64GB Corsair VENGEANCE RGB DDR5 6000MHz CL30 (2 x 32GB)</td>
+    </tr>
+    <tr><td colspan="3"><p>lots of memory. I am a big believer in
+        having plenty of RAM. There are people who will tell you
+        that you don't need it unless you're running many VMs, and
+        I do not agree with these people. Can't have too much RAM;
+        that was a thing I did right about the last machine, and
+        I've done the same here.</p></td></tr>
+    <tr><th>Power Supply</th>
+        <td>CORSAIR SF750 750W 80 PLUS® Platinum Certified High Performance SFX PSU</td>
+    </tr>
+    <tr><th>Monitor</th>
+        <td>IIYAMA XUB2492HSU-B6 24" LED WIDESCREEN, DP, HDMI 1920x1080</td>
+    </tr>
+    <tr><td colspan="3"><p>a <em>second</em> monitor. So now I have two. Sweet.</p></td></tr>
+    <tr><th>Graphics Card</th>
+        <td>12GB ASUS PRIME GEFORCE RTX 5070 OC - HDMI, 3 x DP</td>
+    </tr>
+    <tr><td colspan="3"><p>This is the second good thing; a good
+    graphics card. This has gee'd up my Blender experience 
+    enormously and is very pleasing to me, and also has allowed
+    experimenting with local LLM stuff in order to try to form
+    an informed opinion on this sort of thing.</p></td></tr>
+    <tr><th>1st M.2 SSD Drive</th>
+        <td>500GB CRUCIAL T500 GEN 4 M.2 NVMe PCIe SSD (up to 7200MB/sR, 5700MB/sW)</td>
+    </tr>
+    <tr><th>2nd M.2 SSD Drive</th>
+        <td>4TB CORSAIR CORE XT MP600 NVMe PCIe M.2 SSD (up to 5000 MB/R, 4400 MB/W)</td>
+    </tr>
+</table>
+
+<p>And the third good thing is all the disc space. The thing I really screwed up with the last build was penny-pinching on hard drive space; I was forever deleting stuff in order to have room to download more. I wasn't going to make that mistake again. And indeed I have not; I haven't even used up 25% of the space yet, and I can blithely download whatever I want and not have to worry about tidying it up, emptying the rubbish bin, all that. It's so <em>freeing</em>.</p>
+
+<p>As with last time, I went to <a href="https://www.pcspecialist.co.uk">PC Specialist</a>, and they did a good job. Now my lovely machine sits on my desk and looks pretty and does everything I want. Cheers, mum and dad; here's to the next twelve years of it.</p>]]></description>
+      <source url="http://feeds.feedburner.com/kryogenix">Stuart Langridge</source>
+    </item>
     <item>
       <title>Microbit: easier with extensions</title>
       <link>https://thepcspy.com/read/microbit-easier-with-extensions/</link>
@@ -58,55 +194,6 @@ value <span class="token operator">|=</span> Math<span class="token punctuation"
 <li>Lead image from <a href="https://thepcspy.com/read/microbit-easier-with-extensions/microbit.org">micro Educational Foundation</a></li>
 </ul>]]></description>
       <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
-    </item>
-    <item>
-      <title>Canonical announces the Enterprise Store as part of Ubuntu Pro</title>
-      <link>https://ubuntu.com//blog/canonical-announces-the-enterprise-store</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/canonical-announces-the-enterprise-store</guid>
-      <pubDate>Tue, 21 Jul 2026 14:25:58 GMT</pubDate>
-      <description><![CDATA[<h3 class="wp-block-heading">Canonical introduces a new way to manage software behind firewalls and in air-gapped environments with the Enterprise Store.</h3>
-<p>The Enterprise Store makes software distribution manageable and scalable behind firewalls or in air-gapped environments. Available with an Ubuntu Pro subscription, the Enterprise Store respects the security protocols of strict environments, in a way that is controllable, auditable, and predictable. </p>
-<h2 class="wp-block-heading">What is the Enterprise Store?</h2>
-<p>The <a href="https://ubuntu.com/enterprise-store">Enterprise Store</a> is an on-premise edge proxy. It sits between your devices and Canonical’s software stores, so your systems can install and update software without needing direct outbound access from every machine. That makes it a strong fit for:</p>
-<ul>
-<li>Corporate networks with strict egress controls</li>
-<li>Air-gapped and offline environments</li>
-<li>Regulated industries that need change control and auditability </li>
-</ul>
-<p>In order to meet the needs of these strict environments, the Enterprise Store is designed around a few practical capabilities:</p>
-<ul>
-<li><strong>Local caching</strong> to speed up repeat downloads and reduce bandwidth use.</li>
-<li><strong>Air-gapped operation</strong> (offline mode) so updates can be manually transferred when there’s no internet connectivity.</li>
-<li><strong>High availability</strong> options to reduce the risk of service interruption.</li>
-<li><strong>Granular revision control</strong> so you can pin versions and avoid surprises during critical operations.</li>
-</ul>
-<h2 class="wp-block-heading">High availability</h2>
-<p>The Enterprise Store supports high availability, giving teams a more resilient way to run software distribution in production. Instead of relying on a single machine to serve every client request, organizations can deploy multiple Enterprise Store instances behind a reverse proxy, allowing traffic to be routed to another live unit if one goes down. That reduces the risk of a single-node failure interrupting access to packages, updates, or operator software across connected systems.</p>
-<p>This high-availability model is designed for real operational environments. Reverse proxies can balance traffic and run health checks across backend units, while shared services help keep states consistent across the deployment. The result is a more robust control point for software distribution: one that helps teams maintain continuity, consistency, and tighter operational control even in restricted or business-critical environments.</p>
-<h2 class="wp-block-heading">One proxy for snaps and charms</h2>
-<p>The Enterprise Store gives teams a single proxy to manage both snaps and charms, covering the full software lifecycle from delivery to operations. </p>
-<p>Snaps are self-contained Linux packages that are easy to install, update, and maintain across desktop, cloud, and IoT environments. Charms are operators: software that wraps an application and contains the logic needed to deploy, configure, scale, integrate, and manage it over time. Together, they cover both software delivery and software operations.</p>
-<p>Many organizations use snaps to package and distribute software consistently, and charms to automate deployment and lifecycle management for applications across clouds and clusters. With a unified approach to network controls and governance, the Enterprise Store helps organizations manage their entire software estate consistently. </p>
-<h2 class="wp-block-heading">Included with Ubuntu Pro</h2>
-<p>The Enterprise Store is included as part of<a href="https://canonical.com/legal/ubuntu-pro-description"> Ubuntu Pro</a>, which means anyone with an Ubuntu Pro subscription can try it. If you’re experimenting at home or in a lab, you can get started today.</p>
-<p><a href="https://canonical.com/legal/ubuntu-pro-description">Ubuntu Pro</a> is free for personal use (for up to 5 machines), so you can get hands-on with the Enterprise Store before you roll it into a broader evaluation.</p>
-<h2 class="wp-block-heading">Get started</h2>
-<p>If you want to explore and set up  the Enterprise Store:</p>
-<ol>
-<li><strong>Read the</strong><a href="https://ubuntu.com/enterprise-store"><strong> Enterprise Store overview</strong></a> to understand use cases and key features.</li>
-<li><strong>Follow the</strong><a href="https://documentation.ubuntu.com/enterprise-store/main/?utm_source=chatgpt.com"><strong> </strong><strong>documentation</strong></a>: the docs hub includes getting started guides and sections covering charm support.</li>
-<li><a href="https://ubuntu.com/contact-us/form"><strong>Reach out</strong></a><strong> to Canonical</strong> if you have commercial requirements, larger-scale rollouts, or want guidance for a regulated environment.</li>
-</ol>
-<h2 class="wp-block-heading">Talk to us about your use case</h2>
-<p>If you’re looking at the Enterprise Store for production, especially across fleets, air-gapped environments, or compliance-bound ecosystems, Canonical can help you plan an evaluation, architecture, and rollout plan.</p>
-<p><a href="https://ubuntu.com/contact-us/form">Contact us</a> and tell us about your requirements and use cases.</p>
-<h2 class="wp-block-heading">Further reading</h2>
-<ul>
-<li><a href="https://ubuntu.com/enterprise-store">Enterprise Store overview</a></li>
-<li><a href="https://documentation.ubuntu.com/enterprise-store/main/">Enterprise Store documentation</a></li>
-<li><a href="https://ubuntu.com/pro">Ubuntu Pro</a> (free for personal use)</li>
-</ul>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>New Blog</title>
@@ -1720,54 +1807,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
       <source url="http://feeds.feedburner.com/tdlk">Dimitri John Ledkov</source>
     </item>
     <item>
-      <title>Calculating a rolling average without keeping all the numbers around</title>
-      <link>https://www.kryogenix.org/days/2026/03/14/calculating-a-rolling-average-without-keeping-all-the-numbers-around/</link>
-      <guid isPermaLink="true">https://www.kryogenix.org/days/2026/03/14/calculating-a-rolling-average-without-keeping-all-the-numbers-around/</guid>
-      <pubDate>Sat, 14 Mar 2026 23:23:00 GMT</pubDate>
-      <description><![CDATA[<p>OK, if you know anything about maths you will read this and shake your head in dismay because it's just <em>obvious</em> and why did I even need to think about it? But... I was quite pleased to think this through, so I thought I'd write it down in case anybody else finds it useful.</p>
-<p>So. Your job is to calculate the average of a set of numbers. This is not hard: the average value<sup id="sf-calculating-a-rolling-average-without-keeping-all-the-numbers-around-1-back"><a href="#sf-calculating-a-rolling-average-without-keeping-all-the-numbers-around-1" class="simple-footnote" title="maths people, I mean mean, obvs">1</a></sup> is the sum of the numbers divided by the count of the numbers. So the average of <code>2, 7, 8</code> is</p>
-<div class="highlight"><pre><span></span><code><span class="mf">2</span><span class="o">+</span><span class="mf">7</span><span class="o">+</span><span class="mf">8</span><span class="w">   </span><span class="mf">17</span>
-<span class="o">-----</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.666</span><span class="err">…</span>
-<span class="w">  </span><span class="mf">3</span><span class="w">      </span><span class="mf">3</span>
-</code></pre></div>
-
-<p>You know that bit already. But now I say: ok, here's a new number to add to the end of the list: <code>12</code>. What's the average now?</p>
-<p>One obvious way is to say, well, we know the numbers are <code>2, 7, 8</code>, so I'll just re-do the calculation with <code>2, 7, 8, 12</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="mf">2</span><span class="o">+</span><span class="mf">7</span><span class="o">+</span><span class="mf">8</span><span class="o">+</span><span class="mf">12</span><span class="w">   </span><span class="mf">29</span>
-<span class="o">--------</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.25</span>
-<span class="w">    </span><span class="mf">4</span><span class="w">       </span><span class="mf">4</span>
-</code></pre></div>
-
-<p>But that means that you have to keep all the numbers around forever. What if the list of numbers is big? That seems like hassle. It would be nice if we were able to calculate the average just from knowing what the <em>previous</em> average was, wouldn't it? So you know <code>5.666…</code> and you get told that the new number to add is 12: how do you get the new average of <code>7.25</code> just from that?</p>
-<p>I needed to do this and didn't know how, so I sat and thought about it for a short time and it's actually not hard, which was good; I'd just never considered it. So, as long as you know the "current" average number, <em>and</em> you know how many numbers there were in the list, you're all good. Consider: we know the current average is <code>5.666…</code> and that there were <code>3</code> numbers in the list that made that up. We don't need to know what the 3 numbers were (<code>2, 7, 8</code>) because if the three numbers we'd been given before were <em>all</em> <code>5.666…</code> -- that is, the list of numbers up to now was <code>5.666…, 5.666…, 5.666…</code> then when we took the average of that list, it would still be <code>5.666…</code>, because that's what an average means. So, even though we don't know what the 3 numbers were, we can pretend that we do, and now say that our new list is <code>5.666…, 5.666…, 5.666…, 12</code>. And we can work out the average of that! Or, put another way, we know that the average is</p>
-<div class="highlight"><pre><span></span><code>         sum of all numbers
-5.666… = ------------------
-          count of numbers
-</code></pre></div>
-
-<p>and because we can pretend that all the numbers were the average, we can say that the sum of all numbers is just the current average multiplied by the count:</p>
-<div class="highlight"><pre><span></span><code>         5.666…, 5.666…, "count" times
-5.666… = -----------------------------
-                   count
-</code></pre></div>
-
-<p>and so the <em>new</em> average is:</p>
-<div class="highlight"><pre><span></span><code>              (5.666…, 5.666…, "count" times) + 12
-new average = -----------------------------
-                       count + 1
-</code></pre></div>
-
-<p>which is</p>
-<div class="highlight"><pre><span></span><code>              (current average × count) + new number
-new average = --------------------------------------
-                          count + 1
-</code></pre></div>
-
-<p>So if you know the current average <code>a</code>, how many numbers there have been so far <code>c</code>, and the new number <code>n</code>, then the new <code>a = ((a*c)+n)/(c+1)</code>. And you only need to keep <code>a</code> and <code>c</code> around, rather than the whole list of numbers.</p>
-<p>Simple? Yes. But it was a useful thought for me that I could actually do this without having to keep the list around, which was handy in order to be able to <a href="https://mastodon.social/@sil/116230077286633335">calculate pi very inefficiently with coin flips on a BBC Micro</a>, a perfectly reasonable thing to do on your Saturday evening in my opinion.</p><ol class="simple-footnotes"><li id="sf-calculating-a-rolling-average-without-keeping-all-the-numbers-around-1">maths people, I mean mean, obvs <a href="#sf-calculating-a-rolling-average-without-keeping-all-the-numbers-around-1-back" class="simple-footnote-back">↩</a></li></ol>]]></description>
-      <source url="http://feeds.feedburner.com/kryogenix">Stuart Langridge</source>
-    </item>
-    <item>
       <title>Running RISC-V in a VM to test my snaps</title>
       <link>https://blog.popey.com/2026/02/running-risc-v-in-a-vm-to-test-my-snaps/</link>
       <guid isPermaLink="true">https://blog.popey.com/2026/02/running-risc-v-in-a-vm-to-test-my-snaps/</guid>
@@ -2453,140 +2492,6 @@ new average = --------------------------------------
 
 <p class="wp-block-paragraph">I attempted to use new API additions in recent Qt 6 versions to interact with a few real-world REST services. The additions are valuable, but it seems that there are a few places where improvements might be possible. My attempt to make the API feel closer to what developers in other environments might be accustomed to had some success, but I&#8217;m not sure <code>QFuture</code> is really intended to be used this way.<br>Do readers have any feedback? Would using QCoro improve the coroutine experience? Is it very unusual to create an application with QWidgets instead of QML these days? Should I have used PyQt and the python networking APIs?</p>]]></description>
       <source url="https://steveire.wordpress.com/feed/?mrss=off">Stephen Kelly</source>
-    </item>
-    <item>
-      <title>Free software activity in November 2025</title>
-      <link>https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</link>
-      <guid isPermaLink="true">https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</guid>
-      <pubDate>Thu, 04 Dec 2025 17:55:59 GMT</pubDate>
-      <description><![CDATA[<p>My Debian contributions this month were all
-<a href="https://www.freexian.com/about/debian-contributions/">sponsored</a> by
-Freexian.  I had a bit less time than usual, because Freexian collaborators
-gathered in Marseille this month for our yearly sprint, doing some planning
-for next&nbsp;year.</p>
-<p>You can also support my work directly via
-<a href="https://liberapay.com/cjwatson">Liberapay</a> or <a href="https://github.com/sponsors/cjwatson">GitHub
-Sponsors</a>.</p>
-<h2>OpenSSH</h2>
-<p>I began preparing for the second stage of the <a href="https://lists.debian.org/debian-devel/2024/04/msg00044.html"><span class="caps">GSS</span>-<span class="caps">API</span> key exchange package
-split</a> (some
-details have changed since that message).  It seems that we&#8217;ll need to wait
-until Ubuntu 26.04 <span class="caps">LTS</span> has been released, but that&#8217;s close enough that it&#8217;s
-worth making sure we&#8217;re ready.  This month I just did some packaging
-cleanups that would otherwise have been annoying to copy, such as removing
-support for direct upgrades from pre-bookworm.  I&#8217;m considering some other
-package rearrangements to make the split easier to manage, but haven&#8217;t made
-any decisions here&nbsp;yet.</p>
-<p>This also led me to start on a long-overdue bug triage pass, mainly
-consisting of applying usertags to lots of our open bugs to sort them by
-which program they apply to, and also closing a few that have been fixed,
-since some bugs will eventually need to be reassigned to <span class="caps">GSS</span>-<span class="caps">API</span> packages
-and it would be helpful to make them easier to find.  At the time of
-writing, about 30% of the bug list remains to be categorized this&nbsp;way.</p>
-<h2>Python&nbsp;packaging</h2>
-<p>I upgraded these packages to new upstream&nbsp;versions:</p>
-<ul>
-<li>aioftp</li>
-<li>basemap (fixing <a href="https://bugs.debian.org/1119728">Cython 3.1
-  compatibility</a>)</li>
-<li>billiard</li>
-<li>black</li>
-<li>django-phonenumber-field</li>
-<li>flask-security</li>
-<li>flufl.i18n</li>
-<li>langtable</li>
-<li>mariadb-connector-python</li>
-<li>peewee (fixing <a href="https://bugs.debian.org/1119757">Cython 3.1
-  compatibility</a>)</li>
-<li>pydantic</li>
-<li>pydantic-core</li>
-<li>pydantic-settings</li>
-<li>pylsqpack</li>
-<li>pymongo</li>
-<li>pymssql</li>
-<li>pyodbc</li>
-<li>python-auditwheel (<a href="https://github.com/pypa/auditwheel/pull/640">contributed follow-up fix
-  upstream</a>)</li>
-<li>python-avro</li>
-<li>python-bleach</li>
-<li>python-btrees</li>
-<li>python-certifi</li>
-<li>python-charset-normalizer</li>
-<li>python-colorlog</li>
-<li>python-django-channels</li>
-<li>python-django-constance</li>
-<li>python-django-contact-form</li>
-<li>python-django-hashids</li>
-<li>python-djvulibre (fixing <a href="https://bugs.debian.org/1119766">Cython 3.1
-  compatibility</a>)</li>
-<li>python-evalidate</li>
-<li>python-legacy-cgi</li>
-<li>python-openstep-plist (fixing <a href="https://bugs.debian.org/1119767">Cython 3.1
-  compatibility</a>)</li>
-<li>python-pytest-run-parallel</li>
-<li>python-pytokens</li>
-<li>python-tblib</li>
-<li>python-webargs</li>
-<li>pyupgrade</li>
-<li>sqlfluff</li>
-<li>trove-classifiers</li>
-<li>ttconv</li>
-<li>wcwidth</li>
-<li>zope.hookable</li>
-<li>zope.i18nmessageid (removing <a href="https://bugs.debian.org/1084014">run-time dependency on
-  setuptools</a>)</li>
-<li>zope.interface</li>
-<li>zope.proxy</li>
-<li>zope.security (removing <a href="https://bugs.debian.org/1084018">run-time dependency on
-  setuptools</a>)</li>
-<li>zope.sqlalchemy</li>
-</ul>
-<p>I packaged <a href="https://bugs.debian.org/1120507">django-pgtransaction</a> and
-backported it to trixie, since we plan to use it in Debusine; and I adopted
-python-certifi for the Python&nbsp;team.</p>
-<p>I fixed or helped to fix several other build/test&nbsp;failures:</p>
-<ul>
-<li><a href="https://bugs.debian.org/1119744">kivy</a></li>
-<li><a href="https://bugs.debian.org/1120242">mypy</a></li>
-<li><a href="https://bugs.debian.org/1114284">pytest-mypy-testing</a> (<a href="https://github.com/davidfritzsche/pytest-mypy-testing/pull/57">contributed
-  upstream</a>)</li>
-<li><a href="https://salsa.debian.org/python-team/packages/python-cytoolz/-/commit/52856c4c1d1bc9fab0241e4c1b0d20d75bdaa99a">python-cytoolz</a></li>
-<li><a href="https://bugs.debian.org/1120725">python-discord</a></li>
-<li><a href="https://bugs.debian.org/1120469">python-ncls</a>, fixing some failures in&nbsp;pyranges</li>
-<li><a href="https://bugs.debian.org/1121095">pyxdg</a></li>
-<li><a href="https://bugs.debian.org/1114415">traitlets</a></li>
-<li><a href="https://bugs.debian.org/1120228">twine</a></li>
-</ul>
-<p>I fixed a couple of other&nbsp;bugs:</p>
-<ul>
-<li><a href="https://bugs.debian.org/1119801">pmix: B-D on python3-all-dev, but not built for all supported Python3&nbsp;versions</a></li>
-<li><a href="https://bugs.debian.org/1064621">python-certifi: Package not compatible with&nbsp;multiarch</a></li>
-</ul>
-<h2>Other bits and&nbsp;pieces</h2>
-<ul>
-<li><a href="https://bugs.debian.org/1087524">cdebconf: Move to&nbsp;/usr/lib/apt/apt-extracttemplates</a></li>
-<li><a href="https://salsa.debian.org/debian/devscripts/-/merge_requests/588">devscripts: Restore dpkg-dev&nbsp;dependency</a></li>
-<li><a href="https://bugs.debian.org/1121577">groff: Missing information about some utilities in the &#8220;contrib&#8221;&nbsp;directory</a></li>
-</ul>
-<h2>Code&nbsp;reviews</h2>
-<ul>
-<li><a href="https://bugs.debian.org/1119914">base-passwd: French translation</a> (merged
-  and&nbsp;uploaded)</li>
-<li><a href="https://salsa.debian.org/installer-team/cdebconf/-/merge_requests/23">cdebconf: Consider using the standard dh sequence in
-  d/rules</a>
-  (merged and&nbsp;uploaded)</li>
-<li><a href="https://bugs.debian.org/430151">cdebconf: Multiple select is not right aligned in
-  Hebrew</a> (patch fails to build; asked
-  reporter for an&nbsp;update)</li>
-<li><a href="https://bugs.debian.org/1078936">cdebconf: Allow building without
-  libglib2.0-dev</a> (merged and&nbsp;uploaded)</li>
-<li><a href="https://bugs.debian.org/1121035">pydantic-core</a> (merged and&nbsp;uploaded)</li>
-<li>pymongo (sponsored adoption by Aryan&nbsp;Karamtoth)</li>
-<li><a href="https://salsa.debian.org/python-team/packages/maturin/-/merge_requests/1">python-maturin: Add missing build
-  dependencies</a>
-  (merged and&nbsp;uploaded)</li>
-</ul>]]></description>
-      <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
     </item>
     <item>
       <title>It's NOT always DNS.</title>
@@ -3888,6 +3793,240 @@ mirror and follow the instructions above.</p>]]></description>
 
 <p class="wp-block-paragraph">Thank you to everyone who contributed to OpenStack&nbsp;2023.2 Bobcat!</p>]]></description>
       <source url="https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off">Corey Bryant</source>
+    </item>
+    <item>
+      <title>Building a NAS</title>
+      <link>https://apebox.org/wordpress/tech/1325</link>
+      <guid isPermaLink="true">https://apebox.org/wordpress/tech/1325</guid>
+      <pubDate>Tue, 12 Sep 2023 21:33:05 GMT</pubDate>
+      <description><![CDATA[<h2 class="wp-block-heading">The status quo</h2>
+
+
+
+<p>Back in 2015, I bought an off-the-shelf NAS, a QNAP TS-453mini, to act as my file store and Plex server. I had previously owned a Synology box, and whilst I liked the Synology OS and experience, the hardware was underwhelming. I loaded up the successor QNAP with four 5TB drives in RAID10, and moved all my files over (after some initial DoA drive issues were handled).</p>
+
+
+
+<figure class="wp-block-image size-medium"><img fetchpriority="high" decoding="async" width="550" height="550" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png" alt="QNAP TS-453mini product photo" class="wp-image-1329" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-150x150.png 150w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-768x768.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3.png 850w" sizes="(max-width: 550px) 100vw, 550px" /><figcaption class="wp-element-caption">QNAP TS-453mini product photo</figcaption></figure>
+
+
+
+<p>That thing has been in service for about 8 years now, and it&#8217;s been&#8230; a mixed bag. It was definitely more powerful than the predecessor system, but it was clear that QNAP&#8217;s OS was not up to the same standard as Synology&#8217;s &#8211; perhaps best exemplified by &#8220;HappyGet 2&#8221;, the QNAP webapp for downloading videos from streaming services like YouTube, whose icon is a straight rip-off of StarCraft 2. On its own, meaningless &#8211; but a bad omen for overall software quality</p>
+
+
+
+<span id="more-1325"></span>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="884" height="172" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png" alt="The logo for QNAP HappyGet 2 and Blizzard's Starcraft 2 side by side" class="wp-image-1328" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png 884w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-550x107.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-768x149.png 768w" sizes="(max-width: 884px) 100vw, 884px" /><figcaption class="wp-element-caption">The logo for QNAP HappyGet 2 and Blizzard&#8217;s StarCraft 2 side by side</figcaption></figure>
+
+
+
+<p>Additionally, the embedded Celeron processor in the NAS turned out to be an issue for some cases. It turns out, when playing back videos with subtitles, most Plex clients do not support subtitles properly &#8211; instead they rely on the Plex server doing JIT transcoding to bake the subtitles directly into the video stream. I discovered this with some Blu-Ray rips of Game of Thrones &#8211; some episodes would play back fine on my smart TV, but episodes with subtitled Dothraki speech would play at only 2 or 3 frames per second.</p>
+
+
+
+<p>The final straw was a ransomware attack, which went through all my data and locked every file below a 60MiB threshold. Practically all my music gone. A substantial collection of downloaded files, all gone. Some of these files had been carried around since my college days &#8211; digital rarities, or at least digital detritus I felt a real sense of loss at having to replace. This episode was caused by a ransomware targeting specific vulnerabilities in the QNAP OS, not an error on my part.</p>
+
+
+
+<p>So, I decided to start planning a replacement with:</p>
+
+
+
+<ul class="wp-block-list">
+<li>A non-garbage OS, whilst still being a NAS-appliance type offering (not an off-the-shelf Linux server distro)</li>
+
+
+
+<li>Full remote management capabilities</li>
+
+
+
+<li>A small form factor comparable to off-the-shelf NAS</li>
+
+
+
+<li>A powerful modern CPU capable of transcoding high resolution video</li>
+
+
+
+<li>All flash storage, no spinning rust</li>
+</ul>
+
+
+
+<p>At the time, no consumer NAS offered everything (The Asustor FS6712X exists now, but didn&#8217;t when this project started), so I opted to go for a full DIY rather than an appliance &#8211; not the first time I&#8217;ve jumped between appliances and DIY for home storage.</p>
+
+
+
+<h2 class="wp-block-heading">Selecting the core of the system</h2>
+
+
+
+<p>There aren&#8217;t many companies which will sell you a small motherboard with IPMI. Supermicro is a bust, so is Tyan. But ASRock Rack, the server division of third-tier motherboard vendor ASRock, delivers. Most of their boards aren&#8217;t actually compliant Mini-ITX size, they&#8217;re a proprietary &#8220;Deep Mini-ITX&#8221; with the regular screw holes, but 40mm of extra length (and a commensurately small list of compatible cases). But, thankfully, they do have a tiny selection of boards without the extra size, and I stumbled onto the <a href="https://www.asrockrack.com/general/productdetail.asp?Model=X570D4I-2T">X570D4I-2T</a>, a board with an AMD AM4 socket and the mature X570 chipset. This board can use <em>any</em> AMD Ryzen chip (before the latest-gen Ryzen 7000 series); has built in dual 10 gigabit ethernet; IPMI; four (laptop-sized) RAM slots with full ECC support; one M.2 slot for NVMe SSD storage; a PCIe 16x slot (generally for graphics cards, but we live in a world of possibilities); and up to 8 SATA drives OR a couple more NVMe SSDs. It&#8217;s astonishingly well featured, just a shame it costs about $450 compared to a good consumer-grade Mini ITX AM4 board costing less than half that.</p>
+
+
+
+<p>I was so impressed with the offering, in fact, that I crowed about it on Mastodon and ended up securing ASRock another sale, with someone else looking into a very similar project to mine around the same timespan.</p>
+
+
+
+<p>The next question was the CPU. An important feature of a system expected to run 24/7 is low power, and AM4 chips can consume as much as 130W under load, out of the box. At the other end, some models can require as little as 35W under load &#8211; the OEM-only &#8220;GE&#8221; suffix chips, which are readily found for import on eBay. In their &#8220;PRO&#8221; variant, they also support ECC (all non-G Ryzen chips support ECC, but only Pro G chips do). The top of the range 8 core Ryzen 7 PRO 5750GE is prohibitively expensive, but the slightly weaker 6 core <a href="https://www.amd.com/en/products/apu/amd-ryzen-5-pro-5650ge">Ryzen 5 PRO 5650GE</a> was affordable, and one arrived quickly from Hong Kong. Supplemented with a couple of cheap 16 GiB SODIMM sticks of DDR4 PC-3200 direct from Micron for under $50 a piece, that left only cooling as an unsolved problem to get a bootable test system.</p>
+
+
+
+<p>The official support list for the X570D4I-2T only includes two rackmount coolers, both expensive and hard to source. The reason for such a small list is the non standard cooling layout of the board &#8211; instead of an AM4 hole pattern with the standard plastic AM4 retaining clips, it has an Intel 115x hole pattern with a non-standard backplate (Intel 115x boards have no backplate, the stock Intel 115x cooler attaches to the holes with push pins). As such every single cooler compatibility list excludes this motherboard. However, the backplate is only secured with a mild glue &#8211; with minimal pressure and a plastic prying tool it can be removed, giving compatibility with any 115x cooler (which is basically any CPU cooler for more than a decade). I picked an oversized low profile <a href="http://thermalright.com/product/axp120-x67-black-argb/">Thermalright AXP120-X67</a> hoping that its 120mm fan would cool the nearby MOSFETs and X570 chipset too.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg" alt="" class="wp-image-1333" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Thermalright AXP120-X67, AMD Ryzen 5 PRO 5650GE, ASRock Rack X570D4I-2T, all assembled and running on a flat surface</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Testing up to this point</h2>
+
+
+
+<p>Using a spare ATX power supply, I had enough of a system built to explore the IPMI and UEFI instances, and run MemTest86 to validate my progress. The memory test ran without a hitch and confirmed the ECC was working, although it also showed that the memory was only running at 2933 MT/s instead of the rated 3200 MT/s (a limit imposed by the motherboard, as higher speeds are considered overclocking). The IPMI interface isn&#8217;t the best I&#8217;ve ever used by a long shot, but it&#8217;s minimum viable and allowed me to configure the basics and boot from media entirely via a Web browser.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="905" height="819" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png" alt="" class="wp-image-1341" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png 905w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-550x498.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-768x695.png 768w" sizes="auto, (max-width: 905px) 100vw, 905px" /><figcaption class="wp-element-caption">Memtest86 showing test progress, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>One sad discovery, however, which I&#8217;ve never seen documented before, on PCIe bifurcation.</p>
+
+
+
+<p>With PCI Express, you have a number of &#8220;lanes&#8221; which are allocated in groups by the motherboard and CPU manufacturer. For Ryzen prior to Ryzen 7000, that&#8217;s 16 lanes in one slot for the graphics card; 4 lanes in one M.2 connector for an SSD; then 4 lanes connecting the CPU to the chipset, which can offer whatever it likes for peripherals or extra lanes (bottlenecked by that shared 4x link to the CPU, if it comes down to it).</p>
+
+
+
+<p>It&#8217;s possible, with motherboard and CPU support, to split PCIe groups up &#8211; for example an 8x slot could be split into two 4x slots (eg allowing two NVMe drives in an adapter card &#8211; NVME drives these days all use 4x). However with a &#8220;Cezanne&#8221; Ryzen with integrated graphics, the 16x graphics card slot cannot be split into four 4x slots (ie used for for NVMe drives) &#8211; the most bifurcation it allows is 8x4x4x, which is useless in a NAS.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="897" height="806" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png" alt="" class="wp-image-1336" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png 897w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-550x494.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-768x690.png 768w" sizes="auto, (max-width: 897px) 100vw, 897px" /><figcaption class="wp-element-caption">Screenshot of PCIe 16x slot bifurcation options in UEFI settings, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>As such, I had to abandon any ideas of an all-NVMe NAS I was considering: the 16x slot split into four 4x, combined with two 4x connectors fed by the X570 chipset, to a total of 6 NVMe drives. 7.6TB U.2 enterprise disks are remarkably affordable (cheaper than consumer SATA 8TB drives), but alas, I was locked out by my 5650GE. Thankfully I found out before spending hundreds on a U.2 hot swap bay. The NVMe setup would be nearly 10x as fast as SATA SSDs, but at least the SATA SSD route would still outperform any spinning rust choice on the market (including the fastest 10K RPM SAS drives)</p>
+
+
+
+<h2 class="wp-block-heading">Containing the core</h2>
+
+
+
+<p>The next step was to pick a case and power supply. A lot of NAS cases require an SFX (rather than ATX) size supply, so I ordered a modular <a href="https://www.silverstonetek.com/en/product/info/power-supplies/SX500-G/">SX500</a> unit from Silverstone. Even if I ended up with a case requiring ATX, it&#8217;s easy to turn an SFX power supply into ATX, and the worst result is you have less space taken up in your case, hardly the worst problem to have.</p>
+
+
+
+<p>That said, on to picking a case. There&#8217;s only one brand with any cachet making ITX NAS cases, Silverstone. They have three choices in an appropriate size: <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS01-HS/">CS01-HS</a>, <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS280/">CS280</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/DS380/">DS380</a>. The problem is, these cases are all badly designed garbage. Take the CS280 as an example, the case with the most space for a CPU cooler. Here&#8217;s how close together the hotswap bay (right) and power supply (left) are:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="568" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png" alt="" class="wp-image-1343" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-550x391.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-768x545.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>With actual cables connected, the cable clearance problem is even worse:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="533" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png" alt="" class="wp-image-1344" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-550x366.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-768x512.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>Remember, this is the <em>best</em> of the three cases for internal layout, the one with the least restriction on CPU cooler height. And it&#8217;s garbage! Total hot garbage! I decided therefore to completely skip the NAS case market, and instead purchase a 5.25&#8243;-to-2.5&#8243; hot swap bay adapter from Icy Dock, and put it in an ITX gamer case with a 5.25&#8243; bay. This is no longer a served market &#8211; 5.25&#8243; bays are extinct since nobody uses CD/DVD drives anymore. The ones on the market are really new old stock from 2014-2017: The <a href="https://www.fractal-design.com/products/cases/core/core-500/black/">Fractal Design Core 500</a>, <a href="https://www.coolermaster.com/catalog/cases/mini-itx/elite130/">Cooler Master Elite 130</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/SUGO14/">Silverstone SUGO 14</a>. Of the three, the Fractal is the best rated so I opted to get that one &#8211; however it seems the global supply of &#8220;new old stock&#8221; fully dried up in the two weeks between me making a decision and placing an order &#8211; leaving only the Silverstone case.</p>
+
+
+
+<p>Icy Dock have a selection of 8-bay 2.5&#8243; SATA 5.25&#8243; hot swap chassis choices in their ToughArmor MB998 series. I opted for the <a href="https://global.icydock.com/product_169.html">ToughArmor MB998IP-B</a>, to reduce cable clutter &#8211; it requires only two SFF-8611-to-SF-8643 cables from the motherboard to serve all eight bays, which should make airflow less of a mess. The X570D4I-2T doesn&#8217;t have any SATA ports on board, instead it has two SFF-8611 OCuLink ports, each supporting 4 PCI Express lanes OR 4 SATA connectors via a breakout cable. I had hoped to get the ToughArmor MB118VP-B and run six U.2 drives, but as I said, the PCIe bifurcation issue with Ryzen &#8220;G&#8221; chips meant I wouldn&#8217;t be able to run all six bays successfully.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg" alt="" class="wp-image-1348" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">NAS build in Silverstone SUGO 14, mid build, panels removed</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg" alt="" class="wp-image-1349" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">Silverstone SUGO 14 from the front, with hot swap bay installed</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Actual storage for the storage server</h2>
+
+
+
+<p>My concept for the system always involved a fast boot/cache drive in the motherboard&#8217;s M.2 slot, non-redundant (just backups of the config if the worst were to happen) and separate storage drives somewhere between 3.8 and 8 TB each (somewhere from $200-$350). As a boot drive, I selected the <a href="https://www.intel.com/content/www/us/en/products/sku/211868/intel-optane-ssd-p1600x-series-58gb-m-2-80mm-pcie-3-0-x4-3d-xpoint/specifications.html">Intel Optane SSD P1600X 58G</a>, available for under $35 and rated for 228 years between failures (or 11,000 complete drive rewrite cycles).</p>
+
+
+
+<p>So, on to the big expensive choice: storage drives. I narrowed it down to two contenders: new-old-stock Intel D3-S4510 3.84TB enterprise drives, at about $200, or Samsung 870 QVO 8TB consumer drives, at about $375. I did spend a long time agonizing over the specification differences, the ZFS usage reports, the expected lifetime endurance figures, but in reality, it came down to price &#8211; $1600 of expensive drives vs $3200 of even more expensive drives. That&#8217;s 27TB of usable capacity in RAID-Z1, or 23TB in RAID-Z2. For comparison, I&#8217;m using about 5TB of the old NAS, so that&#8217;s a LOT of overhead for expansion.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg" alt="" class="wp-image-1355" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Storage SSD loaded into hot swap sled</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Booting up</h2>
+
+
+
+<p>Bringing it all together is the OS. I wanted an &#8220;appliance&#8221; NAS OS rather than self-administering a Linux distribution, and after looking into the surrounding ecosystems, decided on <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> (the beta of the 2023 release, based on Debian 12).</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="600" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png" alt="" class="wp-image-1353" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-550x322.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-768x450.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1536x900.png 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image.png 2013w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">TrueNAS Dashboard screenshot in browser window</figcaption></figure>
+
+
+
+<p>I set up RAID-Z1, and with zero tuning (other than enabling auto-TRIM), got the following performance numbers:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>19.3k</td><td>75.6 MiB/s</td></tr><tr><td>4k random reads</td><td>36.1k</td><td>141 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>2300 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>3800 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Results using fio parameters <a href="https://support.huaweicloud.com/intl/en-us/evs_faq/evs_faq_0019.html#evs_faq_0019__section273349017162">suggested by Huawei</a></figcaption></figure>
+
+
+
+<p>And for comparison, the maximum theoretical numbers quoted by Intel for a single drive:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>16k</td><td>?</td></tr><tr><td>4k random reads</td><td>90k</td><td>?</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>280 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>560 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Numbers quoted by Intel SSD successors <a href="https://www.solidigm.com/products/data-center/d3/s4510.html">Solidigm</a>.</figcaption></figure>
+
+
+
+<p>Finally, the numbers reported on the old NAS with four 7200 RPM hard disks in RAID 10:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>430</td><td>1.7 MiB/s</td></tr><tr><td>4k random reads</td><td>8006</td><td>32 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>311 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>566 MiB/s</td></tr></tbody></table></figure>
+
+
+
+<p>Performance seems pretty OK. There&#8217;s always going to be an overhead to RAID. I&#8217;ll settle for the 45x improvement on random writes vs. its predecessor, and 4.5x improvement on random reads. The sequential write numbers are gonna be impacted by the size of the ZFS cache (50% of RAM, so 16 GiB), but the rest should be a reasonable indication of true performance.</p>
+
+
+
+<p>It took me a little while to fully understand the TrueNAS permissions model, but I finally got Plex configured to access data from the same place as my SMB shares, which have anonymous read-only access or authenticated write access for myself and my wife, working fine via both Linux and Windows.</p>
+
+
+
+<p>And&#8230; that&#8217;s it! I built a NAS. I intend to add some fans and more RAM, but that&#8217;s the build. Total spent: about $3000, which sounds like an unreasonable amount, but it&#8217;s actually less than a comparable Synology DiskStation DS1823xs+ which has 4 cores instead of 6, first-generation AMD Zen instead of Zen 3, 8 GiB RAM instead of 32 GiB, no hardware-accelerated video transcoding, etc. And it would have been a whole lot less fun!</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg" alt="" class="wp-image-1364" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">The final system, powered up</figcaption></figure>
+
+
+
+<p>(Also posted on <a href="https://pcpartpicker.com/b/fYhtt6">PCPartPicker</a>)</p>]]></description>
+      <source url="http://apebox.org/wordpress/tag/ubuntu/feed/">Jo Shields</source>
     </item>
     <item>
       <title>Understanding vm.swappiness: Improving Linux Performance and Memory Management</title>
@@ -9411,16 +9550,6 @@ On the reliability front new systems won't be added to the infrastructure if the
 <p>I would like to recommend this person of Microsoft to have a look at the new version  of <a title="guadalinexedu.org" href="http://www.guadalinexedu.org/" target="_blank">Guadalinex Edu</a> (available in few days) and then ask him what do they think is the best for  kids? Perhaps  motivation, enthusiasm and hard work of the entire free software  community can exceed 9.5 billion invested by Microsoft. Don&#8217;t worry about kids, you must be worried about <a title="Ubuntu bug #1" href="https://bugs.launchpad.net/ubuntu/+bug/1" target="_blank">the day</a> when these children reach the professional market and the quality and freedom of the free software used at schools will have more weight than all the investment you are doing in your proprietary software.</p>
 <p>:wq</p>]]></description>
       <source url="http://antoniosanchez.wordpress.com/category/planet-ubuntu/feed/atom">Antonio Sánchez</source>
-    </item>
-    <item>
-      <title>Webling und Android</title>
-      <link>http://blog.diener.li/allgemein/webling-und-android/</link>
-      <guid isPermaLink="true">http://blog.diener.li/allgemein/webling-und-android/</guid>
-      <pubDate>Mon, 09 Nov 2009 14:27:34 GMT</pubDate>
-      <description><![CDATA[<p>Ja ich habe seit Kurzem auch so einen kleinen Alleskönner als Handy. Auch wenn ich meinen <a title="Openmoko Freerunner" href="http://wiki.openmoko.org/wiki/Neo_FreeRunner/de" target="_blank">Freerunner</a> sehr mag, auf mein neues Spielzeug ist einfach mehr Verlass. Da mein altes Handy einem Wasserschaden (kein Kommentar) zum Opfer fiel, besorgte ich mir ein <a title="HTC Hero" href="http://www.htc.com/de/product.aspx" target="_blank">HTC Hero</a> mit <a title="Google Android" href="http://www.google.ch/intl/de_ch/mobile/android/" target="_blank">Google Android</a>. Ein <a title="Apple iPhone" href="http://www.apple.com/de/iphone/" target="_blank">iPhone</a> wollte ich nicht und ich bereue es bis heute nicht. Mein kleiner Held ist nicht nur die Hälfte so teuer, sondern bringt auch alles mit was ich brauche.</p>
-<p>Nun aber zum Wesentlichen. Etwas vom dümmsten an Handys war bislang die Portierung der Kontakte auf das neue Gerät. Umso erfreuter war ich, dass es dieses Mal sehr einfach ging. Da Android nun mal von Google kommt, unterstützt es natürlich auch Synchronisation mit dem Kalender, den Mails und den Kontakten von Google. Wenn man mal die Bedenken bezüglich der &#8222;Datenkrake&#8220; Google aussen vor lässt und sich auf die funktionellen Fakten bezieht, dann ist das mehr als nur optimal. Angenommen man benutzt bereits die genannten Google Dienste bereits, muss man auf dem Android lediglich seine Kontodaten angeben und alles regelt sich von selbst.</p>
-<p>Wie einige von euch wahrscheinlich wissen, bin ich Teilhaber von <a title="uSystems GmbH" href="http://www.usystems.ch/" target="_blank">uSystems GmbH</a>, die unter anderem eine <a title="webling.ch - verwaltet deinen Verein" href="http://www.webling.ch" target="_blank">Vereinsverwaltungssoftware</a> entwickelt. Die nennt sich Webling und kann eigentlich viel mehr, aber in diesem Beispiel brauche ich sie nur als Adressverwaltung. Denn seit einiger Zeit habe ich mir eine persönliche Instanz davon unter den Nagel gerissen und brauche es um die Kontaktdaten meiner Freunde zu verwalten. So habe ich einen zentralen Ort, wo ich von überall darauf Zugriff habe. Warum ich das erwähne? Nun Webling kann Daten nicht nur Importieren, sondern auch in diversen Formaten exportieren. Hier zeigt sich wieder mal, dass gewisse simple und bereits recht alte Standards auch heute noch immer super sind. Denn Webling bietet unter anderem die Möglichkeit in eine <a title="CSV Dateiformat auf Wikipedia DE" href="http://de.wikipedia.org/wiki/CSV_%28Dateiformat%29" target="_blank">CSV-Datei</a> zu exportieren und Google wiederum diese zu importieren. Und da die Google Kontakte ja mit meinem Handy synchronisiert werden, habe ich nun sofort alle meine Kontakte auch auf meinem Handy. Und sollte ich mal einen neuen Kontakt nicht importiert haben, so kann ich jederzeit von überall über den <a title="Webling.ch - News" href="http://www.webling.ch/news.php" target="_blank">neuen</a> Webling Mobile Client auch per Handy auf alle Daten zugreifen. Sehr praktisch sag ich da nur!  <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> (Auch wenn ich natürlich etwas voreingenommen bin.)</p>]]></description>
-      <source url="http://blog.diener.li/feed">Carlos Diener - emonkey</source>
     </item>
     <item>
       <title>UDS Karmic &amp;#8211; Day One</title>
