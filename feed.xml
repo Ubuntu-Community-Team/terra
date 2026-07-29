@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Tue, 28 Jul 2026 02:38:45 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 02:45:37 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -240,6 +240,33 @@
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
+      <title>Tell your kids to be plumbers</title>
+      <link>https://thepcspy.com/read/tell-kids-to-be-plumbers/</link>
+      <guid isPermaLink="true">https://thepcspy.com/read/tell-kids-to-be-plumbers/</guid>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>A few years ago I’d have been happy if my children wanted to
+follow me into a career of programming, but the longer I spend
+with LLMs, the less future I see in it for any of us.
+How should we advise our children for their futures?</p>
+ <figure style="float:right;margin: 0 0 10px 10px;max-width: 30%"><img src="https://thepcspy.com/read/tell-kids-to-be-plumbers/plumber-education.avif"><figcaption>Thanks ChatGPT</figcaption></figure>
+<p>If you can afford tokens, programming became an <strong>outcome-oriented task</strong>. Tell your <abbr title="Large Language Model">LLM</abbr> what you want and wait. Ideas to <abbr title="Minimum Viable Product">MVP</abbr> in an hour, little programming required. Senior developers’ last bastion is debugging and performance, but it’s only a matter of time. Engineering teams <em>will</em> mutate into LLM shepherds until even seniors have no place. And my industry isn’t alone.</p>
+<p>Anything where computers became central is feeling heat: data entry, customer service, translation, technical writing, marketing, copywriting, paralegal, secretarial, accountancy and tax code, and every creative job that doesn’t rely on physical media. Junior tasks are already being done by LLMs, senior roles will follow.</p>
+<p>So what do you want your kids to be when they grow up?<br>
+Will that still be a thing in ten years?</p>
+<p><strong>Note:</strong> Let’s remember: it’s their life to live. As parent’s we sometimes like to think we’re steering but we’re not even passengers. We can advise, we can enable, but we can’t make our kids do anything and would be foolish to try.</p>
+<h2 id="raise-barbarians-rogues-and-rangers-not-wizards">Raise barbarians, rogues and rangers, not wizards</h2>
+<p>My parents, grandparents and school pushed hard towards further education and “professional” jobs. It was the only path for a bright kid. The “trades” were for kids who <em>failed</em> at school. If you didn’t need an A-level –let alone a degree– what was the point?</p>
+<p>This feels like bad advice today. Intelligence-based jobs will still exist but not in today’s volume, and with ever increasing numbers of people (and AIs) vying for them, throwing our kids into that fray doesn’t seem like giving them opportunity, it sounds like a fight.</p>
+<p>But <u><strong>everybody will always need plumbing</strong></u>. All the tokens in the world won’t solder pipework, dig pipe trenches, stick tiles on the wall, smell gas leaks, and and they won’t carry a bath up the stairs. Robots are decades away from replacing cheap meatbags so plumbing is safe from automation, while still being diverse, entrepreneurial and often creative enough to engage an active mind.</p>
+<p>The important thing is raising kids with the awareness of what jobs are actually available. They can’t all be doctors and influencers. There are lots of STR and DEX builds available. Don’t be afraid to dual class.</p>
+<h2 id="education-still-adds-value-and-opportunity">Education still adds value and opportunity</h2>
+<p>What do <em>I</em> want my kids to be? <strong>Happy</strong>.</p>
+<p>Forcing them out of school into an apprenticeship is unlikely to achieve that, and as much as I worry about the future of employment, will more education ever be bad? Further education isn’t a checkbox qualification. It coaches people how to think, research, learn and grow.</p>
+<p>Higher education needs to catch up with the world. £100k for a 5y medical degree, 40 year career <em>might</em> make sense, but what about the degrees without an attached career? Rather than get tribal about what should be allowed at university, I think we need to be more flexible with learning. Is there anything wrong with learning about the Italian Renaissance <em>while</em> training as a plumber? Similarly, we should help adults go back to education, learn more. More night schools, more vocational courses.</p>
+<p>I <em>do</em> worry about the future, but that’s always been a parent’s job.</p>]]></description>
+      <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
+    </item>
+    <item>
       <title>I was bought a new computer</title>
       <link>https://www.kryogenix.org/days/2026/07/24/i-was-bought-a-new-computer/</link>
       <guid isPermaLink="true">https://www.kryogenix.org/days/2026/07/24/i-was-bought-a-new-computer/</guid>
@@ -293,56 +320,6 @@
 
 <p>As with last time, I went to <a href="https://www.pcspecialist.co.uk">PC Specialist</a>, and they did a good job. Now my lovely machine sits on my desk and looks pretty and does everything I want. Cheers, mum and dad; here's to the next twelve years of it.</p>]]></description>
       <source url="http://feeds.feedburner.com/kryogenix">Stuart Langridge</source>
-    </item>
-    <item>
-      <title>Microbit: easier with extensions</title>
-      <link>https://thepcspy.com/read/microbit-easier-with-extensions/</link>
-      <guid isPermaLink="true">https://thepcspy.com/read/microbit-easier-with-extensions/</guid>
-      <pubDate>Thu, 23 Jul 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>The <a href="https://microbit.org/get-started/what-is-the-microbit/">BBC Microbit</a> is a wonderful introduction to both programming and electronics, but <a href="https://makecode.microbit.org/blocks">MakeCode’s Blocks</a> make some ideas quite hard to express.</p>
- <figure class="rimxs"><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;microbit-drawing-2-yellow.avif&quot;,&quot;index&quot;:0}"></figure>
-<p>Introducing my 6yo to robotics, I’m conscious how important it is to keep things interesting, to keep difficulties abstracted, hidden. Buzzers, LEDs, motor controllers and servos are pretty much plug-and-play these days but <em>control</em> is harder. You want speed, direction, some buttons for features and ideally some method of feedback.</p>
-<p>The builtin BLE allows <a href="https://www.youtube.com/watch?v=QxVwzhAZq3Y">phone apps</a>, but I try to keep my kids off phones. There isn’t a proper BT stack available to the Microbit, so real controllers are out. IR is super cheap but the experience is short range and very directional. Similarly a corded remote  works <em>with caveats</em>. But none are ideal.</p>
-<h2 id="use-another-microbit">Use another Microbit.</h2>
-<p>The radio module in the Microbit is awesome. Its Nordic nRF5xxxx SoC has a proprietary low-latency communication protocol called <a href="https://nrfconnectdocs.nordicsemi.com/ncs/3.2.2/nrf/protocols/esb/index.html">Enhanced ShockBurst</a>. Microbit software builds on top of this for a super-simple message exchange format. Pick a channel and just send and receive 32byte messages.</p>
-<p>A Microbit on its own does have enough sensors to act as a HCI device: accelerometer for directions, two or three buttons depending on your version, but you still have to add batteries, and tilting isn’t the best interface. In a pinch, sure, but better options exist. I have –and would recommmend– a <a href="https://wiki.elecfreaks.com/en/microbit/expansion-board/joystick-bit-v2/">Joystick v2 Plus</a>. ~£15 buys you a x-y axes, four buttons, buzzer, vibration feedback, battery case and the plus version has handles (which you could 3d print).</p>
-<h2 id="if-its-so-good-why-use-extensions">If it’s so good, why use extensions?</h2>
-<p>We have our hardware but how do we take that input and send it to our robot? <a href="https://www.elecfreaks.com/learn-en/microbitKit/smart_cutebot/cutebot_case13.html">Elecfreaks’ example</a> would have your controller send named events for both axes, every button. 🤮</p>
-<figure><img __astro_image_="{&quot;alt&quot;:&quot;Yuck&quot;,&quot;src&quot;:&quot;elecfreaks.avif&quot;,&quot;index&quot;:0}"></figure>
-<p>You have to unpick each message separately. These messages are processed in a queue with the main forever loop, it’s possible –likely, even– you’re going to have forever loops where you’re dealing with old data. What about key combinations?</p>
-<p>In a <em>real</em> programming language, you’d pack all your data into one packet and send it off and decode it all at once. 8 bits each for <code>x</code> and <code>y</code>. 1 bit per button. In a real language you can use bitwise operators to pack the bits together into a single number, and break them apart just as easily.</p>
-<pre class="language-plaintext" data-language="plaintext"><code class="language-plaintext">    x    |     y    |  c  |  d  |  e  |  f  
-00000000 | 00000000 |  0  |  0  |  0  |  0 </code></pre>
-<p>But Blocks lacks the tools for encoding this stuff into a single message … without extensions. So I wrote a <a href="https://github.com/oliwarner/joystickbitRadio/"><strong>joystickbit-radio</strong> extension</a> extension to do exactly that. I turns the joypad state into a single number you just transmit over the normal radio block. For the user it’s as simple as dragging a few blocks:</p>
-<figure><img __astro_image_="{&quot;alt&quot;:&quot;&quot;,&quot;src&quot;:&quot;joystickbit-radio-sender.avif&quot;,&quot;index&quot;:0}"></figure>
-<aside><details><summary>See what it's doing behind the scenes...</summary><p>It’s pretty simple to pack a binary format up with bitwise operators.</p><pre class="language-ts" data-language="ts"><code class="language-ts"><span class="token keyword">let</span> value<span class="token operator">:</span><span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span>
-
-value <span class="token operator">|=</span> Math<span class="token punctuation">.</span><span class="token function">idiv</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getRockerValue</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>rockerType<span class="token punctuation">.</span><span class="token constant">X</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
-value <span class="token operator">|=</span> Math<span class="token punctuation">.</span><span class="token function">idiv</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getRockerValue</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>rockerType<span class="token punctuation">.</span><span class="token constant">Y</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">8</span>
-
-<span class="token keyword">if</span> <span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getButton</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>JoystickBitPin<span class="token punctuation">.</span><span class="token constant">P12</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    value <span class="token operator">|=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">16</span>
-
-<span class="token keyword">if</span> <span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getButton</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>JoystickBitPin<span class="token punctuation">.</span><span class="token constant">P13</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    value <span class="token operator">|=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">17</span>
-
-<span class="token keyword">if</span> <span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getButton</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>JoystickBitPin<span class="token punctuation">.</span><span class="token constant">P14</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    value <span class="token operator">|=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">18</span>
-
-<span class="token keyword">if</span> <span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span><span class="token function">getButton</span><span class="token punctuation">(</span>joystickbit<span class="token punctuation">.</span>JoystickBitPin<span class="token punctuation">.</span><span class="token constant">P15</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    value <span class="token operator">|=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">19</span></code></pre><p>You can’t do <em>that</em> with Blocks.</p></details></aside>
-<p>And at the other end, I’ve added some sugar. Not only does it decode, it adds events for button handling, utilities for mapping to different scales, or even tank tracking. <a href="https://makecode.microbit.org/_LKz9J6U42DCR">It makes the whole endeavour for users much, much easier</a>.</p>
-<figure><img __astro_image_="{&quot;alt&quot;:&quot;Much better&quot;,&quot;src&quot;:&quot;joystickbit-radio.avif&quot;,&quot;index&quot;:0}"></figure>
-<p>Extensions allow you to create Blocks that <strong>do stuff</strong> like this. I’m not saying you should use my extension –you can– rather <em><strong>you can write your own!</strong></em> It’s pretty simple and helping your learners before they get stuck will allow them to stay immersed, far longer. Nothing breaks a learning experience like debugging a system you don’t understand, or a impromptu maths lesson on how to unpick a right-to-left axis, or have to learn javascript before they could start.</p>
-<p>Blocks is great for discovering the Microbit API, it pays dividends to make it Good Enough™ rather than push people to harder environments.</p>
-<p>Things I used:</p>
-<ul>
-<li><a href="https://makecode.com/extensions/getting-started">https://makecode.com/extensions/getting-started</a></li>
-<li><a href="https://makecode.com/defining-blocks">https://makecode.com/defining-blocks</a></li>
-<li><a href="https://makecode.com/playground">https://makecode.com/playground</a></li>
-<li>Lead image from <a href="https://thepcspy.com/read/microbit-easier-with-extensions/microbit.org">micro Educational Foundation</a></li>
-</ul>]]></description>
-      <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
     </item>
     <item>
       <title>Ubuntu Weekly Newsletter Issue 954</title>
@@ -4523,240 +4500,6 @@ mirror and follow the instructions above.</p>]]></description>
       <source url="https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off">Corey Bryant</source>
     </item>
     <item>
-      <title>Building a NAS</title>
-      <link>https://apebox.org/wordpress/tech/1325</link>
-      <guid isPermaLink="true">https://apebox.org/wordpress/tech/1325</guid>
-      <pubDate>Tue, 12 Sep 2023 21:33:05 GMT</pubDate>
-      <description><![CDATA[<h2 class="wp-block-heading">The status quo</h2>
-
-
-
-<p>Back in 2015, I bought an off-the-shelf NAS, a QNAP TS-453mini, to act as my file store and Plex server. I had previously owned a Synology box, and whilst I liked the Synology OS and experience, the hardware was underwhelming. I loaded up the successor QNAP with four 5TB drives in RAID10, and moved all my files over (after some initial DoA drive issues were handled).</p>
-
-
-
-<figure class="wp-block-image size-medium"><img fetchpriority="high" decoding="async" width="550" height="550" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png" alt="QNAP TS-453mini product photo" class="wp-image-1329" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-150x150.png 150w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-768x768.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3.png 850w" sizes="(max-width: 550px) 100vw, 550px" /><figcaption class="wp-element-caption">QNAP TS-453mini product photo</figcaption></figure>
-
-
-
-<p>That thing has been in service for about 8 years now, and it&#8217;s been&#8230; a mixed bag. It was definitely more powerful than the predecessor system, but it was clear that QNAP&#8217;s OS was not up to the same standard as Synology&#8217;s &#8211; perhaps best exemplified by &#8220;HappyGet 2&#8221;, the QNAP webapp for downloading videos from streaming services like YouTube, whose icon is a straight rip-off of StarCraft 2. On its own, meaningless &#8211; but a bad omen for overall software quality</p>
-
-
-
-<span id="more-1325"></span>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="884" height="172" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png" alt="The logo for QNAP HappyGet 2 and Blizzard's Starcraft 2 side by side" class="wp-image-1328" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png 884w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-550x107.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-768x149.png 768w" sizes="(max-width: 884px) 100vw, 884px" /><figcaption class="wp-element-caption">The logo for QNAP HappyGet 2 and Blizzard&#8217;s StarCraft 2 side by side</figcaption></figure>
-
-
-
-<p>Additionally, the embedded Celeron processor in the NAS turned out to be an issue for some cases. It turns out, when playing back videos with subtitles, most Plex clients do not support subtitles properly &#8211; instead they rely on the Plex server doing JIT transcoding to bake the subtitles directly into the video stream. I discovered this with some Blu-Ray rips of Game of Thrones &#8211; some episodes would play back fine on my smart TV, but episodes with subtitled Dothraki speech would play at only 2 or 3 frames per second.</p>
-
-
-
-<p>The final straw was a ransomware attack, which went through all my data and locked every file below a 60MiB threshold. Practically all my music gone. A substantial collection of downloaded files, all gone. Some of these files had been carried around since my college days &#8211; digital rarities, or at least digital detritus I felt a real sense of loss at having to replace. This episode was caused by a ransomware targeting specific vulnerabilities in the QNAP OS, not an error on my part.</p>
-
-
-
-<p>So, I decided to start planning a replacement with:</p>
-
-
-
-<ul class="wp-block-list">
-<li>A non-garbage OS, whilst still being a NAS-appliance type offering (not an off-the-shelf Linux server distro)</li>
-
-
-
-<li>Full remote management capabilities</li>
-
-
-
-<li>A small form factor comparable to off-the-shelf NAS</li>
-
-
-
-<li>A powerful modern CPU capable of transcoding high resolution video</li>
-
-
-
-<li>All flash storage, no spinning rust</li>
-</ul>
-
-
-
-<p>At the time, no consumer NAS offered everything (The Asustor FS6712X exists now, but didn&#8217;t when this project started), so I opted to go for a full DIY rather than an appliance &#8211; not the first time I&#8217;ve jumped between appliances and DIY for home storage.</p>
-
-
-
-<h2 class="wp-block-heading">Selecting the core of the system</h2>
-
-
-
-<p>There aren&#8217;t many companies which will sell you a small motherboard with IPMI. Supermicro is a bust, so is Tyan. But ASRock Rack, the server division of third-tier motherboard vendor ASRock, delivers. Most of their boards aren&#8217;t actually compliant Mini-ITX size, they&#8217;re a proprietary &#8220;Deep Mini-ITX&#8221; with the regular screw holes, but 40mm of extra length (and a commensurately small list of compatible cases). But, thankfully, they do have a tiny selection of boards without the extra size, and I stumbled onto the <a href="https://www.asrockrack.com/general/productdetail.asp?Model=X570D4I-2T">X570D4I-2T</a>, a board with an AMD AM4 socket and the mature X570 chipset. This board can use <em>any</em> AMD Ryzen chip (before the latest-gen Ryzen 7000 series); has built in dual 10 gigabit ethernet; IPMI; four (laptop-sized) RAM slots with full ECC support; one M.2 slot for NVMe SSD storage; a PCIe 16x slot (generally for graphics cards, but we live in a world of possibilities); and up to 8 SATA drives OR a couple more NVMe SSDs. It&#8217;s astonishingly well featured, just a shame it costs about $450 compared to a good consumer-grade Mini ITX AM4 board costing less than half that.</p>
-
-
-
-<p>I was so impressed with the offering, in fact, that I crowed about it on Mastodon and ended up securing ASRock another sale, with someone else looking into a very similar project to mine around the same timespan.</p>
-
-
-
-<p>The next question was the CPU. An important feature of a system expected to run 24/7 is low power, and AM4 chips can consume as much as 130W under load, out of the box. At the other end, some models can require as little as 35W under load &#8211; the OEM-only &#8220;GE&#8221; suffix chips, which are readily found for import on eBay. In their &#8220;PRO&#8221; variant, they also support ECC (all non-G Ryzen chips support ECC, but only Pro G chips do). The top of the range 8 core Ryzen 7 PRO 5750GE is prohibitively expensive, but the slightly weaker 6 core <a href="https://www.amd.com/en/products/apu/amd-ryzen-5-pro-5650ge">Ryzen 5 PRO 5650GE</a> was affordable, and one arrived quickly from Hong Kong. Supplemented with a couple of cheap 16 GiB SODIMM sticks of DDR4 PC-3200 direct from Micron for under $50 a piece, that left only cooling as an unsolved problem to get a bootable test system.</p>
-
-
-
-<p>The official support list for the X570D4I-2T only includes two rackmount coolers, both expensive and hard to source. The reason for such a small list is the non standard cooling layout of the board &#8211; instead of an AM4 hole pattern with the standard plastic AM4 retaining clips, it has an Intel 115x hole pattern with a non-standard backplate (Intel 115x boards have no backplate, the stock Intel 115x cooler attaches to the holes with push pins). As such every single cooler compatibility list excludes this motherboard. However, the backplate is only secured with a mild glue &#8211; with minimal pressure and a plastic prying tool it can be removed, giving compatibility with any 115x cooler (which is basically any CPU cooler for more than a decade). I picked an oversized low profile <a href="http://thermalright.com/product/axp120-x67-black-argb/">Thermalright AXP120-X67</a> hoping that its 120mm fan would cool the nearby MOSFETs and X570 chipset too.</p>
-
-
-
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg" alt="" class="wp-image-1333" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Thermalright AXP120-X67, AMD Ryzen 5 PRO 5650GE, ASRock Rack X570D4I-2T, all assembled and running on a flat surface</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Testing up to this point</h2>
-
-
-
-<p>Using a spare ATX power supply, I had enough of a system built to explore the IPMI and UEFI instances, and run MemTest86 to validate my progress. The memory test ran without a hitch and confirmed the ECC was working, although it also showed that the memory was only running at 2933 MT/s instead of the rated 3200 MT/s (a limit imposed by the motherboard, as higher speeds are considered overclocking). The IPMI interface isn&#8217;t the best I&#8217;ve ever used by a long shot, but it&#8217;s minimum viable and allowed me to configure the basics and boot from media entirely via a Web browser.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="905" height="819" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png" alt="" class="wp-image-1341" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png 905w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-550x498.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-768x695.png 768w" sizes="auto, (max-width: 905px) 100vw, 905px" /><figcaption class="wp-element-caption">Memtest86 showing test progress, taken from IPMI remote control window</figcaption></figure>
-
-
-
-<p>One sad discovery, however, which I&#8217;ve never seen documented before, on PCIe bifurcation.</p>
-
-
-
-<p>With PCI Express, you have a number of &#8220;lanes&#8221; which are allocated in groups by the motherboard and CPU manufacturer. For Ryzen prior to Ryzen 7000, that&#8217;s 16 lanes in one slot for the graphics card; 4 lanes in one M.2 connector for an SSD; then 4 lanes connecting the CPU to the chipset, which can offer whatever it likes for peripherals or extra lanes (bottlenecked by that shared 4x link to the CPU, if it comes down to it).</p>
-
-
-
-<p>It&#8217;s possible, with motherboard and CPU support, to split PCIe groups up &#8211; for example an 8x slot could be split into two 4x slots (eg allowing two NVMe drives in an adapter card &#8211; NVME drives these days all use 4x). However with a &#8220;Cezanne&#8221; Ryzen with integrated graphics, the 16x graphics card slot cannot be split into four 4x slots (ie used for for NVMe drives) &#8211; the most bifurcation it allows is 8x4x4x, which is useless in a NAS.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="897" height="806" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png" alt="" class="wp-image-1336" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png 897w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-550x494.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-768x690.png 768w" sizes="auto, (max-width: 897px) 100vw, 897px" /><figcaption class="wp-element-caption">Screenshot of PCIe 16x slot bifurcation options in UEFI settings, taken from IPMI remote control window</figcaption></figure>
-
-
-
-<p>As such, I had to abandon any ideas of an all-NVMe NAS I was considering: the 16x slot split into four 4x, combined with two 4x connectors fed by the X570 chipset, to a total of 6 NVMe drives. 7.6TB U.2 enterprise disks are remarkably affordable (cheaper than consumer SATA 8TB drives), but alas, I was locked out by my 5650GE. Thankfully I found out before spending hundreds on a U.2 hot swap bay. The NVMe setup would be nearly 10x as fast as SATA SSDs, but at least the SATA SSD route would still outperform any spinning rust choice on the market (including the fastest 10K RPM SAS drives)</p>
-
-
-
-<h2 class="wp-block-heading">Containing the core</h2>
-
-
-
-<p>The next step was to pick a case and power supply. A lot of NAS cases require an SFX (rather than ATX) size supply, so I ordered a modular <a href="https://www.silverstonetek.com/en/product/info/power-supplies/SX500-G/">SX500</a> unit from Silverstone. Even if I ended up with a case requiring ATX, it&#8217;s easy to turn an SFX power supply into ATX, and the worst result is you have less space taken up in your case, hardly the worst problem to have.</p>
-
-
-
-<p>That said, on to picking a case. There&#8217;s only one brand with any cachet making ITX NAS cases, Silverstone. They have three choices in an appropriate size: <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS01-HS/">CS01-HS</a>, <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS280/">CS280</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/DS380/">DS380</a>. The problem is, these cases are all badly designed garbage. Take the CS280 as an example, the case with the most space for a CPU cooler. Here&#8217;s how close together the hotswap bay (right) and power supply (left) are:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="568" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png" alt="" class="wp-image-1343" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-550x391.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-768x545.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
-
-
-
-<p>With actual cables connected, the cable clearance problem is even worse:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="533" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png" alt="" class="wp-image-1344" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-550x366.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-768x512.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
-
-
-
-<p>Remember, this is the <em>best</em> of the three cases for internal layout, the one with the least restriction on CPU cooler height. And it&#8217;s garbage! Total hot garbage! I decided therefore to completely skip the NAS case market, and instead purchase a 5.25&#8243;-to-2.5&#8243; hot swap bay adapter from Icy Dock, and put it in an ITX gamer case with a 5.25&#8243; bay. This is no longer a served market &#8211; 5.25&#8243; bays are extinct since nobody uses CD/DVD drives anymore. The ones on the market are really new old stock from 2014-2017: The <a href="https://www.fractal-design.com/products/cases/core/core-500/black/">Fractal Design Core 500</a>, <a href="https://www.coolermaster.com/catalog/cases/mini-itx/elite130/">Cooler Master Elite 130</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/SUGO14/">Silverstone SUGO 14</a>. Of the three, the Fractal is the best rated so I opted to get that one &#8211; however it seems the global supply of &#8220;new old stock&#8221; fully dried up in the two weeks between me making a decision and placing an order &#8211; leaving only the Silverstone case.</p>
-
-
-
-<p>Icy Dock have a selection of 8-bay 2.5&#8243; SATA 5.25&#8243; hot swap chassis choices in their ToughArmor MB998 series. I opted for the <a href="https://global.icydock.com/product_169.html">ToughArmor MB998IP-B</a>, to reduce cable clutter &#8211; it requires only two SFF-8611-to-SF-8643 cables from the motherboard to serve all eight bays, which should make airflow less of a mess. The X570D4I-2T doesn&#8217;t have any SATA ports on board, instead it has two SFF-8611 OCuLink ports, each supporting 4 PCI Express lanes OR 4 SATA connectors via a breakout cable. I had hoped to get the ToughArmor MB118VP-B and run six U.2 drives, but as I said, the PCIe bifurcation issue with Ryzen &#8220;G&#8221; chips meant I wouldn&#8217;t be able to run all six bays successfully.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg" alt="" class="wp-image-1348" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">NAS build in Silverstone SUGO 14, mid build, panels removed</figcaption></figure>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg" alt="" class="wp-image-1349" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">Silverstone SUGO 14 from the front, with hot swap bay installed</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Actual storage for the storage server</h2>
-
-
-
-<p>My concept for the system always involved a fast boot/cache drive in the motherboard&#8217;s M.2 slot, non-redundant (just backups of the config if the worst were to happen) and separate storage drives somewhere between 3.8 and 8 TB each (somewhere from $200-$350). As a boot drive, I selected the <a href="https://www.intel.com/content/www/us/en/products/sku/211868/intel-optane-ssd-p1600x-series-58gb-m-2-80mm-pcie-3-0-x4-3d-xpoint/specifications.html">Intel Optane SSD P1600X 58G</a>, available for under $35 and rated for 228 years between failures (or 11,000 complete drive rewrite cycles).</p>
-
-
-
-<p>So, on to the big expensive choice: storage drives. I narrowed it down to two contenders: new-old-stock Intel D3-S4510 3.84TB enterprise drives, at about $200, or Samsung 870 QVO 8TB consumer drives, at about $375. I did spend a long time agonizing over the specification differences, the ZFS usage reports, the expected lifetime endurance figures, but in reality, it came down to price &#8211; $1600 of expensive drives vs $3200 of even more expensive drives. That&#8217;s 27TB of usable capacity in RAID-Z1, or 23TB in RAID-Z2. For comparison, I&#8217;m using about 5TB of the old NAS, so that&#8217;s a LOT of overhead for expansion.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg" alt="" class="wp-image-1355" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Storage SSD loaded into hot swap sled</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Booting up</h2>
-
-
-
-<p>Bringing it all together is the OS. I wanted an &#8220;appliance&#8221; NAS OS rather than self-administering a Linux distribution, and after looking into the surrounding ecosystems, decided on <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> (the beta of the 2023 release, based on Debian 12).</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="600" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png" alt="" class="wp-image-1353" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-550x322.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-768x450.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1536x900.png 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image.png 2013w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">TrueNAS Dashboard screenshot in browser window</figcaption></figure>
-
-
-
-<p>I set up RAID-Z1, and with zero tuning (other than enabling auto-TRIM), got the following performance numbers:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>19.3k</td><td>75.6 MiB/s</td></tr><tr><td>4k random reads</td><td>36.1k</td><td>141 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>2300 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>3800 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Results using fio parameters <a href="https://support.huaweicloud.com/intl/en-us/evs_faq/evs_faq_0019.html#evs_faq_0019__section273349017162">suggested by Huawei</a></figcaption></figure>
-
-
-
-<p>And for comparison, the maximum theoretical numbers quoted by Intel for a single drive:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>16k</td><td>?</td></tr><tr><td>4k random reads</td><td>90k</td><td>?</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>280 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>560 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Numbers quoted by Intel SSD successors <a href="https://www.solidigm.com/products/data-center/d3/s4510.html">Solidigm</a>.</figcaption></figure>
-
-
-
-<p>Finally, the numbers reported on the old NAS with four 7200 RPM hard disks in RAID 10:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>430</td><td>1.7 MiB/s</td></tr><tr><td>4k random reads</td><td>8006</td><td>32 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>311 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>566 MiB/s</td></tr></tbody></table></figure>
-
-
-
-<p>Performance seems pretty OK. There&#8217;s always going to be an overhead to RAID. I&#8217;ll settle for the 45x improvement on random writes vs. its predecessor, and 4.5x improvement on random reads. The sequential write numbers are gonna be impacted by the size of the ZFS cache (50% of RAM, so 16 GiB), but the rest should be a reasonable indication of true performance.</p>
-
-
-
-<p>It took me a little while to fully understand the TrueNAS permissions model, but I finally got Plex configured to access data from the same place as my SMB shares, which have anonymous read-only access or authenticated write access for myself and my wife, working fine via both Linux and Windows.</p>
-
-
-
-<p>And&#8230; that&#8217;s it! I built a NAS. I intend to add some fans and more RAM, but that&#8217;s the build. Total spent: about $3000, which sounds like an unreasonable amount, but it&#8217;s actually less than a comparable Synology DiskStation DS1823xs+ which has 4 cores instead of 6, first-generation AMD Zen instead of Zen 3, 8 GiB RAM instead of 32 GiB, no hardware-accelerated video transcoding, etc. And it would have been a whole lot less fun!</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg" alt="" class="wp-image-1364" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">The final system, powered up</figcaption></figure>
-
-
-
-<p>(Also posted on <a href="https://pcpartpicker.com/b/fYhtt6">PCPartPicker</a>)</p>]]></description>
-      <source url="http://apebox.org/wordpress/tag/ubuntu/feed/">Jo Shields</source>
-    </item>
-    <item>
       <title>Understanding vm.swappiness: Improving Linux Performance and Memory Management</title>
       <link>https://coderstalk.blogspot.com/2023/07/understanding-vmswappiness-improving.html</link>
       <guid isPermaLink="true">https://coderstalk.blogspot.com/2023/07/understanding-vmswappiness-improving.html</guid>
@@ -7065,6 +6808,35 @@ So, please sync with this change (and sorry :)).</p>
       <source url="http://blogs.gnome.org/mneptok/feed/">Kurt von Finck</source>
     </item>
     <item>
+      <title>Announcing the Ubuntu 18.10 Free Culture Showcase winners</title>
+      <link>https://www.nhaines.com/blog/2018/09/28/announcing-ubuntu-18.10-free-culture-showcase-winners/</link>
+      <guid isPermaLink="true">https://www.nhaines.com/blog/2018/09/28/announcing-ubuntu-18.10-free-culture-showcase-winners/</guid>
+      <pubDate>Fri, 28 Sep 2018 07:00:00 GMT</pubDate>
+      <description><![CDATA[<p>October approaches, and Ubuntu marches steadly along the road from one LTS to another.  Ubuntu 18.10 is another step in Ubuntu’s future.  And now it’s time to unveil a small part of that change: the community wallpapers to be included in Ubuntu 18.10!</p>
+
+<p>Every cycle, talented artists around the world create media and release it under licenses that encourage sharing and adaptation. This cycle we had some amazing images submitted to the <a href="https://www.flickr.com/groups/ubuntu-fcs-1810/">Ubuntu 18.10 Free Culture Showcase</a> photo pool on Flickr, where all eligible submissions can be found.  The competition was fierce; narrowing down the options to the final selections was painful!</p>
+
+<p>But there can be only 12, and the final images that will be included in Ubuntu 18.10 are:</p>
+
+<ul>
+  <li><a href="https://www.flickr.com/photos/155485295@N04/28898305427/in/pool-ubuntu-fcs-1810/">Cosmic Cuttlefish</a> by Jim Coleman</li>
+  <li><a href="https://www.flickr.com/photos/143512932@N03/29085424897/in/pool-ubuntu-fcs-1810/">Spring Flowers</a> by MK4-MI01</li>
+  <li><a href="https://www.flickr.com/photos/mendhak/37748450101/in/pool-ubuntu-fcs-1810/">Carriage Return</a> by mendhak</li>
+  <li><a href="https://www.flickr.com/photos/153219066@N06/41387651640/in/pool-ubuntu-fcs-1810/">Ubuntu Party de Paris</a> by Marcos Costales</li>
+  <li><a href="https://www.flickr.com/photos/98223780@N05/41846068390/in/pool-ubuntu-fcs-1810/">Tapiola, Espoo Cultural Center</a> by Agostino Faedda</li>
+  <li><a href="https://www.flickr.com/photos/14287735@N05/42055551820/in/pool-ubuntu-fcs-1810/">Fairground at Night</a> by martin</li>
+  <li><a href="https://www.flickr.com/photos/tomas_sobek/42346768035/in/pool-ubuntu-fcs-1810/">Milky Way before the dawn</a> by Tomas Sobek</li>
+  <li><a href="https://www.flickr.com/photos/38121135@N05/42996830034/in/pool-ubuntu-fcs-1810/">Black sand beach</a> by Mads Rosendahl</li>
+  <li><a href="https://www.flickr.com/photos/simosx/43736940061/in/pool-ubuntu-fcs-1810/">The Image of Mount Parnassus</a> by simosx</li>
+  <li><a href="https://www.flickr.com/photos/bernhardhanakam/44033490521/in/pool-ubuntu-fcs-1810/">Morning</a> by Bernhard Hanakam</li>
+  <li><a href="https://www.flickr.com/photos/155984160@N07/43295035514/in/pool-ubuntu-fcs-1810/">Encounter</a> by Lzardjin</li>
+  <li><a href="https://www.flickr.com/photos/134476822@N04/43642256642/in/pool-ubuntu-fcs-1810/">touche de vert</a> by François Cante</li>
+</ul>
+
+<p>A big congratulations to the winners, and thanks to everyone who submitted a wallpaper.  You can find these wallpapers (along with dozens of other stunning wallpapers) today at the links above, or in your desktop wallpaper list after you upgrade to or install Ubuntu 18.10 on October 18th.</p>]]></description>
+      <source url="https://www.nhaines.com/feed.xml">Nathan Haines</source>
+    </item>
+    <item>
       <title>NVIDIA PRIME in Ubuntu 18.04 and 18.10, and a call for testing</title>
       <link>https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</link>
       <guid isPermaLink="true">https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</guid>
@@ -8081,50 +7853,6 @@ $2 = (minimal_symbol *) 0x0
 <a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPTo9V_gGem-79f_xmI9JYztYxHjcu8JaW57Xk_JeibNNWbZZ6Fv6lFF2bHIjLWPbrNnnM4asO-g9cuC2n2DMF9N2bdUp9tuayTNA-g4B1mtgX0K3h1XHSME7gTkTSSHMd1D03bAiflS8/s1600/gci_mentor+-+a2667f67-55ab-4c9b-8b41-df3c99eef6e8.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="850" data-original-width="1100" height="494" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPTo9V_gGem-79f_xmI9JYztYxHjcu8JaW57Xk_JeibNNWbZZ6Fv6lFF2bHIjLWPbrNnnM4asO-g9cuC2n2DMF9N2bdUp9tuayTNA-g4B1mtgX0K3h1XHSME7gTkTSSHMd1D03bAiflS8/s640/gci_mentor+-+a2667f67-55ab-4c9b-8b41-df3c99eef6e8.jpg" width="640" /></a></div>
 <br />]]></description>
       <source url="http://carla-sella.blogspot.it/rss.xml">Carla Sella</source>
-    </item>
-    <item>
-      <title>Preparing for Xubuntu 18.04</title>
-      <link>https://open.knome.fi/2017/10/24/preparing-xubuntu-18-04/</link>
-      <guid isPermaLink="true">https://open.knome.fi/2017/10/24/preparing-xubuntu-18-04/</guid>
-      <pubDate>Tue, 24 Oct 2017 06:55:22 GMT</pubDate>
-      <description><![CDATA[<p>Xubuntu 17.10 was just released, but planning for Xubuntu 18.04 – the next long-term support (LTS) release – began quite some time ago. For our users, LTS releases mostly mean a system that is going to be more stable and supported for longer. For us contributors, this means a bunch of things.</p>
-<p>As a repercussion of the longer support cycle and the sought out stable nature of the LTS releases, we do not want to introduce (too many) new components, libraries or other technical changes, as each change has regression potential. This is also a delicate balancing act between getting bugs fixed but keeping enough things as they are.</p>
-<p>The LTS releases are also kind of an flagship for Xubuntu – they are the recommended releases for most users and while we can land stable release updates (SRU) to fix bugs and other major flaws, the scope of changes is limited. Since the next LTS release will be released two years later, we want to get things right.</p>
-<p>For contributors – particularly us non-developer kinds – this is an ideal situation to revisit and improve artwork and documentation amongst other things. Here are some things I am going to be working on for the next months to get the new LTS look and feel more polished than the previous one.</p>
-<h2>Branding – or, updated logo</h2>
-<p>In an <a href="https://open.knome.fi/2017/10/20/refreshing-xubuntu-logo/">earlier article</a> I wrote about the refreshed Xubuntu logo – the why and the what. Here&#8217;s the other what.</p>
-<p>Practically this change means we will have to touch every package with Xubuntu branding and make sure they use the updated logo. For the most part this is trivial, but landing the changes requires time and some co-operation from the team.</p>
-<p>We will also need to make sure the new logo lands on the official website, all related sites and social media before the release – ideally before the first milestone release. Last but not least, we need to communicate this change to our official vendors and provide them the new logo as soon as possible so they can start updating their products.</p>
-<h2>Wallpapers</h2>
-<p>As with any release, the LTS release also needs a wallpaper. This needs to be drafted, proposed and polished. The process usually takes from a few days to a few weeks. We&#8217;ll also want to land the wallpaper relatively early to be able to fix potential issues with it before release.</p>
-<p>The Xubuntu team has organized a community wallpaper contest for the last two LTS releases and it&#8217;s very likely we will be organizing one for 18.04 as well. I was not completely satisfied in how we ran the contest last time, and I&#8217;ve started a discussion to review our policies already, as getting comments from the team can sometimes be quite slow. While the community wallpaper package does not serve any defaults, we will need to end the contest well before the related freezes to double check license issues (like attribution) and leave enough time for uploading them.</p>
-<h2>Documentation</h2>
-<p>Even if there is no need to rewrite sections – or the whole documentation – this time around, there are several tasks for the documentation team as well.</p>
-<p>First of all, it&#8217;s time to refresh both the installer slideshow and the website feature tour. Nothing has been planned yet, but both of these are at least two years old and in need of a facelift – both visually and in terms of content.</p>
-<p>We haven&#8217;t had to touch the documentation much in a long time because the main software selection and features have stayed the same. On the other hand this means that the documentation might be somewhat stale. This might be hard to identify – and possibly even harder to get stale sections refreshed – but we definitely should have a look at our offering before the release. To do this, we need to consider the following questions:</p>
-<ul>
-<li>Does the documentation provide a good overview of the system for new users?</li>
-<li>Does the documentation help users get started?</li>
-<li>Does the documentation answer the most common questions?</li>
-<li>Does the documentation help get the most common (non-hardware specific) issues solved?</li>
-<li>Does the documentation help more advanced users – including those that are familiar with other Linux operating systems but not Xubuntu?</li>
-<li>Is all information in the documentation up-to-date?</li>
-<li>Does the documentation need extending in any area?</li>
-<li>Can we extend the documentation in a useful way without making it too verbose?</li>
-</ul>
-<h2>But wait! There&#8217;s more!</h2>
-<p>My work item list for Xubuntu 18.04 doesn&#8217;t end here. You can find all of the registered work items on our <a href="https://dev.xubuntu.org/">status tracker</a>.</p>
-<p>It&#8217;s worth noting that not all of the work items in the status tracker have an assignee. This means we are still looking for people who can help us make Xubuntu 18.04 a greater release than its predecessors. <em>Maybe you can volunteer and pick up a work item or two?</em></p>
-<p>In addition to the work items, there are a few other activities that we need help with:</p>
-<ul>
-<li><strong>Test.</strong> By testing the daily and milestone ISOs you can help us make sure there aren&#8217;t (so many) annoying bugs in the final release.</li>
-<li><strong>Take part in the community wallpaper contest</strong>. This is not open yet, but once it is, submit your work. You can win and get some swag as well as your work included in an official Xubuntu release!</li>
-<li><strong>Submit us ideas for improving and extending our documentation.</strong> I mentioned some of the questions we have to ask ourselves with the documentation. Can you help us answer these and even work with us on the writing and proofreading?</li>
-</ul>
-<p>Even these tasks just scratch the surface of what needs to be done – and what can be done.</p>
-<p>Get your hands dirty <em>now</em> and <a href="https://xubuntu.org/contribute/">read more about getting involved with Xubuntu</a>, subscribe to the <a href="https://lists.ubuntu.com/mailman/listinfo/xubuntu-devel">Xubuntu development discussion mailing list</a> and join our development IRC channel <a href="irc://chat.freenode.net/xubuntu-devel">#xubuntu-devel</a> which is active on most days.</p>
-<p class="post-serie">This article is part of the article series <a href="https://open.knome.fi/serie/a-day-in-an-open-source-project/" rel="tag">A day in an open source project</a>.</p>]]></description>
-      <source url="http://open.knome.fi/category/ubuntu/feed/">Pasi Lallinaho</source>
     </item>
     <item>
       <title>freenode #live</title>
@@ -10249,6 +9977,16 @@ On the reliability front new systems won't be added to the infrastructure if the
 <p>I would like to recommend this person of Microsoft to have a look at the new version  of <a title="guadalinexedu.org" href="http://www.guadalinexedu.org/" target="_blank">Guadalinex Edu</a> (available in few days) and then ask him what do they think is the best for  kids? Perhaps  motivation, enthusiasm and hard work of the entire free software  community can exceed 9.5 billion invested by Microsoft. Don&#8217;t worry about kids, you must be worried about <a title="Ubuntu bug #1" href="https://bugs.launchpad.net/ubuntu/+bug/1" target="_blank">the day</a> when these children reach the professional market and the quality and freedom of the free software used at schools will have more weight than all the investment you are doing in your proprietary software.</p>
 <p>:wq</p>]]></description>
       <source url="http://antoniosanchez.wordpress.com/category/planet-ubuntu/feed/atom">Antonio Sánchez</source>
+    </item>
+    <item>
+      <title>Webling und Android</title>
+      <link>http://blog.diener.li/allgemein/webling-und-android/</link>
+      <guid isPermaLink="true">http://blog.diener.li/allgemein/webling-und-android/</guid>
+      <pubDate>Mon, 09 Nov 2009 14:27:34 GMT</pubDate>
+      <description><![CDATA[<p>Ja ich habe seit Kurzem auch so einen kleinen Alleskönner als Handy. Auch wenn ich meinen <a title="Openmoko Freerunner" href="http://wiki.openmoko.org/wiki/Neo_FreeRunner/de" target="_blank">Freerunner</a> sehr mag, auf mein neues Spielzeug ist einfach mehr Verlass. Da mein altes Handy einem Wasserschaden (kein Kommentar) zum Opfer fiel, besorgte ich mir ein <a title="HTC Hero" href="http://www.htc.com/de/product.aspx" target="_blank">HTC Hero</a> mit <a title="Google Android" href="http://www.google.ch/intl/de_ch/mobile/android/" target="_blank">Google Android</a>. Ein <a title="Apple iPhone" href="http://www.apple.com/de/iphone/" target="_blank">iPhone</a> wollte ich nicht und ich bereue es bis heute nicht. Mein kleiner Held ist nicht nur die Hälfte so teuer, sondern bringt auch alles mit was ich brauche.</p>
+<p>Nun aber zum Wesentlichen. Etwas vom dümmsten an Handys war bislang die Portierung der Kontakte auf das neue Gerät. Umso erfreuter war ich, dass es dieses Mal sehr einfach ging. Da Android nun mal von Google kommt, unterstützt es natürlich auch Synchronisation mit dem Kalender, den Mails und den Kontakten von Google. Wenn man mal die Bedenken bezüglich der &#8222;Datenkrake&#8220; Google aussen vor lässt und sich auf die funktionellen Fakten bezieht, dann ist das mehr als nur optimal. Angenommen man benutzt bereits die genannten Google Dienste bereits, muss man auf dem Android lediglich seine Kontodaten angeben und alles regelt sich von selbst.</p>
+<p>Wie einige von euch wahrscheinlich wissen, bin ich Teilhaber von <a title="uSystems GmbH" href="http://www.usystems.ch/" target="_blank">uSystems GmbH</a>, die unter anderem eine <a title="webling.ch - verwaltet deinen Verein" href="http://www.webling.ch" target="_blank">Vereinsverwaltungssoftware</a> entwickelt. Die nennt sich Webling und kann eigentlich viel mehr, aber in diesem Beispiel brauche ich sie nur als Adressverwaltung. Denn seit einiger Zeit habe ich mir eine persönliche Instanz davon unter den Nagel gerissen und brauche es um die Kontaktdaten meiner Freunde zu verwalten. So habe ich einen zentralen Ort, wo ich von überall darauf Zugriff habe. Warum ich das erwähne? Nun Webling kann Daten nicht nur Importieren, sondern auch in diversen Formaten exportieren. Hier zeigt sich wieder mal, dass gewisse simple und bereits recht alte Standards auch heute noch immer super sind. Denn Webling bietet unter anderem die Möglichkeit in eine <a title="CSV Dateiformat auf Wikipedia DE" href="http://de.wikipedia.org/wiki/CSV_%28Dateiformat%29" target="_blank">CSV-Datei</a> zu exportieren und Google wiederum diese zu importieren. Und da die Google Kontakte ja mit meinem Handy synchronisiert werden, habe ich nun sofort alle meine Kontakte auch auf meinem Handy. Und sollte ich mal einen neuen Kontakt nicht importiert haben, so kann ich jederzeit von überall über den <a title="Webling.ch - News" href="http://www.webling.ch/news.php" target="_blank">neuen</a> Webling Mobile Client auch per Handy auf alle Daten zugreifen. Sehr praktisch sag ich da nur!  <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> (Auch wenn ich natürlich etwas voreingenommen bin.)</p>]]></description>
+      <source url="http://blog.diener.li/feed">Carlos Diener - emonkey</source>
     </item>
     <item>
       <title>UDS Karmic &amp;#8211; Day One</title>
