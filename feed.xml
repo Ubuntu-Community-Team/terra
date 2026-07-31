@@ -6,17 +6,85 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 30 Jul 2026 02:30:42 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 02:55:45 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>E384 O Carneiro 'Tá Caro P'ra Burro!</title>
+      <link>https://podcastubuntuportugal.org/e384/</link>
+      <guid isPermaLink="true">https://podcastubuntuportugal.org/e384/</guid>
+      <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Netse episódio especial, a Joana Simões (a.k.a. Princesa Leia) passou por cá antes de ir para o Japão para nos falar do seu potente e caríssimo PC onde corre um LLM local; o Diogo veio pasmado de Torres Vedras, capital dos MakerSpace e o Miguel continua a achar que esta história da IA vai acabar mal para toda a gente. Pelo caminho ficámos a conhecer a bronca do Hugging Face, as novidades da agenda, discutimos longamente os riscos e potencial dos LLM&rsquo;s locais, os seus efeitos, defeitos e promessas e ainda malhámos forte e feio nos figurões da tecnologia global, com loas ao Cory Doctorow e os seus livros sem DRM. E o Diogo comprou uma máquina de lavar esperta.</p>
+<p>Já sabem: oiçam, subscrevam e partilhem!</p>
+<ul>
+<li>Bootcamp 2026 no LabAberto em Torres Vedras: <a href="https://lababerto.pt/2026/07/29/lab-aberto-bootcamp-2026/">https://lababerto.pt/2026/07/29/lab-aberto-bootcamp-2026/</a></li>
+<li>MILL: <a href="https://mill.pt/">https://mill.pt/</a></li>
+<li>Lcd Porto: <a href="https://lcdporto.org/">https://lcdporto.org/</a></li>
+<li>Makerspace Unperfekthaus (a casa imperfeita) <a href="https://www.uph.de/">https://www.uph.de/</a>
+<ul>
+<li><a href="https://duckduckgo.com/?t=ffab&amp;q=unperfekthaus%20essen&amp;ia=images&amp;iax=images">https://duckduckgo.com/?t=ffab&amp;q=unperfekthaus%20essen&amp;ia=images&amp;iax=images</a></li>
+</ul>
+</li>
+<li>Cité des Sciences, Paris: <a href="https://www.cite-sciences.fr">https://www.cite-sciences.fr</a>
+<ul>
+<li><a href="https://duckduckgo.com/?t=ffab&amp;q=mus%C3%A9e%20des%20sciences%20et%20de%20l%27industrie%20paris&amp;ia=images&amp;iax=images">https://duckduckgo.com/?t=ffab&amp;q=mus%C3%A9e%20des%20sciences%20et%20de%20l%27industrie%20paris&amp;ia=images&amp;iax=images</a></li>
+</ul>
+</li>
+<li>Mais uma sessão no Centro Linux, na Várzea dos Cavaleiros, no «enterior desquecido e ostracizado», a 1 de Agosto: <a href="https://centrolinux.pt/post/2026-agosto-serta/">https://centrolinux.pt/post/2026-agosto-serta/</a>
+<ul>
+<li>CREDO, Canal Regional do Enterior Desquecido e Ostracizado: <a href="https://youtu.be/HEI-Kldf698">https://youtu.be/HEI-Kldf698</a></li>
+</ul>
+</li>
+<li>A bronca detalhada do Hugging Face atacado por IA: <a href="https://huggingface.co/blog/agent-intrusion-technical-timeline">https://huggingface.co/blog/agent-intrusion-technical-timeline</a></li>
+<li>A OpenAI afirma que o agente saltou para fora da jaula (ooops): <a href="https://arstechnica.com/ai/2026/07/how-an-openai-benchmark-test-turned-into-a-real-world-cyberattack/">https://arstechnica.com/ai/2026/07/how-an-openai-benchmark-test-turned-into-a-real-world-cyberattack/</a></li>
+<li>Sam Altman é um mitómano chico-esperto: <a href="https://arstechnica.com/tech-policy/2026/05/altman-forced-to-confront-claims-at-openai-trial-that-hes-a-prolific-liar/">https://arstechnica.com/tech-policy/2026/05/altman-forced-to-confront-claims-at-openai-trial-that-hes-a-prolific-liar/</a></li>
+<li>Cory Doctorow dá uma ensaboadela aos detractores de IA: <a href="https://pluralistic.net/2026/07/28/hitl-ers/#ai-ai-oh">https://pluralistic.net/2026/07/28/hitl-ers/#ai-ai-oh</a></li>
+<li>A Samsung a nadar em dinheiro:
+<ul>
+<li><a href="https://www.koreajoongangdaily.com/business/samsung-signals-record-chip-profit-ahead/12756835">https://www.koreajoongangdaily.com/business/samsung-signals-record-chip-profit-ahead/12756835</a></li>
+<li><a href="https://www.tomshardware.com/tech-industry/samsungs-chip-division-expects-to-out-earn-its-entire-40-year-history-in-2026">https://www.tomshardware.com/tech-industry/samsungs-chip-division-expects-to-out-earn-its-entire-40-year-history-in-2026</a></li>
+</ul>
+</li>
+<li>Reverse Centaur, do Cory Doctorow (sem DRM!): <a href="https://shop.craphound.com/">https://shop.craphound.com/</a></li>
+<li>No final de Agosto a Joana Simões vai estar no Japão: <a href="https://2026.foss4g.org/en/">https://2026.foss4g.org/en/</a></li>
+<li>Guia para uma IA responsável: <a href="https://responsibleai.guide/">https://responsibleai.guide/</a></li>
+<li>Qwen, LLM Chinês: <a href="https://qwen.ai/">https://qwen.ai/</a></li>
+<li>Claude Mythos: <a href="https://www.anthropic.com/claude/mythos">https://www.anthropic.com/claude/mythos</a></li>
+<li>Montes e montes e montes de modelos locais&hellip;é escolher, freguês: <a href="https://ollama.com/search">https://ollama.com/search</a></li>
+<li>Linus Torvalds dá um murro na mesa: <a href="https://lore.kernel.org/all/CAHk-%3Dwi4zC%2BZe8e%2Bp3tMv8TtG_80KzsZ1syL9anBtmEh5Z40vg@mail.gmail.com/">https://lore.kernel.org/all/CAHk-%3Dwi4zC%2BZe8e%2Bp3tMv8TtG_80KzsZ1syL9anBtmEh5Z40vg@mail.gmail.com/</a></li>
+<li>Pierre Rimbert zurze na euforia dos LLM: <a href="https://pt.mondediplo.com/2026/07/toda-a-gente-detesta-a-ia.html">https://pt.mondediplo.com/2026/07/toda-a-gente-detesta-a-ia.html</a></li>
+<li>Joana Simões, a.k.a. Princesa Leia, a.k.a. Doublebyte:
+<ul>
+<li>Mastodon: <a href="mailto:doublebyte@noc.social">doublebyte@noc.social</a></li>
+<li>Site:  doublebyte.net</li>
+<li>Github: <a href="https://github.com/doublebyte1">https://github.com/doublebyte1</a></li>
+</ul>
+</li>
+<li>Palavras japonesas de origem portuguesa: <a href="https://pt.wikipedia.org/wiki/Palavras_japonesas_de_origem_portuguesa">https://pt.wikipedia.org/wiki/Palavras_japonesas_de_origem_portuguesa</a></li>
+<li>Memorial da Paz em Hiroshima: <a href="https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial">https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial</a></li>
+<li>O porto de Nagasaki: <a href="https://en.wikipedia.org/wiki/Nagasaki">https://en.wikipedia.org/wiki/Nagasaki</a></li>
+<li>Os Ressentidos (Galiza, 1986), FAI UN SOL DE CARALLO: <a href="https://youtu.be/NIGPnzhxcc4">https://youtu.be/NIGPnzhxcc4</a></li>
+<li><a href="https://gl.wikipedia.org/wiki/Os_Resentidos">https://gl.wikipedia.org/wiki/Os_Resentidos</a></li>
+<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
+<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
+<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
+</ul>
+<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
+<p>Este episódio foi produzido por Diogo Constantino, Joana Simões, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
+O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
+Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: Happy Holiday 87bpm loop by AudioCoffee &ndash; <a href="https://freesound.org/s/758405/">https://freesound.org/s/758405/</a> &ndash; License: Attribution NonCommercial 4.0.
+Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
+A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
+      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
+    </item>
     <item>
       <title>11ty wasn’t right for me</title>
       <link>https://thepcspy.com/read/11ty-wasnt-right-for-me/</link>
       <guid isPermaLink="true">https://thepcspy.com/read/11ty-wasnt-right-for-me/</guid>
       <pubDate>Wed, 29 Jul 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>In 2022 <a href="https://thepcspy.com/read/turning-it-up-to-11ty/">I migrated to <strong>11ty</strong></a>, a flexible static site generator.  I thought it was perfect for me but <strong>I was wrong</strong> and it took <em>four years</em> to recover  😪</p>
+      <description><![CDATA[<p>In 2022 <a href="https://thepcspy.com/read/turning-it-up-to-11ty/">I migrated to <strong>11ty</strong></a>, a flexible static site generator.  I thought it perfect but <strong>I was wrong</strong> and it took <em>four years</em> to recover  😪</p>
  <figure style="float:right;margin: 0 0 10px 10px;max-width: 30%"><img src="https://thepcspy.com/read/11ty-wasnt-right-for-me/sad-11ty.svg"></figure>
-<p>Let’s be clear, my last post on this was true: <strong>I loved integrating 11ty.</strong> It was 100% right to move to a <abbr title="Static Site Generator">SSG</abbr>, exfiltrate the content from a claggy database into markdown files, twisting the excellent <a href="https://github.com/markdown-it/markdown-it"><code>markdown-it</code></a> library to handle a decade of custom tags and weird oddities, and 11ty Just Kinda Sorta Worked™. A quantum leap from the rigid Django system I’d been using <a href="https://thepcspy.com/read/everything-is-new-again/">since 2010</a>.</p>
+<p>Let’s be clear, my last post on this was true: <strong>I loved deploying 11ty.</strong> It was 100% right to move to a <abbr title="Static Site Generator">SSG</abbr>, exfiltrate the content from a claggy database into markdown files, twisting the excellent <a href="https://github.com/markdown-it/markdown-it"><code>markdown-it</code></a> library to handle a decade of custom tags and weird oddities, and 11ty Just Kinda Sorta Worked™. A quantum leap from the rigid Django system I’d been using <a href="https://thepcspy.com/read/everything-is-new-again/">since 2010</a>.</p>
 <p>My elation masked <a href="https://thepcspy.com/read/turning-it-up-to-11ty/#whats-not-so-good">the ugly bits</a>, until they got in the way.</p>
 <ul>
 <li>
@@ -35,11 +103,12 @@
 <p><strong>The v2 upgrade broke <u><em>me</em></u>.</strong> I tried –<em>I really tried</em>– but I couldn’t make my site work on v2. I reached out but nobody could untangle my problem and so I did the only thing I could: I gave up.</p>
 </li>
 </ul>
-<p><a href="https://thepcspy.com/read/losing-your-voice/">I actually stopped writing altogether</a>. The shame of being stuck on a platform I’d just eulogised for contributed to be not wanting to be anywhere near it.</p>
-<h2 id="the-point-of-this-post-the-moral-of-the-story-isnt-astro">The point of this post —the moral of the story— isn’t Astro&nbsp;<img src="https://thepcspy.com/read/11ty-wasnt-right-for-me/astro.svg"></h2>
-<p>Wait, there’s a moral to this litany of complaints? Didn’t I move to Astro? Well, yeah, but <strong>it’s okay that 11ty didn’t work for me</strong>. I’m not angry at Zach &amp; co. — they helped me as much as they could with a system that I’m sure does what they need. They owe me nothing.</p>
-<p>I’m angry at me.</p>
-<p>I already knew in 2022 that I was facing an uphill struggle with fundamental parts of the system, and rather than shop around, I convinced myself that I’d fix it one day. It was always a project for another day. I put it off, and nearly ruined one of my favourite hobbies. I made a mistake, missed every cue to correct it, and lied to myself that I’d come back to it. I’m now a three time platinum-selling parent, and a key part of that is being honest about mistakes, learning from them.</p>
+<p>The shame of being stuck on a platform I’d just eulogised for contributed to my <a href="https://thepcspy.com/read/losing-your-voice/">stopping writing altogether</a>. Not a sole cause, by any means, but every time I opened the site to write, all I could see was stuff I needed to fix.</p>
+<h2 id="the-lesson-of-the-story-isnt-astro">The lesson of the story isn’t Astro<img src="https://thepcspy.com/read/11ty-wasnt-right-for-me/astro.svg"></h2>
+<p>Wait, this incomplete pile of complaints is a lesson? Didn’t I move to Astro? Well, yeah, but <strong>it’s okay that 11ty didn’t work for me</strong>. I’m not angry at Zach &amp; co. — they helped me as much as they could with a system that I’m sure does what they need. They owe me nothing.</p>
+<p>I failed but I didn’t <em><strong>Fail Fast</strong></em>.</p>
+<p>I knew four years ago that 11ty wasn’t working for me. Rather than shop around, I convinced myself that I’d fix it one day. It was a perennial <em>project for another day</em>. In putting it off, I nearly ruined one of my favourite hobbies. I missed every cue to correct these oversights, and lied to myself that I’d come back to it.</p>
+<p>As a three time platinum-selling parent, a key skill is being honest about mistakes, learning from them. If you don’t accomplish this cycle, you get stuck in ruts. The longer it goes on, the more peripheral damage.</p>
 <p>This site <em>does</em> run Astro now. It took a heck of a lot of work to port my Markdown code over, and indeed was only just made possible this year inside Astro. Maybe I’ll write about it one day.</p>]]></description>
       <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
     </item>
@@ -1489,50 +1558,6 @@
       <pubDate>Sun, 19 Jul 2026 20:18:23 GMT</pubDate>
       <description><![CDATA[<p>In an attempt to encourage myself to post more I have created a new blog <a href="https://robert-ancell.github.io/">Thinking Open</a>. If you want to hear my thoughts on Open Source, Ubuntu and Flutter then come on over! I'll keep Bob's development blog here as an archive but there will be no more posts.</p><p>Haere rā!</p>]]></description>
       <source url="http://bobthegnome.blogspot.com/feeds/posts/default">Robert Ancell</source>
-    </item>
-    <item>
-      <title>E383 Gambiarra Do Trovão Armada Em 64</title>
-      <link>https://podcastubuntuportugal.org/e383/</link>
-      <guid isPermaLink="true">https://podcastubuntuportugal.org/e383/</guid>
-      <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>Há um mês que não gravávamos e por isso trazemos muitas aventuras: o novo Thundermail, e-readers artesanais, UPS que fritam e fazem tostas mistas, dedos cortados, comutadores alucinados, câmaras virtuais com Pipewire e gambiarras manhosas, sessões de desencaixotamento («unboxing») em audio, actualizações extemporâneas de Ubuntu e ainda: mais fanáticos convertidos ao Ubuntu Touch, porque é que o Android não presta, boas notícias de Nextcloud em Ubuntu Touch, Steam em Arm64, Rust Coreutils, novidades de Agenda e opiniões polémicas sobre centros de dados, que quase davam porrada de criar bicho.</p>
-<p>Já sabem: oiçam, subscrevam e partilhem!</p>
-<ul>
-<li>Exemplo de Caixa Negra de aviação: <a href="https://en.wikipedia.org/wiki/Flight_recorder#/media/File:2002-dmuseum-luftfahrt-014-650.jpg">https://en.wikipedia.org/wiki/Flight_recorder#/media/File:2002-dmuseum-luftfahrt-014-650.jpg</a></li>
-<li>Thundermail, da Mozilla: <a href="https://www.tb.pro/">https://www.tb.pro/</a></li>
-<li>Office Hours da Mozilla, sobre o Thundermail: <a href="https://blog.thunderbird.net/2026/07/community-office-hours-a-thundermail-update/">https://blog.thunderbird.net/2026/07/community-office-hours-a-thundermail-update/</a></li>
-<li>Proton Mail: <a href="https://protonmail.ch">https://protonmail.ch</a></li>
-<li>Qpwgraph: <a href="https://github.com/rncbc/qpwgraph">https://github.com/rncbc/qpwgraph</a></li>
-<li>VDO Ninja: <a href="https://vdo.ninja/">https://vdo.ninja/</a></li>
-<li>Ubuntu Studio: <a href="https://ubuntustudio.org/">https://ubuntustudio.org/</a></li>
-<li>Pipewire: <a href="https://pipewire.org/">https://pipewire.org/</a></li>
-<li>Pulse Audio: <a href="https://www.freedesktop.org/wiki/Software/PulseAudio/">https://www.freedesktop.org/wiki/Software/PulseAudio/</a></li>
-<li>Jack: <a href="https://jackaudio.org/">https://jackaudio.org/</a></li>
-<li>Alsa: <a href="https://www.alsa-project.org/wiki/Main_Page">https://www.alsa-project.org/wiki/Main_Page</a></li>
-<li>Mousse de chocolate Alsa: <a href="https://www.youtube.com/watch?v=injYEz44c_o">https://www.youtube.com/watch?v=injYEz44c_o</a></li>
-<li>Pudins Alsa: <a href="https://www.youtube.com/watch?v=p0cJP01njmk">https://www.youtube.com/watch?v=p0cJP01njmk</a></li>
-<li>As aplicações de Ubuntu Touch para NextCloud, de Tobias Johansson: <a href="https://open-store.io/?search=publisher%3ATobias%20Johansson">https://open-store.io/?search=publisher%3ATobias%20Johansson</a></li>
-<li>Mini UPS Eaton: <a href="https://mauser.pt/076-0569/eaton-3s-mini-ups-compacta-36w-c-4-tensoes-de-saida-dc-9v-12v-15v-19v">https://mauser.pt/076-0569/eaton-3s-mini-ups-compacta-36w-c-4-tensoes-de-saida-dc-9v-12v-15v-19v</a></li>
-<li>Shelly Power Strip: <a href="https://mauser.pt/095-7178/shelly-power-strip-4-gen4-bloco-de-4-tomadas-inteligentes-wifi-bt-zigbee-matter-c-botoes-e-cabo-de-1-5m-branco">https://mauser.pt/095-7178/shelly-power-strip-4-gen4-bloco-de-4-tomadas-inteligentes-wifi-bt-zigbee-matter-c-botoes-e-cabo-de-1-5m-branco</a></li>
-<li>Primeira imagem de snapshot do Ubuntu 26.10 está disponível: <a href="https://www.phoronix.com/news/Ubuntu-26.10-Snapshot-1">https://www.phoronix.com/news/Ubuntu-26.10-Snapshot-1</a></li>
-<li>Rescuezilla baseado em 26.04: <a href="https://9to5linux.com/rescuezilla-2-6-2-system-recovery-live-iso-adds-ubuntu-26-04-lts-support">https://9to5linux.com/rescuezilla-2-6-2-system-recovery-live-iso-adds-ubuntu-26-04-lts-support</a></li>
-<li>Snap do Steam para arm64 agora é estável: <a href="https://discourse.ubuntu.com/t/canonical-s-steam-snap-is-now-stable-on-arm64/83664/3">https://discourse.ubuntu.com/t/canonical-s-steam-snap-is-now-stable-on-arm64/83664/3</a></li>
-<li>Rusc coreutils 0.9 com segurança melhorada e com 90.4% de testes bem sucedidos: <a href="https://www.phoronix.com/news/Rust-Coreutils-0.9">https://www.phoronix.com/news/Rust-Coreutils-0.9</a></li>
-<li>Nick, do Linux Experiment usou Ubuntu Touch durante 30 dias e&hellip; <a href="https://youtu.be/uWWPebWHs8s">https://youtu.be/uWWPebWHs8s</a></li>
-<li>1984, Dois Minutos de Ódio: <a href="https://youtu.be/XvGmOZ5T6_Y">https://youtu.be/XvGmOZ5T6_Y</a></li>
-<li>«This is The Only Data Center I Want Funded»: <a href="https://media.mstdn.social/media_attachments/files/116/879/964/549/934/556/original/5477bd437f73bc80.jpeg">https://media.mstdn.social/media_attachments/files/116/879/964/549/934/556/original/5477bd437f73bc80.jpeg</a></li>
-<li>AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking:  <a href="https://www.mdpi.com/2075-4698/15/1/6">https://www.mdpi.com/2075-4698/15/1/6</a></li>
-<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
-<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
-<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
-</ul>
-<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
-<p>Este episódio foi produzido por Diogo Constantino, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
-O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
-Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: Happy Holiday 87bpm loop by AudioCoffee &ndash; <a href="https://freesound.org/s/758405/">https://freesound.org/s/758405/</a> &ndash; License: Attribution NonCommercial 4.0; Breaking news intro music by humanoide9000 &ndash; <a href="https://freesound.org/s/760770/">https://freesound.org/s/760770/</a> &ndash; License: Attribution 4.0; Sound Design Trailer by DeVern &ndash; <a href="https://freesound.org/s/554673/">https://freesound.org/s/554673/</a> &ndash; License: Attribution NonCommercial 3.0; Tropicorp Advertisement by code_box &ndash; <a href="https://freesound.org/s/561190/">https://freesound.org/s/561190/</a> &ndash; License: Creative Commons 0.
-Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
-A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
-      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
     </item>
     <item>
       <title>The pandemic of incomplete OpenSSL error handling</title>
