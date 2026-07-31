@@ -6,9 +6,43 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 30 Jul 2026 02:35:15 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 03:16:27 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>11ty wasn’t right for me</title>
+      <link>https://thepcspy.com/read/11ty-wasnt-right-for-me/</link>
+      <guid isPermaLink="true">https://thepcspy.com/read/11ty-wasnt-right-for-me/</guid>
+      <pubDate>Wed, 29 Jul 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>In 2022 <a href="https://thepcspy.com/read/turning-it-up-to-11ty/">I migrated to <strong>11ty</strong></a>, a flexible static site generator.  I thought it was perfect for me but <strong>I was wrong</strong> and it took <em>four years</em> to recover  😪</p>
+ <figure style="float:right;margin: 0 0 10px 10px;max-width: 30%"><img src="https://thepcspy.com/read/11ty-wasnt-right-for-me/sad-11ty.svg"></figure>
+<p>Let’s be clear, my last post on this was true: <strong>I loved integrating 11ty.</strong> It was 100% right to move to a <abbr title="Static Site Generator">SSG</abbr>, exfiltrate the content from a claggy database into markdown files, twisting the excellent <a href="https://github.com/markdown-it/markdown-it"><code>markdown-it</code></a> library to handle a decade of custom tags and weird oddities, and 11ty Just Kinda Sorta Worked™. A quantum leap from the rigid Django system I’d been using <a href="https://thepcspy.com/read/everything-is-new-again/">since 2010</a>.</p>
+<p>My elation masked <a href="https://thepcspy.com/read/turning-it-up-to-11ty/#whats-not-so-good">the ugly bits</a>, until they got in the way.</p>
+<ul>
+<li>
+<p><strong>Collections</strong> (posts) are very light and accessible on the surface and filtering and paging are both possible. I never managed to do both at once. I tried to unpick the code, understand what Zach was doing, but it was beyond me, the documentation and the support available at the time.</p>
+</li>
+<li>
+<p><strong>Asset/design management</strong> was explicitly your job. There’s no Vite or Webpack. You can manually pass your output files through processors, but nothing was there to pick up after you. I thought it was cool but quickly realised I much prefer having access to sourcemaps and not having to recompile design files manually. <strong>Edit</strong> <a href="https://www.11ty.dev/docs/server-vite/">You can now use Vite</a>.</p>
+</li>
+<li>
+<p><a href="https://mozilla.github.io/nunjucks/"><strong>Nunjucks</strong></a> is the core templating language, similar to Django’s, it was quick for me to pick up but every its dissimilarity and quirk felt like a limitation.</p>
+</li>
+<li>
+<p>Trying to fix these things was painful. <strong>Zach is only one guy</strong>, there are still only ~110 other contributors. It’s a really tight team with a cult following and that made getting enough support impossible.</p>
+</li>
+<li>
+<p><strong>The v2 upgrade broke <u><em>me</em></u>.</strong> I tried –<em>I really tried</em>– but I couldn’t make my site work on v2. I reached out but nobody could untangle my problem and so I did the only thing I could: I gave up.</p>
+</li>
+</ul>
+<p><a href="https://thepcspy.com/read/losing-your-voice/">I actually stopped writing altogether</a>. The shame of being stuck on a platform I’d just eulogised for contributed to be not wanting to be anywhere near it.</p>
+<h2 id="the-point-of-this-post-the-moral-of-the-story-isnt-astro">The point of this post —the moral of the story— isn’t Astro&nbsp;<img src="https://thepcspy.com/read/11ty-wasnt-right-for-me/astro.svg"></h2>
+<p>Wait, there’s a moral to this litany of complaints? Didn’t I move to Astro? Well, yeah, but <strong>it’s okay that 11ty didn’t work for me</strong>. I’m not angry at Zach &amp; co. — they helped me as much as they could with a system that I’m sure does what they need. They owe me nothing.</p>
+<p>I’m angry at me.</p>
+<p>I already knew in 2022 that I was facing an uphill struggle with fundamental parts of the system, and rather than shop around, I convinced myself that I’d fix it one day. It was always a project for another day. I put it off, and nearly ruined one of my favourite hobbies. I made a mistake, missed every cue to correct it, and lied to myself that I’d come back to it. I’m now a three time platinum-selling parent, and a key part of that is being honest about mistakes, learning from them.</p>
+<p>This site <em>does</em> run Astro now. It took a heck of a lot of work to port my Markdown code over, and indeed was only just made possible this year inside Astro. Maybe I’ll write about it one day.</p>]]></description>
+      <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
+    </item>
     <item>
       <title>DebConf26 – Santa Fe, Argentina</title>
       <link>https://jonathancarter.org/2026/07/27/debconf26-santa-fe-argentina/</link>
@@ -238,33 +272,6 @@
 <p><a href="https://ubuntu.com/engage/tinfoil-confidential-computing-guide">How Ubuntu enables verifiable private AI with confidential computing on bare metal</a></p>
 <p><a href="https://canonical.com/blog/sovereign-cloud-confidential-computing">Sovereign clouds: enhance data security with confidential computing</a></p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
-    </item>
-    <item>
-      <title>Tell your kids to be plumbers</title>
-      <link>https://thepcspy.com/read/tell-kids-to-be-plumbers/</link>
-      <guid isPermaLink="true">https://thepcspy.com/read/tell-kids-to-be-plumbers/</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>A few years ago I’d have been happy if my children wanted to
-follow me into a career of programming, but the longer I spend
-with LLMs, the less future I see in it for any of us.
-How should we advise our children for their futures?</p>
- <figure style="float:right;margin: 0 0 10px 10px;max-width: 30%"><img src="https://thepcspy.com/read/tell-kids-to-be-plumbers/plumber-education.avif"><figcaption>Thanks ChatGPT</figcaption></figure>
-<p>If you can afford tokens, programming became an <strong>outcome-oriented task</strong>. Tell your <abbr title="Large Language Model">LLM</abbr> what you want and wait. Ideas to <abbr title="Minimum Viable Product">MVP</abbr> in an hour, little programming required. Senior developers’ last bastion is debugging and performance, but it’s only a matter of time. Engineering teams <em>will</em> mutate into LLM shepherds until even seniors have no place. And my industry isn’t alone.</p>
-<p>Anything where computers became central is feeling heat: data entry, customer service, translation, technical writing, marketing, copywriting, paralegal, secretarial, accountancy and tax code, and every creative job that doesn’t rely on physical media. Junior tasks are already being done by LLMs, senior roles will follow.</p>
-<p>So what do you want your kids to be when they grow up?<br>
-Will that still be a thing in ten years?</p>
-<p><strong>Note:</strong> Let’s remember: it’s their life to live. As parent’s we sometimes like to think we’re steering but we’re not even passengers. We can advise, we can enable, but we can’t make our kids do anything and would be foolish to try.</p>
-<h2 id="raise-barbarians-rogues-and-rangers-not-wizards">Raise barbarians, rogues and rangers, not wizards</h2>
-<p>My parents, grandparents and school pushed hard towards further education and “professional” jobs. It was the only path for a bright kid. The “trades” were for kids who <em>failed</em> at school. If you didn’t need an A-level –let alone a degree– what was the point?</p>
-<p>This feels like bad advice today. Intelligence-based jobs will still exist but not in today’s volume, and with ever increasing numbers of people (and AIs) vying for them, throwing our kids into that fray doesn’t seem like giving them opportunity, it sounds like a fight.</p>
-<p>But <u><strong>everybody will always need plumbing</strong></u>. All the tokens in the world won’t solder pipework, dig pipe trenches, stick tiles on the wall, smell gas leaks, and and they won’t carry a bath up the stairs. Robots are decades away from replacing cheap meatbags so plumbing is safe from automation, while still being diverse, entrepreneurial and often creative enough to engage an active mind.</p>
-<p>The important thing is raising kids with the awareness of what jobs are actually available. They can’t all be doctors and influencers. There are lots of STR and DEX builds available. Don’t be afraid to dual class.</p>
-<h2 id="education-still-adds-value-and-opportunity">Education still adds value and opportunity</h2>
-<p>What do <em>I</em> want my kids to be? <strong>Happy</strong>.</p>
-<p>Forcing them out of school into an apprenticeship is unlikely to achieve that, and as much as I worry about the future of employment, will more education ever be bad? Further education isn’t a checkbox qualification. It coaches people how to think, research, learn and grow.</p>
-<p>Higher education needs to catch up with the world. £100k for a 5y medical degree, 40 year career <em>might</em> make sense, but what about the degrees without an attached career? Rather than get tribal about what should be allowed at university, I think we need to be more flexible with learning. Is there anything wrong with learning about the Italian Renaissance <em>while</em> training as a plumber? Similarly, we should help adults go back to education, learn more. More night schools, more vocational courses.</p>
-<p>I <em>do</em> worry about the future, but that’s always been a parent’s job.</p>]]></description>
-      <source url="http://feeds.feedburner.com/OliUbuntu">Oli Warner</source>
     </item>
     <item>
       <title>I was bought a new computer</title>
