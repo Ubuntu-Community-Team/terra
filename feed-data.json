@@ -661,6 +661,25 @@
     "imageUrl": null
   },
   {
+    "sourceName": "Russell John",
+    "sourceUrl": "http://russelljohn.net/journal/category/linux/feed",
+    "title": "Ode to Linux 🐧",
+    "link": "https://russelljohn.net/journal/2023/10/ode-to-linux/",
+    "date": "2023-09-30T20:39:43.000Z",
+    "snippet": "In the realm of ones and zeros, where bytes take flight, Lies a world of freedom, in the soft, glowing light. A kernel of power, an OS so divine, Linux, you&#8217;re a treasure, a gem that&#8217;ll shine. Born in the heart of a hacker&#8217;s desire, Open source spirit, like a blazing fire. Linus Torvalds, your [&#8230;]\nThe post Ode to Linux 🐧 appeared first on Cyber Kingdom of Russell John.",
+    "contentHtml": "<p>In the realm of ones and zeros, where bytes take flight, Lies a world of freedom, in the soft, glowing light. A kernel of power, an OS so divine, Linux, you&#8217;re a treasure, a gem that&#8217;ll shine. Born in the heart of a hacker&#8217;s desire, Open source spirit, like a blazing fire. Linus Torvalds, your [&#8230;]</p>\n<p>The post <a href=\"https://russelljohn.net/journal/2023/10/ode-to-linux/\">Ode to Linux 🐧</a> appeared first on <a href=\"https://russelljohn.net\">Cyber Kingdom of Russell John</a>.</p>",
+    "author": "Russell John",
+    "categories": [
+      "Linux",
+      "linux",
+      "penguin",
+      "poem",
+      "song",
+      "tux"
+    ],
+    "imageUrl": null
+  },
+  {
     "sourceName": "Muhammad Fauzilkamil Zainuddin",
     "sourceUrl": "https://coderstalk.blogspot.com/feeds/posts/default/",
     "title": "Understanding vm.swappiness: Improving Linux Performance and Memory Management",
@@ -798,6 +817,26 @@
       "GNOME",
       "Linux",
       "Ubuntu"
+    ],
+    "imageUrl": null
+  },
+  {
+    "sourceName": "Kees Cook",
+    "sourceUrl": "http://outflux.net/blog/archives/category/ubuntu/feed",
+    "title": "finding binary differences",
+    "link": "https://outflux.net/blog/archives/2022/06/24/finding-binary-differences/",
+    "date": "2022-06-24T20:11:48.000Z",
+    "snippet": "As part of the continuing work to replace 1-element arrays in the Linux kernel, it&#8217;s very handy to show that a source change has had no executable code difference. For example, if you started with this:\n\r\nstruct foo {\r\n    unsigned long flags;\r\n    u32 length;\r\n    u32 data[1];\r\n};\r\n\r\nvoid foo_init(int count)\r\n{\r\n    struct foo *instance;\r\n    size_t bytes = sizeof(*instance) + sizeof(u32) * (count - 1);\r\n    ...\r\n    instance = kmalloc(bytes, GFP_KERNEL);\r\n    ...\r\n};\r\n\nAnd you changed on...",
+    "contentHtml": "<p>As part of the continuing work to <a href=\"https://github.com/KSPP/linux/issues/79\">replace 1-element arrays in the Linux kernel</a>, it&#8217;s very handy to show that a source change has had no executable code difference. For example, if you started with this:</p>\n<pre class=\"brush:c\">\r\nstruct foo {\r\n    unsigned long flags;\r\n    u32 length;\r\n    u32 data[1];\r\n};\r\n\r\nvoid foo_init(int count)\r\n{\r\n    struct foo *instance;\r\n    size_t bytes = sizeof(*instance) + sizeof(u32) * (count - 1);\r\n    ...\r\n    instance = kmalloc(bytes, GFP_KERNEL);\r\n    ...\r\n};\r\n</pre>\n<p>And you changed only the struct definition:</p>\n<pre class=\"brush:diff\">\r\n-    u32 data[1];\r\n+    u32 data[];\r\n</pre>\n<p>The <code>bytes</code> calculation is going to be incorrect, since it is still subtracting 1 element&#8217;s worth of space from the desired count. (And let&#8217;s ignore for the moment the open-coded calculation that may end up with an arithmetic over/underflow here; that can be solved separately by using the <code>struct_size()</code> helper or the <code>size_mul()</code>, <code>size_add()</code>, etc family of helpers.)</p>\n<p>The missed adjustment to the size calculation is relatively easy to find in this example, but sometimes it&#8217;s much less obvious how structure sizes might be woven into the code. I&#8217;ve been checking for issues by using the fantastic <a href=\"https://diffoscope.org/\">diffoscope</a> tool. It can produce a LOT of noise if you try to compare builds without keeping in mind the issues solved by <a href=\"https://docs.kernel.org/kbuild/reproducible-builds.html\">reproducible builds</a>, with some additional notes. I prepare my build with the &#8220;known to disrupt code layout&#8221; options disabled, but with debug info enabled:</p>\n<pre class=\"brush:shell\">\r\n$ KBF=\"KBUILD_BUILD_TIMESTAMP=1980-01-01 KBUILD_BUILD_USER=user KBUILD_BUILD_HOST=host KBUILD_BUILD_VERSION=1\"\r\n$ OUT=gcc\r\n$ make $KBF O=$OUT allmodconfig\r\n$ ./scripts/config --file $OUT/.config \\\r\n        -d GCOV_KERNEL -d KCOV -d GCC_PLUGINS -d IKHEADERS -d KASAN -d UBSAN \\\r\n        -d DEBUG_INFO_NONE -e DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT\r\n$ make $KBF O=$OUT olddefconfig\r\n</pre>\n<p>Then I build a stock target, saving the output in &#8220;before&#8221;. In this case, I&#8217;m examining <code>drivers/scsi/megaraid/</code>:</p>\n<pre class=\"brush:shell\">\r\n$ make -jN $KBF O=$OUT drivers/scsi/megaraid/\r\n$ mkdir -p $OUT/before\r\n$ cp $OUT/drivers/scsi/megaraid/*.o $OUT/before/\r\n</pre>\n<p>Then I patch and build a modified target, saving the output in &#8220;after&#8221;:</p>\n<pre class=\"brush:shell\">\r\n$ vi the/source/code.c\r\n$ make -jN $KBF O=$OUT drivers/scsi/megaraid/\r\n$ mkdir -p $OUT/after\r\n$ cp $OUT/drivers/scsi/megaraid/*.o $OUT/after/\r\n</pre>\n<p>And then run <code>diffoscope</code>:</p>\n<pre class=\"brush:shell\">\r\n$ diffoscope $OUT/before/ $OUT/after/\r\n</pre>\n<p>If <code>diffoscope</code> output reports nothing, then we&#8217;re done. <img src=\"https://s.w.org/images/core/emoji/14.0.0/72x72/1f973.png\" alt=\"🥳\" class=\"wp-smiley\" style=\"height: 1em; max-height: 1em;\" /></p>\n<p>Usually, though, when source lines move around other stuff will shift too (e.g. <code>WARN</code> macros rely on line numbers, so the bug table may change contents a bit, etc), and <code>diffoscope</code> output will look noisy. To examine just the executable code, the command that <code>diffoscope</code>  used is reported in the output, and we can run it directly, but with possibly shifted line numbers not reported. i.e. running <code>objdump</code> without <code>--line-numbers</code>:</p>\n<pre class=\"brush:shell\">\r\n$ ARGS=\"--disassemble --demangle --reloc --no-show-raw-insn --section=.text\"\r\n$ for i in $(cd $OUT/before && echo *.o); do\r\n        echo $i\r\n        diff -u <(objdump $ARGS $OUT/before/$i | sed \"0,/^Disassembly/d\") \\\r\n                <(objdump $ARGS $OUT/after/$i  | sed \"0,/^Disassembly/d\")\r\ndone\r\n</pre>\n<p>If I see an unexpected difference, for example:</p>\n<pre class=\"brush:diff\">\r\n-    c120:      movq   $0x0,0x800(%rbx)\r\n+    c120:      movq   $0x0,0x7f8(%rbx)\r\n</pre>\n<p>Then I'll search for the pattern with line numbers added to the <code>objdump</code> output:</p>\n<pre class=\"brush:shell\">\r\n$ vi <(objdump --line-numbers $ARGS $OUT/after/megaraid_sas_fp.o)\r\n</pre>\n<p>I'd search for \"0x0,0x7f8\", find the source file and line number above it, open that source file at that position, and look to see where something was being miscalculated:</p>\n<pre class=\"brush:shell\">\r\n$ vi drivers/scsi/megaraid/megaraid_sas_fp.c +329\r\n</pre>\n<p>Once tracked down, I'd start over at the \"patch and build a modified target\" step above, repeating until there were no differences. For example, in the starting example, I'd also need to make this change:</p>\n<pre class=\"brush:diff\">\r\n-    size_t bytes = sizeof(*instance) + sizeof(u32) * (count - 1);\r\n+    size_t bytes = sizeof(*instance) + sizeof(u32) * count;\r\n</pre>\n<p>Though, as hinted earlier, better yet would be:</p>\n<pre class=\"brush:diff\">\r\n-    size_t bytes = sizeof(*instance) + sizeof(u32) * (count - 1);\r\n+    size_t bytes = struct_size(instance, data, count);\r\n</pre>\n<p>But sometimes adding the helper usage will add binary output differences since they're performing overflow checking that might saturate at <code>SIZE_MAX</code>. To help with patch clarity, those changes can be done separately from fixing the array declaration.</p>\n<p style='text-align:left'>&copy; 2022 - 2023, <a href=\"https://outflux.net/blog/\">Kees Cook</a>. This work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 License</a>.<br /><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/4.0/\"><img decoding=\"async\" alt=\"CC BY-SA 4.0\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/4.0/88x31.png\" /></a> </p>",
+    "author": "kees",
+    "categories": [
+      "Blogging",
+      "Chrome OS",
+      "Debian",
+      "Kernel",
+      "Security",
+      "Ubuntu",
+      "Ubuntu-Server"
     ],
     "imageUrl": null
   },
