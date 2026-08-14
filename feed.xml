@@ -6,29 +6,46 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 13 Aug 2026 02:05:14 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 02:03:14 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Canonical integrates NVIDIA Nemotron 3.5 Lightning with Ubuntu for always-on AI agents</title>
-      <link>https://ubuntu.com//blog/nvidia-nemotron-3-5-lightning</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/nvidia-nemotron-3-5-lightning</guid>
-      <pubDate>Tue, 11 Aug 2026 13:00:00 GMT</pubDate>
-      <description><![CDATA[<p>Canonical is pleased to announce that  NVIDIA’s newly introduced NVIDIA Nemotron 3.5 Lightning, an open, customizable model built for always-on AI agents, is now available on Ubuntu with single-command installation. </p>
-<p>NVIDIA Nemotron 3.5 Lightning is an open 30B hybrid Mixture-of-Experts (MoE) model with 3B active parameters, designed for high-throughput agentic workloads. It is fully customizable, allowing organizations to own, fine-tune, and deploy the model wherever their agents operate while maintaining control over model behavior, data handling, and deployment.</p>
-<h3 class="wp-block-heading">Nemotron 3.5 Lightning available on Ubuntu at launch</h3>
-<p>Canonical is enabling access to Nemotron 3.5 Lightning at launch through <a href="https://documentation.ubuntu.com/inference-snaps/">inference snaps</a>: pre-packaged AI inference runtimes distributed as snap packages for consistent deployment across systems. Developers and enterprises can deploy the model across supported NVIDIA platforms with a single command:</p>
-<pre class="wp-block-code"><code>sudo snap install nemotron-3-5-lightning</code></pre>
-<p>Inference snaps transform Nemotron 3.5 Lightning deployment into a simple, standardized operation. This production-ready runtime scales consistently across workstations, edge devices, and servers, allowing teams to focus on building AI agents instead of managing infrastructure. Users deploying Nemotron 3.5 Lightning with inference snaps benefit from: </p>
+      <title>Advantech AOM-2721 is now Ubuntu Certified</title>
+      <link>https://ubuntu.com//blog/advantech-aom-2721-ubuntu-certified</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/advantech-aom-2721-ubuntu-certified</guid>
+      <pubDate>Thu, 13 Aug 2026 10:25:17 GMT</pubDate>
+      <description><![CDATA[<p>Canonical announces that the Advantech AOM-2721 is officially joining the list of <a href="https://ubuntu.com/certified" rel="noreferrer noopener" target="_blank">Ubuntu Certified Hardware</a>. This latest certification highlights the deepening collaboration between Canonical and Advantech.</p>
+<p>With full certification for <strong>Ubuntu 24.04 LTS</strong>, developers utilizing Advantech’s powerful Open Standard Module (OSM) AOM-2721 can now deploy a seamless, securely designed, and highly optimized Ubuntu experience right out of the box.</p>
+<figure class="wp-block-image size-full"><img alt="" height="460" loading="lazy" sizes="(min-width: 820px) 820px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_820/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fe5ea%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fe5ea%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fe5ea%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fe5ea%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_820/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fe5ea%2Fimage.png 820w" width="820"/></figure>
+<h2 class="wp-block-heading">Tiny size, massive edge power</h2>
+<p>The Advantech AOM-2721 is a highly compact Size-L OSM. Measuring just 45 x 45 mm, this miniature solder-on module is designed to outpace traditional computer-on-modules. At its core lies the Qualcomm® Octa-core QCS6490 processor operating with a 6.9-watt TDP.</p>
+<p>This architecture allows the AOM-2721 to deliver robust on-site computing. In fact, <a href="https://www.advantech.com/en/resources/news/advantech-unveils-aom-2721-a-size-l-open-standard-module-osm-featuring-qualcomm-qcs6490-for-on-device-ai-scenarios" rel="noreferrer noopener" target="_blank">according to Advantech</a>, the QCS6490 achieves nearly 20% better performance compared to mid-tier x86 processors, while providing an impressive 43-75% reduction in power consumption. This makes it an unparalleled solution tailored to meet the demanding physical and thermal constraints of diverse AIoT scenarios and handheld applications.</p>
+<h2 class="wp-block-heading">Empowering machine vision with on-device AI</h2>
+<p>As industries push intelligence closer to the edge, the AOM-2721 is perfectly equipped to handle intensive workloads. The module features 12 TOPS of AI capability, alongside support for dual-camera inputs and a native video codec. </p>
+<p>This combination excels in applications requiring low-latency signals, seamless video capture, and resilience to vibrations within limited installation spaces. It is especially well-suited for autonomous mobile robots (AMR). By leveraging on-device AI, these AMRs can process data from cameras, radar, and LiDAR to perform complex tasks such as object detection, localization, route optimization, and collision avoidance. Furthermore, developers can utilize the Qualcomm AI Hub to streamline the deployment of machine learning models.</p>
+<h2 class="wp-block-heading">Abundant interfaces and seamless connectivity</h2>
+<p>To fully integrate into modern AIoT ecosystems, the AOM-2721 offers a vast array of I/O options within its compact form factor. Key connectivity features include:</p>
 <ul>
-<li>1 million token context window: Nemotron’s context windows supports persistent, autonomous AI agents capable of maintaining context across long-running, multi-step workflows. </li>
-<li>High-throughput hybrid MoE architecture: Nemotron 3.5 Lightning features a 30B Mixture-of-Experts model with 3B active parameters, distilled from NVIDIA’s frontier Nemotron 3 Ultra.</li>
-<li>Consistent runtime across environments: inference snaps ensure identical behavior on cloud, on-premises, and edge systems</li>
-<li>Simplified operations: standardized snap packaging reduces maintenance, patching, and upgrade complexity.</li>
-<li>Secure, confined execution: strict isolation with automatic updates and verified distribution</li>
+<li><strong>High-speed expansion</strong>: PCIe Gen3 support for 5G and Wi-Fi 6 connectivity.</li>
+<li><strong>Next-gen storage</strong>: High-speed memory and storage interfaces including LPDDR5 and UFS.</li>
+<li><strong>Versatile I/O</strong>: Flexible connectivity via USB 3.2, UART, and GPIO.</li>
+<li><strong>Rich displays</strong>: Dual-display capability supporting up to 2K resolution across DSI, DP, and eDP interfaces.</li>
 </ul>
-<p>For enterprises, this translates into significantly faster deployment times, saving weeks of integration and validation work, and enabling scalable AI infrastructure with a single portable artifact. </p>
-<p>Learn more at: <a href="https://documentation.ubuntu.com/inference-snaps/">https://documentation.ubuntu.com/inference-snaps/</a> </p>]]></description>
+<p>When paired with Qualcomm’s 5G and Wi-Fi 6 modules, the integration of the Octa-core QCS6490 CPU ensures compatibility and minimal latency. </p>
+<h2 class="wp-block-heading">Ubuntu optimized for Qualcomm silicon</h2>
+<p>Just as we expanded support with the Ubuntu general availability for Qualcomm Dragonwing, certifying the Advantech AOM-2721 ensures that developers can build, deploy, and scale their AIoT projects with confidence. Ubuntu certification means this device has passed rigorous testing to guarantee hardware components function flawlessly on <strong>Ubuntu 24.04 LTS</strong> at the time of certification and in the future. The Ubuntu Certification team performs regression testing on certified hardware on a regular cadence to ensure Ubuntu Stable Release Updates (SRU) are validated on certified hardware.</p>
+<p>Customers deploying the AOM-2721 with Ubuntu will benefit from Canonical’s robust security patching, long-term support (LTS), and a vast ecosystem of open-source tools. </p>
+<h2 class="wp-block-heading">Maximizing enterprise value with Ubuntu Pro for Devices</h2>
+<p>For commercial deployments requiring long-term reliability and compliance, companies can enhance their Ubuntu-powered fleet with an <a href="https://ubuntu.com/pro/devices" rel="noreferrer noopener" target="_blank">Ubuntu Pro for Devices</a> subscription. This enterprise-grade service offers critical benefits for embedded and IoT deployments:</p>
+<ul>
+<li><strong>CVE Protection</strong>: Prompt security patches for critical and high-severity vulnerabilities for up to 15 years, minimizing exposure to security threats at the edge.</li>
+<li><strong>Device Management Solutions</strong>: Reduced cost of <a href="https://ubuntu.com/internet-of-things/management" rel="noreferrer noopener" target="_blank">managing device fleets</a> and proactive management of security for IoT devices.</li>
+<li><strong>Compliance and Hardening</strong>: Access to tools for automated security hardening and compliance profiles, such as CIS benchmarks and FIPS-compliant cryptographic modules.</li>
+</ul>
+<p>Whether you are building the next generation of autonomous robots or deploying smart industrial machine vision systems, the Advantech AOM-2721 powered by Ubuntu 24.04 LTS and Ubuntu Pro for Devices subscription provides the securely designed, optimized foundation you need to get to market faster.</p>
+<h2 class="wp-block-heading">Learn more</h2>
+<p>Explore our hardware ecosystems on the <a href="https://ubuntu.com/blog/tag/certified-hardware">Ubuntu Certified Hardware Blog</a>. </p>
+<p>For more information about AOM-2721 contact your local Advantech sales representative or visit the <a href="https://www.advantech.com/en/contact/service-request-form?subject=price%2band%2bquotation&amp;product=AOM-2721" rel="noreferrer noopener" target="_blank">Advantech official website</a>.</p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -4230,15 +4247,6 @@ mirror and follow the instructions above.</p>]]></description>
 
 <p class="wp-block-paragraph">Thank you to everyone who contributed to OpenStack&nbsp;2023.2 Bobcat!</p>]]></description>
       <source url="https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off">Corey Bryant</source>
-    </item>
-    <item>
-      <title>Ode to Linux 🐧</title>
-      <link>https://russelljohn.net/journal/2023/10/ode-to-linux/</link>
-      <guid isPermaLink="true">https://russelljohn.net/journal/2023/10/ode-to-linux/</guid>
-      <pubDate>Sat, 30 Sep 2023 20:39:43 GMT</pubDate>
-      <description><![CDATA[<p>In the realm of ones and zeros, where bytes take flight, Lies a world of freedom, in the soft, glowing light. A kernel of power, an OS so divine, Linux, you&#8217;re a treasure, a gem that&#8217;ll shine. Born in the heart of a hacker&#8217;s desire, Open source spirit, like a blazing fire. Linus Torvalds, your [&#8230;]</p>
-<p>The post <a href="https://russelljohn.net/journal/2023/10/ode-to-linux/">Ode to Linux 🐧</a> appeared first on <a href="https://russelljohn.net">Cyber Kingdom of Russell John</a>.</p>]]></description>
-      <source url="http://russelljohn.net/journal/category/linux/feed">Russell John</source>
     </item>
     <item>
       <title>Understanding vm.swappiness: Improving Linux Performance and Memory Management</title>
