@@ -6,9 +6,21 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sun, 16 Aug 2026 01:22:47 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 01:19:44 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sad Story</title>
+      <link>https://mako.cc/copyrighteous/sad-story</link>
+      <guid isPermaLink="true">https://mako.cc/copyrighteous/sad-story</guid>
+      <pubDate>Sun, 16 Aug 2026 07:01:10 GMT</pubDate>
+      <description><![CDATA[<figure class="wp-block-image size-large"><a href="https://mako.cc/copyrighteous/wp-content/uploads/2026/08/PXL_20260719_1815328531-scaled.jpg"><img fetchpriority="high" decoding="async" width="576" height="1024" src="https://mako.cc/copyrighteous/wp-content/uploads/2026/08/PXL_20260719_1815328531-576x1024.jpg" alt="Picture of a box in a fireplace saying: " class="wp-image-3363" srcset="https://mako.cc/copyrighteous/wp-content/uploads/2026/08/PXL_20260719_1815328531-576x1024.jpg 576w, https://mako.cc/copyrighteous/wp-content/uploads/2026/08/PXL_20260719_1815328531-169x300.jpg 169w, https://mako.cc/copyrighteous/wp-content/uploads/2026/08/PXL_20260719_1815328531-768x1365.jpg 768w, https://mako.cc/copyrighteous/wp-content/uploads/2026/08/PXL_20260719_1815328531-864x1536.jpg 864w, https://mako.cc/copyrighteous/wp-content/uploads/2026/08/PXL_20260719_1815328531-1152x2048.jpg 1152w, https://mako.cc/copyrighteous/wp-content/uploads/2026/08/PXL_20260719_1815328531-scaled.jpg 1440w" sizes="(max-width: 576px) 100vw, 576px" /></a></figure>
+
+
+
+<p class="wp-block-paragraph">Not a <a href="https://screenshotsofdespair.tumblr.com/">screenshot of despair</a>. But only because it&#8217;s not a screenshot.</p>]]></description>
+      <source url="http://mako.cc/copyrighteous/?flav=rss">Benjamin Mako Hill</source>
+    </item>
     <item>
       <title>E385 Inveja Da Ovibeja</title>
       <link>https://podcastubuntuportugal.org/e385/</link>
@@ -1459,169 +1471,6 @@ trustmux pair      # generate a pairing URL and 6-digit code
       <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
-      <title>Introducing pkgcli: A nicer command-line interface for PackageKit</title>
-      <link>https://blog.tenstral.net/2026/06/introducing-pkgcli-a-nicer-command-line-interface-for-packagekit.html</link>
-      <guid isPermaLink="true">https://blog.tenstral.net/2026/06/introducing-pkgcli-a-nicer-command-line-interface-for-packagekit.html</guid>
-      <pubDate>Sun, 14 Jun 2026 06:22:00 GMT</pubDate>
-      <description><![CDATA[<p class="wp-block-paragraph">For almost two decades, the <a href="https://github.com/PackageKit/PackageKit">PackageKit</a> package management abstraction layer has shipped with <code>pkcon</code> as its command-line client. <code>pkcon</code> does its job, but it was always kind of a &#8220;testing&#8221; front-end for the PackageKit daemon rather than a tool designed for everyday use. The focus has instead been on the GUI tools, automatic system updates, GUI application managers and other front-ends. Its command names mirror the D-Bus API almost one-to-one (<code>get-details</code>, <code>get-updates</code>, <code>get-depends</code>), output is very plain, and there is no machine-readable mode for scripting. Most importantly though, there has been no development on it at all for almost a decade, so <code>pkcon</code> was stuck in its rudimentary state from that era.</p>
-
-
-
-<p class="wp-block-paragraph">Since a lot of changes will be coming to PackageKit, and testing the daemon and working with it from the command-line was not very pleasant anymore in 2025/2026, I decided to modernize the tool as part of my work as fellow for the <a href="https://www.sovereign.tech/">Sovereign Tech Agency</a> last year. <code>pkgcli</code> is the new command-line client for PackageKit. It is built from the ground up to be pleasant to use interactively <em>and</em> easy to drive from scripts.</p>
-
-
-
-<h2 class="wp-block-heading">Why a new tool?</h2>
-
-
-
-<p class="wp-block-paragraph">Of course, instead of introducing a new tool, I could have just expanded <code>pkcon</code> instead. The problem with that approach is that the <code>pkcon</code> utility has been around for so long and its command-line API had ossified so much, that rather than changing it and potentially breaking a lot of scripts relying on its quirks, I decided to introduce a new tool instead. <code>pkcon</code> can still be optionally compiled for people who need it in their scripts and workflows.</p>
-
-
-
-<p class="wp-block-paragraph">The goals for <code>pkgcli</code>, and the features it now has are:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Human-friendly command names.</strong> Verbs that read the way you&#8217;d describe the task, instead of mirroring the D-Bus API 1:1: <code>show</code>, <code>search</code>, <code>list-updates</code>, <code>what-provides</code>, instead of <code>get-details</code> and friends.</li>
-
-
-
-<li><strong>Readable, <span style="color: #b00020;">c</span><span style="color: #0057b8;">o</span><span style="color: #0b7a0b;">l</span><span style="color: #8a4b00;">o</span><span style="color: #6f42c1;">r</span><span style="color: #007a7a;">e</span><span style="color: #c2410c;">d</span> output</strong> by default (still respecting <a href="https://no-color.org/"><code>NO_COLOR</code></a> and degrading gracefully).</li>
-
-
-
-<li><strong>A real scripting mode.</strong> A global <code>--json</code> flag emits <a href="https://jsonlines.org/">JSONL</a> instead of fully human-readable output when possible, to make it easier to use the tool for scripting purposes.</li>
-
-
-
-<li><strong>Sensible defaults.</strong> A few defaults have been changed, such as the metadata cache-age, or automatic cleanup of unused dependencies being enabled by default. This is more in line with current defaults by other tools and frontends. We also print package information in a slightly different, more readable way.</li>
-
-
-
-<li><strong>Better handling of internationalized text</strong>. Text should now align properly in the terminal window, and we should no longer have completely chaotic text output on non-English locales (especially Chinese/Japanese).</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">Why not <code>pkgctl</code>?</h2>
-
-
-
-<p class="wp-block-paragraph">Originally, this tool was called <code>pkgctl</code>, to match other common cross-distro tool names. However, that name was already taken by an <a href="https://man.archlinux.org/man/pkgctl.1">Arch-specific distro development tool</a>. When this issue was raised, we decided to just rename our tool to <code>pkgcli</code> with the next release, to avoid the name clash on Arch Linux.</p>
-
-
-
-<h2 class="wp-block-heading">Examples!</h2>
-
-
-
-<p class="wp-block-paragraph">Here are some examples on how to use the new tool (some of which include the abridged output <code>pkgcli</code> prints).</p>
-
-
-
-<p class="wp-block-paragraph">Search for anything containing the string &#8220;editor&#8221; in name or description, then look at the details of one result:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli search editor
-Querying                  &#91;████████████████████████████████████████] 100%
-<span style="color:#00a">▣</span> <span style="font-weight:bold">ace-of-penguins</span> <span style="color:#555555">1.5~rc2-7</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">acorn-fdisk</span> <span style="color:#555555">3.0.6-14</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">ardour</span> <span style="color:#555555">1:9.2.0+ds-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">audacity</span> <span style="color:#555555">3.7.7+dfsg-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">manual:debian-testing-main</span>]
-<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">audacity-data</span> <span style="color:#555555">3.7.7+dfsg-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">auto:debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">augeas-tools</span> <span style="color:#555555">1.14.1-1.1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">emacs</span> <span style="color:#555555">1:30.2+1-3</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit</span> <span style="color:#555555">48.1-9+b1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit-common</span> <span style="color:#555555">48.1-9</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit-dev</span> <span style="color:#555555">48.1-9+b1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-&#91;...]
-
-$ pkgcli show nano
-<span style="font-weight:bold">Package:</span> nano
-<span style="font-weight:bold">Version:</span> 9.0-1
-<span style="font-weight:bold">Summary:</span> small, friendly text editor inspired by Pico
-<span style="font-weight:bold">Description:</span> GNU nano is an easy-to-use text editor originally designed as
- a replacement for Pico, the ncurses-based editor from the non-free mailer
- package Pine.
-&#91;...]
-<span style="font-weight:bold">URL:</span> https://www.nano-editor.org/
-<span style="font-weight:bold">Group:</span> publishing
-<span style="font-weight:bold">Installed Size:</span> 2.9 MB
-<span style="font-weight:bold">Download Size:</span> 646.0 KB</code></pre>
-
-
-
-<p class="wp-block-paragraph">Search only within package <em>names</em> rather than descriptions:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli search name python3</code></pre>
-
-
-
-<p class="wp-block-paragraph">Check for updates. <code>refresh</code> updates the metadata, then <code>list-updates</code> reports what&#8217;s available:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli refresh &amp;&amp; pkgcli list-updates
-Loading cache            &#91;████████████████████████████████████████] 100%
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">cme</span> <span style="color:#555555">1.048-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">gir1.2-gdm-1.0</span> <span style="color:#555555">50.1-2</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick-7-common</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick-7.q16</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">libdlrestrictions1</span> <span style="color:#555555">0.22.0</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">libfftw3-bin</span> <span style="color:#555555">3.3.11-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">libfftw3-dev</span> <span style="color:#555555">3.3.11-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]</code></pre>
-
-
-
-<p class="wp-block-paragraph">Explore relationships between packages:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli list-depends inkscape  <span style="color:#6b6b6b"># list what inkscape depends on</span>
-$ pkgcli list-requiring libappstream5  <span style="color:#6b6b6b"># list what requires libappstream5</span></code></pre>
-
-
-
-<p class="wp-block-paragraph">Find the package that provides a capability, here the AV1 GStreamer decoder:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli what-provides "gstreamer1(decoder-video/x-av1)"
-<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">gstreamer1.0-plugins-bad</span> <span style="color:#555555">1.28.3-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">auto:debian-testing-main</span>]</code></pre>
-
-
-
-<p class="wp-block-paragraph">You can also have JSON output for most commands! Attach <code>--json</code> to any query and pipe the result straight into <a href="https://jqlang.github.io/jq/"><code>jq</code></a>. Each line is a self-contained JSON object:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli --json list-updates | jq -r '.name'
-cme
-gir1.2-gdm-1.0
-imagemagick
-imagemagick-7-common
-imagemagick-7.q16
-libdlrestrictions1
-libfftw3-bin
-libfftw3-dev
-libfftw3-double3</code></pre>
-
-
-
-<h2 class="wp-block-heading">Try it</h2>
-
-
-
-<p class="wp-block-paragraph"><code>pkgcli</code> is built by default alongside the rest of PackageKit since PackageKit 1.3.4. If your distribution ships a recent enough PackageKit, it should already be on your <code>PATH</code>. You can read its man page <code>man pkgcli</code> for more information. Feedback, bug reports, and patches are <a href="https://github.com/PackageKit/PackageKit/pulls">very welcome</a>.</p>]]></description>
-      <source url="http://blog.tenstral.net/category/planet/planet-ubuntu/feed">Matthias Klumpp</source>
-    </item>
-    <item>
       <title>Learning about exploits through the safety of Incus</title>
       <link>https://blog.simos.info/learning-about-exploits-through-the-safety-of-incus/</link>
       <guid isPermaLink="true">https://blog.simos.info/learning-about-exploits-through-the-safety-of-incus/</guid>
@@ -2128,36 +1977,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
       <pubDate>Thu, 23 Apr 2026 14:56:36 GMT</pubDate>
       <description><![CDATA[Thanks to the hard work from our contributors, Lubuntu 26.04 LTS has been released. With the codename Resolute Raccoon, Lubuntu 26.04 is the 30th release of Lubuntu, the 16th release of Lubuntu with LXQt as the default desktop environment. Download and Support Lifespan With Lubuntu 26.04 being a long-term support interim release, it will follow [&#8230;]]]></description>
       <source url="http://lubuntu.me/feed/?mrss=off">Lubuntu Blog</source>
-    </item>
-    <item>
-      <title>Quote #75514</title>
-      <link>https://mako.cc/copyrighteous/quote-75514</link>
-      <guid isPermaLink="true">https://mako.cc/copyrighteous/quote-75514</guid>
-      <pubDate>Tue, 31 Mar 2026 21:13:00 GMT</pubDate>
-      <description><![CDATA[<p class="wp-block-paragraph">Although I never submitted to it, I made several appearances in the now-defunct quote database on bash.org (QDB). I&#8217;m dealing with a broken keyboard now, and went to dig hard to find <a href="https://web.archive.org/web/20221210050632/http://bash.org/?75514">this classic in the Wayback machine</a>. I thought I would put it back on the web:</p>
-
-
-
-<pre class="wp-block-code"><code><p class="quote">&lt;mako> my letter "eye" stopped worng
-&lt;luca> k, too?
-&lt;mako> yeah
-&lt;luca> sounds like a mountain dew spill
-&lt;mako> and comma
-&lt;mako> those three
-&lt;mako> ths s horrble
-&lt;luca> tme for a new eyboard
-&lt;luca> 've successfully taen my eyboard apart and fxed t by cleanng t wth alcohol
-&lt;mako> stop mang fun of me
-&lt;mako> ths s a laptop!</p></code></pre>
-
-
-
-<p class="wp-block-paragraph">It was, in fact, horrble.</p>
-
-
-
-<p class="wp-block-paragraph"></p>]]></description>
-      <source url="http://mako.cc/copyrighteous/?flav=rss">Benjamin Mako Hill</source>
     </item>
     <item>
       <title>SCaLE 23x</title>
@@ -5487,14 +5306,6 @@ for <a href="https://www.qt.io/blog/qt-6.0-released">Qt 6</a>. Qt 5 support will
 <p>Sin embargo, tambien he visto como las producciones empiezan a tener mucha exclusividad entre las plataformas, lo que hace difícil encontrar series o películas en el servicio que uno esta pagando, o que hayan otras prioridades en los gastos, por eso espero que este tutorial les sirva de ayuda.</p>
 <p>Si tienen alguna duda, recomendación o problema no duden en escribir un comentario aca abajo o contactenme en mis redes sociales!</p>]]></description>
       <source url="https://desentropia.com/tags/ubuntu/index.xml">Julian Alarcon</source>
-    </item>
-    <item>
-      <title>Fingerprint Reader Support for Lenovo x390Y on Ubuntu</title>
-      <link>http://blog.sergiusens.org/posts/fingerprint-reader-support-for-lenovo-x390y-on-ubuntu/</link>
-      <guid isPermaLink="true">http://blog.sergiusens.org/posts/fingerprint-reader-support-for-lenovo-x390y-on-ubuntu/</guid>
-      <pubDate>Sat, 28 Mar 2020 22:38:02 GMT</pubDate>
-      <description><![CDATA[This is experimental, but I went ahead and ran the following after reading about it on reddit. snap install fwupdmgr /snap/bin/fwupdmgr install https://fwupd.org/downloads/cbe7b45a2591e9d149e00cd4bbf0ccbe5bb95da7-Synaptics-Prometheus_Config-0021.cab /snap/bin/fwupdmgr install https://fwupd.org/downloads/3b5102b3430329a10a3636b4a594fc3dd2bfdc09-Synaptics-Prometheus-10.02.3110269.cab   These two cab files are referenced from:    https://fwupd.org/lvfs/devices/com.synaptics.prometheus.config    https://fwupd.org/lvfs/devices/com.synaptics.prometheus.firmware    Rebooted and then went ahead with the actual fingerprint setup:  After this was all done, login with fingerprints just worked. The only downside is that you need to press a key first to bring up the unlock logic.]]></description>
-      <source url="http://blog.sergiusens.org/categories/ubuntu/index.xml">Sergio Schvezov</source>
     </item>
     <item>
       <title>Creating AWS IAM Access Analyzers In All Regions Of All Accounts</title>
