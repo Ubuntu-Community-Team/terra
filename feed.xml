@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 19 Aug 2026 01:22:13 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2026 01:21:28 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -1250,169 +1250,6 @@ trustmux pair      # generate a pairing URL and 6-digit code
       <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
-      <title>Introducing pkgcli: A nicer command-line interface for PackageKit</title>
-      <link>https://blog.tenstral.net/2026/06/introducing-pkgcli-a-nicer-command-line-interface-for-packagekit.html</link>
-      <guid isPermaLink="true">https://blog.tenstral.net/2026/06/introducing-pkgcli-a-nicer-command-line-interface-for-packagekit.html</guid>
-      <pubDate>Sun, 14 Jun 2026 06:22:00 GMT</pubDate>
-      <description><![CDATA[<p class="wp-block-paragraph">For almost two decades, the <a href="https://github.com/PackageKit/PackageKit">PackageKit</a> package management abstraction layer has shipped with <code>pkcon</code> as its command-line client. <code>pkcon</code> does its job, but it was always kind of a &#8220;testing&#8221; front-end for the PackageKit daemon rather than a tool designed for everyday use. The focus has instead been on the GUI tools, automatic system updates, GUI application managers and other front-ends. Its command names mirror the D-Bus API almost one-to-one (<code>get-details</code>, <code>get-updates</code>, <code>get-depends</code>), output is very plain, and there is no machine-readable mode for scripting. Most importantly though, there has been no development on it at all for almost a decade, so <code>pkcon</code> was stuck in its rudimentary state from that era.</p>
-
-
-
-<p class="wp-block-paragraph">Since a lot of changes will be coming to PackageKit, and testing the daemon and working with it from the command-line was not very pleasant anymore in 2025/2026, I decided to modernize the tool as part of my work as fellow for the <a href="https://www.sovereign.tech/">Sovereign Tech Agency</a> last year. <code>pkgcli</code> is the new command-line client for PackageKit. It is built from the ground up to be pleasant to use interactively <em>and</em> easy to drive from scripts.</p>
-
-
-
-<h2 class="wp-block-heading">Why a new tool?</h2>
-
-
-
-<p class="wp-block-paragraph">Of course, instead of introducing a new tool, I could have just expanded <code>pkcon</code> instead. The problem with that approach is that the <code>pkcon</code> utility has been around for so long and its command-line API had ossified so much, that rather than changing it and potentially breaking a lot of scripts relying on its quirks, I decided to introduce a new tool instead. <code>pkcon</code> can still be optionally compiled for people who need it in their scripts and workflows.</p>
-
-
-
-<p class="wp-block-paragraph">The goals for <code>pkgcli</code>, and the features it now has are:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Human-friendly command names.</strong> Verbs that read the way you&#8217;d describe the task, instead of mirroring the D-Bus API 1:1: <code>show</code>, <code>search</code>, <code>list-updates</code>, <code>what-provides</code>, instead of <code>get-details</code> and friends.</li>
-
-
-
-<li><strong>Readable, <span style="color: #b00020;">c</span><span style="color: #0057b8;">o</span><span style="color: #0b7a0b;">l</span><span style="color: #8a4b00;">o</span><span style="color: #6f42c1;">r</span><span style="color: #007a7a;">e</span><span style="color: #c2410c;">d</span> output</strong> by default (still respecting <a href="https://no-color.org/"><code>NO_COLOR</code></a> and degrading gracefully).</li>
-
-
-
-<li><strong>A real scripting mode.</strong> A global <code>--json</code> flag emits <a href="https://jsonlines.org/">JSONL</a> instead of fully human-readable output when possible, to make it easier to use the tool for scripting purposes.</li>
-
-
-
-<li><strong>Sensible defaults.</strong> A few defaults have been changed, such as the metadata cache-age, or automatic cleanup of unused dependencies being enabled by default. This is more in line with current defaults by other tools and frontends. We also print package information in a slightly different, more readable way.</li>
-
-
-
-<li><strong>Better handling of internationalized text</strong>. Text should now align properly in the terminal window, and we should no longer have completely chaotic text output on non-English locales (especially Chinese/Japanese).</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">Why not <code>pkgctl</code>?</h2>
-
-
-
-<p class="wp-block-paragraph">Originally, this tool was called <code>pkgctl</code>, to match other common cross-distro tool names. However, that name was already taken by an <a href="https://man.archlinux.org/man/pkgctl.1">Arch-specific distro development tool</a>. When this issue was raised, we decided to just rename our tool to <code>pkgcli</code> with the next release, to avoid the name clash on Arch Linux.</p>
-
-
-
-<h2 class="wp-block-heading">Examples!</h2>
-
-
-
-<p class="wp-block-paragraph">Here are some examples on how to use the new tool (some of which include the abridged output <code>pkgcli</code> prints).</p>
-
-
-
-<p class="wp-block-paragraph">Search for anything containing the string &#8220;editor&#8221; in name or description, then look at the details of one result:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli search editor
-Querying                  &#91;████████████████████████████████████████] 100%
-<span style="color:#00a">▣</span> <span style="font-weight:bold">ace-of-penguins</span> <span style="color:#555555">1.5~rc2-7</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">acorn-fdisk</span> <span style="color:#555555">3.0.6-14</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">ardour</span> <span style="color:#555555">1:9.2.0+ds-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">audacity</span> <span style="color:#555555">3.7.7+dfsg-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">manual:debian-testing-main</span>]
-<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">audacity-data</span> <span style="color:#555555">3.7.7+dfsg-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">auto:debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">augeas-tools</span> <span style="color:#555555">1.14.1-1.1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">emacs</span> <span style="color:#555555">1:30.2+1-3</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit</span> <span style="color:#555555">48.1-9+b1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit-common</span> <span style="color:#555555">48.1-9</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit-dev</span> <span style="color:#555555">48.1-9+b1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-&#91;...]
-
-$ pkgcli show nano
-<span style="font-weight:bold">Package:</span> nano
-<span style="font-weight:bold">Version:</span> 9.0-1
-<span style="font-weight:bold">Summary:</span> small, friendly text editor inspired by Pico
-<span style="font-weight:bold">Description:</span> GNU nano is an easy-to-use text editor originally designed as
- a replacement for Pico, the ncurses-based editor from the non-free mailer
- package Pine.
-&#91;...]
-<span style="font-weight:bold">URL:</span> https://www.nano-editor.org/
-<span style="font-weight:bold">Group:</span> publishing
-<span style="font-weight:bold">Installed Size:</span> 2.9 MB
-<span style="font-weight:bold">Download Size:</span> 646.0 KB</code></pre>
-
-
-
-<p class="wp-block-paragraph">Search only within package <em>names</em> rather than descriptions:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli search name python3</code></pre>
-
-
-
-<p class="wp-block-paragraph">Check for updates. <code>refresh</code> updates the metadata, then <code>list-updates</code> reports what&#8217;s available:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli refresh &amp;&amp; pkgcli list-updates
-Loading cache            &#91;████████████████████████████████████████] 100%
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">cme</span> <span style="color:#555555">1.048-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">gir1.2-gdm-1.0</span> <span style="color:#555555">50.1-2</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick-7-common</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick-7.q16</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">libdlrestrictions1</span> <span style="color:#555555">0.22.0</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">libfftw3-bin</span> <span style="color:#555555">3.3.11-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">libfftw3-dev</span> <span style="color:#555555">3.3.11-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]</code></pre>
-
-
-
-<p class="wp-block-paragraph">Explore relationships between packages:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli list-depends inkscape  <span style="color:#6b6b6b"># list what inkscape depends on</span>
-$ pkgcli list-requiring libappstream5  <span style="color:#6b6b6b"># list what requires libappstream5</span></code></pre>
-
-
-
-<p class="wp-block-paragraph">Find the package that provides a capability, here the AV1 GStreamer decoder:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli what-provides "gstreamer1(decoder-video/x-av1)"
-<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">gstreamer1.0-plugins-bad</span> <span style="color:#555555">1.28.3-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">auto:debian-testing-main</span>]</code></pre>
-
-
-
-<p class="wp-block-paragraph">You can also have JSON output for most commands! Attach <code>--json</code> to any query and pipe the result straight into <a href="https://jqlang.github.io/jq/"><code>jq</code></a>. Each line is a self-contained JSON object:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli --json list-updates | jq -r '.name'
-cme
-gir1.2-gdm-1.0
-imagemagick
-imagemagick-7-common
-imagemagick-7.q16
-libdlrestrictions1
-libfftw3-bin
-libfftw3-dev
-libfftw3-double3</code></pre>
-
-
-
-<h2 class="wp-block-heading">Try it</h2>
-
-
-
-<p class="wp-block-paragraph"><code>pkgcli</code> is built by default alongside the rest of PackageKit since PackageKit 1.3.4. If your distribution ships a recent enough PackageKit, it should already be on your <code>PATH</code>. You can read its man page <code>man pkgcli</code> for more information. Feedback, bug reports, and patches are <a href="https://github.com/PackageKit/PackageKit/pulls">very welcome</a>.</p>]]></description>
-      <source url="http://blog.tenstral.net/category/planet/planet-ubuntu/feed">Matthias Klumpp</source>
-    </item>
-    <item>
       <title>Learning about exploits through the safety of Incus</title>
       <link>https://blog.simos.info/learning-about-exploits-through-the-safety-of-incus/</link>
       <guid isPermaLink="true">https://blog.simos.info/learning-about-exploits-through-the-safety-of-incus/</guid>
@@ -2061,7 +1898,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 <p><code class="language-plaintext highlighter-rouge">gpg --export-secret-keys --armor $YOURFINGERPRINT &gt; private-key.asc</code></p>
 
-<p>To run simply run, you need to clone the sources from the <a href="https://github.com/foursixnine/pass-exporter">git repo</a> and inside the directory run:</p>
+<p>To run simply run, you need to clone the sources from the <a href="https://github.com/foursixnine/pass-exporter">git repo</a><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">1</a></sup> and inside the directory run:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>go run . --private-key private-key.asc --identity alice@example.com
 </code></pre></div></div>
@@ -2070,14 +1907,25 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 <p>You can check usage too by passing <code class="language-plaintext highlighter-rouge">--help</code>, It runs fairly fast, and in the end up with a <code class="language-plaintext highlighter-rouge">pass_exported_passwords.csv</code> (again see program help for defaults).</p>
 
-<p>A feature that I’d like to add is a support for user plugins, to i.e check if an otp token is duplicated, or if a password is being reused, but that’s for the future. [^1]</p>
+<p>A feature that I’d like to add is a support for user plugins, to i.e check if an otp token is duplicated, or if a password is being reused, but that’s for the future. <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">2</a></sup></p>
 
 <p>As usual PRs are welcome, specially for adding tests.</p>
 
 <p>PS: “Maybe” I fix the program to be able to be installed via <code class="language-plaintext highlighter-rouge">go install $foo</code> (or somebody submits a PR :D)</p>
 
-<p><a href="https://github.com/foursixnine/pass-exporter">https://github.com/foursixnine/pass-exporter</a> 
-[^1]: <a href="https://www.youtube.com/watch?v=LeGrl74YSMU">That ain’t gonna happen?</a></p>]]></description>
+<hr />
+<h2 id="footnotes">Footnotes</h2>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:2" role="doc-endnote">
+      <p>The repo is located at: <a href="https://github.com/foursixnine/pass-exporter">https://github.com/foursixnine/pass-exporter</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://www.youtube.com/watch?v=LeGrl74YSMU">That ain’t gonna happen?</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></description>
       <source url="https://foursixnine.io/atom.xml">Santiago Zarate</source>
     </item>
     <item>
@@ -6301,35 +6149,6 @@ So, please sync with this change (and sorry :)).</p>
       <source url="http://blogs.gnome.org/mneptok/feed/">Kurt von Finck</source>
     </item>
     <item>
-      <title>Announcing the Ubuntu 18.10 Free Culture Showcase winners</title>
-      <link>https://www.nhaines.com/blog/2018/09/28/announcing-ubuntu-18.10-free-culture-showcase-winners/</link>
-      <guid isPermaLink="true">https://www.nhaines.com/blog/2018/09/28/announcing-ubuntu-18.10-free-culture-showcase-winners/</guid>
-      <pubDate>Fri, 28 Sep 2018 07:00:00 GMT</pubDate>
-      <description><![CDATA[<p>October approaches, and Ubuntu marches steadly along the road from one LTS to another.  Ubuntu 18.10 is another step in Ubuntu’s future.  And now it’s time to unveil a small part of that change: the community wallpapers to be included in Ubuntu 18.10!</p>
-
-<p>Every cycle, talented artists around the world create media and release it under licenses that encourage sharing and adaptation. This cycle we had some amazing images submitted to the <a href="https://www.flickr.com/groups/ubuntu-fcs-1810/">Ubuntu 18.10 Free Culture Showcase</a> photo pool on Flickr, where all eligible submissions can be found.  The competition was fierce; narrowing down the options to the final selections was painful!</p>
-
-<p>But there can be only 12, and the final images that will be included in Ubuntu 18.10 are:</p>
-
-<ul>
-  <li><a href="https://www.flickr.com/photos/155485295@N04/28898305427/in/pool-ubuntu-fcs-1810/">Cosmic Cuttlefish</a> by Jim Coleman</li>
-  <li><a href="https://www.flickr.com/photos/143512932@N03/29085424897/in/pool-ubuntu-fcs-1810/">Spring Flowers</a> by MK4-MI01</li>
-  <li><a href="https://www.flickr.com/photos/mendhak/37748450101/in/pool-ubuntu-fcs-1810/">Carriage Return</a> by mendhak</li>
-  <li><a href="https://www.flickr.com/photos/153219066@N06/41387651640/in/pool-ubuntu-fcs-1810/">Ubuntu Party de Paris</a> by Marcos Costales</li>
-  <li><a href="https://www.flickr.com/photos/98223780@N05/41846068390/in/pool-ubuntu-fcs-1810/">Tapiola, Espoo Cultural Center</a> by Agostino Faedda</li>
-  <li><a href="https://www.flickr.com/photos/14287735@N05/42055551820/in/pool-ubuntu-fcs-1810/">Fairground at Night</a> by martin</li>
-  <li><a href="https://www.flickr.com/photos/tomas_sobek/42346768035/in/pool-ubuntu-fcs-1810/">Milky Way before the dawn</a> by Tomas Sobek</li>
-  <li><a href="https://www.flickr.com/photos/38121135@N05/42996830034/in/pool-ubuntu-fcs-1810/">Black sand beach</a> by Mads Rosendahl</li>
-  <li><a href="https://www.flickr.com/photos/simosx/43736940061/in/pool-ubuntu-fcs-1810/">The Image of Mount Parnassus</a> by simosx</li>
-  <li><a href="https://www.flickr.com/photos/bernhardhanakam/44033490521/in/pool-ubuntu-fcs-1810/">Morning</a> by Bernhard Hanakam</li>
-  <li><a href="https://www.flickr.com/photos/155984160@N07/43295035514/in/pool-ubuntu-fcs-1810/">Encounter</a> by Lzardjin</li>
-  <li><a href="https://www.flickr.com/photos/134476822@N04/43642256642/in/pool-ubuntu-fcs-1810/">touche de vert</a> by François Cante</li>
-</ul>
-
-<p>A big congratulations to the winners, and thanks to everyone who submitted a wallpaper.  You can find these wallpapers (along with dozens of other stunning wallpapers) today at the links above, or in your desktop wallpaper list after you upgrade to or install Ubuntu 18.10 on October 18th.</p>]]></description>
-      <source url="https://www.nhaines.com/feed.xml">Nathan Haines</source>
-    </item>
-    <item>
       <title>NVIDIA PRIME in Ubuntu 18.04 and 18.10, and a call for testing</title>
       <link>https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</link>
       <guid isPermaLink="true">https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</guid>
@@ -7336,16 +7155,6 @@ $2 = (minimal_symbol *) 0x0
 <p>Those who follow OpenStack development will notice that something similar has landed in OpenStack recently; routed provider networks. It&#8217;s the same concept, solving the same problem. It&#8217;s nice to see how Juju uses this out of the box.</p>
 <p>Big thanks to MAAS, Juju, charms and OpenStack communities for doing this. It allowed us to deploy complex applications with a breeze, and therefore shifted our focus to bigger picture, IaaS modeling and some other, new challenges!</p>]]></description>
       <source url="http://ivoks.com/category/ubuntu/feed/">Ante Karamatić</source>
-    </item>
-    <item>
-      <title>No Title Available</title>
-      <link>https://carla-sella.blogspot.com/2018/02/blog-post.html</link>
-      <guid isPermaLink="true">https://carla-sella.blogspot.com/2018/02/blog-post.html</guid>
-      <pubDate>Sat, 03 Feb 2018 13:50:00 GMT</pubDate>
-      <description><![CDATA[<div class="separator" style="clear: both; text-align: center;">
-<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPTo9V_gGem-79f_xmI9JYztYxHjcu8JaW57Xk_JeibNNWbZZ6Fv6lFF2bHIjLWPbrNnnM4asO-g9cuC2n2DMF9N2bdUp9tuayTNA-g4B1mtgX0K3h1XHSME7gTkTSSHMd1D03bAiflS8/s1600/gci_mentor+-+a2667f67-55ab-4c9b-8b41-df3c99eef6e8.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="850" data-original-width="1100" height="494" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPTo9V_gGem-79f_xmI9JYztYxHjcu8JaW57Xk_JeibNNWbZZ6Fv6lFF2bHIjLWPbrNnnM4asO-g9cuC2n2DMF9N2bdUp9tuayTNA-g4B1mtgX0K3h1XHSME7gTkTSSHMd1D03bAiflS8/s640/gci_mentor+-+a2667f67-55ab-4c9b-8b41-df3c99eef6e8.jpg" width="640" /></a></div>
-<br />]]></description>
-      <source url="http://carla-sella.blogspot.it/rss.xml">Carla Sella</source>
     </item>
     <item>
       <title>freenode #live</title>
