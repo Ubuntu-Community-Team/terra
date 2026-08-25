@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Mon, 24 Aug 2026 01:25:40 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 01:22:41 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -1177,169 +1177,6 @@ trustmux pair      # generate a pairing URL and 6-digit code
 
 <p></p>]]></description>
       <source url="http://news.launchpad.net/feed">Launchpad News</source>
-    </item>
-    <item>
-      <title>Introducing pkgcli: A nicer command-line interface for PackageKit</title>
-      <link>https://blog.tenstral.net/2026/06/introducing-pkgcli-a-nicer-command-line-interface-for-packagekit.html</link>
-      <guid isPermaLink="true">https://blog.tenstral.net/2026/06/introducing-pkgcli-a-nicer-command-line-interface-for-packagekit.html</guid>
-      <pubDate>Sun, 14 Jun 2026 06:22:00 GMT</pubDate>
-      <description><![CDATA[<p class="wp-block-paragraph">For almost two decades, the <a href="https://github.com/PackageKit/PackageKit">PackageKit</a> package management abstraction layer has shipped with <code>pkcon</code> as its command-line client. <code>pkcon</code> does its job, but it was always kind of a &#8220;testing&#8221; front-end for the PackageKit daemon rather than a tool designed for everyday use. The focus has instead been on the GUI tools, automatic system updates, GUI application managers and other front-ends. Its command names mirror the D-Bus API almost one-to-one (<code>get-details</code>, <code>get-updates</code>, <code>get-depends</code>), output is very plain, and there is no machine-readable mode for scripting. Most importantly though, there has been no development on it at all for almost a decade, so <code>pkcon</code> was stuck in its rudimentary state from that era.</p>
-
-
-
-<p class="wp-block-paragraph">Since a lot of changes will be coming to PackageKit, and testing the daemon and working with it from the command-line was not very pleasant anymore in 2025/2026, I decided to modernize the tool as part of my work as fellow for the <a href="https://www.sovereign.tech/">Sovereign Tech Agency</a> last year. <code>pkgcli</code> is the new command-line client for PackageKit. It is built from the ground up to be pleasant to use interactively <em>and</em> easy to drive from scripts.</p>
-
-
-
-<h2 class="wp-block-heading">Why a new tool?</h2>
-
-
-
-<p class="wp-block-paragraph">Of course, instead of introducing a new tool, I could have just expanded <code>pkcon</code> instead. The problem with that approach is that the <code>pkcon</code> utility has been around for so long and its command-line API had ossified so much, that rather than changing it and potentially breaking a lot of scripts relying on its quirks, I decided to introduce a new tool instead. <code>pkcon</code> can still be optionally compiled for people who need it in their scripts and workflows.</p>
-
-
-
-<p class="wp-block-paragraph">The goals for <code>pkgcli</code>, and the features it now has are:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Human-friendly command names.</strong> Verbs that read the way you&#8217;d describe the task, instead of mirroring the D-Bus API 1:1: <code>show</code>, <code>search</code>, <code>list-updates</code>, <code>what-provides</code>, instead of <code>get-details</code> and friends.</li>
-
-
-
-<li><strong>Readable, <span style="color: #b00020;">c</span><span style="color: #0057b8;">o</span><span style="color: #0b7a0b;">l</span><span style="color: #8a4b00;">o</span><span style="color: #6f42c1;">r</span><span style="color: #007a7a;">e</span><span style="color: #c2410c;">d</span> output</strong> by default (still respecting <a href="https://no-color.org/"><code>NO_COLOR</code></a> and degrading gracefully).</li>
-
-
-
-<li><strong>A real scripting mode.</strong> A global <code>--json</code> flag emits <a href="https://jsonlines.org/">JSONL</a> instead of fully human-readable output when possible, to make it easier to use the tool for scripting purposes.</li>
-
-
-
-<li><strong>Sensible defaults.</strong> A few defaults have been changed, such as the metadata cache-age, or automatic cleanup of unused dependencies being enabled by default. This is more in line with current defaults by other tools and frontends. We also print package information in a slightly different, more readable way.</li>
-
-
-
-<li><strong>Better handling of internationalized text</strong>. Text should now align properly in the terminal window, and we should no longer have completely chaotic text output on non-English locales (especially Chinese/Japanese).</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">Why not <code>pkgctl</code>?</h2>
-
-
-
-<p class="wp-block-paragraph">Originally, this tool was called <code>pkgctl</code>, to match other common cross-distro tool names. However, that name was already taken by an <a href="https://man.archlinux.org/man/pkgctl.1">Arch-specific distro development tool</a>. When this issue was raised, we decided to just rename our tool to <code>pkgcli</code> with the next release, to avoid the name clash on Arch Linux.</p>
-
-
-
-<h2 class="wp-block-heading">Examples!</h2>
-
-
-
-<p class="wp-block-paragraph">Here are some examples on how to use the new tool (some of which include the abridged output <code>pkgcli</code> prints).</p>
-
-
-
-<p class="wp-block-paragraph">Search for anything containing the string &#8220;editor&#8221; in name or description, then look at the details of one result:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli search editor
-Querying                  &#91;████████████████████████████████████████] 100%
-<span style="color:#00a">▣</span> <span style="font-weight:bold">ace-of-penguins</span> <span style="color:#555555">1.5~rc2-7</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">acorn-fdisk</span> <span style="color:#555555">3.0.6-14</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">ardour</span> <span style="color:#555555">1:9.2.0+ds-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">audacity</span> <span style="color:#555555">3.7.7+dfsg-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">manual:debian-testing-main</span>]
-<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">audacity-data</span> <span style="color:#555555">3.7.7+dfsg-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">auto:debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">augeas-tools</span> <span style="color:#555555">1.14.1-1.1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">emacs</span> <span style="color:#555555">1:30.2+1-3</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit</span> <span style="color:#555555">48.1-9+b1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit-common</span> <span style="color:#555555">48.1-9</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#00a">▣</span> <span style="font-weight:bold">gedit-dev</span> <span style="color:#555555">48.1-9+b1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-&#91;...]
-
-$ pkgcli show nano
-<span style="font-weight:bold">Package:</span> nano
-<span style="font-weight:bold">Version:</span> 9.0-1
-<span style="font-weight:bold">Summary:</span> small, friendly text editor inspired by Pico
-<span style="font-weight:bold">Description:</span> GNU nano is an easy-to-use text editor originally designed as
- a replacement for Pico, the ncurses-based editor from the non-free mailer
- package Pine.
-&#91;...]
-<span style="font-weight:bold">URL:</span> https://www.nano-editor.org/
-<span style="font-weight:bold">Group:</span> publishing
-<span style="font-weight:bold">Installed Size:</span> 2.9 MB
-<span style="font-weight:bold">Download Size:</span> 646.0 KB</code></pre>
-
-
-
-<p class="wp-block-paragraph">Search only within package <em>names</em> rather than descriptions:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli search name python3</code></pre>
-
-
-
-<p class="wp-block-paragraph">Check for updates. <code>refresh</code> updates the metadata, then <code>list-updates</code> reports what&#8217;s available:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli refresh &amp;&amp; pkgcli list-updates
-Loading cache            &#91;████████████████████████████████████████] 100%
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">cme</span> <span style="color:#555555">1.048-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">gir1.2-gdm-1.0</span> <span style="color:#555555">50.1-2</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick-7-common</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">all</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">imagemagick-7.q16</span> <span style="color:#555555">8:7.1.2.24+dfsg1-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">libdlrestrictions1</span> <span style="color:#555555">0.22.0</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">libfftw3-bin</span> <span style="color:#555555">3.3.11-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]
-<span style="color:#0aa">▲</span> <span style="font-weight:bold">libfftw3-dev</span> <span style="color:#555555">3.3.11-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">debian-testing-main</span>]</code></pre>
-
-
-
-<p class="wp-block-paragraph">Explore relationships between packages:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli list-depends inkscape  <span style="color:#6b6b6b"># list what inkscape depends on</span>
-$ pkgcli list-requiring libappstream5  <span style="color:#6b6b6b"># list what requires libappstream5</span></code></pre>
-
-
-
-<p class="wp-block-paragraph">Find the package that provides a capability, here the AV1 GStreamer decoder:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli what-provides "gstreamer1(decoder-video/x-av1)"
-<span style="color:#0a0">&#x2714;</span> <span style="font-weight:bold">gstreamer1.0-plugins-bad</span> <span style="color:#555555">1.28.3-1</span>.<span style="color:#555555">amd64</span> &#91;<span style="color:#555555">auto:debian-testing-main</span>]</code></pre>
-
-
-
-<p class="wp-block-paragraph">You can also have JSON output for most commands! Attach <code>--json</code> to any query and pipe the result straight into <a href="https://jqlang.github.io/jq/"><code>jq</code></a>. Each line is a self-contained JSON object:</p>
-
-
-
-<pre class="wp-block-code"><code>$ pkgcli --json list-updates | jq -r '.name'
-cme
-gir1.2-gdm-1.0
-imagemagick
-imagemagick-7-common
-imagemagick-7.q16
-libdlrestrictions1
-libfftw3-bin
-libfftw3-dev
-libfftw3-double3</code></pre>
-
-
-
-<h2 class="wp-block-heading">Try it</h2>
-
-
-
-<p class="wp-block-paragraph"><code>pkgcli</code> is built by default alongside the rest of PackageKit since PackageKit 1.3.4. If your distribution ships a recent enough PackageKit, it should already be on your <code>PATH</code>. You can read its man page <code>man pkgcli</code> for more information. Feedback, bug reports, and patches are <a href="https://github.com/PackageKit/PackageKit/pulls">very welcome</a>.</p>]]></description>
-      <source url="http://blog.tenstral.net/category/planet/planet-ubuntu/feed">Matthias Klumpp</source>
     </item>
     <item>
       <title>Learning about exploits through the safety of Incus</title>
@@ -2599,140 +2436,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
       <source url="https://steveire.wordpress.com/feed/?mrss=off">Stephen Kelly</source>
     </item>
     <item>
-      <title>Free software activity in November 2025</title>
-      <link>https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</link>
-      <guid isPermaLink="true">https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</guid>
-      <pubDate>Thu, 04 Dec 2025 17:55:59 GMT</pubDate>
-      <description><![CDATA[<p>My Debian contributions this month were all
-<a href="https://www.freexian.com/about/debian-contributions/">sponsored</a> by
-Freexian.  I had a bit less time than usual, because Freexian collaborators
-gathered in Marseille this month for our yearly sprint, doing some planning
-for next&nbsp;year.</p>
-<p>You can also support my work directly via
-<a href="https://liberapay.com/cjwatson">Liberapay</a> or <a href="https://github.com/sponsors/cjwatson">GitHub
-Sponsors</a>.</p>
-<h2>OpenSSH</h2>
-<p>I began preparing for the second stage of the <a href="https://lists.debian.org/debian-devel/2024/04/msg00044.html"><span class="caps">GSS</span>-<span class="caps">API</span> key exchange package
-split</a> (some
-details have changed since that message).  It seems that we&#8217;ll need to wait
-until Ubuntu 26.04 <span class="caps">LTS</span> has been released, but that&#8217;s close enough that it&#8217;s
-worth making sure we&#8217;re ready.  This month I just did some packaging
-cleanups that would otherwise have been annoying to copy, such as removing
-support for direct upgrades from pre-bookworm.  I&#8217;m considering some other
-package rearrangements to make the split easier to manage, but haven&#8217;t made
-any decisions here&nbsp;yet.</p>
-<p>This also led me to start on a long-overdue bug triage pass, mainly
-consisting of applying usertags to lots of our open bugs to sort them by
-which program they apply to, and also closing a few that have been fixed,
-since some bugs will eventually need to be reassigned to <span class="caps">GSS</span>-<span class="caps">API</span> packages
-and it would be helpful to make them easier to find.  At the time of
-writing, about 30% of the bug list remains to be categorized this&nbsp;way.</p>
-<h2>Python&nbsp;packaging</h2>
-<p>I upgraded these packages to new upstream&nbsp;versions:</p>
-<ul>
-<li>aioftp</li>
-<li>basemap (fixing <a href="https://bugs.debian.org/1119728">Cython 3.1
-  compatibility</a>)</li>
-<li>billiard</li>
-<li>black</li>
-<li>django-phonenumber-field</li>
-<li>flask-security</li>
-<li>flufl.i18n</li>
-<li>langtable</li>
-<li>mariadb-connector-python</li>
-<li>peewee (fixing <a href="https://bugs.debian.org/1119757">Cython 3.1
-  compatibility</a>)</li>
-<li>pydantic</li>
-<li>pydantic-core</li>
-<li>pydantic-settings</li>
-<li>pylsqpack</li>
-<li>pymongo</li>
-<li>pymssql</li>
-<li>pyodbc</li>
-<li>python-auditwheel (<a href="https://github.com/pypa/auditwheel/pull/640">contributed follow-up fix
-  upstream</a>)</li>
-<li>python-avro</li>
-<li>python-bleach</li>
-<li>python-btrees</li>
-<li>python-certifi</li>
-<li>python-charset-normalizer</li>
-<li>python-colorlog</li>
-<li>python-django-channels</li>
-<li>python-django-constance</li>
-<li>python-django-contact-form</li>
-<li>python-django-hashids</li>
-<li>python-djvulibre (fixing <a href="https://bugs.debian.org/1119766">Cython 3.1
-  compatibility</a>)</li>
-<li>python-evalidate</li>
-<li>python-legacy-cgi</li>
-<li>python-openstep-plist (fixing <a href="https://bugs.debian.org/1119767">Cython 3.1
-  compatibility</a>)</li>
-<li>python-pytest-run-parallel</li>
-<li>python-pytokens</li>
-<li>python-tblib</li>
-<li>python-webargs</li>
-<li>pyupgrade</li>
-<li>sqlfluff</li>
-<li>trove-classifiers</li>
-<li>ttconv</li>
-<li>wcwidth</li>
-<li>zope.hookable</li>
-<li>zope.i18nmessageid (removing <a href="https://bugs.debian.org/1084014">run-time dependency on
-  setuptools</a>)</li>
-<li>zope.interface</li>
-<li>zope.proxy</li>
-<li>zope.security (removing <a href="https://bugs.debian.org/1084018">run-time dependency on
-  setuptools</a>)</li>
-<li>zope.sqlalchemy</li>
-</ul>
-<p>I packaged <a href="https://bugs.debian.org/1120507">django-pgtransaction</a> and
-backported it to trixie, since we plan to use it in Debusine; and I adopted
-python-certifi for the Python&nbsp;team.</p>
-<p>I fixed or helped to fix several other build/test&nbsp;failures:</p>
-<ul>
-<li><a href="https://bugs.debian.org/1119744">kivy</a></li>
-<li><a href="https://bugs.debian.org/1120242">mypy</a></li>
-<li><a href="https://bugs.debian.org/1114284">pytest-mypy-testing</a> (<a href="https://github.com/davidfritzsche/pytest-mypy-testing/pull/57">contributed
-  upstream</a>)</li>
-<li><a href="https://salsa.debian.org/python-team/packages/python-cytoolz/-/commit/52856c4c1d1bc9fab0241e4c1b0d20d75bdaa99a">python-cytoolz</a></li>
-<li><a href="https://bugs.debian.org/1120725">python-discord</a></li>
-<li><a href="https://bugs.debian.org/1120469">python-ncls</a>, fixing some failures in&nbsp;pyranges</li>
-<li><a href="https://bugs.debian.org/1121095">pyxdg</a></li>
-<li><a href="https://bugs.debian.org/1114415">traitlets</a></li>
-<li><a href="https://bugs.debian.org/1120228">twine</a></li>
-</ul>
-<p>I fixed a couple of other&nbsp;bugs:</p>
-<ul>
-<li><a href="https://bugs.debian.org/1119801">pmix: B-D on python3-all-dev, but not built for all supported Python3&nbsp;versions</a></li>
-<li><a href="https://bugs.debian.org/1064621">python-certifi: Package not compatible with&nbsp;multiarch</a></li>
-</ul>
-<h2>Other bits and&nbsp;pieces</h2>
-<ul>
-<li><a href="https://bugs.debian.org/1087524">cdebconf: Move to&nbsp;/usr/lib/apt/apt-extracttemplates</a></li>
-<li><a href="https://salsa.debian.org/debian/devscripts/-/merge_requests/588">devscripts: Restore dpkg-dev&nbsp;dependency</a></li>
-<li><a href="https://bugs.debian.org/1121577">groff: Missing information about some utilities in the &#8220;contrib&#8221;&nbsp;directory</a></li>
-</ul>
-<h2>Code&nbsp;reviews</h2>
-<ul>
-<li><a href="https://bugs.debian.org/1119914">base-passwd: French translation</a> (merged
-  and&nbsp;uploaded)</li>
-<li><a href="https://salsa.debian.org/installer-team/cdebconf/-/merge_requests/23">cdebconf: Consider using the standard dh sequence in
-  d/rules</a>
-  (merged and&nbsp;uploaded)</li>
-<li><a href="https://bugs.debian.org/430151">cdebconf: Multiple select is not right aligned in
-  Hebrew</a> (patch fails to build; asked
-  reporter for an&nbsp;update)</li>
-<li><a href="https://bugs.debian.org/1078936">cdebconf: Allow building without
-  libglib2.0-dev</a> (merged and&nbsp;uploaded)</li>
-<li><a href="https://bugs.debian.org/1121035">pydantic-core</a> (merged and&nbsp;uploaded)</li>
-<li>pymongo (sponsored adoption by Aryan&nbsp;Karamtoth)</li>
-<li><a href="https://salsa.debian.org/python-team/packages/maturin/-/merge_requests/1">python-maturin: Add missing build
-  dependencies</a>
-  (merged and&nbsp;uploaded)</li>
-</ul>]]></description>
-      <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
-    </item>
-    <item>
       <title>It's NOT always DNS.</title>
       <link>https://notes.pault.ag/its-not-always-dns/</link>
       <guid isPermaLink="true">https://notes.pault.ag/its-not-always-dns/</guid>
@@ -3814,11 +3517,11 @@ mirror and follow the instructions above.</p>]]></description>
       <link>https://jriddell.org/2024/09/12/git-revert-name-and-akademy/</link>
       <guid isPermaLink="true">https://jriddell.org/2024/09/12/git-revert-name-and-akademy/</guid>
       <pubDate>Thu, 12 Sep 2024 14:33:09 GMT</pubDate>
-      <description><![CDATA[<p>I reverted my name back to Jonathan Riddell and have now made a new uid for my PGP key, you can get the updated one on <a href="https://keyserver.ubuntu.com/pks/lookup?op=vindex&amp;search=0xd7574483bb57b18d">keyserver.ubuntu.com</a> or <a href="https://jriddell.org/contact/">my contact page</a> or <a href="https://launchpad.net/~jr">my Launchpad page</a>. </p>
+      <description><![CDATA[<p class="wp-block-paragraph">I reverted my name back to Jonathan Riddell and have now made a new uid for my PGP key, you can get the updated one on <a href="https://keyserver.ubuntu.com/pks/lookup?op=vindex&amp;search=0xd7574483bb57b18d">keyserver.ubuntu.com</a> or <a href="https://jriddell.org/contact/">my contact page</a> or <a href="https://launchpad.net/~jr">my Launchpad page</a>. </p>
 
 
 
-<p>Here&#8217;s some pics from Akademy</p>
+<p class="wp-block-paragraph">Here&#8217;s some pics from Akademy</p>
 
 
 
