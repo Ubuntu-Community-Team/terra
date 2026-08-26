@@ -6,9 +6,55 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Tue, 25 Aug 2026 01:19:17 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 01:22:17 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arduino® VENTUNO™ Q is available for pre-order with Ubuntu pre-installed</title>
+      <link>https://ubuntu.com//blog/arduino-ventuno-q-is-available-for-pre-order-with-ubuntu-pre-installed</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/arduino-ventuno-q-is-available-for-pre-order-with-ubuntu-pre-installed</guid>
+      <pubDate>Tue, 25 Aug 2026 19:13:28 GMT</pubDate>
+      <description><![CDATA[<p>London, UK – August 25, 2026 – Following our initial collaboration <a href="https://canonical.com/blog/canonical-and-arduino-collaborate-to-enable-ubuntu-on-the-ventuno-q-the-next-generation-platform-for-ai">announcement in March 2026</a>, Canonical and Arduino (a subsidiary of Qualcomm Technologies, Inc.) are excited to announce that <a href="https://www.arduino.cc/product-ventuno-q">VENTUNO Q </a>is now generally available for <a href="https://store.arduino.cc/products/ventuno-q">pre-order</a>, pre-loaded with Ubuntu.</p>
+<p>VENTUNO Q is a dual-brain developer board designed for edge AI and robotics applications. With pre-orders opening today, developers, researchers, and industrial innovators can go straight from unboxing to executing AI inference and real-time physical actuation on a production-ready Linux environment.</p>
+<p>With Ubuntu pre-loaded, users don’t need to worry about manual board support package (BSP) flashing, complex kernel configuration, or driver downloads. VENTUNO Q comes pre-installed with Ubuntu natively running on its primary Qualcomm Dragonwing<sup>™</sup> processor.</p>
+<h2 class="wp-block-heading"><strong>How VENTUNO Q accelerates edge AI performance</strong></h2>
+<p>At the core of VENTUNO Q is its dual-brain system architecture designed for physical AI applications where perception must trigger instant action:</p>
+<ul>
+<li>Primary AI processor: Powered by the Qualcomm Dragonwing™ IQ-8275 processor, delivering up to 40 dense TOPS of NPU AI compute alongside integrated CPU and GPU capabilities. It handles heavy AI workloads offline, including Large Language Models (LLMs), Visual Language Models (VLMs), multi-camera computer vision, and speech processing.</li>
+<li>Real-time microcontroller: An integrated STMicroelectronics STM32H5 MCU (STM32H5F5) running Zephyr RTOS. Linked to the main processor via RPC, it provides sub-millisecond, deterministic control for motors, actuators, and sensors without jitter.</li>
+</ul>
+<p>The board comes equipped with 16 GB RAM and 64 GB expandable eMMC storage, providing ample memory to run concurrent multi-model inference pipelines locally at the edge.</p>
+<h2 class="wp-block-heading"><strong>Unified development tools</strong></h2>
+<p>Running on top of pre-loaded Ubuntu, the Arduino<sup>®</sup> App Lab is designed to deliver a  seamless development experience. Developers can execute private, local AI models out of the box without requiring a cloud connection:</p>
+<ul>
+<li>Pre-integrated AI models: Run local LLMs (e.g., Qwen 3, Gemma 4), VLMs, Whisper ASR, MeloTTS, MediaPipe gesture recognition, YoloX object tracking, and FOMO-AD visual anomaly detection directly on the device.</li>
+<li>Flexible toolchain (BYOM / TYOM): Bring Your Own Model (BYOM) from Hugging Face or Qualcomm AI Hub, or train custom models via Edge Impulse. Developers can write code in VS Code, Python IDEs, Docker, or traditional Arduino sketches.</li>
+<li>ROS 2 ready: Ubuntu on VENTUNO Q natively supports ROS 2, enabling NPU-accelerated perception, SLAM, and Nav2 navigation algorithms out of the box.</li>
+</ul>
+<blockquote class="wp-block-quote">
+<p>“VENTUNO Q redefines what’s possible at the edge by combining high-performance AI with deterministic, real-time control. We’re moving beyond just ‘smart’ devices to true physical intelligence. With Ubuntu and Arduino App Lab handling the complexity of the underlying stack – from containers to AI models – developers have the freedom to focus entirely on bringing their most ambitious ideas to life.”</p>
+<cite><em>Fabio Violante, Vice President and General Manager of Arduino at Qualcom</em>m</cite></blockquote>
+<h2 class="wp-block-heading"><strong>Enterprise ready and production grade</strong></h2>
+<blockquote class="wp-block-quote">
+<p>“We’ve worked closely with Arduino and Qualcomm Technologies to deliver an ‘industrial-grade’ software stack as a starting point. By pre-loading a production-ready Ubuntu environment on VENTUNO Q developer boards, we’re removing the barriers between prototyping and commercial scale.”</p>
+<cite>Cindy Goldberg, Vice President of Cloud and Silicon Partnerships at Canonical</cite></blockquote>
+<p>For teams moving from prototype to commercial deployment, the VENTUNO Q is designed to provide a direct scaling path:</p>
+<ul>
+<li>Hardware compatibility:  Expansion options with support for standard Arduino<sup>®</sup> UNO<sup>™</sup> shields and carriers, Modulino<sup>™</sup> nodes, and Raspberry Pi<sup>®</sup> HATs.</li>
+<li>Rich connectivity: Features 3× MIPI-CSI camera connectors, 3× CAN-FD interfaces, Wi-Fi 6, Bluetooth 5.3, 2.5 Gb Ethernet, HDMI, and multi-pin GPIO/PWM options.</li>
+<li>Prototype-to-production pipeline: Code developed on VENTUNO Q developer board can be easily ported onto commercial products such as the production-certified Dragonwing IQ8 System-on-Modules (SoMs) through the <a href="https://www.arduino.cc/pro/works-with-arduino/">Works with Arduino</a><sup>™</sup> program.</li>
+</ul>
+<h4 class="wp-block-heading"><strong>Getting started</strong></h4>
+<p>Download the official Ubuntu image for VENTUNO Q directly from Canonical at <a href="http://ubuntu.com/download/qualcomm-iot#ventunoq">ubuntu.com/download/qualcomm-iot#ventunoq</a>.</p>
+<p>To order your VENTUNO Q board or explore technical specifications and documentation, visit <a href="https://www.arduino.cc/product-ventuno-q">arduino.cc/product-ventuno-q</a></p>
+<h3 class="wp-block-heading"><strong>About Arduino</strong></h3>
+<p>Arduino (a subsidiary of Qualcomm Technologies, Inc.) is a leading open-source hardware and software provider and an accessible platform for creating interactive projects. With an estimated 33 million active users, the Arduino ecosystem has expanded over 20 years to address new demands and challenges, offering products for IoT, wearables, 3D printing, and embedded environments.</p>
+<h3 class="wp-block-heading"><strong>About Canonical</strong></h3>
+<p>Canonical, the publisher of Ubuntu, provides open source security, support and services. Our portfolio covers critical systems, from the smallest devices to the largest clouds, from the kernel to containers, from databases to AI. With customers that include top tech brands, emerging startups, governments and home users, Canonical delivers trusted open source for everyone. </p>
+<p>Learn more at <a href="https://canonical.com/">https://canonical.com/</a> </p>
+<p>Qualcomm branded products are products of Qualcomm Technologies, Inc. and/or its subsidiaries. Arduino, VENTUNO, UNO, and Modulino are trademarks or registered trademarks of Arduino S.r.l.</p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>Sovereign Tech Fellowship for Freedesktop Tasks</title>
       <link>https://blog.tenstral.net/2026/08/sovereign-tech-fellowship-for-freedesktop-tasks.html</link>
@@ -38,7 +84,7 @@
 
 
 
-<p class="wp-block-paragraph">I maintain the <a href="https://specifications.freedesktop.org/">Freedesktop Specifications</a>, which is an area of Freedesktop that has traditionally been a bit chaotic. This &#8220;worked&#8221; in the past, because Freedesktop was never intended to be a former standards body, but more a shared space where people could throw a lot of code and ideas over the wall and see what sticks and what people can collaborate on.</p>
+<p class="wp-block-paragraph">I maintain the <a href="https://specifications.freedesktop.org/">Freedesktop Specifications</a>, which is an area of Freedesktop that has traditionally been a bit chaotic. This &#8220;worked&#8221; in the past, because Freedesktop was never intended to be a formal standards body, but more a shared space where people could throw a lot of code and ideas over the wall and see what sticks and what people can collaborate on.</p>
 
 
 
@@ -114,34 +160,7 @@
       <link>https://jnsgr.uk/2026/08/automating-c-to-rust-translation/</link>
       <guid isPermaLink="true">https://jnsgr.uk/2026/08/automating-c-to-rust-translation/</guid>
       <pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<blockquote>
-<p>This article was originally posted <a href="https://discourse.ubuntu.com/t/investing-in-automated-c-to-rust-translation/86369" target="_blank" rel="noreferrer">on the Ubuntu Discourse</a>, and is reposted here. I welcome comments and further discussion in that thread.</p>
-</blockquote>
-<p>I have written before about the role that Rust will play in Ubuntu&rsquo;s future. The case for Rust in 2026 is clear: it gives systems programmers more ergonomic control over performance and resource use while eliminating many classes of memory-safety defects, making it especially useful for software operating at important security boundaries.</p>
-<p>The harder question is what to do about the enormous amount of mature C code that already exists? Rewrites have long been expensive and risky, and do not often materialise obvious improvements. Established codebases often contain years of bug fixes, compatibility decisions, operational knowledge and hard-won performance optimisations.</p>
-<p>Our approach to modernisation in Ubuntu has been forward-looking, but pragmatic. The new technologies we&rsquo;ve adopted have earned their place in Ubuntu. The <a href="https://uutils.org/coreutils/" target="_blank" rel="noreferrer">uutils coreutils</a> project and <a href="https://github.com/trifectatechfoundation/sudo-rs" target="_blank" rel="noreferrer">sudo-rs</a> are both established projects with mature test suites and committed maintainers and communities. If we want more systems software to benefit from memory safety, we need better ways to reduce the cost and risk of migration.</p>
-<p>That is the problem behind a new research partnership between Canonical and the University of Bristol in the UK.</p>
-<h2 id="project-goals" class="relative group">Project Goals <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#project-goals" aria-label="Anchor">#</a></span></h2><p>Canonical is funding a 3-year PhD project, with matched support from <a href="https://www.ukri.org/" target="_blank" rel="noreferrer">UK Research and Innovation</a>, to investigate increasing the rigour of automated C to Rust translations. The project will be led in Bristol by <a href="https://www.bristol.ac.uk/people/person/Meng-Wang-c7e34d58-549c-4456-ad41-8392dab75a91/" target="_blank" rel="noreferrer">Professor Meng Wang</a>, with <a href="https://www.bristol.ac.uk/people/person/Cristina-David-d78c4612-1820-443c-b2cb-9db853867d90/" target="_blank" rel="noreferrer">Dr Cristina David</a> and myself as co-supervisors.</p>
-<p>The goal is to build an end-to-end platform capable of translating repositories comprising hundreds of thousands of lines of C to safe, behaviourally correct and maintainable Rust.</p>
-<p>Traditional source-to-source translators can process substantial amounts of code, but often preserve the structure of the C too literally. The result may compile as Rust, but still rely heavily on unsafe operations, retain awkward C idioms and require significant manual work before it resembles code a Rust maintainer would choose to own.</p>
-<p>Large language models have almost the opposite characteristics. They can produce convincing, idiomatic Rust for small and well-defined examples, but they struggle with repository-scale context. More importantly, plausible-looking output is not evidence that the translated program behaves like its source.</p>
-<h2 id="a-neurosymbolic-approach" class="relative group">A neurosymbolic approach <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#a-neurosymbolic-approach" aria-label="Anchor">#</a></span></h2><p>The project will combine machine-learning techniques with conventional program analysis, testing and formal methods. The proposed architecture has four main parts.</p>
-<p><strong>Scheduling</strong> will divide a large repository into chunks that can be translated independently, without losing the context required to understand types, dependencies and behaviour. This is more involved than splitting a project by file or function. The order and boundaries of translation affect how much the system can infer and what it can subsequently validate.</p>
-<p><strong>Translation</strong> will use language models trained or fine-tuned against a library of known C-to-Rust translations. The aim is to produce Rust that expresses the intent of the original program using appropriate Rust abstractions, rather than mechanically reproducing C syntax.</p>
-<p><strong>Validation</strong> will check that the Rust implementation behaves like the C source. The project will explore fuzz testing alongside more formal approaches to equivalence checking.</p>
-<p><strong>Debugging and repair</strong> will analyse failed validations, locate likely translation faults and attempt targeted corrections using symbolic program-repair techniques.</p>
-<p>Here the language model is only one component in the system. Generated code should be treated as untrusted until there is evidence that it preserves the desired behaviour. This is the same principle I apply to agentic software development more generally: generation is useful, but it needs to sit inside a system of constraints, feedback and verification.</p>
-<h2 id="applying-the-research-to-ubuntu" class="relative group">Applying the research to Ubuntu <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#applying-the-research-to-ubuntu" aria-label="Anchor">#</a></span></h2><p>Research into code translation can look successful when evaluated only against small programs or carefully selected benchmarks. Real repositories are less accommodating.</p>
-<p>Long standing repositories often accumulate build-system complexity, platform-specific behaviour, unusual error paths and assumptions that may not be obvious from an individual function. Security-sensitive software also tends to contain exactly the low-level operations that are hardest to translate cleanly.</p>
-<p>As part of the collaboration between Canonical and the University of Bristol, the project will target AppArmor and snap-confine as industrial case studies. Both are critical to Ubuntu’s security posture, and provide a substantially harder test than isolated translation examples. They will help us evaluate whether the techniques can cope with the structure and constraints of mature production software.</p>
-<p>Note that this is not a commitment to replace AppArmor or snap-confine with what is generated, rather that we have a vested interest in the software and are keen to see the results.</p>
-<h2 id="why-this-belongs-in-a-phd" class="relative group">Why this belongs in a PhD <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#why-this-belongs-in-a-phd" aria-label="Anchor">#</a></span></h2><p>One could view automated code migration as a software engineering problem that could be solved by a traditional engineering team: connect an LLM to a compiler, add a test loop and keep iterating until the output builds, but it would be easy to miss nuance or accidentally encode project specificities by taking such an approach.</p>
-<p>How should a repository be partitioned without losing semantic context? How can the system establish equivalence when the source contains undefined or implementation-dependent behaviour? How should it handle pointer-heavy APIs, concurrency, foreign interfaces and operating-system boundaries? When validation fails, how can it distinguish a translation defect from an ambiguity in the original program?</p>
-<p>These problems span programming languages, formal methods, machine learning and software engineering. The University of Bristol has a strong <a href="https://plrg-bristol.github.io/" target="_blank" rel="noreferrer">programming-languages research group</a>, and this collaboration facilitates access to practical case studies from Ubuntu. Canonical, in turn, benefits from research that is informed by the constraints of real systems software rather than an idealised model of it.</p>
-<p>The selected student, Alex Wood, is well placed to work across those boundaries. His background includes compiler construction, functional programming, Rust, low-level security work and cryptographic protocol implementation.</p>
-<h2 id="summary" class="relative group">Summary <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#summary" aria-label="Anchor">#</a></span></h2><p>The most optimistic outcome would be a system capable of translating substantial C repositories into Rust with strong evidence of behavioural equivalence and relatively little manual intervention. The research could also produce better methods for decomposing repositories, stronger validation techniques, reusable translation datasets, improved program-repair tools and a more precise understanding of where automated migration stops being reliable.</p>
-<p>Rust is not an objective in itself, but it continues to be a compelling and interesting language for systems programming, and its compiler infrastructure and borrow checker lends itself to verification.</p>
-<p>Work is set to begin later this year, and I look forward to keeping you all up to date on what we find!</p>]]></description>
+      <description><![CDATA[Canonical is funding a 3-year PhD at the University of Bristol to investigate whether large, mature C codebases can be translated into safe, correct and maintainable Rust.]]></description>
       <source url="https://jnsgr.uk/tags/ubuntu/index.xml">Jon Seager</source>
     </item>
     <item>
@@ -1196,45 +1215,6 @@ Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Migue
 Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
 A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
       <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
-    </item>
-    <item>
-      <title>Advantech AOM-2721 is now Ubuntu Certified</title>
-      <link>https://ubuntu.com//blog/advantech-aom-2721-ubuntu-certified</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/advantech-aom-2721-ubuntu-certified</guid>
-      <pubDate>Thu, 13 Aug 2026 10:25:17 GMT</pubDate>
-      <description><![CDATA[<p>Canonical announces that the Advantech AOM-2721 is officially joining the list of <a href="https://ubuntu.com/certified" rel="noreferrer noopener" target="_blank">Ubuntu Certified Hardware</a>. This latest certification highlights the deepening collaboration between Canonical and Advantech.</p>
-<p>With full certification for <strong>Ubuntu 24.04 LTS</strong>, developers utilizing Advantech’s powerful Open Standard Module (OSM) AOM-2721 can now deploy a seamless, securely designed, and highly optimized Ubuntu experience right out of the box.</p>
-<figure class="wp-block-image size-full"><img alt="" height="460" loading="lazy" sizes="(min-width: 820px) 820px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_820/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fe5ea%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fe5ea%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fe5ea%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fe5ea%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_820/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fe5ea%2Fimage.png 820w" width="820"/></figure>
-<h2 class="wp-block-heading">Tiny size, massive edge power</h2>
-<p>The Advantech AOM-2721 is a highly compact Size-L OSM. Measuring just 45 x 45 mm, this miniature solder-on module is designed to outpace traditional computer-on-modules. At its core lies the Qualcomm® Octa-core QCS6490 processor operating with a 6.9-watt TDP.</p>
-<p>This architecture allows the AOM-2721 to deliver robust on-site computing. In fact, <a href="https://www.advantech.com/en/resources/news/advantech-unveils-aom-2721-a-size-l-open-standard-module-osm-featuring-qualcomm-qcs6490-for-on-device-ai-scenarios" rel="noreferrer noopener" target="_blank">according to Advantech</a>, the QCS6490 achieves nearly 20% better performance compared to mid-tier x86 processors, while providing an impressive 43-75% reduction in power consumption. This makes it an unparalleled solution tailored to meet the demanding physical and thermal constraints of diverse AIoT scenarios and handheld applications.</p>
-<h2 class="wp-block-heading">Empowering machine vision with on-device AI</h2>
-<p>As industries push intelligence closer to the edge, the AOM-2721 is perfectly equipped to handle intensive workloads. The module features 12 TOPS of AI capability, alongside support for dual-camera inputs and a native video codec. </p>
-<p>This combination excels in applications requiring low-latency signals, seamless video capture, and resilience to vibrations within limited installation spaces. It is especially well-suited for autonomous mobile robots (AMR). By leveraging on-device AI, these AMRs can process data from cameras, radar, and LiDAR to perform complex tasks such as object detection, localization, route optimization, and collision avoidance. Furthermore, developers can utilize the Qualcomm AI Hub to streamline the deployment of machine learning models.</p>
-<h2 class="wp-block-heading">Abundant interfaces and seamless connectivity</h2>
-<p>To fully integrate into modern AIoT ecosystems, the AOM-2721 offers a vast array of I/O options within its compact form factor. Key connectivity features include:</p>
-<ul>
-<li><strong>High-speed expansion</strong>: PCIe Gen3 support for 5G and Wi-Fi 6 connectivity.</li>
-<li><strong>Next-gen storage</strong>: High-speed memory and storage interfaces including LPDDR5 and UFS.</li>
-<li><strong>Versatile I/O</strong>: Flexible connectivity via USB 3.2, UART, and GPIO.</li>
-<li><strong>Rich displays</strong>: Dual-display capability supporting up to 2K resolution across DSI, DP, and eDP interfaces.</li>
-</ul>
-<p>When paired with Qualcomm’s 5G and Wi-Fi 6 modules, the integration of the Octa-core QCS6490 CPU ensures compatibility and minimal latency. </p>
-<h2 class="wp-block-heading">Ubuntu optimized for Qualcomm silicon</h2>
-<p>Just as we expanded support with the Ubuntu general availability for Qualcomm Dragonwing, certifying the Advantech AOM-2721 ensures that developers can build, deploy, and scale their AIoT projects with confidence. Ubuntu certification means this device has passed rigorous testing to guarantee hardware components function flawlessly on <strong>Ubuntu 24.04 LTS</strong> at the time of certification and in the future. The Ubuntu Certification team performs regression testing on certified hardware on a regular cadence to ensure Ubuntu Stable Release Updates (SRU) are validated on certified hardware.</p>
-<p>Customers deploying the AOM-2721 with Ubuntu will benefit from Canonical’s robust security patching, long-term support (LTS), and a vast ecosystem of open-source tools. </p>
-<h2 class="wp-block-heading">Maximizing enterprise value with Ubuntu Pro for Devices</h2>
-<p>For commercial deployments requiring long-term reliability and compliance, companies can enhance their Ubuntu-powered fleet with an <a href="https://ubuntu.com/pro/devices" rel="noreferrer noopener" target="_blank">Ubuntu Pro for Devices</a> subscription. This enterprise-grade service offers critical benefits for embedded and IoT deployments:</p>
-<ul>
-<li><strong>CVE Protection</strong>: Prompt security patches for critical and high-severity vulnerabilities for up to 15 years, minimizing exposure to security threats at the edge.</li>
-<li><strong>Device Management Solutions</strong>: Reduced cost of <a href="https://ubuntu.com/internet-of-things/management" rel="noreferrer noopener" target="_blank">managing device fleets</a> and proactive management of security for IoT devices.</li>
-<li><strong>Compliance and Hardening</strong>: Access to tools for automated security hardening and compliance profiles, such as CIS benchmarks and FIPS-compliant cryptographic modules.</li>
-</ul>
-<p>Whether you are building the next generation of autonomous robots or deploying smart industrial machine vision systems, the Advantech AOM-2721 powered by Ubuntu 24.04 LTS and Ubuntu Pro for Devices subscription provides the securely designed, optimized foundation you need to get to market faster.</p>
-<h2 class="wp-block-heading">Learn more</h2>
-<p>Explore our hardware ecosystems on the <a href="https://ubuntu.com/blog/tag/certified-hardware">Ubuntu Certified Hardware Blog</a>. </p>
-<p>For more information about AOM-2721 contact your local Advantech sales representative or visit the <a href="https://www.advantech.com/en/contact/service-request-form?subject=price%2band%2bquotation&amp;product=AOM-2721" rel="noreferrer noopener" target="_blank">Advantech official website</a>.</p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Announcing Incus 7.3</title>
