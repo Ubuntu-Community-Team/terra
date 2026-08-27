@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 26 Aug 2026 01:22:17 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 08:04:31 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -6439,29 +6439,6 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 <li><a href="https://github.com/helm/charts/tree/master/stable/external-dns#configuration">The full list of configuration details for the ExternalDNS Helm&nbsp;chart</a></li>
 </ul>]]></description>
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
-    </item>
-    <item>
-      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
-      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
-      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
-      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
-<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
-<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
-<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
-<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
-<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
-<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
-<blockquote>
-<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
-</blockquote>
-<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
-<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
-We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
-So, please sync with this change (and sorry :)).</p>
-<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
-<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
-      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
     </item>
     <item>
       <title>Rise and fall of libclamav</title>
