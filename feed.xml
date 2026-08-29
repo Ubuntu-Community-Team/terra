@@ -6,53 +6,92 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 28 Aug 2026 10:16:51 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2026 06:16:02 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Arduino® VENTUNO™ Q is available for pre-order with Ubuntu pre-installed</title>
-      <link>https://ubuntu.com//blog/arduino-ventuno-q-is-available-for-pre-order-with-ubuntu-pre-installed</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/arduino-ventuno-q-is-available-for-pre-order-with-ubuntu-pre-installed</guid>
-      <pubDate>Tue, 25 Aug 2026 19:13:28 GMT</pubDate>
-      <description><![CDATA[<p>London, UK – August 25, 2026 – Following our initial collaboration <a href="https://canonical.com/blog/canonical-and-arduino-collaborate-to-enable-ubuntu-on-the-ventuno-q-the-next-generation-platform-for-ai">announcement in March 2026</a>, Canonical and Arduino (a subsidiary of Qualcomm Technologies, Inc.) are excited to announce that <a href="https://www.arduino.cc/product-ventuno-q">VENTUNO Q </a>is now generally available for <a href="https://store.arduino.cc/products/ventuno-q">pre-order</a>, pre-loaded with Ubuntu.</p>
-<p>VENTUNO Q is a dual-brain developer board designed for edge AI and robotics applications. With pre-orders opening today, developers, researchers, and industrial innovators can go straight from unboxing to executing AI inference and real-time physical actuation on a production-ready Linux environment.</p>
-<p>With Ubuntu pre-loaded, users don’t need to worry about manual board support package (BSP) flashing, complex kernel configuration, or driver downloads. VENTUNO Q comes pre-installed with Ubuntu natively running on its primary Qualcomm Dragonwing<sup>™</sup> processor.</p>
-<h2 class="wp-block-heading"><strong>How VENTUNO Q accelerates edge AI performance</strong></h2>
-<p>At the core of VENTUNO Q is its dual-brain system architecture designed for physical AI applications where perception must trigger instant action:</p>
+      <title>AI harnesses for telco autonomous networks</title>
+      <link>https://ubuntu.com//blog/ai-harnesses-for-telco-autonomous-networks</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/ai-harnesses-for-telco-autonomous-networks</guid>
+      <pubDate>Fri, 28 Aug 2026 08:11:24 GMT</pubDate>
+      <description><![CDATA[<p>Across the global landscape, telecommunications operators have already deployed machine learning for predictive maintenance, customer care chatbots, and anomaly detection. However, as the industry transitions toward Autonomous Networks Level 4 (AN L4), where networks can make intent-driven, predictive decisions and perform closed-loop management with minimal human intervention, a fundamental architectural challenge has emerged:</p>
+<p><strong><em>How do you build a secure, reliable, and interoperable AI harness that bridges probabilistic AI reasoning with deterministic, carrier-grade network execution?</em></strong></p>
+<p>Connecting large language models (LLMs) or autonomous agents directly to critical network functions poses severe operational risks. An AI-generated decision may be incorrect, out of policy, based on a stale state, or unsafe under unobserved conditions. An erroneous or poorly scoped change in a production core or radio access network (RAN) could violate service-level objectives, destabilize a control loop, or propagate across dependent network functions if existing protection and isolation mechanisms fail.</p>
+<p>To move AI from isolated proofs-of-concept into resilient production, telcos will likely require an end-to-end operational AI harness: a platform architecture that combines open cloud substrates, interoperable agent protocols, trusted operational context, declarative GitOps workflows, confidential inference, intent-driven orchestration, policy enforcement, and closed-loop assurance.</p>
+<p>A key architectural principle is to separate the agentic read path (for observation and cognition) from the network’s write path (for governance and execution). AI can interpret context, diagnose problems, and propose actions, while deterministic policy, validation, orchestration, and assurance mechanisms govern what changes are actually allowed to reach the network. This principle is increasingly reflected in the industry’s work on L4 autonomy.</p>
+<h2 class="wp-block-heading">Why autonomous networks need an AI harness</h2>
+<p>Modern AI production environments demand dense accelerator nodes, high-throughput east-west fabrics, low tail-latency networking, and specialized memory management for key-value (KV) caching. Dropping these memory-dense, probabilistic workloads onto legacy telco architectures engineered for rigid change windows creates friction across different levels:</p>
 <ul>
-<li>Primary AI processor: Powered by the Qualcomm Dragonwing™ IQ-8275 processor, delivering up to 40 dense TOPS of NPU AI compute alongside integrated CPU and GPU capabilities. It handles heavy AI workloads offline, including Large Language Models (LLMs), Visual Language Models (VLMs), multi-camera computer vision, and speech processing.</li>
-<li>Real-time microcontroller: An integrated STMicroelectronics STM32H5 MCU (STM32H5F5) running Zephyr RTOS. Linked to the main processor via RPC, it provides sub-millisecond, deterministic control for motors, actuators, and sensors without jitter.</li>
+<li>Fragmented execution &amp; data islands: Telemetry, alarm streams, and topology maps often live in vendor-siloed systems with different schemas and levels of data quality.</li>
+<li>Missing operational fabric for agents: Autonomous AI agents require unified identity management, fine-grained role-based access control (RBAC) audited tool access, and policy enforcement to prevent unauthorized or conflicting network changes.</li>
+<li>Infrastructure bottlenecks: AI inference introduces very different resource and scheduling characteristics from conventional containerized network functions (CNFs). High-throughput accelerator access, NUMA placement, PCIe topology, SR-IOV/RDMA networking, CPU/GPU scheduling, memory bandwidth and KV-cache management need to coexist with the deterministic latency, isolation, and availability requirements of telco workloads.</li>
 </ul>
-<p>The board comes equipped with 16 GB RAM and 64 GB expandable eMMC storage, providing ample memory to run concurrent multi-model inference pipelines locally at the edge.</p>
-<h2 class="wp-block-heading"><strong>Unified development tools</strong></h2>
-<p>Running on top of pre-loaded Ubuntu, the Arduino<sup>®</sup> App Lab is designed to deliver a  seamless development experience. Developers can execute private, local AI models out of the box without requiring a cloud connection:</p>
+<p>To resolve these bottlenecks, standards bodies and open-source initiatives, including ETSI, TM Forum, O-RAN Alliance, and the Linux Foundation, are developing complementary pieces of the architecture required for autonomous networks. Translating these evolving, domain-specific frameworks into an operational reality requires an open, end-to-end platform harness that bridges low-level cloud substrates with high-level agentic reasoning. Such architecture is better understood as four interacting planes:</p>
 <ul>
-<li>Pre-integrated AI models: Run local LLMs (e.g., Qwen 3, Gemma 4), VLMs, Whisper ASR, MeloTTS, MediaPipe gesture recognition, YoloX object tracking, and FOMO-AD visual anomaly detection directly on the device.</li>
-<li>Flexible toolchain (BYOM / TYOM): Bring Your Own Model (BYOM) from Hugging Face or Qualcomm AI Hub, or train custom models via Edge Impulse. Developers can write code in VS Code, Python IDEs, Docker, or traditional Arduino sketches.</li>
-<li>ROS 2 ready: Ubuntu on VENTUNO Q natively supports ROS 2, enabling NPU-accelerated perception, SLAM, and Nav2 navigation algorithms out of the box.</li>
+<li>Context plane: telemetry, topology, inventory, alarms, service state, knowledge graphs, and other operational data.</li>
+<li>Reasoning plane: AI/ML models and agents that diagnose, predict, plan, and interpret intent.</li>
+<li>Control plane: identity, policy, validation, arbitration, orchestration, and closed-loop decision mechanisms.</li>
+<li>Execution plane: the CNFs, RAN, core, transport, cloud infrastructure, and other network resources that ultimately implement approved changes.</li>
 </ul>
-<blockquote class="wp-block-quote">
-<p>“VENTUNO Q redefines what’s possible at the edge by combining high-performance AI with deterministic, real-time control. We’re moving beyond just ‘smart’ devices to true physical intelligence. With Ubuntu and Arduino App Lab handling the complexity of the underlying stack – from containers to AI models – developers have the freedom to focus entirely on bringing their most ambitious ideas to life.”</p>
-<cite><em>Fabio Violante, Vice President and General Manager of Arduino at Qualcom</em>m</cite></blockquote>
-<h2 class="wp-block-heading"><strong>Enterprise ready and production grade</strong></h2>
-<blockquote class="wp-block-quote">
-<p>“We’ve worked closely with Arduino and Qualcomm Technologies to deliver an ‘industrial-grade’ software stack as a starting point. By pre-loading a production-ready Ubuntu environment on VENTUNO Q developer boards, we’re removing the barriers between prototyping and commercial scale.”</p>
-<cite>Cindy Goldberg, Vice President of Cloud and Silicon Partnerships at Canonical</cite></blockquote>
-<p>For teams moving from prototype to commercial deployment, the VENTUNO Q is designed to provide a direct scaling path:</p>
+<p>The AI harness sits across these planes, connecting the agentic read path to the network’s write path. This links probabilistic reasoning to deterministic control without allowing the model itself to become the network’s final authority. In other words, AI can interpret context and propose actions, while deterministic policy, validation, orchestration, and assurance mechanisms govern what changes are actually allowed to reach the network.</p>
+<h2 class="wp-block-heading">The cloud-native foundation layer</h2>
+<p>At the foundation of any AI-native network sits the cloud substrate. Telcos have strong incentives to avoid maintaining completely parallel, siloed infrastructure stacks (e.g., one for CNFs and another for AI inference pipelines). Some network and AI workloads may benefit from shared infrastructure, while others may require dedicated accelerators, separate security domains, or physically isolated resources. The cloud foundation should therefore provide a common operational model without imposing a single hardware topology.</p>
+<p>Canonical delivers the open-source infrastructure portfolio needed to build a unified runtime environment where AI models and network functions can coexist on shared physical infrastructure, while still allowing operators to dedicate or isolate resources where required:</p>
 <ul>
-<li>Hardware compatibility:  Expansion options with support for standard Arduino<sup>®</sup> UNO<sup>™</sup> shields and carriers, Modulino<sup>™</sup> nodes, and Raspberry Pi<sup>®</sup> HATs.</li>
-<li>Rich connectivity: Features 3× MIPI-CSI camera connectors, 3× CAN-FD interfaces, Wi-Fi 6, Bluetooth 5.3, 2.5 Gb Ethernet, HDMI, and multi-pin GPIO/PWM options.</li>
-<li>Prototype-to-production pipeline: Code developed on VENTUNO Q developer board can be easily ported onto commercial products such as the production-certified Dragonwing IQ8 System-on-Modules (SoMs) through the <a href="https://www.arduino.cc/pro/works-with-arduino/">Works with Arduino</a><sup>™</sup> program.</li>
+<li><a href="https://canonical.com/maas"><strong>Metal-as-a-Service (MAAS</strong></a><strong>):</strong> Automates bare-metal server discovery, firmware management, and provisioning for GPU-enabled servers and edge platforms.</li>
+<li><a href="https://ubuntu.com/real-time"><strong>Ubuntu &amp; real-time kernels</strong></a><strong>:</strong> Deliver a secure operating system foundation with native kernel support for hardware acceleration, low-latency networking (SR-IOV, DPDK), and confidential computing trusted execution environments.</li>
+<li><a href="https://ubuntu.com/kubernetes"><strong>Canonical Kubernetes</strong></a><strong> &amp; </strong><a href="https://canonical.com/microcloud"><strong>MicroCloud</strong></a><strong>:</strong> Provide low-touch Kubernetes orchestration and edge cloud infrastructure tailored for distributed edge deployments.</li>
+<li><a href="https://canonical.com/juju"><strong>Juju &amp; charmed operators</strong></a><strong>:</strong> Encapsulate complex day-2 operational logic, automated upgrades, and integration across infrastructure, data services, and AI/ML tooling.</li>
 </ul>
-<h4 class="wp-block-heading"><strong>Getting started</strong></h4>
-<p>Download the official Ubuntu image for VENTUNO Q directly from Canonical at <a href="http://ubuntu.com/download/qualcomm-iot#ventunoq">ubuntu.com/download/qualcomm-iot#ventunoq</a>.</p>
-<p>To order your VENTUNO Q board or explore technical specifications and documentation, visit <a href="https://www.arduino.cc/product-ventuno-q">arduino.cc/product-ventuno-q</a></p>
-<h3 class="wp-block-heading"><strong>About Arduino</strong></h3>
-<p>Arduino (a subsidiary of Qualcomm Technologies, Inc.) is a leading open-source hardware and software provider and an accessible platform for creating interactive projects. With an estimated 33 million active users, the Arduino ecosystem has expanded over 20 years to address new demands and challenges, offering products for IoT, wearables, 3D printing, and embedded environments.</p>
-<h3 class="wp-block-heading"><strong>About Canonical</strong></h3>
-<p>Canonical, the publisher of Ubuntu, provides open source security, support and services. Our portfolio covers critical systems, from the smallest devices to the largest clouds, from the kernel to containers, from databases to AI. With customers that include top tech brands, emerging startups, governments and home users, Canonical delivers trusted open source for everyone. </p>
-<p>Learn more at <a href="https://canonical.com/">https://canonical.com/</a> </p>
-<p>Qualcomm branded products are products of Qualcomm Technologies, Inc. and/or its subsidiaries. Arduino, VENTUNO, UNO, and Modulino are trademarks or registered trademarks of Arduino S.r.l.</p>]]></description>
+<p>The same foundation can host the inference layer, allowing operators to deploy and manage model-serving workloads alongside cloud-native network functions. Canonical’s <a href="https://documentation.ubuntu.com/inference-snaps/">inference snaps</a> provide a way to package and deploy inference runtimes such as vLLM and llama.cpp as repeatable, versioned workloads for serving LLMs. Juju and charmed operators can then provide model-driven deployment, configuration, integration, scaling, and lifecycle management for the applications and infrastructure supporting those workloads.</p>
+<h2 class="wp-block-heading">Standardizing agentic AI with the model context protocol (MCP)</h2>
+<p>To advance from rule-based automation to agentic AI, reasoning models need a standardized way to discover and query network context and tools. Bespoke API integration isn’t the answer, as it can recreate the vendor lock-in and fragmentation that cloud-native architectures were designed to avoid.</p>
+<p>The industry is increasingly addressing this through the model context protocol (MCP), governed within the Linux Foundation’s Agentic AI Foundation (AAIF). However, MCP is an interoperability layer, not a telco policy engine or network controller. The underlying network APIs and protocols remain responsible for actual network operations, while MCP can serve as an agent-facing protocol layer for the network context read path, providing:</p>
+<ul>
+<li>Interoperability and context retrieval: MCP standardizes how AI agents discover and invoke tools, allowing an agent to query telemetry, inspect cluster health, and gather topology or diagnostic information across heterogeneous systems while leaving the underlying data and observability systems in place. This can significantly reduce bespoke integration at the agent layer.</li>
+<li>Composability: Operators can expose new network capabilities, metrics, or diagnostic models through MCP server wrappers, enabling rapid, modular expansion of the operational toolkit available for the agentic layer</li>
+<li>Security integration and tool exposure: MCP standardizes tool invocation and provides an authorization framework for protected endpoints, including mechanisms that support human control over tool invocation. But, because MCP handles protocol-level interactions rather than enterprise policy, operators need to maintain control by pairing MCP servers with existing identity, RBAC, and audit workflows. This allows operators to expose narrowly scoped diagnostic tools rather than raw network APIs.</li>
+</ul>
+<p>Exposing read-oriented cluster lifecycle observability tools enables AI agents to safely query cluster health, inspect deployment resource states, and evaluate workloads without risking unapproved configuration changes.</p>
+<h2 class="wp-block-heading">Safe execution: policy, orchestration, and declarative control as the guardrails</h2>
+<p>While MCP provides an agent-facing interface for context discovery and tool invocation, state-changing network operations should follow a separate, strictly controlled write path. In a carrier-grade network, an AI agent should not have unrestricted, direct, state-changing access to live network elements.</p>
+<p>Instead, operators can establish operational guardrails by routing agent decisions through policy enforcement, validation, orchestration, and assurance mechanisms. Declarative GitOps workflows is one useful mechanism for selected classes of declarative infrastructure change. A representative workflow could include:</p>
+<ol>
+<li>Context &amp; planning (read path): The AI agent gathers context through MCP, analyzes telemetry (e.g. via Prometheus/OpenTelemetry) and formulates a remediation plan (e.g. scaling a UPF instance or reallocating an O-RAN slice).</li>
+<li>Policy and risk evaluation: Before any state-changing action is accepted, a policy engine evaluates whether the proposed operation is permitted. Policies can consider agent identity, network domain, service criticality, time, maintenance state, data freshness, expected blast radius, concurrent changes, and service-level constraints.</li>
+<li>Declarative commit (write path): For changes suited to declarative infrastructure management, the agent can express its proposal as a configuration change committed to a version-controlled Git repository or, where appropriate, represented through a Juju model or bundle.</li>
+<li>Validation &amp; digital twins: A CI/CD pipeline intercepts the commit and validates the proposed change against a network digital twin or pre-production test environment, where available, to simulate impact and identify violations of policy and service constraints..</li>
+<li>Human-in-the-loop oversight: If the action’s blast radius exceeds pre-defined risk thresholds, the commit automatically triggers a review request for a human operator.</li>
+<li>Reconciliation &amp; rollback: Once approved, declarative controllers (such as FluxCD or charmed operators) reconcile the desired state into the live network. Other network domains may instead use domain-specific orchestrators, controllers, RIC components, or existing network-management interfaces. </li>
+<li>Closed-loop assurance: Post-deployment monitoring evaluates whether the resulting network state remains within the intended service and policy boundaries. Where safe reversal is supported, assurance mechanisms can trigger automated remediation or rollback.</li>
+</ol>
+<p>Different control-loop timescales should also be accounted for. A large language model should not necessarily sit inside a millisecond-scale RAN control loop. Fast, deterministic control loops can remain within network-native controllers, with AI agents operating at slower timescales for diagnosis, prediction, planning, policy interpretation, and higher-level optimization.</p>
+<p>This separation reflects an emerging pattern in Level 4 autonomous network architectures: agentic AI can interpret context and propose actions, while digital twins, intent-based controls, orchestration, and assurance mechanisms constrain and validate execution.</p>
+<h2 class="wp-block-heading">Security &amp; confidential AI: protecting data, models, and prompts in use</h2>
+<p>As AI agents handle real-time subscriber traffic, service tickets, and proprietary network topologies, data privacy and supply-chain security become paramount. Traditional encryption at rest and in transit is insufficient when data must be decrypted in memory during model inference.</p>
+<p>Confidential AI applies hardware-backed trusted execution environments (such as AMD SEV-SNP, Intel TDX, and NVIDIA Confidential GPUs) to protect data and, where supported, model weights while in use. A remote-attestation service can verify cryptographic measurements spanning the host firmware, guest OS, and inference runtime against an operator-defined trust policy before a key broker releases sensitive keys or model assets. Confidential computing therefore establishes a verifiable hardware-backed trust boundary around protected workloads.</p>
+<p>Canonical supports <a href="https://ubuntu.com/confidential-computing/ai">confidential AI</a> across private and public cloud environments:</p>
+<ul>
+<li>Ubuntu 26.04 LTS: Provides integrated host and guest OS support for AMD SEV-SNP and Intel TDX, giving operators full control over confidential VM deployments on their bare-metal infrastructure.</li>
+<li>Ubuntu Core: Offers an immutable, transactional guest OS image packaged with snaps, which reduces configuration drift. Where confidential VMs are used, remote attestation provides an independent mechanism for verifying the measured boot and runtime environment, supporting appliance-like inference endpoints at the edge.</li>
+</ul>
+<h2 class="wp-block-heading">Accelerating developer workflows with Canonical Workshop</h2>
+<p>Building production-grade AI harnesses requires rapid developer iteration. Yet, granting experimental agentic tooling unconstrained access to host machines creates severe security risks. As telco teams build next-generation network intelligence like agentic troubleshooting assistants or local inference engines, they face an operational paradox: developers require fast access to modern AI runtimes (such as Ollama, OpenCode, vLLM, llama.cpp) and hardware SDKs (e.g., NVIDIA CUDA, AMD ROCm), while platform and security teams must enforce strict isolation to prevent driver conflicts or unvetted, destructive agent commands.</p>
+<p>Canonical’s <a href="https://ubuntu.com/workshop">Workshop</a> addresses this friction by enabling engineers to launch composable, sandboxed development environments on Ubuntu via a single command (snap install workshop –classic).</p>
+<p>Defined through simple, version-controlled YAML specification files, Workshops run inside unprivileged system containers powered by LXD. This creates an additional isolation boundary around experimental or hallucination-prone tools or AI agents, reducing their access to the host by default without sacrificing developer speed.</p>
+<p>To solve the brittleness of bespoke container mappings, Workshop uses a uniform resource interface inspired by snapd. Modular SDKs request controlled access to host capabilities, such as discrete GPUs, host mounts, or SSH agents, providing controlled access to host resources while keeping resource access explicit, version-controlled, and administratively controlled. Because the environment is defined declaratively, the same Workshop specification can be reused across developer machines, CI/CD pipelines, and digital twin testbeds, improving reproducibility, reducing configuration drift, and accelerating the path from lab prototype to production harness.</p>
+<h2 class="wp-block-heading">Conclusion</h2>
+<p>Achieving Autonomous Networks Level 4 is not a matter of dropping a large language model onto an existing network stack. It requires a coordinated, open-source platform architecture that aligns silicon capabilities, cloud-native orchestration, confidential execution, standardized agent interfaces, operational knowledge, intent-driven control, and deterministic network safeguards.</p>
+<p>By combining Canonical’s end-to-end software stack, from bare-metal MAAS provisioning and Ubuntu Confidential VMs to Charmed MLOps, Workshop developer sandboxes, and inference snaps, operators can build a trusted, repeatable AI harness.</p>
+<p>This open foundation gives telcos greater control over their data, infrastructure choices, and deployment architecture, while providing a more repeatable path to operationalizing AI and, ultimately, toward the requirements of the 6G era.</p>
+<h2 class="wp-block-heading">Next steps</h2>
+<p>Learn how Canonical solutions provide a stable, validated, and open foundation for telco workloads.</p>
+<ul>
+<li><a href="https://canonical.com/solutions/telco">Learn about Canonical’s solutions for telco</a></li>
+<li><a href="https://canonical.com/solutions/ai">Discover Canonical’s guide to open source AI infrastructure</a></li>
+<li><a href="https://ubuntu.com/workshop">Try Canonical Workshop</a></li>
+<li><a href="https://canonical.com/solutions/telco#get-in-touch">Get in touch with Canonical’s telco team</a></li>
+</ul>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -2035,7 +2074,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
       <description><![CDATA[<p>I am using pretty much the exact same setup I did in <a href="https://bryanquigley.com/posts/memory-usage/2024-livecd-memory-usage-compare.html">2024</a>. Let's see who is more efficient in a live session!</p>
 <p>But first let's take a look at the image sizes:</p>
 <p><!--?xml version='1.0' encoding='utf-8'?-->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="chart-3c39b805-9d69-4612-b93c-226f13dde545" class="pygal-chart" viewbox="0 0 800 600"><!--Generated with pygal 3.1.0 (lxml) ©Kozea 2012-2025 on 2026-05-12--><!--http://pygal.org--><!--http://github.com/Kozea/pygal--><defs></defs><title>Image size (in GB)</title><g class="graph bar-graph vertical"><rect x="0" y="0" width="800" height="600" class="background"></rect><g transform="translate(188, 46)" class="plot"><rect x="0" y="0" width="592.0" height="534" class="background"></rect><g class="axis y always_show"><g class="guides"><path d="M0.000000 523.730769 h592.000000" class="axis major line"></path><text x="-5" y="527.2307692307693" class="major">0</text><title>0</title></g><g class="guides"><path d="M0.000000 456.170040 h592.000000" class="guide line"></path><text x="-5" y="459.67004048583" class="">1</text><title>1</title></g><g class="guides"><path d="M0.000000 388.609312 h592.000000" class="guide line"></path><text x="-5" y="392.1093117408907" class="">2</text><title>2</title></g><g class="guides"><path d="M0.000000 321.048583 h592.000000" class="guide line"></path><text x="-5" y="324.5485829959514" class="">3</text><title>3</title></g><g class="guides"><path d="M0.000000 253.487854 h592.000000" class="guide line"></path><text x="-5" y="256.98785425101215" class="">4</text><title>4</title></g><g class="guides"><path d="M0.000000 185.927126 h592.000000" class="major guide line"></path><text x="-5" y="189.42712550607285" class="major">5</text><title>5</title></g><g class="guides"><path d="M0.000000 118.366397 h592.000000" class="guide line"></path><text x="-5" y="121.86639676113356" class="">6</text><title>6</title></g><g class="guides"><path d="M0.000000 50.805668 h592.000000" class="guide line"></path><text x="-5" y="54.30566801619432" class="">7</text><title>7</title></g></g><g class="series serie-0 color-0"><g class="bars"><g class="bar"><rect x="46.845217391304345" y="111.61032388663972" rx="0" ry="0" width="19.16575250836121" height="412.12044534412956" class="rect reactive tooltip-trigger"></rect><desc class="value">6.1</desc><desc class="x centered">56.42809364548495</desc><desc class="y centered">317.6705465587045</desc></g></g></g><g class="series serie-1 color-1"><g class="bars"><g class="bar"><rect x="68.62448160535116" y="192.68319838056675" rx="0" ry="0" width="19.16575250836121" height="331.04757085020253" class="rect reactive tooltip-trigger"></rect><desc class="value">4.9</desc><desc class="x centered">78.20735785953177</desc><desc class="y centered">358.206983805668</desc></g></g></g><g class="series serie-2 color-2"><g class="bars"><g class="bar"><rect x="90.403745819398" y="260.2439271255061" rx="0" ry="0" width="19.16575250836121" height="263.4868421052632" class="rect reactive tooltip-trigger"></rect><desc class="value">3.9</desc><desc class="x centered">99.9866220735786</desc><desc class="y centered">391.9873481781377</desc></g></g></g><g class="series serie-3 color-3"><g class="bars"><g class="bar"><rect x="112.18301003344482" y="199.43927125506076" rx="0" ry="0" width="19.16575250836121" height="324.2914979757085" class="rect reactive tooltip-trigger"></rect><desc class="value">4.8</desc><desc class="x centered">121.76588628762542</desc><desc class="y centered">361.585020242915</desc></g></g></g><g class="series serie-4 color-4"><g class="bars"><g class="bar"><rect x="133.96227424749162" y="273.7560728744939" rx="0" ry="0" width="19.16575250836121" height="249.9746963562754" class="rect reactive tooltip-trigger"></rect><desc class="value">3.7</desc><desc class="x centered">143.54515050167223</desc><desc class="y centered">398.74342105263156</desc></g></g></g><g class="series serie-5 color-5"><g class="bars"><g class="bar"><rect x="155.74153846153848" y="253.48785425101215" rx="0" ry="0" width="19.16575250836121" height="270.24291497975713" class="rect reactive tooltip-trigger"></rect><desc class="value">4</desc><desc class="x centered">165.3244147157191</desc><desc class="y centered">388.6093117408907</desc></g></g></g><g class="series serie-6 color-6"><g class="bars"><g class="bar"><rect x="177.5208026755853" y="165.6589068825911" rx="0" ry="0" width="19.16575250836121" height="358.0718623481782" class="rect reactive tooltip-trigger"></rect><desc class="value">5.3</desc><desc class="x centered">187.1036789297659</desc><desc class="y centered">344.69483805668017</desc></g></g></g><g class="series serie-7 color-7"><g class="bars"><g class="bar"><rect x="199.3000668896321" y="165.6589068825911" rx="0" ry="0" width="19.16575250836121" height="358.0718623481782" class="rect reactive tooltip-trigger"></rect><desc class="value">5.3</desc><desc class="x centered">208.8829431438127</desc><desc class="y centered">344.69483805668017</desc></g></g></g><g class="series serie-8 color-8"><g class="bars"><g class="bar"><rect x="221.07933110367895" y="172.41497975708495" rx="0" ry="0" width="19.16575250836121" height="351.31578947368433" class="rect reactive tooltip-trigger"></rect><desc class="value">5.2</desc><desc class="x centered">230.66220735785956</desc><desc class="y centered">348.0728744939271</desc></g></g></g><g class="series serie-9 color-9"><g class="bars"><g class="bar"><rect x="242.85859531772576" y="185.92712550607285" rx="0" ry="0" width="19.16575250836121" height="337.8036437246964" class="rect reactive tooltip-trigger"></rect><desc class="value">5</desc><desc class="x centered">252.44147157190636</desc><desc class="y centered">354.82894736842104</desc></g></g></g><g class="series serie-10 color-10"><g class="bars"><g class="bar"><rect x="264.6378595317726" y="226.4635627530364" rx="0" ry="0" width="19.16575250836121" height="297.2672064777329" class="rect reactive tooltip-trigger"></rect><desc class="value">4.4</desc><desc class="x centered">274.22073578595325</desc><desc class="y centered">375.09716599190284</desc></g></g></g><g class="series serie-11 color-11"><g class="bars"><g class="bar"><rect x="286.4171237458194" y="246.73178137651826" rx="0" ry="0" width="19.16575250836121" height="276.998987854251" class="rect reactive tooltip-trigger"></rect><desc class="value">4.1</desc><desc class="x centered">296.0</desc><desc class="y centered">385.23127530364377</desc></g></g></g><g class="series serie-12 color-12"><g class="bars"><g class="bar"><rect x="308.19638795986623" y="260.2439271255061" rx="0" ry="0" width="19.16575250836121" height="263.4868421052632" class="rect reactive tooltip-trigger"></rect><desc class="value">3.9</desc><desc class="x centered">317.77926421404686</desc><desc class="y centered">391.9873481781377</desc></g></g></g><g class="series serie-13 color-13"><g class="bars"><g class="bar"><rect x="329.9756521739131" y="273.7560728744939" rx="0" ry="0" width="19.16575250836121" height="249.9746963562754" class="rect reactive tooltip-trigger"></rect><desc class="value">3.7</desc><desc class="x centered">339.5585284280937</desc><desc class="y centered">398.74342105263156</desc></g></g></g><g class="series serie-14 color-14"><g class="bars"><g class="bar"><rect x="351.7549163879599" y="287.26821862348174" rx="0" ry="0" width="19.16575250836121" height="236.46255060728754" class="rect reactive tooltip-trigger"></rect><desc class="value">3.5</desc><desc class="x centered">361.33779264214047</desc><desc class="y centered">405.4994939271255</desc></g></g></g><g class="series serie-15 color-15"><g class="bars"><g class="bar"><rect x="373.53418060200676" y="327.80465587044534" rx="0" ry="0" width="19.16575250836121" height="195.92611336032394" class="rect reactive tooltip-trigger"></rect><desc class="value">2.9</desc><desc class="x centered">383.11705685618733</desc><desc class="y centered">425.7677125506073</desc></g></g></g><g class="series serie-16 color-16"><g class="bars"><g class="bar"><rect x="395.31344481605356" y="10.269230769230717" rx="0" ry="0" width="19.16575250836121" height="513.4615384615386" class="rect reactive tooltip-trigger"></rect><desc class="value">7.6</desc><desc class="x centered">404.8963210702342</desc><desc class="y centered">267.0</desc></g></g></g><g class="series serie-17 color-17"><g class="bars"><g class="bar"><rect x="417.09270903010037" y="341.3168016194332" rx="0" ry="0" width="19.16575250836121" height="182.4139676113361" class="rect reactive tooltip-trigger"></rect><desc class="value">2.7</desc><desc class="x centered">426.67558528428094</desc><desc class="y centered">432.5237854251012</desc></g></g></g><g class="series serie-18 color-18"><g class="bars"><g class="bar"><rect x="438.8719732441472" y="368.34109311740895" rx="0" ry="0" width="19.16575250836121" height="155.38967611336034" class="rect reactive tooltip-trigger"></rect><desc class="value">2.3</desc><desc class="x centered">448.4548494983278</desc><desc class="y centered">446.0359311740891</desc></g></g></g><g class="series serie-19 color-19"><g class="bars"><g class="bar"><rect x="460.65123745819403" y="354.82894736842104" rx="0" ry="0" width="19.16575250836121" height="168.90182186234824" class="rect reactive tooltip-trigger"></rect><desc class="value">2.5</desc><desc class="x centered">470.23411371237466</desc><desc class="y centered">439.27985829959516</desc></g></g></g><g class="series serie-20 color-20"><g class="bars"><g class="bar"><rect x="482.4305016722409" y="307.53643724696354" rx="0" ry="0" width="19.16575250836121" height="216.19433198380574" class="rect reactive tooltip-trigger"></rect><desc class="value">3.2</desc><desc class="x centered">492.0133779264215</desc><desc class="y centered">415.6336032388664</desc></g></g></g><g class="series serie-21 color-21"><g class="bars"><g class="bar"><rect x="504.2097658862877" y="321.0485829959514" rx="0" ry="0" width="19.16575250836121" height="202.6821862348179" class="rect reactive tooltip-trigger"></rect><desc class="value">3</desc><desc class="x centered">513.7926421404683</desc><desc class="y centered">422.38967611336034</desc></g></g></g><g class="series serie-22 color-22"><g class="bars"><g class="bar"><rect x="525.9890301003345" y="327.80465587044534" rx="0" ry="0" width="19.16575250836121" height="195.92611336032394" class="rect reactive tooltip-trigger"></rect><desc class="value">2.9</desc><desc class="x centered">535.5719063545151</desc><desc class="y centered">425.7677125506073</desc></g></g></g></g><g class="titles"><text x="400.0" y="26" class="title plot_title">Image size (in GB)</text></g><g transform="translate(188, 46)" class="plot overlay"><g class="series serie-0 color-0"></g><g class="series serie-1 color-1"></g><g class="series serie-2 color-2"></g><g class="series serie-3 color-3"></g><g class="series serie-4 color-4"></g><g class="series serie-5 color-5"></g><g class="series serie-6 color-6"></g><g class="series serie-7 color-7"></g><g class="series serie-8 color-8"></g><g class="series serie-9 color-9"></g><g class="series serie-10 color-10"></g><g class="series serie-11 color-11"></g><g class="series serie-12 color-12"></g><g class="series serie-13 color-13"></g><g class="series serie-14 color-14"></g><g class="series serie-15 color-15"></g><g class="series serie-16 color-16"></g><g class="series serie-17 color-17"></g><g class="series serie-18 color-18"></g><g class="series serie-19 color-19"></g><g class="series serie-20 color-20"></g><g class="series serie-21 color-21"></g><g class="series serie-22 color-22"></g></g><g transform="translate(188, 46)" class="plot text-overlay"><g class="series serie-0 color-0"></g><g class="series serie-1 color-1"></g><g class="series serie-2 color-2"></g><g class="series serie-3 color-3"></g><g class="series serie-4 color-4"></g><g class="series serie-5 color-5"></g><g class="series serie-6 color-6"></g><g class="series serie-7 color-7"></g><g class="series serie-8 color-8"></g><g class="series serie-9 color-9"></g><g class="series serie-10 color-10"></g><g class="series serie-11 color-11"></g><g class="series serie-12 color-12"></g><g class="series serie-13 color-13"></g><g class="series serie-14 color-14"></g><g class="series serie-15 color-15"></g><g class="series serie-16 color-16"></g><g class="series serie-17 color-17"></g><g class="series serie-18 color-18"></g><g class="series serie-19 color-19"></g><g class="series serie-20 color-20"></g><g class="series serie-21 color-21"></g><g class="series serie-22 color-22"></g></g><g transform="translate(188, 46)" class="plot tooltip-overlay"><g transform="translate(0 0)" style="opacity: 0" class="tooltip"><rect rx="0" ry="0" width="0" height="0" class="tooltip-box"></rect><g class="text"></g></g></g><g transform="translate(10, 56)" class="legends"><g id="activate-serie-0" class="legend reactive activate-serie"><rect x="0.0" y="1.0" width="12" height="12" class="color-0 reactive"></rect><text x="17.0" y="11.2">Ubuntu</text></g><g id="activate-serie-1" class="legend reactive activate-serie"><rect x="0.0" y="22.0" width="12" height="12" class="color-1 reactive"></rect><text x="17.0" y="32.2">Xubuntu</text></g><g id="activate-serie-2" class="legend reactive activate-serie"><rect x="0.0" y="43.0" width="12" height="12" class="color-2 reactive"></rect><text x="17.0" y="53.2">Ubuntu Budgie</text></g><g id="activate-serie-3" class="legend reactive activate-serie"><rect x="0.0" y="64.0" width="12" height="12" class="color-3 reactive"></rect><text x="17.0" y="74.2">Kubuntu</text></g><g id="activate-serie-4" class="legend reactive activate-serie"><rect x="0.0" y="85.0" width="12" height="12" class="color-4 reactive"></rect><text x="17.0" y="95.2">Lubuntu</text></g><g id="activate-serie-5" class="legend reactive activate-serie"><rect x="0.0" y="106.0" width="12" height="12" class="color-5 reactive"></rect><text x="17.0" y="116.2">Ubuntu Unity</text></g><g id="activate-serie-6" class="legend reactive activate-serie"><rect x="0.0" y="127.0" width="12" height="12" class="color-6 reactive"></rect><text x="17.0" y="137.2">Ubuntu Cinnamon</text></g><g id="activate-serie-7" class="legend reactive activate-serie"><rect x="0.0" y="148.0" width="12" height="12" class="color-7 reactive"></rect><text x="17.0" y="158.2">Manjaro KDE</text></g><g id="activate-serie-8" class="legend reactive activate-serie"><rect x="0.0" y="169.0" width="12" height="12" class="color-8 reactive"></rect><text x="17.0" y="179.2">Manjaro Gnome</text></g><g id="activate-serie-9" class="legend reactive activate-serie"><rect x="0.0" y="190.0" width="12" height="12" class="color-9 reactive"></rect><text x="17.0" y="200.2">Manjaro XFCE</text></g><g id="activate-serie-10" class="legend reactive activate-serie"><rect x="0.0" y="211.0" width="12" height="12" class="color-10 reactive"></rect><text x="17.0" y="221.2">Debian KDE Tes…</text><title>Debian KDE Testing</title></g><g id="activate-serie-11" class="legend reactive activate-serie"><rect x="0.0" y="232.0" width="12" height="12" class="color-11 reactive"></rect><text x="17.0" y="242.2">Debian Gnome T…</text><title>Debian Gnome Testing</title></g><g id="activate-serie-12" class="legend reactive activate-serie"><rect x="0.0" y="253.0" width="12" height="12" class="color-12 reactive"></rect><text x="17.0" y="263.2">Debian XFCE Te…</text><title>Debian XFCE Testing</title></g><g id="activate-serie-13" class="legend reactive activate-serie"><rect x="0.0" y="274.0" width="12" height="12" class="color-13 reactive"></rect><text x="17.0" y="284.2">Zorin OS</text></g><g id="activate-serie-14" class="legend reactive activate-serie"><rect x="0.0" y="295.0" width="12" height="12" class="color-14 reactive"></rect><text x="17.0" y="305.2">EndeavourOS Ti…</text><title>EndeavourOS Titan Neo</title></g><g id="activate-serie-15" class="legend reactive activate-serie"><rect x="0.0" y="316.0" width="12" height="12" class="color-15 reactive"></rect><text x="17.0" y="326.2">Cachyos 260426</text></g><g id="activate-serie-16" class="legend reactive activate-serie"><rect x="0.0" y="337.0" width="12" height="12" class="color-16 reactive"></rect><text x="17.0" y="347.2">Bazzite nvidia…</text><title>Bazzite nvidia open stable</title></g><g id="activate-serie-17" class="legend reactive activate-serie"><rect x="0.0" y="358.0" width="12" height="12" class="color-17 reactive"></rect><text x="17.0" y="368.2">Fedora Worksta…</text><title>Fedora Workstation</title></g><g id="activate-serie-18" class="legend reactive activate-serie"><rect x="0.0" y="379.0" width="12" height="12" class="color-18 reactive"></rect><text x="17.0" y="389.2">Fedora Sway</text></g><g id="activate-serie-19" class="legend reactive activate-serie"><rect x="0.0" y="400.0" width="12" height="12" class="color-19 reactive"></rect><text x="17.0" y="410.2">Fedora KDE Mob…</text><title>Fedora KDE Mobile</title></g><g id="activate-serie-20" class="legend reactive activate-serie"><rect x="0.0" y="421.0" width="12" height="12" class="color-20 reactive"></rect><text x="17.0" y="431.2">Fedora KDE</text></g><g id="activate-serie-21" class="legend reactive activate-serie"><rect x="0.0" y="442.0" width="12" height="12" class="color-21 reactive"></rect><text x="17.0" y="452.2">Fedora COSMIC</text></g><g id="activate-serie-22" class="legend reactive activate-serie"><rect x="0.0" y="463.0" width="12" height="12" class="color-22 reactive"></rect><text x="17.0" y="473.2">Fedora Budgie</text></g></g><g transform="translate(790, 56)" class="legends"></g></g></svg></p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="chart-ecdad2b0-f598-46e0-aed0-6a9e501c4afa" class="pygal-chart" viewbox="0 0 800 600"><!--Generated with pygal 3.1.3 (lxml) ©Kozea 2012-2026 on 2026-08-28--><!--http://pygal.org--><!--http://github.com/Kozea/pygal--><defs></defs><title>Image size (in GB)</title><g class="graph bar-graph vertical"><rect x="0" y="0" width="800" height="600" class="background"></rect><g transform="translate(188, 46)" class="plot"><rect x="0" y="0" width="592.0" height="534" class="background"></rect><g class="axis y always_show"><g class="guides"><path d="M0.000000 523.730769 h592.000000" class="axis major line"></path><text x="-5" y="527.2307692307693" class="major">0</text><title>0</title></g><g class="guides"><path d="M0.000000 456.170040 h592.000000" class="guide line"></path><text x="-5" y="459.67004048583" class="">1</text><title>1</title></g><g class="guides"><path d="M0.000000 388.609312 h592.000000" class="guide line"></path><text x="-5" y="392.1093117408907" class="">2</text><title>2</title></g><g class="guides"><path d="M0.000000 321.048583 h592.000000" class="guide line"></path><text x="-5" y="324.5485829959514" class="">3</text><title>3</title></g><g class="guides"><path d="M0.000000 253.487854 h592.000000" class="guide line"></path><text x="-5" y="256.98785425101215" class="">4</text><title>4</title></g><g class="guides"><path d="M0.000000 185.927126 h592.000000" class="major guide line"></path><text x="-5" y="189.42712550607285" class="major">5</text><title>5</title></g><g class="guides"><path d="M0.000000 118.366397 h592.000000" class="guide line"></path><text x="-5" y="121.86639676113356" class="">6</text><title>6</title></g><g class="guides"><path d="M0.000000 50.805668 h592.000000" class="guide line"></path><text x="-5" y="54.30566801619432" class="">7</text><title>7</title></g></g><g class="series serie-0 color-0"><g class="bars"><g class="bar"><rect x="46.845217391304345" y="111.61032388663972" rx="0" ry="0" width="19.16575250836121" height="412.12044534412956" class="rect reactive tooltip-trigger"></rect><desc class="value">6.1</desc><desc class="x centered">56.42809364548495</desc><desc class="y centered">317.6705465587045</desc></g></g></g><g class="series serie-1 color-1"><g class="bars"><g class="bar"><rect x="68.62448160535116" y="192.68319838056675" rx="0" ry="0" width="19.16575250836121" height="331.04757085020253" class="rect reactive tooltip-trigger"></rect><desc class="value">4.9</desc><desc class="x centered">78.20735785953177</desc><desc class="y centered">358.206983805668</desc></g></g></g><g class="series serie-2 color-2"><g class="bars"><g class="bar"><rect x="90.403745819398" y="260.2439271255061" rx="0" ry="0" width="19.16575250836121" height="263.4868421052632" class="rect reactive tooltip-trigger"></rect><desc class="value">3.9</desc><desc class="x centered">99.9866220735786</desc><desc class="y centered">391.9873481781377</desc></g></g></g><g class="series serie-3 color-3"><g class="bars"><g class="bar"><rect x="112.18301003344482" y="199.43927125506076" rx="0" ry="0" width="19.16575250836121" height="324.2914979757085" class="rect reactive tooltip-trigger"></rect><desc class="value">4.8</desc><desc class="x centered">121.76588628762542</desc><desc class="y centered">361.585020242915</desc></g></g></g><g class="series serie-4 color-4"><g class="bars"><g class="bar"><rect x="133.96227424749162" y="273.7560728744939" rx="0" ry="0" width="19.16575250836121" height="249.9746963562754" class="rect reactive tooltip-trigger"></rect><desc class="value">3.7</desc><desc class="x centered">143.54515050167223</desc><desc class="y centered">398.74342105263156</desc></g></g></g><g class="series serie-5 color-5"><g class="bars"><g class="bar"><rect x="155.74153846153848" y="253.48785425101215" rx="0" ry="0" width="19.16575250836121" height="270.24291497975713" class="rect reactive tooltip-trigger"></rect><desc class="value">4</desc><desc class="x centered">165.3244147157191</desc><desc class="y centered">388.6093117408907</desc></g></g></g><g class="series serie-6 color-6"><g class="bars"><g class="bar"><rect x="177.5208026755853" y="165.6589068825911" rx="0" ry="0" width="19.16575250836121" height="358.0718623481782" class="rect reactive tooltip-trigger"></rect><desc class="value">5.3</desc><desc class="x centered">187.1036789297659</desc><desc class="y centered">344.69483805668017</desc></g></g></g><g class="series serie-7 color-7"><g class="bars"><g class="bar"><rect x="199.3000668896321" y="165.6589068825911" rx="0" ry="0" width="19.16575250836121" height="358.0718623481782" class="rect reactive tooltip-trigger"></rect><desc class="value">5.3</desc><desc class="x centered">208.8829431438127</desc><desc class="y centered">344.69483805668017</desc></g></g></g><g class="series serie-8 color-8"><g class="bars"><g class="bar"><rect x="221.07933110367895" y="172.41497975708495" rx="0" ry="0" width="19.16575250836121" height="351.31578947368433" class="rect reactive tooltip-trigger"></rect><desc class="value">5.2</desc><desc class="x centered">230.66220735785956</desc><desc class="y centered">348.0728744939271</desc></g></g></g><g class="series serie-9 color-9"><g class="bars"><g class="bar"><rect x="242.85859531772576" y="185.92712550607285" rx="0" ry="0" width="19.16575250836121" height="337.8036437246964" class="rect reactive tooltip-trigger"></rect><desc class="value">5</desc><desc class="x centered">252.44147157190636</desc><desc class="y centered">354.82894736842104</desc></g></g></g><g class="series serie-10 color-10"><g class="bars"><g class="bar"><rect x="264.6378595317726" y="226.4635627530364" rx="0" ry="0" width="19.16575250836121" height="297.2672064777329" class="rect reactive tooltip-trigger"></rect><desc class="value">4.4</desc><desc class="x centered">274.22073578595325</desc><desc class="y centered">375.09716599190284</desc></g></g></g><g class="series serie-11 color-11"><g class="bars"><g class="bar"><rect x="286.4171237458194" y="246.73178137651826" rx="0" ry="0" width="19.16575250836121" height="276.998987854251" class="rect reactive tooltip-trigger"></rect><desc class="value">4.1</desc><desc class="x centered">296.0</desc><desc class="y centered">385.23127530364377</desc></g></g></g><g class="series serie-12 color-12"><g class="bars"><g class="bar"><rect x="308.19638795986623" y="260.2439271255061" rx="0" ry="0" width="19.16575250836121" height="263.4868421052632" class="rect reactive tooltip-trigger"></rect><desc class="value">3.9</desc><desc class="x centered">317.77926421404686</desc><desc class="y centered">391.9873481781377</desc></g></g></g><g class="series serie-13 color-13"><g class="bars"><g class="bar"><rect x="329.9756521739131" y="273.7560728744939" rx="0" ry="0" width="19.16575250836121" height="249.9746963562754" class="rect reactive tooltip-trigger"></rect><desc class="value">3.7</desc><desc class="x centered">339.5585284280937</desc><desc class="y centered">398.74342105263156</desc></g></g></g><g class="series serie-14 color-14"><g class="bars"><g class="bar"><rect x="351.7549163879599" y="287.26821862348174" rx="0" ry="0" width="19.16575250836121" height="236.46255060728754" class="rect reactive tooltip-trigger"></rect><desc class="value">3.5</desc><desc class="x centered">361.33779264214047</desc><desc class="y centered">405.4994939271255</desc></g></g></g><g class="series serie-15 color-15"><g class="bars"><g class="bar"><rect x="373.53418060200676" y="327.80465587044534" rx="0" ry="0" width="19.16575250836121" height="195.92611336032394" class="rect reactive tooltip-trigger"></rect><desc class="value">2.9</desc><desc class="x centered">383.11705685618733</desc><desc class="y centered">425.7677125506073</desc></g></g></g><g class="series serie-16 color-16"><g class="bars"><g class="bar"><rect x="395.31344481605356" y="10.269230769230717" rx="0" ry="0" width="19.16575250836121" height="513.4615384615386" class="rect reactive tooltip-trigger"></rect><desc class="value">7.6</desc><desc class="x centered">404.8963210702342</desc><desc class="y centered">267.0</desc></g></g></g><g class="series serie-17 color-17"><g class="bars"><g class="bar"><rect x="417.09270903010037" y="341.3168016194332" rx="0" ry="0" width="19.16575250836121" height="182.4139676113361" class="rect reactive tooltip-trigger"></rect><desc class="value">2.7</desc><desc class="x centered">426.67558528428094</desc><desc class="y centered">432.5237854251012</desc></g></g></g><g class="series serie-18 color-18"><g class="bars"><g class="bar"><rect x="438.8719732441472" y="368.34109311740895" rx="0" ry="0" width="19.16575250836121" height="155.38967611336034" class="rect reactive tooltip-trigger"></rect><desc class="value">2.3</desc><desc class="x centered">448.4548494983278</desc><desc class="y centered">446.0359311740891</desc></g></g></g><g class="series serie-19 color-19"><g class="bars"><g class="bar"><rect x="460.65123745819403" y="354.82894736842104" rx="0" ry="0" width="19.16575250836121" height="168.90182186234824" class="rect reactive tooltip-trigger"></rect><desc class="value">2.5</desc><desc class="x centered">470.23411371237466</desc><desc class="y centered">439.27985829959516</desc></g></g></g><g class="series serie-20 color-20"><g class="bars"><g class="bar"><rect x="482.4305016722409" y="307.53643724696354" rx="0" ry="0" width="19.16575250836121" height="216.19433198380574" class="rect reactive tooltip-trigger"></rect><desc class="value">3.2</desc><desc class="x centered">492.0133779264215</desc><desc class="y centered">415.6336032388664</desc></g></g></g><g class="series serie-21 color-21"><g class="bars"><g class="bar"><rect x="504.2097658862877" y="321.0485829959514" rx="0" ry="0" width="19.16575250836121" height="202.6821862348179" class="rect reactive tooltip-trigger"></rect><desc class="value">3</desc><desc class="x centered">513.7926421404683</desc><desc class="y centered">422.38967611336034</desc></g></g></g><g class="series serie-22 color-22"><g class="bars"><g class="bar"><rect x="525.9890301003345" y="327.80465587044534" rx="0" ry="0" width="19.16575250836121" height="195.92611336032394" class="rect reactive tooltip-trigger"></rect><desc class="value">2.9</desc><desc class="x centered">535.5719063545151</desc><desc class="y centered">425.7677125506073</desc></g></g></g></g><g class="titles"><text x="400.0" y="26" class="title plot_title">Image size (in GB)</text></g><g transform="translate(188, 46)" class="plot overlay"><g class="series serie-0 color-0"></g><g class="series serie-1 color-1"></g><g class="series serie-2 color-2"></g><g class="series serie-3 color-3"></g><g class="series serie-4 color-4"></g><g class="series serie-5 color-5"></g><g class="series serie-6 color-6"></g><g class="series serie-7 color-7"></g><g class="series serie-8 color-8"></g><g class="series serie-9 color-9"></g><g class="series serie-10 color-10"></g><g class="series serie-11 color-11"></g><g class="series serie-12 color-12"></g><g class="series serie-13 color-13"></g><g class="series serie-14 color-14"></g><g class="series serie-15 color-15"></g><g class="series serie-16 color-16"></g><g class="series serie-17 color-17"></g><g class="series serie-18 color-18"></g><g class="series serie-19 color-19"></g><g class="series serie-20 color-20"></g><g class="series serie-21 color-21"></g><g class="series serie-22 color-22"></g></g><g transform="translate(188, 46)" class="plot text-overlay"><g class="series serie-0 color-0"></g><g class="series serie-1 color-1"></g><g class="series serie-2 color-2"></g><g class="series serie-3 color-3"></g><g class="series serie-4 color-4"></g><g class="series serie-5 color-5"></g><g class="series serie-6 color-6"></g><g class="series serie-7 color-7"></g><g class="series serie-8 color-8"></g><g class="series serie-9 color-9"></g><g class="series serie-10 color-10"></g><g class="series serie-11 color-11"></g><g class="series serie-12 color-12"></g><g class="series serie-13 color-13"></g><g class="series serie-14 color-14"></g><g class="series serie-15 color-15"></g><g class="series serie-16 color-16"></g><g class="series serie-17 color-17"></g><g class="series serie-18 color-18"></g><g class="series serie-19 color-19"></g><g class="series serie-20 color-20"></g><g class="series serie-21 color-21"></g><g class="series serie-22 color-22"></g></g><g transform="translate(188, 46)" class="plot tooltip-overlay"><g transform="translate(0 0)" style="opacity: 0" class="tooltip"><rect rx="0" ry="0" width="0" height="0" class="tooltip-box"></rect><g class="text"></g></g></g><g transform="translate(10, 56)" class="legends"><g id="activate-serie-0" class="legend reactive activate-serie"><rect x="0.0" y="1.0" width="12" height="12" class="color-0 reactive"></rect><text x="17.0" y="11.2">Ubuntu</text></g><g id="activate-serie-1" class="legend reactive activate-serie"><rect x="0.0" y="22.0" width="12" height="12" class="color-1 reactive"></rect><text x="17.0" y="32.2">Xubuntu</text></g><g id="activate-serie-2" class="legend reactive activate-serie"><rect x="0.0" y="43.0" width="12" height="12" class="color-2 reactive"></rect><text x="17.0" y="53.2">Ubuntu Budgie</text></g><g id="activate-serie-3" class="legend reactive activate-serie"><rect x="0.0" y="64.0" width="12" height="12" class="color-3 reactive"></rect><text x="17.0" y="74.2">Kubuntu</text></g><g id="activate-serie-4" class="legend reactive activate-serie"><rect x="0.0" y="85.0" width="12" height="12" class="color-4 reactive"></rect><text x="17.0" y="95.2">Lubuntu</text></g><g id="activate-serie-5" class="legend reactive activate-serie"><rect x="0.0" y="106.0" width="12" height="12" class="color-5 reactive"></rect><text x="17.0" y="116.2">Ubuntu Unity</text></g><g id="activate-serie-6" class="legend reactive activate-serie"><rect x="0.0" y="127.0" width="12" height="12" class="color-6 reactive"></rect><text x="17.0" y="137.2">Ubuntu Cinnamon</text></g><g id="activate-serie-7" class="legend reactive activate-serie"><rect x="0.0" y="148.0" width="12" height="12" class="color-7 reactive"></rect><text x="17.0" y="158.2">Manjaro KDE</text></g><g id="activate-serie-8" class="legend reactive activate-serie"><rect x="0.0" y="169.0" width="12" height="12" class="color-8 reactive"></rect><text x="17.0" y="179.2">Manjaro Gnome</text></g><g id="activate-serie-9" class="legend reactive activate-serie"><rect x="0.0" y="190.0" width="12" height="12" class="color-9 reactive"></rect><text x="17.0" y="200.2">Manjaro XFCE</text></g><g id="activate-serie-10" class="legend reactive activate-serie"><rect x="0.0" y="211.0" width="12" height="12" class="color-10 reactive"></rect><text x="17.0" y="221.2">Debian KDE Tes…</text><title>Debian KDE Testing</title></g><g id="activate-serie-11" class="legend reactive activate-serie"><rect x="0.0" y="232.0" width="12" height="12" class="color-11 reactive"></rect><text x="17.0" y="242.2">Debian Gnome T…</text><title>Debian Gnome Testing</title></g><g id="activate-serie-12" class="legend reactive activate-serie"><rect x="0.0" y="253.0" width="12" height="12" class="color-12 reactive"></rect><text x="17.0" y="263.2">Debian XFCE Te…</text><title>Debian XFCE Testing</title></g><g id="activate-serie-13" class="legend reactive activate-serie"><rect x="0.0" y="274.0" width="12" height="12" class="color-13 reactive"></rect><text x="17.0" y="284.2">Zorin OS</text></g><g id="activate-serie-14" class="legend reactive activate-serie"><rect x="0.0" y="295.0" width="12" height="12" class="color-14 reactive"></rect><text x="17.0" y="305.2">EndeavourOS Ti…</text><title>EndeavourOS Titan Neo</title></g><g id="activate-serie-15" class="legend reactive activate-serie"><rect x="0.0" y="316.0" width="12" height="12" class="color-15 reactive"></rect><text x="17.0" y="326.2">Cachyos 260426</text></g><g id="activate-serie-16" class="legend reactive activate-serie"><rect x="0.0" y="337.0" width="12" height="12" class="color-16 reactive"></rect><text x="17.0" y="347.2">Bazzite nvidia…</text><title>Bazzite nvidia open stable</title></g><g id="activate-serie-17" class="legend reactive activate-serie"><rect x="0.0" y="358.0" width="12" height="12" class="color-17 reactive"></rect><text x="17.0" y="368.2">Fedora Worksta…</text><title>Fedora Workstation</title></g><g id="activate-serie-18" class="legend reactive activate-serie"><rect x="0.0" y="379.0" width="12" height="12" class="color-18 reactive"></rect><text x="17.0" y="389.2">Fedora Sway</text></g><g id="activate-serie-19" class="legend reactive activate-serie"><rect x="0.0" y="400.0" width="12" height="12" class="color-19 reactive"></rect><text x="17.0" y="410.2">Fedora KDE Mob…</text><title>Fedora KDE Mobile</title></g><g id="activate-serie-20" class="legend reactive activate-serie"><rect x="0.0" y="421.0" width="12" height="12" class="color-20 reactive"></rect><text x="17.0" y="431.2">Fedora KDE</text></g><g id="activate-serie-21" class="legend reactive activate-serie"><rect x="0.0" y="442.0" width="12" height="12" class="color-21 reactive"></rect><text x="17.0" y="452.2">Fedora COSMIC</text></g><g id="activate-serie-22" class="legend reactive activate-serie"><rect x="0.0" y="463.0" width="12" height="12" class="color-22 reactive"></rect><text x="17.0" y="473.2">Fedora Budgie</text></g></g><g transform="translate(790, 56)" class="legends"></g></g></svg></p>
 <h2>Round 1 - Basic Bootup</h2>
 <p><strong>Requirements</strong>: Trying each image with 1.5 GB. Had a 3 minute timer going on each boot so I didn't let it take forever. I mostly did not test twice, so your results may vary.</p>
 <ul>
@@ -2113,7 +2152,7 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 <h2>Round 4 - Breaking Point</h2>
 <p><strong>Requirements</strong>: Same as above except we reduce the memory amount in 0.05G increments. </p>
 <p><!--?xml version='1.0' encoding='utf-8'?-->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="chart-8abe888e-02dd-42b6-a2ed-7c89556d346d" class="pygal-chart" viewbox="0 0 800 600"><!--Generated with pygal 3.1.0 (lxml) ©Kozea 2012-2025 on 2026-05-12--><!--http://pygal.org--><!--http://github.com/Kozea/pygal--><defs></defs><title>Memory usage compared (in G)</title><g class="graph bar-graph vertical"><rect x="0" y="0" width="800" height="600" class="background"></rect><g transform="translate(48, 46)" class="plot"><rect x="0" y="0" width="689.9802870281301" height="477.4266705405059" class="background"></rect><g class="axis y always_show"><g class="guides"><path d="M0.000000 468.245388 h689.980287" class="axis major line"></path><text x="-5" y="471.7453884147269" class="major">0</text><title>0</title></g><g class="guides"><path d="M0.000000 414.237846 h689.980287" class="guide line"></path><text x="-5" y="417.7378464983801" class="">0.1</text><title>0.1</title></g><g class="guides"><path d="M0.000000 360.230305 h689.980287" class="guide line"></path><text x="-5" y="363.7303045820333" class="">0.2</text><title>0.2</title></g><g class="guides"><path d="M0.000000 306.222763 h689.980287" class="guide line"></path><text x="-5" y="309.72276266568645" class="">0.3</text><title>0.3</title></g><g class="guides"><path d="M0.000000 252.215221 h689.980287" class="guide line"></path><text x="-5" y="255.71522074933964" class="">0.4</text><title>0.4</title></g><g class="guides"><path d="M0.000000 198.207679 h689.980287" class="major guide line"></path><text x="-5" y="201.70767883299283" class="major">0.5</text><title>0.5</title></g><g class="guides"><path d="M0.000000 144.200137 h689.980287" class="guide line"></path><text x="-5" y="147.70013691664604" class="">0.6</text><title>0.6</title></g><g class="guides"><path d="M0.000000 90.192595 h689.980287" class="guide line"></path><text x="-5" y="93.69259500029926" class="">0.7</text><title>0.7</title></g><g class="guides"><path d="M0.000000 36.185053 h689.980287" class="guide line"></path><text x="-5" y="39.68505308395231" class="">0.8</text><title>0.8</title></g></g><g class="axis x"><path d="M0.000000 0.000000 v477.426671" class="line"></path><g class="guides"><path d="M179.129498 0.000000 v477.426671" class="guide line"></path><text x="179.12949759384148" y="492.4266705405059" class="" transform="rotate(20 179.129498 492.426671)">Lubuntu</text></g><g class="guides"><path d="M510.850789 0.000000 v477.426671" class="guide line"></path><text x="510.8507894342886" y="492.4266705405059" class="" transform="rotate(20 510.850789 492.426671)">Fedora Sway</text></g></g><g class="series serie-0 color-0"><g class="bars"><g class="bar"><rect x="50.68701339322031" y="117.1963659584726" rx="0" ry="0" width="256.88496840124225" height="351.0490224562543" class="rect reactive tooltip-trigger"></rect><desc class="value">0.65</desc><desc class="x centered">179.12949759384145</desc><desc class="y centered">292.72087718659975</desc><desc class="x_label">Lubuntu</desc></g><g class="bar"><rect x="382.4083052336675" y="9.181282125778978" rx="0" ry="0" width="256.88496840124225" height="459.0641062889479" class="rect reactive tooltip-trigger"></rect><desc class="value">0.85</desc><desc class="x centered">510.8507894342886</desc><desc class="y centered">238.71333527025294</desc><desc class="x_label">Fedora Sway</desc></g></g></g></g><g class="titles"><text x="400.0" y="26" class="title plot_title">Memory usage compared (in G)</text></g><g transform="translate(48, 46)" class="plot overlay"><g class="series serie-0 color-0"></g></g><g transform="translate(48, 46)" class="plot text-overlay"><g class="series serie-0 color-0"></g></g><g transform="translate(48, 46)" class="plot tooltip-overlay"><g transform="translate(0 0)" style="opacity: 0" class="tooltip"><rect rx="0" ry="0" width="0" height="0" class="tooltip-box"></rect><g class="text"></g></g></g><g transform="translate(58, 566)" class="legends"><g id="activate-serie-0" class="legend reactive activate-serie"><rect x="0.0" y="1.0" width="12" height="12" class="color-0 reactive"></rect><text x="17.0" y="11.2">Desktop responsive to Folder</text></g></g></g></svg></p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="chart-90ffcd92-45ba-4a70-92e2-6f336895e023" class="pygal-chart" viewbox="0 0 800 600"><!--Generated with pygal 3.1.3 (lxml) ©Kozea 2012-2026 on 2026-08-28--><!--http://pygal.org--><!--http://github.com/Kozea/pygal--><defs></defs><title>Memory usage compared (in G)</title><g class="graph bar-graph vertical"><rect x="0" y="0" width="800" height="600" class="background"></rect><g transform="translate(48, 46)" class="plot"><rect x="0" y="0" width="689.9802870281301" height="477.4266705405059" class="background"></rect><g class="axis y always_show"><g class="guides"><path d="M0.000000 468.245388 h689.980287" class="axis major line"></path><text x="-5" y="471.7453884147269" class="major">0</text><title>0</title></g><g class="guides"><path d="M0.000000 414.237846 h689.980287" class="guide line"></path><text x="-5" y="417.7378464983801" class="">0.1</text><title>0.1</title></g><g class="guides"><path d="M0.000000 360.230305 h689.980287" class="guide line"></path><text x="-5" y="363.7303045820333" class="">0.2</text><title>0.2</title></g><g class="guides"><path d="M0.000000 306.222763 h689.980287" class="guide line"></path><text x="-5" y="309.72276266568645" class="">0.3</text><title>0.3</title></g><g class="guides"><path d="M0.000000 252.215221 h689.980287" class="guide line"></path><text x="-5" y="255.71522074933964" class="">0.4</text><title>0.4</title></g><g class="guides"><path d="M0.000000 198.207679 h689.980287" class="major guide line"></path><text x="-5" y="201.70767883299283" class="major">0.5</text><title>0.5</title></g><g class="guides"><path d="M0.000000 144.200137 h689.980287" class="guide line"></path><text x="-5" y="147.70013691664604" class="">0.6</text><title>0.6</title></g><g class="guides"><path d="M0.000000 90.192595 h689.980287" class="guide line"></path><text x="-5" y="93.69259500029926" class="">0.7</text><title>0.7</title></g><g class="guides"><path d="M0.000000 36.185053 h689.980287" class="guide line"></path><text x="-5" y="39.68505308395231" class="">0.8</text><title>0.8</title></g></g><g class="axis x"><path d="M0.000000 0.000000 v477.426671" class="line"></path><g class="guides"><path d="M179.129498 0.000000 v477.426671" class="guide line"></path><text x="179.12949759384148" y="492.4266705405059" class="" transform="rotate(20 179.129498 492.426671)">Lubuntu</text></g><g class="guides"><path d="M510.850789 0.000000 v477.426671" class="guide line"></path><text x="510.8507894342886" y="492.4266705405059" class="" transform="rotate(20 510.850789 492.426671)">Fedora Sway</text></g></g><g class="series serie-0 color-0"><g class="bars"><g class="bar"><rect x="50.68701339322031" y="117.1963659584726" rx="0" ry="0" width="256.88496840124225" height="351.0490224562543" class="rect reactive tooltip-trigger"></rect><desc class="value">0.65</desc><desc class="x centered">179.12949759384145</desc><desc class="y centered">292.72087718659975</desc><desc class="x_label">Lubuntu</desc></g><g class="bar"><rect x="382.4083052336675" y="9.181282125778978" rx="0" ry="0" width="256.88496840124225" height="459.0641062889479" class="rect reactive tooltip-trigger"></rect><desc class="value">0.85</desc><desc class="x centered">510.8507894342886</desc><desc class="y centered">238.71333527025294</desc><desc class="x_label">Fedora Sway</desc></g></g></g></g><g class="titles"><text x="400.0" y="26" class="title plot_title">Memory usage compared (in G)</text></g><g transform="translate(48, 46)" class="plot overlay"><g class="series serie-0 color-0"></g></g><g transform="translate(48, 46)" class="plot text-overlay"><g class="series serie-0 color-0"></g></g><g transform="translate(48, 46)" class="plot tooltip-overlay"><g transform="translate(0 0)" style="opacity: 0" class="tooltip"><rect rx="0" ry="0" width="0" height="0" class="tooltip-box"></rect><g class="text"></g></g></g><g transform="translate(58, 566)" class="legends"><g id="activate-serie-0" class="legend reactive activate-serie"><rect x="0.0" y="1.0" width="12" height="12" class="color-0 reactive"></rect><text x="17.0" y="11.2">Desktop responsive to Folder</text></g></g></g></svg></p>
 <h2>Conclusion</h2>
 <ul>
 <li>Lubuntu still wins even with a bigger comparison base, but minimum memory has increased.</li>
@@ -2475,375 +2514,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 </span></span><span style="display:flex;"><span> <span style="color:#66d9ef">return</span> list(forecasts)
 </span></span></code></pre></div><p>But, here is the gotcha, something I was doing inherently wrong. Lists in python are mutable objects. So, reversing the list modifies the list in place, without creating a new reference of the list. My initial approach was to do this</p>]]></description>
       <source url="https://soumyadghosh.github.io/website/index.xml">Soumyadeep Ghosh</source>
-    </item>
-    <item>
-      <title>Smart DCA Strategy – Meet DCAi That Times the Dip The Open Source Machine Learning</title>
-      <link>https://utappia.org/2026/02/13/smart-dca-strategy-machine-learning-dcai/</link>
-      <guid isPermaLink="true">https://utappia.org/2026/02/13/smart-dca-strategy-machine-learning-dcai/</guid>
-      <pubDate>Fri, 13 Feb 2026 17:57:58 GMT</pubDate>
-      <description><![CDATA[<p class="wp-block-paragraph">Is your Dollar Cost Averaging strategy &#8220;blind&#8221;? Buying on the 1st of the month is disciplined, but buying during a crash is profitable. Here is how the open source Smart DCA Strategy, based on <a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">K-Nearest Neighbors (KNN) algorithm</a> can help you aggressively buy the dips and preserve cash when the market is overheated.</p>
-
-
-
-<p class="wp-block-paragraph">A few months ago, I analyzed <a href="https://arxiv.org/abs/2308.05200" type="link" id="https://arxiv.org/abs/2308.05200">a research paper on &#8220;Smart DCA Strategy&#8221;</a> and developed a <strong>TradingView PineScript</strong> indicator to implement it. The original concept was useful—it calculated the ideal investment amount based on price levels—but it lacked a crucial element: <strong>Timing.</strong></p>
-
-
-
-<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
-<p class="wp-block-paragraph">I didn&#8217;t just want to know <strong><em>how much</em> to buy</strong> with my DCA strategy; </p>
-
-
-
-<p class="wp-block-paragraph">I needed to know <em><strong>when</strong></em> to deploy that capital for maximum, long term impact.</p>
-</blockquote>
-
-
-
-<p class="wp-block-paragraph">By integrating Machine Learning into the Smart DCA Strategy, I programmed the indicator to identify &#8220;fair value&#8221; based on historical price action. The result? A system that signals exactly when to enter and how much to commit, giving you the <em>psychological confidence</em> that you aren&#8217;t just buying at random.</p>
-
-
-
-<p class="wp-block-paragraph">I call it <strong>DCAi</strong> (DCA + AI)&#8230;. yeah I know right&#8230; what a name <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f61b.png" alt="😛" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
-
-
-
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="1022" height="439" src="https://utappia.org/wp-content/uploads/2026/02/dcai-machine-learning.webp" alt="DCAi – The Machine Learning Strategy That Times the Dip" class="wp-image-49946" srcset="https://utappia.org/wp-content/uploads/2026/02/dcai-machine-learning.webp 1022w, https://utappia.org/wp-content/uploads/2026/02/dcai-machine-learning-300x129.webp 300w, https://utappia.org/wp-content/uploads/2026/02/dcai-machine-learning-768x330.webp 768w" sizes="(max-width: 1022px) 100vw, 1022px" /></figure>
-
-
-
-<h2 class="wp-block-heading">What is DCAi?</h2>
-
-
-
-<p class="wp-block-paragraph">Think of DCAi as an <a href="https://utappia.org/2025/07/10/ai-terminal-free/">intelligent Ai</a> assistant that scans market history inside TradingView.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>When the market rallies:</strong> The assistant warns you: <em>&#8220;Do not buy now. The price is overextended. Keep your cash in the &#8216;Savings Pot&#8217; and wait for the next correction.&#8221;</em></li>
-
-
-
-<li><strong>When the market drops:</strong> It scans historical data to see if similar price structures in the past led to a recovery. If the algorithm identifies a high statistical probability of a bounce, it signals a <strong>Buy</strong>.</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">Why DCAi Smart DCA Strategy Outperforms Traditional DCA</h2>
-
-
-
-<p class="wp-block-paragraph">The fact is that the standard DCA builds discipline. However, it is a static strategy — you buy the same amount on the same day, regardless of whether the market is crashing or &#8220;<em>mooning</em>&#8220;. DCAi is a Smart DCA Strategy that introduces <strong>three dynamic concepts </strong>to optimize your returns:</p>
-
-
-
-<h3 class="wp-block-heading">1. Dynamic Sizing (The Rho Parameter)</h3>
-
-
-
-<p class="wp-block-paragraph">In your standard monthly DCA, you invest $100 whether Bitcoin is at $100,000 or $20,000. </p>
-
-
-
-<p class="wp-block-paragraph">In contrast, the DCAi the <strong><em>Rho</em></strong> parameter to adjust your exposure.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>How it works:</strong> instead of a fixed amount, the DCAi measures the deviation of the current price from its historical average.
-<ul class="wp-block-list">
-<li><strong>Flat Market:</strong> It invests your base budget.</li>
-
-
-
-<li><strong>Market Crash:</strong> If the price drops significantly (e.g., -40%), the algorithm aggressively increases the buy amount, allowing you to <em><strong>lower your average entry price</strong></em> faster.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">2. Statistical Confidence (KNN Algorithm)</h3>
-
-
-
-<p class="wp-block-paragraph">The DCAi system doesn&#8217;t &#8220;predict&#8221; the future; it compares the present to the past using the <strong>K-Nearest Neighbors (KNN)</strong> algorithm.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>How it works:</strong> KNN looks for historical moments where technical indicators (like volume and volatility) mirrored today&#8217;s price action. If the majority of those historical instances resulted in an uptrend, the system generates a signal with a &#8220;Confidence Score.&#8221;</li>
-</ul>
-
-
-
-<h3 class="wp-block-heading">3. The &#8220;Savings Pot&#8221; in the DCAi &#8211; Smart DCA Strategy</h3>
-
-
-
-<p class="wp-block-paragraph">If the market is in a parabolic uptrend (&#8220;Mooning&#8221;) and there are no safe entry points, DCAi will try to prevent you from buying the top.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>How it works:</strong> If the Machine Learning model detects low confidence for the month, it halts trading. Your monthly budget is moved to a virtual <strong>Savings Pot</strong>.</li>
-
-
-
-<li><strong>The Advantage:</strong> This cash accumulates. When a major correction finally occurs, you have a stockpile of &#8220;dry powder&#8221; ready to deploy at the bottom.</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">The Limitations: No Algorithm is Magic so is the DCAi Smart DCA Strategy</h2>
-
-
-
-<p class="wp-block-paragraph">DCAi is a powerful tool, but it has limitations you must understand and accept:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>False Signals:</strong> Historical probability does not guarantee future performance. The market can signal a buy, yet the price may continue to fall.</li>
-
-
-
-<li><strong>Overfitting:</strong> The algorithm learns from known history. If a &#8220;Black Swan&#8221; event occurs (a scenario never seen before), the model may misinterpret the data.</li>
-
-
-
-<li><strong>Lag:</strong> DCAi confirms signals on candle closes (e.g., Daily close). In a rapid V-shape recovery, you might buy slightly higher than the absolute bottom.</li>
-
-
-
-<li><strong>Platform Limits:</strong> TradingView limits the script&#8217;s &#8220;memory&#8221; to about 3,000 candles. For this reason, <strong>Daily (D) or Weekly (W) timeframes are highly recommended.</strong></li>
-</ul>
-
-
-
-<p class="wp-block-paragraph"><em>Recommendation: Always backtest and forward-test using Paper Trading for 1-3 months before using real capital.</em></p>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-
-
-<h2 class="wp-block-heading">Step-by-Step Installation Guide</h2>
-
-
-
-<p class="wp-block-paragraph">Ready to automate your analysis? Follow these steps to set up DCAi on TradingView.</p>
-
-
-
-<h3 class="wp-block-heading">1. Install the Script</h3>
-
-
-
-<p class="wp-block-paragraph">Open your chart on TradingView and locate the <strong>Pine Editor</strong> tab at the bottom.</p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" width="615" height="502" src="https://utappia.org/wp-content/uploads/2026/02/image.png" alt="" class="wp-image-49947" srcset="https://utappia.org/wp-content/uploads/2026/02/image.png 615w, https://utappia.org/wp-content/uploads/2026/02/image-300x245.png 300w" sizes="(max-width: 615px) 100vw, 615px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph">Clear any existing code in the editor.</p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" width="1024" height="259" src="https://utappia.org/wp-content/uploads/2026/02/image-1.png" alt="DCAi pine script" class="wp-image-49950" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1.png 1024w, https://utappia.org/wp-content/uploads/2026/02/image-1-300x76.png 300w, https://utappia.org/wp-content/uploads/2026/02/image-1-768x194.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph">Copy the official DCAi code:</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>Source Code:</strong> <a href="https://github.com/cerebrux/DCAi/blob/stable/dcai.pine" target="_blank" rel="noreferrer noopener"><strong>https://github.com/cerebrux/DCAi/blob/stable/dcai.pine</strong></a></li>
-</ul>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="680" height="362" src="https://utappia.org/wp-content/uploads/2026/02/image-1-2.png" alt="dcai.pine" class="wp-image-49951" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1-2.png 680w, https://utappia.org/wp-content/uploads/2026/02/image-1-2-300x160.png 300w" sizes="auto, (max-width: 680px) 100vw, 680px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph">Paste the code, click <strong>Save</strong>, and then select <strong>&#8220;Add to chart&#8221;</strong>.</p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="640" height="255" src="https://utappia.org/wp-content/uploads/2026/02/image-1-3.png" alt="dcai add to the chart" class="wp-image-49952" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1-3.png 640w, https://utappia.org/wp-content/uploads/2026/02/image-1-3-300x120.png 300w" sizes="auto, (max-width: 640px) 100vw, 640px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph">Once you add it, it will start the training to past price action data and it will look like :</p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="1024" height="781" src="https://utappia.org/wp-content/uploads/2026/02/image-1-4.webp" alt="Smart DCA Strategy DCAi Strategy Indicator" class="wp-image-49954" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1-4.webp 1024w, https://utappia.org/wp-content/uploads/2026/02/image-1-4-300x229.webp 300w, https://utappia.org/wp-content/uploads/2026/02/image-1-4-768x586.webp 768w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
-</div>
-
-
-<h3 class="wp-block-heading">2. Asset Configuration</h3>
-
-
-
-<p class="wp-block-paragraph">DCAi requires different settings for Crypto versus Stocks. You must configure it for the asset you are trading.</p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="712" height="165" src="https://utappia.org/wp-content/uploads/2026/02/image-1-5.png" alt="DCAi indicator Smart DCA Strategy " class="wp-image-49957" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1-5.png 712w, https://utappia.org/wp-content/uploads/2026/02/image-1-5-300x70.png 300w" sizes="auto, (max-width: 712px) 100vw, 712px" /></figure>
-</div>
-
-
-<ol start="1" class="wp-block-list">
-<li>Click the <strong>Settings</strong> (gear icon) on the DCAi indicator.</li>
-
-
-
-<li>Select your <strong>Asset Class</strong> (Crypto, Stocks, Indices, or Commodities).</li>
-
-
-
-<li>Set your <strong>Start Date</strong> (e.g., the 1st of the current month).</li>
-
-
-
-<li>Set your <strong>Base Monthly Budget</strong> (e.g., $100). This is the amount you <em>would</em> spend in a standard DCA strategy.</li>
-
-
-
-<li><strong>Crucial:</strong> Ensure your chart is on the <strong>Daily Timeframe</strong>.</li>
-
-
-
-<li>Select the ticker based on the Asset Class you choose</li>
-</ol>
-
-
-
-<h3 class="wp-block-heading">3.  Smart DCA Strategy Execution</h3>
-
-
-
-<p class="wp-block-paragraph">Once set up, patience is key.</p>
-
-
-
-<ul class="wp-block-list">
-<li><strong>No Signal?</strong> If a month passes without a signal, <strong>do not spend your budget.</strong> Keep it in your &#8220;account&#8221;. The script will automatically add the months amount to your &#8220;Savings Pot&#8221; on the dashboard.</li>
-
-
-
-<li><strong>Buy Signal?</strong> The chart will display a label with the exact amount to invest.
-<ul class="wp-block-list">
-<li><em>Example:</em> If the label says <strong>$124</strong>, it means the algorithm is using your $100 monthly budget plus $24 from your accumulated savings to buy the dip.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1023" height="566" src="https://utappia.org/wp-content/uploads/2026/02/image-1-7.webp" alt="Smart DCA Strategy DCAi settings" class="wp-image-49959" srcset="https://utappia.org/wp-content/uploads/2026/02/image-1-7.webp 1023w, https://utappia.org/wp-content/uploads/2026/02/image-1-7-300x166.webp 300w, https://utappia.org/wp-content/uploads/2026/02/image-1-7-768x425.webp 768w" sizes="auto, (max-width: 1023px) 100vw, 1023px" /></figure>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-
-
-<h2 class="wp-block-heading">Where to Execute Your Trades</h2>
-
-
-
-<p class="wp-block-paragraph">Once DCAi gives the signal, you need a platform with low fees and flexible execution. Here are two recommendations with signup bonuses:</p>
-
-
-
-<p class="wp-block-paragraph"><strong>For Bitcoin (The &#8220;Bitcoin Only&#8221; Strategy):</strong></p>
-
-
-
-<p class="wp-block-paragraph"><strong>Strike</strong> is the superior choice for pure Bitcoin accumulation due to its minimal fees.</p>
-
-
-
-<ul class="wp-block-list">
-<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f449.png" alt="👉" class="wp-smiley" style="height: 1em; max-height: 1em;" /> <a href="https://invite.strike.me/QWHYWZ">Sign up for Strike here to claim your bonus</a></li>
-
-
-
-<li>Deposit your DCA amount</li>
-
-
-
-<li><strong>Bonus:</strong> You get a €500 cumulative fee-free Bitcoin purchases.</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph"><strong>For ETFs &amp; Stocks (e.g., S&amp;P 500):</strong></p>
-
-
-
-<p class="wp-block-paragraph">If you are building a diversified portfolio, <strong>Trading 212</strong> is ideal for fractional investing (you can invest as little as €1).</p>
-
-
-
-<ol start="1" class="wp-block-list">
-<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f449.png" alt="👉" class="wp-smiley" style="height: 1em; max-height: 1em;" /> <a href="https://www.trading212.com/invite/4DrudI95mps">Open a Trading 212 account and get a free share</a> <em>(Promo valid until March 4, 2026)</em>.</li>
-
-
-
-<li>Create a free virtual Visa card and add it to Apple/Google Wallet (Earn 1.5% cashback on investments. Promo ends in 02/28 ).</li>
-
-
-
-<li>Instant, fee-free deposits via Google/Apple Pay.</li>
-</ol>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-
-
-<h2 class="wp-block-heading">Conclusion</h2>
-
-
-
-<p class="wp-block-paragraph">The goal of any robust investment strategy is to <strong>remove emotion from the equation.</strong> DCAi achieves this by adding a layer of algorithmic intelligence to the proven discipline of Dollar Cost Averaging. Whether you are stacking Sats or accumulating ETFs, having a machine learning model tell you when to be aggressive and when to sit on your hands is the ultimate portfolio upgrade.</p>
-
-
-
-<p class="wp-block-paragraph"><strong>Next Step:</strong> Download the code, run your own backtests, and see how much lower your average entry price could be!</p>
-
-
-
-<p class="wp-block-paragraph"><strong>Join the Community:</strong></p>
-
-
-
-<p class="wp-block-paragraph">Did you find settings that work perfectly for a specific asset? Share your results in our GitHub Discussions:</p>
-
-
-
-<ul class="wp-block-list">
-<li><a href="https://github.com/cerebrux/DCAi/discussions">https://github.com/cerebrux/DCAi/discussions</a></li>
-</ul>
-
-
-
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-
-
-
-<p class="wp-block-paragraph"><em>Disclaimer: Investments involve risk. DCAi is a technical analysis tool, not financial advice or a guarantee of profit. Always conduct your own due diligence.</em></p>
-<p>The post <a href="https://utappia.org/2026/02/13/smart-dca-strategy-machine-learning-dcai/">Smart DCA Strategy &#8211; Meet DCAi That Times the Dip The Open Source Machine Learning</a> appeared first on <a href="https://utappia.org">Utappia</a>.</p>]]></description>
-      <source url="http://utappia.org/feed/">Salih Emin</source>
     </item>
     <item>
       <title>REST API Development with Qt 6</title>
@@ -3639,19 +3309,19 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
       <link>https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</link>
       <guid isPermaLink="true">https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</guid>
       <pubDate>Fri, 16 May 2025 11:17:23 GMT</pubDate>
-      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
+      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd wp-block-paragraph">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
 
 
 
-<p></p>
+<p class="wp-block-paragraph"></p>
 
 
 
-<p></p>
+<p class="wp-block-paragraph"></p>
 
 
 
-<p></p>]]></description>
+<p class="wp-block-paragraph"></p>]]></description>
       <source url="https://ograblog.wordpress.com/feed/atom">Oliver Grawert</source>
     </item>
     <item>
@@ -4228,6 +3898,240 @@ mirror and follow the instructions above.</p>]]></description>
 
 <p class="wp-block-paragraph">Thank you to everyone who contributed to OpenStack&nbsp;2023.2 Bobcat!</p>]]></description>
       <source url="https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off">Corey Bryant</source>
+    </item>
+    <item>
+      <title>Building a NAS</title>
+      <link>https://apebox.org/wordpress/tech/1325</link>
+      <guid isPermaLink="true">https://apebox.org/wordpress/tech/1325</guid>
+      <pubDate>Tue, 12 Sep 2023 21:33:05 GMT</pubDate>
+      <description><![CDATA[<h2 class="wp-block-heading">The status quo</h2>
+
+
+
+<p>Back in 2015, I bought an off-the-shelf NAS, a QNAP TS-453mini, to act as my file store and Plex server. I had previously owned a Synology box, and whilst I liked the Synology OS and experience, the hardware was underwhelming. I loaded up the successor QNAP with four 5TB drives in RAID10, and moved all my files over (after some initial DoA drive issues were handled).</p>
+
+
+
+<figure class="wp-block-image size-medium"><img fetchpriority="high" decoding="async" width="550" height="550" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png" alt="QNAP TS-453mini product photo" class="wp-image-1329" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-150x150.png 150w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-768x768.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3.png 850w" sizes="(max-width: 550px) 100vw, 550px" /><figcaption class="wp-element-caption">QNAP TS-453mini product photo</figcaption></figure>
+
+
+
+<p>That thing has been in service for about 8 years now, and it&#8217;s been&#8230; a mixed bag. It was definitely more powerful than the predecessor system, but it was clear that QNAP&#8217;s OS was not up to the same standard as Synology&#8217;s &#8211; perhaps best exemplified by &#8220;HappyGet 2&#8221;, the QNAP webapp for downloading videos from streaming services like YouTube, whose icon is a straight rip-off of StarCraft 2. On its own, meaningless &#8211; but a bad omen for overall software quality</p>
+
+
+
+<span id="more-1325"></span>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="884" height="172" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png" alt="The logo for QNAP HappyGet 2 and Blizzard's Starcraft 2 side by side" class="wp-image-1328" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png 884w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-550x107.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-768x149.png 768w" sizes="(max-width: 884px) 100vw, 884px" /><figcaption class="wp-element-caption">The logo for QNAP HappyGet 2 and Blizzard&#8217;s StarCraft 2 side by side</figcaption></figure>
+
+
+
+<p>Additionally, the embedded Celeron processor in the NAS turned out to be an issue for some cases. It turns out, when playing back videos with subtitles, most Plex clients do not support subtitles properly &#8211; instead they rely on the Plex server doing JIT transcoding to bake the subtitles directly into the video stream. I discovered this with some Blu-Ray rips of Game of Thrones &#8211; some episodes would play back fine on my smart TV, but episodes with subtitled Dothraki speech would play at only 2 or 3 frames per second.</p>
+
+
+
+<p>The final straw was a ransomware attack, which went through all my data and locked every file below a 60MiB threshold. Practically all my music gone. A substantial collection of downloaded files, all gone. Some of these files had been carried around since my college days &#8211; digital rarities, or at least digital detritus I felt a real sense of loss at having to replace. This episode was caused by a ransomware targeting specific vulnerabilities in the QNAP OS, not an error on my part.</p>
+
+
+
+<p>So, I decided to start planning a replacement with:</p>
+
+
+
+<ul class="wp-block-list">
+<li>A non-garbage OS, whilst still being a NAS-appliance type offering (not an off-the-shelf Linux server distro)</li>
+
+
+
+<li>Full remote management capabilities</li>
+
+
+
+<li>A small form factor comparable to off-the-shelf NAS</li>
+
+
+
+<li>A powerful modern CPU capable of transcoding high resolution video</li>
+
+
+
+<li>All flash storage, no spinning rust</li>
+</ul>
+
+
+
+<p>At the time, no consumer NAS offered everything (The Asustor FS6712X exists now, but didn&#8217;t when this project started), so I opted to go for a full DIY rather than an appliance &#8211; not the first time I&#8217;ve jumped between appliances and DIY for home storage.</p>
+
+
+
+<h2 class="wp-block-heading">Selecting the core of the system</h2>
+
+
+
+<p>There aren&#8217;t many companies which will sell you a small motherboard with IPMI. Supermicro is a bust, so is Tyan. But ASRock Rack, the server division of third-tier motherboard vendor ASRock, delivers. Most of their boards aren&#8217;t actually compliant Mini-ITX size, they&#8217;re a proprietary &#8220;Deep Mini-ITX&#8221; with the regular screw holes, but 40mm of extra length (and a commensurately small list of compatible cases). But, thankfully, they do have a tiny selection of boards without the extra size, and I stumbled onto the <a href="https://www.asrockrack.com/general/productdetail.asp?Model=X570D4I-2T">X570D4I-2T</a>, a board with an AMD AM4 socket and the mature X570 chipset. This board can use <em>any</em> AMD Ryzen chip (before the latest-gen Ryzen 7000 series); has built in dual 10 gigabit ethernet; IPMI; four (laptop-sized) RAM slots with full ECC support; one M.2 slot for NVMe SSD storage; a PCIe 16x slot (generally for graphics cards, but we live in a world of possibilities); and up to 8 SATA drives OR a couple more NVMe SSDs. It&#8217;s astonishingly well featured, just a shame it costs about $450 compared to a good consumer-grade Mini ITX AM4 board costing less than half that.</p>
+
+
+
+<p>I was so impressed with the offering, in fact, that I crowed about it on Mastodon and ended up securing ASRock another sale, with someone else looking into a very similar project to mine around the same timespan.</p>
+
+
+
+<p>The next question was the CPU. An important feature of a system expected to run 24/7 is low power, and AM4 chips can consume as much as 130W under load, out of the box. At the other end, some models can require as little as 35W under load &#8211; the OEM-only &#8220;GE&#8221; suffix chips, which are readily found for import on eBay. In their &#8220;PRO&#8221; variant, they also support ECC (all non-G Ryzen chips support ECC, but only Pro G chips do). The top of the range 8 core Ryzen 7 PRO 5750GE is prohibitively expensive, but the slightly weaker 6 core <a href="https://www.amd.com/en/products/apu/amd-ryzen-5-pro-5650ge">Ryzen 5 PRO 5650GE</a> was affordable, and one arrived quickly from Hong Kong. Supplemented with a couple of cheap 16 GiB SODIMM sticks of DDR4 PC-3200 direct from Micron for under $50 a piece, that left only cooling as an unsolved problem to get a bootable test system.</p>
+
+
+
+<p>The official support list for the X570D4I-2T only includes two rackmount coolers, both expensive and hard to source. The reason for such a small list is the non standard cooling layout of the board &#8211; instead of an AM4 hole pattern with the standard plastic AM4 retaining clips, it has an Intel 115x hole pattern with a non-standard backplate (Intel 115x boards have no backplate, the stock Intel 115x cooler attaches to the holes with push pins). As such every single cooler compatibility list excludes this motherboard. However, the backplate is only secured with a mild glue &#8211; with minimal pressure and a plastic prying tool it can be removed, giving compatibility with any 115x cooler (which is basically any CPU cooler for more than a decade). I picked an oversized low profile <a href="http://thermalright.com/product/axp120-x67-black-argb/">Thermalright AXP120-X67</a> hoping that its 120mm fan would cool the nearby MOSFETs and X570 chipset too.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg" alt="" class="wp-image-1333" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Thermalright AXP120-X67, AMD Ryzen 5 PRO 5650GE, ASRock Rack X570D4I-2T, all assembled and running on a flat surface</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Testing up to this point</h2>
+
+
+
+<p>Using a spare ATX power supply, I had enough of a system built to explore the IPMI and UEFI instances, and run MemTest86 to validate my progress. The memory test ran without a hitch and confirmed the ECC was working, although it also showed that the memory was only running at 2933 MT/s instead of the rated 3200 MT/s (a limit imposed by the motherboard, as higher speeds are considered overclocking). The IPMI interface isn&#8217;t the best I&#8217;ve ever used by a long shot, but it&#8217;s minimum viable and allowed me to configure the basics and boot from media entirely via a Web browser.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="905" height="819" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png" alt="" class="wp-image-1341" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png 905w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-550x498.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-768x695.png 768w" sizes="auto, (max-width: 905px) 100vw, 905px" /><figcaption class="wp-element-caption">Memtest86 showing test progress, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>One sad discovery, however, which I&#8217;ve never seen documented before, on PCIe bifurcation.</p>
+
+
+
+<p>With PCI Express, you have a number of &#8220;lanes&#8221; which are allocated in groups by the motherboard and CPU manufacturer. For Ryzen prior to Ryzen 7000, that&#8217;s 16 lanes in one slot for the graphics card; 4 lanes in one M.2 connector for an SSD; then 4 lanes connecting the CPU to the chipset, which can offer whatever it likes for peripherals or extra lanes (bottlenecked by that shared 4x link to the CPU, if it comes down to it).</p>
+
+
+
+<p>It&#8217;s possible, with motherboard and CPU support, to split PCIe groups up &#8211; for example an 8x slot could be split into two 4x slots (eg allowing two NVMe drives in an adapter card &#8211; NVME drives these days all use 4x). However with a &#8220;Cezanne&#8221; Ryzen with integrated graphics, the 16x graphics card slot cannot be split into four 4x slots (ie used for for NVMe drives) &#8211; the most bifurcation it allows is 8x4x4x, which is useless in a NAS.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="897" height="806" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png" alt="" class="wp-image-1336" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png 897w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-550x494.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-768x690.png 768w" sizes="auto, (max-width: 897px) 100vw, 897px" /><figcaption class="wp-element-caption">Screenshot of PCIe 16x slot bifurcation options in UEFI settings, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>As such, I had to abandon any ideas of an all-NVMe NAS I was considering: the 16x slot split into four 4x, combined with two 4x connectors fed by the X570 chipset, to a total of 6 NVMe drives. 7.6TB U.2 enterprise disks are remarkably affordable (cheaper than consumer SATA 8TB drives), but alas, I was locked out by my 5650GE. Thankfully I found out before spending hundreds on a U.2 hot swap bay. The NVMe setup would be nearly 10x as fast as SATA SSDs, but at least the SATA SSD route would still outperform any spinning rust choice on the market (including the fastest 10K RPM SAS drives)</p>
+
+
+
+<h2 class="wp-block-heading">Containing the core</h2>
+
+
+
+<p>The next step was to pick a case and power supply. A lot of NAS cases require an SFX (rather than ATX) size supply, so I ordered a modular <a href="https://www.silverstonetek.com/en/product/info/power-supplies/SX500-G/">SX500</a> unit from Silverstone. Even if I ended up with a case requiring ATX, it&#8217;s easy to turn an SFX power supply into ATX, and the worst result is you have less space taken up in your case, hardly the worst problem to have.</p>
+
+
+
+<p>That said, on to picking a case. There&#8217;s only one brand with any cachet making ITX NAS cases, Silverstone. They have three choices in an appropriate size: <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS01-HS/">CS01-HS</a>, <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS280/">CS280</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/DS380/">DS380</a>. The problem is, these cases are all badly designed garbage. Take the CS280 as an example, the case with the most space for a CPU cooler. Here&#8217;s how close together the hotswap bay (right) and power supply (left) are:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="568" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png" alt="" class="wp-image-1343" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-550x391.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-768x545.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>With actual cables connected, the cable clearance problem is even worse:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="533" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png" alt="" class="wp-image-1344" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-550x366.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-768x512.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>Remember, this is the <em>best</em> of the three cases for internal layout, the one with the least restriction on CPU cooler height. And it&#8217;s garbage! Total hot garbage! I decided therefore to completely skip the NAS case market, and instead purchase a 5.25&#8243;-to-2.5&#8243; hot swap bay adapter from Icy Dock, and put it in an ITX gamer case with a 5.25&#8243; bay. This is no longer a served market &#8211; 5.25&#8243; bays are extinct since nobody uses CD/DVD drives anymore. The ones on the market are really new old stock from 2014-2017: The <a href="https://www.fractal-design.com/products/cases/core/core-500/black/">Fractal Design Core 500</a>, <a href="https://www.coolermaster.com/catalog/cases/mini-itx/elite130/">Cooler Master Elite 130</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/SUGO14/">Silverstone SUGO 14</a>. Of the three, the Fractal is the best rated so I opted to get that one &#8211; however it seems the global supply of &#8220;new old stock&#8221; fully dried up in the two weeks between me making a decision and placing an order &#8211; leaving only the Silverstone case.</p>
+
+
+
+<p>Icy Dock have a selection of 8-bay 2.5&#8243; SATA 5.25&#8243; hot swap chassis choices in their ToughArmor MB998 series. I opted for the <a href="https://global.icydock.com/product_169.html">ToughArmor MB998IP-B</a>, to reduce cable clutter &#8211; it requires only two SFF-8611-to-SF-8643 cables from the motherboard to serve all eight bays, which should make airflow less of a mess. The X570D4I-2T doesn&#8217;t have any SATA ports on board, instead it has two SFF-8611 OCuLink ports, each supporting 4 PCI Express lanes OR 4 SATA connectors via a breakout cable. I had hoped to get the ToughArmor MB118VP-B and run six U.2 drives, but as I said, the PCIe bifurcation issue with Ryzen &#8220;G&#8221; chips meant I wouldn&#8217;t be able to run all six bays successfully.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg" alt="" class="wp-image-1348" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">NAS build in Silverstone SUGO 14, mid build, panels removed</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg" alt="" class="wp-image-1349" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">Silverstone SUGO 14 from the front, with hot swap bay installed</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Actual storage for the storage server</h2>
+
+
+
+<p>My concept for the system always involved a fast boot/cache drive in the motherboard&#8217;s M.2 slot, non-redundant (just backups of the config if the worst were to happen) and separate storage drives somewhere between 3.8 and 8 TB each (somewhere from $200-$350). As a boot drive, I selected the <a href="https://www.intel.com/content/www/us/en/products/sku/211868/intel-optane-ssd-p1600x-series-58gb-m-2-80mm-pcie-3-0-x4-3d-xpoint/specifications.html">Intel Optane SSD P1600X 58G</a>, available for under $35 and rated for 228 years between failures (or 11,000 complete drive rewrite cycles).</p>
+
+
+
+<p>So, on to the big expensive choice: storage drives. I narrowed it down to two contenders: new-old-stock Intel D3-S4510 3.84TB enterprise drives, at about $200, or Samsung 870 QVO 8TB consumer drives, at about $375. I did spend a long time agonizing over the specification differences, the ZFS usage reports, the expected lifetime endurance figures, but in reality, it came down to price &#8211; $1600 of expensive drives vs $3200 of even more expensive drives. That&#8217;s 27TB of usable capacity in RAID-Z1, or 23TB in RAID-Z2. For comparison, I&#8217;m using about 5TB of the old NAS, so that&#8217;s a LOT of overhead for expansion.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg" alt="" class="wp-image-1355" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Storage SSD loaded into hot swap sled</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Booting up</h2>
+
+
+
+<p>Bringing it all together is the OS. I wanted an &#8220;appliance&#8221; NAS OS rather than self-administering a Linux distribution, and after looking into the surrounding ecosystems, decided on <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> (the beta of the 2023 release, based on Debian 12).</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="600" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png" alt="" class="wp-image-1353" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-550x322.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-768x450.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1536x900.png 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image.png 2013w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">TrueNAS Dashboard screenshot in browser window</figcaption></figure>
+
+
+
+<p>I set up RAID-Z1, and with zero tuning (other than enabling auto-TRIM), got the following performance numbers:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>19.3k</td><td>75.6 MiB/s</td></tr><tr><td>4k random reads</td><td>36.1k</td><td>141 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>2300 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>3800 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Results using fio parameters <a href="https://support.huaweicloud.com/intl/en-us/evs_faq/evs_faq_0019.html#evs_faq_0019__section273349017162">suggested by Huawei</a></figcaption></figure>
+
+
+
+<p>And for comparison, the maximum theoretical numbers quoted by Intel for a single drive:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>16k</td><td>?</td></tr><tr><td>4k random reads</td><td>90k</td><td>?</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>280 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>560 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Numbers quoted by Intel SSD successors <a href="https://www.solidigm.com/products/data-center/d3/s4510.html">Solidigm</a>.</figcaption></figure>
+
+
+
+<p>Finally, the numbers reported on the old NAS with four 7200 RPM hard disks in RAID 10:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>430</td><td>1.7 MiB/s</td></tr><tr><td>4k random reads</td><td>8006</td><td>32 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>311 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>566 MiB/s</td></tr></tbody></table></figure>
+
+
+
+<p>Performance seems pretty OK. There&#8217;s always going to be an overhead to RAID. I&#8217;ll settle for the 45x improvement on random writes vs. its predecessor, and 4.5x improvement on random reads. The sequential write numbers are gonna be impacted by the size of the ZFS cache (50% of RAM, so 16 GiB), but the rest should be a reasonable indication of true performance.</p>
+
+
+
+<p>It took me a little while to fully understand the TrueNAS permissions model, but I finally got Plex configured to access data from the same place as my SMB shares, which have anonymous read-only access or authenticated write access for myself and my wife, working fine via both Linux and Windows.</p>
+
+
+
+<p>And&#8230; that&#8217;s it! I built a NAS. I intend to add some fans and more RAM, but that&#8217;s the build. Total spent: about $3000, which sounds like an unreasonable amount, but it&#8217;s actually less than a comparable Synology DiskStation DS1823xs+ which has 4 cores instead of 6, first-generation AMD Zen instead of Zen 3, 8 GiB RAM instead of 32 GiB, no hardware-accelerated video transcoding, etc. And it would have been a whole lot less fun!</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg" alt="" class="wp-image-1364" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">The final system, powered up</figcaption></figure>
+
+
+
+<p>(Also posted on <a href="https://pcpartpicker.com/b/fYhtt6">PCPartPicker</a>)</p>]]></description>
+      <source url="http://apebox.org/wordpress/tag/ubuntu/feed/">Jo Shields</source>
     </item>
     <item>
       <title>Understanding vm.swappiness: Improving Linux Performance and Memory Management</title>
@@ -6305,6 +6209,29 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 <li><a href="https://github.com/helm/charts/tree/master/stable/external-dns#configuration">The full list of configuration details for the ExternalDNS Helm&nbsp;chart</a></li>
 </ul>]]></description>
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
+    </item>
+    <item>
+      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
+      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
+      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
+      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
+      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
+<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
+<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
+<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
+<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
+<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
+<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
+<blockquote>
+<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
+</blockquote>
+<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
+<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
+We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
+So, please sync with this change (and sorry :)).</p>
+<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
+<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
+      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
     </item>
     <item>
       <title>Rise and fall of libclamav</title>
