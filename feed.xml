@@ -6,9 +6,79 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 02 Sep 2026 03:35:03 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 03:34:45 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>“Bullet-Proof” KDE Initiative: How Ubuntu Studio Benefits</title>
+      <link>https://ubuntustudio.org/2026/09/bullet-proof-kde-initiative-how-ubuntu-studio-benefits/</link>
+      <guid isPermaLink="true">https://ubuntustudio.org/2026/09/bullet-proof-kde-initiative-how-ubuntu-studio-benefits/</guid>
+      <pubDate>Tue, 01 Sep 2026 19:03:26 GMT</pubDate>
+      <description><![CDATA[<p class="wp-block-paragraph">As should be obvious from browsing our website for any amount of time, Ubuntu Studio releases a Long-Term Support (LTS) release every two years. The latest LTS release happens to be our latest release: 26.04. What&#8217;s more is we just released 26.04.1, a roll-up of bugfixes and security updates, on August 27th.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-large is-resized"><img fetchpriority="high" decoding="async" width="1024" height="614" src="https://ubuntustudio.org/wp-content/uploads/2026/09/image-1024x614.png?wsr" alt="" class="wp-image-9336" style="aspect-ratio:1.6678051865907653;width:340px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/09/image-1024x614.png 1024w, https://ubuntustudio.org/wp-content/uploads/2026/09/image-300x180.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/09/image-768x461.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/09/image-1200x720.png 1200w, https://ubuntustudio.org/wp-content/uploads/2026/09/image.png 1387w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</div>
+
+
+<p class="wp-block-paragraph">Also announced is the <a href="https://www.einpresswire.com/article/930823977/kubuntu-focus-techpaladin-software-and-kde-e-v-announce-the-bullet-proof-kde-software-initiative">&#8220;Butllet-Proof&#8221; KDE Initiative</a>, where <a href="https://kfocus.org">Kubuntu Focus</a>, <a href="https://techpaladinsoftware.com/">Techpaladin Software</a>, and <a href="https://kde.org/">KDE e.V.</a> are working together to make Plasma 6.6, along with KDE Frameworks, an LTS release as well. This means that Techpaladin, Kubuntu, and Kubuntu Focus will be working to fix bugs in the version of the desktop environment and back-end libraries released in Ubuntu Studio 26.04 LTS. This means that, while Kubuntu will be primarily working on the Stable Release Updates as provided by KDE, Ubuntu Studio uses the same packages that get these updates.</p>
+
+
+
+<p class="wp-block-paragraph">Our project leader, Erich Eickmeyer, has been doing what he can to help support Kubuntu with this task from his side, while the Ubuntu Studio team (including Erich) focuses on bug fixes to the multimedia applications included with their own Stable Release Updates for the life of 26.04, which is three years total until April 2029.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-full is-resized"><img decoding="async" width="474" height="265" src="https://ubuntustudio.org/wp-content/uploads/2026/09/image-1.png?wsr" alt="" class="wp-image-9338" style="aspect-ratio:1.788725750339053;width:218px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/09/image-1.png 474w, https://ubuntustudio.org/wp-content/uploads/2026/09/image-1-300x168.png 300w" sizes="(max-width: 474px) 100vw, 474px" /></figure>
+</div>
+
+
+<p class="wp-block-paragraph">That, combined with <a href="https://ubuntu.com/pro">Ubuntu Pro</a> (free for every user up to 5 simultaneous machines) means you will not only receive bugfixes better than in the past, which was done at best effort, but also benefit from the security updates provided by Canonical. Yes, even Ubuntu Studio can use Ubuntu Pro. Do note that Ubuntu Pro will not extend the support time period for Ubuntu Studio, but give the added benefit of sponsored security updates.</p>
+
+
+
+<p class="wp-block-paragraph">If you would like to help with everything Ubuntu Studio has going on, from supporting the LTS to supporting the upcoming 26.10 release due in October, please feel free to <a href="https://ubuntustudio.org/contribute/" data-type="page" data-id="56">join us</a>!</p>
+
+
+
+<p class="wp-block-paragraph">Additionally, while there was an initial jump in monetary support following the 26.04 LTS release, it has dropped-off considerably. Please <a href="https://ubuntustudio.org/contribute/" data-type="page" data-id="56">consider becoming a monthly monetary contributor</a> to help support this project. Remember, our website now has a monthly cost along with the usual cost of packaging and development. If you cannot commit to a monthly monetary contribution, please consider at least a one-time contribution, even if you&#8217;ve given before. Even if it&#8217;s just a tank of petrol! For those already giving, thank you so much for your continued support. It means the world to us, and allows us to continue giving you and others this operating system for free! You&#8217;ve helped countless people throughout the world!</p>]]></description>
+      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
+    </item>
+    <item>
+      <title>Surviving the uncharted: when dedicated OpenStack expertise is your best ally in disaster recovery </title>
+      <link>https://ubuntu.com//blog/support-restores-openstack</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/support-restores-openstack</guid>
+      <pubDate>Tue, 01 Sep 2026 11:10:15 GMT</pubDate>
+      <description><![CDATA[<p>Some support cases are routine. Others take you off the documented path entirely, into territory where the only way forward is deep, hands on open source expertise. This series looks at how Canonical Support navigates the unexpected: cases where standard playbooks aren’t enough, and a support engineer helps a customer find a solution in real time.</p>
+<p>This is one of those cases. A customer’s production OpenStack environment went, overnight, from fully operational to unable to provision, scale, or manage a single resource.</p>
+<h2 class="wp-block-heading">What happened</h2>
+<p>OpenStack is not a single piece of software. It is a coordinated architecture of services that manage core infrastructure components like compute, networking, identity, storage, all of which depend on a shared database that keeps a record of the current state of the cloud: what is running, where, and how it is configured.</p>
+<p>During routine operations, an action targeted the database cluster underpinning that control plane. Within seconds, the layer that lets operators manage the cloud, provision, migrate, scale, was gone.</p>
+<p>The support case opened the same day.</p>
+<h2 class="wp-block-heading">The first problem: the backup</h2>
+<p>The team’s first question was straightforward: when was the last backup taken, and had it ever been tested as a restore? The available backup was old enough that it no longer reflected the cloud’s current state. Virtual machines had moved, resources had been reallocated, credentials had rotated since it was captured.</p>
+<p>Restoring it directly risked producing a control plane that described a cloud that no longer existed. That ruled out the simplest path, and left something harder: rebuild the control plane around live, running workloads, without breaking them.</p>
+<p>This is worth pausing on, because it is a common gap even in mature operations. A backup schedule tells you data is being captured. It does not tell you the restore will work, or that the restored state will still match reality by the time you need it. The two need to be validated together, on a cadence tied to how quickly the environment actually changes.</p>
+<h2 class="wp-block-heading">The thing that didn’t break</h2>
+<p>Before touching anything, the assigned support engineer checked what was still running, and found that nothing had actually gone down. No workloads were lost. The business kept running. What had been lost was the ability to manage the cloud: no new provisioning, no migration, no scaling.</p>
+<p>This is a property of OpenStack’s architecture worth understanding on its own terms. The control plane manages the state of the cloud; the data plane does the actual work, compute, networking, storage. These layers are decoupled by design, specifically so that a failure in management infrastructure does not take down the workloads depending on it. It is one of the architectural advantages that makes OpenStack viable for large scale production environments in the first place, and it is exactly what held up here.</p>
+<p>That guarantee only helps you if you know it exists and know how to use it to shape a recovery strategy. Recognizing it early is what turned this from an open ended crisis into a scoped, solvable engineering problem within the first hour.</p>
+<h2 class="wp-block-heading">The recovery</h2>
+<p>With existing workloads confirmed safe, the team turned to rebuilding the control plane. Because the need to rebuild a database from scratch is such a rare edge case, standard recovery documentation covers only damaged or degraded states. So the engineer developed and validated a new procedure for that specific scenario: reconstructing the database cluster, restoring available data in a controlled sequence, then reconnecting every OpenStack service to the new database, one dependency at a time.</p>
+<p>That last part was the bulk of the work. The relationships linking each service to the database had to be reestablished individually, and gaps between the backup’s state and the cloud’s actual state had to be reconciled by hand, including cases where a VM was running perfectly well but the database, working from stale information, reported it as stopped or in error.</p>
+<p>It took several days of close, sustained collaboration between the Canonical engineer and the customer’s team. By the end, the cloud was fully operational, with zero workloads lost.</p>
+<h2 class="wp-block-heading">What this case actually shows</h2>
+<p>Two things are worth taking from this.</p>
+<p>Backup validation deserves the same rigor as backup scheduling. This is not a hypothetical gap. <a href="https://www.cockroachlabs.com/guides/the-state-of-resilience-2025/">Cockroach Labs’ <em>State of Resilience 2025</em> survey</a> found that 62% of organizations do not perform regular backup restoration exercises, and 71% do no failover testing at all, despite nearly all of them running some form of resiliency testing on paper. Separately, <a href="https://www.acronis.com/en/tru/posts/why-most-dr-deployments-may-not-survive-a-real-disaster/">Acronis’ Q1 2026 telemetry</a> across its disaster recovery platform found that 85% of recovery servers had RPO monitoring turned off entirely, meaning no automatic check on whether backups are even recent enough to be useful, and only 18% of backup rules were configured for monthly testing.</p>
+<p>The pattern is consistent: having a backup policy is common, but proving that policy actually works under real conditions is not. That gap tends to stay invisible until the day it matters, which is exactly why a tested, timed, end to end restore process belongs on a resilience checklist next to RTO and RPO targets, not treated as a given once the backup job shows green.</p>
+<p>In a system this interconnected, architectural knowledge is what makes recovery possible at all. Knowing that OpenStack’s control and data planes are decoupled was not trivial here. It was the fact that determined the entire recovery strategy, because it told the engineer, within the first hour, that the business had not already lost. That is the kind of knowledge that matters exactly once, at the highest stakes moment, and it is precisely what deep, specialized support exists to provide on demand.</p>
+<p>Large, distributed infrastructure accumulates operational complexity and interdependency by nature, at every vendor and every layer of the stack. What determines the outcome when something goes wrong is not whether an environment is complex. It is whether the team responding has the depth to move fast, diagnose correctly, and build a solution under pressure when the documented path runs out.</p>
+<p>The procedure developed during this incident has since been documented for future cases. But the case itself is a useful reminder of what a support subscription is actually buying: not just answers to known problems, but access to the expertise to navigate the ones nobody has written down yet.</p>
+<p></p>
+<p><strong>If your organization runs OpenStack in production, <a href="https://ubuntu.com/support/contact-us?product=support-overview">talk to us about Ubuntu Pro with Support</a>.</strong></p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>Announcing Incus 7.4</title>
       <link>https://stgraber.org/2026/08/31/announcing-incus-7-2-2-2/</link>
@@ -153,29 +223,6 @@
 
 <p><!-- /wp:post-content --></p>]]></description>
       <source url="https://stgraber.org/category/planet-ubuntu/feed/">Stéphane Graber</source>
-    </item>
-    <item>
-      <title>Canonical joins the Open Secure AI Alliance</title>
-      <link>https://ubuntu.com//blog/open-secure-ai-alliance</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/open-secure-ai-alliance</guid>
-      <pubDate>Fri, 28 Aug 2026 13:26:31 GMT</pubDate>
-      <description><![CDATA[<p>Canonical is now part of the <a href="https://blogs.nvidia.com/blog/open-secure-ai-alliance/">Open Secure AI Alliance</a>, announced by NVIDIA with partners across cloud computing, cybersecurity, enterprise software, open source foundations, and AI research. The alliance aims to develop and share open technologies, techniques, and tools to safeguard software and agents in the age of AI.</p>
-<h2 class="wp-block-heading"><strong>The bedrock for AI </strong></h2>
-<p>Alongside NVIDIA and a coalition of industry leaders, we are embarking on a critical mission: to ensure that the tools needed to secure the age of AI are open, transparent, and accessible to defenders everywhere.</p>
-<p>The Open Secure AI Alliance recognizes a fundamental truth: an AI agent is more than just its model weights. It is a full stack of software, harnesses, and guardrails. And at the base of that stack sits the infrastructure.</p>
-<p>Ubuntu is the platform of choice for AI development and deployment, from a developer’s workstation to the edge and the data center. The security of that platform shapes the security of everything built on top of it, making Canonical’s role in securing the AI ecosystem a natural fit.</p>
-<h2 class="wp-block-heading"><strong>Open source makes verification possible</strong></h2>
-<p>When the source is open, you can inspect it, test it, and confirm the software does what it says it does. Then you can make the software better, and more resilient yourself, and publish the fixes for everyone running it.</p>
-<p>The same holds across the agent stack. Identity, permissions, guardrails, logs, and evaluation are easier to check when the code and the tooling are open source. That is what open source tools give defenders. More to examine, and more to improve.</p>
-<h2 class="wp-block-heading"><strong>Resilient AI open source software stack</strong></h2>
-<p>Resilience starts with the platform underneath. Ubuntu LTS supports UEFI Secure Boot to verify the boot chain, and AppArmor is enabled by default to confine applications. TPM-backed full-disk encryption can be enabled during installation, protecting disk-encryption keys and releasing them only when the machine boots into an expected state. For workloads that need data protected while it is being processed, Ubuntu supports <a href="https://ubuntu.com/confidential-computing">confidential computing</a> as both guest and host, enabling confidential AI use cases with silicon-level encryption.</p>
-<p>An AI system depends on far more than the operating system (OS). Libraries, runtimes, databases, message queues, and monitoring tools all sit on top of the OS, and much of that software comes from the wider Ubuntu archive, rather than the core set of packages. <a href="https://ubuntu.com/pro">Ubuntu Pro</a> extends Canonical’s maintenance across that whole archive, including the Universe repository, with up to 15 years of security maintenance, compliance, and support. </p>
-<p>This coverage is critical for environments that demand high stability. Financial services, healthcare, telecommunications, energy, manufacturing, automotive, and public sector teams keep the same release in production for a long time, and the software running on it has to be maintained for just as long. AI infrastructure is starting to work the same way, and that kind of long-term maintenance is what Canonical has been doing for years.</p>
-<p>Trust in AI will be earned the way trust in open source was earned. In public, over time, with the work available for anyone to check.</p>
-<p>We are glad to be part of it.</p>
-<p>Learn more about the<a href="https://blogs.nvidia.com/blog/open-secure-ai-alliance/"> Open Secure AI Alliance</a>.</p>
-<p>Learn more about security maintenance with <a href="https://ubuntu.com/pro">Ubuntu Pro</a>.</p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Charm recipe uploads now authorize with Ubuntu SSO</title>
@@ -1714,135 +1761,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
       <source url="https://bryanquigley.com/rss.xml">Bryan Quigley</source>
     </item>
     <item>
-      <title>Ubuntu Studio’s New Home: What’s Changing and Why</title>
-      <link>https://ubuntustudio.org/2026/05/ubuntu-studios-new-home-whats-changing-and-why/</link>
-      <guid isPermaLink="true">https://ubuntustudio.org/2026/05/ubuntu-studios-new-home-whats-changing-and-why/</guid>
-      <pubDate>Sun, 10 May 2026 02:25:40 GMT</pubDate>
-      <description><![CDATA[<div class="wp-block-image">
-<figure class="alignright size-medium"><img decoding="async" width="300" height="160" src="https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-300x160.png?wsr" alt="Homepage of Ubuntu Studio showcasing a content creation studio with various creative tools including musical instruments, a camera, and editing software elements." class="wp-image-5119" srcset="https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-300x160.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-1024x545.png 1024w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-768x409.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-1536x817.png 1536w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2-1200x639.png 1200w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-2.png 1554w" sizes="(max-width: 300px) 100vw, 300px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph">Ubuntu Studio&#8217;s web presence has been spread across several Canonical-hosted systems for a long time: the main website on an old Canonical web server, the Ubuntu Community Help Wiki at <code>help.ubuntu.com/community/UbuntuStudio</code>, and the Ubuntu Developer Wiki at <code>wiki.ubuntu.com/UbuntuStudio</code>. Those platforms served their purpose, but each had become a poor fit for how the project actually works today.</p>
-
-
-
-<h2 class="wp-block-heading">What&#8217;s Moving</h2>
-
-
-
-<p class="wp-block-paragraph"><strong>The main Ubuntu Studio website</strong> has already moved away from Canonical hosting and onto its current home. That move was driven by necessity: Canonical shut down the old web server that had hosted the site, so Ubuntu Studio needed a new home for its primary web presence. This has been a mostly transparent process and most users would never have noticed a difference.</p>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-medium is-resized"><img fetchpriority="high" decoding="async" width="300" height="233" src="https://ubuntustudio.org/wp-content/uploads/2026/05/image-300x233.png?wsr" alt="Screenshot of the Ubuntu Studio Community Help page, featuring sections for user and developer wikis, support information, and links to contributions and resources." class="wp-image-5113" style="width:197px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/05/image-300x233.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-768x597.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/05/image.png 945w" sizes="(max-width: 300px) 100vw, 300px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph"><strong>The Community Help Wiki</strong> — the place where users have always gone to find answers about audio configuration, hardware support, the Audio Handbook, and getting started with Ubuntu Studio — is being mirrored and maintained directly on ubuntustudio.org at <code>/help/</code>. Every page you&#8217;re used to is coming with us: the Pro Audio Intro, the Ubuntu Studio Audio Handbook and all its chapters, the FAQ, hardware support information, terminal basics, troubleshooting guides, and community information. Most of this is outdated now, and we need help to bring it up to modernization.</p>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-medium is-resized"><img decoding="async" width="300" height="214" src="https://ubuntustudio.org/wp-content/uploads/2026/05/image-1-300x214.png?wsr" alt="Screenshot of the Ubuntu Studio developer wiki homepage featuring navigation links, a welcome message, and information about the Ubuntu Studio project and community." class="wp-image-5116" style="width:255px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/05/image-1-300x214.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-1-768x548.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/05/image-1.png 933w" sizes="(max-width: 300px) 100vw, 300px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph"><strong>The Developer Wiki</strong> — home to the team&#8217;s internal processes, release planning, testing documentation, artwork resources, and packaging and development notes — is moving to ubuntustudio.org at <code>/wiki/</code>. The full section structure is preserved: Testing, PR &amp; Support, Artwork, Packaging/Development, Documentation, and Organization are all there. This information is also outdated.</p>
-
-
-
-<h2 class="wp-block-heading">Why Now</h2>
-
-
-
-<p class="wp-block-paragraph">The website move and the wiki move do not have exactly the same origin.</p>
-
-
-
-<p class="wp-block-paragraph">For the main website, the trigger was straightforward: Canonical shut down the old web server that hosted it. Ubuntu Studio had to move the site in order to keep a public home on the web.</p>
-
-
-
-<p class="wp-block-paragraph">For the help and developer wikis, the issue was the editing experience and maintenance burden. The old MoinMoin-based wiki workflow is cumbersome, slow, and awkward to work with. Its markup is not standard Markdown, which makes editing, reviewing, and migrating content more difficult than it should be. Over time, that friction made it harder to keep pages current, fix outdated instructions, and encourage casual contributors to improve documentation.</p>
-
-
-
-<p class="wp-block-paragraph">Meanwhile, ubuntustudio.org has been running on WordPress for some time, and the team has been using GitHub for development work. By routing our documentation through a GitHub repository — using the Git it Write plugin to publish markdown directly to WordPress — we get something we&#8217;ve never really had before: a documentation workflow that fits naturally alongside our other development work. Pull requests, issue tracking, version history, and a low barrier to entry for new contributors all come with it.</p>
-
-
-
-<h2 class="wp-block-heading">What This Means for Contributors</h2>
-
-
-
-<p class="wp-block-paragraph">If you&#8217;ve ever wanted to fix something on the old wiki and been put off by the process, this is your opening. The content lives in a <a href="https://github.com/UbuntuStudio-Official/ubuntustudio-website">public GitHub repository</a>. Find the file, fix the text, open a pull request. That&#8217;s it.</p>
-
-
-
-<p class="wp-block-paragraph">The content is organized into buckets that map to the old wiki structure:</p>
-
-
-
-<ul class="wp-block-list">
-<li><code>help/content/support/</code> — support pages (FAQ, hardware, audio configuration, etc.)</li>
-
-
-
-<li><code>help/content/handbook/</code> — the Audio Handbook and Pro Audio Intro</li>
-
-
-
-<li><code>help/content/community/</code> — IRC, mailing lists, joining the team</li>
-
-
-
-<li><code>help/content/reference/</code> — resources, links, wiki guide</li>
-
-
-
-<li><code>wiki/content/ubuntu-studio/</code> — developer wiki pages</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">If you&#8217;re editing a page that has outdated information, and there&#8217;s plenty of it, particularly around the old PulseAudio/JACK workflow that predates PipeWire — this is the place to update it.</p>
-
-
-
-<h2 class="wp-block-heading">What Isn&#8217;t Changing</h2>
-
-
-
-<p class="wp-block-paragraph">The old wiki pages at <code>help.ubuntu.com</code> and <code>wiki.ubuntu.com</code> aren&#8217;t going anywhere immediately. Canonical maintains those as part of Ubuntu infrastructure, and they&#8217;ll continue to exist. Our goal isn&#8217;t to break any existing bookmarks or search results, it&#8217;s to have a home where we can keep things current.</p>
-
-
-
-<p class="wp-block-paragraph">We&#8217;re also not rewriting the documentation wholesale. The content of the mirrored pages is as faithful to the originals as it can be, with updates where the old guidance referred to software or workflows that no longer apply to current Ubuntu Studio releases.</p>
-
-
-
-<h2 class="wp-block-heading">Where to Find Everything</h2>
-
-
-
-<ul class="wp-block-list">
-<li>Help pages: <a href="https://ubuntustudio.org/help/">ubuntustudio.org/help/</a></li>
-
-
-
-<li>Developer wiki: <a href="https://ubuntustudio.org/wiki/">ubuntustudio.org/wiki/</a></li>
-
-
-
-<li>GitHub repository: <a href="https://github.com/UbuntuStudio-Official/ubuntustudio-website">github.com/UbuntuStudio-Official/ubuntustudio-website</a></li>
-</ul>
-
-
-
-<p class="wp-block-paragraph">If you find something wrong, missing, or out of date — open a pull request, or file an issue and let the team know.</p>]]></description>
-      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
-    </item>
-    <item>
       <title>Lubuntu 26.04 LTS Released!</title>
       <link>https://lubuntu.me/lubuntu-26-04-lts-released/</link>
       <guid isPermaLink="true">https://lubuntu.me/lubuntu-26-04-lts-released/</guid>
@@ -2982,19 +2900,19 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
       <link>https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</link>
       <guid isPermaLink="true">https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</guid>
       <pubDate>Fri, 16 May 2025 11:17:23 GMT</pubDate>
-      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
+      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd wp-block-paragraph">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
 
 
 
-<p></p>
+<p class="wp-block-paragraph"></p>
 
 
 
-<p></p>
+<p class="wp-block-paragraph"></p>
 
 
 
-<p></p>]]></description>
+<p class="wp-block-paragraph"></p>]]></description>
       <source url="https://ograblog.wordpress.com/feed/atom">Oliver Grawert</source>
     </item>
     <item>
