@@ -1,5 +1,21 @@
 [
   {
+    "sourceName": "Launchpad News",
+    "sourceUrl": "http://news.launchpad.net/feed",
+    "title": "Launchpad documentation office hour #8: Documentation clinic",
+    "link": "https://blog.launchpad.net/general/launchpad-documentation-office-hour-8-documentation-clinic",
+    "date": "2026-09-02T17:19:19.000Z",
+    "snippet": "The Launchpad team will host its eighth public documentation office hour this Friday, September 4th, from 1330 UTC. In this session, we will be conducting a documentation clinic for projects hosted on Launchpad.\n\n\n\nIf your project is on Launchpad and you&#8217;d like some guidance on creating, improving, or publishing its documentation, drop by at any time from 1330 to 1430 UTC. We&#8217;ll see you there!\n\n\n\nLaunchpad community documentation office hour (Public)Friday, 4th September · 1330 to 14...",
+    "contentHtml": "<p>The Launchpad team will host its eighth public documentation office hour this Friday, September 4th, from 1330 UTC. In this session, we will be conducting a documentation clinic for projects hosted on Launchpad.</p>\n\n\n\n<p>If your project is on Launchpad and you&#8217;d like some guidance on creating, improving, or publishing its documentation, drop by at any time from 1330 to 1430 UTC. We&#8217;ll see you there!</p>\n\n\n\n<p>Launchpad community documentation office hour (Public)<br>Friday, 4th September · 1330 to 1430 UTC<br>Google Meet joining info<br>Video call link:&nbsp;<a href=\"https://meet.google.com/gcd-hnxo-sce\">https://meet.google.com/gcd-hnxo-sce</a></p>",
+    "author": "charles-odada",
+    "categories": [
+      "General",
+      "documentation",
+      "office-hours"
+    ],
+    "imageUrl": null
+  },
+  {
     "sourceName": "Ubuntu Studio",
     "sourceUrl": "http://ubuntustudio.org/category/planetubuntu/feed/",
     "title": "“Bullet-Proof” KDE Initiative: How Ubuntu Studio Benefits",
@@ -46,21 +62,6 @@
       "LXD",
       "Planet Ubuntu",
       "Zabbly"
-    ],
-    "imageUrl": null
-  },
-  {
-    "sourceName": "Launchpad News",
-    "sourceUrl": "http://news.launchpad.net/feed",
-    "title": "Charm recipe uploads now authorize with Ubuntu SSO",
-    "link": "https://blog.launchpad.net/general/charm-recipe-uploads-now-authorize-with-ubuntu-sso",
-    "date": "2026-08-28T12:16:27.000Z",
-    "snippet": "Launchpad builds charm recipes and uploads them to Charmhub on your behalf. Up until now, the uploads were authorized via Candid. Charmhub is retiring Candid and moving to Ubuntu One SSO, which is the same sign-on service that Launchpad already uses for snap recipes.&nbsp;\n\n\n\nWe have updated Launchpad to use the new flow. When you authorize a charm recipe, you will now be taken to Ubuntu SSO instead of Candid to authenticate. The rest of the process, building and uploading, remains unchanged.\n\n\n...",
-    "contentHtml": "<p>Launchpad <a href=\"https://ubuntu.com/docs/launchpad/user/how-to/packaging/build-charms-in-launchpad/\">builds charm recipes</a> and uploads them to Charmhub on your behalf. Up until now, the uploads were authorized via Candid. Charmhub is retiring Candid and moving to Ubuntu One SSO, which is the same sign-on service that Launchpad already uses for snap recipes.&nbsp;</p>\n\n\n\n<p>We have updated Launchpad to use the new flow. When you authorize a charm recipe, you will now be taken to Ubuntu SSO instead of Candid to authenticate. The rest of the process, building and uploading, remains unchanged.</p>\n\n\n\n<h3>What you need to do:</h3>\n\n\n\n<p>You do not need to make any changes right now.&nbsp;</p>\n\n\n\n<p>Please note:</p>\n\n\n\n<ul><li>Recipes which were already authorized prior to this change will keep uploading with their existing credentials.</li><li>The new flow will apply the next time you authorize a recipe — either when creating a new charm recipe, or when re-authorizing an existing recipe.</li><li>Authorizations last up to a year, which is the maximum that Charmhub allows.</li></ul>\n\n\n\n<p>If you run into any issues while authorizing a recipe or uploading a charm, please let us know by contacting us via Matrix: #launchpad:ubuntu.com or asking a <a href=\"https://answers.launchpad.net/launchpad/+addquestion\">question</a>.</p>",
-    "author": "harsh-s",
-    "categories": [
-      "General",
-      "announcement"
     ],
     "imageUrl": null
   },
