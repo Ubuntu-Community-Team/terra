@@ -6,135 +6,35 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 05 Sep 2026 03:35:11 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 03:36:55 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Introducing PPA Dependency Pinning</title>
-      <link>https://blog.launchpad.net/general/introducing-ppa-dependency-pinning</link>
-      <guid isPermaLink="true">https://blog.launchpad.net/general/introducing-ppa-dependency-pinning</guid>
-      <pubDate>Thu, 03 Sep 2026 07:07:37 GMT</pubDate>
-      <description><![CDATA[<p>PPA maintainers now have more control over where their build dependencies come from. With PPA dependency pinning, you can assign priorities to the PPAs your builds depend on, helping ensure that your packages build against the software you intend to use.</p>
+      <title>Merge Launchpad merge proposals with one click</title>
+      <link>https://blog.launchpad.net/general/merge-launchpad-merge-proposals-with-one-click</link>
+      <guid isPermaLink="true">https://blog.launchpad.net/general/merge-launchpad-merge-proposals-with-one-click</guid>
+      <pubDate>Fri, 04 Sep 2026 09:52:42 GMT</pubDate>
+      <description><![CDATA[<p>Maintainers can now merge changes (merge proposals) directly from the Launchpad UI.</p>
 
 
 
-<p>Whether you are testing a patch, maintaining a customised library, or preparing a new release, this feature makes it easier to manage builds that rely on packages outside the standard Ubuntu archive.</p>
+<p>The new <strong>Request merge</strong> button is available to anyone with permission to push to the target branch. Launchpad enables it if the merge proposal has:</p>
 
 
 
-<p><strong>NOTE:</strong> This setting applies only to package builds performed by Launchpad and can only be set by the PPA maintainer. It does NOT change package selection on users’ computers, nor affect local builds.</p>
+<ul><li>An active status and an up-to-date diff</li><li>No conflicts with the target branch</li><li>Approval from the target repository owner, a member of its owner team, or designated review team</li><li>Successfully completed any configured CI checks</li><li>No unmerged prerequisite branches</li></ul>
 
 
 
-<h2><strong>Why dependency priorities matter</strong></h2>
+<p>When you click on <strong>Request merge</strong>, Launchpad queues the merge, tracks its progress, and lets you know when the change has been merged.</p>
 
 
 
-<p>Personal Package Archives (PPAs) let developers build and distribute packages through Launchpad. When packages in one PPA require packages from another PPA in order to be built, the maintainer can configure the other PPA as a build dependency.</p>
+<p>The feature is available for all Launchpad-hosted Git repositories, with no additional setup or integration required.</p>
 
 
 
-<p>However, making a package available does not necessarily mean it will be selected. When multiple repositories provide the same package at the same priority, Ubuntu’s package manager generally prefers the newer version.<a href="https://manpages.ubuntu.com/manpages/focal/man5/apt_preferences.5.html"> APT’s documentation</a> explains these selection rules.</p>
-
-
-
-<p>Imagine that your application needs a library containing a patch you maintain in a separate PPA. Your builds will only use that library successfully until an Ubuntu update introduces a package with a higher version number. Subsequent builds will select the Ubuntu version instead, even though it does not contain your patch.</p>
-
-
-
-<p>PPA dependency pinning gives you a way to express which source your builds should always prefer by allowing you to assign a priority to each PPA dependency. Launchpad applies those priorities when preparing the build environment.</p>
-
-
-
-<p>For the patched-library example, an appropriate priority lets you keep using the library from your chosen PPA, even when Ubuntu publishes a newer version. This reduces the need to adjust package version numbers to influence which source is selected.</p>
-
-
-
-<h2><strong>Who is this for?</strong></h2>
-
-
-
-<p>The feature is useful for teams that:</p>
-
-
-
-<ul><li>Test fixes or features that are not yet available in Ubuntu.</li><li>Maintain customised dependencies for their applications.</li><li>Build related projects across several PPAs.</li></ul>
-
-
-
-<h2><strong>Configure priorities in Launchpad</strong></h2>
-
-
-
-<p>When Launchpad prepares a build, APT resolves versioning conflicts by selecting the package repository with the highest priority. Some values already have conventional meanings: <strong>500</strong> is the default for available packages, and <strong>990</strong> is generally used for packages from the configured target release. Values above <strong>1000</strong> are especially strong and may cause APT to select a package even when it is an older version. See <a href="https://manpages.ubuntu.com/manpages/focal/man5/apt_preferences.5.html#APT">APT’s documentation</a> for more information.</p>
-
-
-
-<p>To get started, open your PPA’s <strong>Edit PPA dependencies</strong> page and adjust the <strong>Priority</strong> field beside the relevant dependency. Save your changes to apply the setting to subsequent builds.</p>
-
-
-
-<figure class="wp-block-image size-full"><img width="865" height="357" src="https://blog.launchpad.net/wp-content/uploads/2026/09/64c9/image.png" alt="" class="wp-image-4577"/></figure>
-
-
-
-<p>For teams that manage their PPA configuration through scripts or automation, priorities can also be configured through the <a href="https://api.launchpad.net/devel.html#archive_dependency">Launchpad API</a>. This can be done through <a href="https://ubuntu.com/docs/launchpad/developer/how-to/operate-launchpad/use-lp-shell/">lp-shell</a> as follows:</p>
-
-
-
-<pre class="wp-block-code"><code># Run: lp-shell production devel
-
-
-
-In &#91;1]: target_ppa = lp.people&#91;"your-launchpad-id"].getPPAByName(
-
-    name="your-ppa-name"
-
-)
-
-In &#91;2]: dependency_ppa = lp.people&#91;"dependency-owner"].getPPAByName(
-
-    name="dependency-ppa-name"
-
-)
-
-
-
-In &#91;3]: target_ppa.addArchiveDependency(
-
-    dependency=dependency_ppa,
-
-    pocket="Release",
-
-    component="main",
-
-    pin_priority=1001,
-
-)</code></pre>
-
-
-
-<p>Existing dependencies retain the default priority of <strong>500</strong>, so there is no configuration change required if the current behaviour meets your needs.</p>
-
-
-
-<p>Priorities apply to packages supplied by the dependency PPA, so choose them with the contents of that PPA in mind. They express a source preference; they do not freeze a particular package version or guarantee identical builds over time.</p>
-
-
-
-<p>Additionally, PPA dependency pinning only affects the build environment on Launchpad. It does not change package preferences on the computers of people who install software from your PPA.</p>
-
-
-
-<h2><strong>References</strong></h2>
-
-
-
-<p>For more information, see:</p>
-
-
-
-<ul><li><a href="https://manpages.ubuntu.com/manpages/focal/man5/apt_preferences.5.html">apt_preferences(5)</a></li><li><a href="https://ubuntu.com/docs/launchpad/user/how-to/packaging/create-ppa/">Launchpad manual’s create a PPA page</a></li><li><a href="https://api.launchpad.net/devel.html#archive_dependency">Launchpad API Archive Dependency page</a></li><li><a href="https://ubuntu.com/docs/launchpad/developer/how-to/operate-launchpad/use-lp-shell/">lp-shell documentation</a></li></ul>]]></description>
+<p>Happy merging!</p>]]></description>
       <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
@@ -2999,19 +2899,19 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
       <link>https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</link>
       <guid isPermaLink="true">https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</guid>
       <pubDate>Fri, 16 May 2025 11:17:23 GMT</pubDate>
-      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd wp-block-paragraph">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
+      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
 
 
 
-<p class="wp-block-paragraph"></p>
+<p></p>
 
 
 
-<p class="wp-block-paragraph"></p>
+<p></p>
 
 
 
-<p class="wp-block-paragraph"></p>]]></description>
+<p></p>]]></description>
       <source url="https://ograblog.wordpress.com/feed/atom">Oliver Grawert</source>
     </item>
     <item>
@@ -5665,29 +5565,6 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 <li><a href="https://github.com/helm/charts/tree/master/stable/external-dns#configuration">The full list of configuration details for the ExternalDNS Helm&nbsp;chart</a></li>
 </ul>]]></description>
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
-    </item>
-    <item>
-      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
-      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
-      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
-      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
-<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
-<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
-<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
-<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
-<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
-<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
-<blockquote>
-<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
-</blockquote>
-<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
-<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
-We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
-So, please sync with this change (and sorry :)).</p>
-<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
-<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
-      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
     </item>
     <item>
       <title>Rise and fall of libclamav</title>
