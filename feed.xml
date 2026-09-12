@@ -6,9 +6,216 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 11 Sep 2026 03:42:12 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 03:45:40 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JPEG-XL, AppStream, and better media processing</title>
+      <link>https://blog.tenstral.net/2026/09/jpeg-xl-appstream-and-better-media-processing.html</link>
+      <guid isPermaLink="true">https://blog.tenstral.net/2026/09/jpeg-xl-appstream-and-better-media-processing.html</guid>
+      <pubDate>Thu, 10 Sep 2026 17:48:00 GMT</pubDate>
+      <description><![CDATA[<p class="wp-block-paragraph">Two weeks ago, I released AppStream 1.2.0. This release contains a lot of great changes, but one of the most important ones concerns how media are being handled, and AppStream&#8217;s default image export format.</p>
+
+
+
+<p class="wp-block-paragraph"><a href="https://www.freedesktop.org/software/appstream/docs/">AppStream</a> is a Freedesktop metadata standard to describe software components. That can be anything from system services over fonts to console and graphical applications. AppStream metadata is supposed to give users enough information to decide whether they want to install a piece of software, to represent that piece of software, and to give the operating system enough information to decide whether a software component should be installed automatically and (to some extent) what capabilities and relations it has, to provide the user with sensible options.</p>
+
+
+
+<p class="wp-block-paragraph">Especially for the first two goals, and especially for GUI applications, AppStream supports icons and screenshots, which are used to showcase applications. Today, AppStream is used by all kinds of services, from Linux distributions over firmware updates to Flatpak and desktops directly. AppStream&#8217;s original design however comes from the perspective of Linux distributions in 2011, where you may want to browse the software catalog offline, without delay, and without pinging an external server (which could be a privacy concern).</p>
+
+
+
+<p class="wp-block-paragraph">Therefore, a common way to deploy an AppStream-enabled software repository is to ship all icons of all applications in the repository to the user as part of the repository metadata download. AppStream does support remote icon downloads nowadays, and for a while I thought that this would become the default eventually. However, especially in today&#8217;s world, having a bandwidth-saving, instantly responsive, privacy-protecting application browsing experience seems more important that ever.</p>
+
+
+
+<h3 class="wp-block-heading">PNG images are great!</h3>
+
+
+
+<p class="wp-block-paragraph">The only format that AppStream supports for icons <strong>and</strong> screenshots (which are downloaded on-demand from your distributor&#8217;s CDN) has always been exclusively <a href="https://en.wikipedia.org/wiki/PNG">PNG</a>. PNG images are perfect for icons, because they compress well (especially for common icon shapes), are fast and simple to load, and can be loaded anywhere, by any toolkit or webbrowser. They also ensure we deliver faithful screenshot images, even though we may have scaled or re-rendered them. Still though, PNG images are less great for screenshots, as they are not very efficient, which puts strain on any CDN that has to deliver them, as well as on people&#8217;s internet connections when browsing screenshots. Having smaller thumbnails alleviates that problem a little, but does not fully solve it.</p>
+
+
+
+<p class="wp-block-paragraph">But even for icons, PNG could be improved upon: In many cases, icons are re-downloaded with the repository metadata again and again, so having a large icon tarball adds up to the data transferred during metadata refreshes. AppStream also now supports large 128x128px icons, which nobody in 2012 expected we would need, adding even more data that will be re-downloaded. Saving some space here translates directly to lower bandwidth costs as well as faster downloads for users.</p>
+
+
+
+<p class="wp-block-paragraph">To improve PNG file sizes, the AppStream Compose library, which handles all image processing and metadata catalog composition, was running <a href="https://optipng.sourceforge.net/">optipng</a> on all generated PNG images. That does create smaller PNG images, but they were still relatively large compared to other image formats.</p>
+
+
+
+<p class="wp-block-paragraph">For a long time though, there was no alternative to PNG images for icons: There was no lossless image compression format that could give us the same quality as PNG images and that was also widely supported.</p>
+
+
+
+<h3 class="wp-block-heading">JPEG-XL vs PNG in AppStream</h3>
+
+
+
+<p class="wp-block-paragraph">Since 2021 we have <a href="https://jpegxl.info/">JPEG-XL</a> (JXL), which offers a true lossless mode with often better compression than PNG. The issue was that JPEG-XL wasn&#8217;t widely supported. Then, in 2025, the PDF Association selected JPEG-XL as the preferred image format for HDR images in PDFs, and now we are finally getting browser support and more ubiquitous availability of the format (you can try it right now in Firefox!).</p>
+
+
+
+<p class="wp-block-paragraph">For screenshots, using JXL&#8217;s lossy mode, it has obvious and extreme size advantages over PNG, so supporting JXL or WebP for screenshot images was an obvious choice. If JXL would support the lossless case very well as well though, we could serve many use cases with the same exported image format, which is very attractive to me.</p>
+
+
+
+<p class="wp-block-paragraph">So, the obvious next question was whether it was worth the pain of switching the icon format, so I did some measurements on real icons. For that I used the AppStream component icon pool that Debian Unstable ships, which is almost 5000 application icons of various sizes, and converted them to PNG:</p>
+
+
+
+<div style="overflow-x: auto;">
+<table>
+  <thead>
+    <tr><th>Icon size</th><th align="right">Icons</th><th align="right">PNG total</th><th align="right">JXL total</th><th align="right">Pool saved</th><th align="right">PNG avg</th><th align="right">JXL avg</th><th align="right">Median saved</th><th align="right">Mean saved</th><th align="right">  Worst</th><th align="right"> Best</th><th align="right">Larger as JXL</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>48&#215;48    </td><td align="right"> 1544</td><td align="right">  3.7 MiB</td><td align="right">  3.0 MiB</td><td align="right">     17.8%</td><td align="right">2.4 KiB</td><td align="right">2.0 KiB</td><td align="right">       17.9%</td><td align="right">     16.7%</td><td align="right">-118.7%</td><td align="right">60.0%</td><td align="right">          206</td></tr>
+    <tr><td>64&#215;64    </td><td align="right"> 2018</td><td align="right">  7.0 MiB</td><td align="right">  5.8 MiB</td><td align="right">     17.8%</td><td align="right">3.6 KiB</td><td align="right">2.9 KiB</td><td align="right">       18.0%</td><td align="right">     15.8%</td><td align="right">-112.7%</td><td align="right">70.0%</td><td align="right">          279</td></tr>
+    <tr><td>128&#215;128  </td><td align="right"> 1411</td><td align="right"> 11.2 MiB</td><td align="right">  8.7 MiB</td><td align="right">     22.0%</td><td align="right">8.1 KiB</td><td align="right">6.3 KiB</td><td align="right">       20.1%</td><td align="right">     17.5%</td><td align="right"> -89.7%</td><td align="right">61.0%</td><td align="right">          209</td></tr>
+  </tbody>
+  <tfoot>
+    <tr><th>TOTAL    </th><th align="right"> 4973</th><th align="right"> 21.9 MiB</th><th align="right"> 17.5 MiB</th><th align="right">     19.9%</th><th align="right">4.5 KiB</th><th align="right">3.6 KiB</th><th align="right">       18.6%</th><th align="right">     16.6%</th><th align="right">-118.7%</th><th align="right">70.0%</th><th align="right">          694</th></tr>
+  </tfoot>
+</table>
+</div>
+<p><small>PNG images saved with libpng at <code>effort=4, compression=9</code>, then optimized using <code>optipng -o2</code>, JXL images encoded using <code>vips jxlsave lossless=1 effort=7 strip=1</code> via VIPS/libjxl.</small></p>
+
+
+
+<p class="wp-block-paragraph">As the table shows, using lossless JXL images over size-optimized PNG images (using optipng&#8217;s default settings) provides a roughly 20% gain. This does not look like much, until you consider how often these files are downloaded: A 20% file size reduction may only save 1-2 MiB of disk space, but if they are downloaded over and over again by many clients, it will save a lot of bandwidth.</p>
+
+
+
+<h3 class="wp-block-heading">Interesting JXL encoding findings</h3>
+
+
+
+<p class="wp-block-paragraph">As a sidequest, I was curious why some images were larger than their PNG counterparts when encoded with JXL, and what the ones that were significantly smaller were.</p>
+
+
+
+<p class="wp-block-paragraph">In short, the biggest size reductions for JXL existed on images that were already small as PNG, and contained large, flat color surfaces with hard edges and simple shapes. They were not very interesting, and much of JXL&#8217;s wins come from accumulating smaller gains across all files, which compound the bigger icons get (especially at 128x128px, where JXL truly shines).</p>
+
+
+
+<p class="wp-block-paragraph">The events were JXL loses to PNG are more interesting: For example, it does quite poorly with pixel-art images that have a lot of repeating patterns. Those are encoded well by PNG, but less efficiently by JXL. Take for example Vonsh:</p>
+
+
+
+<figure class="wp-block-image size-full is-resized"><a href="https://blog.tenstral.net/wp-content/uploads/2026/09/vonsh_vonsh.png"><img decoding="async" width="64" height="64" src="https://blog.tenstral.net/wp-content/uploads/2026/09/vonsh_vonsh.png" alt="" class="wp-image-2137" style="width:151px;height:auto"/></a><figcaption class="wp-element-caption">Icon of <a href="https://github.com/aurb/vonsh/">Vonsh</a>, an SDL-based snake game, which PNG compresses better than JXL</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">My guess is that while PNG can exploit the repeating pixel patterns for compression, JXL&#8217;s predicts surrounding pixels from its neighbours, which fails too often and makes it pay almost full entropy per pixel. In this single rare case, the PNG is at 5.4 KiB, while the JXL is almost 8 KiB in size.</p>
+
+
+
+<p class="wp-block-paragraph">Other cases I looked at were arguably buggy input data, where color channels were hidden under the alpha channel of the input image. PNG could probably again exploit repeats, while we were forcing JXL to encode pixels that were invisible in the final image. This is arguably a problem with the original input data. Currently, AppStream does not make any changes to icons at all, but in future we might add a filter that removes invisible colors from images to solve this pathological case (it was only two icons out of 5000 though, so it is not a high priority).</p>
+
+
+
+<p class="wp-block-paragraph">The third case I found where JXL loses to PNG were icons with checkerboard-like patterns:</p>
+
+
+
+<figure class="wp-block-image size-full is-resized"><a href="https://blog.tenstral.net/wp-content/uploads/2026/09/x3270_x3270.png"><img decoding="async" width="64" height="64" src="https://blog.tenstral.net/wp-content/uploads/2026/09/x3270_x3270.png" alt="" class="wp-image-2139" style="width:148px;height:auto"/></a><figcaption class="wp-element-caption">Icon of <a href="https://x3270.bgp.nu/">x3270</a>, an IBM 3270 Terminal Emulator</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">For those, PNG can likely again exploit the repeating patterns, while a checkerboard layout is pretty bad for left/top predictors like JXL&#8217;s. However, in this case the size difference (and loss for JXL) is only 450 bytes, so even though JXL loses to PNG, it does so not by much.</p>
+
+
+
+<h3 class="wp-block-heading">JXL in AppStream</h3>
+
+
+
+<p class="wp-block-paragraph">Given these findings, JPEG-XL is the default image format starting with AppStream 1.2.0. AppStream Compose will encode all images losslessly as JXL, while screenshots are encoded in lossy mode at <code>Q=90 effort=7</code>. Since the optipng step does not happen for JXL images, this comes at no speed penalty and is even a bit faster on modern x86_64 CPUs (where libjxl can use SIMD). PNG is still available, and Compose can be told to switch between the two formats.</p>
+
+
+
+<h4 class="wp-block-heading">Upsides of JXL in AppStream right now</h4>
+
+
+
+<p class="wp-block-paragraph">If you use JXL in Compose or the recent release of <a href="https://github.com/ximion/appstream-generator">appstream-generator</a>, you will get much smaller images and, for screenshots, will benefit from other JPEG-XL features such as progressive decoding, providing a far nicer user experience. libAppStream has supported JXL icons since version 1.1.3, so your clients will need that version or a newer one, and all software centers will have to support loading JXL images (which all of them do, provided the right plugins are installed).</p>
+
+
+
+<h4 class="wp-block-heading">Downsides of switching to JXL too quickly</h4>
+
+
+
+<p class="wp-block-paragraph">JXL is a very new format, so web browsers might not yet display it if you are serving webpages. Your clients may also have bugs in processing JXL images, as the format is still &#8220;new&#8221;. For example, switching on JXL in Debian sent KDE Discover into an infinite loop on startup while trying to load the icons (an issue which <a href="https://invent.kde.org/frameworks/kimageformats/-/commit/458257b7a32417c995d3a95a65b38586eee7a91a">has been fixed</a>, but clients will need that patch first before JXL is switched on).</p>
+
+
+
+<p class="wp-block-paragraph">This currently makes JXL enablement only possible when you <strong>know</strong> that your clients can support it. This is the case for me in Debian Unstable and Debian 14, which are using JXL images for a few weeks now, but not for any older releases. Platforms like Flatpak have it even harder, because they do know even less about their clients. So, even though it has big advantages, you may want to hold off on using JXL right away, and force PNG by setting the <code>ImageFormat</code> key to <code>png</code> in <code>appstream-generator</code>&#8216;s configuration, or passing <code>--image-format=png</code> to <code>appstreamcli compose</code>.</p>
+
+
+
+<p class="wp-block-paragraph">It is also worth mentioning that JPEG-XL is much, much slower on systems that do not have SIMD instructions or for which the libjxl/jxl-rs library does not have them (such as apparently riscv64 right now). If this is a concern, you might not want to switch to JXL right away.</p>
+
+
+
+<h3 class="wp-block-heading">Media pipeline improvements </h3>
+
+
+
+<p class="wp-block-paragraph">Besides the JXL default change, AppStream 1.2.0 also comes with a complete overhaul of its media processing pipeline. While <code>libappstream</code>, AppStream&#8217;s main library, does not do any media processing and comes with very minimal dependencies to be embedded in client applications and used on servers, the same can not be said about <code>libappstream-compose</code>, AppStream&#8217;s library to build metadata generating applications (the server-side part, usually).</p>
+
+
+
+<p class="wp-block-paragraph">The <code>compose</code> library has to render fonts into font specimen cards, inspect translation files, render SVG images, decode all kinds of raster images, inspect video files, etc. Especially the fonts, and the fact that fonts can appear in SVG images, has caused issues in the past, as <code>libappstream-compose</code> is a heavily threaded library and most font libraries can only work from a single thread. This forced the library to essentially go into single-thread mode anytime anything that could touch a font was being processed.</p>
+
+
+
+<p class="wp-block-paragraph">AppStream also originally was created for a &#8220;safe world&#8221; where applications were vetted by the distributors before their metadata was processed. This is increasingly not the case, so it made sense to put at least a few guardrails on the most complex part of the pipeline: The media processing. As part of the change, media processing was split out into a separate worker process. This solved two problems at once: Font handling was isolated in a single-threaded binary &#8211; if we wanted to handle fonts in parallel, we could simply spawn more workers. And, being in a separate process, the media processing could now be sandboxed.</p>
+
+
+
+<p class="wp-block-paragraph">As part of the multiprocess changes, Compose also switched from using <a href="https://gitlab.gnome.org/GNOME/gdk-pixbuf/">GdkPixbuf</a> to <a href="https://github.com/libvips/libvips">VIPS</a> for image processing. The latter allows for much more fine-grained control over the image output and encoding, and comes with a lot of well-maintained filters and operations, which made it possible to eliminate a fair chunk of AppStream&#8217;s hand-rolled image processing operations. As part of this transition, we unfortunately lost the ability to read <a href="https://en.wikipedia.org/wiki/X_PixMap">XPM</a> images, which dropped about 20-30 applications from the pool at Debian. But in the name of security, this is a sensible choice, especially since most XPM icons were very small and low-resolution, and applications using them could benefit from adding a high-quality PNG icon anyway. With VIPS, we also now restrict the amount of image formats we can load to a sensible set, so extremely niche or unexpected formats will be outright rejected (this includes sane-but-unusual formats for screenshots and icons, such as <a href="https://de.wikipedia.org/wiki/Tagged_Image_File_Format">TIFF</a> images).</p>
+
+
+
+<p class="wp-block-paragraph">The Compose library, with all of these changes, will now just request high-level operations (e.g. &#8220;render a font card for this font to a JXL image&#8221;) from the worker, and provide it with input data in sealed <a href="https://man7.org/linux/man-pages/man2/memfd_create.2.html">memfd</a>s and output locations as FDs as well. On Linux systems, the worker will use <a href="https://docs.kernel.org/userspace-api/landlock.html">Landlock</a> if available, to block all write access to the filesystem, deny device access and deny TCP and UDP as well. The sandbox can certainly be tightened a fair bit in future, but this was a good and safe start to gain some experience with it without having things break too easily, given the many places Compose is used in (also, Landlock&#8217;s API is surprisingly nice to use, so it was easier than I thought to add in this early version).</p>
+
+
+
+<p class="wp-block-paragraph">With all of these changes, the <code>libappstream-compose</code> library is now also officially marked API-stable, so you should be able to rely on it in future to build new things (its API has barely changed in the past, and now with the new media API and defaults change in place, it was time to declare it stable).</p>
+
+
+
+<h3 class="wp-block-heading">I want to see / try this!</h3>
+
+
+
+<p class="wp-block-paragraph">Currently, the easiest way to have a look at the new data is to check out Debian Unstable. If you have a JXL-enabled browser, you can also see the icons in <a href="https://appstream.debian.org/sid/">AppStream Generator&#8217;s HTML pages for Debian Sid</a>. If you are using appstream-generator for your distribution, you will also get much more pleasant statistics and HTML pages, as well as fully deterministic media output and a whole bunch of security updates, so, update to its recent 1.0 release.</p>
+
+
+
+<p class="wp-block-paragraph">Please keep in mind that if you switch to JXL, the client tools receiving the image data have to support it. Support varies depending on the Linux distribution, so, test it first and switch the default back to PNG in case you encounter any issues.</p>
+
+
+
+<h3 class="wp-block-heading">What&#8217;s next?</h3>
+
+
+
+<p class="wp-block-paragraph">With so many features and changes landed, the next changes in AppStream will focus on improving what already exists and fixing any issues (there will be more blogposts about the other features 1.2.x delivers!). Testing with the entire Debian archive as data source makes me fairly confident though that there will not be many problems. In the longer term, tightening the media processing sandbox will also be something we might want to do, e.g. by hiding parts of the filesystem tree or filtering syscalls.</p>
+
+
+
+<p class="wp-block-paragraph">For JPEG-XL, one obvious question is &#8220;Will you add support for it to the Freedesktop icon-theme specification as supported format alongside PNG, SVG(Z), and XPM?&#8221;. For on-disk icon repositories, JXL&#8217;s space-savings are less compelling, and it being HDR-capable is also not necessarily a killer feature (PNG can go a long way!). However, JPEG-XL&#8217;s ability to immediately decode larger images at reduced resolution without resampling could legitimately be very powerful here, as applications could ship a single large image and quickly decode it at 1/2, 1/4 or 1/8 the size for different purposes in their UI. JPEG-XL also supports spot-color extra channels, which applications could use as masks to recolor raster icons at render time. This could be incredibly nice to color symbolic icons on-the-fly without any SVG and CSS. JXL also provides richer metadata, which might be neat for (license/author) documentation. So, the answer here is: Maybe it makes sense to allow another format, but this will have to be discussed first, as it would force JXL into every toolkit and desktop, which is a much bigger ask than supporting it only in AppStream.</p>
+
+
+
+<p class="wp-block-paragraph">As always, let me know what you think and please report any issues or bugs directly against <a href="https://github.com/ximion/appstream">AppStream</a> or <a href="https://github.com/ximion/appstream-generator">AppStream Generator</a> if you encounter problems that are with the tools, and not with a project&#8217;s metadata.</p>]]></description>
+      <source url="http://blog.tenstral.net/category/planet/planet-ubuntu/feed">Matthias Klumpp</source>
+    </item>
     <item>
       <title>Ubuntu now certified on Qualcomm Dragonwing™ IQ-8275</title>
       <link>https://ubuntu.com//blog/ubuntu-now-certified-on-qualcomm-dragonwing-iq-8275</link>
@@ -1096,106 +1303,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 
 <p><!-- /wp:post-content --></p>]]></description>
       <source url="https://stgraber.org/category/planet-ubuntu/feed/">Stéphane Graber</source>
-    </item>
-    <item>
-      <title>Sovereign Tech Fellowship for Freedesktop Tasks</title>
-      <link>https://blog.tenstral.net/2026/08/sovereign-tech-fellowship-for-freedesktop-tasks.html</link>
-      <guid isPermaLink="true">https://blog.tenstral.net/2026/08/sovereign-tech-fellowship-for-freedesktop-tasks.html</guid>
-      <pubDate>Mon, 24 Aug 2026 21:00:40 GMT</pubDate>
-      <description><![CDATA[<p class="wp-block-paragraph">In 2025 I was honored to be selected for the first cohort of <a href="https://www.sovereign.tech/programs/fellowship">Sovereign Tech Fellows</a>, a program by Germany&#8217;s <a href="https://www.sovereign.tech/">Sovereign Tech Agency</a> to improve the resilience of the open source ecosystem by supporting maintainers directly (complementing their existing support for larger FOSS organizations). Back in 2025, I was only working very limited hours &#8211; however, this has changed in 2026.</p>
-
-
-
-<p class="wp-block-paragraph">For the second half of 2026, I am working again as a Sovereign Tech Fellow, but this time with significantly increased hours. After finishing my PhD, I do have time now for new tasks (and new jobs!), and the fellowship presents an amazing opportunity to really advance projects that I maintain or am part of. This also has a very nice effect on contributors and bug reporters, as their feedback gets addressed a lot faster. With some luck, this ultimately will help finding new (co)maintainers for projects as well (although in the age of AI, a lot of how open source used to work is much more uncertain, but that is a matter for a different blog post).</p>
-
-
-
-<p class="wp-block-paragraph">The fellowship is time-limited, so I am intending to make the time I currently have count!</p>
-
-
-
-<h2 class="wp-block-heading">So, what&#8217;s planned?</h2>
-
-
-
-<p class="wp-block-paragraph">I am involved in many projects, but three of them will be getting attention as part of the fellowship. I know I am notoriously slow at blogging, but expect more details on each of them very soon. Here&#8217;s an overview:</p>
-
-
-
-<h3 class="wp-block-heading">Freedesktop.org, Specifications and Organization</h3>
-
-
-
-<p class="wp-block-paragraph">I maintain the <a href="https://specifications.freedesktop.org/">Freedesktop Specifications</a>, which is an area of Freedesktop that has traditionally been a bit chaotic. This &#8220;worked&#8221; in the past, because Freedesktop was never intended to be a formal standards body, but more a shared space where people could throw a lot of code and ideas over the wall and see what sticks and what people can collaborate on.</p>
-
-
-
-<p class="wp-block-paragraph">While I very much love the spirit of this and want to keep it in some form, we definitely would benefit not just from more formalization and better procedures, but also from better organization of the specifications in general. A lot of conflicts can be avoided by that. I will work on improving procedures, crunching through the (lots!) of pending bug reports and MRs, and to make the specifications site better searchable and accessible (similar to how Mozilla&#8217;s MDN presents information, but I am not sure if we will get quite that far). I also intent to add a compatibility matrix for specifications, so if a desktop opts out of any one of them (or does not implement them yet) that fact is documented and authors of applications know what they can expect. This will allow us to move a lot faster and avoid a lot of conflict, because there is no implicit assumption that &#8220;everybody will implement everything&#8221; anymore (which has never been quite true anyway).</p>
-
-
-
-<p class="wp-block-paragraph">Hopefully, this will ultimately result in a Freedesktop that is both a lot more useful for application authors who want to bring their project to Linux, as well as developers of desktop environments who need to see which specifications are available and which ones are current.</p>
-
-
-
-<p class="wp-block-paragraph">In addition to that, I have also worked on a Freedesktop.org website refresh, which is pretty much done in its first iteration (pending sysadmin action). The aim there is to have a more official website, separate from user-contributed wiki content, that showcases what Freedesktop is and which projects are using it for hosting. Once the new website is live, I will also review every page again, archive dead projects in their own section and reorganize the software and specifications directory. Those sections are severely outdated and are missing recent efforts from the community, while still containing long-dead old projects (remember <a href="https://en.wikipedia.org/wiki/HAL_(software)">HAL</a>? <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" />).</p>
-
-
-
-<h3 class="wp-block-heading">AppStream</h3>
-
-
-
-<p class="wp-block-paragraph">A lot of extra maintenance work will be (has been!) done on it. This includes things such as JPEG-XL support (blog post soon), sandboxed media processing, support for newer specification additions, better OARS integration (and potentially migrating it to fd.o infrastructure), improvements and API stabilization for <em>libappstream-compose</em> and a lot of bugfixing and resolution of issues found by AI code review.</p>
-
-
-
-<p class="wp-block-paragraph"><a href="https://github.com/ximion/appstream">AppStream</a> was originally designed to parse only trusted data from vetted Linux distribution sources &#8211; this is no longer the case in today&#8217;s world and in the way Flatpak uses it, so we need to increase resilience of the project.</p>
-
-
-
-<p class="wp-block-paragraph">I am also exploring a project that could vastly improve search accuracy for AppStream. Stay tuned for that.</p>
-
-
-
-<h3 class="wp-block-heading">PackageKit &amp; System Upgrades</h3>
-
-
-
-<p class="wp-block-paragraph">Many years ago, people thought we would all migrate to atomic Linux distributions and slowly not need <a href="https://github.com/PackageKit/PackageKit">PackageKit</a> anymore. This has not turned out to be the case, and there are still plenty of reasons to use a package-based OS, especially in development environments. At the same time, PackageKit has been basically the same for years, and its older architecture is beginning to show. It being a daemon who&#8217;s literal job it is to modify the entire system also makes it one of the most security-sensitive components that a Linux system can have, while simultaneously making it near-impossible to sandbox.</p>
-
-
-
-<p class="wp-block-paragraph">My plan is to create PackageKit 2.0 by building on the great foundation of PackageKit 1.0, but modernizing it. This will include simplifying its code and removing a bunch of features that have no more use in modern desktops, while also adding some features that PackageKit never had but that would be useful to expose to frontends (still no to interactivity an terminal-progress forwarding though!). PK 2.0 will also allow me to solve a few design issues that have been worked around in the past, by replacing them with better solutions. This will be a painful transition, as PackageKit 2.0 will break all interfaces PackageKit has &#8211; and those interfaces have been frozen for more than a decade. However, I do fully expect this change to be worth the effort.</p>
-
-
-
-<p class="wp-block-paragraph">In addition to that, I intend to look into the offline-update procedure again and improve it. The current multi-reboot operation comes with downsides, that newer systemd features such as soft-reboot can alleviate. The end result should be a much smoother, less annoying offline-update experience for users (I especially want to get rid of updates running on system startup, which I consider quite bad from a usability perspective). The new behavior is in the early drafting stages and may need direct support from systemd. I will share more about it once I can.</p>
-
-
-
-<h2 class="wp-block-heading">That&#8217;s a lot of tasks!</h2>
-
-
-
-<p class="wp-block-paragraph">Yes! I will see how far I get. I am moving project-by-project though, to allow me to focus on one project at a time, rather than scattering my attention continuously. Amazingly, this means that the major tasks for AppStream are already almost done, and we are nearing the 1.2.0 release. AppStream got priority, because the new Freedesktop Flatpak runtime will be released soon, and because I want FlatHub/Flatpak to have access to the new AppStream release sooner. Freedesktop and PackageKit are next on the task list.</p>
-
-
-
-<p class="wp-block-paragraph">Either way, a lot of progress is coming &#8211; if you have any feedback or want to help out, please don&#8217;t hesitate to reach out! All work is happening fully in the open, so you can also chime in on the respective GitHub/GitLab tasks <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" />.</p>
-
-
-
-<p class="wp-block-paragraph">You can also expect blog posts about key features or interesting changes, so stay tuned! <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
-
-
-
-<p class="wp-block-paragraph"></p>
-
-
-
-<p class="wp-block-paragraph"></p>]]></description>
-      <source url="http://blog.tenstral.net/category/planet/planet-ubuntu/feed">Matthias Klumpp</source>
     </item>
     <item>
       <title>Investing in automated C to Rust translation</title>
@@ -3079,19 +3186,19 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
       <link>https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</link>
       <guid isPermaLink="true">https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</guid>
       <pubDate>Fri, 16 May 2025 11:17:23 GMT</pubDate>
-      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd wp-block-paragraph">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
+      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
 
 
 
-<p class="wp-block-paragraph"></p>
+<p></p>
 
 
 
-<p class="wp-block-paragraph"></p>
+<p></p>
 
 
 
-<p class="wp-block-paragraph"></p>]]></description>
+<p></p>]]></description>
       <source url="https://ograblog.wordpress.com/feed/atom">Oliver Grawert</source>
     </item>
     <item>
