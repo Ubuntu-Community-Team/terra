@@ -6,9 +6,249 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 18 Sep 2026 03:42:26 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 03:39:10 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Write?</title>
+      <link>https://notes.pault.ag/why-write/</link>
+      <guid isPermaLink="true">https://notes.pault.ag/why-write/</guid>
+      <pubDate>Fri, 18 Sep 2026 17:05:00 GMT</pubDate>
+      <description><![CDATA[<p>As a graduate of a liberal arts university, I wound up, unsurprisingly, taking a
+lot of classes in every possible academic discipline. Thinking back to the
+person that I was going into university, I don&rsquo;t think I would have chosen to
+take them &ndash; after all, my degree was in the sciences; I&rsquo;d have been stoked to
+do nothing more than wall-to-wall computer science until I ran out of
+coursework and filled the rest of my hours with research and independent
+studies with my professors (which, I guess I did actually do, just not as
+much as I would have otherwise).</p>
+<p>Even this blog&rsquo;s CSS theme (now 18 years old and starting to look it) was
+something I wrote after receiving and repeatedly re-reading a tattered
+third-hand copy of &ldquo;The Laws of Thought&rdquo; by George Boole. It was gifted to me
+by a college friend majoring in philosophy while I was crashing at his rental
+on the beach. He gave it to me because he knew I &ldquo;liked that shit&rdquo; and, while
+it was definitely computer science in nature, I would not have read it
+otherwise. I have vivid memories of sleeping on his la-z-boy surrounded by
+towers of books he was working through. He went on to do incredible work,
+getting his PhD, doing research, brilliant writing &ndash; his death in 2023 has
+robbed humanity of more time with him. &ldquo;The Laws of Thought&rdquo; sits behind me in
+my office, and is one of my most valued possessions.</p>
+<p>My friends mean more to me than I could ever express, and I definitely don&rsquo;t
+show it enough. Each of my classes made me a more thoughtful person. My
+professors made me a better, more well-rounded person &ndash; and a person who
+attempts to live up to the oft repeated credo of being &ldquo;men and women for
+others&rdquo;. I did the best I could, even though I was never a particularly good
+student. Without liberal arts, I don&rsquo;t think I would, dispositionally, have
+been capable of pushing myself &ndash; to this day &ndash; to continue to learn on nights
+and weekends, for no reason other than wanting to learn. I <em>refuse</em> to stop
+expanding my perspective, and do my best to approach new problems with as much
+humility and curiosity as I can muster.</p>
+<p>Every few days for the last year or so, I have been thinking back to a reading
+assignment from my junior year that, at the time, I thought was a borderline
+throwaway filler assignment for the class. The reading is an essay from 1947 by
+the french existentialist philosopher and libertarian marxist, Jean-Paul Sartre
+(as some of the more erudite may have now already worked out given the blog&rsquo;s
+title), &ldquo;Why Write?&rdquo;. I re-read it this week. It is not filler. I remember this
+essay better than some of the classwork I considered more important at the
+time.</p>
+<h1 id="why-write">Why Write?</h1>
+<p>&ldquo;Why Write?&rdquo; starts off by describing the ways in which writing &ndash; trying to
+communicate your thoughts, opinions, or feelings to others &ndash; is an act of
+<em>projection</em>. The writer will only ever draw from a place of their &ldquo;own
+subjectivity&rdquo; &ndash; writing is taking your person and putting it on display.
+You&rsquo;re choosing what words to use, how to use them, pulling from knowledge
+you&rsquo;ve accumulated (based on how you&rsquo;ve chosen to spend your time). Spending
+any amount of your finite existence in order to convey a thought is, itself,
+announcing to the world that you believe it to be a thought worth sharing.</p>
+<p>Meanwhile, the act of reading is <em>not simply</em> turning letters into words.
+Reading is engaging with the work, and <em>understanding</em> the work in a process
+that looks more like what Sartre terms &ldquo;re-invention&rdquo; or &ldquo;discovery&rdquo; &ndash; &ldquo;the
+literary object, though realized <em>through</em> language, is never given <em>in</em>
+language&rdquo;. It is not enough to read the words in a book end-to-end; you must,
+as a reader, actively engage with the work to understand what is being
+communicated by those words. Reading is to take the words on the page, and
+&ldquo;exceed&rdquo; the mere words through what he calls &ldquo;directed creation&rdquo;. The reader
+is &ldquo;re-inventing&rdquo;/&ldquo;discovering&rdquo; the writer&rsquo;s thoughts by following their
+&ldquo;landmarks in the void&rdquo;.</p>
+<p>And this all makes pretty good sense to me &ndash; I know if someone is being
+sarcastic because I know the writer; I have read their words and have <em>read</em>
+into their words, allowing myself to be directed by the writer into
+&ldquo;discovering&rdquo; the thought they have left me in their work. I understand that
+their words are <em>humorous</em>, not <em>irate</em>. Knowing who the author of a work is
+can completely change the point of a sentence. The fact I&rsquo;m writing about
+Sartre at all, or that this very writing has been constrained for presentation
+in this blog&rsquo;s CSS is only happening because of who I am, what things I&rsquo;ve
+experienced in life, and what has made me, me. Sartre argues that this dyadic
+coupling between writer and writing means that I, as a writer, can never truly
+<em>read</em> my own writing. I will never be capable of <em>reading</em> my own work and
+getting something out of it &ndash; the work is already an extension of my own
+person. I can discover no thought in my own works.</p>
+<p>Of course, Sartre, as an existentialist, is honor bound to go one step further
+here &ndash; the reader, by participating in <em>reading</em> a work, is asserting their
+own freedom. Every time a writer writes &ldquo;[&hellip;] the writer appeals to the
+reader&rsquo;s freedom to collaborate in the production of [their] work&rdquo;. The
+creative act may only be complete if both writer and reader have recognized one
+another and made a choice to do so. No one is <em>compelled</em> to complete the
+creative act. The things you <em>read</em> matter. Reading something fundamentally
+alters you as a person &ndash; you can not simply un-read a thought. Everything you
+read changes your universe. I have a hunch Sartre would find things like the
+(original early 2010s era) &ldquo;tl;dr&rdquo; reply to obviously terrible writing
+absolutely hilarious as a reader&rsquo;s expression of freedom (not to be confused
+with modern 2020s era usage as shorthand for &ldquo;summary section&rdquo;). Using your
+freedom to choose to complete the writer&rsquo;s creative act (or not) is inherently
+asserting your humanity.</p>
+<p>I&rsquo;m a bit fuzzy on the specifics of this quote, but I think it was
+<a href="https://meta.wikimedia.org/wiki/User:Sj">sj</a> who told me at one year&rsquo;s
+<a href="https://puzzles.mit.edu/">Mystery Hunt</a> that &ldquo;A puzzle is a contract between
+puzzle author and puzzle solver, the author promises that the puzzle is
+solvable if you&rsquo;re clever enough&rdquo;. The puzzle author and puzzle solver are
+engaging in a collaborative production of the work that is only possible by
+recognizing one another. Similarly, Sartre &ndash; &ldquo;whatever connections [the
+reader] may establish among the different parts of the book among the chapters
+or the words [the reader] has a guarantee, namely, that they have been
+expressly willed&rdquo;.</p>
+<h1 id="wall-drawing-123">Wall Drawing #123</h1>
+<p>It follows, Sartre argues, that the act of writing, as a means to convey a
+thought to a reader, may only be completed through the act of <em>reading</em>.
+<em>Reading</em> can only be done by others; writing, therefore, only exists to be
+<em>read</em> &ndash; it can serve no other purpose. Writing and reading are two halves of
+the same creative, collaborative act, only satisfied when both writer and
+reader acknowledge one another. Combined, writing and reading are the act of
+recognizing one another&rsquo;s humanity, thoughts, experiences, consciousness &ndash; the
+act of co-creation of thought is the critical aspect of writing and reading &ndash;
+reconstructing the author&rsquo;s perspective, thought, intent, point. The
+co-creation <em>is the point</em> of both <em>reading</em> and <em>writing</em>.</p>
+<p>Writing without anyone to <em>read</em> the work leaves the writer&rsquo;s bid for
+co-creation unsatisfied and humanity unrecognized. No thought has been conveyed
+to any reader, no one has understood the reason behind the &ldquo;landmarks in the
+void&rdquo; you&rsquo;ve carefully placed, leaving you to either &ldquo;[&hellip;] put down [your] pen
+or despair&rdquo;. Writing is an appeal to the reader&rsquo;s freedom, and the nature of
+that freedom is the writer can not control it &ndash; never being understood is
+always a possibility any time anyone sets out to write.</p>
+<p>Nearly 12 years ago, I attempted to read the text on the <a href="https://git-man-page-generator.lokaltog.net/">git manpage
+generator</a> for the first time &ndash;
+I remember the <strong>exact</strong> feeling of my brain going into &ldquo;git manpage parsing
+mode&rdquo; where every word was dragging git plumbing megaliths through the sand
+from their far-flung homes. I can still feel the surface of my desk as I
+instinctually started to trace out logical connections between git internals
+referenced as I read along. It took me a good 20 seconds to realize what I was
+reading made no sense. This website broke Sartre&rsquo;s writer-reader agreement &ndash; I
+was attempting to <em>read</em> this website, but there was nothing there. You can
+&ldquo;mechanically&rdquo; &ldquo;read&rdquo; the <code>git-man-page-generator</code>, but you can never <em>read</em> it
+&ndash; it is not possible to <em>read</em> it. It was funny &ndash; unsettling. Each grasp at a
+real-looking image in front of me misses, my hand coming back empty. I
+couldn&rsquo;t get enough of it. I must have tried to read a dozen generations in a
+row. I had never had something quite that broken pass that far into my
+consciousness before. Although I kept trying, it never did feel quite the same
+as that first time; I think fundamentally, I couldn&rsquo;t forget that it was
+random.</p>
+<p>While never having anyone <em>read</em> your <em>writing</em> drives them to &ldquo;put down your
+pen or despair&rdquo;, Sartre never had to contend with the opposite problem &ndash; being
+asked to <em>read</em> that which was not <em>written</em>. <em>Reading</em> that which was not
+<em>written</em> does not merely leave someone unrecognized when a reader makes a
+choice; instead, it is an <strong>inherent violation of the contract between reader
+and writer</strong>. Not only is no humanity being recognized through attempting to
+<em>read</em> words which were not <em>written</em>, but the <u>reader</u>, not the writer,
+is the one who bears the burden of unexpected apophenia. The <u>reader</u>,
+while engaging in co-creation, must now contort themselves to uphold their end
+of the Sartrean agreement, scrutinizing text to ascribe consciousness,
+thought and intent only to come back up with pareidolia-fueled echos of
+one&rsquo;s own self and disfigured half-thoughts of others. The reality is, the
+modern reader must now &ldquo;mechanically&rdquo; &ldquo;read&rdquo; most written work they come
+across, scrutinizing text for any signs of thought before truly attempting
+to <em>read</em> the work. Failing to do this correctly changes our person &ndash;
+each time it happens, a small part of us is irrevocably altered. Choosing to
+engage in this ballet because you wish to do so is one thing &ndash; this is
+your right and freedom as a reader &ndash; but passing words which were not
+<em>written</em> as your own in an attempt to wrestle a reader&rsquo;s freedom of
+co-creation from them is another entirely.</p>
+<p><strong>If you didn&rsquo;t write it, I don&rsquo;t want to read it (dw;dr). Send me your prompt instead.</strong></p>]]></description>
+      <source url="http://notes.pault.ag/feeds/all-en.atom.xml">Paul Tagliamonte</source>
+    </item>
+    <item>
+      <title>E387 O Propópito Do Ócalipito</title>
+      <link>https://podcastubuntuportugal.org/e387/</link>
+      <guid isPermaLink="true">https://podcastubuntuportugal.org/e387/</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Já não gravávamos há demasiado tempo e recuperados da ressaca da última sessão, relatámos viagens, aventuras e o cruzamento do software livre com a promoção da indústria vitivinícola nacional. Pelos caminhos de Portugal com GPS, rastreio de satélites, rádio amador, Meshtastic, servidores Linux, novidades do Ubuntu Touch, Unav, Pure Maps, aparelhos de comunicação em feiras de velharias, muitas referências desnecessárias e gratuitas a cultura popular - e como arranjámos mais lenha para nos queimarmos, com um novo projecto de aplicação para Ubuntu Touch&hellip;</p>
+<p>Já sabem: oiçam, subscrevam e partilhem!</p>
+<ul>
+<li>Centro Linux na Várzea: <a href="https://centrolinux.pt/post/2026-setembro-serta/">https://centrolinux.pt/post/2026-setembro-serta/</a></li>
+<li>Centro Linux no MILL: <a href="https://centrolinux.pt/lisboa/">https://centrolinux.pt/lisboa/</a></li>
+<li>Meshtastic: <a href="https://meshtastic.org">https://meshtastic.org</a></li>
+<li>RTL-SDR: <a href="https://www.rtl-sdr.com/about-rtl-sdr/">https://www.rtl-sdr.com/about-rtl-sdr/</a></li>
+<li>GQRX: <a href="https://www.gqrx.dk/">https://www.gqrx.dk/</a></li>
+<li>Gpredict, software para rastreio de satélites: <a href="https://oz9aec.dk/gpredict/">https://oz9aec.dk/gpredict/</a></li>
+<li>Chave telegráfica nas feiras de cangalhos antigos: <a href="https://youtu.be/VzvDe4uq7kE">https://youtu.be/VzvDe4uq7kE</a></li>
+<li>Chave de Morse Speed-X, em latão niquelado, muito bem preservada: <a href="https://youtu.be/f8s5oNtyhug">https://youtu.be/f8s5oNtyhug</a></li>
+<li>Um pouco de história sobre a versão militar da chave telegráfica Speed-X: <a href="http://k4che.com/BC474key/BC474key.htm">http://k4che.com/BC474key/BC474key.htm</a></li>
+<li>UbPorts: <a href="https://ubports.com">https://ubports.com</a></li>
+<li>Unav: <a href="https://open-store.io/app/navigator.costales/">https://open-store.io/app/navigator.costales/</a></li>
+<li>Pure Maps: <a href="https://open-store.io/app/pure-maps.jonnius/">https://open-store.io/app/pure-maps.jonnius/</a></li>
+<li>Open Street Maps: OpenStreetMaps.org</li>
+<li>Open Free Map: <a href="https://openfreemap.org/">https://openfreemap.org/</a></li>
+<li>OSM Scout Server: <a href="https://open-store.io/app/osmscout-server.jonnius/">https://open-store.io/app/osmscout-server.jonnius/</a></li>
+<li>Where: <a href="https://open-store.io/app/where.cibersheep/">https://open-store.io/app/where.cibersheep/</a></li>
+<li>Georeferenciação com Nominatim: <a href="https://nominatim.org/">https://nominatim.org/</a></li>
+<li>As apps do Luís Louro (Lápis de Cor): <a href="https://snapcraft.io/publisher/lapisdecor">https://snapcraft.io/publisher/lapisdecor</a></li>
+</ul>
+<p>Referências da Cultura Pra Pular:</p>
+<ul>
+<li>
+<p>Pelos Caminhos de Portugal:</p>
+<ul>
+<li><a href="https://youtu.be/MHnHgylVFdE">https://youtu.be/MHnHgylVFdE</a></li>
+<li><a href="https://youtu.be/VxvO_9LeT0A">https://youtu.be/VxvO_9LeT0A</a></li>
+</ul>
+</li>
+<li>
+<p>O Apocalipto: <a href="https://youtu.be/WiKf_0BHn_s">https://youtu.be/WiKf_0BHn_s</a></p>
+</li>
+<li>
+<p>A Trofada: <a href="https://youtu.be/5KHdpM91-Cc">https://youtu.be/5KHdpM91-Cc</a></p>
+</li>
+<li>
+<p>Hackers (1995): <a href="https://youtu.be/piI9vJ9-UZ0">https://youtu.be/piI9vJ9-UZ0</a></p>
+</li>
+<li>
+<p>A Engenharia, Geopolítica e Extractivismo da Estrela da Morte: <a href="https://youtu.be/5pcnQ6Xym5k">https://youtu.be/5pcnQ6Xym5k</a></p>
+</li>
+<li>
+<p>O Exorcista, um filme para toda a família: <a href="https://youtu.be/BU2eYAO31Cc">https://youtu.be/BU2eYAO31Cc</a></p>
+</li>
+<li>
+<p>Gabriel O Pensador e a americanização: <a href="https://youtu.be/4nupSSmfHz8">https://youtu.be/4nupSSmfHz8</a></p>
+</li>
+<li>
+<p>Pulp Fiction (1994); trabalhar com IA fechado numa cave: <a href="https://youtu.be/6U_U3TMxKcQ">https://youtu.be/6U_U3TMxKcQ</a></p>
+</li>
+<li>
+<p>Ana Malhoa, «Tá Turbinada»: <a href="https://youtu.be/8Bv2Ka4sBrg">https://youtu.be/8Bv2Ka4sBrg</a></p>
+</li>
+<li>
+<p>Artista, Não Elitista: <a href="https://youtu.be/o_nUba7dWnI">https://youtu.be/o_nUba7dWnI</a></p>
+</li>
+<li>
+<p>Força, Força Companheiro Diogo, segue em frente, nós ficamos cá atrás à espera: <a href="https://youtu.be/wKO2qgkXU20">https://youtu.be/wKO2qgkXU20</a></p>
+</li>
+<li>
+<p>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></p>
+</li>
+<li>
+<p>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></p>
+</li>
+<li>
+<p>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></p>
+</li>
+</ul>
+<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
+<p>Este episódio foi produzido por Diogo Constantino, Joana Simões, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
+O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
+Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: 1820 Thunder by avreference &ndash; <a href="https://freesound.org/s/587875/">https://freesound.org/s/587875/</a> &ndash; License: Creative Commons 0; Horror Atmosphere 3_In the Presence of Pure Evil_Loop by Ulrich_Wehner &ndash; <a href="https://freesound.org/s/731349/">https://freesound.org/s/731349/</a> &ndash; License: Attribution 4.0; Exorcism by CClarke65 &ndash; <a href="https://freesound.org/s/615926/">https://freesound.org/s/615926/</a> &ndash; License: Creative Commons 0; Elevator Music by YellowTree &ndash; <a href="https://freesound.org/s/686020/">https://freesound.org/s/686020/</a> &ndash; License: Attribution 4.0.
+Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
+A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
+      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
+    </item>
     <item>
       <title>Beyond the 10-year mark: Extending Ubuntu Pro 16.04 LTS security coverage</title>
       <link>https://ubuntu.com//blog/extending-ubuntu-pro-16-04-coverage</link>
@@ -37,348 +277,6 @@
 <li><strong>Read the full announcement:</strong> Learn more about how Canonical is expanding total coverage for legacy releases <a href="https://canonical.com/blog/canonical-expands-total-coverage-for-ubuntu-lts-releases-to-15-years-with-legacy-add-on">in our official announcement</a>.</li>
 </ol>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
-    </item>
-    <item>
-      <title>DESFire EV3</title>
-      <link>https://notes.pault.ag/desfire-ev3/</link>
-      <guid isPermaLink="true">https://notes.pault.ag/desfire-ev3/</guid>
-      <pubDate>Tue, 15 Sep 2026 13:25:00 GMT</pubDate>
-      <description><![CDATA[<p>I&rsquo;ve <em>long</em> been interested in hardware key material storage devices. I&rsquo;ve been
-a fan of <a href="https://github.com/go-piv/go-ykpiv">yubikeys</a> (I still remember
-when my fancy new NEO-N showed up), <a href="https://github.com/paultag/go-piv">PIV</a>
-(and its associated
-<a href="https://github.com/paultag/go-othername">smattering</a> of
-<a href="https://github.com/paultag/go-fasc">additional</a>
-<a href="https://github.com/paultag/go-cbeff">fields</a>),
-<a href="https://github.com/hallowauth/hallow">SaaS HSMs</a>,
-the <a href="https://github.com/paultag/go-keyring">kernel keyring</a>, some tooling
-I&rsquo;ve fairly satisfied with the design of at prior companies, and of course,
-our dear friend, the TPM. All that is not even to mention the scores of exotic
-hardware security modules one generally comes across from time to time when
-you&rsquo;re keeping a sharp eye out that you wind up playing with.</p>
-<aside class="right">
-I have not used any LLMs in the course of this adventure. Not for
-writing these posts, and not for this code. The intent here was to learn
-more about how DESFire works. LLMs defeat that purpose.
-</aside>
-<p>The concept of storing private key material on a disk, or even having it in
-RAM has always skeeved me out, so I have a natural inclination to hardware
-modules, and how shifting keying material around can change your risks
-and threat model(s) in interesting ways.</p>
-<p>I don&rsquo;t remember when I first came across the
-<a href="https://www.nxp.com/products/MF3DHx3">MIFARE DESFire EV3</a>, but a few weeks ago
-I did a deep-dive into the state of the art of authentication schemes using
-ID cards. My complete overview of what tradeoffs exist is pretty extensive
-(and likely not interesting to the vast majority of the world), but the tl;dr
-wound up being one of &ldquo;use PIV&rdquo; or &ldquo;use MIFARE DESFire EV3&rdquo;. I wound up
-picking DESFire for a recent project, and figured it&rsquo;s worth talking
-a bit about what I learned, share some thoughts, and some code. That code is
-published on <a href="https://crates.io/crates/desox">crates.io/desox</a>, and docs,
-as is our custom, may be found at
-<a href="https://docs.rs/desox/latest/desox/">docs.rs/desox</a></p>
-<aside class="left">
-PIV, while oft-maligned, is exceptional for public key cryptography using
-asymmetric keys, and can safely interoperate with x.509. If any of those things
-are a hard must, I don't think that's going anywhere.
-</aside>
-<p>DESFire supports DES (I&rsquo;m sure most readers saw that one coming), 3DES (I
-didn&rsquo;t bother playing with 3DES at all) or AES-128 (AFAICT always use this?)
-keying material. It&rsquo;s worth noting that the DESFire only supports symmetric
-keys and is not designed for public key cryptography, and operates exclusively
-using shared symmetric key material. The DESFire EV series use those keys and
-related authentication schemes to interact with &ldquo;files&rdquo; stored on the on-chip
-EEPROM (2k, 4k, 8k, and 16k versions exist), or &ldquo;applications&rdquo; (groups of files
-and authentication keys).</p>
-<h1 id="talking-to-a-desfire-ev3">Talking to a DESFire EV3</h1>
-<p>Interactions with the card are done over NFC (ISO/IEC 14443 Type A), and
-commands to/from the card may be in the usual ISO/IEC 7816-4 APDU format, or
-&ldquo;unencapsulated&rdquo; bytes sent to/from the card are sent using a fixed instruction
-set and return code structure &ndash; saving a few bytes per message. I&rsquo;ve opted to
-use their undocumented and proprietary format &ndash; I found it easier to work
-with and with a maximum message of 60 bytes, the savings matter a lot.</p>
-<aside class="right">
-I keep calling the DESFire messages I implemented "APDU messages" since I have
-to use a bunch of API surface saying it is -- but they're not.
-</aside>
-<p>While powered via NFC, the card maintains a small amount of state about the
-connection between the reader and the card in its RAM, including if the
-session is authenticated or unauthenticated. I&rsquo;ll dig into how authentication
-happens later, but it&rsquo;s worth knowing that sessions <em>can</em> become authenticated
-using one of the symmetric keys shared by the card and the reader. The vast
-majority of the
-<a href="https://docs.rs/desox/0.5.1/desox/enum.Instruction.html">DESFire commands</a>
-I know about tend to work while either authenticated or unauthenticated,
-with a few exceptions (<code>GetUid</code>, <code>ChangeKey</code>, and <code>ChangeKeySettings</code>
-for example).</p>
-<p>In general, I found working with this card particularly pleasant. There is a
-fair amount of backwards-compatible behavior and multiple methods of
-communication that confuse things a bit, but overall, it was better than
-average to integrate with. Kudos to the NXP team. If the docs on this chip
-were public, things would be orders of magnitude easier &ndash; it&rsquo;s not entirely
-clear to my why they&rsquo;re keeping so much of the interface documentation under
-NDA, but it&rsquo;s the largest knock against the chip, by far.</p>
-<h2 id="authentication">Authentication</h2>
-<p>I found a lot of really great resources outlining how the handshake and
-protocol works for a DESFire EV3, especially from
-<a href="https://ridrix.wordpress.com/2009/09/19/mifare-desfire-communication-example/">Ridrix</a>,
-some <a href="https://www.cardlogix.com/wp-content/uploads/MIFARE-Application-Programming-Guide-for-DESFfire_rev.e.pdf">public datasheets</a>
-<a href="https://www.scribd.com/document/683260738/DESFire">ThrRealRevK</a>
-and posts from <a href="https://medium.com/@androidcrypto/mifare-desfire-ev3-a-beginner-tutorial-android-java-using-the-desfire-for-android-tools-00aaecb8fa93">AndroidCrypto</a>.</p>
-<aside class="left">
-It's not super clear to me why all of this is under such heavy NDA, surely
-a robust ecosystem is nothing but good?
-</aside>
-<p>The gist here is that, because the DESFire only does symmetric key operations,
-the key exchange (a type of SKA &ndash; Symmetric Key Agreement) uses symmetric keys
-to establish a unique session key which is used to sign or encrypt data
-exchanged between the reader and the card. I&rsquo;m not going to get too in-depth
-here, since there&rsquo;s a ton of other resources out there to dig into &ndash; but I
-will do a quick high-level description to keep this post mostly self-contained.</p>
-<p>The authentication protocol serves two main functions &ndash; to verify that both
-parties know the same shared secret, as well as to act as a SKA to construct a
-new session shared secret key. Here&rsquo;s a quick overview of how a shared session
-key is derived between the reader and the card using our symmetric keys
-(<code>AES-128</code> in the case below).</p>
-<ol>
-<li>the reader requests to start authentication with the card (something like
-<code>AA 00</code> to start an AES Authentication handshake with keyslot <code>0x00</code>).</li>
-<li>The card will then reply with <code>AF</code> (a status code that indicates more data
-is to follow), followed by 16 bytes (in the case of <code>AES-128</code>) of encrypted
-(using CBC) data.</li>
-<li>The hosts then decrypts this block with the symmetric key from keyslot 0,
-returning the card&rsquo;s session nonce.</li>
-<li>The host generates 16 bytes (usually random) for its session
-nonce.</li>
-<li>The host sends an instruction of <code>AF</code> (indicating a continuation of
-the previous command), followed by 32 bytes of encrypted data. When decrypted,
-the first 16 bytes are our nonce generated in step #4, followed by the 16 bytes
-provided by the card, decrypted in step #3, except where every byte is shifted
-to the left by one place (the 0th byte is copied to the end).</li>
-<li>The card will reply with <code>00</code> indicating a successful operation, followed
-by 16 bytes, which when decrypted, is our session nonce from step #4, shifted
-to the left by one byte in the same way that we did in step #5 with the card&rsquo;s
-nonce.</li>
-<li>At this point, both the reader and card have confirmed the other party has
-the same symmetric secret key. The session is now &ldquo;authenticated&rdquo; and a
-&ldquo;session key&rdquo; is derived using the two nonce blocks. Two hashing keys (K1
-and K2) are derived from this key, which is used to maintain an ongoing
-<a href="https://csrc.nist.gov/pubs/sp/800/38/b/upd1/final">CMAC</a> hash of the messages
-coming and going to/from the card.</li>
-</ol>
-<p>From here on out, the session is &ldquo;authenticated&rdquo;, and responses from the card
-which were previously &ldquo;plain&rdquo; will now contain a 8-byte CMAC signature,
-which can be used to ensure that the replies in question come from the
-active session.</p>
-<p>In my <a href="https://github.com/paultag/desox-rs/tree/v0.5.4/src/handshake">implementation of the handshake</a>
-I opted to encode the handshake state into rust types, just so I wouldn&rsquo;t make
-any mistakes. The <code>Handshake</code> type contains the session internals (session
-nonce values, keying state, to include IV, etc). This means the authentication
-flow (from within my code) uses the <code>Handshake</code> struct to generate the commands
-to send to the card in order:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#e6db74">/// Create a new `Handshake`, and return the
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/// start auth command (something like `AA 00`)
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">Handshake</span>::<span style="color:#f92672">&lt;</span>Initial<span style="color:#f92672">&gt;</span>::begin(
-</span></span><span style="display:flex;"><span> output: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">mut</span> [<span style="color:#66d9ef">u8</span>],
-</span></span><span style="display:flex;"><span> key: [<span style="color:#66d9ef">u8</span>; <span style="color:#ae81ff">16</span>],
-</span></span><span style="display:flex;"><span> key_id: <span style="color:#66d9ef">u8</span>,
-</span></span><span style="display:flex;"><span>) -&gt; (Self, <span style="color:#f92672">&amp;</span>[<span style="color:#66d9ef">u8</span>]);
-</span></span></code></pre></div><p>After we get a reply back from the card (the encrypted version of the card&rsquo;s
-session nonce, sometimes called <code>Rnd_B</code> in code I&rsquo;ve seen), we transition
-states from <code>Initial</code> into <code>HalfOpen</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#e6db74">/// Given the card&#39;s encrypted response, generate
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/// our session nonce and generate a reply
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/// (something that starts with `AF` followed by
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/// 32 bytes of encrypted data).
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">Handshake</span>::<span style="color:#f92672">&lt;</span>Initial<span style="color:#f92672">&gt;</span>::rnd_b(
-</span></span><span style="display:flex;"><span> self,
-</span></span><span style="display:flex;"><span> output: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">mut</span> [<span style="color:#66d9ef">u8</span>],
-</span></span><span style="display:flex;"><span> input: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">u8</span>]
-</span></span><span style="display:flex;"><span>) -&gt; (Handshake::<span style="color:#f92672">&lt;</span>HalfOpen<span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&amp;</span>[<span style="color:#66d9ef">u8</span>]);
-</span></span></code></pre></div><p>Now that we&rsquo;re &ldquo;<code>HalfOpen</code>&rdquo;, we&rsquo;re waiting to hear back from the card to ensure
-that it, too, can byte-shift our provided nonce. Once we have the card&rsquo;s reply,
-we can check it using our <code>complete</code> helper, transitioning from <code>HalfOpen</code> to
-<code>Successful</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#e6db74">/// Check to ensure that the card replied with
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/// our nonce byte-shifted by one place, indicating
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/// that they know the symmetric secret in
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/// this key slot.
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">Handshake</span>::<span style="color:#f92672">&lt;</span>HalfOpen<span style="color:#f92672">&gt;</span>::complete(
-</span></span><span style="display:flex;"><span> self,
-</span></span><span style="display:flex;"><span> input: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">u8</span>]
-</span></span><span style="display:flex;"><span>) -&gt; <span style="color:#a6e22e">Handshake</span>::<span style="color:#f92672">&lt;</span>Successful<span style="color:#f92672">&gt;</span>;
-</span></span></code></pre></div><p>Once the <code>Handshake</code> is successful, the only thing left to do is consume
-the <code>Handshake</code> struct and turn it into the shared session key by running
-it through the <a href="https://github.com/paultag/desox-rs/blob/v0.5.4/src/crypto/kdf.rs">key derivation function</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#e6db74">/// Consume the `Handshake` struct and return the
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/// new shared session secret key.
-</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">Handshake</span>::<span style="color:#f92672">&lt;</span>Successful<span style="color:#f92672">&gt;</span>::into_key(self) -&gt; [<span style="color:#66d9ef">u8</span>; <span style="color:#ae81ff">16</span>];
-</span></span></code></pre></div><p>From here on out we can use this session key for the remainder of our
-interactions with the card &ndash; signing messages from (and sometimes to!) the
-card, or encrypted messages to and from the card. This key is used in CBC block
-mode, where the session IV is updated with the last block of the encrypted
-data.</p>
-<h2 id="unit-testing">Unit Testing</h2>
-<p>A nice proprietary of the SKA scheme we&rsquo;re using as part of DESFire is that the
-derived session key is actually deterministic if you control your nonce RNG
-(ok, actually, pretty true for most key agreements, but anyway), which means it
-is possible to capture traffic over the NFC interface, and &ldquo;replay&rdquo; the NFC I/O
-with cooked RNGs and ensure byte-identical messages and keys are generated.
-Within <code>desox-rs</code> this is called <code>replay</code> (I&rsquo;m creative), and I&rsquo;ve got a few
-replay sessions checked into VCS, which exercise a signficant amount fo the API
-surface. All were derived from an actual session with a real DESFire card, and
-can be updated with a live card and a <code>--cfg</code> flag.</p>
-<aside class="left">
-This replay stuff wound up being super dope, it caught a ton of
-almost-regressions during the heavy development phases. If I did this again
-from scratch -- this would be the first thing I did.
-</aside>
-<p>Each <code>replay</code> file is a set of lines (request-response transactions), each
-containing two space-delimited hex encoded NFC messages. For instance,
-here&rsquo;s an authentication handshake in <code>replay</code> format:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>1a00 afc7bbd82ff8fefae8
-</span></span><span style="display:flex;"><span>afc6dab54df2278d2952d560821be7e4c3 007d9abe94a9b14748
-</span></span></code></pre></div><p>The code that generated that exchange came from the test stored adjacent
-to that file &ndash; a handshake with the default DES key (all zeros), and
-an <code>RndA</code> value hardcoded to <code>32c28fdafd3960de</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> card <span style="color:#f92672">=</span> card
-</span></span><span style="display:flex;"><span> .authenticate_with_rnd_a(
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">0x00</span>,
-</span></span><span style="display:flex;"><span> Key::Des([<span style="color:#ae81ff">0</span>; <span style="color:#ae81ff">8</span>]),
-</span></span><span style="display:flex;"><span> Key::Des(hex_literal::<span style="color:#a6e22e">hex!</span>(<span style="color:#e6db74">&#34;32 c2 8f da fd 39 60 de&#34;</span>)),
-</span></span><span style="display:flex;"><span> )
-</span></span><span style="display:flex;"><span> .<span style="color:#66d9ef">await</span>
-</span></span><span style="display:flex;"><span> .unwrap();
-</span></span></code></pre></div><p>Since the card&rsquo;s <code>RndB</code> is similarly unchanging (I&rsquo;m replaying this file every
-time), this will always derive the same session key, which means messages
-(including encrypted ones or CMAC signed responses) will be identical, as well.
-If you&rsquo;re playing with the DESFire yourself, feel free to grab my <a href="https://github.com/paultag/desox-rs/tree/main/src/replay">replay
-files</a> if you need a
-&ldquo;known good&rdquo; baseline.</p>
-<p>By default this will run using the
-<a href="https://docs.rs/desox/latest/desox/io/struct.MockBackend.html">MockBackend</a>,
-replaying each file &ndash; expecting a byte-identical request, and responding with
-the harcoded customary reply. If the code (or test!) needs to change, updating
-the tests is done by swapping the <code>MockBackend</code> out for a real one. Since I
-had to do this a bunch during development, running <code>cargo test</code>
-with <code>RUSTFLAGS=&quot;--cfg desox_replay_rw&quot;</code> will, on run, overwrite the replay
-file(s) for the executed test(s), ensuring all line-protocol changes are
-explicitly caught and reviewed.</p>
-<h1 id="observations">Observations</h1>
-<p>Most commands, even ones which require authentication, are transmitted without
-CMAC signature(s) or encryption. <code>CMAC</code> signatures from the reader to the card
-are not really used (except for writes to a file which specifies communication
-must be <code>CMAC</code> signed), ditto for encryption (although that one is used for key
-change operations, in addition to file writes on files that specify encrypted
-communication must be used). The vast majority of commands take a &ldquo;plain&rdquo;
-request from the reader, and return a CMAC signed response.</p>
-<aside class="right">
-I really wish there was a mode or configuration flag I could flip that would
-enforce CMAC signatures from the reader to the card.
-</aside>
-<p>By my eye, this means that a malicious reader, or something otherwise capable
-of holding the card online after communication with an authentic reader is
-complete are able to execute privilaged commands (since one can simply ignore
-the <code>CMAC</code> signatures on responses), so long as the command doesn&rsquo;t require the
-reader to provide CMAC signatures (or encryption), or allow the card to power
-down.</p>
-<h1 id="fun-with-desfire">Fun with DESFire</h1>
-<p>I&rsquo;ve played around a bit with ways to use the DESFire cards in interesting
-configurations, given what they&rsquo;re capable of. Here&rsquo;s some half-baked thoughts
-I had while mucking around with the cards &ndash; these are all poorly thought out
-sketches of some things we can do given the specific tradeoffs I see with the
-DESFire card. It&rsquo;s also worth noting that I don&rsquo;t have any of the actual
-documentation, and am not a cryptographic grown-up, so take these sketches with
-a massive grain of salt.</p>
-<aside class="left">
-This stuff is right around when I really miss having asymmetric cryptographic
-operations handy.
-</aside>
-<p>The first thing that came to mind when implementing this is how the
-authentication scheme can shift the boundary of what is and is not trusted
-(assuming good secure keying, and provided the key slots and card/application
-permissions are configured correctly). Rather than push the key material out to
-the machine connected to the NFC reader (&ldquo;reader machine&rdquo;), I instead tried
-turning the NFC reader and computer into something psuedo-untrusted by &ldquo;merely&rdquo;
-having it pass messages from the card to a trusted remote system (&ldquo;remote
-machine&rdquo;). This means that the &ldquo;reader machine&rdquo; is exchanging NFC data with the
-card, but that data is being decrypted, encrypted and processed by the trusted
-&ldquo;remote machine&rdquo; &ndash; the reader is unable to derive the session key.</p>
-<p>For each of these, I wind up needing to authenticate &ndash; so there&rsquo;s still a few
-latent risks, but these can mostly be mitigated by asking for a readbacks of
-any changed file(s), setting key permissions carefully, and requesting the
-card&rsquo;s UID via the encrypted channel &ndash; all of which would require the
-symmetric secrets (which undermine the whole security model if comprimised).</p>
-<aside class="right">
-This all feels a bit messy at times -- but I have to keep grounding myself
-in the threat model -- "if you have the key, you can clone the card (or snoop
-the session key)"
-</aside>
-<p>This general construction is also subject to a hostile takeover of the
-untrusted &ldquo;reader machine&rdquo;, since most commands (including destructive ones!)
-are sent in &ldquo;<code>PLAIN</code>&rdquo; mode &ndash; the reader machine can wait until authentication
-is complete and then inject commands into the card and &ldquo;simply&rdquo; ignore the CMAC
-signatures on responses, severing ties with the remote machine. As such, we
-also need to take steps to ensure that the key being used is not one that
-allows any access beyond what is allowed. Here were some ideas I sketched out
-off the back of this theory.</p>
-<h2 id="the-second-factor">The &ldquo;second-factor&rdquo;</h2>
-<p>Given some established (and authenticated) connection, part of the initial
-authentication flow may use the DESFire card to prove physical control over it
-as part of a handshake. This can serve as a second factor during some
-authentication flow, requiring physical card presence at a reader to fully
-initialize a connection. This does have one glaring downside, however &ndash; it&rsquo;s
-phishable. To use this &ldquo;for real&rdquo;, we&rsquo;d need to take some steps to prevent
-obvious MITM flows (XOR the NFC messages with the URI as seen by the client?),
-but maybe there&rsquo;s something interesting there.</p>
-<aside class="left">
-WebAuthN is objectively better in basically every way to this -- this scheme
-has some heafty downsides, but also a few interesting properties.
-</aside>
-<p>This also has a second interesting attribute &ndash; when used as part of a physical
-system authentication flow, this becomes a logical place to inject access
-control, being able to determine if some person is permitted to operate some
-device at that particular time (Is &ldquo;Joe&rdquo; current on his Laser Cutter
-certifications?) I think of the ideas I landed on, while conceptually
-interesting (using an employee id card as a 2FA token, it&rsquo;s very fast), this
-one is the least likely to turn into something real.</p>
-<h2 id="the-encrypted-cookie">The &ldquo;encrypted-cookie&rdquo;</h2>
-<p>This construction, when paired with an encrypted DESFire file, allows the
-&ldquo;remote machine&rdquo; to read/write an &rsquo;encrypted cookie&rsquo; to the card &ndash; storing
-small amount of encrypted data that the &ldquo;remote machine&rdquo; can read/write, but
-not the &ldquo;reader machine&rdquo;, since this uses an encrypted and authenticated
-channel from the &ldquo;remote machine&rdquo; directly to the DESFire card, without any
-intermediate hosts needing to be <em>fully</em> trusted. I keep calling this the
-&ldquo;encrypted cookie&rdquo; in my head because it feels conceptually similar to how Ruby
-on Rails and Laravel handles cookies.</p>
-<aside class="right">
-I never really liked encrypted cookies.
-</aside>
-<p>We&rsquo;d need to take a few extra steps here (for instance, ensure that you read
-the cookie back over the encrypted channel after writing to prevent a malicious
-reader from dropping writes) to secure the system, but it feels like the
-structure of this is definitely decent.</p>
-<h2 id="the-takeover">The &ldquo;takeover&rdquo;</h2>
-<p>This time, let&rsquo;s say the computer attached to the NFC reader (&ldquo;reader machine&rdquo;)
-<em>is</em> semi-trusted. For this scheme, our trusted &ldquo;remote machine&rdquo; and the
-&ldquo;reader machine&rdquo; pass messages over the network to handle authentication to the
-card (as above), where the handshake data is being decrypted, encrypted and
-processed by the trusted &ldquo;remote machine&rdquo; as usual. However, once the
-authentication handshake is complete and a session key has been derived, the
-&ldquo;remote system&rdquo; return the session key to the &ldquo;reader machine&rdquo;, giving it a
-one-time-use key and authenticated session to the card.</p>
-<aside class="left">
-Like a hermit crab.
-</aside>
-<p>We need to be careful about global/application permissions and key access
-control to files &ndash; but in this construction, we can allow the &ldquo;reader machine&rdquo;
-to take over privileged actions using a scope-limited DESFire key without
-handing over the card&rsquo;s true keying material (preventing cloning of the card).
-This can be helpful to ensure messages to/from the card are <em>truely</em> from the
-card (verifying CMAC signatures), enables the &ldquo;reader machine&rdquo; to directly
-read/write to/from encrypted file(s), but allows the symmetric key material to
-remain in as few places as possible &ndash; which is critical given compromising
-that secret will undermine the security of the entire system.</p>]]></description>
-      <source url="http://notes.pault.ag/feeds/all-en.atom.xml">Paul Tagliamonte</source>
     </item>
     <item>
       <title>JPEG-XL as default in AppStream, and better media processing</title>
@@ -682,26 +580,6 @@ that secret will undermine the security of the entire system.</p>]]></descriptio
 
 <p>The extension is free software under GPL-3.0, and its <a href="https://git.launchpad.net/vscode-launchpad">source</a> is hosted on Launchpad. We welcome contributions via merge proposals. You can even review them using the extension itself!</p>]]></description>
       <source url="http://news.launchpad.net/feed">Launchpad News</source>
-    </item>
-    <item>
-      <title>E386 OooOOoooOoppss</title>
-      <link>https://podcastubuntuportugal.org/e386/</link>
-      <guid isPermaLink="true">https://podcastubuntuportugal.org/e386/</guid>
-      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>Senhroes treslespectadors, este episódio naõ há seman&hellip;hips!&hellip;nesta semana não há epsidodio&hellip;pisdodio&hellip;pisódio! A gente fomos ao centero linux no enterior desquecido e oustracizado e bubemos&hellip;bevemos..vebvemos uma ginjinha tão boua que tivemos de ficar a escançar&hellip;descansar. A modos que não houve garvação&hellip;gravação e depois a gente contamos tudo pra semana, pormete&hellip;ppormetemos&hellip;prometemos! hips!</p>
-<p>Já sabem: oiçam, subscrevam e partilhem!</p>
-<ul>
-<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
-<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
-<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
-</ul>
-<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
-<p>Este episódio foi produzido por Diogo Constantino, Joana Simões, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
-O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
-Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: snoring by Daxter31 &ndash; <a href="https://freesound.org/s/114609/">https://freesound.org/s/114609/</a> &ndash; License: Creative Commons 0.
-Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
-A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
-      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
     </item>
     <item>
       <title>Ubuntu Weekly Newsletter Issue 961</title>
@@ -5968,29 +5846,6 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 <li><a href="https://github.com/helm/charts/tree/master/stable/external-dns#configuration">The full list of configuration details for the ExternalDNS Helm&nbsp;chart</a></li>
 </ul>]]></description>
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
-    </item>
-    <item>
-      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
-      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
-      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
-      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
-<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
-<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
-<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
-<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
-<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
-<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
-<blockquote>
-<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
-</blockquote>
-<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
-<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
-We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
-So, please sync with this change (and sorry :)).</p>
-<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
-<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
-      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
     </item>
     <item>
       <title>Rise and fall of libclamav</title>
