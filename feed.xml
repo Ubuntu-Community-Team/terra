@@ -6,43 +6,65 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Tue, 29 Sep 2026 04:46:07 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 04:31:45 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Creating a private 5G network</title>
-      <link>https://ubuntu.com//blog/creating-a-private-5g-network</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/creating-a-private-5g-network</guid>
-      <pubDate>Mon, 28 Sep 2026 14:13:43 GMT</pubDate>
-      <description><![CDATA[<p>Private 5G networks are dedicated cellular systems delivering ultra-reliable low-latency communication, massive IoT connectivity, and customized security for enterprises undergoing digital transformation. Private 5G subsumes advantages of both public and non-public networks, offering unified connectivity, optimized services, and customized security within a defined area. Private 5G empowers enterprises to control and secure their own information, optimize networks for exclusive requirements, and flexibly reconfigure infrastructure as business objectives evolve.</p>
-<p>Private 5G has evolved from an experimental concept into critical industrial infrastructure. The success of private 5G hinges on a fundamental architectural shift: replacing heavyweight, legacy virtualization stacks with agile, softwarized infrastructure that slashes operational expenditure (OpEx) and accelerates service delivery.</p>
-<p>However, deploying private 5G at the edge introduces additional challenges. The edge is constrained by power, cooling, space, and it is physically vulnerable. And, increasingly, the edge needs to meet high localized AI processing demands. Solving these challenges requires a cohesive software stack spanning from the immutable Operating System (OS) up to model-driven automation, capable of bridging the gaps between telco requirements and cloud-native IT.</p>
-<h2 class="wp-block-heading">The virtualization dilemma</h2>
-<p>Historically, deploying a mobile core required racks of servers, substantial power consumption, and heavyweight virtualization stacks like traditional OpenStack. In contrast, private 5G scenarios, where the infrastructure might live in a factory closet or an outdoor enclosure, require lightweight virtualization instead. The user plane function (UPF) of the 5G core, and often the virtualized radio access networks (vRAN) and/or open RAN (O-RAN) components, need to run on a fraction of the footprint.</p>
-<p>For years, the industry narrative faced a binary choice: either stick with traditional, resource-heavy virtual machines (often managed by enterprise hypervisors), or move entirely to application containers (managed by Kubernetes). At the enterprise edge, neither extreme is perfect on its own. Legacy hypervisors consume too much compute overhead, inflating OpEx and hardware costs. Conversely, although modern 5G Core and vRAN components are shifting to cloud-native network functions (CNFs) that demand near-bare metal performance, many enterprises still rely on legacy virtual network functions (VNFs) or security appliances that require strict kernel-level isolation.</p>
-<p>As a consequence, the industry is increasingly embracing lightweight, hybrid edge virtualization. Architectures built on system containers deliver similar packet performance to bare metal for 5G UPFs while using lean KVM virtual machines (VMs) only when strict kernel boundaries are mandated. This hybrid footprint keeps edge compute efficient, low-touch, and cost-effective.</p>
-<p>This is where <a href="https://github.com/canonical/microcloud"><strong>MicroCloud</strong></a> changes the game for private 5G. </p>
-<p>MicroCloud is a low-touch, automated private cloud designed specifically for the edge. Instead of deploying a massive, bloated cloud infrastructure, MicroCloud combines lightweight<a href="https://canonical.com/lxd"> LXD</a> system containers and virtual machines, distributed storage via <a href="https://canonical.com/ceph">MicroCeph</a>, and software-defined networking via MicroOVN into a single automated tool. MicroCloud allows you to deploy a lightweight cluster that can run on as few as three to four physical nodes with 32 GB of RAM each for production high availability deployments.</p>
-<h2 class="wp-block-heading">The OS at the core: determinism, hardware acceleration, and immutability</h2>
-<p>In private 5G deployments, the OS is the foundational layer through which the network stack accesses compute, networking, scheduling, and hardware acceleration capabilities. For latency-sensitive workloads, a real-time kernel such as <a href="https://ubuntu.com/real-time">real-time Ubuntu</a>, which incorporates PREEMPT_RT, can make task execution more predictable by reducing scheduling latency and providing more deterministic response times. High-throughput UPF workloads, meanwhile, can use technologies such as Data Plane Development Kit (DPDK) for efficient userspace packet processing, while Extended Berkeley Packet Filter (eBPF) and Express Data Path (XDP) provide programmable, high-performance processing within the Linux networking stack.</p>
-<p>As private 5G architectures increasingly converge radio processing, edge computing, and AI inference, the OS must expose the hardware primitives needed to allow diverse workloads to share infrastructure predictably and securely. Non-Uniform Memory Access (NUMA) awareness, hugepages, CPU affinity and isolation, device passthrough and Single Root Input/Output Virtualization (SR-IOV) can enable network functions and AI workloads to approach bare metal performance while maintaining resource boundaries through the virtualization and container stack. </p>
-<p>Where the threat model requires protection from a potentially compromised host or hypervisor, <a href="https://ubuntu.com/confidential-computing">confidential computing</a> technologies can add hardware-assisted isolation for workloads. The OS therefore needs to provide not just hardware abstraction, but the mechanisms through which higher-level platforms can translate application requirements (e.g., latency, throughput, isolation, and locality) into enforceable resource policies.</p>
-<p>Security and lifecycle management are equally important at the physically distributed edge. An OS for private 5G should establish a chain of trust from boot through runtime, combining secure boot, hardware-rooted trust, disk encryption, application confinement, and least-privilege controls with transactional software updates and reliable rollback. <a href="https://ubuntu.com/core">Ubuntu Core </a>is an example of this security and lifecycle model, with application confinement, full-disk encryption (FDE), and transactional updates designed for devices that may operate remotely for long periods. </p>
-<p>For larger private 5G deployments, vulnerability remediation must also minimize operational disruption. <a href="https://ubuntu.com/security/livepatch">Linux Kernel Livepatch</a> can address supported critical and high-severity kernel vulnerabilities without rebooting, reducing maintenance downtime as a result. In addition to this, <a href="https://ubuntu.com/pricing/pro">Ubuntu Pro</a> provides 10 years of security coverage, which can be extended to 15 years with the Legacy add-on. These capabilities are particularly valuable in environments where infrastructure is expected to remain security-maintained, predictable, and supportable for many years.</p>
-<h2 class="wp-block-heading">Edge AI inference in private 5G deployments</h2>
-<p>Private 5G networks can generate substantial uplink traffic, such as telemetry, video feeds, sensor data, and more. Sending all raw data to a centralized cloud can increase backhaul requirements, latency, and data and security exposure. Localizing AI inference at the edge can enable very low and more predictable end-to-end latency by keeping data close to where it is generated. A local 5G UPF can provide a direct user-plane path into an edge computing environment, allowing applications such as computer vision, defect detection, autonomous mobile robot trajectory planning, or <a href="https://www.youtube.com/watch?v=JQp2tq5YBcE">physical AI</a> to process data streams in milliseconds.</p>
-<p>In emerging AI-RAN architectures, this convergence can extend to sharing accelerated compute infrastructure between RAN functions and AI workloads. GPUs and other accelerators can potentially support both radio processing and enterprise AI, with spare capacity made available to additional workloads when RAN demand permits. <a href="https://ubuntu.com/engage/ai-powered-edge-networking">Industry demonstrations</a> have already shown RAN and AI workloads running concurrently on shared GPU-accelerated platforms. </p>
-<p>To integrate AI efficiently, the infrastructure must support containerized workloads seamlessly alongside network functions.<a href="https://ubuntu.com/server"> Ubuntu Server</a> provides the OS foundation for Private 5G and edge AI, with hardware enablement, security maintenance, and long-term enterprise support. For appliance-style edge deployments, <a href="https://ubuntu.com/core">Ubuntu Core</a> offers a more minimal, immutable, and transactional model with secure boot, application confinement, and Over-the-Air (OTA) updates. MicroCloud can add lightweight infrastructure virtualization through LXD containers and VMs, while <a href="https://ubuntu.com/kubernetes">Canonical Kubernetes</a> provides orchestration for cloud-native 5G Core and AI workloads. </p>
-<p>This stack enables enterprises to run private 5G alongside edge AI workloads such as computer vision and robotics, while maintaining the performance, security, isolation, and lifecycle management required for industrial environments.</p>
-<h2 class="wp-block-heading">Conclusion</h2>
-<p>Private 5G can become more than a dedicated connectivity layer: it can provide the connectivity foundation for distributed vertical computing and AI. The strongest architectures will combine trusted OS foundations, efficient infrastructure virtualization, and cloud-native orchestration, so that compute resources can support both network functions and emerging workloads such as computer vision, robotics, and industrial AI. The objective should be to create an infrastructure platform that can evolve as radio, networking, compute, and AI requirements change, while retaining consistent security and lifecycle management across the estate.</p>
-<h2 class="wp-block-heading">Next steps</h2>
-<p>Learn how Canonical solutions provide a stable, validated, and open foundation for telco workloads.<br/></p>
+      <title>Upgrade your desktop: Ubuntu 26.04.1 LTS is now available</title>
+      <link>https://ubuntu.com//blog/upgrade-your-desktop-ubuntu-26-04-lts</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/upgrade-your-desktop-ubuntu-26-04-lts</guid>
+      <pubDate>Tue, 29 Sep 2026 11:16:20 GMT</pubDate>
+      <description><![CDATA[<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="304" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/ugIlNyRRkYY?feature=oembed" title="Introducing Ubuntu 26.04 LTS | Resolute Raccoon" width="540"></iframe>
+</div></figure>
+<p>Whether you’re a first-time Linux user, experienced developer, academic researcher, or enterprise administrator, Ubuntu 26.04 LTS Resolute Raccoon is the best way to benefit from the latest advancements in the Linux ecosystem on a stable foundation.</p>
+<p>As with all LTS releases of Ubuntu, Ubuntu 26.04.1 LTS represents the consolidation of fixes and improvements identified during the initial launch of Ubuntu 26.04 LTS. It’s available to download and install <a href="https://ubuntu.com/download">from our download page</a>.</p>
+<div>
+<a href="https://ubuntu.com/download?utm_source=26041blog&amp;utm_medium=blog&amp;utm_campaign=701N100000kAmDpIAK" rel="noopener" target="_blank"><p class="p-button--positive">Download for free</p></a>
+</div>
+<p>Users of Ubuntu 24.04 LTS will shortly be prompted to upgrade to 26.04 LTS directly from their desktop, either automatically or as part of a scheduled update. If you missed <a href="https://canonical.com/blog/canonical-releases-ubuntu-26-04-lts-resolute-raccoon">our press release</a>, don’t worry. We’re summing up the most exciting developments in this post to get you ready to upgrade.</p>
+<h2 class="wp-block-heading">User experience and performance enhancements</h2>
+<p>With the GNOME 50 desktop environment and a modernized set of default applications, Ubuntu 26.04 LTS fully embraces Wayland, completing the upstream shift from X.org. This shift delivers smoother visuals, per-monitor scaling, native touch and gesture support, removes screen tearing and optimizes performance across platforms, including support for the latest NVIDIA production drivers. Fractional scaling and variable refresh rate (VRR) are no longer experimental, and GNOME 50 brings faster animations and a cleaner workspace.</p>
+<figure class="wp-block-image size-large"><img alt="" height="1078" loading="lazy" sizes="(min-width: 1920px) 1920px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg 1920w" width="1920"/></figure>
+<p>New default applications include the Papers document viewer, the Loupe image viewer, the Ptyxis terminal, and the Resources system monitor, along with a broad set of accessibility fixes across the Shell and default applications to ensure compliance with global regulations. The App Center now provides a unified software management experience, with debs and snaps displayed side-by-side in a single place. </p>
+<h2 class="wp-block-heading">Your development and AI tools, right at home on Ubuntu</h2>
+<p>As the target platform for open source software vendors and community projects, Ubuntu 26.04 LTS ships with <a href="https://ubuntu.com/blog/from-jammy-to-resolute-how-ubuntus-toolchains-have-evolved">the latest toolchains</a> for Python, Rust, Ruby, Go, PHP, and Perl, and users get first access to the latest updates for key libraries and packages.</p>
+<p>In fields such as <a href="https://ubuntu.com/ai/data-science">data science and machine learning</a>, Ubuntu is the operating system (OS) of choice for many of the most popular frameworks. This includes <a href="https://opencv.org/">OpenCV</a>, <a href="https://www.tensorflow.org/">TensorFlow</a>, <a href="https://keras.io/">Keras</a>, <a href="https://pytorch.org/">PyTorch</a>, and <a href="https://www.kubeflow.org/">Kubeflow</a>.</p>
+<p>Ubuntu 26.04 LTS is the first Ubuntu release to natively distribute <a href="https://canonical.com/blog/canonical-announces-it-will-support-and-distribute-nvidia-cuda-in-ubuntu">NVIDIA CUDA</a> as part of its software repositories, and <a href="https://ubuntu.com/blog/canonical-announces-it-will-distribute-nvidia-doca-ofed-in-ubuntu">NVIDIA DOCA-OFED</a> for high-performance networking is available through an official PPA starting with this release. The <a href="https://canonical.com/blog/canonical-amd-rocm-ai-ml-hpc-libraries">AMD ROCm</a> software platform is also now available in Ubuntu’s repositories – an open software ecosystem for hardware-accelerated AI, machine learning, and HPC workloads on AMD Instinct and AMD Radeon GPUs.</p>
+<div class="p-card" style="background-color: #FFFFFF;">
+<h4 class="p-card__title">Get development environments that just work, with Workshop</h4>
+<div>
+<p> Launch sandboxed development environments that are composable and repeatable with a single command. Innovate with agentic workflows while keeping your host system isolated.
+</p>
+<a href="https://ubuntu.com/workshop?utm_source=24041blog&amp;utm_medium=blog&amp;utm_campaign=701N100000kAmDpIAK" rel="noopener" target="_blank"><p class="p-button--positive">Learn more</p></a>
+</div>
+</div>
+<h2 class="wp-block-heading">Security and compliance features for enterprises</h2>
+<p>Ubuntu 26.04 LTS builds on the resilience-focused improvements introduced in interim releases, bringing security and compliance enhancements that shrink the attack surface and harden the OS against unauthorized or malicious entry attempts.</p>
+<figure class="wp-block-image size-large"><img alt="" height="1485" loading="lazy" sizes="(min-width: 1920px) 1920px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg 1920w" width="1920"/></figure>
+<p>TPM-backed full-disk encryption is now generally available in the Ubuntu installer. By tying encryption to the TPM security chip, disk encryption is bound to a specific device, significantly raising the bar for physical access attacks while improving the user experience. As part of this release, the Security Center becomes a control plane for platform protections. Through the Security Center, administrators can inspect and manage TPM-backed encryption state, recovery mechanisms, Secure Boot status, and disk protection configuration after deployment.</p>
+<p>Ubuntu 26.04 LTS is the first LTS to expand the number of memory safe system components. In practice, this means new kernel drivers and subsystems written in Rust, as well as <code>sudo-rs</code> and <code>uutils</code> coreutils, bringing memory-safe reimplementations of foundational system tools such as <code>sudo</code> and <code>ls</code> while GNU implementations remain available for compatibility. </p>
+<p>Cryptographic defaults in Ubuntu 26.04 LTS are post-quantum aware: hybrid post-quantum key exchange is enabled by default, and legacy cipher support has been fully retired. Ubuntu 26.04 LTS provides host and guest support for confidential computing on Intel Trust Domain Extensions and AMD SEV, extends Canonical Livepatch to Arm64 for the first time, and delivers an updated WSL experience with cloud-init and Ubuntu Pro for WSL. </p>
+<p><a href="https://ubuntu.com/blog/ubuntu-26-04-lts-security-updates">Read what’s new in security for Ubuntu 26.04 LTS &gt;</a></p>
+<p>Finally, for enterprises requiring strict identity management, <code>authd</code> enables authentication against cloud identity providers such as Entra ID, Google IAM and any OIDC-compliant service from the official repositories.</p>
+<div class="p-card" style="background-color: #FFFFFF;">
+<h4 class="p-card__title">Enterprise identity management for Ubuntu Server and Desktop</h4>
+<div>
+<p> Best practices for securing access to Ubuntu in large enterprises
+</p>
+<a href="https://ubuntu.com/engage/ubuntu-enterprise-identity-management?utm_source=26041blog&amp;utm_medium=blog&amp;utm_campaign=701N100000kAmDpIAK" rel="noopener" target="_blank"><p class="p-button--positive">Read our whitepaper</p></a>
+</div>
+</div>
+<h2 class="wp-block-heading">More value for enterprises with Ubuntu Pro</h2>
+<p>Running the latest OS offers new features and enhanced performance, which is a good choice for new deployments. However, organizations also prioritize stability, security, and support, whether it’s for a fleet of workstations or established production systems.</p>
+<p>Canonical’s <a href="https://ubuntu.com/pro">Ubuntu Pro subscription</a> caters to these needs. As with other long term supported releases, 26.04 LTS not only includes five years of standard security maintenance on the main Ubuntu repository, but that coverage is extended to 10 years and tens of thousands of packages with Ubuntu Pro. An additional 5 years of support can be purchased through our <a href="https://ubuntu.com/blog/canonical-expands-total-coverage-for-ubuntu-lts-releases-to-15-years-with-legacy-add-on">Legacy Support add-on, giving you a 15 year commitment</a> on this release and going back to 14.04 LTS.</p>
+<p>This .1 update to Ubuntu 26.04 LTS Resolute Raccoon brings additional stability to our release, making it the ideal choice for your enterprise.</p>
+<h2 class="wp-block-heading">Get started today</h2>
 <ul>
-<li><a href="https://ubuntu.com/engage/ai-powered-edge-networking">AI-Powered Edge Networking with Dell, Intel, and Canonical</a></li>
-<li><a href="https://canonical.com/solutions/telco/5g-edge">Deploy the next-generation 5G edge with Canonical</a></li>
-<li><a href="https://canonical.com/solutions/telco/open-ran">Canonical’s telco infrastructure for virtual RAN</a></li>
-<li><a href="https://canonical.com/solutions/telco#get-in-touch">Get in touch with Canonical’s telco team</a></li>
+<li><a href="https://canonical.com/blog/canonical-releases-ubuntu-26-04-lts-resolute-raccoon">Check out the full Ubuntu 26.04 LTS press release</a></li>
+<li><a href="https://documentation.ubuntu.com/release-notes/26.04/">Dive into the Resolute Raccoon release notes</a></li>
+<li><a href="https://ubuntu.com/download/desktop">Download Ubuntu Desktop 26.04 LTS</a></li>
+<li><a href="https://ubuntu.com/desktop/organisations#get-in-touch">Get in touch with us</a></li>
 </ul>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
@@ -9029,7 +9051,7 @@ Reboot your pi, and make sure everything works together. &nbsp;</div>
  </li>
 </ul>
 <p>Here is what the new progress looks like in 1.0:<br />
-<a href="https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png"><img data-attachment-id="367" data-permalink="https://mvogt.wordpress.com/2014/04/04/apt-1-0/apt-progress/" data-orig-file="https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png" data-orig-size="720,435" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="apt-progress" data-image-description="" data-image-caption="" data-large-file="https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png?w=450" src="https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png?w=450&#038;h=271" alt="apt-progress" width="450" height="271" class="alignnone size-full wp-image-367" srcset="https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png?w=450&amp;h=272 450w, https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png?w=150&amp;h=91 150w, https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png?w=300&amp;h=181 300w, https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png 720w" sizes="(max-width: 450px) 100vw, 450px" /></a></p>
+<a href="https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png"><img data-attachment-id="367" data-permalink="https://mvogt.wordpress.com/2014/04/04/apt-1-0/apt-progress/" data-orig-file="https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png" data-orig-size="720,435" data-comments-opened="1" data-image-title="apt-progress" data-image-description="" data-image-caption="" data-large-file="https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png?w=450" src="https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png?w=450&#038;h=271" alt="apt-progress" width="450" height="271" class="alignnone size-full wp-image-367" srcset="https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png?w=450&amp;h=272 450w, https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png?w=150&amp;h=91 150w, https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png?w=300&amp;h=181 300w, https://mvogt.wordpress.com/wp-content/uploads/2014/04/apt-progress.png 720w" sizes="(max-width: 450px) 100vw, 450px" /></a></p>
 <p>You can enable/disable the install progress via: </p>
 <pre>
 # echo 'Dpkg::Progress-Fancy "1";' &gt; /etc/apt/apt.conf.d/99progressbar
@@ -9249,8 +9271,7 @@ Let's get 13.04 into shape!</div>]]></description>
 intrigued by the notice that</p>
 <blockquote>
 <p>softraid(4) RAID1 and crypto volumes are now bootable on i386 and
-amd64 (full disk encryption).</p>
-</blockquote>
+amd64 (full disk encryption).</p></blockquote>
 <p>I&rsquo;ve always used an encrypted LVM (as setup by the alternate CD) with
 a fully encrypted root on my netbook and laptop when running
 Debian/Kubuntu and never noticed much a performance
@@ -9259,7 +9280,7 @@ significant drop in performance with full-disk encryption on OpenBSD.</p>
 <p>Although the steps required to setup full-disk encryption (as opposed
 to requiring <a href="http://geekyschmidt.com/2011/01/19/configuring-openbsd-softraid-fo-encryption">manual intervention at boot</a> or the equivalent
 of <a href="http://geekyschmidt.com/2011/01/24/configuring-openbsd-svnd-for-encrypted-volumes">loop-mounted</a> <a href="http://www.geektechnique.org/projectlab/84/">encrypted images</a> via
-<a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vnconfig&apropos=0&sektion=8"><code>vnconfig(8)</code></a>) on OpenBSD are not explicitly documented
+<a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vnconfig&amp;apropos=0&amp;sektion=8"><code>vnconfig(8)</code></a>) on OpenBSD are not explicitly documented
 anywhere, searching through the mailing lists, man pages, and trial
 and error provided the following steps:</p>
 <ol>
@@ -9271,7 +9292,7 @@ appropriate size of type <code>swap</code> for swap, and then add a label <code>
 using the remainder of the space of type <code>RAID</code>. We aren&rsquo;t going
 to put <code>swap</code> on our crypto device since OpenBSD has encrypted the
 swap partition by default <a href="http://www.openbsd.org/plus38.html">since 2005</a>.</li>
-<li>Setup the crypto volume as described in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=bioctl&apropos=0&sektion=8&manpath=OpenBSD+5.3&arch=i386&format=html"><code>bioctl(8)</code></a>. You
+<li>Setup the crypto volume as described in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=bioctl&amp;apropos=0&amp;sektion=8&amp;manpath=OpenBSD&#43;5.3&amp;arch=i386&amp;format=html"><code>bioctl(8)</code></a>. You
 will be prompted for a passphrase and presented with a message
 along the lines of <code>softraid0: SR CRYPTO volume attached as sd0</code>
 on successful setup. I used <code>bioctl -c C -l /dev/wd0a softraid0</code>
@@ -9289,17 +9310,17 @@ disk <code>sd0</code> (or whichever disk the crypto volume got attached
 as). In the partitioning dialog, you may need to manually adjust
 things since the auto-partitioning creates an additional swap
 label on <code>sd0</code>, which we don&rsquo;t need given we already have <code>wd0b</code>.</li>
-<li>Using <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ed&apropos=0&sektion=1"><code>ed(1)</code></a>, add the line <code>1a8bab44e9cc178d.b none swap sw</code> to <code>/mnt/etc/fstab</code>, assuming that <code>1a8bab44e9cc178d</code> is the
+<li>Using <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ed&amp;apropos=0&amp;sektion=1"><code>ed(1)</code></a>, add the line <code>1a8bab44e9cc178d.b none swap sw</code> to <code>/mnt/etc/fstab</code>, assuming that <code>1a8bab44e9cc178d</code> is the
 DUID associated with <code>wd0</code>.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Alternatively,
 wait until you boot into your system, and add it to your
-<code>/etc/fstab</code> using <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vi&apropos=0&sektion=1"><code>vi(1)</code></a> or <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=mg&apropos=0&sektion=1"><code>mg(1)</code></a>.</li>
+<code>/etc/fstab</code> using <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vi&amp;apropos=0&amp;sektion=1"><code>vi(1)</code></a> or <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=mg&amp;apropos=0&amp;sektion=1"><code>mg(1)</code></a>.</li>
 <li>Reboot, and you&rsquo;ll be prompted for your passhprase. You&rsquo;re done!</li>
 </ol>
 <p>Here&rsquo;s a screenshot of steps 1 through 4.</p>
-<p><img alt="Steps 1 through 4" src="/blog/2013-03-26-setting-up-full-disk-encryption-in-openbsd-5.3/2013-03-26-113954_720x400_scrot.png"></p>
+<p><img src="/blog/2013-03-26-setting-up-full-disk-encryption-in-openbsd-5.3/2013-03-26-113954_720x400_scrot.png" alt="Steps 1 through 4"></p>
 <p>Here&rsquo;s a screenshot of the passphrase prompt, after successfully
 entering the passphrase:</p>
-<p><img alt="Passphrase prompt" src="/blog/2013-03-26-setting-up-full-disk-encryption-in-openbsd-5.3/2013-03-26-125344_720x400_scrot.png"></p>
+<p><img src="/blog/2013-03-26-setting-up-full-disk-encryption-in-openbsd-5.3/2013-03-26-125344_720x400_scrot.png" alt="Passphrase prompt"></p>
 <p>If I&rsquo;ve made any errors in the steps above, please point them out in
 the comments below or by sending me an email.</p>
 <div class="footnotes" role="doc-endnotes">
