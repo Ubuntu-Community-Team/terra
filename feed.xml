@@ -6,43 +6,65 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 30 Sep 2026 04:40:44 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 04:52:56 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Creating a private 5G network</title>
-      <link>https://ubuntu.com//blog/creating-a-private-5g-network</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/creating-a-private-5g-network</guid>
-      <pubDate>Mon, 28 Sep 2026 14:13:43 GMT</pubDate>
-      <description><![CDATA[<p>Private 5G networks are dedicated cellular systems delivering ultra-reliable low-latency communication, massive IoT connectivity, and customized security for enterprises undergoing digital transformation. Private 5G subsumes advantages of both public and non-public networks, offering unified connectivity, optimized services, and customized security within a defined area. Private 5G empowers enterprises to control and secure their own information, optimize networks for exclusive requirements, and flexibly reconfigure infrastructure as business objectives evolve.</p>
-<p>Private 5G has evolved from an experimental concept into critical industrial infrastructure. The success of private 5G hinges on a fundamental architectural shift: replacing heavyweight, legacy virtualization stacks with agile, softwarized infrastructure that slashes operational expenditure (OpEx) and accelerates service delivery.</p>
-<p>However, deploying private 5G at the edge introduces additional challenges. The edge is constrained by power, cooling, space, and it is physically vulnerable. And, increasingly, the edge needs to meet high localized AI processing demands. Solving these challenges requires a cohesive software stack spanning from the immutable Operating System (OS) up to model-driven automation, capable of bridging the gaps between telco requirements and cloud-native IT.</p>
-<h2 class="wp-block-heading">The virtualization dilemma</h2>
-<p>Historically, deploying a mobile core required racks of servers, substantial power consumption, and heavyweight virtualization stacks like traditional OpenStack. In contrast, private 5G scenarios, where the infrastructure might live in a factory closet or an outdoor enclosure, require lightweight virtualization instead. The user plane function (UPF) of the 5G core, and often the virtualized radio access networks (vRAN) and/or open RAN (O-RAN) components, need to run on a fraction of the footprint.</p>
-<p>For years, the industry narrative faced a binary choice: either stick with traditional, resource-heavy virtual machines (often managed by enterprise hypervisors), or move entirely to application containers (managed by Kubernetes). At the enterprise edge, neither extreme is perfect on its own. Legacy hypervisors consume too much compute overhead, inflating OpEx and hardware costs. Conversely, although modern 5G Core and vRAN components are shifting to cloud-native network functions (CNFs) that demand near-bare metal performance, many enterprises still rely on legacy virtual network functions (VNFs) or security appliances that require strict kernel-level isolation.</p>
-<p>As a consequence, the industry is increasingly embracing lightweight, hybrid edge virtualization. Architectures built on system containers deliver similar packet performance to bare metal for 5G UPFs while using lean KVM virtual machines (VMs) only when strict kernel boundaries are mandated. This hybrid footprint keeps edge compute efficient, low-touch, and cost-effective.</p>
-<p>This is where <a href="https://github.com/canonical/microcloud"><strong>MicroCloud</strong></a> changes the game for private 5G. </p>
-<p>MicroCloud is a low-touch, automated private cloud designed specifically for the edge. Instead of deploying a massive, bloated cloud infrastructure, MicroCloud combines lightweight<a href="https://canonical.com/lxd"> LXD</a> system containers and virtual machines, distributed storage via <a href="https://canonical.com/ceph">MicroCeph</a>, and software-defined networking via MicroOVN into a single automated tool. MicroCloud allows you to deploy a lightweight cluster that can run on as few as three to four physical nodes with 32 GB of RAM each for production high availability deployments.</p>
-<h2 class="wp-block-heading">The OS at the core: determinism, hardware acceleration, and immutability</h2>
-<p>In private 5G deployments, the OS is the foundational layer through which the network stack accesses compute, networking, scheduling, and hardware acceleration capabilities. For latency-sensitive workloads, a real-time kernel such as <a href="https://ubuntu.com/real-time">real-time Ubuntu</a>, which incorporates PREEMPT_RT, can make task execution more predictable by reducing scheduling latency and providing more deterministic response times. High-throughput UPF workloads, meanwhile, can use technologies such as Data Plane Development Kit (DPDK) for efficient userspace packet processing, while Extended Berkeley Packet Filter (eBPF) and Express Data Path (XDP) provide programmable, high-performance processing within the Linux networking stack.</p>
-<p>As private 5G architectures increasingly converge radio processing, edge computing, and AI inference, the OS must expose the hardware primitives needed to allow diverse workloads to share infrastructure predictably and securely. Non-Uniform Memory Access (NUMA) awareness, hugepages, CPU affinity and isolation, device passthrough and Single Root Input/Output Virtualization (SR-IOV) can enable network functions and AI workloads to approach bare metal performance while maintaining resource boundaries through the virtualization and container stack. </p>
-<p>Where the threat model requires protection from a potentially compromised host or hypervisor, <a href="https://ubuntu.com/confidential-computing">confidential computing</a> technologies can add hardware-assisted isolation for workloads. The OS therefore needs to provide not just hardware abstraction, but the mechanisms through which higher-level platforms can translate application requirements (e.g., latency, throughput, isolation, and locality) into enforceable resource policies.</p>
-<p>Security and lifecycle management are equally important at the physically distributed edge. An OS for private 5G should establish a chain of trust from boot through runtime, combining secure boot, hardware-rooted trust, disk encryption, application confinement, and least-privilege controls with transactional software updates and reliable rollback. <a href="https://ubuntu.com/core">Ubuntu Core </a>is an example of this security and lifecycle model, with application confinement, full-disk encryption (FDE), and transactional updates designed for devices that may operate remotely for long periods. </p>
-<p>For larger private 5G deployments, vulnerability remediation must also minimize operational disruption. <a href="https://ubuntu.com/security/livepatch">Linux Kernel Livepatch</a> can address supported critical and high-severity kernel vulnerabilities without rebooting, reducing maintenance downtime as a result. In addition to this, <a href="https://ubuntu.com/pricing/pro">Ubuntu Pro</a> provides 10 years of security coverage, which can be extended to 15 years with the Legacy add-on. These capabilities are particularly valuable in environments where infrastructure is expected to remain security-maintained, predictable, and supportable for many years.</p>
-<h2 class="wp-block-heading">Edge AI inference in private 5G deployments</h2>
-<p>Private 5G networks can generate substantial uplink traffic, such as telemetry, video feeds, sensor data, and more. Sending all raw data to a centralized cloud can increase backhaul requirements, latency, and data and security exposure. Localizing AI inference at the edge can enable very low and more predictable end-to-end latency by keeping data close to where it is generated. A local 5G UPF can provide a direct user-plane path into an edge computing environment, allowing applications such as computer vision, defect detection, autonomous mobile robot trajectory planning, or <a href="https://www.youtube.com/watch?v=JQp2tq5YBcE">physical AI</a> to process data streams in milliseconds.</p>
-<p>In emerging AI-RAN architectures, this convergence can extend to sharing accelerated compute infrastructure between RAN functions and AI workloads. GPUs and other accelerators can potentially support both radio processing and enterprise AI, with spare capacity made available to additional workloads when RAN demand permits. <a href="https://ubuntu.com/engage/ai-powered-edge-networking">Industry demonstrations</a> have already shown RAN and AI workloads running concurrently on shared GPU-accelerated platforms. </p>
-<p>To integrate AI efficiently, the infrastructure must support containerized workloads seamlessly alongside network functions.<a href="https://ubuntu.com/server"> Ubuntu Server</a> provides the OS foundation for Private 5G and edge AI, with hardware enablement, security maintenance, and long-term enterprise support. For appliance-style edge deployments, <a href="https://ubuntu.com/core">Ubuntu Core</a> offers a more minimal, immutable, and transactional model with secure boot, application confinement, and Over-the-Air (OTA) updates. MicroCloud can add lightweight infrastructure virtualization through LXD containers and VMs, while <a href="https://ubuntu.com/kubernetes">Canonical Kubernetes</a> provides orchestration for cloud-native 5G Core and AI workloads. </p>
-<p>This stack enables enterprises to run private 5G alongside edge AI workloads such as computer vision and robotics, while maintaining the performance, security, isolation, and lifecycle management required for industrial environments.</p>
-<h2 class="wp-block-heading">Conclusion</h2>
-<p>Private 5G can become more than a dedicated connectivity layer: it can provide the connectivity foundation for distributed vertical computing and AI. The strongest architectures will combine trusted OS foundations, efficient infrastructure virtualization, and cloud-native orchestration, so that compute resources can support both network functions and emerging workloads such as computer vision, robotics, and industrial AI. The objective should be to create an infrastructure platform that can evolve as radio, networking, compute, and AI requirements change, while retaining consistent security and lifecycle management across the estate.</p>
-<h2 class="wp-block-heading">Next steps</h2>
-<p>Learn how Canonical solutions provide a stable, validated, and open foundation for telco workloads.<br/></p>
+      <title>Upgrade your desktop: Ubuntu 26.04.1 LTS is now available</title>
+      <link>https://ubuntu.com//blog/upgrade-your-desktop-ubuntu-26-04-lts</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/upgrade-your-desktop-ubuntu-26-04-lts</guid>
+      <pubDate>Tue, 29 Sep 2026 11:16:20 GMT</pubDate>
+      <description><![CDATA[<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="304" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/ugIlNyRRkYY?feature=oembed" title="Introducing Ubuntu 26.04 LTS | Resolute Raccoon" width="540"></iframe>
+</div></figure>
+<p>Whether you’re a first-time Linux user, experienced developer, academic researcher, or enterprise administrator, Ubuntu 26.04 LTS Resolute Raccoon is the best way to benefit from the latest advancements in the Linux ecosystem on a stable foundation.</p>
+<p>As with all LTS releases of Ubuntu, Ubuntu 26.04.1 LTS represents the consolidation of fixes and improvements identified during the initial launch of Ubuntu 26.04 LTS. It’s available to download and install <a href="https://ubuntu.com/download">from our download page</a>.</p>
+<div>
+<a href="https://ubuntu.com/download?utm_source=26041blog&amp;utm_medium=blog&amp;utm_campaign=701N100000kAmDpIAK" rel="noopener" target="_blank"><p class="p-button--positive">Download for free</p></a>
+</div>
+<p>Users of Ubuntu 24.04 LTS will shortly be prompted to upgrade to 26.04 LTS directly from their desktop, either automatically or as part of a scheduled update. If you missed <a href="https://canonical.com/blog/canonical-releases-ubuntu-26-04-lts-resolute-raccoon">our press release</a>, don’t worry. We’re summing up the most exciting developments in this post to get you ready to upgrade.</p>
+<h2 class="wp-block-heading">User experience and performance enhancements</h2>
+<p>With the GNOME 50 desktop environment and a modernized set of default applications, Ubuntu 26.04 LTS fully embraces Wayland, completing the upstream shift from X.org. This shift delivers smoother visuals, per-monitor scaling, native touch and gesture support, removes screen tearing and optimizes performance across platforms, including support for the latest NVIDIA production drivers. Fractional scaling and variable refresh rate (VRR) are no longer experimental, and GNOME 50 brings faster animations and a cleaner workspace.</p>
+<figure class="wp-block-image size-large"><img alt="" height="1078" loading="lazy" sizes="(min-width: 1920px) 1920px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F9280%2Fimage-1.jpeg 1920w" width="1920"/></figure>
+<p>New default applications include the Papers document viewer, the Loupe image viewer, the Ptyxis terminal, and the Resources system monitor, along with a broad set of accessibility fixes across the Shell and default applications to ensure compliance with global regulations. The App Center now provides a unified software management experience, with debs and snaps displayed side-by-side in a single place. </p>
+<h2 class="wp-block-heading">Your development and AI tools, right at home on Ubuntu</h2>
+<p>As the target platform for open source software vendors and community projects, Ubuntu 26.04 LTS ships with <a href="https://ubuntu.com/blog/from-jammy-to-resolute-how-ubuntus-toolchains-have-evolved">the latest toolchains</a> for Python, Rust, Ruby, Go, PHP, and Perl, and users get first access to the latest updates for key libraries and packages.</p>
+<p>In fields such as <a href="https://ubuntu.com/ai/data-science">data science and machine learning</a>, Ubuntu is the operating system (OS) of choice for many of the most popular frameworks. This includes <a href="https://opencv.org/">OpenCV</a>, <a href="https://www.tensorflow.org/">TensorFlow</a>, <a href="https://keras.io/">Keras</a>, <a href="https://pytorch.org/">PyTorch</a>, and <a href="https://www.kubeflow.org/">Kubeflow</a>.</p>
+<p>Ubuntu 26.04 LTS is the first Ubuntu release to natively distribute <a href="https://canonical.com/blog/canonical-announces-it-will-support-and-distribute-nvidia-cuda-in-ubuntu">NVIDIA CUDA</a> as part of its software repositories, and <a href="https://ubuntu.com/blog/canonical-announces-it-will-distribute-nvidia-doca-ofed-in-ubuntu">NVIDIA DOCA-OFED</a> for high-performance networking is available through an official PPA starting with this release. The <a href="https://canonical.com/blog/canonical-amd-rocm-ai-ml-hpc-libraries">AMD ROCm</a> software platform is also now available in Ubuntu’s repositories – an open software ecosystem for hardware-accelerated AI, machine learning, and HPC workloads on AMD Instinct and AMD Radeon GPUs.</p>
+<div class="p-card" style="background-color: #FFFFFF;">
+<h4 class="p-card__title">Get development environments that just work, with Workshop</h4>
+<div>
+<p> Launch sandboxed development environments that are composable and repeatable with a single command. Innovate with agentic workflows while keeping your host system isolated.
+</p>
+<a href="https://ubuntu.com/workshop?utm_source=24041blog&amp;utm_medium=blog&amp;utm_campaign=701N100000kAmDpIAK" rel="noopener" target="_blank"><p class="p-button--positive">Learn more</p></a>
+</div>
+</div>
+<h2 class="wp-block-heading">Security and compliance features for enterprises</h2>
+<p>Ubuntu 26.04 LTS builds on the resilience-focused improvements introduced in interim releases, bringing security and compliance enhancements that shrink the attack surface and harden the OS against unauthorized or malicious entry attempts.</p>
+<figure class="wp-block-image size-large"><img alt="" height="1485" loading="lazy" sizes="(min-width: 1920px) 1920px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6bf5%2Fimage-1.jpeg 1920w" width="1920"/></figure>
+<p>TPM-backed full-disk encryption is now generally available in the Ubuntu installer. By tying encryption to the TPM security chip, disk encryption is bound to a specific device, significantly raising the bar for physical access attacks while improving the user experience. As part of this release, the Security Center becomes a control plane for platform protections. Through the Security Center, administrators can inspect and manage TPM-backed encryption state, recovery mechanisms, Secure Boot status, and disk protection configuration after deployment.</p>
+<p>Ubuntu 26.04 LTS is the first LTS to expand the number of memory safe system components. In practice, this means new kernel drivers and subsystems written in Rust, as well as <code>sudo-rs</code> and <code>uutils</code> coreutils, bringing memory-safe reimplementations of foundational system tools such as <code>sudo</code> and <code>ls</code> while GNU implementations remain available for compatibility. </p>
+<p>Cryptographic defaults in Ubuntu 26.04 LTS are post-quantum aware: hybrid post-quantum key exchange is enabled by default, and legacy cipher support has been fully retired. Ubuntu 26.04 LTS provides host and guest support for confidential computing on Intel Trust Domain Extensions and AMD SEV, extends Canonical Livepatch to Arm64 for the first time, and delivers an updated WSL experience with cloud-init and Ubuntu Pro for WSL. </p>
+<p><a href="https://ubuntu.com/blog/ubuntu-26-04-lts-security-updates">Read what’s new in security for Ubuntu 26.04 LTS &gt;</a></p>
+<p>Finally, for enterprises requiring strict identity management, <code>authd</code> enables authentication against cloud identity providers such as Entra ID, Google IAM and any OIDC-compliant service from the official repositories.</p>
+<div class="p-card" style="background-color: #FFFFFF;">
+<h4 class="p-card__title">Enterprise identity management for Ubuntu Server and Desktop</h4>
+<div>
+<p> Best practices for securing access to Ubuntu in large enterprises
+</p>
+<a href="https://ubuntu.com/engage/ubuntu-enterprise-identity-management?utm_source=26041blog&amp;utm_medium=blog&amp;utm_campaign=701N100000kAmDpIAK" rel="noopener" target="_blank"><p class="p-button--positive">Read our whitepaper</p></a>
+</div>
+</div>
+<h2 class="wp-block-heading">More value for enterprises with Ubuntu Pro</h2>
+<p>Running the latest OS offers new features and enhanced performance, which is a good choice for new deployments. However, organizations also prioritize stability, security, and support, whether it’s for a fleet of workstations or established production systems.</p>
+<p>Canonical’s <a href="https://ubuntu.com/pro">Ubuntu Pro subscription</a> caters to these needs. As with other long term supported releases, 26.04 LTS not only includes five years of standard security maintenance on the main Ubuntu repository, but that coverage is extended to 10 years and tens of thousands of packages with Ubuntu Pro. An additional 5 years of support can be purchased through our <a href="https://ubuntu.com/blog/canonical-expands-total-coverage-for-ubuntu-lts-releases-to-15-years-with-legacy-add-on">Legacy Support add-on, giving you a 15 year commitment</a> on this release and going back to 14.04 LTS.</p>
+<p>This .1 update to Ubuntu 26.04 LTS Resolute Raccoon brings additional stability to our release, making it the ideal choice for your enterprise.</p>
+<h2 class="wp-block-heading">Get started today</h2>
 <ul>
-<li><a href="https://ubuntu.com/engage/ai-powered-edge-networking">AI-Powered Edge Networking with Dell, Intel, and Canonical</a></li>
-<li><a href="https://canonical.com/solutions/telco/5g-edge">Deploy the next-generation 5G edge with Canonical</a></li>
-<li><a href="https://canonical.com/solutions/telco/open-ran">Canonical’s telco infrastructure for virtual RAN</a></li>
-<li><a href="https://canonical.com/solutions/telco#get-in-touch">Get in touch with Canonical’s telco team</a></li>
+<li><a href="https://canonical.com/blog/canonical-releases-ubuntu-26-04-lts-resolute-raccoon">Check out the full Ubuntu 26.04 LTS press release</a></li>
+<li><a href="https://documentation.ubuntu.com/release-notes/26.04/">Dive into the Resolute Raccoon release notes</a></li>
+<li><a href="https://ubuntu.com/download/desktop">Download Ubuntu Desktop 26.04 LTS</a></li>
+<li><a href="https://ubuntu.com/desktop/organisations#get-in-touch">Get in touch with us</a></li>
 </ul>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
@@ -3201,140 +3223,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
       <source url="https://steveire.wordpress.com/feed/?mrss=off">Stephen Kelly</source>
     </item>
     <item>
-      <title>Free software activity in November 2025</title>
-      <link>https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</link>
-      <guid isPermaLink="true">https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</guid>
-      <pubDate>Thu, 04 Dec 2025 17:55:59 GMT</pubDate>
-      <description><![CDATA[<p>My Debian contributions this month were all
-<a href="https://www.freexian.com/about/debian-contributions/">sponsored</a> by
-Freexian.  I had a bit less time than usual, because Freexian collaborators
-gathered in Marseille this month for our yearly sprint, doing some planning
-for next&nbsp;year.</p>
-<p>You can also support my work directly via
-<a href="https://liberapay.com/cjwatson">Liberapay</a> or <a href="https://github.com/sponsors/cjwatson">GitHub
-Sponsors</a>.</p>
-<h2>OpenSSH</h2>
-<p>I began preparing for the second stage of the <a href="https://lists.debian.org/debian-devel/2024/04/msg00044.html"><span class="caps">GSS</span>-<span class="caps">API</span> key exchange package
-split</a> (some
-details have changed since that message).  It seems that we&#8217;ll need to wait
-until Ubuntu 26.04 <span class="caps">LTS</span> has been released, but that&#8217;s close enough that it&#8217;s
-worth making sure we&#8217;re ready.  This month I just did some packaging
-cleanups that would otherwise have been annoying to copy, such as removing
-support for direct upgrades from pre-bookworm.  I&#8217;m considering some other
-package rearrangements to make the split easier to manage, but haven&#8217;t made
-any decisions here&nbsp;yet.</p>
-<p>This also led me to start on a long-overdue bug triage pass, mainly
-consisting of applying usertags to lots of our open bugs to sort them by
-which program they apply to, and also closing a few that have been fixed,
-since some bugs will eventually need to be reassigned to <span class="caps">GSS</span>-<span class="caps">API</span> packages
-and it would be helpful to make them easier to find.  At the time of
-writing, about 30% of the bug list remains to be categorized this&nbsp;way.</p>
-<h2>Python&nbsp;packaging</h2>
-<p>I upgraded these packages to new upstream&nbsp;versions:</p>
-<ul>
-<li>aioftp</li>
-<li>basemap (fixing <a href="https://bugs.debian.org/1119728">Cython 3.1
-  compatibility</a>)</li>
-<li>billiard</li>
-<li>black</li>
-<li>django-phonenumber-field</li>
-<li>flask-security</li>
-<li>flufl.i18n</li>
-<li>langtable</li>
-<li>mariadb-connector-python</li>
-<li>peewee (fixing <a href="https://bugs.debian.org/1119757">Cython 3.1
-  compatibility</a>)</li>
-<li>pydantic</li>
-<li>pydantic-core</li>
-<li>pydantic-settings</li>
-<li>pylsqpack</li>
-<li>pymongo</li>
-<li>pymssql</li>
-<li>pyodbc</li>
-<li>python-auditwheel (<a href="https://github.com/pypa/auditwheel/pull/640">contributed follow-up fix
-  upstream</a>)</li>
-<li>python-avro</li>
-<li>python-bleach</li>
-<li>python-btrees</li>
-<li>python-certifi</li>
-<li>python-charset-normalizer</li>
-<li>python-colorlog</li>
-<li>python-django-channels</li>
-<li>python-django-constance</li>
-<li>python-django-contact-form</li>
-<li>python-django-hashids</li>
-<li>python-djvulibre (fixing <a href="https://bugs.debian.org/1119766">Cython 3.1
-  compatibility</a>)</li>
-<li>python-evalidate</li>
-<li>python-legacy-cgi</li>
-<li>python-openstep-plist (fixing <a href="https://bugs.debian.org/1119767">Cython 3.1
-  compatibility</a>)</li>
-<li>python-pytest-run-parallel</li>
-<li>python-pytokens</li>
-<li>python-tblib</li>
-<li>python-webargs</li>
-<li>pyupgrade</li>
-<li>sqlfluff</li>
-<li>trove-classifiers</li>
-<li>ttconv</li>
-<li>wcwidth</li>
-<li>zope.hookable</li>
-<li>zope.i18nmessageid (removing <a href="https://bugs.debian.org/1084014">run-time dependency on
-  setuptools</a>)</li>
-<li>zope.interface</li>
-<li>zope.proxy</li>
-<li>zope.security (removing <a href="https://bugs.debian.org/1084018">run-time dependency on
-  setuptools</a>)</li>
-<li>zope.sqlalchemy</li>
-</ul>
-<p>I packaged <a href="https://bugs.debian.org/1120507">django-pgtransaction</a> and
-backported it to trixie, since we plan to use it in Debusine; and I adopted
-python-certifi for the Python&nbsp;team.</p>
-<p>I fixed or helped to fix several other build/test&nbsp;failures:</p>
-<ul>
-<li><a href="https://bugs.debian.org/1119744">kivy</a></li>
-<li><a href="https://bugs.debian.org/1120242">mypy</a></li>
-<li><a href="https://bugs.debian.org/1114284">pytest-mypy-testing</a> (<a href="https://github.com/davidfritzsche/pytest-mypy-testing/pull/57">contributed
-  upstream</a>)</li>
-<li><a href="https://salsa.debian.org/python-team/packages/python-cytoolz/-/commit/52856c4c1d1bc9fab0241e4c1b0d20d75bdaa99a">python-cytoolz</a></li>
-<li><a href="https://bugs.debian.org/1120725">python-discord</a></li>
-<li><a href="https://bugs.debian.org/1120469">python-ncls</a>, fixing some failures in&nbsp;pyranges</li>
-<li><a href="https://bugs.debian.org/1121095">pyxdg</a></li>
-<li><a href="https://bugs.debian.org/1114415">traitlets</a></li>
-<li><a href="https://bugs.debian.org/1120228">twine</a></li>
-</ul>
-<p>I fixed a couple of other&nbsp;bugs:</p>
-<ul>
-<li><a href="https://bugs.debian.org/1119801">pmix: B-D on python3-all-dev, but not built for all supported Python3&nbsp;versions</a></li>
-<li><a href="https://bugs.debian.org/1064621">python-certifi: Package not compatible with&nbsp;multiarch</a></li>
-</ul>
-<h2>Other bits and&nbsp;pieces</h2>
-<ul>
-<li><a href="https://bugs.debian.org/1087524">cdebconf: Move to&nbsp;/usr/lib/apt/apt-extracttemplates</a></li>
-<li><a href="https://salsa.debian.org/debian/devscripts/-/merge_requests/588">devscripts: Restore dpkg-dev&nbsp;dependency</a></li>
-<li><a href="https://bugs.debian.org/1121577">groff: Missing information about some utilities in the &#8220;contrib&#8221;&nbsp;directory</a></li>
-</ul>
-<h2>Code&nbsp;reviews</h2>
-<ul>
-<li><a href="https://bugs.debian.org/1119914">base-passwd: French translation</a> (merged
-  and&nbsp;uploaded)</li>
-<li><a href="https://salsa.debian.org/installer-team/cdebconf/-/merge_requests/23">cdebconf: Consider using the standard dh sequence in
-  d/rules</a>
-  (merged and&nbsp;uploaded)</li>
-<li><a href="https://bugs.debian.org/430151">cdebconf: Multiple select is not right aligned in
-  Hebrew</a> (patch fails to build; asked
-  reporter for an&nbsp;update)</li>
-<li><a href="https://bugs.debian.org/1078936">cdebconf: Allow building without
-  libglib2.0-dev</a> (merged and&nbsp;uploaded)</li>
-<li><a href="https://bugs.debian.org/1121035">pydantic-core</a> (merged and&nbsp;uploaded)</li>
-<li>pymongo (sponsored adoption by Aryan&nbsp;Karamtoth)</li>
-<li><a href="https://salsa.debian.org/python-team/packages/maturin/-/merge_requests/1">python-maturin: Add missing build
-  dependencies</a>
-  (merged and&nbsp;uploaded)</li>
-</ul>]]></description>
-      <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
-    </item>
-    <item>
       <title>Why I Won’t Be Attending or Speaking at Ubuntu Summit 25.10</title>
       <link>https://ericheickmeyer.com/2025/10/09/why-i-wont-be-attending-or-speaking-at-ubuntu-summit-25-10/</link>
       <guid isPermaLink="true">https://ericheickmeyer.com/2025/10/09/why-i-wont-be-attending-or-speaking-at-ubuntu-summit-25-10/</guid>
@@ -3920,19 +3808,19 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
       <link>https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</link>
       <guid isPermaLink="true">https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</guid>
       <pubDate>Fri, 16 May 2025 11:17:23 GMT</pubDate>
-      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
+      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd wp-block-paragraph">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
 
 
 
-<p></p>
+<p class="wp-block-paragraph"></p>
 
 
 
-<p></p>
+<p class="wp-block-paragraph"></p>
 
 
 
-<p></p>]]></description>
+<p class="wp-block-paragraph"></p>]]></description>
       <source url="https://ograblog.wordpress.com/feed/atom">Oliver Grawert</source>
     </item>
     <item>
@@ -4509,6 +4397,240 @@ mirror and follow the instructions above.</p>]]></description>
 
 <p class="wp-block-paragraph">Thank you to everyone who contributed to OpenStack&nbsp;2023.2 Bobcat!</p>]]></description>
       <source url="https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off">Corey Bryant</source>
+    </item>
+    <item>
+      <title>Building a NAS</title>
+      <link>https://apebox.org/wordpress/tech/1325</link>
+      <guid isPermaLink="true">https://apebox.org/wordpress/tech/1325</guid>
+      <pubDate>Tue, 12 Sep 2023 21:33:05 GMT</pubDate>
+      <description><![CDATA[<h2 class="wp-block-heading">The status quo</h2>
+
+
+
+<p>Back in 2015, I bought an off-the-shelf NAS, a QNAP TS-453mini, to act as my file store and Plex server. I had previously owned a Synology box, and whilst I liked the Synology OS and experience, the hardware was underwhelming. I loaded up the successor QNAP with four 5TB drives in RAID10, and moved all my files over (after some initial DoA drive issues were handled).</p>
+
+
+
+<figure class="wp-block-image size-medium"><img fetchpriority="high" decoding="async" width="550" height="550" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png" alt="QNAP TS-453mini product photo" class="wp-image-1329" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-150x150.png 150w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-768x768.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3.png 850w" sizes="(max-width: 550px) 100vw, 550px" /><figcaption class="wp-element-caption">QNAP TS-453mini product photo</figcaption></figure>
+
+
+
+<p>That thing has been in service for about 8 years now, and it&#8217;s been&#8230; a mixed bag. It was definitely more powerful than the predecessor system, but it was clear that QNAP&#8217;s OS was not up to the same standard as Synology&#8217;s &#8211; perhaps best exemplified by &#8220;HappyGet 2&#8221;, the QNAP webapp for downloading videos from streaming services like YouTube, whose icon is a straight rip-off of StarCraft 2. On its own, meaningless &#8211; but a bad omen for overall software quality</p>
+
+
+
+<span id="more-1325"></span>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="884" height="172" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png" alt="The logo for QNAP HappyGet 2 and Blizzard's Starcraft 2 side by side" class="wp-image-1328" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png 884w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-550x107.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-768x149.png 768w" sizes="(max-width: 884px) 100vw, 884px" /><figcaption class="wp-element-caption">The logo for QNAP HappyGet 2 and Blizzard&#8217;s StarCraft 2 side by side</figcaption></figure>
+
+
+
+<p>Additionally, the embedded Celeron processor in the NAS turned out to be an issue for some cases. It turns out, when playing back videos with subtitles, most Plex clients do not support subtitles properly &#8211; instead they rely on the Plex server doing JIT transcoding to bake the subtitles directly into the video stream. I discovered this with some Blu-Ray rips of Game of Thrones &#8211; some episodes would play back fine on my smart TV, but episodes with subtitled Dothraki speech would play at only 2 or 3 frames per second.</p>
+
+
+
+<p>The final straw was a ransomware attack, which went through all my data and locked every file below a 60MiB threshold. Practically all my music gone. A substantial collection of downloaded files, all gone. Some of these files had been carried around since my college days &#8211; digital rarities, or at least digital detritus I felt a real sense of loss at having to replace. This episode was caused by a ransomware targeting specific vulnerabilities in the QNAP OS, not an error on my part.</p>
+
+
+
+<p>So, I decided to start planning a replacement with:</p>
+
+
+
+<ul class="wp-block-list">
+<li>A non-garbage OS, whilst still being a NAS-appliance type offering (not an off-the-shelf Linux server distro)</li>
+
+
+
+<li>Full remote management capabilities</li>
+
+
+
+<li>A small form factor comparable to off-the-shelf NAS</li>
+
+
+
+<li>A powerful modern CPU capable of transcoding high resolution video</li>
+
+
+
+<li>All flash storage, no spinning rust</li>
+</ul>
+
+
+
+<p>At the time, no consumer NAS offered everything (The Asustor FS6712X exists now, but didn&#8217;t when this project started), so I opted to go for a full DIY rather than an appliance &#8211; not the first time I&#8217;ve jumped between appliances and DIY for home storage.</p>
+
+
+
+<h2 class="wp-block-heading">Selecting the core of the system</h2>
+
+
+
+<p>There aren&#8217;t many companies which will sell you a small motherboard with IPMI. Supermicro is a bust, so is Tyan. But ASRock Rack, the server division of third-tier motherboard vendor ASRock, delivers. Most of their boards aren&#8217;t actually compliant Mini-ITX size, they&#8217;re a proprietary &#8220;Deep Mini-ITX&#8221; with the regular screw holes, but 40mm of extra length (and a commensurately small list of compatible cases). But, thankfully, they do have a tiny selection of boards without the extra size, and I stumbled onto the <a href="https://www.asrockrack.com/general/productdetail.asp?Model=X570D4I-2T">X570D4I-2T</a>, a board with an AMD AM4 socket and the mature X570 chipset. This board can use <em>any</em> AMD Ryzen chip (before the latest-gen Ryzen 7000 series); has built in dual 10 gigabit ethernet; IPMI; four (laptop-sized) RAM slots with full ECC support; one M.2 slot for NVMe SSD storage; a PCIe 16x slot (generally for graphics cards, but we live in a world of possibilities); and up to 8 SATA drives OR a couple more NVMe SSDs. It&#8217;s astonishingly well featured, just a shame it costs about $450 compared to a good consumer-grade Mini ITX AM4 board costing less than half that.</p>
+
+
+
+<p>I was so impressed with the offering, in fact, that I crowed about it on Mastodon and ended up securing ASRock another sale, with someone else looking into a very similar project to mine around the same timespan.</p>
+
+
+
+<p>The next question was the CPU. An important feature of a system expected to run 24/7 is low power, and AM4 chips can consume as much as 130W under load, out of the box. At the other end, some models can require as little as 35W under load &#8211; the OEM-only &#8220;GE&#8221; suffix chips, which are readily found for import on eBay. In their &#8220;PRO&#8221; variant, they also support ECC (all non-G Ryzen chips support ECC, but only Pro G chips do). The top of the range 8 core Ryzen 7 PRO 5750GE is prohibitively expensive, but the slightly weaker 6 core <a href="https://www.amd.com/en/products/apu/amd-ryzen-5-pro-5650ge">Ryzen 5 PRO 5650GE</a> was affordable, and one arrived quickly from Hong Kong. Supplemented with a couple of cheap 16 GiB SODIMM sticks of DDR4 PC-3200 direct from Micron for under $50 a piece, that left only cooling as an unsolved problem to get a bootable test system.</p>
+
+
+
+<p>The official support list for the X570D4I-2T only includes two rackmount coolers, both expensive and hard to source. The reason for such a small list is the non standard cooling layout of the board &#8211; instead of an AM4 hole pattern with the standard plastic AM4 retaining clips, it has an Intel 115x hole pattern with a non-standard backplate (Intel 115x boards have no backplate, the stock Intel 115x cooler attaches to the holes with push pins). As such every single cooler compatibility list excludes this motherboard. However, the backplate is only secured with a mild glue &#8211; with minimal pressure and a plastic prying tool it can be removed, giving compatibility with any 115x cooler (which is basically any CPU cooler for more than a decade). I picked an oversized low profile <a href="http://thermalright.com/product/axp120-x67-black-argb/">Thermalright AXP120-X67</a> hoping that its 120mm fan would cool the nearby MOSFETs and X570 chipset too.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg" alt="" class="wp-image-1333" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Thermalright AXP120-X67, AMD Ryzen 5 PRO 5650GE, ASRock Rack X570D4I-2T, all assembled and running on a flat surface</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Testing up to this point</h2>
+
+
+
+<p>Using a spare ATX power supply, I had enough of a system built to explore the IPMI and UEFI instances, and run MemTest86 to validate my progress. The memory test ran without a hitch and confirmed the ECC was working, although it also showed that the memory was only running at 2933 MT/s instead of the rated 3200 MT/s (a limit imposed by the motherboard, as higher speeds are considered overclocking). The IPMI interface isn&#8217;t the best I&#8217;ve ever used by a long shot, but it&#8217;s minimum viable and allowed me to configure the basics and boot from media entirely via a Web browser.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="905" height="819" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png" alt="" class="wp-image-1341" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png 905w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-550x498.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-768x695.png 768w" sizes="auto, (max-width: 905px) 100vw, 905px" /><figcaption class="wp-element-caption">Memtest86 showing test progress, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>One sad discovery, however, which I&#8217;ve never seen documented before, on PCIe bifurcation.</p>
+
+
+
+<p>With PCI Express, you have a number of &#8220;lanes&#8221; which are allocated in groups by the motherboard and CPU manufacturer. For Ryzen prior to Ryzen 7000, that&#8217;s 16 lanes in one slot for the graphics card; 4 lanes in one M.2 connector for an SSD; then 4 lanes connecting the CPU to the chipset, which can offer whatever it likes for peripherals or extra lanes (bottlenecked by that shared 4x link to the CPU, if it comes down to it).</p>
+
+
+
+<p>It&#8217;s possible, with motherboard and CPU support, to split PCIe groups up &#8211; for example an 8x slot could be split into two 4x slots (eg allowing two NVMe drives in an adapter card &#8211; NVME drives these days all use 4x). However with a &#8220;Cezanne&#8221; Ryzen with integrated graphics, the 16x graphics card slot cannot be split into four 4x slots (ie used for for NVMe drives) &#8211; the most bifurcation it allows is 8x4x4x, which is useless in a NAS.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="897" height="806" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png" alt="" class="wp-image-1336" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png 897w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-550x494.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-768x690.png 768w" sizes="auto, (max-width: 897px) 100vw, 897px" /><figcaption class="wp-element-caption">Screenshot of PCIe 16x slot bifurcation options in UEFI settings, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>As such, I had to abandon any ideas of an all-NVMe NAS I was considering: the 16x slot split into four 4x, combined with two 4x connectors fed by the X570 chipset, to a total of 6 NVMe drives. 7.6TB U.2 enterprise disks are remarkably affordable (cheaper than consumer SATA 8TB drives), but alas, I was locked out by my 5650GE. Thankfully I found out before spending hundreds on a U.2 hot swap bay. The NVMe setup would be nearly 10x as fast as SATA SSDs, but at least the SATA SSD route would still outperform any spinning rust choice on the market (including the fastest 10K RPM SAS drives)</p>
+
+
+
+<h2 class="wp-block-heading">Containing the core</h2>
+
+
+
+<p>The next step was to pick a case and power supply. A lot of NAS cases require an SFX (rather than ATX) size supply, so I ordered a modular <a href="https://www.silverstonetek.com/en/product/info/power-supplies/SX500-G/">SX500</a> unit from Silverstone. Even if I ended up with a case requiring ATX, it&#8217;s easy to turn an SFX power supply into ATX, and the worst result is you have less space taken up in your case, hardly the worst problem to have.</p>
+
+
+
+<p>That said, on to picking a case. There&#8217;s only one brand with any cachet making ITX NAS cases, Silverstone. They have three choices in an appropriate size: <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS01-HS/">CS01-HS</a>, <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS280/">CS280</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/DS380/">DS380</a>. The problem is, these cases are all badly designed garbage. Take the CS280 as an example, the case with the most space for a CPU cooler. Here&#8217;s how close together the hotswap bay (right) and power supply (left) are:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="568" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png" alt="" class="wp-image-1343" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-550x391.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-768x545.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>With actual cables connected, the cable clearance problem is even worse:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="533" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png" alt="" class="wp-image-1344" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-550x366.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-768x512.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>Remember, this is the <em>best</em> of the three cases for internal layout, the one with the least restriction on CPU cooler height. And it&#8217;s garbage! Total hot garbage! I decided therefore to completely skip the NAS case market, and instead purchase a 5.25&#8243;-to-2.5&#8243; hot swap bay adapter from Icy Dock, and put it in an ITX gamer case with a 5.25&#8243; bay. This is no longer a served market &#8211; 5.25&#8243; bays are extinct since nobody uses CD/DVD drives anymore. The ones on the market are really new old stock from 2014-2017: The <a href="https://www.fractal-design.com/products/cases/core/core-500/black/">Fractal Design Core 500</a>, <a href="https://www.coolermaster.com/catalog/cases/mini-itx/elite130/">Cooler Master Elite 130</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/SUGO14/">Silverstone SUGO 14</a>. Of the three, the Fractal is the best rated so I opted to get that one &#8211; however it seems the global supply of &#8220;new old stock&#8221; fully dried up in the two weeks between me making a decision and placing an order &#8211; leaving only the Silverstone case.</p>
+
+
+
+<p>Icy Dock have a selection of 8-bay 2.5&#8243; SATA 5.25&#8243; hot swap chassis choices in their ToughArmor MB998 series. I opted for the <a href="https://global.icydock.com/product_169.html">ToughArmor MB998IP-B</a>, to reduce cable clutter &#8211; it requires only two SFF-8611-to-SF-8643 cables from the motherboard to serve all eight bays, which should make airflow less of a mess. The X570D4I-2T doesn&#8217;t have any SATA ports on board, instead it has two SFF-8611 OCuLink ports, each supporting 4 PCI Express lanes OR 4 SATA connectors via a breakout cable. I had hoped to get the ToughArmor MB118VP-B and run six U.2 drives, but as I said, the PCIe bifurcation issue with Ryzen &#8220;G&#8221; chips meant I wouldn&#8217;t be able to run all six bays successfully.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg" alt="" class="wp-image-1348" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">NAS build in Silverstone SUGO 14, mid build, panels removed</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg" alt="" class="wp-image-1349" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">Silverstone SUGO 14 from the front, with hot swap bay installed</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Actual storage for the storage server</h2>
+
+
+
+<p>My concept for the system always involved a fast boot/cache drive in the motherboard&#8217;s M.2 slot, non-redundant (just backups of the config if the worst were to happen) and separate storage drives somewhere between 3.8 and 8 TB each (somewhere from $200-$350). As a boot drive, I selected the <a href="https://www.intel.com/content/www/us/en/products/sku/211868/intel-optane-ssd-p1600x-series-58gb-m-2-80mm-pcie-3-0-x4-3d-xpoint/specifications.html">Intel Optane SSD P1600X 58G</a>, available for under $35 and rated for 228 years between failures (or 11,000 complete drive rewrite cycles).</p>
+
+
+
+<p>So, on to the big expensive choice: storage drives. I narrowed it down to two contenders: new-old-stock Intel D3-S4510 3.84TB enterprise drives, at about $200, or Samsung 870 QVO 8TB consumer drives, at about $375. I did spend a long time agonizing over the specification differences, the ZFS usage reports, the expected lifetime endurance figures, but in reality, it came down to price &#8211; $1600 of expensive drives vs $3200 of even more expensive drives. That&#8217;s 27TB of usable capacity in RAID-Z1, or 23TB in RAID-Z2. For comparison, I&#8217;m using about 5TB of the old NAS, so that&#8217;s a LOT of overhead for expansion.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg" alt="" class="wp-image-1355" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Storage SSD loaded into hot swap sled</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Booting up</h2>
+
+
+
+<p>Bringing it all together is the OS. I wanted an &#8220;appliance&#8221; NAS OS rather than self-administering a Linux distribution, and after looking into the surrounding ecosystems, decided on <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> (the beta of the 2023 release, based on Debian 12).</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="600" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png" alt="" class="wp-image-1353" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-550x322.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-768x450.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1536x900.png 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image.png 2013w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">TrueNAS Dashboard screenshot in browser window</figcaption></figure>
+
+
+
+<p>I set up RAID-Z1, and with zero tuning (other than enabling auto-TRIM), got the following performance numbers:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>19.3k</td><td>75.6 MiB/s</td></tr><tr><td>4k random reads</td><td>36.1k</td><td>141 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>2300 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>3800 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Results using fio parameters <a href="https://support.huaweicloud.com/intl/en-us/evs_faq/evs_faq_0019.html#evs_faq_0019__section273349017162">suggested by Huawei</a></figcaption></figure>
+
+
+
+<p>And for comparison, the maximum theoretical numbers quoted by Intel for a single drive:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>16k</td><td>?</td></tr><tr><td>4k random reads</td><td>90k</td><td>?</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>280 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>560 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Numbers quoted by Intel SSD successors <a href="https://www.solidigm.com/products/data-center/d3/s4510.html">Solidigm</a>.</figcaption></figure>
+
+
+
+<p>Finally, the numbers reported on the old NAS with four 7200 RPM hard disks in RAID 10:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>430</td><td>1.7 MiB/s</td></tr><tr><td>4k random reads</td><td>8006</td><td>32 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>311 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>566 MiB/s</td></tr></tbody></table></figure>
+
+
+
+<p>Performance seems pretty OK. There&#8217;s always going to be an overhead to RAID. I&#8217;ll settle for the 45x improvement on random writes vs. its predecessor, and 4.5x improvement on random reads. The sequential write numbers are gonna be impacted by the size of the ZFS cache (50% of RAM, so 16 GiB), but the rest should be a reasonable indication of true performance.</p>
+
+
+
+<p>It took me a little while to fully understand the TrueNAS permissions model, but I finally got Plex configured to access data from the same place as my SMB shares, which have anonymous read-only access or authenticated write access for myself and my wife, working fine via both Linux and Windows.</p>
+
+
+
+<p>And&#8230; that&#8217;s it! I built a NAS. I intend to add some fans and more RAM, but that&#8217;s the build. Total spent: about $3000, which sounds like an unreasonable amount, but it&#8217;s actually less than a comparable Synology DiskStation DS1823xs+ which has 4 cores instead of 6, first-generation AMD Zen instead of Zen 3, 8 GiB RAM instead of 32 GiB, no hardware-accelerated video transcoding, etc. And it would have been a whole lot less fun!</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg" alt="" class="wp-image-1364" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">The final system, powered up</figcaption></figure>
+
+
+
+<p>(Also posted on <a href="https://pcpartpicker.com/b/fYhtt6">PCPartPicker</a>)</p>]]></description>
+      <source url="http://apebox.org/wordpress/tag/ubuntu/feed/">Jo Shields</source>
     </item>
     <item>
       <title>Understanding vm.swappiness: Improving Linux Performance and Memory Management</title>
@@ -9249,8 +9371,7 @@ Let's get 13.04 into shape!</div>]]></description>
 intrigued by the notice that</p>
 <blockquote>
 <p>softraid(4) RAID1 and crypto volumes are now bootable on i386 and
-amd64 (full disk encryption).</p>
-</blockquote>
+amd64 (full disk encryption).</p></blockquote>
 <p>I&rsquo;ve always used an encrypted LVM (as setup by the alternate CD) with
 a fully encrypted root on my netbook and laptop when running
 Debian/Kubuntu and never noticed much a performance
@@ -9259,7 +9380,7 @@ significant drop in performance with full-disk encryption on OpenBSD.</p>
 <p>Although the steps required to setup full-disk encryption (as opposed
 to requiring <a href="http://geekyschmidt.com/2011/01/19/configuring-openbsd-softraid-fo-encryption">manual intervention at boot</a> or the equivalent
 of <a href="http://geekyschmidt.com/2011/01/24/configuring-openbsd-svnd-for-encrypted-volumes">loop-mounted</a> <a href="http://www.geektechnique.org/projectlab/84/">encrypted images</a> via
-<a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vnconfig&apropos=0&sektion=8"><code>vnconfig(8)</code></a>) on OpenBSD are not explicitly documented
+<a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vnconfig&amp;apropos=0&amp;sektion=8"><code>vnconfig(8)</code></a>) on OpenBSD are not explicitly documented
 anywhere, searching through the mailing lists, man pages, and trial
 and error provided the following steps:</p>
 <ol>
@@ -9271,7 +9392,7 @@ appropriate size of type <code>swap</code> for swap, and then add a label <code>
 using the remainder of the space of type <code>RAID</code>. We aren&rsquo;t going
 to put <code>swap</code> on our crypto device since OpenBSD has encrypted the
 swap partition by default <a href="http://www.openbsd.org/plus38.html">since 2005</a>.</li>
-<li>Setup the crypto volume as described in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=bioctl&apropos=0&sektion=8&manpath=OpenBSD+5.3&arch=i386&format=html"><code>bioctl(8)</code></a>. You
+<li>Setup the crypto volume as described in <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=bioctl&amp;apropos=0&amp;sektion=8&amp;manpath=OpenBSD&#43;5.3&amp;arch=i386&amp;format=html"><code>bioctl(8)</code></a>. You
 will be prompted for a passphrase and presented with a message
 along the lines of <code>softraid0: SR CRYPTO volume attached as sd0</code>
 on successful setup. I used <code>bioctl -c C -l /dev/wd0a softraid0</code>
@@ -9289,17 +9410,17 @@ disk <code>sd0</code> (or whichever disk the crypto volume got attached
 as). In the partitioning dialog, you may need to manually adjust
 things since the auto-partitioning creates an additional swap
 label on <code>sd0</code>, which we don&rsquo;t need given we already have <code>wd0b</code>.</li>
-<li>Using <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ed&apropos=0&sektion=1"><code>ed(1)</code></a>, add the line <code>1a8bab44e9cc178d.b none swap sw</code> to <code>/mnt/etc/fstab</code>, assuming that <code>1a8bab44e9cc178d</code> is the
+<li>Using <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=ed&amp;apropos=0&amp;sektion=1"><code>ed(1)</code></a>, add the line <code>1a8bab44e9cc178d.b none swap sw</code> to <code>/mnt/etc/fstab</code>, assuming that <code>1a8bab44e9cc178d</code> is the
 DUID associated with <code>wd0</code>.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Alternatively,
 wait until you boot into your system, and add it to your
-<code>/etc/fstab</code> using <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vi&apropos=0&sektion=1"><code>vi(1)</code></a> or <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=mg&apropos=0&sektion=1"><code>mg(1)</code></a>.</li>
+<code>/etc/fstab</code> using <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=vi&amp;apropos=0&amp;sektion=1"><code>vi(1)</code></a> or <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=mg&amp;apropos=0&amp;sektion=1"><code>mg(1)</code></a>.</li>
 <li>Reboot, and you&rsquo;ll be prompted for your passhprase. You&rsquo;re done!</li>
 </ol>
 <p>Here&rsquo;s a screenshot of steps 1 through 4.</p>
-<p><img alt="Steps 1 through 4" src="/blog/2013-03-26-setting-up-full-disk-encryption-in-openbsd-5.3/2013-03-26-113954_720x400_scrot.png"></p>
+<p><img src="/blog/2013-03-26-setting-up-full-disk-encryption-in-openbsd-5.3/2013-03-26-113954_720x400_scrot.png" alt="Steps 1 through 4"></p>
 <p>Here&rsquo;s a screenshot of the passphrase prompt, after successfully
 entering the passphrase:</p>
-<p><img alt="Passphrase prompt" src="/blog/2013-03-26-setting-up-full-disk-encryption-in-openbsd-5.3/2013-03-26-125344_720x400_scrot.png"></p>
+<p><img src="/blog/2013-03-26-setting-up-full-disk-encryption-in-openbsd-5.3/2013-03-26-125344_720x400_scrot.png" alt="Passphrase prompt"></p>
 <p>If I&rsquo;ve made any errors in the steps above, please point them out in
 the comments below or by sending me an email.</p>
 <div class="footnotes" role="doc-endnotes">
