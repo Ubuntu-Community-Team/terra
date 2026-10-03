@@ -6,134 +6,157 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 02 Oct 2026 04:43:36 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 04:26:05 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Realtime transaction fraud detection – with an LLM?</title>
-      <link>https://ubuntu.com//blog/realtime-transaction-fraud-detection-with-an-llm</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/realtime-transaction-fraud-detection-with-an-llm</guid>
-      <pubDate>Wed, 30 Sep 2026 06:58:49 GMT</pubDate>
-      <description><![CDATA[<p>Conversational AI with a chatbot is great for drafting emails or debugging code,  but it’s less ideal for real-time application middleware. If you’re trying to inspect a financial transaction for potential fraud in the middle of a checkout loop, you don’t need an LLM to write you an essay about why a credit card transaction looks suspicious – you just need a probability score, and you need it as fast as possible.</p>
-<p>To this end, TypeSafe AI recently released Jev, a cloud-based service that uses modified generative AI models for classification tasks. Naturally, the open weight model community has responded with similar, publicly accessible models that you can run yourself. Instead of generating natural language, these AI large language models bypass text generation entirely. They read the context you provide them with, evaluate all your typed questions in a single parallel pass, and report back the probabilities.</p>
-<p>The advent of this new LLM-based classification technique seemed to me to be, if nothing else, a great opportunity to demonstrate how to use Canonical’s open source MLOps stack to build a realtime transaction fraud detection system, based on an open weight, Jev-like model – the “<a href="https://huggingface.co/pngwn/system-one-qwen3.5-4b-scorer">system-one-qwen3.5-4b-scorer</a>” model.</p>
-<figure class="wp-block-image size-full"><img alt="" height="857" loading="lazy" sizes="(min-width: 1516px) 1516px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1516/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb4cb%2Frealtime-fraud-detection-with-an-open-jev-model.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb4cb%2Frealtime-fraud-detection-with-an-open-jev-model.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb4cb%2Frealtime-fraud-detection-with-an-open-jev-model.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb4cb%2Frealtime-fraud-detection-with-an-open-jev-model.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb4cb%2Frealtime-fraud-detection-with-an-open-jev-model.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb4cb%2Frealtime-fraud-detection-with-an-open-jev-model.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1516/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fb4cb%2Frealtime-fraud-detection-with-an-open-jev-model.png 1516w" width="1516"/></figure>
-<p>Sounds like fun? Good. Let’s start.</p>
-<h2 class="wp-block-heading">Open source MLOps</h2>
-<p>Canonical’s open source <a href="https://canonical.com/mlops">MLOps stack</a> is pretty comprehensive, with integrated support for Kubeflow, Katib, Feast, MLFlow and KServe for doing everything from pre-training, to fine tuning and reinforcement learning, with a set of structured tools to help with the full project lifecycle from early research to production.</p>
-<p>But for this project, we’ll just be using KServe. KServe is a Kubernetes based inference server control plane. It helps you to deploy AI models – including large language models – on Kubernetes, so that you can benefit from the resilience and automation that Kubernetes offers for production deployments. Before we begin in earnest, make sure you you can meet the prerequisites:</p>
+      <title>Lubuntu Stonking Beta Released!</title>
+      <link>https://lubuntu.me/lubuntu-stonking-beta-released/</link>
+      <guid isPermaLink="true">https://lubuntu.me/lubuntu-stonking-beta-released/</guid>
+      <pubDate>Fri, 02 Oct 2026 02:02:14 GMT</pubDate>
+      <description><![CDATA[Thanks to all the hard work from our contributors, Lubuntu 26.10 Beta has been released. With the codename Stonking Stingray, Lubuntu 26.10 will be the 31st release of Lubuntu, the seventeenth release of Lubuntu with LXQt as the default desktop environment. Support lifespan With Lubuntu 26.10 being an interim release, it will follow the standard non-LTS support [&#8230;]]]></description>
+      <source url="http://lubuntu.me/feed/?mrss=off">Lubuntu Blog</source>
+    </item>
+    <item>
+      <title>Ubuntu Studio 26.10 Beta Released</title>
+      <link>https://ubuntustudio.org/2026/10/ubuntu-studio-26-10-beta-released/</link>
+      <guid isPermaLink="true">https://ubuntustudio.org/2026/10/ubuntu-studio-26-10-beta-released/</guid>
+      <pubDate>Thu, 01 Oct 2026 19:44:41 GMT</pubDate>
+      <description><![CDATA[<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img fetchpriority="high" decoding="async" width="800" height="297" src="https://ubuntustudio.org/wp-content/uploads/2026/10/betabanner.png?wsr" alt="Graphic showing the logo and name of Ubuntu Studio 26.10 Beta, titled 'Stonking Stingray' against a dark background." class="wp-image-9398" style="aspect-ratio:2.693849813115868;width:673px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/10/betabanner.png 800w, https://ubuntustudio.org/wp-content/uploads/2026/10/betabanner-300x111.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/10/betabanner-768x285.png 768w" sizes="(max-width: 800px) 100vw, 800px" /></figure>
+</div>
+
+
+<div style="height:35px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-jetpack-markdown"><p>The Ubuntu Studio team is pleased to announce the beta release of Ubuntu Studio 26.10, codenamed “Stonking Stingray”.</p>
+<p>While this beta is reasonably free of any showstopper installer bugs, you will find some bugs within. This image is mostly representative of what you will find when Ubuntu Studio 26.10 is released on October 15, 2026.</p>
+<p><strong>Ubuntu Studio 26.10 is a standard release and will be supported for 9 months, until July 2027.</strong> We encourage everyone to try this image and report bugs to improve our final release.</p>
+<h2>Special Notes</h2>
+<p>The Ubuntu Studio 26.10 disk image (ISO) exceeds 4 GB and cannot be downloaded to some file systems such as FAT32 and may not be readable when burned to a DVD. For this reason, we recommend downloading to a compatible file system. When creating a boot medium, we recommend <a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu#1-overview">creating a bootable USB stick</a> with the ISO image or burning to a Dual-Layer DVD.</p>
+<p>Images can be obtained from this link: <a href="https://cdimage.ubuntu.com/ubuntustudio/releases/26.10/beta/">https://cdimage.ubuntu.com/ubuntustudio/releases/26.10/beta/</a></p>
+<p>Full updated information, including upgrade instructions, is available in the <a href="https://discourse.ubuntu.com/t/ubuntu-studio-26-10-stonking-stingray-release-notes/">Release Notes</a>.</p>
+<h2>Only Install What You Need</h2>
+<p>A common piece of feedback we hear is that people prefer to start with a lean base and install only the tools they actually use, rather than getting an overwhelming number of pre-installed packages. We hear you.</p>
+<p>Ubuntu Studio includes a <strong>minimal install</strong> option in the installer. This gives you the Ubuntu Studio desktop experience — the theme, the audio configuration, the optimized settings — without the full suite of creative applications. From there, you can use <strong>Ubuntu Studio Installer</strong> to add exactly the workflows you want: audio, graphics, video, photography, or publishing: à la carte.</p>
+<p>Alternatively, if you’re already running Kubuntu, Ubuntu, Lubuntu, Xubuntu, or any other <a href="https://ubuntu.com/desktop/flavours">official Ubuntu flavor</a>, you don’t have to reinstall at all. Just install the <a href="https://ubuntustudio.org/ubuntu-studio-installer">Ubuntu Studio Installer</a> package and pick the components you need. This has always been an option, but we want to make sure everyone knows about it.</p>
+<p>The full install remains available for those who want a complete creative workstation out of the box, and that’s a perfectly valid choice too.</p>
+<h2>New and Improved This Release</h2>
+<p>Ubuntu Studio 26.10 builds on the 26.04 LTS release with improvements to Ubuntu Studio Installer, Ubuntu Studio Audio Configuration, and included creative tools.</p>
 <ul>
-<li>You’ll need to be running at least Ubuntu 24.04 LTS on your computer.</li>
-<li>Your computer needs to have at least 32GB of RAM and a modern CPU to run everything comfortably.</li>
-<li>I initially used the integrated graphics processor on my laptop’s CPU to accelerate the model’s processing, but to make this lab project more accessible, we will use your computer’s CPU. The model will just run slower.</li>
-<li>A stable, high speed internet connection for downloads.</li>
-<li>Some familiarity with Linux commands so that you can follow along.</li>
+<li>
+<p><strong>Ubuntu Studio Installer package selection:</strong> You can now expand a metapackage’s Depends and Recommends and select individual packages.</p>
+</li>
+<li>
+<p><strong>Ubuntu Studio Audio Configuration:</strong> The app now uses a single-window, tabbed control-panel layout, with PipeWire quantum settings organized on the Audio tab.</p>
+</li>
+<li>
+<p><strong>PipeWire settings:</strong> The installer offers the PipeWire settings app appropriate to the detected desktop environment.</p>
+</li>
+<li>
+<p><strong>Newly-included Audio Applications:</strong> Sonic Pi, SuperCollider, JNoise, and the SuperCollider 3 plugin suite are available through Ubuntu Studio’s audio package selections.</p>
+</li>
 </ul>
-<h2 class="wp-block-heading">Install KServe and set up the lab project</h2>
-<p>First up, let’s prepare the system. Open up your terminal and make sure you’ve got the base software installed. Run the following commands:</p>
-<pre class="wp-block-code"><code>sudo snap install microk8s --channel 1.34-strict/stable
-sudo microk8s enable storage dns
-sudo microk8s enable metallb 10.64.140.43-10.64.140.49
-sudo snap install juju --channel 3.6/stable
-sudo microk8s.config | juju add-k8s my-k8s
-sudo snap install terraform
-sudo apt install git -y
-git clone https://github.com/canonical/charmed-kubeflow-solutions.git
-pushd charmed-kubeflow-solutions
-git checkout track/1.11
-pushd terraform/products/kubeflow</code></pre>
-<p>Congratulations, you’ve just installed a one-node, super-compact Kubernetes cluster running Canonical’s <a href="https://canonical.com/microk8s">MicroK8s</a>, with Canonical’s operations management engine <a href="https://juju.is">Juju</a>, and with Terraform.</p>
-<p>Now let’s launch Charmed Kubeflow. We’re only going to enable Kubeflow and KServe, so we’ll disable all the other modules like Katib, MLFlow, TensorBoard, federated login and the Canonical Observability Stack. You can always enable them if you want, but they aren’t needed for the purposes of this demo.</p>
-<pre class="wp-block-code"><code>DEX_USERNAME=username
-DEX_PASSWORD=password
-terraform init
-terraform apply -auto-approve -var dex_static_username="${DEX_USERNAME}" -var dex_static_password="${DEX_PASSWORD}" -var enable_feast=false -var enable_katib=false -var enable_kserve=true -var enable_training_v2=false -var enable_training_v1=false -var enable_observability=false -var enable_tensorboard=false 
-popd
-popd</code></pre>
-<p>Give it 10-15 minutes for things to come up on the Kubernetes node. You can monitor how close things are getting to completion with the command `juju status -m kubeflow`. When everything is saying “idle/active”, we’re ready to go further with this lab project.</p>
-<p>I’ve prepared the scripts needed to successfully complete this project and put them up on GitHub. The next step will be to clone the git repository to your local system. Run the following command:</p>
-<pre class="wp-block-code"><code>git clone https://github.com/grobbie/realtime-transaction-fraud-detection-with-an-llm.git
-pushd realtime-transaction-fraud-detection-with-an-llm</code></pre>
-<p>Now let’s install the development tools that we’re going to need. Make sure not to skip these steps.</p>
-<pre class="wp-block-code"><code>sudo apt update &amp;&amp; apt install -y python3-venv python3-pip
-python3 -m venv .venv
-source .venv/bin/activate
-.venv/bin/pip3 install -r requirements.txt</code></pre>
-<h2 class="wp-block-heading">Model crush</h2>
-<p>The model we’re using isn’t the biggest, but it’s still big enough to crash a laptop – or rather, to crash the Kubernetes pod it’s going to run inside. So there are a couple of tricks we’re going to use to make it work much more efficiently on your computer, even without a high power GPU. </p>
-<p>The model we’re using is actually a derivative model using a <strong>LoRA adapter</strong> architecture. Low rank adaptation (LoRA) is a model fine-tuning technique that allows you to adapt a large language model to a specific task, without modifying the original model at all. However, for our purposes this approach adds additional overheads – every request has to pass through both the base model and the adapter paths simultaneously. This is good if you want to hot-swap model specialisms on a base model in real-time. But we just want a compact, efficient model that’s going to do classification tasks, so we’ll merge the LoRA weights into the base model.</p>
-<p>The other trick we’re going to use is Activation-aware Weight Quantization (AWQ). This is a 4-bit post-training quantization technique that compresses the model with minimal loss of accuracy. With AWQ, we can squash the amount of VRAM the model needs down by up to 75%. While this technique is really designed and optimized for accelerating models that are running on GPUs, it does also work on the CPU. So for our Qwen3.5-4b derivative model, we should be able to get the model’s VRAM needs down from about 18GB all-in to around 5GB. Not too bad and definitely enough of a squeeze for you to be able to reliably run it on a laptop or similar without crashing, and yielding decent performance.</p>
-<p>Run the following command to download a calibration dataset and prep it, and then merge the model weights and quantize:</p>
-<pre class="wp-block-code"><code>.venv/bin/python3 quantize_awq.py</code></pre>
-<p>This downloads the model weights from <a href="https://huggingface.co/">Hugging Face Hub</a>, runs the merge and quantization, and produces a `./system-one-4bit-awq` directory containing all the necessary model artifacts. The task could take a while to complete – expect it to take around 6 hours on a laptop because of the calibration that we need to do during quantization.</p>
-<h2 class="wp-block-heading">Run the model on vLLM</h2>
-<p>Now we’ve got the model, we need a way to run it. We’ll run it on the industry standard vLLM model server, using KServe as a means to set everything up nicely on Kubernetes.</p>
-<p>To deploy the vLLM serving pod and service, you can use the manifests from my git repository.  <strong>Before you run the commands</strong>, be sure to edit the file `kserve_deployment_cpu.yaml` to adjust the path to the model. Make sure the path is set to wherever the `system-one-4bit-awq` directory is on your system.</p>
-<pre class="wp-block-code"><code>microk8s.kubectl create namespace modelserving
-microk8s.kubectl apply -f kserve_deployment_cpu.yaml
-microk8s.kubectl apply -f kserve_service_lb.yaml</code></pre>
-<p>It’ll take a fair bit of time for vLLM to start up, load the weights into memory, and get ready to serve on your CPU. You might be waiting as long as 5 minutes for this depending on the specs of your system. Obviously, it almost goes without saying that if we were doing this for real we’d use GPU acceleration and the whole experience would be a lot more performant.</p>
-<p>To verify the pod is running, you can try the following command:</p>
-<pre class="wp-block-code"><code>microk8s.kubectl get inferenceservice -n modelserving</code></pre>
-<p>Eventually, if all goes well the output will show that the health checks are good, and you’ll be ready to try out some classification tasks with your new specialized artificial brain.</p>
-<h2 class="wp-block-heading">Run some predictions</h2>
-<p>Obviously the goal of all of this, besides learning, is to run some transaction fraud detection with an LLM. So we want to try that, right? Of course. Let’s try that now and see if it works.</p>
-<p>First we’ll try with a terminal command, and then we can try with a little web app I put together. To make sure the model is running accurately, we’re going to send it a web request using the `curl` command in the terminal, and see how it responds. We can use this one-liner command to find the right IP address for the vLLM model server:</p>
-<pre class="wp-block-code"><code>KSERVE_IP=$(kubectl get services -n modelserving | grep system-one | grep private | awk '{ print $3 }')</code></pre>
-<p>Now let’s send a request to the vLLM endpoint and see what we get back:</p>
-<pre class="wp-block-code"><code>curl -s -X POST http://${KSERVE_IP}:8080/v1/completions \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "/model",
-    "prompt": "&lt;|im_start|&gt;user\nSystem One Fraud Risk Decision Query:\n\nTarget Transaction Profile:\nTRANSACTION PROFILE:\n- Type: TRANSFER\n- Transaction Amount: $100,000.00\n- Sender Initial Balance: $100,000.00\n- Sender Post-Transaction Balance: $0.00 (Delta: $100,000.00)\n- Recipient Initial Balance: $0.00\n- Recipient Post-Transaction Balance: $100,000.00 (Delta: $100,000.00)\n\nQuestion: What is the fraud risk classification for this transaction?\nOptions: 0: LOW_RISK, 1: MEDIUM_RISK, 2: HIGH_RISK_FRAUD&lt;|im_end|&gt;\n&lt;|im_start|&gt;assistant\nAnswer: ",
-    "max_tokens": 1,
-    "temperature": 0.0,
-    "logprobs": 3
-  }' | .venv/bin/python3 -m json.tool</code></pre>
-<p>The request contains the context – a transaction record, showing the transaction type, amount, the sender’s initial balance, the sender’s balance after the transaction, the recipient’s initial balance, and the recipient’s post-transaction balance. It also contains a structured JSON object containing the question: “What is the fraud risk classification for this transaction?”, and it contains the options that the model can use – “LOW_RISK”, “MEDIUM_RISK”, and “HIGH_RISK_FRAUD”. Each option has a short description. You could actually ask a few of these structured questions, and they should all be processed in parallel by the model.</p>
-<p>If everything goes correctly, then when you run the command you’ll get some output back pretty quickly. It should look something like the listing below which is a response giving the model’s prediction.</p>
-<pre class="wp-block-code"><code>{
-  "id": "cmpl-84ef1f97a3cc8d37",
-  "object": "text_completion",
-  "created": 1789839558,
-  "model": "/model",
-  "choices": [
-    {
-      "index": 0,
-      "text": "2",
-      "logprobs": {
-        "text_offset": [0],
-        "token_logprobs": [-1.5500739812850952],
-        "tokens": ["2"],
-        "top_logprobs": [
-          {
-            "2": -1.5500739812850952,
-            "1": -1.7219489812850952,
-            "0": -2.0422616004943848,
-          }
-        ]
-      },
-      "finish_reason": "length"
-    }
-  ],
-  "usage": {
-    "prompt_tokens": 182,
-    "total_tokens": 183,
-    "completion_tokens": 1
-  }
-}</code></pre>
-<p>It can be a bit tricky to interpret, but basically the bits to look for are the value of `text` and `top_logprobs`.  “text” indicates the predicted classification (“text”: “2”). The model selected option token “2”, which corresponds to HIGH_RISK_FRAUD.</p>
-<p>Looking back at the transaction record we sent, the transaction was a wire transfer of $100,000 to an empty bank account that completely drained the sender’s account. Definitely a risky transaction highly likely to be fraudulent. So if your model responded with “text”: “2”, then it got it right.</p>
-<p>Not as much fun using the terminal though, so let’s start up that web app I promised you, which you’ll find in my repo. Start it by running the following command:</p>
-<pre class="wp-block-code"><code>.venv/bin/python app.py</code></pre>
-<p>The interactive web UI should be accessible at <a href="http://localhost:8000/">http://localhost:8000/</a> for you to play with.</p>
-<h2 class="wp-block-heading">Take it further</h2>
-<p>This has just been a lab project, but you can definitely take this further. Open weight models and open source software enable you to run AI behind the firewall in your own, self-governed environment – without needing to use cloud services. And with some optimizations the investment involved to run this technology doesn’t need to be out of reach – especially for enterprise use cases like this one. Of course, the whole process from quantization of the model to running the model could be accelerated with only a modest investment in GPUs; but if you want to run this kind of workload in production with low milliseconds response times across a huge number of concurrent real time transactions, then you might need a more substantial setup.</p>
-<p>In any case, <a href="https://canonical.com/mlops">Canonical’s MLOps stack</a> is there to support your use case.</p>
+<h2>Major Package Upgrades</h2>
 <ul>
-<li><a href="https://canonical.com/mlops/kubeflow">Discover the full capabilities of Charmed Kubeflow</a></li>
-<li>Want us to manage the infrastructure so you can focus on the models? <a href="https://marketplace.microsoft.com/en-us/product/saas/canonical.managed-kubeflow?tab=overview">Sign up for Managed Kubeflow on Azure</a></li>
-</ul>]]></description>
+<li>OBS Studio 32.2.2</li>
+<li>FreeShow 1.6.5 (snap)</li>
+<li>QPrompt 2.0.2</li>
+<li>RaySession 0.18.0</li>
+<li>Patchance 1.4.0</li>
+<li>DistroAV 6.2.1 for NDI support in OBS Studio</li>
+<li>Kdenlive 26.08.1</li>
+<li>Krita 6.0.3</li>
+<li>GIMP 3.2.6</li>
+<li>Ardour 9.8.0</li>
+<li>Scribus 1.6.6</li>
+<li>Audacity 3.7.8</li>
+</ul>
+<p>There are many other improvements, too numerous to list here. We encourage you to look around the freely-downloadable ISO image.</p>
+<h2>Known Issues</h2>
+<ul>
+<li>You will be prompted, upon first login of any new user, to reboot to apply proper audio configurations for audio production. This is intentional and is a workaround for the installer’s inability to <a href="https://launchpad.net/bugs/2063899">configure the first user as part of the “audio” group or for new users to be added to the audio group automatically.</a></li>
+<li>Official Ubuntu Studio release notes can be found at <a href="https://discourse.ubuntu.com/t/ubuntu-studio-26-10-release-notes/">https://discourse.ubuntu.com/t/ubuntu-studio-26-10-release-notes/</a></li>
+<li>Further known issues, mostly pertaining to the desktop environment, can be found in the <a href="https://wiki.ubuntu.com/StonkingStingray/ReleaseNotes/Kubuntu">Kubuntu release notes</a>.</li>
+<li>Additionally, the <a href="https://documentation.ubuntu.com/release-notes/26.10/">Ubuntu 26.10 release notes</a> contain more generic issues.</li>
+</ul>
+<h2>How You Can Help</h2>
+<p>Please test using the test cases on <a href="https://tests.ubuntu.com/">https://tests.ubuntu.com</a>. All you need is a <a href="https://launchpad.net/">Launchpad</a> account to get started, and to join the <a href="https://launchpad.net/~ubuntu-testing">Ubuntu QA Team</a>.</p>
+<p>Additionally, we need financial contributions. Our project lead, Erich Eickmeyer, is working long hours on this project and trying to generate a part-time income. <a href="https://ubuntustudio.org/contribute/">Go here</a> to see how you can contribute financially (options are also in the sidebar).</p>
+<h2>Frequently Asked Questions</h2>
+<p><strong>Q: Does Ubuntu Studio contain snaps?</strong>
+A: Yes. Mozilla’s distribution agreement with Canonical changed, and Ubuntu was forced to no longer distribute Firefox in a native .deb package. We have found that, after numerous improvements, Firefox now performs just as well as the native .deb package did.</p>
+<p>Thunderbird is also a snap in order for the maintainers to get security patches delivered faster. This is done by the Thunderbird team in cooperation with Canonical.</p>
+<p>Additionally, FreeShow is an Electron-based application. Electron-based applications cannot be packaged in the Ubuntu repositories in that they cannot be packaged in a traditional Debian source package. While such apps do have a build system to create a .deb binary package, it circumvents the source package build system in Launchpad, which is required when packaging for Ubuntu. However, Electron apps also have a facility for creating snaps, which can be uploaded and included. Therefore, for FreeShow to be included in Ubuntu Studio, it had to be packaged as a snap.</p>
+<p>Also, to keep theming consistent, all included themes are snapped in addition to the included .deb versions so that snaps stay consistent with our themes.</p>
+<p>We are working with Canonical to make sure that the quality of snaps goes up with each release, so we please ask that you give snaps a chance instead of writing them off completely.</p>
+<p><strong>Q: If I install this Beta release, will I have to reinstall when the final release comes out?</strong>
+A: No. If you keep it updated, your installation will automatically become the final release.</p>
+<p><strong>Q: Will you make an ISO with {my favorite desktop environment}?</strong>
+A: To do so would require creating an entirely new flavor of Ubuntu, which would require going through the Official Ubuntu Flavor application process. Since we’re completely volunteer-run, we don’t have the time or resources to do this. Instead, we recommend you download the <a href="https://ubuntu.com/download/flavours">official flavor for the desktop environment of your choice</a> and use <a href="https://ubuntustudio.org/ubuntu-studio-installer">Ubuntu Studio Installer</a> to get Ubuntu Studio — which does <em>not</em> convert that flavor to Ubuntu Studio but adds its benefits.</p>
+<p><strong>Q: What if I don’t want all these packages installed on my machine?</strong>
+A: See the “Only Install What You Need” section above. Use the minimal install option and then add only the metapackages, configurations, or individual packages you want with Ubuntu Studio Installer.</p>
+</div>]]></description>
+      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
+    </item>
+    <item>
+      <title>Android™ belongs in your CI/CD pipeline</title>
+      <link>https://ubuntu.com//blog/android-belongs-in-your-ci-cd-pipeline</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/android-belongs-in-your-ci-cd-pipeline</guid>
+      <pubDate>Thu, 01 Oct 2026 09:24:20 GMT</pubDate>
+      <description><![CDATA[<p>How on-demand Android environments turn validation into a repeatable pipeline stage</p>
+<p>In the first article, we looked at automation: how Android environments can be created and managed programmatically. In the second, we looked at scaling: how shared infrastructure can make those environments available to more developers, tests, and workloads.</p>
+<p>This third article looks at the next step: integrating those environments directly into CI/CD.</p>
+<p>A CI/CD system may already automate much of the software delivery process, from producing an application or Android image to triggering tests and reporting results. The Android execution environment, however, can still sit outside that workflow. Consider the following disconnects:</p>
+<ul>
+<li>An application may be built automatically, but someone must connect a device before validation can begin.</li>
+<li>A pull request reaches a manual stage because the required Android environment is not available to the pipeline.</li>
+<li>A test passes on one workstation and fails on another because the underlying environment has changed.</li>
+</ul>
+<p>This is the gap CI/CD integration closes. With Anbox Cloud, the Android execution environment becomes another resource the pipeline can request when needed. The workflow can request the necessary environment, deploy the artifact, initiate validation, collect results, and release resources once the task is completed.</p>
+<p>Instead of treating Android as a separate component of the pipeline, the environment is integrated into the automated software delivery process.</p>
+<p>In this article, “Android execution environment” refers to the Android instance in which the application or system is run and validated, including the Android image, configuration, allocated resources, and test setup.</p>
+<h2 class="wp-block-heading">Make Android part of the workflow</h2>
+<p>CI/CD pipelines are built around repeatability. A change produces an artifact, tests run against defined inputs, and the pipeline records enough information to understand the result.</p>
+<p>The execution environment is part of that process. CI/CD pipelines already provision temporary resources such as containers, virtual machines, databases, and services as part of a job. With Anbox Cloud, the Android execution environment can become another resource requested by the pipeline when needed.</p>
+<p>Instead of treating a physical device or local emulator as a prerequisite, the pipeline requests an Android environment with a known image and configuration. It deploys the artifact, performs the required validation, collects the evidence, and releases the resources.</p>
+<p>Anbox Cloud does not build the Android application or platform. That remains the responsibility of the existing build system. Its role is to provide the Android environment required for validation through a programmable and repeatable lifecycle.</p>
+<h2 class="wp-block-heading">A typical Android pipeline</h2>
+<p>The exact tooling varies, but the workflow is typically consistent. The pipeline first produces or retrieves the artifact to validate. For an application team, that may be an APK. For a platform team, it may be a complete Android or Android Automotive OS image.</p>
+<p>Usually, after requesting the predefined environment, the process can then deploy the artifacts, get the test data ready, and establish a connection (using ADB, for instance). Once that is done, and before deleting the environment, test reports, logs, screenshots, crash data, and performance metrics are gathered.</p>
+<p>Every stage of the process should be explicit. The pipeline should know which artifact was tested, which Android environment was used, which configuration was applied, and which outputs were produced.</p>
+<p>Without that context, automation may speed up testing but not improve the reliability of the results.</p>
+<h2 class="wp-block-heading">Reproducibility matters more than automation alone</h2>
+<p>Being able to start Android automatically is useful, but starting the same environment consistently is way more valuable.</p>
+<p>When the Android version changes between runs, a setting is manually changed, cached data influences the outcome, or an older application is still installed, the results are difficult to trust. Making those inputs explicit in the CI/CD workflow reduces manual configuration errors and improves reproducibility.</p>
+<p>The Android image, application artifact, instance resources, display settings, test inputs, and expected outputs can all be associated with a specific execution. The workflow can also wait for known states instead of relying on arbitrary delays or assumptions about when an environment is ready.</p>
+<p>A script says, “Start Android and run this test.” A reproducible pipeline says, “Run this version of the test against this artifact, in this defined environment, with these inputs, and preserve enough evidence to explain the result.”</p>
+<p>That second model is what teams need when a failure blocks a release.</p>
+<h2 class="wp-block-heading">Preserve evidence, not unnecessary infrastructure</h2>
+<p>Disposable environments allow every run to begin from a clean state, but removing an environment should not mean losing the information required for debugging.</p>
+<p>When validation fails, the pipeline should collect the relevant diagnostics before releasing the resources. It may also record the environment definition so that an engineer can recreate the same conditions later. In selected cases, preserving an instance temporarily for interactive investigation may be useful.</p>
+<p>The goal is not to retain every failed environment indefinitely. A better principle would be to preserve the evidence by default and preserve the environment when it adds value.</p>
+<p>This keeps the workflow efficient while giving teams enough information to understand and reproduce failures.</p>
+<h2 class="wp-block-heading">One operating model, different Android workloads</h2>
+<p>Application and platform teams validate different artifacts, but the operational model remains the same.</p>
+<p>An application pipeline may install an APK and run instrumentation, UI, compatibility, or integration tests. A platform pipeline may validate a complete Android system image, an Android Automotive OS configuration, platform services, or a custom OEM build.</p>
+<p>The execution environment may differ as well. Application-oriented workloads may benefit from containerized Android when density and startup time matter. Complete system workloads may require virtualized Android with a full virtual-machine boundary.</p>
+<p>Those are implementation choices. The pipeline story remains consistent: a change produces an artifact, the workflow requests the appropriate Android environment, and validation begins without waiting for someone to prepare hardware.</p>
+<h2 class="wp-block-heading">Keep people and hardware where they add value</h2>
+<p>Not every validation decision can be automated. Developers may need to inspect a graphical issue, QA engineers may need to review a visual difference, and platform engineers may need to investigate system behavior interactively. A pipeline-created environment can still be recreated, streamed, or shared temporarily for that work.</p>
+<p>Physical hardware remains essential for validating sensors, peripherals, radios, drivers, power consumption, thermal behavior, and final production performance. But it does not need to carry the full weight of the development process. Programmable environments can provide earlier feedback and broader parallel validation before software reaches the final hardware stage.</p>
+<p>A balanced strategy would be to run every change, validate broadly in the cloud, and finally prove it on target hardware.</p>
+<h2 class="wp-block-heading">Android should no longer be the manual exception</h2>
+<p>Automation makes Android environments programmable. Scaling makes that capacity available when workflows need it. CI/CD brings both capabilities into the software delivery process at the point where feedback is most valuable.</p>
+<p>The pipeline can request an environment, deploy the artifact, run validation, collect evidence, and release the resources without waiting for someone to connect a device or prepare a test machine.</p>
+<p>Android becomes part of the workflow rather than an external dependency on it. Physical hardware remains the final proof, but routine Android feedback no longer needs to wait for it.</p>
+<p>That is the broader transformation explored throughout this series: Android moves from a scarce physical asset to programmable engineering infrastructure.</p>
+<h2 class="wp-block-heading">Further reading</h2>
+<p><a href="https://ubuntu.com/blog/android-development-shouldnt-start-with-a-physical-device">Read Part 1: Android development shouldn’t start with a physical device</a></p>
+<p><a href="https://ubuntu.com/blog/scaling-android-development-without-scaling-hardware">Read Part 2: Scaling Android development without scaling hardware</a></p>
+<p>For any questions, feel free to <a href="https://canonical.com/anbox-cloud#get-in-touch">get in touch with the Anbox team.</a></p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -1988,42 +2011,6 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
       <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
-      <title>“Bullet-Proof” KDE Initiative: How Ubuntu Studio Benefits</title>
-      <link>https://ubuntustudio.org/2026/09/bullet-proof-kde-initiative-how-ubuntu-studio-benefits/</link>
-      <guid isPermaLink="true">https://ubuntustudio.org/2026/09/bullet-proof-kde-initiative-how-ubuntu-studio-benefits/</guid>
-      <pubDate>Tue, 01 Sep 2026 19:03:26 GMT</pubDate>
-      <description><![CDATA[<p class="wp-block-paragraph">As should be obvious from browsing our website for any amount of time, Ubuntu Studio releases a Long-Term Support (LTS) release every two years. The latest LTS release happens to be our latest release: 26.04. What&#8217;s more is we just released 26.04.1, a roll-up of bugfixes and security updates, on August 27th.</p>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-large is-resized"><img fetchpriority="high" decoding="async" width="1024" height="614" src="https://ubuntustudio.org/wp-content/uploads/2026/09/image-1024x614.png?wsr" alt="" class="wp-image-9336" style="aspect-ratio:1.6678051865907653;width:340px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/09/image-1024x614.png 1024w, https://ubuntustudio.org/wp-content/uploads/2026/09/image-300x180.png 300w, https://ubuntustudio.org/wp-content/uploads/2026/09/image-768x461.png 768w, https://ubuntustudio.org/wp-content/uploads/2026/09/image-1200x720.png 1200w, https://ubuntustudio.org/wp-content/uploads/2026/09/image.png 1387w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph">Also announced is the <a href="https://www.einpresswire.com/article/930823977/kubuntu-focus-techpaladin-software-and-kde-e-v-announce-the-bullet-proof-kde-software-initiative">&#8220;Butllet-Proof&#8221; KDE Initiative</a>, where <a href="https://kfocus.org">Kubuntu Focus</a>, <a href="https://techpaladinsoftware.com/">Techpaladin Software</a>, and <a href="https://kde.org/">KDE e.V.</a> are working together to make Plasma 6.6, along with KDE Frameworks, an LTS release as well. This means that Techpaladin, Kubuntu, and Kubuntu Focus will be working to fix bugs in the version of the desktop environment and back-end libraries released in Ubuntu Studio 26.04 LTS. This means that, while Kubuntu will be primarily working on the Stable Release Updates as provided by KDE, Ubuntu Studio uses the same packages that get these updates.</p>
-
-
-
-<p class="wp-block-paragraph">Our project leader, Erich Eickmeyer, has been doing what he can to help support Kubuntu with this task from his side, while the Ubuntu Studio team (including Erich) focuses on bug fixes to the multimedia applications included with their own Stable Release Updates for the life of 26.04, which is three years total until April 2029.</p>
-
-
-<div class="wp-block-image">
-<figure class="alignright size-full is-resized"><img decoding="async" width="474" height="265" src="https://ubuntustudio.org/wp-content/uploads/2026/09/image-1.png?wsr" alt="" class="wp-image-9338" style="aspect-ratio:1.788725750339053;width:218px;height:auto" srcset="https://ubuntustudio.org/wp-content/uploads/2026/09/image-1.png 474w, https://ubuntustudio.org/wp-content/uploads/2026/09/image-1-300x168.png 300w" sizes="(max-width: 474px) 100vw, 474px" /></figure>
-</div>
-
-
-<p class="wp-block-paragraph">That, combined with <a href="https://ubuntu.com/pro">Ubuntu Pro</a> (free for every user up to 5 simultaneous machines) means you will not only receive bugfixes better than in the past, which was done at best effort, but also benefit from the security updates provided by Canonical. Yes, even Ubuntu Studio can use Ubuntu Pro. Do note that Ubuntu Pro will not extend the support time period for Ubuntu Studio, but give the added benefit of sponsored security updates.</p>
-
-
-
-<p class="wp-block-paragraph">If you would like to help with everything Ubuntu Studio has going on, from supporting the LTS to supporting the upcoming 26.10 release due in October, please feel free to <a href="https://ubuntustudio.org/contribute/" data-type="page" data-id="56">join us</a>!</p>
-
-
-
-<p class="wp-block-paragraph">Additionally, while there was an initial jump in monetary support following the 26.04 LTS release, it has dropped-off considerably. Please <a href="https://ubuntustudio.org/contribute/" data-type="page" data-id="56">consider becoming a monthly monetary contributor</a> to help support this project. Remember, our website now has a monthly cost along with the usual cost of packaging and development. If you cannot commit to a monthly monetary contribution, please consider at least a one-time contribution, even if you&#8217;ve given before. Even if it&#8217;s just a tank of petrol! For those already giving, thank you so much for your continued support. It means the world to us, and allows us to continue giving you and others this operating system for free! You&#8217;ve helped countless people throughout the world!</p>]]></description>
-      <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
-    </item>
-    <item>
       <title>Announcing Incus 7.4</title>
       <link>https://stgraber.org/2026/08/31/announcing-incus-7-2-2-2/</link>
       <guid isPermaLink="true">https://stgraber.org/2026/08/31/announcing-incus-7-2-2-2/</guid>
@@ -2901,14 +2888,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 <li>Ubuntu version was 26.04.  Fedora was 44.</li>
 </ul>]]></description>
       <source url="https://bryanquigley.com/rss.xml">Bryan Quigley</source>
-    </item>
-    <item>
-      <title>Lubuntu 26.04 LTS Released!</title>
-      <link>https://lubuntu.me/lubuntu-26-04-lts-released/</link>
-      <guid isPermaLink="true">https://lubuntu.me/lubuntu-26-04-lts-released/</guid>
-      <pubDate>Thu, 23 Apr 2026 14:56:36 GMT</pubDate>
-      <description><![CDATA[Thanks to the hard work from our contributors, Lubuntu 26.04 LTS has been released. With the codename Resolute Raccoon, Lubuntu 26.04 is the 30th release of Lubuntu, the 16th release of Lubuntu with LXQt as the default desktop environment. Download and Support Lifespan With Lubuntu 26.04 being a long-term support interim release, it will follow [&#8230;]]]></description>
-      <source url="http://lubuntu.me/feed/?mrss=off">Lubuntu Blog</source>
     </item>
     <item>
       <title>SCaLE 23x</title>
@@ -4599,240 +4578,6 @@ mirror and follow the instructions above.</p>]]></description>
 
 <p class="wp-block-paragraph">Thank you to everyone who contributed to OpenStack&nbsp;2023.2 Bobcat!</p>]]></description>
       <source url="https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off">Corey Bryant</source>
-    </item>
-    <item>
-      <title>Building a NAS</title>
-      <link>https://apebox.org/wordpress/tech/1325</link>
-      <guid isPermaLink="true">https://apebox.org/wordpress/tech/1325</guid>
-      <pubDate>Tue, 12 Sep 2023 21:33:05 GMT</pubDate>
-      <description><![CDATA[<h2 class="wp-block-heading">The status quo</h2>
-
-
-
-<p>Back in 2015, I bought an off-the-shelf NAS, a QNAP TS-453mini, to act as my file store and Plex server. I had previously owned a Synology box, and whilst I liked the Synology OS and experience, the hardware was underwhelming. I loaded up the successor QNAP with four 5TB drives in RAID10, and moved all my files over (after some initial DoA drive issues were handled).</p>
-
-
-
-<figure class="wp-block-image size-medium"><img fetchpriority="high" decoding="async" width="550" height="550" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png" alt="QNAP TS-453mini product photo" class="wp-image-1329" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-150x150.png 150w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-768x768.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3.png 850w" sizes="(max-width: 550px) 100vw, 550px" /><figcaption class="wp-element-caption">QNAP TS-453mini product photo</figcaption></figure>
-
-
-
-<p>That thing has been in service for about 8 years now, and it&#8217;s been&#8230; a mixed bag. It was definitely more powerful than the predecessor system, but it was clear that QNAP&#8217;s OS was not up to the same standard as Synology&#8217;s &#8211; perhaps best exemplified by &#8220;HappyGet 2&#8221;, the QNAP webapp for downloading videos from streaming services like YouTube, whose icon is a straight rip-off of StarCraft 2. On its own, meaningless &#8211; but a bad omen for overall software quality</p>
-
-
-
-<span id="more-1325"></span>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="884" height="172" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png" alt="The logo for QNAP HappyGet 2 and Blizzard's Starcraft 2 side by side" class="wp-image-1328" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png 884w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-550x107.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-768x149.png 768w" sizes="(max-width: 884px) 100vw, 884px" /><figcaption class="wp-element-caption">The logo for QNAP HappyGet 2 and Blizzard&#8217;s StarCraft 2 side by side</figcaption></figure>
-
-
-
-<p>Additionally, the embedded Celeron processor in the NAS turned out to be an issue for some cases. It turns out, when playing back videos with subtitles, most Plex clients do not support subtitles properly &#8211; instead they rely on the Plex server doing JIT transcoding to bake the subtitles directly into the video stream. I discovered this with some Blu-Ray rips of Game of Thrones &#8211; some episodes would play back fine on my smart TV, but episodes with subtitled Dothraki speech would play at only 2 or 3 frames per second.</p>
-
-
-
-<p>The final straw was a ransomware attack, which went through all my data and locked every file below a 60MiB threshold. Practically all my music gone. A substantial collection of downloaded files, all gone. Some of these files had been carried around since my college days &#8211; digital rarities, or at least digital detritus I felt a real sense of loss at having to replace. This episode was caused by a ransomware targeting specific vulnerabilities in the QNAP OS, not an error on my part.</p>
-
-
-
-<p>So, I decided to start planning a replacement with:</p>
-
-
-
-<ul class="wp-block-list">
-<li>A non-garbage OS, whilst still being a NAS-appliance type offering (not an off-the-shelf Linux server distro)</li>
-
-
-
-<li>Full remote management capabilities</li>
-
-
-
-<li>A small form factor comparable to off-the-shelf NAS</li>
-
-
-
-<li>A powerful modern CPU capable of transcoding high resolution video</li>
-
-
-
-<li>All flash storage, no spinning rust</li>
-</ul>
-
-
-
-<p>At the time, no consumer NAS offered everything (The Asustor FS6712X exists now, but didn&#8217;t when this project started), so I opted to go for a full DIY rather than an appliance &#8211; not the first time I&#8217;ve jumped between appliances and DIY for home storage.</p>
-
-
-
-<h2 class="wp-block-heading">Selecting the core of the system</h2>
-
-
-
-<p>There aren&#8217;t many companies which will sell you a small motherboard with IPMI. Supermicro is a bust, so is Tyan. But ASRock Rack, the server division of third-tier motherboard vendor ASRock, delivers. Most of their boards aren&#8217;t actually compliant Mini-ITX size, they&#8217;re a proprietary &#8220;Deep Mini-ITX&#8221; with the regular screw holes, but 40mm of extra length (and a commensurately small list of compatible cases). But, thankfully, they do have a tiny selection of boards without the extra size, and I stumbled onto the <a href="https://www.asrockrack.com/general/productdetail.asp?Model=X570D4I-2T">X570D4I-2T</a>, a board with an AMD AM4 socket and the mature X570 chipset. This board can use <em>any</em> AMD Ryzen chip (before the latest-gen Ryzen 7000 series); has built in dual 10 gigabit ethernet; IPMI; four (laptop-sized) RAM slots with full ECC support; one M.2 slot for NVMe SSD storage; a PCIe 16x slot (generally for graphics cards, but we live in a world of possibilities); and up to 8 SATA drives OR a couple more NVMe SSDs. It&#8217;s astonishingly well featured, just a shame it costs about $450 compared to a good consumer-grade Mini ITX AM4 board costing less than half that.</p>
-
-
-
-<p>I was so impressed with the offering, in fact, that I crowed about it on Mastodon and ended up securing ASRock another sale, with someone else looking into a very similar project to mine around the same timespan.</p>
-
-
-
-<p>The next question was the CPU. An important feature of a system expected to run 24/7 is low power, and AM4 chips can consume as much as 130W under load, out of the box. At the other end, some models can require as little as 35W under load &#8211; the OEM-only &#8220;GE&#8221; suffix chips, which are readily found for import on eBay. In their &#8220;PRO&#8221; variant, they also support ECC (all non-G Ryzen chips support ECC, but only Pro G chips do). The top of the range 8 core Ryzen 7 PRO 5750GE is prohibitively expensive, but the slightly weaker 6 core <a href="https://www.amd.com/en/products/apu/amd-ryzen-5-pro-5650ge">Ryzen 5 PRO 5650GE</a> was affordable, and one arrived quickly from Hong Kong. Supplemented with a couple of cheap 16 GiB SODIMM sticks of DDR4 PC-3200 direct from Micron for under $50 a piece, that left only cooling as an unsolved problem to get a bootable test system.</p>
-
-
-
-<p>The official support list for the X570D4I-2T only includes two rackmount coolers, both expensive and hard to source. The reason for such a small list is the non standard cooling layout of the board &#8211; instead of an AM4 hole pattern with the standard plastic AM4 retaining clips, it has an Intel 115x hole pattern with a non-standard backplate (Intel 115x boards have no backplate, the stock Intel 115x cooler attaches to the holes with push pins). As such every single cooler compatibility list excludes this motherboard. However, the backplate is only secured with a mild glue &#8211; with minimal pressure and a plastic prying tool it can be removed, giving compatibility with any 115x cooler (which is basically any CPU cooler for more than a decade). I picked an oversized low profile <a href="http://thermalright.com/product/axp120-x67-black-argb/">Thermalright AXP120-X67</a> hoping that its 120mm fan would cool the nearby MOSFETs and X570 chipset too.</p>
-
-
-
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg" alt="" class="wp-image-1333" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Thermalright AXP120-X67, AMD Ryzen 5 PRO 5650GE, ASRock Rack X570D4I-2T, all assembled and running on a flat surface</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Testing up to this point</h2>
-
-
-
-<p>Using a spare ATX power supply, I had enough of a system built to explore the IPMI and UEFI instances, and run MemTest86 to validate my progress. The memory test ran without a hitch and confirmed the ECC was working, although it also showed that the memory was only running at 2933 MT/s instead of the rated 3200 MT/s (a limit imposed by the motherboard, as higher speeds are considered overclocking). The IPMI interface isn&#8217;t the best I&#8217;ve ever used by a long shot, but it&#8217;s minimum viable and allowed me to configure the basics and boot from media entirely via a Web browser.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="905" height="819" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png" alt="" class="wp-image-1341" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png 905w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-550x498.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-768x695.png 768w" sizes="auto, (max-width: 905px) 100vw, 905px" /><figcaption class="wp-element-caption">Memtest86 showing test progress, taken from IPMI remote control window</figcaption></figure>
-
-
-
-<p>One sad discovery, however, which I&#8217;ve never seen documented before, on PCIe bifurcation.</p>
-
-
-
-<p>With PCI Express, you have a number of &#8220;lanes&#8221; which are allocated in groups by the motherboard and CPU manufacturer. For Ryzen prior to Ryzen 7000, that&#8217;s 16 lanes in one slot for the graphics card; 4 lanes in one M.2 connector for an SSD; then 4 lanes connecting the CPU to the chipset, which can offer whatever it likes for peripherals or extra lanes (bottlenecked by that shared 4x link to the CPU, if it comes down to it).</p>
-
-
-
-<p>It&#8217;s possible, with motherboard and CPU support, to split PCIe groups up &#8211; for example an 8x slot could be split into two 4x slots (eg allowing two NVMe drives in an adapter card &#8211; NVME drives these days all use 4x). However with a &#8220;Cezanne&#8221; Ryzen with integrated graphics, the 16x graphics card slot cannot be split into four 4x slots (ie used for for NVMe drives) &#8211; the most bifurcation it allows is 8x4x4x, which is useless in a NAS.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="897" height="806" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png" alt="" class="wp-image-1336" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png 897w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-550x494.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-768x690.png 768w" sizes="auto, (max-width: 897px) 100vw, 897px" /><figcaption class="wp-element-caption">Screenshot of PCIe 16x slot bifurcation options in UEFI settings, taken from IPMI remote control window</figcaption></figure>
-
-
-
-<p>As such, I had to abandon any ideas of an all-NVMe NAS I was considering: the 16x slot split into four 4x, combined with two 4x connectors fed by the X570 chipset, to a total of 6 NVMe drives. 7.6TB U.2 enterprise disks are remarkably affordable (cheaper than consumer SATA 8TB drives), but alas, I was locked out by my 5650GE. Thankfully I found out before spending hundreds on a U.2 hot swap bay. The NVMe setup would be nearly 10x as fast as SATA SSDs, but at least the SATA SSD route would still outperform any spinning rust choice on the market (including the fastest 10K RPM SAS drives)</p>
-
-
-
-<h2 class="wp-block-heading">Containing the core</h2>
-
-
-
-<p>The next step was to pick a case and power supply. A lot of NAS cases require an SFX (rather than ATX) size supply, so I ordered a modular <a href="https://www.silverstonetek.com/en/product/info/power-supplies/SX500-G/">SX500</a> unit from Silverstone. Even if I ended up with a case requiring ATX, it&#8217;s easy to turn an SFX power supply into ATX, and the worst result is you have less space taken up in your case, hardly the worst problem to have.</p>
-
-
-
-<p>That said, on to picking a case. There&#8217;s only one brand with any cachet making ITX NAS cases, Silverstone. They have three choices in an appropriate size: <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS01-HS/">CS01-HS</a>, <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS280/">CS280</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/DS380/">DS380</a>. The problem is, these cases are all badly designed garbage. Take the CS280 as an example, the case with the most space for a CPU cooler. Here&#8217;s how close together the hotswap bay (right) and power supply (left) are:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="568" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png" alt="" class="wp-image-1343" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-550x391.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-768x545.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
-
-
-
-<p>With actual cables connected, the cable clearance problem is even worse:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="533" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png" alt="" class="wp-image-1344" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-550x366.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-768x512.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
-
-
-
-<p>Remember, this is the <em>best</em> of the three cases for internal layout, the one with the least restriction on CPU cooler height. And it&#8217;s garbage! Total hot garbage! I decided therefore to completely skip the NAS case market, and instead purchase a 5.25&#8243;-to-2.5&#8243; hot swap bay adapter from Icy Dock, and put it in an ITX gamer case with a 5.25&#8243; bay. This is no longer a served market &#8211; 5.25&#8243; bays are extinct since nobody uses CD/DVD drives anymore. The ones on the market are really new old stock from 2014-2017: The <a href="https://www.fractal-design.com/products/cases/core/core-500/black/">Fractal Design Core 500</a>, <a href="https://www.coolermaster.com/catalog/cases/mini-itx/elite130/">Cooler Master Elite 130</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/SUGO14/">Silverstone SUGO 14</a>. Of the three, the Fractal is the best rated so I opted to get that one &#8211; however it seems the global supply of &#8220;new old stock&#8221; fully dried up in the two weeks between me making a decision and placing an order &#8211; leaving only the Silverstone case.</p>
-
-
-
-<p>Icy Dock have a selection of 8-bay 2.5&#8243; SATA 5.25&#8243; hot swap chassis choices in their ToughArmor MB998 series. I opted for the <a href="https://global.icydock.com/product_169.html">ToughArmor MB998IP-B</a>, to reduce cable clutter &#8211; it requires only two SFF-8611-to-SF-8643 cables from the motherboard to serve all eight bays, which should make airflow less of a mess. The X570D4I-2T doesn&#8217;t have any SATA ports on board, instead it has two SFF-8611 OCuLink ports, each supporting 4 PCI Express lanes OR 4 SATA connectors via a breakout cable. I had hoped to get the ToughArmor MB118VP-B and run six U.2 drives, but as I said, the PCIe bifurcation issue with Ryzen &#8220;G&#8221; chips meant I wouldn&#8217;t be able to run all six bays successfully.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg" alt="" class="wp-image-1348" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">NAS build in Silverstone SUGO 14, mid build, panels removed</figcaption></figure>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg" alt="" class="wp-image-1349" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">Silverstone SUGO 14 from the front, with hot swap bay installed</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Actual storage for the storage server</h2>
-
-
-
-<p>My concept for the system always involved a fast boot/cache drive in the motherboard&#8217;s M.2 slot, non-redundant (just backups of the config if the worst were to happen) and separate storage drives somewhere between 3.8 and 8 TB each (somewhere from $200-$350). As a boot drive, I selected the <a href="https://www.intel.com/content/www/us/en/products/sku/211868/intel-optane-ssd-p1600x-series-58gb-m-2-80mm-pcie-3-0-x4-3d-xpoint/specifications.html">Intel Optane SSD P1600X 58G</a>, available for under $35 and rated for 228 years between failures (or 11,000 complete drive rewrite cycles).</p>
-
-
-
-<p>So, on to the big expensive choice: storage drives. I narrowed it down to two contenders: new-old-stock Intel D3-S4510 3.84TB enterprise drives, at about $200, or Samsung 870 QVO 8TB consumer drives, at about $375. I did spend a long time agonizing over the specification differences, the ZFS usage reports, the expected lifetime endurance figures, but in reality, it came down to price &#8211; $1600 of expensive drives vs $3200 of even more expensive drives. That&#8217;s 27TB of usable capacity in RAID-Z1, or 23TB in RAID-Z2. For comparison, I&#8217;m using about 5TB of the old NAS, so that&#8217;s a LOT of overhead for expansion.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg" alt="" class="wp-image-1355" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Storage SSD loaded into hot swap sled</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Booting up</h2>
-
-
-
-<p>Bringing it all together is the OS. I wanted an &#8220;appliance&#8221; NAS OS rather than self-administering a Linux distribution, and after looking into the surrounding ecosystems, decided on <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> (the beta of the 2023 release, based on Debian 12).</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="600" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png" alt="" class="wp-image-1353" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-550x322.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-768x450.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1536x900.png 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image.png 2013w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">TrueNAS Dashboard screenshot in browser window</figcaption></figure>
-
-
-
-<p>I set up RAID-Z1, and with zero tuning (other than enabling auto-TRIM), got the following performance numbers:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>19.3k</td><td>75.6 MiB/s</td></tr><tr><td>4k random reads</td><td>36.1k</td><td>141 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>2300 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>3800 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Results using fio parameters <a href="https://support.huaweicloud.com/intl/en-us/evs_faq/evs_faq_0019.html#evs_faq_0019__section273349017162">suggested by Huawei</a></figcaption></figure>
-
-
-
-<p>And for comparison, the maximum theoretical numbers quoted by Intel for a single drive:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>16k</td><td>?</td></tr><tr><td>4k random reads</td><td>90k</td><td>?</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>280 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>560 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Numbers quoted by Intel SSD successors <a href="https://www.solidigm.com/products/data-center/d3/s4510.html">Solidigm</a>.</figcaption></figure>
-
-
-
-<p>Finally, the numbers reported on the old NAS with four 7200 RPM hard disks in RAID 10:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>430</td><td>1.7 MiB/s</td></tr><tr><td>4k random reads</td><td>8006</td><td>32 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>311 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>566 MiB/s</td></tr></tbody></table></figure>
-
-
-
-<p>Performance seems pretty OK. There&#8217;s always going to be an overhead to RAID. I&#8217;ll settle for the 45x improvement on random writes vs. its predecessor, and 4.5x improvement on random reads. The sequential write numbers are gonna be impacted by the size of the ZFS cache (50% of RAM, so 16 GiB), but the rest should be a reasonable indication of true performance.</p>
-
-
-
-<p>It took me a little while to fully understand the TrueNAS permissions model, but I finally got Plex configured to access data from the same place as my SMB shares, which have anonymous read-only access or authenticated write access for myself and my wife, working fine via both Linux and Windows.</p>
-
-
-
-<p>And&#8230; that&#8217;s it! I built a NAS. I intend to add some fans and more RAM, but that&#8217;s the build. Total spent: about $3000, which sounds like an unreasonable amount, but it&#8217;s actually less than a comparable Synology DiskStation DS1823xs+ which has 4 cores instead of 6, first-generation AMD Zen instead of Zen 3, 8 GiB RAM instead of 32 GiB, no hardware-accelerated video transcoding, etc. And it would have been a whole lot less fun!</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg" alt="" class="wp-image-1364" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">The final system, powered up</figcaption></figure>
-
-
-
-<p>(Also posted on <a href="https://pcpartpicker.com/b/fYhtt6">PCPartPicker</a>)</p>]]></description>
-      <source url="http://apebox.org/wordpress/tag/ubuntu/feed/">Jo Shields</source>
     </item>
     <item>
       <title>Understanding vm.swappiness: Improving Linux Performance and Memory Management</title>
@@ -6910,6 +6655,29 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 <li><a href="https://github.com/helm/charts/tree/master/stable/external-dns#configuration">The full list of configuration details for the ExternalDNS Helm&nbsp;chart</a></li>
 </ul>]]></description>
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
+    </item>
+    <item>
+      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
+      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
+      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
+      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
+      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
+<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
+<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
+<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
+<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
+<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
+<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
+<blockquote>
+<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
+</blockquote>
+<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
+<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
+We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
+So, please sync with this change (and sorry :)).</p>
+<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
+<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
+      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
     </item>
     <item>
       <title>Rise and fall of libclamav</title>
