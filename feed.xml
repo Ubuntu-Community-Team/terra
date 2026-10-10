@@ -6,9 +6,142 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 09 Oct 2026 05:05:05 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 04:50:32 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>E388 'Tá Toda Confinada</title>
+      <link>https://podcastubuntuportugal.org/e388/</link>
+      <guid isPermaLink="true">https://podcastubuntuportugal.org/e388/</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>O Diogo regressou da Festa do Software Livre de barriga cheia com frango assado e excelentes comunicações e dá-nos um cheirinho do que viu. Perorámos muito sobre as novidades do Firefox, alterações do seu design, avanços e recuos; o Diogo continua a fazer TOKENMAXXING À BRUTA para levar a Anthropic à falência e até o Miguel já foi estender a mão ao Deepseek para lhe desligar o portátil. Andámos a brincar com o fogo a meter Qwen 3 e Ollama com Gemma no computador; o Diogo está enfiado num labirinto (que ele próprio criou) numa app de navegação e ainda insultámos a Trofa, Corroios, Coimbra e muitas outras comunidades humanas - excepto São Mamede de Infesta, que é a sede do LCD Porto e por isso é muito fixe.</p>
+<p>Já sabem: oiçam, subscrevam e partilhem!</p>
+<ul>
+<li>FSL 2026: <a href="https://ansol.org/fsl2026/">https://ansol.org/fsl2026/</a></li>
+<li>Vídeos da FSL 2026: <a href="https://viste.pt/videos/browse">https://viste.pt/videos/browse</a></li>
+<li>Novidades do Firefox:</li>
+<li><a href="https://9to5linux.com/mozilla-firefox-156-is-now-available-for-download-heres-whats-new">https://9to5linux.com/mozilla-firefox-156-is-now-available-for-download-heres-whats-new</a></li>
+<li><a href="https://www.omgubuntu.co.uk/2026/09/firefox-157-released-nova-theme">https://www.omgubuntu.co.uk/2026/09/firefox-157-released-nova-theme</a></li>
+<li><a href="https://9to5linux.com/mozilla-firefox-157-is-now-available-for-download-with-brand-new-design">https://9to5linux.com/mozilla-firefox-157-is-now-available-for-download-with-brand-new-design</a></li>
+<li>AmálIA: <a href="https://amalia-llm.github.io/intro.html">https://amalia-llm.github.io/intro.html</a></li>
+<li>DeepSeek: <a href="https://chat.deepseek.com/">https://chat.deepseek.com/</a></li>
+<li>Claude: <a href="https://claude.com/">https://claude.com/</a></li>
+<li>Qwen 3.8 como Snap: <a href="https://snapcraft.io/qwen3-8">https://snapcraft.io/qwen3-8</a></li>
+<li>Ollama para Raspberry Pi: <a href="https://raspberry.tips/en/raspberrypi-tutorials/ollama-raspberry-pi-5">https://raspberry.tips/en/raspberrypi-tutorials/ollama-raspberry-pi-5</a></li>
+<li><a href="https://documentation.ubuntu.com/inference-snaps/">https://documentation.ubuntu.com/inference-snaps/</a></li>
+<li>O mais recente Q&amp;A de Ubuntu Touch, com Marius Gripsgard e Fredl: <a href="https://www.youtube.com/watch?v=dcZMfv0gryc">https://www.youtube.com/watch?v=dcZMfv0gryc</a></li>
+<li>UbPorts: <a href="https://ubports.com">https://ubports.com</a></li>
+<li>Unav: <a href="https://open-store.io/app/navigator.costales/">https://open-store.io/app/navigator.costales/</a></li>
+<li>Pure Maps: <a href="https://open-store.io/app/pure-maps.jonnius/">https://open-store.io/app/pure-maps.jonnius/</a></li>
+<li>Open Street Maps: OpenStreetMaps.org</li>
+<li>Open Free Map: <a href="https://openfreemap.org/">https://openfreemap.org/</a></li>
+<li>OSM Scout Server: <a href="https://open-store.io/app/osmscout-server.jonnius/">https://open-store.io/app/osmscout-server.jonnius/</a></li>
+<li>LCD POrto: <a href="https://lcdporto.org">https://lcdporto.org</a></li>
+<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
+<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
+<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
+</ul>
+<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
+<p>Este episódio foi produzido por Diogo Constantino, Joana Simões, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
+O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
+Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: Tropicorp Advertisement by code_box &ndash; <a href="https://freesound.org/s/561190/">https://freesound.org/s/561190/</a> &ndash; License: Creative Commons 0; 12046 futuristic electric ambience loop.wav by Robinhood76 &ndash; <a href="https://freesound.org/s/682167/">https://freesound.org/s/682167/</a> &ndash; License: Attribution NonCommercial 4.0; Born To Drive (loop ver.3) by AudioCoffee &ndash; <a href="https://freesound.org/s/710556/">https://freesound.org/s/710556/</a> &ndash; License: Attribution NonCommercial 4.0
+A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
+      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
+    </item>
+    <item>
+      <title>What&amp;#8217;s new in security for Ubuntu 26.10?</title>
+      <link>https://ubuntu.com//blog/ubuntu-26-10-security</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/ubuntu-26-10-security</guid>
+      <pubDate>Tue, 06 Oct 2026 14:19:19 GMT</pubDate>
+      <description><![CDATA[<p>Ubuntu 26.10 “Stonking Stingray” arrives at a time when AI tools are accelerating vulnerability discovery. Patching faster is essential, but the resilience of the underlying operating system must also limit what an attacker can achieve before a fix is available.</p>
+<p>To respond to this new threat landscape, Ubuntu 26.10 continues the work of previous releases by reducing the code exposed to attack: replacing memory-unsafe implementations while preserving confinement as components change. Security doesn’t just relate to security features; it informs the approach we take wherever we innovate. Let’s take <a href="https://discourse.ubuntu.com/t/introducing-myna-speech-to-text-for-ubuntu-desktop/84251">Myna</a>, Ubuntu’s new desktop dictation feature. Its speech recognition runs locally through a sandboxed inference snap, so audio does not need to be sent to a cloud service for transcription.</p>
+<p>In this blog, we’ll look through what’s changed in security for Ubuntu 26.10, the protection each change provides, and what you need to check before upgrading. Here’s a quick rundown if you want to find something specific:</p>
+<ul>
+<li>A signed, slimmed down GRUB with a reduced attack surface</li>
+<li>TPM-backed encryption on machines without a hardware root of trust</li>
+<li>Core utilities that are now entirely in Rust</li>
+<li>OpenSSL 4.0, OpenSSH 10.5 and certificate revocation with upki</li>
+<li>dbus-broker as the default message bus, with AppArmor mediation intact</li>
+<li>ntpd-rs, a memory-safe time daemon, available for testing</li>
+<li>authd support for Microsoft MFA and identity-provider-based accounts, plus hardware-token VPN sign-in in NetworkManager</li>
+<li>On-device speech recognition</li>
+<li>Linux 7.3</li>
+</ul>
+<h1 class="wp-block-heading">A smaller Secure Boot path</h1>
+<p>GRUB is part of Ubuntu’s early boot chain. In the usual UEFI Secure Boot configuration, the firmware first loads <a href="https://documentation.ubuntu.com/security/security-features/platform-protections/secure-boot">shim</a>, which then validates and loads GRUB. It contains parsers for filesystems, image formats, and partition layouts that, over the years, have been a steady source of Secure Boot bypass vulnerabilities.</p>
+<p>In Ubuntu 26.10, signed GRUB builds retain only what Ubuntu <em>needs</em> to boot:</p>
+<ul>
+<li>/boot on ext4, FAT, and ISO9660 remains supported, along with squashfs for snaps.</li>
+<li>Filesystem drivers for Btrfs, HFS+, XFS, and ZFS have been removed from the signed build, as have JPEG and PNG image loading and Apple partition tables.</li>
+<li>/boot on LVM, software RAID other than RAID1, and LUKS encryption are no longer supported under Secure Boot.</li>
+</ul>
+<p>This reduces the potential attack surface during the boot sequence. These changes affect only the boot path, with LVM, RAID, LUKS, Btrfs, and ZFS continuing to work in the running system. The full feature set also remains available with Secure Boot disabled. Check any customized /boot layout against the supported list before upgrading.</p>
+<p>Fewer parsers running before the kernel means fewer ways to break the chain of trust. We deliberately made this change directly after a long-term supported release (in this case, Ubuntu 26.04 LTS), so that anyone who depends on the removed features can stay on Ubuntu 26.04 LTS until May 2041 with Ubuntu Pro and the Legacy add-on.</p>
+<p>Encrypting /boot alone does not authenticate its contents or establish a trusted boot chain. Ubuntu’s TPM-backed full disk encryption combines boot-chain protections with measured boot and a policy governing when the disk-unlocking key can be released. Let’s dive into that now.</p>
+<h1 class="wp-block-heading">TPM-backed encryption on more machines</h1>
+<p>TPM-backed full disk encryption protects data at rest and ties automatic disk unlocking to the system’s measured boot state. The TPM releases the disk-unlocking key only when those measurements satisfy the configured security policy. In Ubuntu 26.10, TPM-backed full disk encryption reaches systems without a hardware root of trust. Ubuntu cannot verify the firmware automatically on these machines, so they require a PIN or passphrase at installation.</p>
+<p>Administrators can remove the PIN later. However, without it, the system is no longer protected against firmware tampering. Machines with a hardware root of trust, which covers most PCs made since 2021, continue to unlock automatically.</p>
+<p>The firmware update flow has also changed. fwupd now asks for a recovery key only when the running system uses TPM-backed encryption and a firmware update could affect the measurements used to unlock the disk, rather than prompting unnecessarily on systems where the update does not affect the TPM-backed unlock policy. This fix has also been backported to Ubuntu 26.04 LTS.</p>
+<h1 class="wp-block-heading">Core utilities, now entirely Rust</h1>
+<p>Ubuntu 26.04 LTS made the Rust-based uutils coreutils the default, but it retained the GNU implementations of cp, mv, and rm for compatibility. Ubuntu 26.10 migrates those remaining tools. The default core utilities now run entirely on Rust.</p>
+<p>These are commands that scripts, packages, and administrators use all day, every day. <em>Safe Rust</em> prevents classes of memory-safety errors, including use-after-free and out-of-bounds memory access through compile-time checks and runtime checks where necessary. This reduces the scope for memory-corruption vulnerabilities, although it does not prevent logic errors or vulnerabilities in unsafe code and dependencies.</p>
+<p>We encourage everyone to test their scripts that depend on subtle command behaviour against the new defaults, particularly privileged workflows that copy, move, or delete files.</p>
+<h1 class="wp-block-heading">OpenSSL 4.0 and OpenSSH 10.5</h1>
+<p>A sufficiently powerful quantum computer could break widely deployed public-key algorithms, such as RSA and elliptic-curve cryptography, which we use today to secure connections and verify signatures. Post-quantum algorithms are designed to withstand that threat. Ubuntu is adding them because data encrypted today could be collected and decrypted in the future.</p>
+<p>Ubuntu 26.10 moves to OpenSSL 4.0 (OpenSSL is the global standard for internet encryption), the first new major version since OpenSSL 3.0. This builds on the post-quantum foundations of Ubuntu 26.04 LTS. Like Ubuntu 26.04 LTS, Ubuntu 26.10 makes ML-KEM, ML-DSA, and SLH-DSA available to users, with hybrid post-quantum key exchange being preferred by default in OpenSSL’s TLS configuration when supported by the peer. OpenSSL 4.0 adds the curveSM2MLKEM768 hybrid key-exchange group, the ML-DSA-MU pseudo-digest, and the cSHAKE function.</p>
+<p>It also introduces support for Encrypted Client Hello (ECH). When enabled by compatible applications and servers, ECH protects the inner TLS ClientHello, including the requested server name. It does not hide the destination IP address or prevent all traffic analysis, and installing OpenSSL 4.0 does not automatically enable ECH for every application.</p>
+<p>Ubuntu 26.10 also introduces upki, a system-level approach to certificate revocation. Linux command-line tools have historically lacked the browser-grade revocation infrastructure used by browsers such as Firefox and Chromium, which means an application can successfully validate a certificate chain without necessarily knowing that a certificate has since been revoked.</p>
+<p>upki uses locally cached CRLite revocation data so applications can check certificate revocation without making a separate online request to a certificate authority for every connection. In Ubuntu 26.10, this is integrated with curl, allowing HTTPS connections made through curl to detect revoked certificates as part of certificate verification. The revocation data is updated periodically in the background.</p>
+<p>Several legacy interfaces and algorithms have been removed or restricted:</p>
+<ul>
+<li>The ENGINE interface has been removed in favor of providers.</li>
+<li>SSLv3 support has been removed.</li>
+<li>Support for deprecated elliptic curves in TLS and for explicit elliptic-curve parameters is disabled.</li>
+<li>Certificate and revocation checks have been tightened, including additional authority-key-identifier checks when strict X.509 verification is enabled.</li>
+</ul>
+<p>If you rely on OpenSSL engines for HSMs, PKCS#11 tokens, or TPM-backed keys, now is the time to switch to the equivalent provider: OpenSSL’s newer plug-in interface. Check that a suitable provider exists for your hardware and workflows, and test the migration. These changes reduce legacy code and extend cryptographic capabilities, but they can require application and configuration changes.</p>
+<p>Ubuntu 26.10 also ships OpenSSH 10.5. Hybrid post-quantum key exchange remains the default. This includes fixes introduced in OpenSSH 10.3 for certificate and command-line handling:</p>
+<ul>
+<li>When checking certificates through the authorized_keys principals= option, an empty certificate principals list no longer acts as a wildcard.</li>
+<li>sshd correctly enforces restrictions on which ECDSA algorithms it accepts.</li>
+<li>Validation of command-line user names happens earlier, addressing cases where shell metacharacters could otherwise be expanded through configuration tokens in ssh_config.</li>
+</ul>
+<h1 class="wp-block-heading">dbus-broker replaces dbus-daemon</h1>
+<p>D-Bus lets applications and services communicate, whether they are connecting to Wi-Fi or mounting a USB drive. It is a trust boundary because unprivileged processes use it to reach privileged ones. Ubuntu uses AppArmor to control which D-Bus interfaces snaps and critical packages can access.</p>
+<p>Ubuntu 26.10 replaces dbus-daemon, used in Ubuntu since 2004, with dbus-broker. The replacement uses an event-driven architecture with better accounting, reliability, and scalability. Both the system bus and every user session bus will change on fresh installations and upgrades.</p>
+<p>The switch to dbus-broker preserves AppArmor’s control over which D-Bus messages applications can send and receive. This keeps existing confinement policies enforced as Ubuntu replaces the message bus implementation. Ubuntu 26.10 also includes further fixes to this AppArmor integration.</p>
+<h1 class="wp-block-heading">Memory-safe time synchronization, ready for testing</h1>
+<p>Accurate time underpins TLS certificate validation, Kerberos, reliable log timestamps, and audit trails. If a system clock is significantly wrong, valid certificates can appear expired or not yet valid, Kerberos authentication can fail because of clock skew, and security logs can become difficult to correlate reliably across systems. Ubuntu 26.10 includes an updated version of ntpd-rs, a memory-safe NTP implementation, in the archive for testing, and the goal is to make it the default in Ubuntu 27.04.</p>
+<p>To accelerate this transition, Canonical has become a Gold Sponsor of the Trifecta Tech Foundation and is funding aspects of ntpd-rs development. The funding supports feature parity with chrony, including multi-threaded NTP servers and GPSd support, as well as AppArmor and seccomp confinement.</p>
+<p>Time daemons run for long periods and face the network. Memory-safe code reduces the risk of memory-corruption vulnerabilities, while confinement limits the damage a compromised daemon can cause. Both matter as Ubuntu prepares for the transition.</p>
+<h1 class="wp-block-heading">Enterprise authentication from sign-in to VPN</h1>
+<p>Ubuntu’s authd service lets users sign into their Ubuntu machines with an account managed by a cloud identity provider using OpenID Connect. In Ubuntu 26.10, authd adds support for signing in with a Microsoft password and completing multi-factor authentication through Microsoft Authenticator.</p>
+<p>Separately, authd now derives user and group IDs directly from identity-provider attributes, keeping those IDs consistent across machines in a fleet. This helps ensure that shared files retain the correct ownership and permissions. Administrators can also disable local password authentication for these accounts, requiring users to authenticate through their identity provider.</p>
+<p>For VPN access, NetworkManager gains PKCS#11 and smart-card support. Users can authenticate with hardware tokens, such as YubiKeys, through the standard desktop interface. These changes help organizations extend their existing identity, MFA, and hardware-token policies to Ubuntu sign-in and VPN access, without exceptions to explain to auditors.</p>
+<h1 class="wp-block-heading">On-device speech recognition</h1>
+<p>Ubuntu 26.10 introduces <a href="https://discourse.ubuntu.com/t/introducing-myna-speech-to-text-for-ubuntu-desktop/84251">Myna</a>, a desktop speech-to-text feature. It’s designed to bring cutting-edge accessibility, without compromising security. </p>
+<p><a href="https://discourse.ubuntu.com/t/introducing-myna-speech-to-text-for-ubuntu-desktop/84251">Myna</a> performs speech recognition locally through an inference snap. Once the required models are installed, dictation works without an internet connection. Audio is processed in memory, discarded after use, and is not uploaded to an external transcription service.</p>
+<p>This privacy protection applies to speech recognition. The resulting text is inserted into the application you are using, whose own storage and network behaviour still applies.</p>
+<p>Where AI sends data is a critical security question, and Myna addresses this through local inference and confinement of its snap components, without requiring cloud-based transcription.</p>
+<h1 class="wp-block-heading">Linux kernel 7.3</h1>
+<p>Ubuntu 26.10 ships with Linux kernel 7.3, following Ubuntu’s policy of shipping the latest upstream kernel available at release freeze. As a result, users receive the newest upstream hardening and hardware security enablement as early as possible.</p>
+<p>This cycle’s security work includes updates to the Landlock, AppArmor, SELinux, and Smack security modules. There are also TPM driver updates and BPF verifier fixes that prevent pointer leaks on speculative execution paths. NTFS3 received security hardening, and Rust support in the kernel now extends to PowerPC. The release candidates also carried a large batch of memory-safety fixes, many of them found by fuzzing, for use-after-free and overflow bugs across networking, filesystems, and virtualization.</p>
+<h1 class="wp-block-heading">Towards 28.04 LTS</h1>
+<p>Interim releases give us room to make substantial changes ahead of an LTS, so that the next long-term release can benefit from both security and stability improvements. Ubuntu 26.10 sets the  direction for Ubuntu 28.04 LTS with less code in privileged components, from GRUB to OpenSSL, and more memory safety across the system. Hardware-backed encryption comes with explicitly documented trade-offs. Enterprise identity policies extend from sign-in to VPN, while Myna keeps speech recognition local.</p>
+<p>Ubuntu 26.10 is supported until July 2027. <a href="https://discourse.ubuntu.com/t/ubuntu-desktop-26-10-stonking-stingray-roadmap-building-toward-ubuntu-28-04-lts/83751">Test it against your workloads</a>, and tell us what you find. Your feedback shapes Ubuntu 28.04 LTS.</p>
+<h1 class="wp-block-heading">Further reading </h1>
+<ul>
+<li><a href="https://discourse.ubuntu.com/t/streamlining-secure-boot-for-26-10/79069?utm_source=chatgpt.com">Streamlining Secure Boot for 26.10</a> </li>
+<li><a href="https://discourse.ubuntu.com/t/ubuntu-26-10-is-switching-to-dbus-broker/84060?utm_source=chatgpt.com">Ubuntu 26.10 is switching to dbus-broker</a> </li>
+<li><a href="https://discourse.ubuntu.com/t/ntpd-rs-its-about-time/79154?utm_source=chatgpt.com">Ntpd-rs: it’s about time!</a> </li>
+<li><a href="https://discourse.ubuntu.com/t/microsoft-entra-id-password-and-mfa-sign-in-comes-to-ubuntu/88342?utm_source=chatgpt.com">Microsoft Entra ID Password and MFA sign-in comes to Ubuntu</a> </li>
+<li><a href="https://discourse.ubuntu.com/t/introducing-myna-speech-to-text-for-ubuntu-desktop/84251?utm_source=chatgpt.com">Introducing Myna: Speech to Text for Ubuntu Desktop</a> </li>
+<li><a href="https://discourse.ubuntu.com/t/an-update-on-rust-coreutils/80773?utm_source=chatgpt.com">An update on rust-coreutils</a></li>
+<li><a href="https://discourse.ubuntu.com/t/post-quantum-support-in-the-upcoming-26-04-lts/76840?utm_source=chatgpt.com">Post Quantum Support in the upcoming 26.04 LTS</a> </li>
+</ul>
+<p></p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>Lubuntu Stonking Beta Released!</title>
       <link>https://lubuntu.me/lubuntu-stonking-beta-released/</link>
@@ -1394,90 +1527,6 @@ co-creation from them is another entirely.</p>
       <source url="http://notes.pault.ag/feeds/all-en.atom.xml">Paul Tagliamonte</source>
     </item>
     <item>
-      <title>E387 O Propópito Do Ócalipito</title>
-      <link>https://podcastubuntuportugal.org/e387/</link>
-      <guid isPermaLink="true">https://podcastubuntuportugal.org/e387/</guid>
-      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>Já não gravávamos há demasiado tempo e recuperados da ressaca da última sessão, relatámos viagens, aventuras e o cruzamento do software livre com a promoção da indústria vitivinícola nacional. Pelos caminhos de Portugal com GPS, rastreio de satélites, rádio amador, Meshtastic, servidores Linux, novidades do Ubuntu Touch, Unav, Pure Maps, aparelhos de comunicação em feiras de velharias, muitas referências desnecessárias e gratuitas a cultura popular - e como arranjámos mais lenha para nos queimarmos, com um novo projecto de aplicação para Ubuntu Touch&hellip;</p>
-<p>Já sabem: oiçam, subscrevam e partilhem!</p>
-<ul>
-<li>Centro Linux na Várzea: <a href="https://centrolinux.pt/post/2026-setembro-serta/">https://centrolinux.pt/post/2026-setembro-serta/</a></li>
-<li>Centro Linux no MILL: <a href="https://centrolinux.pt/lisboa/">https://centrolinux.pt/lisboa/</a></li>
-<li>Meshtastic: <a href="https://meshtastic.org">https://meshtastic.org</a></li>
-<li>RTL-SDR: <a href="https://www.rtl-sdr.com/about-rtl-sdr/">https://www.rtl-sdr.com/about-rtl-sdr/</a></li>
-<li>GQRX: <a href="https://www.gqrx.dk/">https://www.gqrx.dk/</a></li>
-<li>Gpredict, software para rastreio de satélites: <a href="https://oz9aec.dk/gpredict/">https://oz9aec.dk/gpredict/</a></li>
-<li>Chave telegráfica nas feiras de cangalhos antigos: <a href="https://youtu.be/VzvDe4uq7kE">https://youtu.be/VzvDe4uq7kE</a></li>
-<li>Chave de Morse Speed-X, em latão niquelado, muito bem preservada: <a href="https://youtu.be/f8s5oNtyhug">https://youtu.be/f8s5oNtyhug</a></li>
-<li>Um pouco de história sobre a versão militar da chave telegráfica Speed-X: <a href="http://k4che.com/BC474key/BC474key.htm">http://k4che.com/BC474key/BC474key.htm</a></li>
-<li>UbPorts: <a href="https://ubports.com">https://ubports.com</a></li>
-<li>Unav: <a href="https://open-store.io/app/navigator.costales/">https://open-store.io/app/navigator.costales/</a></li>
-<li>Pure Maps: <a href="https://open-store.io/app/pure-maps.jonnius/">https://open-store.io/app/pure-maps.jonnius/</a></li>
-<li>Open Street Maps: OpenStreetMaps.org</li>
-<li>Open Free Map: <a href="https://openfreemap.org/">https://openfreemap.org/</a></li>
-<li>OSM Scout Server: <a href="https://open-store.io/app/osmscout-server.jonnius/">https://open-store.io/app/osmscout-server.jonnius/</a></li>
-<li>Where: <a href="https://open-store.io/app/where.cibersheep/">https://open-store.io/app/where.cibersheep/</a></li>
-<li>Georeferenciação com Nominatim: <a href="https://nominatim.org/">https://nominatim.org/</a></li>
-<li>As apps do Luís Louro (Lápis de Cor): <a href="https://snapcraft.io/publisher/lapisdecor">https://snapcraft.io/publisher/lapisdecor</a></li>
-</ul>
-<p>Referências da Cultura Pra Pular:</p>
-<ul>
-<li>
-<p>Pelos Caminhos de Portugal:</p>
-<ul>
-<li><a href="https://youtu.be/MHnHgylVFdE">https://youtu.be/MHnHgylVFdE</a></li>
-<li><a href="https://youtu.be/VxvO_9LeT0A">https://youtu.be/VxvO_9LeT0A</a></li>
-</ul>
-</li>
-<li>
-<p>O Apocalipto: <a href="https://youtu.be/WiKf_0BHn_s">https://youtu.be/WiKf_0BHn_s</a></p>
-</li>
-<li>
-<p>A Trofada: <a href="https://youtu.be/5KHdpM91-Cc">https://youtu.be/5KHdpM91-Cc</a></p>
-</li>
-<li>
-<p>Hackers (1995): <a href="https://youtu.be/piI9vJ9-UZ0">https://youtu.be/piI9vJ9-UZ0</a></p>
-</li>
-<li>
-<p>A Engenharia, Geopolítica e Extractivismo da Estrela da Morte: <a href="https://youtu.be/5pcnQ6Xym5k">https://youtu.be/5pcnQ6Xym5k</a></p>
-</li>
-<li>
-<p>O Exorcista, um filme para toda a família: <a href="https://youtu.be/BU2eYAO31Cc">https://youtu.be/BU2eYAO31Cc</a></p>
-</li>
-<li>
-<p>Gabriel O Pensador e a americanização: <a href="https://youtu.be/4nupSSmfHz8">https://youtu.be/4nupSSmfHz8</a></p>
-</li>
-<li>
-<p>Pulp Fiction (1994); trabalhar com IA fechado numa cave: <a href="https://youtu.be/6U_U3TMxKcQ">https://youtu.be/6U_U3TMxKcQ</a></p>
-</li>
-<li>
-<p>Ana Malhoa, «Tá Turbinada»: <a href="https://youtu.be/8Bv2Ka4sBrg">https://youtu.be/8Bv2Ka4sBrg</a></p>
-</li>
-<li>
-<p>Artista, Não Elitista: <a href="https://youtu.be/o_nUba7dWnI">https://youtu.be/o_nUba7dWnI</a></p>
-</li>
-<li>
-<p>Força, Força Companheiro Diogo, segue em frente, nós ficamos cá atrás à espera: <a href="https://youtu.be/wKO2qgkXU20">https://youtu.be/wKO2qgkXU20</a></p>
-</li>
-<li>
-<p>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></p>
-</li>
-<li>
-<p>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></p>
-</li>
-<li>
-<p>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></p>
-</li>
-</ul>
-<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
-<p>Este episódio foi produzido por Diogo Constantino, Joana Simões, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
-O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
-Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: 1820 Thunder by avreference &ndash; <a href="https://freesound.org/s/587875/">https://freesound.org/s/587875/</a> &ndash; License: Creative Commons 0; Horror Atmosphere 3_In the Presence of Pure Evil_Loop by Ulrich_Wehner &ndash; <a href="https://freesound.org/s/731349/">https://freesound.org/s/731349/</a> &ndash; License: Attribution 4.0; Exorcism by CClarke65 &ndash; <a href="https://freesound.org/s/615926/">https://freesound.org/s/615926/</a> &ndash; License: Creative Commons 0; Elevator Music by YellowTree &ndash; <a href="https://freesound.org/s/686020/">https://freesound.org/s/686020/</a> &ndash; License: Attribution 4.0.
-Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
-A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
-      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
-    </item>
-    <item>
       <title>JPEG-XL as default in AppStream, and better media processing</title>
       <link>https://blog.tenstral.net/2026/09/jpeg-xl-appstream-and-better-media-processing.html</link>
       <guid isPermaLink="true">https://blog.tenstral.net/2026/09/jpeg-xl-appstream-and-better-media-processing.html</guid>
@@ -1689,7 +1738,7 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
       <link>https://blog.launchpad.net/general/review-merge-proposals-in-vs-code</link>
       <guid isPermaLink="true">https://blog.launchpad.net/general/review-merge-proposals-in-vs-code</guid>
       <pubDate>Tue, 08 Sep 2026 10:32:27 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://marketplace.visualstudio.com/items?itemName=steciuk.launchpad-merge-proposals-preview">Launchpad Merge Proposals</a>, a VS Code extension for reviewing Launchpad merge proposals, is now available on the Visual Studio Marketplace as a preview release.</p>
+      <description><![CDATA[<p><a href="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals" data-type="URL" data-id="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals">Launchpad Merge Proposals</a>, a VS Code extension for reviewing Launchpad merge proposals, is now available on the Visual Studio Marketplace as a preview release.</p>
 
 
 
@@ -1753,7 +1802,7 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 
 
 
-<ol><li>Install <a href="https://marketplace.visualstudio.com/items?itemName=steciuk.launchpad-merge-proposals-preview">Launchpad Merge Proposals</a> in VS Code 1.105 or newer.</li><li>Open a project backed by a Git repository on Launchpad, and check out a branch tracking a remote one.</li><li>Open the<strong> Launchpad Merge Proposals</strong> view from the <strong>Activity Bar</strong> and sign in when prompted.</li><li>Select a merge proposal, then pick a preview diff to see the changes and comments.</li></ol>
+<ol><li>Install <a href="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals" data-type="URL" data-id="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals">Launchpad Merge Proposals</a> in VS Code 1.105 or newer.</li><li>Open a project backed by a Git repository on Launchpad, and check out a branch tracking a remote one.</li><li>Open the<strong> Launchpad Merge Proposals</strong> view from the <strong>Activity Bar</strong> and sign in when prompted.</li><li>Select a merge proposal, then pick a preview diff to see the changes and comments.</li></ol>
 
 
 
@@ -1765,7 +1814,7 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 
 
 
-<p>This is a <strong>preview release</strong>. The core review flow works and we use it daily, but some capabilities are still experimental while we work out how they should behave. The <a href="https://marketplace.visualstudio.com/items?itemName=steciuk.launchpad-merge-proposals-preview">README</a> covers the current state, including a <em>known issues</em> section that we update with each release.</p>
+<p>This is a <strong>preview release</strong>. The core review flow works and we use it daily, but some capabilities are still experimental while we work out how they should behave. The <a href="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals" data-type="URL" data-id="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals">README</a> covers the current state, including a <em>known issues</em> section that we update with each release.</p>
 
 
 
@@ -3759,19 +3808,19 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
       <link>https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</link>
       <guid isPermaLink="true">https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</guid>
       <pubDate>Fri, 16 May 2025 11:17:23 GMT</pubDate>
-      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd wp-block-paragraph">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
+      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
 
 
 
-<p class="wp-block-paragraph"></p>
+<p></p>
 
 
 
-<p class="wp-block-paragraph"></p>
+<p></p>
 
 
 
-<p class="wp-block-paragraph"></p>]]></description>
+<p></p>]]></description>
       <source url="https://ograblog.wordpress.com/feed/atom">Oliver Grawert</source>
     </item>
     <item>
