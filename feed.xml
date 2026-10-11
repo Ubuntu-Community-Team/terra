@@ -6,9 +6,48 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 10 Oct 2026 04:58:53 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 04:47:01 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>E388 'Tá Toda Confinada</title>
+      <link>https://podcastubuntuportugal.org/e388/</link>
+      <guid isPermaLink="true">https://podcastubuntuportugal.org/e388/</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>O Diogo regressou da Festa do Software Livre de barriga cheia com frango assado e excelentes comunicações e dá-nos um cheirinho do que viu. Perorámos muito sobre as novidades do Firefox, alterações do seu design, avanços e recuos; o Diogo continua a fazer TOKENMAXXING À BRUTA para levar a Anthropic à falência e até o Miguel já foi estender a mão ao Deepseek para lhe desligar o portátil. Andámos a brincar com o fogo a meter Qwen 3 e Ollama com Gemma no computador; o Diogo está enfiado num labirinto (que ele próprio criou) numa app de navegação e ainda insultámos a Trofa, Corroios, Coimbra e muitas outras comunidades humanas - excepto São Mamede de Infesta, que é a sede do LCD Porto e por isso é muito fixe.</p>
+<p>Já sabem: oiçam, subscrevam e partilhem!</p>
+<ul>
+<li>FSL 2026: <a href="https://ansol.org/fsl2026/">https://ansol.org/fsl2026/</a></li>
+<li>Vídeos da FSL 2026: <a href="https://viste.pt/videos/browse">https://viste.pt/videos/browse</a></li>
+<li>Novidades do Firefox:</li>
+<li><a href="https://9to5linux.com/mozilla-firefox-156-is-now-available-for-download-heres-whats-new">https://9to5linux.com/mozilla-firefox-156-is-now-available-for-download-heres-whats-new</a></li>
+<li><a href="https://www.omgubuntu.co.uk/2026/09/firefox-157-released-nova-theme">https://www.omgubuntu.co.uk/2026/09/firefox-157-released-nova-theme</a></li>
+<li><a href="https://9to5linux.com/mozilla-firefox-157-is-now-available-for-download-with-brand-new-design">https://9to5linux.com/mozilla-firefox-157-is-now-available-for-download-with-brand-new-design</a></li>
+<li>AmálIA: <a href="https://amalia-llm.github.io/intro.html">https://amalia-llm.github.io/intro.html</a></li>
+<li>DeepSeek: <a href="https://chat.deepseek.com/">https://chat.deepseek.com/</a></li>
+<li>Claude: <a href="https://claude.com/">https://claude.com/</a></li>
+<li>Qwen 3.8 como Snap: <a href="https://snapcraft.io/qwen3-8">https://snapcraft.io/qwen3-8</a></li>
+<li>Ollama para Raspberry Pi: <a href="https://raspberry.tips/en/raspberrypi-tutorials/ollama-raspberry-pi-5">https://raspberry.tips/en/raspberrypi-tutorials/ollama-raspberry-pi-5</a></li>
+<li><a href="https://documentation.ubuntu.com/inference-snaps/">https://documentation.ubuntu.com/inference-snaps/</a></li>
+<li>O mais recente Q&amp;A de Ubuntu Touch, com Marius Gripsgard e Fredl: <a href="https://www.youtube.com/watch?v=dcZMfv0gryc">https://www.youtube.com/watch?v=dcZMfv0gryc</a></li>
+<li>UbPorts: <a href="https://ubports.com">https://ubports.com</a></li>
+<li>Unav: <a href="https://open-store.io/app/navigator.costales/">https://open-store.io/app/navigator.costales/</a></li>
+<li>Pure Maps: <a href="https://open-store.io/app/pure-maps.jonnius/">https://open-store.io/app/pure-maps.jonnius/</a></li>
+<li>Open Street Maps: OpenStreetMaps.org</li>
+<li>Open Free Map: <a href="https://openfreemap.org/">https://openfreemap.org/</a></li>
+<li>OSM Scout Server: <a href="https://open-store.io/app/osmscout-server.jonnius/">https://open-store.io/app/osmscout-server.jonnius/</a></li>
+<li>LCD POrto: <a href="https://lcdporto.org">https://lcdporto.org</a></li>
+<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
+<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
+<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
+</ul>
+<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
+<p>Este episódio foi produzido por Diogo Constantino, Joana Simões, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
+O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
+Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: Tropicorp Advertisement by code_box &ndash; <a href="https://freesound.org/s/561190/">https://freesound.org/s/561190/</a> &ndash; License: Creative Commons 0; 12046 futuristic electric ambience loop.wav by Robinhood76 &ndash; <a href="https://freesound.org/s/682167/">https://freesound.org/s/682167/</a> &ndash; License: Attribution NonCommercial 4.0; Born To Drive (loop ver.3) by AudioCoffee &ndash; <a href="https://freesound.org/s/710556/">https://freesound.org/s/710556/</a> &ndash; License: Attribution NonCommercial 4.0
+A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
+      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
+    </item>
     <item>
       <title>What&amp;#8217;s new in security for Ubuntu 26.10?</title>
       <link>https://ubuntu.com//blog/ubuntu-26-10-security</link>
@@ -1488,90 +1527,6 @@ co-creation from them is another entirely.</p>
       <source url="http://notes.pault.ag/feeds/all-en.atom.xml">Paul Tagliamonte</source>
     </item>
     <item>
-      <title>E387 O Propópito Do Ócalipito</title>
-      <link>https://podcastubuntuportugal.org/e387/</link>
-      <guid isPermaLink="true">https://podcastubuntuportugal.org/e387/</guid>
-      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>Já não gravávamos há demasiado tempo e recuperados da ressaca da última sessão, relatámos viagens, aventuras e o cruzamento do software livre com a promoção da indústria vitivinícola nacional. Pelos caminhos de Portugal com GPS, rastreio de satélites, rádio amador, Meshtastic, servidores Linux, novidades do Ubuntu Touch, Unav, Pure Maps, aparelhos de comunicação em feiras de velharias, muitas referências desnecessárias e gratuitas a cultura popular - e como arranjámos mais lenha para nos queimarmos, com um novo projecto de aplicação para Ubuntu Touch&hellip;</p>
-<p>Já sabem: oiçam, subscrevam e partilhem!</p>
-<ul>
-<li>Centro Linux na Várzea: <a href="https://centrolinux.pt/post/2026-setembro-serta/">https://centrolinux.pt/post/2026-setembro-serta/</a></li>
-<li>Centro Linux no MILL: <a href="https://centrolinux.pt/lisboa/">https://centrolinux.pt/lisboa/</a></li>
-<li>Meshtastic: <a href="https://meshtastic.org">https://meshtastic.org</a></li>
-<li>RTL-SDR: <a href="https://www.rtl-sdr.com/about-rtl-sdr/">https://www.rtl-sdr.com/about-rtl-sdr/</a></li>
-<li>GQRX: <a href="https://www.gqrx.dk/">https://www.gqrx.dk/</a></li>
-<li>Gpredict, software para rastreio de satélites: <a href="https://oz9aec.dk/gpredict/">https://oz9aec.dk/gpredict/</a></li>
-<li>Chave telegráfica nas feiras de cangalhos antigos: <a href="https://youtu.be/VzvDe4uq7kE">https://youtu.be/VzvDe4uq7kE</a></li>
-<li>Chave de Morse Speed-X, em latão niquelado, muito bem preservada: <a href="https://youtu.be/f8s5oNtyhug">https://youtu.be/f8s5oNtyhug</a></li>
-<li>Um pouco de história sobre a versão militar da chave telegráfica Speed-X: <a href="http://k4che.com/BC474key/BC474key.htm">http://k4che.com/BC474key/BC474key.htm</a></li>
-<li>UbPorts: <a href="https://ubports.com">https://ubports.com</a></li>
-<li>Unav: <a href="https://open-store.io/app/navigator.costales/">https://open-store.io/app/navigator.costales/</a></li>
-<li>Pure Maps: <a href="https://open-store.io/app/pure-maps.jonnius/">https://open-store.io/app/pure-maps.jonnius/</a></li>
-<li>Open Street Maps: OpenStreetMaps.org</li>
-<li>Open Free Map: <a href="https://openfreemap.org/">https://openfreemap.org/</a></li>
-<li>OSM Scout Server: <a href="https://open-store.io/app/osmscout-server.jonnius/">https://open-store.io/app/osmscout-server.jonnius/</a></li>
-<li>Where: <a href="https://open-store.io/app/where.cibersheep/">https://open-store.io/app/where.cibersheep/</a></li>
-<li>Georeferenciação com Nominatim: <a href="https://nominatim.org/">https://nominatim.org/</a></li>
-<li>As apps do Luís Louro (Lápis de Cor): <a href="https://snapcraft.io/publisher/lapisdecor">https://snapcraft.io/publisher/lapisdecor</a></li>
-</ul>
-<p>Referências da Cultura Pra Pular:</p>
-<ul>
-<li>
-<p>Pelos Caminhos de Portugal:</p>
-<ul>
-<li><a href="https://youtu.be/MHnHgylVFdE">https://youtu.be/MHnHgylVFdE</a></li>
-<li><a href="https://youtu.be/VxvO_9LeT0A">https://youtu.be/VxvO_9LeT0A</a></li>
-</ul>
-</li>
-<li>
-<p>O Apocalipto: <a href="https://youtu.be/WiKf_0BHn_s">https://youtu.be/WiKf_0BHn_s</a></p>
-</li>
-<li>
-<p>A Trofada: <a href="https://youtu.be/5KHdpM91-Cc">https://youtu.be/5KHdpM91-Cc</a></p>
-</li>
-<li>
-<p>Hackers (1995): <a href="https://youtu.be/piI9vJ9-UZ0">https://youtu.be/piI9vJ9-UZ0</a></p>
-</li>
-<li>
-<p>A Engenharia, Geopolítica e Extractivismo da Estrela da Morte: <a href="https://youtu.be/5pcnQ6Xym5k">https://youtu.be/5pcnQ6Xym5k</a></p>
-</li>
-<li>
-<p>O Exorcista, um filme para toda a família: <a href="https://youtu.be/BU2eYAO31Cc">https://youtu.be/BU2eYAO31Cc</a></p>
-</li>
-<li>
-<p>Gabriel O Pensador e a americanização: <a href="https://youtu.be/4nupSSmfHz8">https://youtu.be/4nupSSmfHz8</a></p>
-</li>
-<li>
-<p>Pulp Fiction (1994); trabalhar com IA fechado numa cave: <a href="https://youtu.be/6U_U3TMxKcQ">https://youtu.be/6U_U3TMxKcQ</a></p>
-</li>
-<li>
-<p>Ana Malhoa, «Tá Turbinada»: <a href="https://youtu.be/8Bv2Ka4sBrg">https://youtu.be/8Bv2Ka4sBrg</a></p>
-</li>
-<li>
-<p>Artista, Não Elitista: <a href="https://youtu.be/o_nUba7dWnI">https://youtu.be/o_nUba7dWnI</a></p>
-</li>
-<li>
-<p>Força, Força Companheiro Diogo, segue em frente, nós ficamos cá atrás à espera: <a href="https://youtu.be/wKO2qgkXU20">https://youtu.be/wKO2qgkXU20</a></p>
-</li>
-<li>
-<p>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></p>
-</li>
-<li>
-<p>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></p>
-</li>
-<li>
-<p>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></p>
-</li>
-</ul>
-<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
-<p>Este episódio foi produzido por Diogo Constantino, Joana Simões, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
-O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
-Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: 1820 Thunder by avreference &ndash; <a href="https://freesound.org/s/587875/">https://freesound.org/s/587875/</a> &ndash; License: Creative Commons 0; Horror Atmosphere 3_In the Presence of Pure Evil_Loop by Ulrich_Wehner &ndash; <a href="https://freesound.org/s/731349/">https://freesound.org/s/731349/</a> &ndash; License: Attribution 4.0; Exorcism by CClarke65 &ndash; <a href="https://freesound.org/s/615926/">https://freesound.org/s/615926/</a> &ndash; License: Creative Commons 0; Elevator Music by YellowTree &ndash; <a href="https://freesound.org/s/686020/">https://freesound.org/s/686020/</a> &ndash; License: Attribution 4.0.
-Este episódio está licenciado nos termos da licença: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">cujo texto integral pode ser lido aqui</a>. Estamos abertos a licenciar para permitir outros tipos de utilização, <a href="https://podcastubuntuportugal.org/contactos">contactem-nos</a> para validação e autorização.
-A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
-      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
-    </item>
-    <item>
       <title>JPEG-XL as default in AppStream, and better media processing</title>
       <link>https://blog.tenstral.net/2026/09/jpeg-xl-appstream-and-better-media-processing.html</link>
       <guid isPermaLink="true">https://blog.tenstral.net/2026/09/jpeg-xl-appstream-and-better-media-processing.html</guid>
@@ -1783,7 +1738,7 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
       <link>https://blog.launchpad.net/general/review-merge-proposals-in-vs-code</link>
       <guid isPermaLink="true">https://blog.launchpad.net/general/review-merge-proposals-in-vs-code</guid>
       <pubDate>Tue, 08 Sep 2026 10:32:27 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://marketplace.visualstudio.com/items?itemName=steciuk.launchpad-merge-proposals-preview">Launchpad Merge Proposals</a>, a VS Code extension for reviewing Launchpad merge proposals, is now available on the Visual Studio Marketplace as a preview release.</p>
+      <description><![CDATA[<p><a href="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals" data-type="URL" data-id="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals">Launchpad Merge Proposals</a>, a VS Code extension for reviewing Launchpad merge proposals, is now available on the Visual Studio Marketplace as a preview release.</p>
 
 
 
@@ -1847,7 +1802,7 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 
 
 
-<ol><li>Install <a href="https://marketplace.visualstudio.com/items?itemName=steciuk.launchpad-merge-proposals-preview">Launchpad Merge Proposals</a> in VS Code 1.105 or newer.</li><li>Open a project backed by a Git repository on Launchpad, and check out a branch tracking a remote one.</li><li>Open the<strong> Launchpad Merge Proposals</strong> view from the <strong>Activity Bar</strong> and sign in when prompted.</li><li>Select a merge proposal, then pick a preview diff to see the changes and comments.</li></ol>
+<ol><li>Install <a href="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals" data-type="URL" data-id="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals">Launchpad Merge Proposals</a> in VS Code 1.105 or newer.</li><li>Open a project backed by a Git repository on Launchpad, and check out a branch tracking a remote one.</li><li>Open the<strong> Launchpad Merge Proposals</strong> view from the <strong>Activity Bar</strong> and sign in when prompted.</li><li>Select a merge proposal, then pick a preview diff to see the changes and comments.</li></ol>
 
 
 
@@ -1859,7 +1814,7 @@ A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustrado
 
 
 
-<p>This is a <strong>preview release</strong>. The core review flow works and we use it daily, but some capabilities are still experimental while we work out how they should behave. The <a href="https://marketplace.visualstudio.com/items?itemName=steciuk.launchpad-merge-proposals-preview">README</a> covers the current state, including a <em>known issues</em> section that we update with each release.</p>
+<p>This is a <strong>preview release</strong>. The core review flow works and we use it daily, but some capabilities are still experimental while we work out how they should behave. The <a href="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals" data-type="URL" data-id="https://marketplace.visualstudio.com/items?itemName=Canonical.launchpad-merge-proposals">README</a> covers the current state, including a <em>known issues</em> section that we update with each release.</p>
 
 
 
@@ -6753,6 +6708,29 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 <li><a href="https://github.com/helm/charts/tree/master/stable/external-dns#configuration">The full list of configuration details for the ExternalDNS Helm&nbsp;chart</a></li>
 </ul>]]></description>
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
+    </item>
+    <item>
+      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
+      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
+      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
+      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
+      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
+<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
+<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
+<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
+<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
+<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
+<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
+<blockquote>
+<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
+</blockquote>
+<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
+<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
+We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
+So, please sync with this change (and sorry :)).</p>
+<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
+<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
+      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
     </item>
     <item>
       <title>Rise and fall of libclamav</title>
