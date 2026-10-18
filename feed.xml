@@ -6,9 +6,54 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sat, 17 Oct 2026 03:33:13 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 03:40:04 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to lower Android™ development costs by removing hardware from the critical path</title>
+      <link>https://ubuntu.com//blog/lower-android-development-cost</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/lower-android-development-cost</guid>
+      <pubDate>Fri, 16 Oct 2026 09:50:26 GMT</pubDate>
+      <description><![CDATA[<p>As an Android developer, you’ll almost always have access to <em>a</em> device. However, when handling hardware, the device that you actually need often happens to be already in use, set up incorrectly, stored in another lab, or simply waiting to be reset. That’s when Android development costs start to increase.</p>
+<p>Because it’s not <em>just</em> the device itself that generates expenses, it’s everything around it: procurement, provisioning, maintenance, remote access, lab capacity, and, worst of all: your engineering time. A developer waiting for the right dev environment still constitutes a cost.</p>
+<p>So, how can you solve that problem?</p>
+<h2 class="wp-block-heading">Do my tests actually need hardware?</h2>
+<p>We all know that hardware still plays a big role in Android development. If you need to validate sensors, peripherals, real target performance, the hardware integration itself, or even the genuine user experience, you’re going to need the physical target device.</p>
+<p>But most workloads competing for those devices can run elsewhere.</p>
+<p>When building Android, testing an application, <a href="https://canonical.com/blog/what-the-cyber-resilience-act-cra-means-for-android-development">reproducing a bug</a>, or even running regression tests, there’s absolutely no need for any physical device. So instead of asking yourself if a specific target device is available, the question you should ask is whether you need a device at all.</p>
+<p>The distinction is important here, because hardware labs are obviously much harder to scale than software.</p>
+<p>More developers often means more builds, more tests, and more configurations. That typically means a higher need for devices, benches, and more infrastructure to have enough capacity for peak times when relying on hardware-first. As you can see, Android development costs aren’t only a result of the gear itself, but the effort to run it, and the engineering time lost when access becomes a bottleneck.</p>
+<h2 class="wp-block-heading">Android infrastructure operations</h2>
+<p>When moving workloads away from hardware, Android environments can then <a href="https://ubuntu.com/blog/android-development-shouldnt-start-with-a-physical-device">be provisioned when needed</a>, <a href="https://ubuntu.com/blog/android-belongs-in-your-ci-cd-pipeline">integrated into Continuous Integration and Continuous Delivery/Deployment (CI/CD) pipelines</a>, <a href="https://ubuntu.com/blog/scaling-android-development-without-scaling-hardware">run in parallel</a>, and discarded afterwards. A cloud-first approach is much simpler than a hardware one. Just request your environment, run your tests, and safely release it.</p>
+<p>The secret trick is to be wise when choosing <a href="https://ubuntu.com/blog/virtualized-android-comes-to-anbox-cloud">the appropriate execution environment</a> for the job you want to run: use containers when you need app density and scale, virtual machines if you need to run a custom Android image, and physical devices for when the tests truly depend on physical components.</p>
+<p>With Anbox Cloud, these cloud environments can co-exist in exactly the same development workflow. Developers can continue using familiar tools such as Android Debug Bridge (ADB), Android Studio, their existing test frameworks, and usual CI/CD systems.</p>
+<p>Let’s take the example of a support or validation team that needs to reproduce issues across many Android configurations. In a hardware-first setup, that means finding the right device, checking its software version, reserving it, reconfiguring it, and setting up remote access before debugging even starts.</p>
+<p>With cloud-based Android environments, the same team can keep predefined images for common configurations and start them on demand. Several engineers can work in parallel, while physical devices are reserved for cases that truly require hardware validation.</p>
+<p>In this instance, costs are lowered not simply because there is one less phone on a shelf. It is the time spent finding, preparing, and sharing that phone and the extra capacity required to make sure one is available when demand peaks. A device sitting idle is inefficient. An engineer sitting idle because the right device isn’t available is even more expensive.</p>
+<h2 class="wp-block-heading">Where Android development costs actually come from, and how to reduce your expenses</h2>
+<p>Generally, there are three cost areas worth looking at: the first obvious cost is hardware, then operations (setup, maintenance, and so on), and, last but not least: engineering time. The impact of that last element is easy to underestimate.</p>
+<p>If fewer workloads depend on dedicated devices, teams need less hardware capacity to support the same level of development activity. Here is how using Anbox Cloud helps you to improve these three cost areas:</p>
+<ul>
+<li>Hardware cost: fewer devices, benches, and supporting infrastructure need to be provisioned for peak demand</li>
+<li>Operational cost: less manual setup, maintenance, and environment management</li>
+<li>Engineering-time cost: less waiting for shared resources and more opportunities to run workloads in parallel</li>
+</ul>
+<p>If ten tests need to run, they should not necessarily queue behind the same physical bench. If an issue needs to be reproduced, an engineer should not have to spend time rebuilding the right configuration manually. Software-defined environments can be created specifically for the workload and removed afterwards.</p>
+<p>That also means that the customized hardware you do have can then be reserved for the tests that can’t do without it. Reducing Android development cost therefore becomes more than reducing hardware spending. It becomes a way to get more engineering work from the infrastructure, as well as getting back the engineering time you already have.</p>
+<h2 class="wp-block-heading">Take hardware out of the critical path</h2>
+<p>As I like to say, the point here is not to completely get rid of physical devices. The goal is to make sure to only use your expensive hardware because the test requires it, not because the workflow was built around it.</p>
+<p>That means running software-driven workloads early, running more of them in parallel, and keeping those physical benches for the validation or certification work where they provide actual value.</p>
+<p>Instead of scaling Android development by continuously adding devices, scale the environments around them. Less wait, more scaling, faster iterations.</p>
+<p><strong>Stop running after devices. Run Android in the cloud.</strong></p>
+<h1 class="wp-block-heading">Further reading</h1>
+<p><a href="https://canonical.com/anbox-cloud">Learn more about Anbox Cloud or contact our team to discuss your use case</a></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<p>Android is a trademark of Google LLC.</p>
+<p>Anbox Cloud uses assets available through the Android Open Source Project.</p>
+<p>The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the<a href="https://creativecommons.org/licenses/by/3.0/"> Creative Commons</a> 3.0 Attribution License.</p>
+<p></p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>Lubuntu 26.10 Released!</title>
       <link>https://lubuntu.me/lubuntu-26-10-released/</link>
@@ -415,60 +460,6 @@
 <blockquote class="wp-embedded-content" data-secret="86CwJYdYqh"><a href="https://ubuntustudio.org/contribute/">Contribute</a></blockquote><iframe loading="lazy" class="wp-embedded-content" sandbox="allow-scripts" security="restricted"  title="“Contribute” — Ubuntu Studio" src="https://ubuntustudio.org/contribute/embed/#?secret=O45M2CRuxr#?secret=86CwJYdYqh" data-secret="86CwJYdYqh" width="600" height="338" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 </div></figure>]]></description>
       <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
-    </item>
-    <item>
-      <title>Canonical releases Ubuntu 26.10 Stonking Stingray</title>
-      <link>https://ubuntu.com//blog/canonical-releases-ubuntu-26-10-stonking-stingray</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/canonical-releases-ubuntu-26-10-stonking-stingray</guid>
-      <pubDate>Thu, 15 Oct 2026 12:16:02 GMT</pubDate>
-      <description><![CDATA[<h4 class="wp-block-heading">The latest interim release of Ubuntu previews privacy conscious speech-to-text, enables post-quantum package signing, completes the rollout of Rust coreutils, and improves enterprise identity integration.</h4>
-<figure class="wp-block-image size-full"><img alt="" height="2382" loading="lazy" sizes="(min-width: 4226px) 4226px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_4226/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6ca3%2FScreenshot-from-2026-10-14-17-35-16.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6ca3%2FScreenshot-from-2026-10-14-17-35-16.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6ca3%2FScreenshot-from-2026-10-14-17-35-16.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6ca3%2FScreenshot-from-2026-10-14-17-35-16.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6ca3%2FScreenshot-from-2026-10-14-17-35-16.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F6ca3%2FScreenshot-from-2026-10-14-17-35-16.png 1920w" width="4226"/></figure>
-<p><strong>October 15, 2026</strong></p>
-<p>Today Canonical announced the release of Ubuntu 26.10, codenamed “Stonking Stingray,” available to download and install from <a href="http://ubuntu.com/download">ubuntu.com/download</a>. </p>
-<p>Building on previous releases, Ubuntu 26.10 advances enterprise security features, completes the<s> </s>rollout of the Rust-based <code>uutils coreutils</code>, and strengthens integrations for user authentication using Microsoft Entra ID. Ubuntu 26.10 also introduces post-quantum package signing, demonstrating that interim releases both build on established ground, and look towards the future.</p>
-<blockquote class="wp-block-quote">
-<p>Earlier this year, we set out a roadmap for AI on Ubuntu. Stonking Stingray delivers the first milestone through the integration of Myna: a speech-to-text agent that utilizes on-device LLMs. We’ve led Ubuntu’s first AI integration with accessibility to ensure that cutting-edge features are available to all users from day one.</p>
-<p>Users will also benefit from enhanced security features. Ubuntu 26.10 completes the migration to Rust-based coreutils, and broadens device support for TPM-backed FDE.  Stonking Stingray is symbolic of Ubuntu’s journey to not just build up, but also build out.</p>
-<cite>Jon Seager, VP of Ubuntu Engineering at Canonical</cite></blockquote>
-<div class="p-cta-block">
-<a class="p-button--positive" href="https://ubuntu.com/download">Download Ubuntu 26.10 for free</a>
-<a href="https://ubuntu.com/summit">Register for Ubuntu Summit 26.10 ›</a>
-</div>
-<h2 class="wp-block-heading">Elegance and accessibility with new speech-to-text agent</h2>
-<p>Stonking Stingray brings us <a href="https://ubuntu.com/blog/myna-speech-to-text-technology-preview-available">the debut of Myna</a>: Ubuntu’s speech-to-text agent. Named after the Myna bird (known for its ability to mimic human speech),  Myna is an opt-in feature in Ubuntu 26.10, designed to provide speech recognition with clear visual feedback while you speak. Based on local models, Myna offers speech-to-text, without sacrificing privacy. Myna will continue to evolve and as Ubuntu 28.04 LTS approaches, it will be included by default with Ubuntu.</p>
-<figure class="wp-block-image size-full"><img alt="" height="2108" loading="lazy" sizes="(min-width: 3474px) 3474px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_3474/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa244%2FScreenshot-from-2026-10-14-16-01-25.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa244%2FScreenshot-from-2026-10-14-16-01-25.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa244%2FScreenshot-from-2026-10-14-16-01-25.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa244%2FScreenshot-from-2026-10-14-16-01-25.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa244%2FScreenshot-from-2026-10-14-16-01-25.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fa244%2FScreenshot-from-2026-10-14-16-01-25.png 1920w" width="3474"/></figure>
-<p>Myna marks the first step towards a more natural, intent-driven Ubuntu Desktop experience that will enable users to express what they want to achieve, rather than manually navigate applications and settings. For example, a developer could simply say, “Help me investigate why my tests are failing,” and Ubuntu could analyze test results, locate relevant code, and prepare a workspace with the tools and information needed to troubleshoot the issue. </p>
-<p>Ubuntu 26.10 also ships with GNOME 51, bringing a smoother, more responsive desktop, better display handling, improved accessibility, and refinements across core applications. In addition, the Ubuntu App Center now provides a more consistent experience for managing snaps and debs.</p>
-<p>Users of assistive technology will benefit from improved support for Flutter applications, with assistive technologies like Orca (screen-reader) now able to better parse and understand the content included in Flutter applications.</p>
-<p>This release also brings reliability enhancements to the desktop userspace layers. Ubuntu 26.10 adopts dbus-broker as the default D-Bus implementation, replacing legacy message queuing between apps with strict per-app message accounting, ensuring a single app can’t stall the desktop. Additionally, desktop OOM (out-of-memory protection) scoring has been adjusted to better manage<s>–</s>memory pressure in userspace.</p>
-<h2 class="wp-block-heading">Security for present and future threats</h2>
-<p>Ubuntu Desktop now <a href="https://discourse.ubuntu.com/t/microsoft-entra-id-password-and-mfa-sign-in-comes-to-ubuntu/88342">integrates more naturally with Microsoft identity services</a>, including password with Multi-Factor Authentication (MFA), and passwordless authentication. This ensures devices can authenticate securely by default,  and under the same security umbrella as Windows devices in the same organization.</p>
-<p>TPM-backed full-disk encryption, which was rolled out in Ubuntu 26.04 LTS, has been expanded to encompass hardware models lacking a Hardware Root of Trust, with users being able to require a PIN or passphrase. These features ensure that users can use Ubuntu with best<s> </s>practice security enabled by default. </p>
-<p>Ubuntu 26.10 delivers post-quantum ready package signing, by replacing GnuPG with Sequoia PGP to verify APT repository signatures. Sequoia brings Rust’s memory-safe practices to package signing and acts as a barrier to the threat of quantum cryptographic attack attempts. Ubuntu 26.10 introduces quantum-safe token support via openCryptoki, providing robust PKCS #11 V3.2 coverage across multiple token types, including Soft, EP11, and CCA tokens with ML-DSA and ML-KEM integration.</p>
-<h2 class="wp-block-heading">A new kernel. The latest hardware. </h2>
-<p>Ubuntu 26.10 brings Linux kernel 7.3, which facilitates hardware enablement for the latest silicon, such as Intel Xe3P (Nova Lake), AMD Zen 6, and NVIDIA 615. As heterogeneous platforms like these span CPU cores, GPUs, and media decoders, the latest kernel brings the direct rendering management and power management hooks needed for these components to perform. </p>
-<p>Kernel 7.3 also enhances the way data is handled at the software level, through out-of-the-box support for Lustre, a parallel distributed file system designed to transfer massive datasets simultaneously across thousands of corporate nodes. </p>
-<p>Ubuntu 26.10 continues the tradition of delivering architecture-focused enhancements. Stonking Stingray will launch with a dedicated installer for amd64v3 hardware, ensuring that users with modern platforms get an optimized experience. For RISC-V users, Ubuntu 26.10 brings desktop images, complementing the work that had already been done to do so with Server images. This includes support for the first RVA23-enabled RISC-V hardware, the SpacemiT K3, ensuring that developers can meet the new standard with confidence on a stable OS. Together, these enhancements streamline setup for developers building on cutting-edge silicon.</p>
-<blockquote class="wp-block-quote">
-<p>2026 is the year of RVA23 silicon, so I’m thrilled to see desktop image support arrive for RISC-V in Ubuntu 26.10. It brings the power of the RVA23 profile to everyday applications including productivity, online meetings, video streaming and software development.</p>
-<cite>Andrea Gallo, CEO of RISC-V International</cite></blockquote>
-<h2 class="wp-block-heading">A speedy path to AI and software development</h2>
-<p>Beyond hardware enablement, Stonking Stingray also delivers enhanced support for running accelerated AI workloads. Ubuntu 26.04 LTS brought ROCm (AMD’s AI enablement stack for AMD hardware) into the Ubuntu archive. Ubuntu 26.10 upgrades that to the latest major version with support for ROCm 10.0. ROCm 10.0 adds support for new GPU architectures and serving frameworks like vLLM and SGLang.</p>
-<figure class="wp-block-image size-full"><img alt="" height="2108" loading="lazy" sizes="(min-width: 3474px) 3474px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_3474/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3b63%2FScreenshot-from-2026-10-14-16-03-56.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3b63%2FScreenshot-from-2026-10-14-16-03-56.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3b63%2FScreenshot-from-2026-10-14-16-03-56.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3b63%2FScreenshot-from-2026-10-14-16-03-56.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3b63%2FScreenshot-from-2026-10-14-16-03-56.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3b63%2FScreenshot-from-2026-10-14-16-03-56.png 1920w" width="3474"/></figure>
-<p>Ubuntu 26.10 also distributes the latest developer toolchains from upstream, including LLVM 22.1.6, GCC 15.2.0, Python 3.14.7, Rust 1.97.1, Zig 0.16, and Go 1.27. <a href="https://ubuntu.com/developers/docs/tutorials/java-advanced/spring-ai/">Spring AI</a> is also available on Ubuntu Desktop for the first time, through the devpack for Spring, a snap that bundles the latest features and versions of Spring. For those developing in Rust, Ubuntu 26.10 coincides with <a href="https://ubuntu.com/blog/devpack-for-rust-support">the release of the devpack for Rust</a>, bringing a batteries-included setup experience complete with flexible version management and robust IDE support.</p>
-<h2 class="wp-block-heading">Get started today </h2>
-<ul>
-<li><a href="https://documentation.ubuntu.com/release-notes/26.10/">Read the release notes</a></li>
-<li><a href="https://discourse.ubuntu.com/">Follow the Ubuntu engineering team on Discourse</a></li>
-</ul>
-<div class="p-cta-block">
-<a class="p-button--positive" href="https://ubuntu.com/download">Download Ubuntu 26.10 for free</a>
-<a href="https://ubuntu.com/summit?utm_source=2610launch&amp;utm_medium=referral">Register for Ubuntu Summit 26.10 ›</a>
-</div>
-<h2 class="wp-block-heading">About Canonical</h2>
-<p>Canonical, the publisher of Ubuntu, provides open source security, support and services. Our portfolio covers critical systems, from the smallest devices to the largest clouds, from the kernel to containers, from databases to AI. With customers that include top tech brands, emerging startups, governments and home users, Canonical delivers trusted open source for everyone. </p>
-<p>Learn more at <a href="http://canonical.com">canonical.com</a></p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Launchpad product roadmap updates – Blueprints and Translations</title>
