@@ -6,9 +6,97 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Sun, 18 Oct 2026 03:31:35 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 03:42:49 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sobre GenAI LLMs y Knowledge workers</title>
+      <link>https://foursixnine.io//blog/software/genai/ai/venezuela/software%20engineering/security/2026/10/18/sobre-genai-y-knowledge-work.html</link>
+      <guid isPermaLink="true">https://foursixnine.io//blog/software/genai/ai/venezuela/software%20engineering/security/2026/10/18/sobre-genai-y-knowledge-work.html</guid>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Eres un Knowledge Worker o trabajas en tecnología y tienes dudas sobre el futuro con todo esto de las LLM, agentes y demas?… aca dejo unos pensamientos que tengo desde hace rato, pero hoy como que les pude dar forma gracias a una pequeña encuesta en un grupo  de <a href="https://t.me/ProgramadoresVenezuela/1074046">Programadores de Venezuela</a> en Telegram.</p>
+
+<p>Pero antes de continuar, Don’t Panic!</p>
+
+<p><img src="/assets/images/dont-panic.png" alt="DON'T PANIC" /></p>
+
+<p>La encuesta en cuestión tiene las siguientes opciones:</p>
+
+<blockquote>
+  <p>El futuro sigue estando en los humanos?</p>
+
+  <ul>
+    <li>🔘 El futuro es humano, la IA llegará a un techo que nos dará años donde todo seguirá igual</li>
+    <li>🔘 Las áreas del conocimiento solo serán de top 10% humanos más inteligentes y la IA</li>
+    <li>🔘 Los humanos no tendrán oportunidad, vamos a una época donde las armas y la juventud son el valor</li>
+    <li>🔘 El futuro solo estará en los bienes y valores finitos, también el como validamos esos valores</li>
+  </ul>
+</blockquote>
+
+<p>Y llevo bastante tiempo regresando aveces a la misma analogía que escuche en un podcast de Thoughtworks<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> y quise expandir un poco mas (y se termino convirtiendo en algo bastante largo… because, well… brain):</p>
+
+<blockquote>
+  <p>Porque en 1970, los contadores dedicaban la mayor parte de su tiempo a recalcular manualmente hojas de cálculo en papel. Luego llegó la hoja de cálculo electrónica. Y supuso un cambio radical para ellos. Y no los convirtió en mejores contadores. Simplemente eliminó gran parte del trabajo tedioso.</p>
+</blockquote>
+
+<p>Y aquí es donde yo pienso que de la misma forma que usamos un compilador, un analizador de código estático, linter, hojas de calculo, traductores (google translate), motores de búsqueda e incluso ML y otras cosas del conglomerado de AI, utilizar GPTs y otros tipos de modelos para el trabajo del día a día… </p>
+
+<p>Aquí la comparación que yo hago es a la introducción del brazo robótico en fabricas o la invención de la central telefónica automatizada… </p>
+
+<p>Los contadores siguen usando hojas de calculo y calculadora, solo que ahora todos sabemos usar una hoja de calculo en mayor o menor medida… </p>
+
+<p>En las fabricas y almacenes siguen teniendo humanos en diferentes partes de sus procesos y la automatización ayuda a ensamblado de partes, soldar componentes, etc… y hoy por hoy tenemos en muchos lugares escaleras mecánicas, puertas automáticas con sensores y hasta juguetes para lanzar un NERF al que rompió producción (si trabajas en oficina claro) o incluso cosas como impresoras 3d o CNC de sobremesa, o servicios como JLCPCB</p>
+
+<p>El oficio de telefonista cambio, y ahora hay recepcionistas, operadores de servicio de atención al cliente (call centers), etc… y ahora aveces hasta hay un chatbot o operador automata antes de que puedas hablar con un humano</p>
+
+<p>Todas estas eran trabajo manual que se hacia que requería una parte física para poder realizarse o era knowledge work que no se podia automatizar porque la tecnología no existía…  </p>
+
+<p>Y ahora es que la automatización esta tocando al area de desarrollo de software de una forma muy dramática y a velocidad vertiginosa… </p>
+
+<p>Entonces de la misma forma que ahora tu como ingeniero de software puedes tener tu propia hoja de calculo para llevar tus impuestos y finanzas personales (i.e yo), o una impresora 3d para prototipar esas partes que necesitas para algo que se rompió o ajustar algo (i.e mejorar el flujo de aire en tu computador)… pues ahora <em>$fulanito</em> podría sentarse por su cuenta o con alguien mas a resolver el problema que tiene…</p>
+
+<p>O como mucho ya pasa: Alguien usa un LLM para generar thumbnails de videos o imágenes desde su teléfono, en lugar de contratar a un diseñador grafico o Alguien decide que puede hacer que su idea se haga realidad y se vibecodea algo desde cero… </p>
+
+<p>Al final, citando a phenobarbital (en el 2023!):</p>
+
+<blockquote>
+  <p><em>entonces, hay un bojote de Juniors copy&amp;paste que solo aprendieron haciendo cursos de $plataforma sin mucho ánimo de gastar 3 neuronas en análisis
+la informática y la creación de sistemas tiene mucho de arte y análisis
+y menos de monkey-coders y tira-flechas</em></p>
+</blockquote>
+
+<p>Y nuevamente en el 2026:</p>
+<blockquote>
+  <p><strong>foursixnine</strong>: <em>Si no pueden sentarse en una entrevista tecnica, sin usar AI… nunca fueron seniors para empezar?…  No digo que deban saber echar codigo en $lenguaje de memoria, pero los basics deberian estar alli.</em></p>
+
+  <p><strong>phenobarbital</strong>: _en efecto, vamos a ponernos filosóficos:</p>
+
+  <p>hay una escena en “Los pilares de la tierra” de Follet, dónde el arzobispo de Kingsbridge le dice a Tom Builder (el hombre que está construyendo la catedral), vieron como un obrero estaba haciendo mala mezcla pero él (tom) estaba muy ocupado poniendo bloques_</p>
+
+  <p><strong>phenobarbital</strong>: <em>que muy chévere que te guste echar ladrillo y bloques, pero ahora eres maestro constructor, o supervisas a tus empleados o tiras bloques</em></p>
+
+  <p><strong>phenobarbital</strong>:  no puedes dirigir y batir cemento</p>
+
+  <p><strong>phenobarbital</strong>: <em>y llega un punto en tu vida en que decides, batir cemento o dirigir obrero…</em></p>
+
+  <p><strong>phenobarbital</strong>: <em>si “usar la IA” para algunos es “pedirle que tire bloques sin saber cómo se hace el tramado o con qué densidad se bate la mezcla”</em></p>
+
+  <p><strong>phenobarbital</strong>: <em>no eres un senior, eres un monkey coder que reemplazó las manos para lanzar código por otro artilugio que también lanza código y que igual, tampoco entiendes</em></p>
+</blockquote>
+
+<p>En fin, <a href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#Don't_Panic">don’t panic</a>!.</p>
+
+<p>Como lectura recomendada: La pagina de <a href="https://en.wikipedia.org/wiki/Automation">Automatizacion</a> de wikipedia y la de <a href="https://en.wikipedia.org/wiki/Robot">Inteligencia artificial</a> (en ingles)</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://www.thoughtworks.com/insights/podcasts/technology-podcasts/generative-ai-future-knowledge-work#:~:text=And%20in%20the%20short%2Dterm%20altered%20somewhat%20by,they%20stopped%20using%20adding%20machines%20so%20much">Generative AI and the future of knowledge work</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></description>
+      <source url="https://foursixnine.io/atom.xml">Santiago Zarate</source>
+    </item>
     <item>
       <title>How to lower Android™ development costs by removing hardware from the critical path</title>
       <link>https://ubuntu.com//blog/lower-android-development-cost</link>
@@ -2290,47 +2378,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
       <source url="https://popey.com/blog/post/index.xml">Alan Pope</source>
     </item>
     <item>
-      <title>Introducing pass-exporter - Export your passwords from pass to bitwarden csv format</title>
-      <link>https://foursixnine.io//blog/security/software/2026/02/19/exportingyourpasswordsfrompasstobitwardencsvformat.html</link>
-      <guid isPermaLink="true">https://foursixnine.io//blog/security/software/2026/02/19/exportingyourpasswordsfrompasstobitwardencsvformat.html</guid>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>This is a rudimentary attempt (that surprisingly works) to export passwords from <a href="https://www.passwordstore.org">pass</a> to Bitwarden  <a href="https://bitwarden.com/help/condition-bitwarden-import/">csv format</a></p>
-
-<p>As a requisite you need to have the private key that protects the passwords, exported as an ASCII armored key (Or whatever the nomenclature is), the important bit is that you export it:</p>
-
-<p><code class="language-plaintext highlighter-rouge">gpg --export-secret-keys --armor $YOURFINGERPRINT &gt; private-key.asc</code></p>
-
-<p>To run simply run, you need to clone the sources from the <a href="https://github.com/foursixnine/pass-exporter">git repo</a><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">1</a></sup> and inside the directory run:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>go run . --private-key private-key.asc --identity alice@example.com
-</code></pre></div></div>
-
-<p>Alternatively you can build it and then run it (Sky is the limit)</p>
-
-<p>You can check usage too by passing <code class="language-plaintext highlighter-rouge">--help</code>, It runs fairly fast, and in the end up with a <code class="language-plaintext highlighter-rouge">pass_exported_passwords.csv</code> (again see program help for defaults).</p>
-
-<p>A feature that I’d like to add is a support for user plugins, to i.e check if an otp token is duplicated, or if a password is being reused, but that’s for the future. <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">2</a></sup></p>
-
-<p>As usual PRs are welcome, specially for adding tests.</p>
-
-<p>PS: “Maybe” I fix the program to be able to be installed via <code class="language-plaintext highlighter-rouge">go install $foo</code> (or somebody submits a PR :D)</p>
-
-<hr />
-<h2 id="footnotes">Footnotes</h2>
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:2" role="doc-endnote">
-      <p>The repo is located at: <a href="https://github.com/foursixnine/pass-exporter">https://github.com/foursixnine/pass-exporter</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-    <li id="fn:1" role="doc-endnote">
-      <p><a href="https://www.youtube.com/watch?v=LeGrl74YSMU">That ain’t gonna happen?</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>]]></description>
-      <source url="https://foursixnine.io/atom.xml">Santiago Zarate</source>
-    </item>
-    <item>
       <title>Python Mutable References with Caching</title>
       <link>https://soumyadghosh.github.io/website/blog/python-mutable-reference-caching/</link>
       <guid isPermaLink="true">https://soumyadghosh.github.io/website/blog/python-mutable-reference-caching/</guid>
@@ -2538,6 +2585,140 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 <p class="wp-block-paragraph">I attempted to use new API additions in recent Qt 6 versions to interact with a few real-world REST services. The additions are valuable, but it seems that there are a few places where improvements might be possible. My attempt to make the API feel closer to what developers in other environments might be accustomed to had some success, but I&#8217;m not sure <code>QFuture</code> is really intended to be used this way.<br>Do readers have any feedback? Would using QCoro improve the coroutine experience? Is it very unusual to create an application with QWidgets instead of QML these days? Should I have used PyQt and the python networking APIs?</p>]]></description>
       <source url="https://steveire.wordpress.com/feed/?mrss=off">Stephen Kelly</source>
+    </item>
+    <item>
+      <title>Free software activity in November 2025</title>
+      <link>https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</link>
+      <guid isPermaLink="true">https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</guid>
+      <pubDate>Thu, 04 Dec 2025 17:55:59 GMT</pubDate>
+      <description><![CDATA[<p>My Debian contributions this month were all
+<a href="https://www.freexian.com/about/debian-contributions/">sponsored</a> by
+Freexian.  I had a bit less time than usual, because Freexian collaborators
+gathered in Marseille this month for our yearly sprint, doing some planning
+for next&nbsp;year.</p>
+<p>You can also support my work directly via
+<a href="https://liberapay.com/cjwatson">Liberapay</a> or <a href="https://github.com/sponsors/cjwatson">GitHub
+Sponsors</a>.</p>
+<h2>OpenSSH</h2>
+<p>I began preparing for the second stage of the <a href="https://lists.debian.org/debian-devel/2024/04/msg00044.html"><span class="caps">GSS</span>-<span class="caps">API</span> key exchange package
+split</a> (some
+details have changed since that message).  It seems that we&#8217;ll need to wait
+until Ubuntu 26.04 <span class="caps">LTS</span> has been released, but that&#8217;s close enough that it&#8217;s
+worth making sure we&#8217;re ready.  This month I just did some packaging
+cleanups that would otherwise have been annoying to copy, such as removing
+support for direct upgrades from pre-bookworm.  I&#8217;m considering some other
+package rearrangements to make the split easier to manage, but haven&#8217;t made
+any decisions here&nbsp;yet.</p>
+<p>This also led me to start on a long-overdue bug triage pass, mainly
+consisting of applying usertags to lots of our open bugs to sort them by
+which program they apply to, and also closing a few that have been fixed,
+since some bugs will eventually need to be reassigned to <span class="caps">GSS</span>-<span class="caps">API</span> packages
+and it would be helpful to make them easier to find.  At the time of
+writing, about 30% of the bug list remains to be categorized this&nbsp;way.</p>
+<h2>Python&nbsp;packaging</h2>
+<p>I upgraded these packages to new upstream&nbsp;versions:</p>
+<ul>
+<li>aioftp</li>
+<li>basemap (fixing <a href="https://bugs.debian.org/1119728">Cython 3.1
+  compatibility</a>)</li>
+<li>billiard</li>
+<li>black</li>
+<li>django-phonenumber-field</li>
+<li>flask-security</li>
+<li>flufl.i18n</li>
+<li>langtable</li>
+<li>mariadb-connector-python</li>
+<li>peewee (fixing <a href="https://bugs.debian.org/1119757">Cython 3.1
+  compatibility</a>)</li>
+<li>pydantic</li>
+<li>pydantic-core</li>
+<li>pydantic-settings</li>
+<li>pylsqpack</li>
+<li>pymongo</li>
+<li>pymssql</li>
+<li>pyodbc</li>
+<li>python-auditwheel (<a href="https://github.com/pypa/auditwheel/pull/640">contributed follow-up fix
+  upstream</a>)</li>
+<li>python-avro</li>
+<li>python-bleach</li>
+<li>python-btrees</li>
+<li>python-certifi</li>
+<li>python-charset-normalizer</li>
+<li>python-colorlog</li>
+<li>python-django-channels</li>
+<li>python-django-constance</li>
+<li>python-django-contact-form</li>
+<li>python-django-hashids</li>
+<li>python-djvulibre (fixing <a href="https://bugs.debian.org/1119766">Cython 3.1
+  compatibility</a>)</li>
+<li>python-evalidate</li>
+<li>python-legacy-cgi</li>
+<li>python-openstep-plist (fixing <a href="https://bugs.debian.org/1119767">Cython 3.1
+  compatibility</a>)</li>
+<li>python-pytest-run-parallel</li>
+<li>python-pytokens</li>
+<li>python-tblib</li>
+<li>python-webargs</li>
+<li>pyupgrade</li>
+<li>sqlfluff</li>
+<li>trove-classifiers</li>
+<li>ttconv</li>
+<li>wcwidth</li>
+<li>zope.hookable</li>
+<li>zope.i18nmessageid (removing <a href="https://bugs.debian.org/1084014">run-time dependency on
+  setuptools</a>)</li>
+<li>zope.interface</li>
+<li>zope.proxy</li>
+<li>zope.security (removing <a href="https://bugs.debian.org/1084018">run-time dependency on
+  setuptools</a>)</li>
+<li>zope.sqlalchemy</li>
+</ul>
+<p>I packaged <a href="https://bugs.debian.org/1120507">django-pgtransaction</a> and
+backported it to trixie, since we plan to use it in Debusine; and I adopted
+python-certifi for the Python&nbsp;team.</p>
+<p>I fixed or helped to fix several other build/test&nbsp;failures:</p>
+<ul>
+<li><a href="https://bugs.debian.org/1119744">kivy</a></li>
+<li><a href="https://bugs.debian.org/1120242">mypy</a></li>
+<li><a href="https://bugs.debian.org/1114284">pytest-mypy-testing</a> (<a href="https://github.com/davidfritzsche/pytest-mypy-testing/pull/57">contributed
+  upstream</a>)</li>
+<li><a href="https://salsa.debian.org/python-team/packages/python-cytoolz/-/commit/52856c4c1d1bc9fab0241e4c1b0d20d75bdaa99a">python-cytoolz</a></li>
+<li><a href="https://bugs.debian.org/1120725">python-discord</a></li>
+<li><a href="https://bugs.debian.org/1120469">python-ncls</a>, fixing some failures in&nbsp;pyranges</li>
+<li><a href="https://bugs.debian.org/1121095">pyxdg</a></li>
+<li><a href="https://bugs.debian.org/1114415">traitlets</a></li>
+<li><a href="https://bugs.debian.org/1120228">twine</a></li>
+</ul>
+<p>I fixed a couple of other&nbsp;bugs:</p>
+<ul>
+<li><a href="https://bugs.debian.org/1119801">pmix: B-D on python3-all-dev, but not built for all supported Python3&nbsp;versions</a></li>
+<li><a href="https://bugs.debian.org/1064621">python-certifi: Package not compatible with&nbsp;multiarch</a></li>
+</ul>
+<h2>Other bits and&nbsp;pieces</h2>
+<ul>
+<li><a href="https://bugs.debian.org/1087524">cdebconf: Move to&nbsp;/usr/lib/apt/apt-extracttemplates</a></li>
+<li><a href="https://salsa.debian.org/debian/devscripts/-/merge_requests/588">devscripts: Restore dpkg-dev&nbsp;dependency</a></li>
+<li><a href="https://bugs.debian.org/1121577">groff: Missing information about some utilities in the &#8220;contrib&#8221;&nbsp;directory</a></li>
+</ul>
+<h2>Code&nbsp;reviews</h2>
+<ul>
+<li><a href="https://bugs.debian.org/1119914">base-passwd: French translation</a> (merged
+  and&nbsp;uploaded)</li>
+<li><a href="https://salsa.debian.org/installer-team/cdebconf/-/merge_requests/23">cdebconf: Consider using the standard dh sequence in
+  d/rules</a>
+  (merged and&nbsp;uploaded)</li>
+<li><a href="https://bugs.debian.org/430151">cdebconf: Multiple select is not right aligned in
+  Hebrew</a> (patch fails to build; asked
+  reporter for an&nbsp;update)</li>
+<li><a href="https://bugs.debian.org/1078936">cdebconf: Allow building without
+  libglib2.0-dev</a> (merged and&nbsp;uploaded)</li>
+<li><a href="https://bugs.debian.org/1121035">pydantic-core</a> (merged and&nbsp;uploaded)</li>
+<li>pymongo (sponsored adoption by Aryan&nbsp;Karamtoth)</li>
+<li><a href="https://salsa.debian.org/python-team/packages/maturin/-/merge_requests/1">python-maturin: Add missing build
+  dependencies</a>
+  (merged and&nbsp;uploaded)</li>
+</ul>]]></description>
+      <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
     </item>
     <item>
       <title>Why I Won’t Be Attending or Speaking at Ubuntu Summit 25.10</title>
