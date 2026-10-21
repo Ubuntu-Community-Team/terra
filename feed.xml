@@ -6,9 +6,148 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Tue, 20 Oct 2026 04:01:19 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 03:50:34 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>From personas to archetypes: a living, shared understanding of the people we build for (Part 1 of 2)</title>
+      <link>https://ubuntu.com//blog/from-personas-to-archetypes</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/from-personas-to-archetypes</guid>
+      <pubDate>Mon, 19 Oct 2026 23:07:00 GMT</pubDate>
+      <description><![CDATA[<p><em>Personas are easy to create but often ignored. This is the first of two posts about how we developed archetypes to keep our personas fresh at Canonical. These are shared, machine-readable descriptions of our users that multiple teams and their agents can use. This post explains the system, its purpose, and its structure. The second post’ll cover how we maintain and update it.</em></p>
+<p>Personas should be functional tools. They frequently become decorative elements in slide decks that are forgotten after the initial workshop. The primary challenge is ensuring they remain used, accurate, and relevant.</p>
+<p>At Canonical, this challenge increases with our scope. We develop over 60 technical products for a wide range of users, including hobbyists with home servers and CTOs managing large fleets of machines. Individual teams understand their specific users, but there are no clear ways to share this to other teams. </p>
+<p>We needed a common understanding of our users that was broad enough for company-wide alignment and detailed enough for specific product work. Achieving both breadth and depth simultaneously sounded difficult.</p>
+<p>We addressed this by building a system we call archetypes. We define archetypes as user types based on distinct interest and behavior, which in turn helps us to structure our design and messaging. Their scope is both product and brand, and they are a tool to align the two. Our archetypes also differ from what is commonly called as “brand archetypes”, often used to give a brand a persona.</p>
+<h2 class="wp-block-heading">Why we wanted to go beyond the usual personas</h2>
+<p>We observed two challenges with personas in the past.</p>
+<p>First, a common challenge in design is personas becoming obsolete, and hard to update. A team performs interviews and makes the personas. They post the document and finish working on it, as they treat the task as a project to be concluded. They fail to update the document when they learn new information, and the persona becomes inaccurate within a year. Other teams notice the inaccuracies and lose trust in the data. </p>
+<p>Second, a large language model can easily generate a persona, for example for a Security Engineer, that sounds plausible, but lacks evidence, and risks delivery stereotypes. Models provide a generic average of the training data. However, this doesn’t describe our specific operators. (Before LLMs, this problem was called <a href="https://alistapart.com/article/beware-the-cut-n-paste-persona/">cut-n-paste personas</a>.)</p>
+<p>An archetype needs to be maintained like a product instead of treating it as a completed project. User descriptions require current evidence to be useful. We did not need more documents, we needed a shared vocabulary based on sources.</p>
+<p>We used this idea to separate archetypes from personas.</p>
+<figure class="wp-block-image size-full"><img alt="" height="1320" loading="lazy" sizes="(min-width: 2240px) 2240px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_2240/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F814d%2Farchetypes-card.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F814d%2Farchetypes-card.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F814d%2Farchetypes-card.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F814d%2Farchetypes-card.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F814d%2Farchetypes-card.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F814d%2Farchetypes-card.png 1920w" width="2240"/><figcaption class="wp-element-caption">Fig 1: The structure of an archetype card, with a citation behind claims.</figcaption></figure>
+<h2 class="wp-block-heading">What is an archetype?</h2>
+<p>An archetype describes a user type based on behavior across our whole portfolio. It’s not a list of demographics and general flavor test, like name, coffee order, or stock photo standing in for a person. Instead we describe how they evaluate a new tool, what breaks their trust, and what a bad Tuesday looks like for them. Behaviors trace back to a source (an interview, a support thread, a pattern that showed up across a dozen conversations) so a claim can be checked rather than taken on faith.</p>
+<p>An archetype also doesn’t belong to the team that happened to write it, they are applicable to our full portfolio. We organize them by where someone sits in the customer journey (e.g. day 0 evaluation, day 1 deployment, day 2 operations) so a dozen teams building for the same infrastructure operator work from the same file instead of each running their own round of interviews and drawing their own conclusions.</p>
+<p>A contextual persona is the other half: a team’s own take on that same user, built for a particular product, feature, or launch. It reads like a traditional persona, named, detailed, scoped to one use case, but it’s layered on top of an archetype rather than standing alone.</p>
+<h2 class="wp-block-heading">Two tiers: broad and deep</h2>
+<p>This is how we get breadth and depth at once: two tiers.</p>
+<p>The archetypes are the broad, portfolio-wide view. Our User Science team maintains them centrally. Underneath, teams build contextual personas for their own feature or product launch, owned by the team using them. A contextual persona never starts from a blank page: it starts from the archetype, inheriting the same evidence and behavior, and when a team learns something new building contextual persona, it feeds back into the archetype instead of staying stuck in one team.</p>
+<figure class="wp-block-image size-full"><img alt="" height="872" loading="lazy" sizes="(min-width: 2240px) 2240px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_2240/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fbbf7%2Farchetypes-two-tiers.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fbbf7%2Farchetypes-two-tiers.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fbbf7%2Farchetypes-two-tiers.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fbbf7%2Farchetypes-two-tiers.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fbbf7%2Farchetypes-two-tiers.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fbbf7%2Farchetypes-two-tiers.png 1920w" width="2240"/><figcaption class="wp-element-caption">Fig 2: One archetype informs each team’s contextual persona, and what they learn from personas, feeds back to the archetype..</figcaption></figure>
+<p>Alignment comes from the top with the archetypes in place. Details live at the edge, in each team’s contextual persona. As we keep the contextual personas together in a single repository, a team looking to understand, say, DevOps engineers begins from an archetype already shaped by what other teams have learned, and can look at their contextual personas for inspiration.</p>
+<h2 class="wp-block-heading">What changes when you have archetypes</h2>
+<p>A shared description of a user is only useful when people reach for it, so we’ve spent as much effort on needfinding and adoption as on the archetypes themselves. </p>
+<p>Archetypes also change how our agents work. Once the verified archetypes became structured, machine-readable files, they represented a context an agent could rely on. Instead of prompting an untuned model, a team can point its agent at the archetypes we stand behind. </p>
+<p>What’s more, we can use these agentic experiments to continue to check the archetypes against reality. For example, we can use an archetype to inform targeting for a marketing campaign and see whether it actually performs.</p>
+<p>We view one of the most valuable outcomes as building a shared language across our diverse teams for talking about users, with a system designed to keep that language accurate as our understanding grows.</p>
+<p>All of this is very much in progress, and (inspired by engineering maintenance culture and changelogs) within Canonical we’re keeping the archetypes, including the way we make them, transparently available to the whole organization, so anyone can trace a claim, disagree with it, or build on the work. Personas are meant to be used. We’re trying to keep ours worth using.</p>
+<p>The second post is about how we build and maintain the archetypes.</p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<h3 class="wp-block-heading"><strong>Join the Canonical design team</strong></h3>
+<p>We’re looking for designers who care about craft and how systems work under the hood. At Canonical, design sits at the intersection of UX, engineering, and open source where we shape cohesive, accessible experiences across cloud, desktop, and IoT products.</p>
+<p>If you enjoy solving complex problems and turning technical depth into clarity, explore our open roles: <a href="https://canonical.com/careers/web-and-design/?utm_source=ownedcontent-canonical-design-blog&amp;utm_medium=blog&amp;utm_campaign=evergreen-recruiting&amp;utm_content=evergreen-blog"><strong>canonical.com/careers</strong></a></p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
+    <item>
+      <title>Protect your Launchpad API tokens with a security key</title>
+      <link>https://blog.launchpad.net/general/protect-your-launchpad-api-tokens-with-a-security-key</link>
+      <guid isPermaLink="true">https://blog.launchpad.net/general/protect-your-launchpad-api-tokens-with-a-security-key</guid>
+      <pubDate>Mon, 19 Oct 2026 20:40:02 GMT</pubDate>
+      <description><![CDATA[<p>Supply-chain attacks that harvest developer credentials are on the rise. The <a href="https://unit42.paloaltonetworks.com/npm-supply-chain-attack/">Shai-Hulud</a> campaign, for example, used automated scanners to sweep up any secrets they could find in files and keyrings. If you use Launchpad&#8217;s API, one of those secrets is your API token &#8211; and until now it has been about as safe as the laptop it sits on.</p>
+
+
+
+<p>Launchpad now supports <strong>hardware-bound API tokens</strong>: you can tie your API access to a USB FIDO2 security key, such as a YubiKey, so that a stolen token is useless to an attacker who does not have your physical key.</p>
+
+
+
+<h2>The problem</h2>
+
+
+
+<p>Tools like lp-shell and ubuntu-archive-tools use the launchpadlib library to talk to Launchpad. After you log in, launchpadlib stores your OAuth token &#8211; either as a plaintext file on disk or in your desktop keyring. The keyring is unlocked when you log in to your session, so to anything running as you, or to malware that can read your files, that token is effectively plaintext.</p>
+
+
+
+<p>For most people that is an acceptable risk. For core developers, stable release update team members, archive administrators, and Launchpad developers who run a lot of unaudited code, it is a tempting target.</p>
+
+
+
+<h2>The idea</h2>
+
+
+
+<p>Hardware-bound API tokens change what gets stored. Instead of a usable token, launchpadlib stores a long-lived OAuth <strong>refresh grant</strong> that is useless on its own. To do anything with it, launchpadlib has to ask your security key to sign a challenge from Launchpad, which mints a <strong>short-lived access token</strong> for the actual API calls.</p>
+
+
+
+<p>The stored grant cannot mint a token without the key. So if an attacker copies your grant, they get nothing &#8211; the signing happens on a device they do not have.</p>
+
+
+
+<h2>How it works</h2>
+
+
+
+<p>Once you have registered a key and issued a grant, logging in looks like this:</p>
+
+
+
+<ol><li>launchpadlib loads your stored refresh grant.</li><li>It asks Launchpad for a challenge.</li><li>Your security key signs the challenge (you touch the key, and enter its PIN if it has one).</li><li>Launchpad verifies the signature against your registered key and returns a short-lived access token.</li><li>launchpadlib uses that token for API calls until it is close to expiry, then you need to touch your hardware key to renew.</li></ol>
+
+
+
+<p>The signing step is a standard WebAuthn assertion &#8211; the same mechanism browsers use for passkeys &#8211; so it builds on a well-tested security model.</p>
+
+
+
+<h2>Keeping it usable</h2>
+
+
+
+<p>Security that gets in the way does not get used, so the design keeps everyday work smooth:</p>
+
+
+
+<ul><li>A minted access token is reused until it is nearly expired, so you are not touching your key on every command.</li><li>Long-running scripts keep working; the token is renewed as needed.</li><li>The grant is stored in your keyring by default, or in a file you control if you prefer.</li></ul>
+
+
+
+<h2>What it protects &#8211; and what it doesn&#8217;t</h2>
+
+
+
+<p>Being honest about the boundaries matters:</p>
+
+
+
+<ul><li><strong>Opportunistic theft</strong> of stored credentials &#8211; the main thing this defends against. A scanner that grabs your grant gets something it cannot use.</li><li><strong>Targeted attacks on your user session</strong> &#8211; if an attacker can already run code as you, they could still capture a freshly minted access token. Reducing that exposure is future work.</li><li><strong>Root-level compromise</strong> &#8211; out of scope. If an attacker owns the machine, no client-side measure fully protects you.</li></ul>
+
+
+
+<p>This is also specifically about <strong>programmatic access through launchpadlib</strong>, not logging in to the Launchpad website, and it is not intended for automation or bot accounts.</p>
+
+
+
+<h2>Try it</h2>
+
+
+
+<p>You will need a USB FIDO2 security key and launchpadlib with the fido2 extra:</p>
+
+
+
+<pre class="wp-block-code"><code>pip install 'launchpadlib&#91;fido2]'</code></pre>
+
+
+
+<p>Then register your key, issue a grant, and log in with it. The step-by-step instructions are in the Launchpad documentation&#8217;s how-to, <a href="https://ubuntu.com/docs/launchpad/user/how-to/launchpadlib/use-hardware-bound-api-tokens/"><em>Use hardware-bound API tokens</em></a>, with the design and protocol covered in the developer docs.</p>
+
+
+
+<p>We would love your feedback as you start using it! <a href="mailto:feedback@launchpad.net">feedback@launchpad.net</a></p>]]></description>
+      <source url="http://news.launchpad.net/feed">Launchpad News</source>
+    </item>
     <item>
       <title>Sobre GenAI LLMs y Knowledge workers</title>
       <link>https://foursixnine.io//blog/software/genai/ai/venezuela/software%20engineering/security/2026/10/18/sobre-genai-y-knowledge-work.html</link>
@@ -96,51 +235,6 @@ y menos de monkey-coders y tira-flechas</em></p>
   </ol>
 </div>]]></description>
       <source url="https://foursixnine.io/atom.xml">Santiago Zarate</source>
-    </item>
-    <item>
-      <title>How to lower Android™ development costs by removing hardware from the critical path</title>
-      <link>https://ubuntu.com//blog/lower-android-development-cost</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/lower-android-development-cost</guid>
-      <pubDate>Fri, 16 Oct 2026 09:50:26 GMT</pubDate>
-      <description><![CDATA[<p>As an Android developer, you’ll almost always have access to <em>a</em> device. However, when handling hardware, the device that you actually need often happens to be already in use, set up incorrectly, stored in another lab, or simply waiting to be reset. That’s when Android development costs start to increase.</p>
-<p>Because it’s not <em>just</em> the device itself that generates expenses, it’s everything around it: procurement, provisioning, maintenance, remote access, lab capacity, and, worst of all: your engineering time. A developer waiting for the right dev environment still constitutes a cost.</p>
-<p>So, how can you solve that problem?</p>
-<h2 class="wp-block-heading">Do my tests actually need hardware?</h2>
-<p>We all know that hardware still plays a big role in Android development. If you need to validate sensors, peripherals, real target performance, the hardware integration itself, or even the genuine user experience, you’re going to need the physical target device.</p>
-<p>But most workloads competing for those devices can run elsewhere.</p>
-<p>When building Android, testing an application, <a href="https://canonical.com/blog/what-the-cyber-resilience-act-cra-means-for-android-development">reproducing a bug</a>, or even running regression tests, there’s absolutely no need for any physical device. So instead of asking yourself if a specific target device is available, the question you should ask is whether you need a device at all.</p>
-<p>The distinction is important here, because hardware labs are obviously much harder to scale than software.</p>
-<p>More developers often means more builds, more tests, and more configurations. That typically means a higher need for devices, benches, and more infrastructure to have enough capacity for peak times when relying on hardware-first. As you can see, Android development costs aren’t only a result of the gear itself, but the effort to run it, and the engineering time lost when access becomes a bottleneck.</p>
-<h2 class="wp-block-heading">Android infrastructure operations</h2>
-<p>When moving workloads away from hardware, Android environments can then <a href="https://ubuntu.com/blog/android-development-shouldnt-start-with-a-physical-device">be provisioned when needed</a>, <a href="https://ubuntu.com/blog/android-belongs-in-your-ci-cd-pipeline">integrated into Continuous Integration and Continuous Delivery/Deployment (CI/CD) pipelines</a>, <a href="https://ubuntu.com/blog/scaling-android-development-without-scaling-hardware">run in parallel</a>, and discarded afterwards. A cloud-first approach is much simpler than a hardware one. Just request your environment, run your tests, and safely release it.</p>
-<p>The secret trick is to be wise when choosing <a href="https://ubuntu.com/blog/virtualized-android-comes-to-anbox-cloud">the appropriate execution environment</a> for the job you want to run: use containers when you need app density and scale, virtual machines if you need to run a custom Android image, and physical devices for when the tests truly depend on physical components.</p>
-<p>With Anbox Cloud, these cloud environments can co-exist in exactly the same development workflow. Developers can continue using familiar tools such as Android Debug Bridge (ADB), Android Studio, their existing test frameworks, and usual CI/CD systems.</p>
-<p>Let’s take the example of a support or validation team that needs to reproduce issues across many Android configurations. In a hardware-first setup, that means finding the right device, checking its software version, reserving it, reconfiguring it, and setting up remote access before debugging even starts.</p>
-<p>With cloud-based Android environments, the same team can keep predefined images for common configurations and start them on demand. Several engineers can work in parallel, while physical devices are reserved for cases that truly require hardware validation.</p>
-<p>In this instance, costs are lowered not simply because there is one less phone on a shelf. It is the time spent finding, preparing, and sharing that phone and the extra capacity required to make sure one is available when demand peaks. A device sitting idle is inefficient. An engineer sitting idle because the right device isn’t available is even more expensive.</p>
-<h2 class="wp-block-heading">Where Android development costs actually come from, and how to reduce your expenses</h2>
-<p>Generally, there are three cost areas worth looking at: the first obvious cost is hardware, then operations (setup, maintenance, and so on), and, last but not least: engineering time. The impact of that last element is easy to underestimate.</p>
-<p>If fewer workloads depend on dedicated devices, teams need less hardware capacity to support the same level of development activity. Here is how using Anbox Cloud helps you to improve these three cost areas:</p>
-<ul>
-<li>Hardware cost: fewer devices, benches, and supporting infrastructure need to be provisioned for peak demand</li>
-<li>Operational cost: less manual setup, maintenance, and environment management</li>
-<li>Engineering-time cost: less waiting for shared resources and more opportunities to run workloads in parallel</li>
-</ul>
-<p>If ten tests need to run, they should not necessarily queue behind the same physical bench. If an issue needs to be reproduced, an engineer should not have to spend time rebuilding the right configuration manually. Software-defined environments can be created specifically for the workload and removed afterwards.</p>
-<p>That also means that the customized hardware you do have can then be reserved for the tests that can’t do without it. Reducing Android development cost therefore becomes more than reducing hardware spending. It becomes a way to get more engineering work from the infrastructure, as well as getting back the engineering time you already have.</p>
-<h2 class="wp-block-heading">Take hardware out of the critical path</h2>
-<p>As I like to say, the point here is not to completely get rid of physical devices. The goal is to make sure to only use your expensive hardware because the test requires it, not because the workflow was built around it.</p>
-<p>That means running software-driven workloads early, running more of them in parallel, and keeping those physical benches for the validation or certification work where they provide actual value.</p>
-<p>Instead of scaling Android development by continuously adding devices, scale the environments around them. Less wait, more scaling, faster iterations.</p>
-<p><strong>Stop running after devices. Run Android in the cloud.</strong></p>
-<h1 class="wp-block-heading">Further reading</h1>
-<p><a href="https://canonical.com/anbox-cloud">Learn more about Anbox Cloud or contact our team to discuss your use case</a></p>
-<hr class="wp-block-separator has-alpha-channel-opacity"/>
-<p>Android is a trademark of Google LLC.</p>
-<p>Anbox Cloud uses assets available through the Android Open Source Project.</p>
-<p>The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the<a href="https://creativecommons.org/licenses/by/3.0/"> Creative Commons</a> 3.0 Attribution License.</p>
-<p></p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Lubuntu 26.10 Released!</title>
@@ -550,54 +644,6 @@ y menos de monkey-coders y tira-flechas</em></p>
       <source url="http://ubuntustudio.org/category/planetubuntu/feed/">Ubuntu Studio</source>
     </item>
     <item>
-      <title>Launchpad product roadmap updates – Blueprints and Translations</title>
-      <link>https://blog.launchpad.net/general/launchpad-product-roadmap-updates-blueprints-and-translations</link>
-      <guid isPermaLink="true">https://blog.launchpad.net/general/launchpad-product-roadmap-updates-blueprints-and-translations</guid>
-      <pubDate>Wed, 14 Oct 2026 08:54:21 GMT</pubDate>
-      <description><![CDATA[<p>We would like to share an update regarding our plans for the Blueprints and Translations features in Launchpad.</p>
-
-
-
-<h2>Retiring Launchpad Blueprints</h2>
-
-
-
-<p>Launchpad Blueprints are lightweight feature specifications attached to projects and distributions.</p>
-
-
-
-<p>As the usage of Blueprints has declined steadily, we plan to retire the feature at the end of the 27.10 cycle (October 2027) and remove its data. This reduces technical debt and frees development and maintenance time for the features most of our users rely on.</p>
-
-
-
-<h2>Reimagining Launchpad Translations</h2>
-
-
-
-<p>Launchpad Translations lets communities translate software through a web interface, with translation templates and message sharing across projects, distributions and series.</p>
-
-
-
-<p>The current implementation has not changed substantially in many years, and the translation ecosystem has moved on considerably since it was built. Rather than continue incremental maintenance, we are considering replacing it with a modern, purpose-built translation platform and providing an integrated Launchpad experience on top of that. Weblate is an obvious candidate, though no decision has been made as yet.</p>
-
-
-
-<p>Before we choose a direction, we want to hear from the people who use Translations. We are particularly interested in which workflows matter most to you, what you rely on that a general-purpose tool might not provide, how you currently get data in and out, and what a migration would need to preserve for you to consider it successful.</p>
-
-
-
-<p>We will be collecting input over the coming months. Our tentative target for completing this change is the end of the 27.10 cycle (October 2027), but that timeline may shift as we learn more.</p>
-
-
-
-<h2>Get in touch</h2>
-
-
-
-<p>If you have any questions or concerns about the Blueprints retirement, need help exporting your Blueprints data, or have feedback to share on the Translations revamp, please contact us on Matrix (<code>#launchpad:ubuntu.com</code>), submit a <a href="https://answers.launchpad.net/launchpad/+addquestion">question</a> or send an email to <a href="mailto:feedback@launchpad.net">feedback@launchpad.net</a>.</p>]]></description>
-      <source url="http://news.launchpad.net/feed">Launchpad News</source>
-    </item>
-    <item>
       <title>Ubuntu MATE 26.10 Release Notes</title>
       <link>https://ubuntu-mate.org/blog/ubuntu-mate-stonking-stingray-release-notes/</link>
       <guid isPermaLink="true">https://ubuntu-mate.org/blog/ubuntu-mate-stonking-stingray-release-notes/</guid>
@@ -686,6 +732,284 @@ See <a href="https://ubuntu-mate.org/get-involved/">get-involved</a> page to kno
       <source url="https://ubuntu-mate.org/rss.xml">Ubuntu MATE</source>
     </item>
     <item>
+      <title>Ubuntu Weekly Newsletter Issue 966</title>
+      <link>https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-966/89310</link>
+      <guid isPermaLink="true">https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-966/89310</guid>
+      <pubDate>Tue, 13 Oct 2026 00:31:16 GMT</pubDate>
+      <description><![CDATA[<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/3X/8/8/8831ee40a8aa53ba3972751d598fefba8ac7d279.png" data-download-href="/uploads/short-url/jqPUxySZDw2bO39PWjRKSjyjhDr.png?dl=1" title="header"><img src="https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/3X/8/8/8831ee40a8aa53ba3972751d598fefba8ac7d279.png" alt="header" data-base62-sha1="jqPUxySZDw2bO39PWjRKSjyjhDr" width="522" height="111"></a></div><p></p>
+<h1><a name="p-232585-ubuntu-weekly-news-1" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-weekly-news-1" aria-label="Heading link"></a>Ubuntu Weekly News</h1>
+<h2><a name="p-232585-uwn-issue-966-october-11-17-2026-2" class="anchor" href="https://discourse.ubuntu.com#p-232585-uwn-issue-966-october-11-17-2026-2" aria-label="Heading link"></a>UWN Issue 966 October 11-17 2026.</h2>
+<p>Welcome to the Ubuntu Weekly Newsletter, Issue 966 for the week of October 11 - 17, 2026.</p>
+<h2><a name="p-232585-in-this-issue-3" class="anchor" href="https://discourse.ubuntu.com#p-232585-in-this-issue-3" aria-label="Heading link"></a>In this Issue</h2>
+<ul>
+<li>Canonical releases Ubuntu 26.10 Stonking Stingray</li>
+<li>Fixes available for CVE-2026-92392 and other curl vulnerabilities</li>
+<li>Welcome New Members and Developers</li>
+<li>Ubuntu Stats</li>
+<li>Hot in Support</li>
+<li>Other Meeting Reports</li>
+<li>Upcoming Meetings and Events</li>
+<li>Ubuntu Circles! (LoCo) News</li>
+<li>Edinburgh Linux User Group – Meeting Update - 10th October 2026</li>
+<li>Event report: UbuCon Cameroon X PyCon Cameroon 2026</li>
+<li>Ubuntu Circles! (LoCo) Events</li>
+<li>Ubuntu Discourse</li>
+<li>Try Myna speech-to-text on Ubuntu Desktop</li>
+<li>Launchpad product roadmap updates – Blueprints and Translations</li>
+<li>Building an agentic testing system for charming claims</li>
+<li>Other Community News</li>
+<li>What Say You</li>
+<li>In the Press</li>
+<li>In the Blogosphere</li>
+<li>Other Articles of Interest</li>
+<li>Security and Updates for Ubuntu 22.04, 24.04, 26.04, and 26.10</li>
+<li>And much more!</li>
+</ul>
+<h2><a name="p-232585-general-community-news-4" class="anchor" href="https://discourse.ubuntu.com#p-232585-general-community-news-4" aria-label="Heading link"></a>General Community News</h2>
+<h3><a name="p-232585-canonical-releases-ubuntu-2610-stonking-stingray-5" class="anchor" href="https://discourse.ubuntu.com#p-232585-canonical-releases-ubuntu-2610-stonking-stingray-5" aria-label="Heading link"></a>Canonical releases Ubuntu 26.10 Stonking Stingray</h3>
+<p>This Canonical blog post tells us about the release of Ubuntu 26.10. It includes a number of screenshots, a quote from Jon Seager (VP of Ubuntu Engineering), and details of what we’ll find in this release.</p>
+<p>For more, including the Ubuntu 26.10 flavors, see the Ubuntu Discourse announcement posts.</p>
+<p><a href="https://ubuntu.com/blog/canonical-releases-ubuntu-26-10-stonking-stingray">https://ubuntu.com/blog/canonical-releases-ubuntu-26-10-stonking-stingray</a></p>
+<ul>
+<li>Ubuntu 26.10 (Stonking Stingray) released - <a href="https://discourse.ubuntu.com/t/ubuntu-26-10-stonking-stingray-released/89539">https://discourse.ubuntu.com/t/ubuntu-26-10-stonking-stingray-released/89539</a></li>
+<li>New release: Ubuntu 26.10 “Stonking Stingray” is now available on AWS - <a href="https://discourse.ubuntu.com/t/new-release-ubuntu-26-10-stonking-stingray-is-now-available-on-aws/89567">https://discourse.ubuntu.com/t/new-release-ubuntu-26-10-stonking-stingray-is-now-available-on-aws/89567</a></li>
+</ul>
+<p>Interested in the flavors? Release announcements as follows:</p>
+<ul>
+<li>Edubuntu 26.10 Released - <a href="https://discourse.ubuntu.com/t/edubuntu-26-10-released/89554">https://discourse.ubuntu.com/t/edubuntu-26-10-released/89554</a></li>
+<li>Ubuntu Studio 26.10 Released - <a href="https://discourse.ubuntu.com/t/ubuntu-studio-26-10-released/89557/">https://discourse.ubuntu.com/t/ubuntu-studio-26-10-released/89557/</a></li>
+<li>Kubuntu 26.10 is out: what’s actually on the ISO - <a href="https://discourse.ubuntu.com/t/kubuntu-26-10-is-out-whats-actually-on-the-iso/89576">https://discourse.ubuntu.com/t/kubuntu-26-10-is-out-whats-actually-on-the-iso/89576</a></li>
+<li>Lubuntu 26.10 Released! - <a href="https://lubuntu.me/lubuntu-26-10-released/">https://lubuntu.me/lubuntu-26-10-released/</a></li>
+<li>Xubuntu 26.10 released! - <a href="https://xubuntu.org/news/releases/26.10/2026-10-15-xubuntu-26-10-released/">https://xubuntu.org/news/releases/26.10/2026-10-15-xubuntu-26-10-released/</a></li>
+<li>Ubuntu Kylin version 26.10 has been officially released! - <a href="https://www.ubuntukylin.com/news/ubuntukylin2610-cn.html">https://www.ubuntukylin.com/news/ubuntukylin2610-cn.html</a></li>
+<li>Ubuntu Cinnamon 26.10 “Stonking Stingray” Released! - <a href="https://ubuntucinnamon.org/ubuntu-cinnamon-26-10-stonking-stingray-released/">https://ubuntucinnamon.org/ubuntu-cinnamon-26-10-stonking-stingray-released/</a></li>
+</ul>
+<p>Flavors detail:</p>
+<ul>
+<li>Ubuntu MATE 26.10 Release Notes <a href="https://ubuntu-mate.org/blog/ubuntu-mate-stonking-stingray-release-notes/">https://ubuntu-mate.org/blog/ubuntu-mate-stonking-stingray-release-notes/</a></li>
+<li>Ubuntu Unity 26.10 release notes - <a href="https://ubuntuunity.org/posts/ubuntu-unity-2610-release-notes/">https://ubuntuunity.org/posts/ubuntu-unity-2610-release-notes/</a></li>
+</ul>
+<p>Media attention:</p>
+<ul>
+<li>Ubuntu 26.10 (Stonking Stingray) Is Now Available for Download, Here’s What’s New - <a href="https://9to5linux.com/ubuntu-26-10-stonking-stingray-is-now-available-for-download-heres-whats-new">https://9to5linux.com/ubuntu-26-10-stonking-stingray-is-now-available-for-download-heres-whats-new</a></li>
+<li>Ubuntu 26.10 Released With Linux 7.3 + GNOME 51, Rust Coreutils Migration Complete - <a href="https://www.phoronix.com/news/Ubuntu-26.10-Released">https://www.phoronix.com/news/Ubuntu-26.10-Released</a></li>
+<li>Ubuntu 26.10 is out with GNOME 51, Linux 7.3 &amp; new tiling trick - <a href="https://www.omgubuntu.co.uk/2026/10/ubuntu-2610-new-features">https://www.omgubuntu.co.uk/2026/10/ubuntu-2610-new-features</a></li>
+<li>Ubuntu 26.10 Released with Kernel 7.3, GNOME 51, &amp; AMD64v3 Image - <a href="https://ubuntuhandbook.org/index.php/2026/10/ubuntu-26-10-released-with-kernel-7-3-gnome-51-amd64v3-image/">https://ubuntuhandbook.org/index.php/2026/10/ubuntu-26-10-released-with-kernel-7-3-gnome-51-amd64v3-image/</a></li>
+<li>Ubuntu 26.10 (Stonking Stingray) released - <a href="https://www.gamingonlinux.com/2026/10/ubuntu-26-10-stonking-stingray-released/">https://www.gamingonlinux.com/2026/10/ubuntu-26-10-stonking-stingray-released/</a></li>
+<li>Ubuntu 26.10 Official Flavors Are Now Available for Download, This Is What’s New - <a href="https://9to5linux.com/ubuntu-26-10-official-flavors-are-now-available-for-download-this-is-whats-new">https://9to5linux.com/ubuntu-26-10-official-flavors-are-now-available-for-download-this-is-whats-new</a></li>
+<li>Ubuntu 26.10 Released: Linux 7.3, GNOME 51 and 10 Flavors - <a href="https://www.opensourcefeed.org/ubuntu-26-10-stonking-stingray-release/">https://www.opensourcefeed.org/ubuntu-26-10-stonking-stingray-release/</a></li>
+<li>Ubuntu 26.10 Has Come Out as a Rust-Packed Interim Release - <a href="https://itsfoss.com/news/ubuntu-26-10-release/">https://itsfoss.com/news/ubuntu-26-10-release/</a></li>
+<li>Ubuntu Stonking Stingray swims into spotlight with pre-release kernel - <a href="https://www.theregister.com/os-platforms/2026/10/16/ubuntu-stonking-stingray-swims-into-spotlight-with-pre-release-kernel/5303580">https://www.theregister.com/os-platforms/2026/10/16/ubuntu-stonking-stingray-swims-into-spotlight-with-pre-release-kernel/5303580</a></li>
+</ul>
+<h3><a name="p-232585-fixes-available-for-cve-2026-92392-and-other-curl-vulnerabilities-6" class="anchor" href="https://discourse.ubuntu.com#p-232585-fixes-available-for-cve-2026-92392-and-other-curl-vulnerabilities-6" aria-label="Heading link"></a>Fixes available for CVE-2026-92392 and other curl vulnerabilities</h3>
+<p>Luci Stanescu reminds us of a 7 October 2026 post by Daniel Stenberg that reported fixes were coming on 14 October; this post (14 October) tells us of these fixes. We’re given details of the CVEs addressed, links for more specifics, and some CVSS 3.1 scores. A list of impacted releases &amp; package versions with fixes is included, as well as details on how we can check if we’re impacted, how to apply fixes, and more.</p>
+<p><a href="https://ubuntu.com/blog/curl-vulnerabilities-fixes-available">https://ubuntu.com/blog/curl-vulnerabilities-fixes-available</a></p>
+<h3><a name="p-232585-welcome-new-members-and-developers-7" class="anchor" href="https://discourse.ubuntu.com#p-232585-welcome-new-members-and-developers-7" aria-label="Heading link"></a>Welcome New Members and Developers</h3>
+<ul>
+<li>Wesley Hershberger; SRU Developer - <a href="https://lists.ubuntu.com/archives/ubuntu-devel/2026-October/043666.html">https://lists.ubuntu.com/archives/ubuntu-devel/2026-October/043666.html</a></li>
+</ul>
+<p>Congratulations Wesley!</p>
+<h2><a name="p-232585-ubuntu-stats-8" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-stats-8" aria-label="Heading link"></a>Ubuntu Stats</h2>
+<h3><a name="p-232585-bug-stats-9" class="anchor" href="https://discourse.ubuntu.com#p-232585-bug-stats-9" aria-label="Heading link"></a>Bug Stats</h3>
+<ul>
+<li>Open: 137548 (+295)</li>
+<li>Critical: 296 (0)</li>
+<li>Unconfirmed: 73431 (+241)</li>
+</ul>
+<p>As always, the Bug Squad needs more help. If you want to get started, please see: <a href="https://wiki.ubuntu.com/BugSquad">https://wiki.ubuntu.com/BugSquad</a></p>
+<h3><a name="p-232585-translations-10" class="anchor" href="https://discourse.ubuntu.com#p-232585-translations-10" aria-label="Heading link"></a>Translations</h3>
+<ul>
+<li>Swedish: 100.00% (0/3743)</li>
+<li>Albanian: 98.20% (6850/0)</li>
+<li>Ukrainian: 89.09% (41577/1111)</li>
+<li>German: 87.01% (49512/382)</li>
+<li>French: 86.00% (53386/6478)</li>
+</ul>
+<h2><a name="p-232585-hot-in-support-11" class="anchor" href="https://discourse.ubuntu.com#p-232585-hot-in-support-11" aria-label="Heading link"></a>Hot in Support</h2>
+<h3><a name="p-232585-ubuntu-community-discourse-trending-top-5-threads-12" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-community-discourse-trending-top-5-threads-12" aria-label="Heading link"></a>Ubuntu Community Discourse Trending Top 5 Threads</h3>
+<ul>
+<li>Upgrading from Ubuntu Studio 24.04 LTS the “proper” way - <a href="https://discourse.ubuntu.com/t/upgrading-from-ubuntu-studio-24-04-lts-the-proper-way/89311">https://discourse.ubuntu.com/t/upgrading-from-ubuntu-studio-24-04-lts-the-proper-way/89311</a></li>
+<li>‘Cleanup’ skipped in upgrade to 26.04 LTS. How to invoke this now? - <a href="https://discourse.ubuntu.com/t/cleanup-skipped-in-upgrade-to-26-04-lts-how-to-invoke-this-now/89469">https://discourse.ubuntu.com/t/cleanup-skipped-in-upgrade-to-26-04-lts-how-to-invoke-this-now/89469</a></li>
+<li>MySQL is not function properly since upgrading to Ubuntu 26.04.1 - <a href="https://discourse.ubuntu.com/t/mysql-is-not-function-properly-since-upgrading-to-ubuntu-26-04-1/89599">https://discourse.ubuntu.com/t/mysql-is-not-function-properly-since-upgrading-to-ubuntu-26-04-1/89599</a></li>
+<li>How to insure snap packages get updated, not just .deb packages via apt / Synaptic - <a href="https://discourse.ubuntu.com/t/how-to-insure-snap-packages-get-updated-not-just-deb-packages-via-apt-synaptic/89756">https://discourse.ubuntu.com/t/how-to-insure-snap-packages-get-updated-not-just-deb-packages-via-apt-synaptic/89756</a></li>
+<li>Using laptop as server - <a href="https://discourse.ubuntu.com/t/using-laptop-as-server/89794">https://discourse.ubuntu.com/t/using-laptop-as-server/89794</a></li>
+</ul>
+<p>Find more support at: <a href="https://discourse.ubuntu.com/c/support-and-help/306">https://discourse.ubuntu.com/c/support-and-help/306</a></p>
+<h3><a name="p-232585-ask-ubuntu-top-questions-13" class="anchor" href="https://discourse.ubuntu.com#p-232585-ask-ubuntu-top-questions-13" aria-label="Heading link"></a>Ask Ubuntu Top Questions</h3>
+<ul>
+<li>systemd DNSSEC failure with KeyTag 38696 - <a href="https://askubuntu.com/questions/1570248/systemd-dnssec-failure-with-keytag-38696">https://askubuntu.com/questions/1570248/systemd-dnssec-failure-with-keytag-38696</a></li>
+<li>Where should I look for fonts installed on my system? - <a href="https://askubuntu.com/questions/1570288/where-should-i-look-for-fonts-installed-on-my-system">https://askubuntu.com/questions/1570288/where-should-i-look-for-fonts-installed-on-my-system</a></li>
+<li>How do I update my BIOS without use of Windows - <a href="https://askubuntu.com/questions/1570366/how-do-i-update-my-bios-without-use-of-windows">https://askubuntu.com/questions/1570366/how-do-i-update-my-bios-without-use-of-windows</a></li>
+<li>Ubuntu 26.04.1, C# on raspberry pi - <a href="https://askubuntu.com/questions/1570395/ubuntu-26-04-1-c-on-raspberry-pi">https://askubuntu.com/questions/1570395/ubuntu-26-04-1-c-on-raspberry-pi</a></li>
+<li>Package System Broken - <a href="https://askubuntu.com/questions/1570271/package-system-broken">https://askubuntu.com/questions/1570271/package-system-broken</a></li>
+</ul>
+<p>Ask (and answer!) questions at: <a href="https://askubuntu.com/">https://askubuntu.com/</a></p>
+<h2><a name="p-232585-other-meeting-reports-14" class="anchor" href="https://discourse.ubuntu.com#p-232585-other-meeting-reports-14" aria-label="Heading link"></a>Other Meeting Reports</h2>
+<ul>
+<li>Utkarsh Gupta: FOSS Activities in September 2026 - <a href="https://utkarsh2102.org/posts/foss-in-sept-26/">https://utkarsh2102.org/posts/foss-in-sept-26/</a></li>
+<li>[daily] Server Triage Reports - <a href="https://discourse.ubuntu.com/c/project/server/17">https://discourse.ubuntu.com/c/project/server/17</a></li>
+<li>Foundations Team Updates - 2026-10-15 - <a href="https://discourse.ubuntu.com/t/foundations-team-updates-2026-10-15/89548">https://discourse.ubuntu.com/t/foundations-team-updates-2026-10-15/89548</a></li>
+</ul>
+<h2><a name="p-232585-upcoming-meetings-and-events-15" class="anchor" href="https://discourse.ubuntu.com#p-232585-upcoming-meetings-and-events-15" aria-label="Heading link"></a>Upcoming Meetings and Events</h2>
+<ul>
+<li>Ubuntu HPC weekly community call: Wednesday, 21 October, 4:30 - 5:00 PM - <a href="https://meet.jit.si/Ubuntu-HPC">https://meet.jit.si/Ubuntu-HPC</a> | <a href="https://matrix.to/#/#hpc:ubuntu.com" rel="noopener nofollow ugc">https://matrix.to/#/#hpc:ubuntu.com</a></li>
+<li>Lubuntu Weekly Standup: Thursday 22 October, 9:00 - 10:00 PM - <a href="https://matrix.to/#/#lubuntu-devel:ubuntu.com" rel="noopener nofollow ugc">https://matrix.to/#/#lubuntu-devel:ubuntu.com</a> | <a href="https://discourse.ubuntu.com/t/lubuntu-weekly-standup/43699">https://discourse.ubuntu.com/t/lubuntu-weekly-standup/43699</a></li>
+</ul>
+<p>Times shown are UTC unless otherwise specified. For more details and further dates please visit: <a href="https://ubuntu.com/community">https://ubuntu.com/community</a> | <a href="https://discourse.ubuntu.com/upcoming-events">https://discourse.ubuntu.com/upcoming-events</a></p>
+<h2><a name="p-232585-ubuntu-circles-loco-news-16" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-circles-loco-news-16" aria-label="Heading link"></a>Ubuntu Circles! (LoCo) News</h2>
+<h3><a name="p-232585-edinburgh-linux-user-group-meeting-update-10th-october-2026-17" class="anchor" href="https://discourse.ubuntu.com#p-232585-edinburgh-linux-user-group-meeting-update-10th-october-2026-17" aria-label="Heading link"></a>Edinburgh Linux User Group – Meeting Update - 10th October 2026</h3>
+<p>David Potter tells us about a great Edinburgh Linux User Group (EDLUG) meeting, which had both ‘new and familiar faces’ and was the best attendance yet. David thanks the University of Edinburgh, has attached some photos, gives us dates of future meetings, and more.</p>
+<p><a href="https://discourse.ubuntu.com/t/edinburgh-linux-user-group-meeting-update-10th-october-2026/89278/">https://discourse.ubuntu.com/t/edinburgh-linux-user-group-meeting-update-10th-october-2026/89278/</a></p>
+<h3><a name="p-232585-event-report-ubucon-cameroon-x-pycon-cameroon-2026-18" class="anchor" href="https://discourse.ubuntu.com#p-232585-event-report-ubucon-cameroon-x-pycon-cameroon-2026-18" aria-label="Heading link"></a>Event report: UbuCon Cameroon X PyCon Cameroon 2026</h3>
+<p>Muluh Penn Junior Patrick gives us an event report on UbuCon Cameroon X PyCon Cameroon 2026. Along with dates, we’re given details which include ‘behind the scenes’ or preparation of the conference and reports on the three conference days. Many photos are provided in this extensive report, which covers speaker’s dinner &amp; some coverage outside of the conference itself, particularly in regards to Ubuntu Cameroon. An expression of thanks is given to “everyone who made UbuCon @ PyCon Cameroon 2026 possible”.</p>
+<p><a href="https://discourse.ubuntu.com/t/event-report-ubucon-cameroon-x-pycon-cameroon-2026/89699/">https://discourse.ubuntu.com/t/event-report-ubucon-cameroon-x-pycon-cameroon-2026/89699/</a></p>
+<h2><a name="p-232585-ubuntu-circles-loco-events-19" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-circles-loco-events-19" aria-label="Heading link"></a>Ubuntu Circles! (LoCo) Events</h2>
+<p>The following LoCo team events are currently scheduled in the next two weeks:</p>
+<ul>
+<li>Arizona LoCo: Virtual Tempe Ubuntu Hour on line; 22 October, 1900 - 2000 - BigBlue Button, <a href="https://bbb.azloco.net">https://bbb.azloco.net</a></li>
+<li>Atlanta Linux Enthusiasts: Linux In-Person Help Session; Wings and Things Tyrone, GA; Thursday, 22 October, 6:00 - 8:00 PM PM CDT - <a href="https://www.heylo.com/event/4c63ffd2-e4f0-4d01-94a7-36d724664ff0">https://www.heylo.com/event/4c63ffd2-e4f0-4d01-94a7-36d724664ff0</a></li>
+<li>Atlanta Linux Enthusiasts: Linux Help Session (Online) - Jitsi; 25 October, 3 PM CDT - <a href="https://www.heylo.com/event/a08b05ed-4e90-48a6-aa5f-f465578ffe35">https://www.heylo.com/event/a08b05ed-4e90-48a6-aa5f-f465578ffe35</a></li>
+<li>Atlanta Linux Enthusiasts: Linux In-Person Help Session; Wings and Things Tyrone, GA; Thursday, 29 October, 6:00 - 8:00 PM PM CDT - <a href="https://www.heylo.com/event/ec210c11-a8ff-4271-a43d-ccdfc4447b27">https://www.heylo.com/event/ec210c11-a8ff-4271-a43d-ccdfc4447b27</a></li>
+<li>Arizona LoCo: AZLOCO Team Meeting on IRC.libera.chat; 01 November, 2100-2130 - IRC channel &lt;#ubuntu.us.az&gt;</li>
+</ul>
+<p>Looking beyond the next two weeks? Visit the respective Circles!/LoCo Team calendar to browse upcoming events.</p>
+<p>Please also see:</p>
+<ul>
+<li>Ubuntu Arizona LoCo: <a href="https://discourse.ubuntu.com/t/upcoming-events-for-azloco/38466">https://discourse.ubuntu.com/t/upcoming-events-for-azloco/38466</a></li>
+<li>Atlanta Linux Enthusiasts: <a href="https://ale.org/">https://ale.org/</a></li>
+<li>Registered LoCo contacts: <a href="https://discourse.ubuntu.com/c/locos/129">https://discourse.ubuntu.com/c/locos/129</a></li>
+</ul>
+<h2><a name="p-232585-ubuntu-discourse-20" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-discourse-20" aria-label="Heading link"></a>Ubuntu Discourse</h2>
+<h3><a name="p-232585-try-myna-speech-to-text-on-ubuntu-desktop-21" class="anchor" href="https://discourse.ubuntu.com#p-232585-try-myna-speech-to-text-on-ubuntu-desktop-21" aria-label="Heading link"></a>Try Myna speech-to-text on Ubuntu Desktop</h3>
+<p>Jean Baptiste Lallement announces the release of Myna, a “local speech-to-text solution for Ubuntu Desktop, as a technology preview”. We’re given some details, and asked to give it a try, and report what we think.</p>
+<p><a href="https://discourse.ubuntu.com/t/try-myna-speech-to-text-on-ubuntu-desktop/89292">https://discourse.ubuntu.com/t/try-myna-speech-to-text-on-ubuntu-desktop/89292</a></p>
+<ul>
+<li>Myna speech-to-text is now available as a technology preview - <a href="https://ubuntu.com/blog/myna-speech-to-text-technology-preview-available">https://ubuntu.com/blog/myna-speech-to-text-technology-preview-available</a></li>
+<li>[Video] Myna: Ubuntu’s new speech-to-text app—first look. - <a href="https://peertube.hayes.software/w/pDSsZZvTgMfgPQjo5ULkzT">https://peertube.hayes.software/w/pDSsZZvTgMfgPQjo5ULkzT</a></li>
+</ul>
+<h3><a name="p-232585-launchpad-product-roadmap-updates-blueprints-and-translations-22" class="anchor" href="https://discourse.ubuntu.com#p-232585-launchpad-product-roadmap-updates-blueprints-and-translations-22" aria-label="Heading link"></a>Launchpad product roadmap updates – Blueprints and Translations</h3>
+<p>Guruprasad shares an update on plans for Blueprints and Translations features in Launchpad. We’re told the Launchpad Blueprints feature usage has been declining, thus it will be retired at the end of the Ubuntu 27.10 development cycle (October 2027) with data dropped. Next, Guruprasad covers translations, stating the current implementation hasn’t changed much in years and tells us of plans to retire it and replace it with a modern translation platform; though no final decision has yet been reached. If we’re involved in Translations, we’re asked to provide input on workflows before the replacement platform is chosen, with details of how we can ‘get in touch’ provided.</p>
+<p><a href="https://discourse.ubuntu.com/t/launchpad-product-roadmap-updates-blueprints-and-translations/89431">https://discourse.ubuntu.com/t/launchpad-product-roadmap-updates-blueprints-and-translations/89431</a></p>
+<h3><a name="p-232585-building-an-agentic-testing-system-for-charming-claims-23" class="anchor" href="https://discourse.ubuntu.com#p-232585-building-an-agentic-testing-system-for-charming-claims-23" aria-label="Heading link"></a>Building an agentic testing system for charming claims</h3>
+<p>David Wilding explains an “attempt to build” a system that accepts a description of what needs testing and constructs tests for easily reviewable artifact and results. We’re given a quick primer on charmed applications (and Juju via link) before David describes what was done in creating this ‘testing system’. We’re told how the agent works, with some restrictions on the setup being mentioned and a discussion of risks included in this somewhat extensive post. We’re told David is still refining the work, and encourages us to explore similar systems &amp; give him any suggestions.</p>
+<p><a href="https://discourse.ubuntu.com/t/building-an-agentic-testing-system-for-charming-claims/89553">https://discourse.ubuntu.com/t/building-an-agentic-testing-system-for-charming-claims/89553</a></p>
+<h2><a name="p-232585-other-community-news-24" class="anchor" href="https://discourse.ubuntu.com#p-232585-other-community-news-24" aria-label="Heading link"></a>Other Community News</h2>
+<h3><a name="p-232585-kde-the-documentary-the-story-of-free-software-underdogs-25" class="anchor" href="https://discourse.ubuntu.com#p-232585-kde-the-documentary-the-story-of-free-software-underdogs-25" aria-label="Heading link"></a>KDE: The Documentary — The Story of Free Software Underdogs</h3>
+<p>“KDE: The Documentary tells the story of the pioneering open source community that gave computer users a free and open alternative to proprietary desktops like Windows.” Starting in 1996, the film covers “three decades of KDE history, the Qt licensing fight and the rivalry with GNOME”, and more.</p>
+<p><a href="https://www.youtube.com/watch?v=1Vyzla9mx4g">https://www.youtube.com/watch?v=1Vyzla9mx4g</a></p>
+<ul>
+<li>Happy 30th Birthday, KDE! - <a href="https://9to5linux.com/happy-30th-birthday-kde">https://9to5linux.com/happy-30th-birthday-kde</a></li>
+<li>KDE hits 30, decides it’s time to move out of the X11 era - <a href="https://www.theregister.com/software/2026/10/15/kde-hits-30-decides-its-time-to-move-out-of-the-x11-era/5303293">https://www.theregister.com/software/2026/10/15/kde-hits-30-decides-its-time-to-move-out-of-the-x11-era/5303293</a></li>
+</ul>
+<h2><a name="p-232585-what-say-you-26" class="anchor" href="https://discourse.ubuntu.com#p-232585-what-say-you-26" aria-label="Heading link"></a>What Say You</h2>
+<h3><a name="p-232585-an-agentic-workflow-to-triage-ubuntu-ftbfs-27" class="anchor" href="https://discourse.ubuntu.com#p-232585-an-agentic-workflow-to-triage-ubuntu-ftbfs-27" aria-label="Heading link"></a>An agentic workflow to triage Ubuntu FTBFS</h3>
+<p>“A couple weeks ago my application for Ubuntu Contributor was approved by the DMB ￼￼ and with this new recognition I felt empowered to go and do some good for Ubuntu and contribute a few packages. Looking for contributions is sometimes a daunting task for new and even seasoned contributors, there are a lot of places to look at within the Ubuntu package life cycle where it is possible to contribute (this previous post cover this life cycle at a high level) … So, I chose to look at FTBFS in universe.” - Matthieu Clemenceau</p>
+<p><a href="https://discourse.ubuntu.com/t/an-agentic-workflow-to-triage-ubuntu-ftbfs/89300">https://discourse.ubuntu.com/t/an-agentic-workflow-to-triage-ubuntu-ftbfs/89300</a></p>
+<h2><a name="p-232585-in-the-press-28" class="anchor" href="https://discourse.ubuntu.com#p-232585-in-the-press-28" aria-label="Heading link"></a>In the Press</h2>
+<h3><a name="p-232585-ive-used-ubuntu-for-22-years-and-2610-might-be-its-best-release-yet-29" class="anchor" href="https://discourse.ubuntu.com#p-232585-ive-used-ubuntu-for-22-years-and-2610-might-be-its-best-release-yet-29" aria-label="Heading link"></a>I’ve used Ubuntu for 22 years – and 26.10 might be its best release yet</h3>
+<p>Jack Wallen reminds us he’s been using Ubuntu since 4.10 and recalls good and bad releases, and here he explores Ubuntu 26.10. Jack starts with Myna, which he has added to his ‘best dictation apps for Linux’, then Jack moves on to other ‘software updates’ including GRUB, Coreutils now Rust, and more. Jack tells us it’s more secure and that Ubuntu 26.10 “feels like it’s a vast improvement over 26.04”.</p>
+<p><a href="https://www.zdnet.com/tech/ubuntu-26-10-canonical-release-open-source/">https://www.zdnet.com/tech/ubuntu-26-10-canonical-release-open-source/</a></p>
+<h2><a name="p-232585-in-the-blogosphere-30" class="anchor" href="https://discourse.ubuntu.com#p-232585-in-the-blogosphere-30" aria-label="Heading link"></a>In the Blogosphere</h2>
+<h3><a name="p-232585-ubuntu-2704-codename-revealed-as-tenacious-t-rex-31" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-2704-codename-revealed-as-tenacious-t-rex-31" aria-label="Heading link"></a>Ubuntu 27.04 codename revealed as ‘Tenacious T-Rex’</h3>
+<p>Joey Sneddon informs us that the Ubuntu 27.04 codename is ‘Tenacious T-Rex’. With a link to the bug report adding details to distro-info-data showing proof, we’re reminded of Ubuntu’s adjective &amp; animal coupling, before going into a little of what the words tell us.</p>
+<p><a href="https://www.omgubuntu.co.uk/2026/10/ubuntu-2704-is-tenacious-t-rex">https://www.omgubuntu.co.uk/2026/10/ubuntu-2704-is-tenacious-t-rex</a></p>
+<h3><a name="p-232585-ubuntu-2704-tenacious-t-rex-is-slated-for-release-on-april-22nd-2027-32" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-2704-tenacious-t-rex-is-slated-for-release-on-april-22nd-2027-32" aria-label="Heading link"></a>Ubuntu 27.04 “Tenacious T-Rex” Is Slated for Release on April 22nd, 2027</h3>
+<p>Marcus Nestor also writes about the codename and animal for Ubuntu 27.04 being known; He gives a list of some known dates, and a link to the release schedule. Marcus concludes with a reminder that Ubuntu Summit 26.10 is coming next month.</p>
+<p><a href="https://9to5linux.com/ubuntu-27-04-tenacious-t-rex-is-slated-for-release-on-april-22nd-2027">https://9to5linux.com/ubuntu-27-04-tenacious-t-rex-is-slated-for-release-on-april-22nd-2027</a></p>
+<h3><a name="p-232585-linux-finally-making-it-easier-to-answer-the-question-is-this-risc-v-system-rva23-33" class="anchor" href="https://discourse.ubuntu.com#p-232585-linux-finally-making-it-easier-to-answer-the-question-is-this-risc-v-system-rva23-33" aria-label="Heading link"></a>Linux Finally Making It Easier To Answer The Question: “Is This RISC-V System RVA23?”</h3>
+<p>Michael Larabel tells us why the RISC-V RVA23 profile is a “big deal” to the RISC-V ecosystem, and informs us of pending Linux kernel patches that help with this. Michael makes reference to the Linux Plumbers Conference held recently in Prague that discussed this, gives us a link to the patch series, and ends telling us we’re “getting close” for easy RVA23 reporting to user-space.</p>
+<p><a href="https://www.phoronix.com/news/Linux-Answering-RVA23-Question">https://www.phoronix.com/news/Linux-Answering-RVA23-Question</a></p>
+<h2><a name="p-232585-other-articles-of-interest-34" class="anchor" href="https://discourse.ubuntu.com#p-232585-other-articles-of-interest-34" aria-label="Heading link"></a>Other Articles of Interest</h2>
+<ul>
+<li>Edge AI module with 12 TOPS earns Ubuntu 24.04 LTS certification - <a href="https://www.eeworldonline.com/edge-ai-module-with-12-tops-earns-ubuntu-24-04-lts-certification/">https://www.eeworldonline.com/edge-ai-module-with-12-tops-earns-ubuntu-24-04-lts-certification/</a></li>
+</ul>
+<h2><a name="p-232585-security-and-updates-for-ubuntu-2204-2404-2604-and-2610-35" class="anchor" href="https://discourse.ubuntu.com#p-232585-security-and-updates-for-ubuntu-2204-2404-2604-and-2610-35" aria-label="Heading link"></a>Security and Updates for Ubuntu 22.04, 24.04, 26.04, and 26.10</h2>
+<h3><a name="p-232585-security-updates-36" class="anchor" href="https://discourse.ubuntu.com#p-232585-security-updates-36" aria-label="Heading link"></a>Security Updates</h3>
+<ul>
+<li>[USN-8912-1] Perl DBI module vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011394.html" class="inline-onebox">[USN-8912-1] Perl DBI module vulnerabilities</a></li>
+<li>[USN-8913-1] libx11 vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011395.html" class="inline-onebox">[USN-8913-1] libx11 vulnerabilities</a></li>
+<li>[USN-8914-1] Google Guest Agent, Google OS Config Agent vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011396.html" class="inline-onebox">[USN-8914-1] Google Guest Agent, Google OS Config Agent vulnerability</a></li>
+<li>[USN-8915-1] FFmpeg vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011397.html" class="inline-onebox">[USN-8915-1] FFmpeg vulnerabilities</a></li>
+<li>[USN-8917-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011402.html" class="inline-onebox">[USN-8917-1] Linux kernel vulnerabilities</a></li>
+<li>[USN-8918-1] Linux kernel (Azure) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011398.html" class="inline-onebox">[USN-8918-1] Linux kernel (Azure) vulnerabilities</a></li>
+<li>[USN-8919-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011403.html" class="inline-onebox">[USN-8919-1] Linux kernel vulnerabilities</a></li>
+<li>[USN-8920-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011399.html" class="inline-onebox">[USN-8920-1] Linux kernel vulnerabilities</a></li>
+<li>[USN-8921-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011404.html" class="inline-onebox">[USN-8921-1] Linux kernel vulnerabilities</a></li>
+<li>[USN-8923-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011405.html" class="inline-onebox">[USN-8923-1] Linux kernel vulnerabilities</a></li>
+<li>[USN-8922-1] Linux kernel (Oracle) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011400.html" class="inline-onebox">[USN-8922-1] Linux kernel (Oracle) vulnerabilities</a></li>
+<li>[USN-8924-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011401.html" class="inline-onebox">[USN-8924-1] Linux kernel vulnerabilities</a></li>
+<li>[USN-8925-1] YAML-LibYAML vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011406.html" class="inline-onebox">[USN-8925-1] YAML-LibYAML vulnerabilities</a></li>
+<li>[USN-8916-1] PyJWT vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011407.html" class="inline-onebox">[USN-8916-1] PyJWT vulnerabilities</a></li>
+<li>[USN-8928-1] OpenSSH vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011408.html" class="inline-onebox">[USN-8928-1] OpenSSH vulnerabilities</a></li>
+<li>[USN-8927-1] curl vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011409.html" class="inline-onebox">[USN-8927-1] curl vulnerabilities</a></li>
+<li>[USN-8929-1] Bind vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011410.html" class="inline-onebox">[USN-8929-1] Bind vulnerabilities</a></li>
+<li>[USN-8908-2] BlueZ regression - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011411.html" class="inline-onebox">[USN-8908-2] BlueZ regression</a></li>
+<li>[USN-8931-1] Apache HTTP Server vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011412.html" class="inline-onebox">[USN-8931-1] Apache HTTP Server vulnerabilities</a></li>
+<li>[USN-8930-1] U-Boot vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011413.html" class="inline-onebox">[USN-8930-1] U-Boot vulnerabilities</a></li>
+<li>[USN-8932-1] curl vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011414.html" class="inline-onebox">[USN-8932-1] curl vulnerabilities</a></li>
+<li>[USN-8926-1] urllib3 vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011415.html" class="inline-onebox">[USN-8926-1] urllib3 vulnerabilities</a></li>
+<li>[USN-8922-2] Linux kernel (Azure) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011416.html" class="inline-onebox">[USN-8922-2] Linux kernel (Azure) vulnerabilities</a></li>
+<li>[USN-8883-2] Go vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011417.html" class="inline-onebox">[USN-8883-2] Go vulnerability</a></li>
+<li>[USN-8933-1] RabbitMQ Server vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011418.html" class="inline-onebox">[USN-8933-1] RabbitMQ Server vulnerabilities</a></li>
+</ul>
+<h3><a name="p-232585-ubuntu-2204-updates-37" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-2204-updates-37" aria-label="Heading link"></a>Ubuntu 22.04 Updates</h3>
+<p>Maintenance Activity: <a href="https://lists.ubuntu.com/archives/jammy-changes/2026-October/" class="inline-onebox">The jammy-changes October 2026 Archive by thread</a></p>
+<p>End of Standard Support: April 2027</p>
+<h3><a name="p-232585-ubuntu-2404-updates-38" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-2404-updates-38" aria-label="Heading link"></a>Ubuntu 24.04 Updates</h3>
+<p>Maintenance Activity: <a href="https://lists.ubuntu.com/archives/noble-changes/2026-October/" class="inline-onebox">The noble-changes October 2026 Archive by thread</a></p>
+<p>End of standard support: April 2029</p>
+<h3><a name="p-232585-ubuntu-2604-updates-39" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-2604-updates-39" aria-label="Heading link"></a>Ubuntu 26.04 Updates</h3>
+<p>Maintenance Activity: <a href="https://lists.ubuntu.com/archives/resolute-changes/2026-October/" class="inline-onebox">The Resolute-changes October 2026 Archive by thread</a></p>
+<p>End of Standard Support: April 2031</p>
+<h3><a name="p-232585-ubuntu-2610-updates-40" class="anchor" href="https://discourse.ubuntu.com#p-232585-ubuntu-2610-updates-40" aria-label="Heading link"></a>Ubuntu 26.10 Updates</h3>
+<p>Maintenance Activity: <a href="https://lists.ubuntu.com/archives/stonking-changes/2026-October/" class="inline-onebox">The Stonking-changes October 2026 Archive by thread</a></p>
+<p>End of Life: July 2027</p>
+<p>[The Release Update Listings] have become unwieldy so we’re providing links.</p>
+<h2><a name="p-232585-subscribe-41" class="anchor" href="https://discourse.ubuntu.com#p-232585-subscribe-41" aria-label="Heading link"></a>Subscribe</h2>
+<p>Get your copy of the Ubuntu Weekly Newsletter delivered each week to you via email at: <a href="https://lists.ubuntu.com/mailman/listinfo/ubuntu-news" class="inline-onebox">ubuntu-news Info Page</a></p>
+<p>Or follow us via our various social media presences:</p>
+<ul>
+<li><a href="https://www.facebook.com/UbuntuWeeklyNewsletter">https://www.facebook.com/UbuntuWeeklyNewsletter</a></li>
+<li><a href="https://twitter.com/Ubuntu_News">https://twitter.com/Ubuntu_News</a></li>
+<li><a href="https://t.me/ubuntunewsletter">https://t.me/ubuntunewsletter</a> (Telegram)</li>
+<li><a href="https://ubuntu.social/">https://ubuntu.social/</a> (Mastodon)</li>
+<li><a href="https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss" class="inline-onebox">UWN Issues - Ubuntu Discourse</a> (our RSS feed)</li>
+</ul>
+<h2><a name="p-232585-archives-42" class="anchor" href="https://discourse.ubuntu.com#p-232585-archives-42" aria-label="Heading link"></a>Archives</h2>
+<p>For recent issues of the Ubuntu Weekly Newsletter <a href="https://discourse.ubuntu.com/c/uwn/uwn-issues/419">Issue 786 &amp; later please visit our Discourse page:</a> or <a href="https://ubuntu.com/community/uwn/">our Portal page:</a> that is easier to read. The older WIKI issues (809 and earlier) are available at<a href="https://wiki.ubuntu.com/UbuntuWeeklyNewsletter/Archive">: UbuntuWeeklyNewsletter/Archive</a>.</p>
+<h2><a name="p-232585-further-news-43" class="anchor" href="https://discourse.ubuntu.com#p-232585-further-news-43" aria-label="Heading link"></a>Further News</h2>
+<p>As always you can find more Ubuntu news and announcements at:</p>
+<ul>
+<li><a href="https://ubuntu.com/blog/" class="inline-onebox">Ubuntu Blog | Ubuntu</a></li>
+<li><a href="https://ubuntu.com/community" class="inline-onebox">The Ubuntu Community | Ubuntu</a></li>
+</ul>
+<h2><a name="p-232585-conclusion-44" class="anchor" href="https://discourse.ubuntu.com#p-232585-conclusion-44" aria-label="Heading link"></a>Conclusion</h2>
+<p>Thank you for reading the Ubuntu Weekly Newsletter.</p>
+<p>See you next week!</p>
+<h2><a name="p-232585-credits-45" class="anchor" href="https://discourse.ubuntu.com#p-232585-credits-45" aria-label="Heading link"></a>Credits</h2>
+<p>The Ubuntu Weekly Newsletter is brought to you by:</p>
+<ul>
+<li>Krytarik Raido</li>
+<li>Bashing-om</li>
+<li>Chris Guiver</li>
+<li>Wild Man</li>
+<li>irihapeti</li>
+<li>And many others</li>
+</ul>
+<h2><a name="p-232585-glossary-of-terms-46" class="anchor" href="https://discourse.ubuntu.com#p-232585-glossary-of-terms-46" aria-label="Heading link"></a>Glossary of Terms</h2>
+<p>Other acronyms can be found at: <a href="https://discourse.ubuntu.com/t/glossary-uwn/42405" class="inline-onebox">Glossary (UWN)</a></p>
+<h2><a name="p-232585-get-involved-47" class="anchor" href="https://discourse.ubuntu.com#p-232585-get-involved-47" aria-label="Heading link"></a>Get Involved</h2>
+<p>The Ubuntu community consists of individuals and teams, working on different aspects of the distribution, giving advice and technical support, and helping to promote Ubuntu to a wider audience. No contribution is too small, and anyone can help. It’s your chance to get in on all the community fun associated with developing and promoting Ubuntu. More on this at: <a href="https://community.ubuntu.com/contribute/" class="inline-onebox">Contribute - Contribute - Ubuntu Discourse</a></p>
+<p>Or get involved with the Ubuntu Weekly Newsletter team! We always need summary writers and editors, if you’re interested, learn more at: <a href="https://discourse.ubuntu.com/t/joining-the-ubuntu-weekly-newsletter-team/40929" class="inline-onebox">Joining the Ubuntu Weekly Newsletter Team</a></p>
+<h2><a name="p-232585-feedback-48" class="anchor" href="https://discourse.ubuntu.com#p-232585-feedback-48" aria-label="Heading link"></a>Feedback</h2>
+<p>This document is maintained by the Ubuntu Weekly News Team. If you have a story idea or suggestions for the Weekly Newsletter, join the Ubuntu News Team mailing list at <a href="https://lists.ubuntu.com/mailman/listinfo/Ubuntu-news-team" class="inline-onebox">ubuntu-news-team Info Page</a> and submit it. Ideas can also be added to the wiki at <a href="https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-ideas/40053/" class="inline-onebox">Ubuntu Weekly Newsletter Ideas</a> . If you’d like to contribute to a future issue of the Ubuntu Weekly Newsletter, please feel free to edit the appropriate wiki page. If you have any technical support questions, please check <a href="https://community.ubuntu.com/help-information/">https://community.ubuntu.com/help-information/</a> for more information on where to get help.</p>
+<p>Except where otherwise noted, this issue of the Ubuntu Weekly Newsletter is licensed under a Creative Commons Attribution ShareAlike 3.0 License.</p>
+<p><img src="https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/3X/d/b/dbf59da03627b1c1aed30432a2467c245b8cfbf1.png" alt="CCL" data-base62-sha1="vnQNj6QVCJUCgWWL8t8nrPszYqJ" width="88" height="31"></p>
+            <p><small>1 post - 1 participant</small></p>
+            <p><a href="https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-966/89310">Read full topic</a></p>]]></description>
+      <source url="https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss">Ubuntu Weekly News</source>
+    </item>
+    <item>
       <title>E388 'Tá Toda Confinada</title>
       <link>https://podcastubuntuportugal.org/e388/</link>
       <guid isPermaLink="true">https://podcastubuntuportugal.org/e388/</guid>
@@ -723,275 +1047,6 @@ O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcas
 Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: Tropicorp Advertisement by code_box &ndash; <a href="https://freesound.org/s/561190/">https://freesound.org/s/561190/</a> &ndash; License: Creative Commons 0; 12046 futuristic electric ambience loop.wav by Robinhood76 &ndash; <a href="https://freesound.org/s/682167/">https://freesound.org/s/682167/</a> &ndash; License: Attribution NonCommercial 4.0; Born To Drive (loop ver.3) by AudioCoffee &ndash; <a href="https://freesound.org/s/710556/">https://freesound.org/s/710556/</a> &ndash; License: Attribution NonCommercial 4.0
 A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
       <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
-    </item>
-    <item>
-      <title>Ubuntu Weekly Newsletter Issue 965</title>
-      <link>https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-965/88891</link>
-      <guid isPermaLink="true">https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-965/88891</guid>
-      <pubDate>Mon, 05 Oct 2026 21:07:58 GMT</pubDate>
-      <description><![CDATA[<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/3X/8/8/8831ee40a8aa53ba3972751d598fefba8ac7d279.png" data-download-href="/uploads/short-url/jqPUxySZDw2bO39PWjRKSjyjhDr.png?dl=1" title="header"><img src="https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/3X/8/8/8831ee40a8aa53ba3972751d598fefba8ac7d279.png" alt="header" data-base62-sha1="jqPUxySZDw2bO39PWjRKSjyjhDr" width="522" height="111"></a></div><p></p>
-<h1><a name="p-231571-ubuntu-weekly-news-1" class="anchor" href="https://discourse.ubuntu.com#p-231571-ubuntu-weekly-news-1" aria-label="Heading link"></a>Ubuntu Weekly News</h1>
-<h2><a name="p-231571-uwn-issue-965-october-4-10-2026-2" class="anchor" href="https://discourse.ubuntu.com#p-231571-uwn-issue-965-october-4-10-2026-2" aria-label="Heading link"></a>UWN Issue 965 October 4-10 2026.</h2>
-<p>Welcome to the Ubuntu Weekly Newsletter, Issue 965 for the week of October 4 - 10, 2026.</p>
-<h2><a name="p-231571-in-this-issue-3" class="anchor" href="https://discourse.ubuntu.com#p-231571-in-this-issue-3" aria-label="Heading link"></a>In this Issue</h2>
-<ul>
-<li>Second Stonking Stingray test rebuild</li>
-<li>DDoS on Canonical and Ubuntu websites</li>
-<li>Call for testing: RCs of 26.10 Release are ready!</li>
-<li>Ubuntu Stats</li>
-<li>Hot in Support</li>
-<li>Other Meeting Reports</li>
-<li>Upcoming Meetings and Events</li>
-<li>Ubuntu Circles! (LoCo) Events</li>
-<li>Ubuntu Community Discourse</li>
-<li>Multipass 1.17 release candidate</li>
-<li>Canceled Kernel Releases for the 2026.08.31 SRU Cycle</li>
-<li>Announcing Ubuntu desktop images for RISC-V</li>
-<li>What’s new in security for Ubuntu 26.10?</li>
-<li>Canonical News</li>
-<li>In the Blogosphere</li>
-<li>Featured Audio and Video</li>
-<li>Security and Updates for Ubuntu 22.04, 24.04, and 26.04</li>
-<li>And much more!</li>
-</ul>
-<h2><a name="p-231571-general-community-news-4" class="anchor" href="https://discourse.ubuntu.com#p-231571-general-community-news-4" aria-label="Heading link"></a>General Community News</h2>
-<h3><a name="p-231571-second-stonking-stingray-test-rebuild-5" class="anchor" href="https://discourse.ubuntu.com#p-231571-second-stonking-stingray-test-rebuild-5" aria-label="Heading link"></a>Second Stonking Stingray test rebuild</h3>
-<p>Graham Inggs tells us the “second test rebuild of Stonking Stingray was started on October 2”. Most architectures and components have already completed for main, excluding riscv64 and some still running for universe and multiverse repositories. Graham thanks CPC and Launchpad teams for preparing updated ‘buildd’ chroots for this build. We’re given links to see results, and asked to help fix build failures.</p>
-<p><a href="https://lists.ubuntu.com/archives/ubuntu-devel/2026-October/043663.html">https://lists.ubuntu.com/archives/ubuntu-devel/2026-October/043663.html</a></p>
-<h3><a name="p-231571-ddos-on-canonical-and-ubuntu-websites-6" class="anchor" href="https://discourse.ubuntu.com#p-231571-ddos-on-canonical-and-ubuntu-websites-6" aria-label="Heading link"></a>DDoS on Canonical and Ubuntu websites</h3>
-<p>Javier Arregui reports that Canonical websites are under sustained distributed denial of service attack (DDoS), and reports the team is working “diligently to resolve the incident”. A link to the status page is provided, and we are warned some services may be intermittent at times. This post has received an update (via reply) telling us most services are back up, but restoration continues for some affected services.</p>
-<p><a href="https://discourse.ubuntu.com/t/ddos-on-canonical-and-ubuntu-websites/89064">https://discourse.ubuntu.com/t/ddos-on-canonical-and-ubuntu-websites/89064</a></p>
-<ul>
-<li>Ubuntu websites offline due to ‘sustained’ DDoS attack [Resolved] - <a href="https://www.omgubuntu.co.uk/2026/10/ubuntu-website-ddos-part-2">https://www.omgubuntu.co.uk/2026/10/ubuntu-website-ddos-part-2</a></li>
-</ul>
-<h3><a name="p-231571-call-for-testing-rcs-of-2610-release-are-ready-7" class="anchor" href="https://discourse.ubuntu.com#p-231571-call-for-testing-rcs-of-2610-release-are-ready-7" aria-label="Heading link"></a>Call for testing: RCs of 26.10 Release are ready!</h3>
-<p>Utkarsh Gupta, on behalf of the Release team, announces the “the first set of initial release candidate images for the 26.10 release is now available on Test Observer”. We are told RISC-V images will soon be available. Test your favorite flavor, and report test results on the Test Observer.</p>
-<p><a href="https://lists.ubuntu.com/archives/ubuntu-devel/2026-October/043665.html">https://lists.ubuntu.com/archives/ubuntu-devel/2026-October/043665.html</a></p>
-<h2><a name="p-231571-ubuntu-stats-8" class="anchor" href="https://discourse.ubuntu.com#p-231571-ubuntu-stats-8" aria-label="Heading link"></a>Ubuntu Stats</h2>
-<h3><a name="p-231571-bug-stats-9" class="anchor" href="https://discourse.ubuntu.com#p-231571-bug-stats-9" aria-label="Heading link"></a>Bug Stats</h3>
-<ul>
-<li>Open: 137253 (+151)</li>
-<li>Critical: 296 (+1)</li>
-<li>Unconfirmed: 73190 (+110)</li>
-</ul>
-<p>As always, the Bug Squad needs more help. If you want to get started, please see: <a href="https://wiki.ubuntu.com/BugSquad">https://wiki.ubuntu.com/BugSquad</a></p>
-<h3><a name="p-231571-translations-10" class="anchor" href="https://discourse.ubuntu.com#p-231571-translations-10" aria-label="Heading link"></a>Translations</h3>
-<ul>
-<li>Swedish: 100.00% (0/3723)</li>
-<li>Albanian: 97.83% (8288/0)</li>
-<li>Ukrainian: 89.09% (41582/1100)</li>
-<li>German: 87.01% (49512/365)</li>
-<li>French: 85.96% (53505/6551)</li>
-</ul>
-<h2><a name="p-231571-hot-in-support-11" class="anchor" href="https://discourse.ubuntu.com#p-231571-hot-in-support-11" aria-label="Heading link"></a>Hot in Support</h2>
-<h3><a name="p-231571-ubuntu-community-discourse-trending-top-5-threads-12" class="anchor" href="https://discourse.ubuntu.com#p-231571-ubuntu-community-discourse-trending-top-5-threads-12" aria-label="Heading link"></a>Ubuntu Community Discourse Trending Top 5 Threads</h3>
-<ul>
-<li>GRUB Issues With Upgrade on Ubuntu Studio - <a href="https://discourse.ubuntu.com/t/grub-issues-with-upgrade-on-ubuntu-studio/88681">https://discourse.ubuntu.com/t/grub-issues-with-upgrade-on-ubuntu-studio/88681</a></li>
-<li>U-MATE installer doesn’t seem to offer “custom” access to GParted? - <a href="https://discourse.ubuntu.com/t/u-mate-installer-doesnt-seem-to-offer-custom-access-to-gparted/88822">https://discourse.ubuntu.com/t/u-mate-installer-doesnt-seem-to-offer-custom-access-to-gparted/88822</a></li>
-<li>Snap-store dock icon does not show when there are updates - <a href="https://discourse.ubuntu.com/t/snap-store-dock-icon-does-not-show-when-there-are-updates/89139">https://discourse.ubuntu.com/t/snap-store-dock-icon-does-not-show-when-there-are-updates/89139</a></li>
-<li>Abnormal battery drain during suspend (s2idle) on Dell Latitude 7430 - <a href="https://discourse.ubuntu.com/t/abnormal-battery-drain-during-suspend-s2idle-on-dell-latitude-7430/89171">https://discourse.ubuntu.com/t/abnormal-battery-drain-during-suspend-s2idle-on-dell-latitude-7430/89171</a></li>
-<li>apt/HWE Kernel NOT offer v7.0 install. Keep current v6.17 kernel indefinitely - <a href="https://discourse.ubuntu.com/t/apt-hwe-kernel-not-offer-v7-0-install-keep-current-v6-17-kernel-indefinitely/89180">https://discourse.ubuntu.com/t/apt-hwe-kernel-not-offer-v7-0-install-keep-current-v6-17-kernel-indefinitely/89180</a></li>
-</ul>
-<p>Find more support at: <a href="https://discourse.ubuntu.com/c/support-and-help/306">https://discourse.ubuntu.com/c/support-and-help/306</a></p>
-<h3><a name="p-231571-ask-ubuntu-top-questions-13" class="anchor" href="https://discourse.ubuntu.com#p-231571-ask-ubuntu-top-questions-13" aria-label="Heading link"></a>Ask Ubuntu Top Questions</h3>
-<ul>
-<li>I upgraded an app now it doesn’t work - <a href="https://askubuntu.com/questions/1570193/i-upgraded-an-app-now-it-doesnt-work">https://askubuntu.com/questions/1570193/i-upgraded-an-app-now-it-doesnt-work</a></li>
-<li>Shortcut to share my wired LAN internet via WiFi - <a href="https://askubuntu.com/questions/1570099/shortcut-to-share-my-wired-lan-internet-via-wifi">https://askubuntu.com/questions/1570099/shortcut-to-share-my-wired-lan-internet-via-wifi</a></li>
-<li>Simple Markdown Notes Program - <a href="https://askubuntu.com/questions/1570188/simple-markdown-notes-program">https://askubuntu.com/questions/1570188/simple-markdown-notes-program</a></li>
-<li>Update 24.04 to 26.04 broke and not recovered - <a href="https://askubuntu.com/questions/1570167/update-24-04-to-26-04-broke-and-not-recovered">https://askubuntu.com/questions/1570167/update-24-04-to-26-04-broke-and-not-recovered</a></li>
-<li>How to add Vim shortcuts to the new Papers app - <a href="https://askubuntu.com/questions/1570164/how-to-add-vim-shortcuts-to-the-new-papers-app">https://askubuntu.com/questions/1570164/how-to-add-vim-shortcuts-to-the-new-papers-app</a></li>
-</ul>
-<p>Ask (and answer!) questions at: <a href="https://askubuntu.com/">https://askubuntu.com/</a></p>
-<h2><a name="p-231571-other-meeting-reports-14" class="anchor" href="https://discourse.ubuntu.com#p-231571-other-meeting-reports-14" aria-label="Heading link"></a>Other Meeting Reports</h2>
-<ul>
-<li>+1 Maintenance Report from 2026-09-27 to 2026-10-03 - <a href="https://discourse.ubuntu.com/t/1-maintenance-report-from-2026-09-27-to-2026-10-03/88882">https://discourse.ubuntu.com/t/1-maintenance-report-from-2026-09-27-to-2026-10-03/88882</a></li>
-<li>[daily] Server Triage Reports - <a href="https://discourse.ubuntu.com/c/project/server/17">https://discourse.ubuntu.com/c/project/server/17</a></li>
-<li>Foundations Team Updates - 2026-10-08 - <a href="https://discourse.ubuntu.com/t/foundations-team-updates-2026-10-08/89044">https://discourse.ubuntu.com/t/foundations-team-updates-2026-10-08/89044</a></li>
-</ul>
-<h2><a name="p-231571-upcoming-meetings-and-events-15" class="anchor" href="https://discourse.ubuntu.com#p-231571-upcoming-meetings-and-events-15" aria-label="Heading link"></a>Upcoming Meetings and Events</h2>
-<ul>
-<li>Ubuntu HPC weekly community call: Wednesday, 14 October, 4:30 - 5:00 PM - <a href="https://meet.jit.si/Ubuntu-HPC">https://meet.jit.si/Ubuntu-HPC</a> | <a href="https://matrix.to/#/#hpc:ubuntu.com" rel="noopener nofollow ugc">https://matrix.to/#/#hpc:ubuntu.com</a></li>
-<li>Lubuntu Weekly Standup: Thursday 15 October, 9:00 - 10:00 PM - <a href="https://matrix.to/#/#lubuntu-devel:ubuntu.com" rel="noopener nofollow ugc">https://matrix.to/#/#lubuntu-devel:ubuntu.com</a> | <a href="https://discourse.ubuntu.com/t/lubuntu-weekly-standup/43699">https://discourse.ubuntu.com/t/lubuntu-weekly-standup/43699</a></li>
-<li>Documentation Community Hour: Friday, 16 October, 4:00 - 5:00 PM BST - <a href="https://discourse.ubuntu.com/t/community-hour/42771">https://discourse.ubuntu.com/t/community-hour/42771</a> | <a href="https://meet.google.com/zcy-onjk-smi">https://meet.google.com/zcy-onjk-smi</a></li>
-</ul>
-<p>Times shown are UTC unless otherwise specified. For more details and further dates please visit: <a href="https://ubuntu.com/community">https://ubuntu.com/community</a> | <a href="https://discourse.ubuntu.com/upcoming-events">https://discourse.ubuntu.com/upcoming-events</a></p>
-<h2><a name="p-231571-ubuntu-circles-loco-events-16" class="anchor" href="https://discourse.ubuntu.com#p-231571-ubuntu-circles-loco-events-16" aria-label="Heading link"></a>Ubuntu Circles! (LoCo) Events</h2>
-<p>The following LoCo team events are currently scheduled in the next two weeks:</p>
-<ul>
-<li>Atlanta Linux Enthusiasts: Linux In-Person Help Session; Wings and Things Tyrone, GA; Thursday, 15 October, 6:00 - 8:00 PM PM CDT - <a href="https://www.heylo.com/event/955338e0-3bcf-43f7-9bcc-e61896c1a760">https://www.heylo.com/event/955338e0-3bcf-43f7-9bcc-e61896c1a760</a></li>
-<li>Arizona LoCo: Virtual Installfest/Linux Workshop on line; 17 October, 1000-1600 - Big Blue Button, <a href="https://bbb.azloco.net">https://bbb.azloco.net</a> (co-hosted with the Phoenix Linux User Group)</li>
-<li>Atlanta Linux Enthusiasts: Linux Help Session (Online) - Jitsi; 18 October, 3 PM CDT - <a href="https://www.heylo.com/event/c2afaad7-8eba-4140-81e6-a4c697a62bfa">https://www.heylo.com/event/c2afaad7-8eba-4140-81e6-a4c697a62bfa</a></li>
-<li>Arizona LoCo: Virtual Tempe Ubuntu Hour on line; 22 October, 1900 - 2000 - BigBlue Button, <a href="https://bbb.azloco.net">https://bbb.azloco.net</a></li>
-<li>Atlanta Linux Enthusiasts: Linux In-Person Help Session; Wings and Things Tyrone, GA; Thursday, 22 October, 6:00 - 8:00 PM PM CDT - <a href="https://www.heylo.com/event/4c63ffd2-e4f0-4d01-94a7-36d724664ff0">https://www.heylo.com/event/4c63ffd2-e4f0-4d01-94a7-36d724664ff0</a></li>
-</ul>
-<p>Looking beyond the next two weeks? Visit the respective Circles!/LoCo Team calendar to browse upcoming events.</p>
-<p>Please also see:</p>
-<ul>
-<li>Ubuntu Arizona LoCo: <a href="https://discourse.ubuntu.com/t/upcoming-events-for-azloco/38466">https://discourse.ubuntu.com/t/upcoming-events-for-azloco/38466</a></li>
-<li>Atlanta Linux Enthusiasts: <a href="https://ale.org/">https://ale.org/</a></li>
-<li>Registered LoCo contacts: <a href="https://discourse.ubuntu.com/c/locos/129">https://discourse.ubuntu.com/c/locos/129</a></li>
-</ul>
-<h2><a name="p-231571-ubuntu-community-discourse-17" class="anchor" href="https://discourse.ubuntu.com#p-231571-ubuntu-community-discourse-17" aria-label="Heading link"></a>Ubuntu Community Discourse</h2>
-<h3><a name="p-231571-multipass-117-release-candidate-18" class="anchor" href="https://discourse.ubuntu.com#p-231571-multipass-117-release-candidate-18" aria-label="Heading link"></a>Multipass 1.17 release candidate</h3>
-<p>Christoph Niederberger tells us the Multipass 1.17.0 Release Candidate is ready for testing, and we’re invited to test it. We’re given details, including the snap in the beta channel, Windows and macOS packages available for GitHub, and told where to report any issues.</p>
-<p><a href="https://discourse.ubuntu.com/t/multipass-1-17-release-candidate/88834">https://discourse.ubuntu.com/t/multipass-1-17-release-candidate/88834</a></p>
-<h3><a name="p-231571-canceled-kernel-releases-for-the-20260831-sru-cycle-19" class="anchor" href="https://discourse.ubuntu.com#p-231571-canceled-kernel-releases-for-the-20260831-sru-cycle-19" aria-label="Heading link"></a>Canceled Kernel Releases for the 2026.08.31 SRU Cycle</h3>
-<p>Kleber Souza reminds us of the 2-week SRU cycle for the Ubuntu Kernel team and the new rules; as a result of these ‘stricter’ rules we’re told of some kernel changes that have been canceled in the 2026.08.31 SRU cycle. A table is provided showing: SRU cycle, kernels, package types, versions, and cancellation reason.</p>
-<p><a href="https://discourse.ubuntu.com/t/canceled-kernel-releases-for-the-2026-08-31-sru-cycle/88894">https://discourse.ubuntu.com/t/canceled-kernel-releases-for-the-2026-08-31-sru-cycle/88894</a></p>
-<h3><a name="p-231571-announcing-ubuntu-desktop-images-for-risc-v-20" class="anchor" href="https://discourse.ubuntu.com#p-231571-announcing-ubuntu-desktop-images-for-risc-v-20" aria-label="Heading link"></a>Announcing Ubuntu desktop images for RISC-V</h3>
-<p>Valentin Haudiquet writes about Desktop images coming to Ubuntu 26.10 for RISC-V. We’re told the images are available for testing, and also told of a Xubuntu Minimal image being available too. Valentin then moves to official support for SpacemiT K3 which will come with Ubuntu 26.10, and gives us a link to view the documentation. We’re given some clues on trying these images, and some technical details on how it was achieved and the work done. We’re asked to give it a try, with thanks given to a number of people who helped.</p>
-<p><a href="https://discourse.ubuntu.com/t/announcing-ubuntu-desktop-images-for-risc-v/89110">https://discourse.ubuntu.com/t/announcing-ubuntu-desktop-images-for-risc-v/89110</a></p>
-<ul>
-<li>Canonical Announces Official Ubuntu Desktop Images for RISC-V - <a href="https://9to5linux.com/canonical-announces-official-ubuntu-desktop-images-for-risc-v">https://9to5linux.com/canonical-announces-official-ubuntu-desktop-images-for-risc-v</a></li>
-</ul>
-<h2><a name="p-231571-the-planet-21" class="anchor" href="https://discourse.ubuntu.com#p-231571-the-planet-21" aria-label="Heading link"></a>The Planet</h2>
-<h3><a name="p-231571-whats-new-in-security-for-ubuntu-2610-22" class="anchor" href="https://discourse.ubuntu.com#p-231571-whats-new-in-security-for-ubuntu-2610-22" aria-label="Heading link"></a>What’s new in security for Ubuntu 26.10?</h3>
-<p>Ijlal Loutfi reminds us that AI tools are “accelerating vulnerability discovery” and as such patching “faster is essential”. Ubuntu 26.10 will continue the work in prior Ubuntu releases to reduce “code exposed to attack” with us given some details of this, using Myna as an example. This blog outlines the changes made in Ubuntu 26.10 regarding security in some detail, starting with the Secure Boot path, TPM-backed encryption, and more. This is a detailed post, with many links provided should we need more. Along with a reminder of the interim releases in an LTS cycle, we’re asked to test Ubuntu 26.10 with our workloads, and report what we find, as reports will help influence development of Ubuntu 28.04 LTS.</p>
-<p><a href="https://ubuntu.com/blog/ubuntu-26-10-security">https://ubuntu.com/blog/ubuntu-26-10-security</a></p>
-<ul>
-<li>Canonical Beefs Up Security for Ubuntu 26.10 with Slimmed-Down GRUB, Linux 7.3 - <a href="https://9to5linux.com/canonical-beefs-up-security-for-ubuntu-26-10-with-slimmed-down-grub-linux-7-3">https://9to5linux.com/canonical-beefs-up-security-for-ubuntu-26-10-with-slimmed-down-grub-linux-7-3</a></li>
-<li>Canonical Reaffirms Plans For Ubuntu 27.04 To Use ntpd-rs By Default - <a href="https://www.phoronix.com/news/Ubuntu-27.04-ntpd-rs-Plans">https://www.phoronix.com/news/Ubuntu-27.04-ntpd-rs-Plans</a></li>
-<li>Ubuntu 26.10 drops Btrfs, XFS &amp; ZFS /boot with Secure Boot</li>
-</ul>
-<h2><a name="p-231571-canonical-news-23" class="anchor" href="https://discourse.ubuntu.com#p-231571-canonical-news-23" aria-label="Heading link"></a>Canonical News</h2>
-<ul>
-<li>Devpack for Rust: Zero to Rust in seconds - <a href="https://ubuntu.com/blog/devpack-for-rust-support">https://ubuntu.com/blog/devpack-for-rust-support</a></li>
-</ul>
-<h2><a name="p-231571-in-the-blogosphere-24" class="anchor" href="https://discourse.ubuntu.com#p-231571-in-the-blogosphere-24" aria-label="Heading link"></a>In the Blogosphere</h2>
-<h3><a name="p-231571-multiple-security-issues-patched-in-xorg-server-21125-and-xwayland-24114-25" class="anchor" href="https://discourse.ubuntu.com#p-231571-multiple-security-issues-patched-in-xorg-server-21125-and-xwayland-24114-25" aria-label="Heading link"></a>Multiple Security Issues Patched in XOrg Server 21.1.25 and Xwayland 24.1.14</h3>
-<p>Marcus Nestor tells us of the release of XOrg Server 21.1.25 and Xwayland 24.1.14 which resolve some security vulnerabilities. We’re given details of the problems and CVEs resolved, of potential problems of heap corruption, denial of service &amp; more that are mitigated with this update. A link to the XOrg Security Advisory is also included.</p>
-<p><a href="https://9to5linux.com/multiple-security-issues-patched-in-xorg-server-21-1-25-and-xwayland-24-1-14">https://9to5linux.com/multiple-security-issues-patched-in-xorg-server-21-1-25-and-xwayland-24-1-14</a></p>
-<ul>
-<li><a href="http://X.Org">X.Org</a> Security Advisory: multiple security issues in <a href="http://X.Org">X.Org</a> X server - <a href="https://lists.x.org/archives/xorg-announce/2026-October/003747.html">https://lists.x.org/archives/xorg-announce/2026-October/003747.html</a></li>
-</ul>
-<h3><a name="p-231571-ubuntu-summit-for-ubuntu-2610-takes-place-on-november-12-13-2026-26" class="anchor" href="https://discourse.ubuntu.com#p-231571-ubuntu-summit-for-ubuntu-2610-takes-place-on-november-12-13-2026-26" aria-label="Heading link"></a>Ubuntu Summit for Ubuntu 26.10 Takes Place on November 12-13, 2026</h3>
-<p>Marcus Nestor gives us details of the Ubuntu Summit; which will take place on November 12-13 2026. We’re reminded of the coming Ubuntu 26.10 (Stonking Stingray) release, before giving us some details of the Ubuntu Summit, some links, and being told how to register via Ubuntu’s Discourse.</p>
-<p><a href="https://9to5linux.com/ubuntu-summit-for-ubuntu-26-10-takes-place-on-november-12-13-2026">https://9to5linux.com/ubuntu-summit-for-ubuntu-26-10-takes-place-on-november-12-13-2026</a></p>
-<h3><a name="p-231571-nvidia-615-driver-is-finally-available-in-official-ubuntu-repository-27" class="anchor" href="https://discourse.ubuntu.com#p-231571-nvidia-615-driver-is-finally-available-in-official-ubuntu-repository-27" aria-label="Heading link"></a>NVIDIA 615 Driver is Finally Available in Official Ubuntu Repository</h3>
-<p>Ji m reports that the NVIDIA 615.71.09 driver can be found in Ubuntu repositories for Ubuntu 26.04 LTS, Ubuntu 24.04 LTS and Ubuntu 22.04 LTS. We’re given details of the improvements in this newer driver, and told how we can install it if we’re using a Ubuntu system.</p>
-<p><a href="https://ubuntuhandbook.org/index.php/2026/10/nvidia-615-available-ubuntu-repository/">https://ubuntuhandbook.org/index.php/2026/10/nvidia-615-available-ubuntu-repository/</a></p>
-<h2><a name="p-231571-featured-audio-and-video-28" class="anchor" href="https://discourse.ubuntu.com#p-231571-featured-audio-and-video-28" aria-label="Heading link"></a>Featured Audio and Video</h2>
-<h3><a name="p-231571-portugal-podcast-episode-388-t-toda-confinada-29" class="anchor" href="https://discourse.ubuntu.com#p-231571-portugal-podcast-episode-388-t-toda-confinada-29" aria-label="Heading link"></a>Portugal Podcast: Episode 388 - 'Tá Toda Confinada</h3>
-<p>“O Diogo regressou da Festa do Software Livre de barriga cheia com frango assado e excelentes comunicações e dá-nos um cheirinho do que viu. Perorámos muito sobre as novidades do Firefox, alterações do seu design, avanços e recuos; o Diogo continua a fazer TOKENMAXXING À BRUTA para levar a Anthropic à falência e até o Miguel já foi estender a mão ao Deepseek para lhe desligar o portátil. Andámos a brincar com o fogo a meter Qwen 3 e Ollama com Gemma no computador; o Diogo está enfiado num labirinto (que ele próprio criou) numa app de navegação e ainda insultámos a Trofa, Corroios, Coimbra e muitas outras comunidades humanas - excepto São Mamede de Infesta, que é a sede do LCD Porto e por isso é muito fixe.”</p>
-<p><a href="https://podcastubuntuportugal.org/e388/">https://podcastubuntuportugal.org/e388/</a></p>
-<h3><a name="p-231571-destination-linux-episode-486-monica-ayhensmadon-talks-thundermail-ubuntu-mate-opensource-community-power-30" class="anchor" href="https://discourse.ubuntu.com#p-231571-destination-linux-episode-486-monica-ayhensmadon-talks-thundermail-ubuntu-mate-opensource-community-power-30" aria-label="Heading link"></a>Destination Linux: episode 486 - Monica Ayhens‑Madon Talks Thundermail, Ubuntu MATE &amp; Open‑Source Community Power</h3>
-<p>“Jill hosts an extended and heartfelt conversation with <strong>Monica Ayhens‑Madon</strong>, one of the most passionate open‑source community advocates in the Linux world. Monica shares her journey from Canonical’s Community Team to Ubuntu MATE, her time on the Ubuntu Community Council, and her current role helping shape the future of Thunderbird.”</p>
-<p><a href="https://www.youtube.com/watch?v=VH1ry7JSHVE">https://www.youtube.com/watch?v=VH1ry7JSHVE</a></p>
-<h2><a name="p-231571-security-and-updates-for-ubuntu-2204-2404-and-2604-31" class="anchor" href="https://discourse.ubuntu.com#p-231571-security-and-updates-for-ubuntu-2204-2404-and-2604-31" aria-label="Heading link"></a>Security and Updates for Ubuntu 22.04, 24.04, and 26.04</h2>
-<h3><a name="p-231571-security-updates-32" class="anchor" href="https://discourse.ubuntu.com#p-231571-security-updates-32" aria-label="Heading link"></a>Security Updates</h3>
-<ul>
-<li>[USN-8867-1] Ceph vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011335.html" class="inline-onebox">[USN-8867-1] Ceph vulnerability</a></li>
-<li>[USN-8865-1] EDK II vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011336.html" class="inline-onebox">[USN-8865-1] EDK II vulnerabilities</a></li>
-<li>[USN-8868-1] LibreOffice vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011337.html" class="inline-onebox">[USN-8868-1] LibreOffice vulnerabilities</a></li>
-<li>[USN-8851-3] Linux kernel (Azure) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011338.html" class="inline-onebox">[USN-8851-3] Linux kernel (Azure) vulnerabilities</a></li>
-<li>[USN-8871-1] Linux kernel (Raspberry Pi) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011339.html" class="inline-onebox">[USN-8871-1] Linux kernel (Raspberry Pi) vulnerabilities</a></li>
-<li>[USN-8870-1] OpenStack Aodh and Watcher vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011340.html" class="inline-onebox">[USN-8870-1] OpenStack Aodh and Watcher vulnerability</a></li>
-<li>[USN-8872-1] libxmltok vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011341.html" class="inline-onebox">[USN-8872-1] libxmltok vulnerabilities</a></li>
-<li>[USN-8873-1] Unbound vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011342.html" class="inline-onebox">[USN-8873-1] Unbound vulnerabilities</a></li>
-<li>[USN-8876-1] Linux kernel (Azure CVM) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011343.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011343.html</a></li>
-<li>[USN-8878-1] Linux kernel (GCP) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011344.html" class="inline-onebox">[USN-8878-1] Linux kernel (GCP) vulnerabilities</a></li>
-<li>[USN-8877-1] Linux kernel (GCP) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011345.html" class="inline-onebox">[USN-8877-1] Linux kernel (GCP) vulnerabilities</a></li>
-<li>[USN-8879-1] Linux kernel (Oracle) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011346.html" class="inline-onebox">[USN-8879-1] Linux kernel (Oracle) vulnerabilities</a></li>
-<li>[USN-8875-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011347.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011347.html</a></li>
-<li>[USN-8869-1] RabbitMQ Server vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011348.html" class="inline-onebox">[USN-8869-1] RabbitMQ Server vulnerability</a></li>
-<li>[USN-8881-1] FreeType vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011349.html" class="inline-onebox">[USN-8881-1] FreeType vulnerability</a></li>
-<li>[USN-8881-1] FreeType vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011365.html" class="inline-onebox">[USN-8881-1] FreeType vulnerability</a></li>
-<li>[USN-8880-1] FreeRDP vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011350.html" class="inline-onebox">[USN-8880-1] FreeRDP vulnerabilities</a></li>
-<li>[USN-8880-1] FreeRDP vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011364.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011364.html</a></li>
-<li>[USN-8880-1] FreeRDP vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011363.html" class="inline-onebox">[USN-8880-1] FreeRDP vulnerabilities</a></li>
-<li>[USN-8874-1] sg3_utils vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011352.html" class="inline-onebox">[USN-8874-1] sg3_utils vulnerability</a></li>
-<li>[USN-8882-1] Tesseract vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011351.html" class="inline-onebox">[USN-8882-1] Tesseract vulnerabilities</a></li>
-<li>[USN-8888-1] Linux kernel (Azure) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011355.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011355.html</a></li>
-<li>[USN-8889-1] Linux kernel (OEM) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011356.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011356.html</a></li>
-<li>[USN-8887-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011357.html" class="inline-onebox">[USN-8887-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-8883-1] Go vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011353.html" class="inline-onebox">[USN-8883-1] Go vulnerability</a></li>
-<li>[USN-8885-1] FluidSynth vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011354.html" class="inline-onebox">[USN-8885-1] FluidSynth vulnerabilities</a></li>
-<li>[USN-8886-1] Linux kernel (NVIDIA Tegra) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011358.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011358.html</a></li>
-<li>[USN-8884-1] U-Boot vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011359.html" class="inline-onebox">[USN-8884-1] U-Boot vulnerabilities</a></li>
-<li>[USN-8890-1] libsoup vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011360.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011360.html</a></li>
-<li>[USN-8892-1] Ubuntu Pro for WSL vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011361.html" class="inline-onebox">[USN-8892-1] Ubuntu Pro for WSL vulnerability</a></li>
-<li>[USN-8866-1] Redis vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011366.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011366.html</a></li>
-<li>[USN-8893-1] Libwebsockets vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011367.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011367.html</a></li>
-<li>[USN-8891-1] librsvg vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011368.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011368.html</a></li>
-<li>[LSN-0122-1] Linux kernel vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011369.html" class="inline-onebox">[LSN-0122-1] Linux kernel vulnerability</a></li>
-<li>[USN-8895-1] Sudo vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011370.html" class="inline-onebox">[USN-8895-1] Sudo vulnerability</a></li>
-<li>[USN-8894-1] poppler vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011371.html" class="inline-onebox">[USN-8894-1] poppler vulnerabilities</a></li>
-<li>[USN-8900-1] Go Networking vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011372.html" class="inline-onebox">[USN-8900-1] Go Networking vulnerabilities</a></li>
-<li>[USN-8896-1] GStreamer Ugly Plugins vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011374.html" class="inline-onebox">[USN-8896-1] GStreamer Ugly Plugins vulnerabilities</a></li>
-<li>[USN-8897-1] lxml vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011373.html" class="inline-onebox">[USN-8897-1] lxml vulnerabilities</a></li>
-<li>[USN-8901-1] Erlang vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011375.html" class="inline-onebox">[USN-8901-1] Erlang vulnerabilities</a></li>
-<li>[USN-8887-2] Linux kernel (AWS) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011385.html" class="inline-onebox">[USN-8887-2] Linux kernel (AWS) vulnerabilities</a></li>
-<li>[USN-8904-1] Linux kernel (Azure) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011380.html" class="inline-onebox">[USN-8904-1] Linux kernel (Azure) vulnerabilities</a></li>
-<li>[USN-8888-2] Linux kernel (Azure) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011381.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011381.html</a></li>
-<li>[USN-8906-1] Linux kernel (IBM) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011382.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011382.html</a></li>
-<li>[USN-8905-1] Linux kernel (GCP) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011383.html" class="inline-onebox">[USN-8905-1] Linux kernel (GCP) vulnerabilities</a></li>
-<li>[USN-8903-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011384.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011384.html</a></li>
-<li>[USN-8907-1] libgit2 vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011376.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011376.html</a></li>
-<li>[USN-8902-1] libarchive vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011377.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011377.html</a></li>
-<li>[USN-8898-1] Apache HTTP Server vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011379.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011379.html</a></li>
-<li>[USN-8899-1] libpng vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011378.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011378.html</a></li>
-<li>[USN-8910-1] libxml2 vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011386.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011386.html</a></li>
-<li>[USN-8909-1] libde265 vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011387.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011387.html</a></li>
-<li>[USN-8875-2] Linux kernel (NVIDIA) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011392.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011392.html</a></li>
-<li>[USN-8903-2] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011389.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011389.html</a></li>
-<li>[USN-8887-3] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011391.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011391.html</a></li>
-<li>[USN-8905-2] Linux kernel (GCP) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011390.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011390.html</a></li>
-<li>[USN-8908-1] BlueZ vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011388.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011388.html</a></li>
-<li>[USN-8911-1] Linux kernel (OEM) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011393.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-October/011393.html</a></li>
-</ul>
-<h3><a name="p-231571-ubuntu-2204-updates-33" class="anchor" href="https://discourse.ubuntu.com#p-231571-ubuntu-2204-updates-33" aria-label="Heading link"></a>Ubuntu 22.04 Updates</h3>
-<p>Maintenance Activity: <a href="https://lists.ubuntu.com/archives/jammy-changes/2026-October/">https://lists.ubuntu.com/archives/jammy-changes/2026-October/</a></p>
-<p>End of Standard Support: April 2027</p>
-<h3><a name="p-231571-ubuntu-2404-updates-34" class="anchor" href="https://discourse.ubuntu.com#p-231571-ubuntu-2404-updates-34" aria-label="Heading link"></a>Ubuntu 24.04 Updates</h3>
-<p>Maintenance Activity: <a href="https://lists.ubuntu.com/archives/noble-changes/2026-October/">https://lists.ubuntu.com/archives/noble-changes/2026-October/</a></p>
-<p>End of standard support: April 2029</p>
-<h3><a name="p-231571-ubuntu-2604-updates-35" class="anchor" href="https://discourse.ubuntu.com#p-231571-ubuntu-2604-updates-35" aria-label="Heading link"></a>Ubuntu 26.04 Updates</h3>
-<p>Maintenance Activity: <a href="https://lists.ubuntu.com/archives/resolute-changes/2026-October/">https://lists.ubuntu.com/archives/resolute-changes/2026-October/</a></p>
-<p>End of Standard Support: April 2031</p>
-<p>[The Release Update Listings] have become unwieldy so we’re providing links.</p>
-<h2><a name="p-231571-subscribe-36" class="anchor" href="https://discourse.ubuntu.com#p-231571-subscribe-36" aria-label="Heading link"></a>Subscribe</h2>
-<p>Get your copy of the Ubuntu Weekly Newsletter delivered each week to you via email at: <a href="https://lists.ubuntu.com/mailman/listinfo/ubuntu-news">https://lists.ubuntu.com/mailman/listinfo/ubuntu-news</a></p>
-<p>Or follow us via our various social media presences:</p>
-<ul>
-<li><a href="https://www.facebook.com/UbuntuWeeklyNewsletter">https://www.facebook.com/UbuntuWeeklyNewsletter</a></li>
-<li><a href="https://twitter.com/Ubuntu_News">https://twitter.com/Ubuntu_News</a></li>
-<li><a href="https://t.me/ubuntunewsletter">https://t.me/ubuntunewsletter</a> (Telegram)</li>
-<li><a href="https://ubuntu.social/">https://ubuntu.social/</a> (Mastodon)</li>
-<li><a href="https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss">https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss</a> (our RSS feed)</li>
-</ul>
-<h2><a name="p-231571-archives-37" class="anchor" href="https://discourse.ubuntu.com#p-231571-archives-37" aria-label="Heading link"></a>Archives</h2>
-<p>For recent issues of the Ubuntu Weekly Newsletter <a href="https://discourse.ubuntu.com/c/uwn/uwn-issues/419">Issue 786 &amp; later please visit our Discourse page:</a> or <a href="https://ubuntu.com/community/uwn/">our Portal page:</a> that is easier to read. The older WIKI issues (809 and earlier) are available at<a href="https://wiki.ubuntu.com/UbuntuWeeklyNewsletter/Archive">: UbuntuWeeklyNewsletter/Archive</a>.</p>
-<h2><a name="p-231571-further-news-38" class="anchor" href="https://discourse.ubuntu.com#p-231571-further-news-38" aria-label="Heading link"></a>Further News</h2>
-<p>As always you can find more Ubuntu news and announcements at:</p>
-<ul>
-<li><a href="https://ubuntu.com/blog/">https://ubuntu.com/blog/</a></li>
-<li><a href="https://ubuntu.com/community">https://ubuntu.com/community</a></li>
-</ul>
-<h2><a name="p-231571-conclusion-39" class="anchor" href="https://discourse.ubuntu.com#p-231571-conclusion-39" aria-label="Heading link"></a>Conclusion</h2>
-<p>Thank you for reading the Ubuntu Weekly Newsletter.</p>
-<p>See you next week!</p>
-<h2><a name="p-231571-credits-40" class="anchor" href="https://discourse.ubuntu.com#p-231571-credits-40" aria-label="Heading link"></a>Credits</h2>
-<p>The Ubuntu Weekly Newsletter is brought to you by:</p>
-<ul>
-<li>Krytarik Raido</li>
-<li>Bashing-om</li>
-<li>Chris Guiver</li>
-<li>Wild Man</li>
-<li>irihapeti</li>
-<li>And many others</li>
-</ul>
-<h2><a name="p-231571-glossary-of-terms-41" class="anchor" href="https://discourse.ubuntu.com#p-231571-glossary-of-terms-41" aria-label="Heading link"></a>Glossary of Terms</h2>
-<p>Other acronyms can be found at: <a href="https://discourse.ubuntu.com/t/glossary-uwn/42405">https://discourse.ubuntu.com/t/glossary-uwn/42405</a></p>
-<h2><a name="p-231571-get-involved-42" class="anchor" href="https://discourse.ubuntu.com#p-231571-get-involved-42" aria-label="Heading link"></a>Get Involved</h2>
-<p>The Ubuntu community consists of individuals and teams, working on different aspects of the distribution, giving advice and technical support, and helping to promote Ubuntu to a wider audience. No contribution is too small, and anyone can help. It’s your chance to get in on all the community fun associated with developing and promoting Ubuntu. More on this at: <a href="https://community.ubuntu.com/contribute/">https://community.ubuntu.com/contribute/</a></p>
-<p>Or get involved with the Ubuntu Weekly Newsletter team! We always need summary writers and editors, if you’re interested, learn more at: <a href="https://discourse.ubuntu.com/t/joining-the-ubuntu-weekly-newsletter-team/40929">https://discourse.ubuntu.com/t/joining-the-ubuntu-weekly-newsletter-team/40929</a></p>
-<h2><a name="p-231571-feedback-43" class="anchor" href="https://discourse.ubuntu.com#p-231571-feedback-43" aria-label="Heading link"></a>Feedback</h2>
-<p>This document is maintained by the Ubuntu Weekly News Team. If you have a story idea or suggestions for the Weekly Newsletter, join the Ubuntu News Team mailing list at <a href="https://lists.ubuntu.com/mailman/listinfo/Ubuntu-news-team">https://lists.ubuntu.com/mailman/listinfo/Ubuntu-news-team</a> and submit it. Ideas can also be added to the wiki at <a href="https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-ideas/40053/">https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-ideas/40053/</a> . If you’d like to contribute to a future issue of the Ubuntu Weekly Newsletter, please feel free to edit the appropriate wiki page. If you have any technical support questions, please check <a href="https://community.ubuntu.com/help-information/">https://community.ubuntu.com/help-information/</a> for more information on where to get help.</p>
-<p>Except where otherwise noted, this issue of the Ubuntu Weekly Newsletter is licensed under a Creative Commons Attribution ShareAlike 3.0 License.</p>
-<p><img src="https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/3X/d/b/dbf59da03627b1c1aed30432a2467c245b8cfbf1.png" alt="CCL" data-base62-sha1="vnQNj6QVCJUCgWWL8t8nrPszYqJ" width="88" height="31"></p>
-            <p><small>2 posts - 2 participants</small></p>
-            <p><a href="https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-965/88891">Read full topic</a></p>]]></description>
-      <source url="https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss">Ubuntu Weekly News</source>
     </item>
     <item>
       <title>If it hurts, do it more!</title>
@@ -2587,6 +2642,140 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
       <source url="https://steveire.wordpress.com/feed/?mrss=off">Stephen Kelly</source>
     </item>
     <item>
+      <title>Free software activity in November 2025</title>
+      <link>https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</link>
+      <guid isPermaLink="true">https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</guid>
+      <pubDate>Thu, 04 Dec 2025 17:55:59 GMT</pubDate>
+      <description><![CDATA[<p>My Debian contributions this month were all
+<a href="https://www.freexian.com/about/debian-contributions/">sponsored</a> by
+Freexian.  I had a bit less time than usual, because Freexian collaborators
+gathered in Marseille this month for our yearly sprint, doing some planning
+for next&nbsp;year.</p>
+<p>You can also support my work directly via
+<a href="https://liberapay.com/cjwatson">Liberapay</a> or <a href="https://github.com/sponsors/cjwatson">GitHub
+Sponsors</a>.</p>
+<h2>OpenSSH</h2>
+<p>I began preparing for the second stage of the <a href="https://lists.debian.org/debian-devel/2024/04/msg00044.html"><span class="caps">GSS</span>-<span class="caps">API</span> key exchange package
+split</a> (some
+details have changed since that message).  It seems that we&#8217;ll need to wait
+until Ubuntu 26.04 <span class="caps">LTS</span> has been released, but that&#8217;s close enough that it&#8217;s
+worth making sure we&#8217;re ready.  This month I just did some packaging
+cleanups that would otherwise have been annoying to copy, such as removing
+support for direct upgrades from pre-bookworm.  I&#8217;m considering some other
+package rearrangements to make the split easier to manage, but haven&#8217;t made
+any decisions here&nbsp;yet.</p>
+<p>This also led me to start on a long-overdue bug triage pass, mainly
+consisting of applying usertags to lots of our open bugs to sort them by
+which program they apply to, and also closing a few that have been fixed,
+since some bugs will eventually need to be reassigned to <span class="caps">GSS</span>-<span class="caps">API</span> packages
+and it would be helpful to make them easier to find.  At the time of
+writing, about 30% of the bug list remains to be categorized this&nbsp;way.</p>
+<h2>Python&nbsp;packaging</h2>
+<p>I upgraded these packages to new upstream&nbsp;versions:</p>
+<ul>
+<li>aioftp</li>
+<li>basemap (fixing <a href="https://bugs.debian.org/1119728">Cython 3.1
+  compatibility</a>)</li>
+<li>billiard</li>
+<li>black</li>
+<li>django-phonenumber-field</li>
+<li>flask-security</li>
+<li>flufl.i18n</li>
+<li>langtable</li>
+<li>mariadb-connector-python</li>
+<li>peewee (fixing <a href="https://bugs.debian.org/1119757">Cython 3.1
+  compatibility</a>)</li>
+<li>pydantic</li>
+<li>pydantic-core</li>
+<li>pydantic-settings</li>
+<li>pylsqpack</li>
+<li>pymongo</li>
+<li>pymssql</li>
+<li>pyodbc</li>
+<li>python-auditwheel (<a href="https://github.com/pypa/auditwheel/pull/640">contributed follow-up fix
+  upstream</a>)</li>
+<li>python-avro</li>
+<li>python-bleach</li>
+<li>python-btrees</li>
+<li>python-certifi</li>
+<li>python-charset-normalizer</li>
+<li>python-colorlog</li>
+<li>python-django-channels</li>
+<li>python-django-constance</li>
+<li>python-django-contact-form</li>
+<li>python-django-hashids</li>
+<li>python-djvulibre (fixing <a href="https://bugs.debian.org/1119766">Cython 3.1
+  compatibility</a>)</li>
+<li>python-evalidate</li>
+<li>python-legacy-cgi</li>
+<li>python-openstep-plist (fixing <a href="https://bugs.debian.org/1119767">Cython 3.1
+  compatibility</a>)</li>
+<li>python-pytest-run-parallel</li>
+<li>python-pytokens</li>
+<li>python-tblib</li>
+<li>python-webargs</li>
+<li>pyupgrade</li>
+<li>sqlfluff</li>
+<li>trove-classifiers</li>
+<li>ttconv</li>
+<li>wcwidth</li>
+<li>zope.hookable</li>
+<li>zope.i18nmessageid (removing <a href="https://bugs.debian.org/1084014">run-time dependency on
+  setuptools</a>)</li>
+<li>zope.interface</li>
+<li>zope.proxy</li>
+<li>zope.security (removing <a href="https://bugs.debian.org/1084018">run-time dependency on
+  setuptools</a>)</li>
+<li>zope.sqlalchemy</li>
+</ul>
+<p>I packaged <a href="https://bugs.debian.org/1120507">django-pgtransaction</a> and
+backported it to trixie, since we plan to use it in Debusine; and I adopted
+python-certifi for the Python&nbsp;team.</p>
+<p>I fixed or helped to fix several other build/test&nbsp;failures:</p>
+<ul>
+<li><a href="https://bugs.debian.org/1119744">kivy</a></li>
+<li><a href="https://bugs.debian.org/1120242">mypy</a></li>
+<li><a href="https://bugs.debian.org/1114284">pytest-mypy-testing</a> (<a href="https://github.com/davidfritzsche/pytest-mypy-testing/pull/57">contributed
+  upstream</a>)</li>
+<li><a href="https://salsa.debian.org/python-team/packages/python-cytoolz/-/commit/52856c4c1d1bc9fab0241e4c1b0d20d75bdaa99a">python-cytoolz</a></li>
+<li><a href="https://bugs.debian.org/1120725">python-discord</a></li>
+<li><a href="https://bugs.debian.org/1120469">python-ncls</a>, fixing some failures in&nbsp;pyranges</li>
+<li><a href="https://bugs.debian.org/1121095">pyxdg</a></li>
+<li><a href="https://bugs.debian.org/1114415">traitlets</a></li>
+<li><a href="https://bugs.debian.org/1120228">twine</a></li>
+</ul>
+<p>I fixed a couple of other&nbsp;bugs:</p>
+<ul>
+<li><a href="https://bugs.debian.org/1119801">pmix: B-D on python3-all-dev, but not built for all supported Python3&nbsp;versions</a></li>
+<li><a href="https://bugs.debian.org/1064621">python-certifi: Package not compatible with&nbsp;multiarch</a></li>
+</ul>
+<h2>Other bits and&nbsp;pieces</h2>
+<ul>
+<li><a href="https://bugs.debian.org/1087524">cdebconf: Move to&nbsp;/usr/lib/apt/apt-extracttemplates</a></li>
+<li><a href="https://salsa.debian.org/debian/devscripts/-/merge_requests/588">devscripts: Restore dpkg-dev&nbsp;dependency</a></li>
+<li><a href="https://bugs.debian.org/1121577">groff: Missing information about some utilities in the &#8220;contrib&#8221;&nbsp;directory</a></li>
+</ul>
+<h2>Code&nbsp;reviews</h2>
+<ul>
+<li><a href="https://bugs.debian.org/1119914">base-passwd: French translation</a> (merged
+  and&nbsp;uploaded)</li>
+<li><a href="https://salsa.debian.org/installer-team/cdebconf/-/merge_requests/23">cdebconf: Consider using the standard dh sequence in
+  d/rules</a>
+  (merged and&nbsp;uploaded)</li>
+<li><a href="https://bugs.debian.org/430151">cdebconf: Multiple select is not right aligned in
+  Hebrew</a> (patch fails to build; asked
+  reporter for an&nbsp;update)</li>
+<li><a href="https://bugs.debian.org/1078936">cdebconf: Allow building without
+  libglib2.0-dev</a> (merged and&nbsp;uploaded)</li>
+<li><a href="https://bugs.debian.org/1121035">pydantic-core</a> (merged and&nbsp;uploaded)</li>
+<li>pymongo (sponsored adoption by Aryan&nbsp;Karamtoth)</li>
+<li><a href="https://salsa.debian.org/python-team/packages/maturin/-/merge_requests/1">python-maturin: Add missing build
+  dependencies</a>
+  (merged and&nbsp;uploaded)</li>
+</ul>]]></description>
+      <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
+    </item>
+    <item>
       <title>Why I Won’t Be Attending or Speaking at Ubuntu Summit 25.10</title>
       <link>https://ericheickmeyer.com/2025/10/09/why-i-wont-be-attending-or-speaking-at-ubuntu-summit-25-10/</link>
       <guid isPermaLink="true">https://ericheickmeyer.com/2025/10/09/why-i-wont-be-attending-or-speaking-at-ubuntu-summit-25-10/</guid>
@@ -2686,8 +2875,8 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
     </item>
     <item>
       <title>Testing crash recovery features in a CI environment</title>
-      <link>https://andrea.corbellini.name/2025/09/09/testing-crash-recovery-features-in-ci/</link>
-      <guid isPermaLink="true">https://andrea.corbellini.name/2025/09/09/testing-crash-recovery-features-in-ci/</guid>
+      <link>https://andrea.corbellini.blog/2025/09/09/testing-crash-recovery-features-in-ci/</link>
+      <guid isPermaLink="true">https://andrea.corbellini.blog/2025/09/09/testing-crash-recovery-features-in-ci/</guid>
       <pubDate>Tue, 09 Sep 2025 00:05:00 GMT</pubDate>
       <description><![CDATA[<p>About two years ago I wrote a Rust crate to fulfill this promise:</p>
 <blockquote>
@@ -2973,12 +3162,12 @@ anonymous temporary files, as well as show that the fix was working as
 intended. This is what it looks like (output in the screenshot was trimmed down
 a bit):</p>
 <figure>
-  <img src="https://andrea.corbellini.name/images/crash-tests-failure.png" alt="Output showing a failure from the test suite">
+  <img src="https://andrea.corbellini.blog/images/crash-tests-failure.png" alt="Output showing a failure from the test suite">
   <figcaption>Output from the <code>run-test.sh</code> script <em>before</em> applying the fix, showing a failure.</figcaption>
 </figure>
 
 <figure>
-  <img src="https://andrea.corbellini.name/images/crash-tests-success.png" alt="Output showing a success from the test suite">
+  <img src="https://andrea.corbellini.blog/images/crash-tests-success.png" alt="Output showing a success from the test suite">
   <figcaption>Output from the <code>run-test.sh</code> script <em>after</em> applying the fix, showing a success.</figcaption>
 </figure>
 
