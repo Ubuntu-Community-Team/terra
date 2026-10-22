@@ -6,49 +6,45 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 21 Oct 2026 03:43:28 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 03:43:18 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>eMudhra CA compromise fixes available</title>
-      <link>https://ubuntu.com//blog/emudhra-ca-compromise-fixes-available</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/emudhra-ca-compromise-fixes-available</guid>
-      <pubDate>Tue, 20 Oct 2026 23:45:09 GMT</pubDate>
+      <title>php2shell (CVE-2026-109618 and CVE-2026-109619) – PHP critical vulnerability fixes available</title>
+      <link>https://ubuntu.com//blog/php2shell-vulnerability-fixes-available</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/php2shell-vulnerability-fixes-available</guid>
+      <pubDate>Wed, 21 Oct 2026 14:43:48 GMT</pubDate>
       <description><![CDATA[<h2 class="wp-block-heading">Introduction</h2>
-<p>The private keys of the eMudhra Certificate Authority (CA) have been <a href="https://emudhra.we-have-a-problem.com/">demonstrated</a> on 20 October 2026 to have been compromised. The Ubuntu Security Team has released updates to the system PKI (Public Key Infrastructure) root CA store in the ca-certificates package.</p>
-<p>While the eMudhra CA is not directly trusted as a root on Ubuntu, two other root CAs have cross-signed the eMudhra CA: <strong>emSign Root TLS CA – G3</strong> and <strong>Comodo AAA Certificate Services</strong>. These two roots have been removed from the Ubuntu trusted root store in the ca-certificates package to ensure that the compromised eMudhra CA is no longer trusted. Any legitimate certificate which is ultimately trusted by either of these two root CAs would no longer be trusted. It is unlikely, but this may result in some hosts being unreachable, due to their use of the revoked certificate. The AAA Certificate Services CA had previously been removed from the CA bundles in Ubuntu 22.04 (Jammy Jellyfish) and newer releases.</p>
-<h2 class="wp-block-heading">Which Ubuntu releases are affected?</h2>
-<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained"><div class="wp-block-group__inner-container">
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:100%">
-<figure class="wp-block-table alignleft"><table><tbody><tr><td><strong>Release</strong></td><td><strong>Package name</strong></td><td><strong>Remediation status</strong></td></tr><tr><td>Trusty (14.04)</td><td>ca-certificates</td><td>Fixed in 20230311~14.04.1~esm3</td></tr><tr><td>Xenial (16.04)</td><td>ca-certificates</td><td>Fixed in 202402031~16.04.1~esm3</td></tr><tr><td>Bionic (18.04)</td><td>ca-certificates</td><td>Fixed in 202402031ubuntu0.18.04.1+esm3</td></tr><tr><td>Focal (20.04)</td><td>ca-certificates</td><td>Fixed in 20240203~20.04.1ubuntu0.1~esm2</td></tr><tr><td>Jammy (22.04)</td><td>ca-certificates</td><td>Fixed in 20260816ubuntu0.22.04.1</td></tr><tr><td>Noble (24.04)</td><td>ca-certificates</td><td>Fixed in 20260816ubuntu0.24.04.1</td></tr><tr><td>Resolute (26.04)</td><td>ca-certificates</td><td>Fixed in 20260816ubuntu0.26.04.1</td></tr><tr><td>Stonking (26.10)</td><td>ca-certificates</td><td>Fixed in 20260816ubuntu0.26.10.1</td></tr></tbody></table></figure>
-</div>
-</div>
-</div></div>
-<h2 class="wp-block-heading">How to check if you are impacted</h2>
-<p>You can verify the version of the ca-certificates package with the following command:</p>
-<pre class="wp-block-code"><code>dpkg -l 'ca-certificates' | grep ^ii</code></pre>
-<h2 class="wp-block-heading">Impact of the CA Compromise</h2>
-<p>An unauthorized third party would be able to sign fraudulent X.509 certificates; these would pass validation by a TLS implementation (commonly TLS clients) that trusts the eMudhra CA. Mitigations such as public key pinning or DNS Certificate Authority Authorization (CAA) records do provide the ability to detect such fraudulent certificates, but depend on the TLS application making use of the mitigations and are not widely used.</p>
-<p>This could lead to the identity impersonation of a TLS endpoint and could allow an attacker-in-the-middle to intercept and compromise the confidentiality and integrity of TLS connections, irrespective of the CA that the authentic TLS endpoint uses, unless mitigations are employed.</p>
-<h2 class="wp-block-heading">How to apply fixes</h2>
+<p><br/>Two critical security vulnerabilities affecting PHP have been identified that result in unauthenticated remote code execution (RCE) for any PHP application. The vulnerabilities have been assigned the CVE-2026-109618 and CVE-2026-109619 identifiers, but are also referred to using the php2shell nickname. Ubuntu has released fixes for the affected packages for all supported releases.</p>
+<p>The two vulnerabilities both have a CVSS 4.0 score of 9.2, corresponding to a severity of CRITICAL.</p>
+<p>The vulnerabilities have been responsibly disclosed and the PHP Foundation has engaged in coordinated vulnerability disclosure (CVD) with distributors, establishing a public disclosure date of 22 October 2026 at 14:00 UTC. However, due to a public leak, the disclosure date has been moved forward to 21 October 2026 14:00 UTC.</p>
+<h2 class="wp-block-heading">Which Ubuntu releases are affected by php2shell?</h2>
+<figure class="wp-block-table"><table><tbody><tr><td><strong>Release</strong></td><td><strong>Package Name</strong></td><td><strong>Remediation status</strong></td></tr><tr><td>Trusty (14.04)</td><td>php5</td><td>Fixed in 5.5.9+dfsg-1ubuntu4.29+esm18</td></tr><tr><td>Xenial (16.04)</td><td>php7.0</td><td>Fixed in 7.0.33-0ubuntu0.16.04.16+esm22</td></tr><tr><td>Bionic (18.04)</td><td>php7.2</td><td>Fixed in 7.2.24-0ubuntu0.18.04.17+esm14</td></tr><tr><td>Focal (20.04)</td><td>php7.4</td><td>Fixed in 7.4.3-4ubuntu2.29+esm5</td></tr><tr><td>Jammy (22.04)</td><td>php8.1</td><td>Fixed in 8.1.2-1ubuntu2.28</td></tr><tr><td>Noble (24.04)</td><td>php8.3</td><td>Fixed in 8.3.6-0ubuntu0.24.04.13</td></tr><tr><td>Resolute (26.04)</td><td>php8.5</td><td>Fixed in 8.5.4-0ubuntu1.5</td></tr><tr><td>Stonking (26.10)</td><td>php8.5</td><td>Fixed in 8.5.9-0ubuntu2.1</td></tr></tbody></table></figure>
+<h2 class="wp-block-heading">How to check if you are impacted by php2shell</h2>
+<p>You can verify the versions of any packages installed matching the PHP interpreter package name with the following command:</p>
+<pre class="wp-block-code"><code>apt list '?installed ?name(^php[0-9.]+$)'</code></pre>
+<h2 class="wp-block-heading">Impact of php2shell</h2>
+<p>The two vulnerabilities affect any PHP application. An unauthenticated attacker with network access to the web application can trivially achieve arbitrary remote code execution with the PHP application’s credentials on the target system.</p>
+<h2 class="wp-block-heading">How to apply fixes for php2shell</h2>
 <p>We recommend you upgrade all packages:</p>
 <pre class="wp-block-code"><code>sudo apt update &amp;&amp; sudo apt upgrade</code></pre>
 <p>If this is not possible, the affected component can be targeted:</p>
-<pre class="wp-block-code"><code>sudo apt update &amp;&amp; sudo apt install --only-upgrade ca-certificates</code></pre>
+<pre class="wp-block-code"><code>sudo apt update &amp;&amp; sudo apt install --only-upgrade '?name(^php[0-9.]+$)'</code></pre>
+<p>The application that uses the PHP interpreter would likely need to be restarted. For example, for an application using apache2 with mod_php, restarting the apache daemon is required:</p>
+<pre class="wp-block-code"><code>sudo systemctl restart apache2</code></pre>
+<p>Alternatively, the system can be rebooted to ensure that all applications use the updated components:</p>
+<pre class="wp-block-code"><code>sudo reboot</code></pre>
 <p>The unattended-upgrades feature is enabled by default for Ubuntu 16.04 LTS onwards. This feature:  </p>
-<ul>
+<ul class="wp-block-list">
 <li>Applies new security updates every 24 hours automatically.</li>
-<li>If you have this enabled, the patches above will be automatically applied within 24 hours of being available.</li>
+<li>If you have this enabled, the patches above will be automatically applied within 24 hours of being available, but the affected applications would still need to be restarted or the system rebooted.</li>
 </ul>
-<p>Ubuntu 26.10, 26.04 LTS, 24.04 LTS, and 22.04 LTS receive these fixes as part of standard support. If you are using Ubuntu 20.04 LTS or older, you can apply this fix with an Ubuntu Pro subscription via the Expanded Security Maintenance (ESM) service. Ubuntu Pro is free for up to 5 machines, or up to 50 machines for community members. Ubuntu Pro also provides access to Landscape which enables you to control the roll-out of security fixes across your estate. <a href="http://www.ubuntu.com/pro">Learn more</a>. </p>
-<h3 class="wp-block-heading">Note for Ubuntu Desktop users</h3>
-<p>On Ubuntu Desktop, the most common TLS client would be a browser. They are typically installed as snap packages on Ubuntu desktop, and do not use the system trust store provided by the ca-certificates package. Snap packages are refreshed four times a day by default. If you have disabled automatic updates, ensure that you refresh your snaps manually.</p>
+<p>Ubuntu 26.10, 26.04 LTS, 24.04 LTS, and 22.04 LTS receive these fixes as part of standard support. If you are using Ubuntu 20.04 LTS or older, you can apply this fix with an Ubuntu Pro subscription via the Expanded Security Maintenance (ESM) service. Ubuntu Pro is free for up to 5 machines, or up to 50 machines for community members. Ubuntu Pro also provides access to Landscape which enables you to control the roll-out of security fixes across your estate. <a href="http://www.ubuntu.com/pro">Learn more</a>.</p>
 <h2 class="wp-block-heading">References</h2>
-<ul>
-<li><a href="https://ubuntu.com/security/notices/USN-8944-1">https://ubuntu.com/security/notices/USN-8944-1</a></li>
-<li><a href="https://ubuntu.com/security/notices/USN-8944-2">https://ubuntu.com/security/notices/USN-8944-2</a></li>
-<li><a href="https://emudhra.we-have-a-problem.com/">https://emudhra.we-have-a-problem.com/</a></li>
+<ul class="wp-block-list">
+<li><a href="https://ubuntu.com/security/notices/USN-8948-1">https://ubuntu.com/security/notices/USN-8948-1</a></li>
+<li><a href="https://ubuntu.com/security/notices/USN-8948-2">https://ubuntu.com/security/notices/USN-8948-2</a></li>
+<li><a href="https://www.php.net/archive/2026.php#2026-10-21-5">https://www.php.net/archive/2026.php#2026-10-21-5</a></li>
 </ul>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
@@ -124,8 +120,9 @@ to me, like Cloudflare. Services like Cloudflare in fact do not understand
 third-level domains and did not allow me to register with them because they
 wanted proof of ownership of the second-level domain. Now this is no longer an
 obstacle.</p>
-<p>Reaching my blog also becomes a bit easier: https://corbellini.blog in fact
-redirects to https://andrea.corbellini.blog.</p>
+<p>Reaching my blog also becomes a bit easier:
+<a href="https://corbellini.blog">https://corbellini.blog</a> in fact redirects to
+<a href="https://andrea.corbellini.blog">https://andrea.corbellini.blog</a>.</p>
 <p>Perhaps an amusing fact about <code>.blog</code> specifically is that it’s owned and
 operated by a company called “Knock Knock WhoIS There, LLC”, and I find that
 name quite funny. Having said that, I don’t know anything about this company or
@@ -151,106 +148,6 @@ anymore, regardless of what ICANN’s intentions are.</p>
 <p>I’m happy to be proven wrong. I <em>truly</em> hope this decision gets reversed and I
 get to keep my <code>.name</code> domain. But at this point I lost all hope.</p>]]></description>
       <source url="http://andrea.corbellini.name/ubuntu.rss">Andrea Corbellini</source>
-    </item>
-    <item>
-      <title>Protect your Launchpad API tokens with a security key</title>
-      <link>https://blog.launchpad.net/general/protect-your-launchpad-api-tokens-with-a-security-key</link>
-      <guid isPermaLink="true">https://blog.launchpad.net/general/protect-your-launchpad-api-tokens-with-a-security-key</guid>
-      <pubDate>Mon, 19 Oct 2026 20:40:02 GMT</pubDate>
-      <description><![CDATA[<p>Supply-chain attacks that harvest developer credentials are on the rise. The <a href="https://unit42.paloaltonetworks.com/npm-supply-chain-attack/">Shai-Hulud</a> campaign, for example, used automated scanners to sweep up any secrets they could find in files and keyrings. If you use Launchpad&#8217;s API, one of those secrets is your API token &#8211; and until now it has been about as safe as the laptop it sits on.</p>
-
-
-
-<p>Launchpad now supports <strong>hardware-bound API tokens</strong>: you can tie your API access to a USB FIDO2 security key, such as a YubiKey, so that a stolen token is useless to an attacker who does not have your physical key.</p>
-
-
-
-<h2>The problem</h2>
-
-
-
-<p>Tools like lp-shell and ubuntu-archive-tools use the launchpadlib library to talk to Launchpad. After you log in, launchpadlib stores your OAuth token &#8211; either as a plaintext file on disk or in your desktop keyring. The keyring is unlocked when you log in to your session, so to anything running as you, or to malware that can read your files, that token is effectively plaintext.</p>
-
-
-
-<p>For most people that is an acceptable risk. For core developers, stable release update team members, archive administrators, and Launchpad developers who run a lot of unaudited code, it is a tempting target.</p>
-
-
-
-<h2>The idea</h2>
-
-
-
-<p>Hardware-bound API tokens change what gets stored. Instead of a usable token, launchpadlib stores a long-lived OAuth <strong>refresh grant</strong> that is useless on its own. To do anything with it, launchpadlib has to ask your security key to sign a challenge from Launchpad, which mints a <strong>short-lived access token</strong> for the actual API calls.</p>
-
-
-
-<p>The stored grant cannot mint a token without the key. So if an attacker copies your grant, they get nothing &#8211; the signing happens on a device they do not have.</p>
-
-
-
-<h2>How it works</h2>
-
-
-
-<p>Once you have registered a key and issued a grant, logging in looks like this:</p>
-
-
-
-<ol><li>launchpadlib loads your stored refresh grant.</li><li>It asks Launchpad for a challenge.</li><li>Your security key signs the challenge (you touch the key, and enter its PIN if it has one).</li><li>Launchpad verifies the signature against your registered key and returns a short-lived access token.</li><li>launchpadlib uses that token for API calls until it is close to expiry, then you need to touch your hardware key to renew.</li></ol>
-
-
-
-<p>The signing step is a standard WebAuthn assertion &#8211; the same mechanism browsers use for passkeys &#8211; so it builds on a well-tested security model.</p>
-
-
-
-<h2>Keeping it usable</h2>
-
-
-
-<p>Security that gets in the way does not get used, so the design keeps everyday work smooth:</p>
-
-
-
-<ul><li>A minted access token is reused until it is nearly expired, so you are not touching your key on every command.</li><li>Long-running scripts keep working; the token is renewed as needed.</li><li>The grant is stored in your keyring by default, or in a file you control if you prefer.</li></ul>
-
-
-
-<h2>What it protects &#8211; and what it doesn&#8217;t</h2>
-
-
-
-<p>Being honest about the boundaries matters:</p>
-
-
-
-<ul><li><strong>Opportunistic theft</strong> of stored credentials &#8211; the main thing this defends against. A scanner that grabs your grant gets something it cannot use.</li><li><strong>Targeted attacks on your user session</strong> &#8211; if an attacker can already run code as you, they could still capture a freshly minted access token. Reducing that exposure is future work.</li><li><strong>Root-level compromise</strong> &#8211; out of scope. If an attacker owns the machine, no client-side measure fully protects you.</li></ul>
-
-
-
-<p>This is also specifically about <strong>programmatic access through launchpadlib</strong>, not logging in to the Launchpad website, and it is not intended for automation or bot accounts.</p>
-
-
-
-<h2>Try it</h2>
-
-
-
-<p>You will need a USB FIDO2 security key and launchpadlib with the fido2 extra:</p>
-
-
-
-<pre class="wp-block-code"><code>pip install 'launchpadlib&#91;fido2]'</code></pre>
-
-
-
-<p>Then register your key, issue a grant, and log in with it. The step-by-step instructions are in the Launchpad documentation&#8217;s how-to, <a href="https://ubuntu.com/docs/launchpad/user/how-to/launchpadlib/use-hardware-bound-api-tokens/"><em>Use hardware-bound API tokens</em></a>, with the design and protocol covered in the developer docs.</p>
-
-
-
-<p>We would love your feedback as you start using it! <a href="mailto:feedback@launchpad.net">feedback@launchpad.net</a></p>]]></description>
-      <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
       <title>Sobre GenAI LLMs y Knowledge workers</title>
@@ -339,14 +236,6 @@ y menos de monkey-coders y tira-flechas</em></p>
   </ol>
 </div>]]></description>
       <source url="https://foursixnine.io/atom.xml">Santiago Zarate</source>
-    </item>
-    <item>
-      <title>Lubuntu 26.10 Released!</title>
-      <link>https://lubuntu.me/lubuntu-26-10-released/</link>
-      <guid isPermaLink="true">https://lubuntu.me/lubuntu-26-10-released/</guid>
-      <pubDate>Thu, 15 Oct 2026 23:05:46 GMT</pubDate>
-      <description><![CDATA[Thanks to the hard work from our contributors, Lubuntu 26.10 has been released. With the codename Stonking Stingray, Lubuntu 26.10 is the 31st release of Lubuntu, the 17th release of Lubuntu with LXQt as the default desktop environment. Download and Support Lifespan With Lubuntu 26.10 being an interim release, it will follow the standard non-LTS [&#8230;]]]></description>
-      <source url="http://lubuntu.me/feed/?mrss=off">Lubuntu Blog</source>
     </item>
     <item>
       <title>Ubuntu Studio 26.10 Released!</title>
@@ -2744,6 +2633,140 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
 
 <p class="wp-block-paragraph">I attempted to use new API additions in recent Qt 6 versions to interact with a few real-world REST services. The additions are valuable, but it seems that there are a few places where improvements might be possible. My attempt to make the API feel closer to what developers in other environments might be accustomed to had some success, but I&#8217;m not sure <code>QFuture</code> is really intended to be used this way.<br>Do readers have any feedback? Would using QCoro improve the coroutine experience? Is it very unusual to create an application with QWidgets instead of QML these days? Should I have used PyQt and the python networking APIs?</p>]]></description>
       <source url="https://steveire.wordpress.com/feed/?mrss=off">Stephen Kelly</source>
+    </item>
+    <item>
+      <title>Free software activity in November 2025</title>
+      <link>https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</link>
+      <guid isPermaLink="true">https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</guid>
+      <pubDate>Thu, 04 Dec 2025 17:55:59 GMT</pubDate>
+      <description><![CDATA[<p>My Debian contributions this month were all
+<a href="https://www.freexian.com/about/debian-contributions/">sponsored</a> by
+Freexian.  I had a bit less time than usual, because Freexian collaborators
+gathered in Marseille this month for our yearly sprint, doing some planning
+for next&nbsp;year.</p>
+<p>You can also support my work directly via
+<a href="https://liberapay.com/cjwatson">Liberapay</a> or <a href="https://github.com/sponsors/cjwatson">GitHub
+Sponsors</a>.</p>
+<h2>OpenSSH</h2>
+<p>I began preparing for the second stage of the <a href="https://lists.debian.org/debian-devel/2024/04/msg00044.html"><span class="caps">GSS</span>-<span class="caps">API</span> key exchange package
+split</a> (some
+details have changed since that message).  It seems that we&#8217;ll need to wait
+until Ubuntu 26.04 <span class="caps">LTS</span> has been released, but that&#8217;s close enough that it&#8217;s
+worth making sure we&#8217;re ready.  This month I just did some packaging
+cleanups that would otherwise have been annoying to copy, such as removing
+support for direct upgrades from pre-bookworm.  I&#8217;m considering some other
+package rearrangements to make the split easier to manage, but haven&#8217;t made
+any decisions here&nbsp;yet.</p>
+<p>This also led me to start on a long-overdue bug triage pass, mainly
+consisting of applying usertags to lots of our open bugs to sort them by
+which program they apply to, and also closing a few that have been fixed,
+since some bugs will eventually need to be reassigned to <span class="caps">GSS</span>-<span class="caps">API</span> packages
+and it would be helpful to make them easier to find.  At the time of
+writing, about 30% of the bug list remains to be categorized this&nbsp;way.</p>
+<h2>Python&nbsp;packaging</h2>
+<p>I upgraded these packages to new upstream&nbsp;versions:</p>
+<ul>
+<li>aioftp</li>
+<li>basemap (fixing <a href="https://bugs.debian.org/1119728">Cython 3.1
+  compatibility</a>)</li>
+<li>billiard</li>
+<li>black</li>
+<li>django-phonenumber-field</li>
+<li>flask-security</li>
+<li>flufl.i18n</li>
+<li>langtable</li>
+<li>mariadb-connector-python</li>
+<li>peewee (fixing <a href="https://bugs.debian.org/1119757">Cython 3.1
+  compatibility</a>)</li>
+<li>pydantic</li>
+<li>pydantic-core</li>
+<li>pydantic-settings</li>
+<li>pylsqpack</li>
+<li>pymongo</li>
+<li>pymssql</li>
+<li>pyodbc</li>
+<li>python-auditwheel (<a href="https://github.com/pypa/auditwheel/pull/640">contributed follow-up fix
+  upstream</a>)</li>
+<li>python-avro</li>
+<li>python-bleach</li>
+<li>python-btrees</li>
+<li>python-certifi</li>
+<li>python-charset-normalizer</li>
+<li>python-colorlog</li>
+<li>python-django-channels</li>
+<li>python-django-constance</li>
+<li>python-django-contact-form</li>
+<li>python-django-hashids</li>
+<li>python-djvulibre (fixing <a href="https://bugs.debian.org/1119766">Cython 3.1
+  compatibility</a>)</li>
+<li>python-evalidate</li>
+<li>python-legacy-cgi</li>
+<li>python-openstep-plist (fixing <a href="https://bugs.debian.org/1119767">Cython 3.1
+  compatibility</a>)</li>
+<li>python-pytest-run-parallel</li>
+<li>python-pytokens</li>
+<li>python-tblib</li>
+<li>python-webargs</li>
+<li>pyupgrade</li>
+<li>sqlfluff</li>
+<li>trove-classifiers</li>
+<li>ttconv</li>
+<li>wcwidth</li>
+<li>zope.hookable</li>
+<li>zope.i18nmessageid (removing <a href="https://bugs.debian.org/1084014">run-time dependency on
+  setuptools</a>)</li>
+<li>zope.interface</li>
+<li>zope.proxy</li>
+<li>zope.security (removing <a href="https://bugs.debian.org/1084018">run-time dependency on
+  setuptools</a>)</li>
+<li>zope.sqlalchemy</li>
+</ul>
+<p>I packaged <a href="https://bugs.debian.org/1120507">django-pgtransaction</a> and
+backported it to trixie, since we plan to use it in Debusine; and I adopted
+python-certifi for the Python&nbsp;team.</p>
+<p>I fixed or helped to fix several other build/test&nbsp;failures:</p>
+<ul>
+<li><a href="https://bugs.debian.org/1119744">kivy</a></li>
+<li><a href="https://bugs.debian.org/1120242">mypy</a></li>
+<li><a href="https://bugs.debian.org/1114284">pytest-mypy-testing</a> (<a href="https://github.com/davidfritzsche/pytest-mypy-testing/pull/57">contributed
+  upstream</a>)</li>
+<li><a href="https://salsa.debian.org/python-team/packages/python-cytoolz/-/commit/52856c4c1d1bc9fab0241e4c1b0d20d75bdaa99a">python-cytoolz</a></li>
+<li><a href="https://bugs.debian.org/1120725">python-discord</a></li>
+<li><a href="https://bugs.debian.org/1120469">python-ncls</a>, fixing some failures in&nbsp;pyranges</li>
+<li><a href="https://bugs.debian.org/1121095">pyxdg</a></li>
+<li><a href="https://bugs.debian.org/1114415">traitlets</a></li>
+<li><a href="https://bugs.debian.org/1120228">twine</a></li>
+</ul>
+<p>I fixed a couple of other&nbsp;bugs:</p>
+<ul>
+<li><a href="https://bugs.debian.org/1119801">pmix: B-D on python3-all-dev, but not built for all supported Python3&nbsp;versions</a></li>
+<li><a href="https://bugs.debian.org/1064621">python-certifi: Package not compatible with&nbsp;multiarch</a></li>
+</ul>
+<h2>Other bits and&nbsp;pieces</h2>
+<ul>
+<li><a href="https://bugs.debian.org/1087524">cdebconf: Move to&nbsp;/usr/lib/apt/apt-extracttemplates</a></li>
+<li><a href="https://salsa.debian.org/debian/devscripts/-/merge_requests/588">devscripts: Restore dpkg-dev&nbsp;dependency</a></li>
+<li><a href="https://bugs.debian.org/1121577">groff: Missing information about some utilities in the &#8220;contrib&#8221;&nbsp;directory</a></li>
+</ul>
+<h2>Code&nbsp;reviews</h2>
+<ul>
+<li><a href="https://bugs.debian.org/1119914">base-passwd: French translation</a> (merged
+  and&nbsp;uploaded)</li>
+<li><a href="https://salsa.debian.org/installer-team/cdebconf/-/merge_requests/23">cdebconf: Consider using the standard dh sequence in
+  d/rules</a>
+  (merged and&nbsp;uploaded)</li>
+<li><a href="https://bugs.debian.org/430151">cdebconf: Multiple select is not right aligned in
+  Hebrew</a> (patch fails to build; asked
+  reporter for an&nbsp;update)</li>
+<li><a href="https://bugs.debian.org/1078936">cdebconf: Allow building without
+  libglib2.0-dev</a> (merged and&nbsp;uploaded)</li>
+<li><a href="https://bugs.debian.org/1121035">pydantic-core</a> (merged and&nbsp;uploaded)</li>
+<li>pymongo (sponsored adoption by Aryan&nbsp;Karamtoth)</li>
+<li><a href="https://salsa.debian.org/python-team/packages/maturin/-/merge_requests/1">python-maturin: Add missing build
+  dependencies</a>
+  (merged and&nbsp;uploaded)</li>
+</ul>]]></description>
+      <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
     </item>
     <item>
       <title>Why I Won’t Be Attending or Speaking at Ubuntu Summit 25.10</title>
@@ -7145,15 +7168,6 @@ introducing <code>git ubuntu tag</code>.</p>]]></description>
       <source url="https://cesarsevilla.wordpress.com/category/ubuntu/feed/?mrss=off">Cesar Sevilla</source>
     </item>
     <item>
-      <title>A week ago …</title>
-      <link>https://blogs.fsfe.org/myriam/2016/06/08/a-week-ago/</link>
-      <guid isPermaLink="true">https://blogs.fsfe.org/myriam/2016/06/08/a-week-ago/</guid>
-      <pubDate>Wed, 08 Jun 2016 20:44:39 GMT</pubDate>
-      <description><![CDATA[<p>my cat Filoue turned 15. She survives her nephew Stupsi, who sadly left us earlier this year.<a href="http://blogs.fsfe.org/myriam/files/2016/06/DSC_0040.jpg"><img class="alignnone size-medium wp-image-767" src="http://blogs.fsfe.org/myriam/files/2016/06/DSC_0040-300x199.jpg" alt="" width="300" height="199" srcset="https://blogs.fsfe.org/myriam/files/2016/06/DSC_0040-300x199.jpg 300w, https://blogs.fsfe.org/myriam/files/2016/06/DSC_0040-1024x680.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
-<p>This reminds me how long I contribute to KDE already <img src="https://s.w.org/images/core/emoji/12.0.0-1/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> She has been sitting next to the keyboard purring on almost everything I did in the last 15 years.</p>]]></description>
-      <source url="http://blogs.fsfe.org/myriam/?feed=rss2">Myriam Schweingruber</source>
-    </item>
-    <item>
       <title>Ask Ubuntu moderator election is now underway!</title>
       <link>https://unbrokenspectrum.wordpress.com/2016/06/07/ask-ubuntu-moderator-election-is-now-underway/</link>
       <guid isPermaLink="true">https://unbrokenspectrum.wordpress.com/2016/06/07/ask-ubuntu-moderator-election-is-now-underway/</guid>
@@ -8828,54 +8842,6 @@ There we were starting discussions for the <a href="http://uds.ubuntu.com/">Ubun
 <p>The books will be available for download by this weekend so I&#8217;ll update everyone on where to find them.  Also, if you&#8217;re a developer looking to scratch an itch and help folks, one of these projects might be for you!  If you&#8217;re a System Admin or make recommendations to organizations who might need a great OpenMRS or disaster planning software, we&#8217;ll have a book for you at the end of the week.</p>
 <p>Follow the event on twitter #docsummit #flossmanuals</p>]]></description>
       <source url="https://dindafoss.wordpress.com/category/ubuntu/feed/?mrss=off">Belinda Lopez</source>
-    </item>
-    <item>
-      <title>Ubuntu Global Jam Oneiric</title>
-      <link>http://tumbleweed.org.za/2011/09/05/ubuntu-global-jam-oneiric</link>
-      <guid isPermaLink="true">http://tumbleweed.org.za/2011/09/05/ubuntu-global-jam-oneiric</guid>
-      <pubDate>Mon, 05 Sep 2011 17:22:04 GMT</pubDate>
-      <description><![CDATA[<p>We had quite a successful <a href="http://loco.ubuntu.com/events/ubuntu-za/1169/detail/">Ubuntu Global Jam</a> on Saturday. Thanks <a href="http://www.yola.com/">Yola</a> for hosting us. It was only 5 of us, and I was the only one with any uploads under my belt, but the nice small team meant I had time to help everyone fix some build failures. We had intended to focus on Scientific packages, but it was easier to just pick arbitrary build failures from the most recent <a href="http://people.ubuntuwire.org/~wgrant/rebuild-ftbfs-test/test-rebuild-20110816-oneiric.html">archive rebuild</a>.</p>
-
-<p>Maia <a href="http://my-ubuntu-day.blogspot.com/2011/09/oneiric-global-jam-in-cape-town.html">visited us briefly at lunch time</a> and took some photos, thanks :) Sorry you couldn&#8217;t stay longer.</p>
-
-<h1>Some stats from the jam</h1>
-
-<p>Examples that we fixed together:</p>
-
-<ul>
-<li><a href="https://launchpad.net/ubuntu/oneiric/+source/libmatio/1.3.4-3">sync libmatio to fix <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/832806">fix <span class="caps">FTBFS</span> in pidgin-twitter</a></li>
-</ul>
-
-<p><a href="https://launchpad.net/~dappermuis">Kyle Williams</a>:</p>
-
-<ul>
-<li><a href="https://bugs.launchpad.net/bugs/840385">sync kcollectd to fix <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/840523">sync k9copy to fix <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/831105">fix kx11grab <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/770860">fix kon2 <span class="caps">FTBFS</span></a></li>
-</ul>
-
-<p><a href="https://launchpad.net/~marco-gallotta">Marco Gallotta</a>:</p>
-
-<ul>
-<li><a href="https://bugs.launchpad.net/bugs/835752">fix pysatellites <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/771103">fix ratpoison <span class="caps">FTBFS</span></a></li>
-</ul>
-
-<p><a href="https://launchpad.net/~michielbaird">Michiel Baird</a>:</p>
-
-<ul>
-<li><a href="https://bugs.launchpad.net/bugs/840338">Sync camlimages to fix advi <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/840400">Sync libsdl-sound1.2 to fix asc <span class="caps">FTBFS</span></a></li>
-</ul>
-
-<p>I think that&#8217;s pretty good for a day&#8217;s work :P</p>
-
-<h1>In other news</h1>
-
-<p>Eep, haven&#8217;t blogged an ages. Since I last blogged, I&#8217;ve become a <a href="http://qa.debian.org/developer.php?login=stefanor">Debian Developer</a>, made an <a href="http://launchpad.net/ibid">Ibid</a> point release, been to (my first) <a href="http://summit.ubuntu.com/uds-o/"><span class="caps">UDS</span></a> and a <a href="http://debconf11.debconf.org/">Debconf</a> (which were both fantastic, and very different), spent a week sailing in Croatia with my brother, and been pulled into the Ubuntu release team. All this has meant little progress in my MSc, though :/</p>]]></description>
-      <source url="http://tumbleweed.org.za/tags/ubuntu/feed">Stefano Rivera</source>
     </item>
     <item>
       <title>The sooner the better.</title>
