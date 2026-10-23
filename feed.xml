@@ -6,47 +6,45 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 22 Oct 2026 03:50:35 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 03:54:54 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>eMudhra CA compromise fixes available</title>
-      <link>https://ubuntu.com//blog/emudhra-ca-compromise-fixes-available</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/emudhra-ca-compromise-fixes-available</guid>
-      <pubDate>Tue, 20 Oct 2026 23:45:09 GMT</pubDate>
+      <title>php2shell (CVE-2026-109618 and CVE-2026-109619) – PHP critical vulnerability fixes available</title>
+      <link>https://ubuntu.com//blog/php2shell-vulnerability-fixes-available</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/php2shell-vulnerability-fixes-available</guid>
+      <pubDate>Wed, 21 Oct 2026 14:43:48 GMT</pubDate>
       <description><![CDATA[<h2 class="wp-block-heading">Introduction</h2>
-<p>The private keys of the eMudhra Certificate Authority (CA) have been <a href="https://emudhra.we-have-a-problem.com/">demonstrated</a> on 20 October 2026 to have been compromised. The Ubuntu Security Team has released updates to the system PKI (Public Key Infrastructure) root CA store in the ca-certificates package.</p>
-<p>While the eMudhra CA is not directly trusted as a root on Ubuntu, two other root CAs have cross-signed the eMudhra CA: <strong>emSign Root TLS CA – G3</strong> and <strong>Comodo AAA Certificate Services</strong>. These two roots have been removed from the Ubuntu trusted root store in the ca-certificates package to ensure that the compromised eMudhra CA is no longer trusted. Any legitimate certificate which is ultimately trusted by either of these two root CAs would no longer be trusted. It is unlikely, but this may result in some hosts being unreachable, due to their use of the revoked certificate. The AAA Certificate Services CA had previously been removed from the CA bundles in Ubuntu 22.04 (Jammy Jellyfish) and newer releases.</p>
-<h2 class="wp-block-heading">Which Ubuntu releases are affected?</h2>
-<div class="table-responsive">
-<table>
-<figure class="wp-block-table is-style-regular, scrollable-table"><table class="scrollable-table"><tbody><tr><td><strong>Release</strong></td><td><strong>Package Name</strong></td><td class="has-text-align-left" data-align="left"><strong>Remediation status</strong></td></tr><tr><td>Trusty (14.04)</td><td>ca-certificates</td><td class="has-text-align-left" data-align="left">Fixed in 20230311~14.04.1~esm3</td></tr><tr><td>Xenial (16.04)</td><td>ca-certificates</td><td class="has-text-align-left" data-align="left">Fixed in 202402031~16.04.1~esm3</td></tr><tr><td>Bionic (18.04)</td><td>ca-certificates</td><td class="has-text-align-left" data-align="left">Fixed in 202402031ubuntu0.18.04.1+esm3</td></tr><tr><td>Focal (20.04)</td><td>ca-certificates</td><td class="has-text-align-left" data-align="left">Fixed in 20240203~20.04.1ubuntu0.1~esm2</td></tr><tr><td>Jammy (22.04)</td><td>ca-certificates</td><td class="has-text-align-left" data-align="left">Fixed in 20260816ubuntu0.22.04.1</td></tr><tr><td>Noble (24.04)</td><td>ca-certificates</td><td class="has-text-align-left" data-align="left">Fixed in 20260816ubuntu0.24.04.1</td></tr><tr><td>Resolute (26.04)</td><td>ca-certificates</td><td class="has-text-align-left" data-align="left">Fixed in 20260816ubuntu0.26.04.1</td></tr><tr><td>Stonking (26.10)</td><td>ca-certificates</td><td class="has-text-align-left" data-align="left">Fixed in 20260816ubuntu0.26.10.1</td></tr></tbody></table></figure>
-</table>
-</div>
-<h2 class="wp-block-heading">How to check if you are impacted</h2>
-<p>You can verify the version of the ca-certificates package with the following command:</p>
-<pre class="wp-block-code"><code>dpkg -l 'ca-certificates' | grep ^ii</code></pre>
-<h2 class="wp-block-heading">Impact of the CA Compromise</h2>
-<p>An unauthorized third party would be able to sign fraudulent X.509 certificates; these would pass validation by a TLS implementation (commonly TLS clients) that trusts the eMudhra CA. Mitigations such as public key pinning or DNS Certificate Authority Authorization (CAA) records do provide the ability to detect such fraudulent certificates, but depend on the TLS application making use of the mitigations and are not widely used.</p>
-<p>This could lead to the identity impersonation of a TLS endpoint and could allow an attacker-in-the-middle to intercept and compromise the confidentiality and integrity of TLS connections, irrespective of the CA that the authentic TLS endpoint uses, unless mitigations are employed.</p>
-<h2 class="wp-block-heading">How to apply fixes</h2>
+<p><br/>Two critical security vulnerabilities affecting PHP have been identified that result in unauthenticated remote code execution (RCE) for any PHP application. The vulnerabilities have been assigned the CVE-2026-109618 and CVE-2026-109619 identifiers, but are also referred to using the php2shell nickname. Ubuntu has released fixes for the affected packages for all supported releases.</p>
+<p>The two vulnerabilities both have a CVSS 4.0 score of 9.2, corresponding to a severity of CRITICAL.</p>
+<p>The vulnerabilities have been responsibly disclosed and the PHP Foundation has engaged in coordinated vulnerability disclosure (CVD) with distributors, establishing a public disclosure date of 22 October 2026 at 14:00 UTC. However, due to a public leak, the disclosure date has been moved forward to 21 October 2026 14:00 UTC.</p>
+<h2 class="wp-block-heading">Which Ubuntu releases are affected by php2shell?</h2>
+<figure class="wp-block-table"><table><tbody><tr><td><strong>Release</strong></td><td><strong>Package Name</strong></td><td><strong>Remediation status</strong></td></tr><tr><td>Trusty (14.04)</td><td>php5</td><td>Fixed in 5.5.9+dfsg-1ubuntu4.29+esm18</td></tr><tr><td>Xenial (16.04)</td><td>php7.0</td><td>Fixed in 7.0.33-0ubuntu0.16.04.16+esm22</td></tr><tr><td>Bionic (18.04)</td><td>php7.2</td><td>Fixed in 7.2.24-0ubuntu0.18.04.17+esm14</td></tr><tr><td>Focal (20.04)</td><td>php7.4</td><td>Fixed in 7.4.3-4ubuntu2.29+esm5</td></tr><tr><td>Jammy (22.04)</td><td>php8.1</td><td>Fixed in 8.1.2-1ubuntu2.28</td></tr><tr><td>Noble (24.04)</td><td>php8.3</td><td>Fixed in 8.3.6-0ubuntu0.24.04.13</td></tr><tr><td>Resolute (26.04)</td><td>php8.5</td><td>Fixed in 8.5.4-0ubuntu1.5</td></tr><tr><td>Stonking (26.10)</td><td>php8.5</td><td>Fixed in 8.5.9-0ubuntu2.1</td></tr></tbody></table></figure>
+<h2 class="wp-block-heading">How to check if you are impacted by php2shell</h2>
+<p>You can verify the versions of any packages installed matching the PHP interpreter package name with the following command:</p>
+<pre class="wp-block-code"><code>apt list '?installed ?name(^php[0-9.]+$)'</code></pre>
+<h2 class="wp-block-heading">Impact of php2shell</h2>
+<p>The two vulnerabilities affect any PHP application. An unauthenticated attacker with network access to the web application can trivially achieve arbitrary remote code execution with the PHP application’s credentials on the target system.</p>
+<h2 class="wp-block-heading">How to apply fixes for php2shell</h2>
 <p>We recommend you upgrade all packages:</p>
 <pre class="wp-block-code"><code>sudo apt update &amp;&amp; sudo apt upgrade</code></pre>
 <p>If this is not possible, the affected component can be targeted:</p>
-<pre class="wp-block-code"><code>sudo apt update &amp;&amp; sudo apt install --only-upgrade ca-certificates</code></pre>
+<pre class="wp-block-code"><code>sudo apt update &amp;&amp; sudo apt install --only-upgrade '?name(^php[0-9.]+$)'</code></pre>
+<p>The application that uses the PHP interpreter would likely need to be restarted. For example, for an application using apache2 with mod_php, restarting the apache daemon is required:</p>
+<pre class="wp-block-code"><code>sudo systemctl restart apache2</code></pre>
+<p>Alternatively, the system can be rebooted to ensure that all applications use the updated components:</p>
+<pre class="wp-block-code"><code>sudo reboot</code></pre>
 <p>The unattended-upgrades feature is enabled by default for Ubuntu 16.04 LTS onwards. This feature:  </p>
-<ul>
+<ul class="wp-block-list">
 <li>Applies new security updates every 24 hours automatically.</li>
-<li>If you have this enabled, the patches above will be automatically applied within 24 hours of being available.</li>
+<li>If you have this enabled, the patches above will be automatically applied within 24 hours of being available, but the affected applications would still need to be restarted or the system rebooted.</li>
 </ul>
-<p>Ubuntu 26.10, 26.04 LTS, 24.04 LTS, and 22.04 LTS receive these fixes as part of standard support. If you are using Ubuntu 20.04 LTS or older, you can apply this fix with an Ubuntu Pro subscription via the Expanded Security Maintenance (ESM) service. Ubuntu Pro is free for up to 5 machines, or up to 50 machines for community members. Ubuntu Pro also provides access to Landscape which enables you to control the roll-out of security fixes across your estate. <a href="http://www.ubuntu.com/pro">Learn more</a>. </p>
-<h3 class="wp-block-heading">Note for Ubuntu Desktop users</h3>
-<p>On Ubuntu Desktop, the most common TLS client would be a browser. They are typically installed as snap packages on Ubuntu desktop, and do not use the system trust store provided by the ca-certificates package. Snap packages are refreshed four times a day by default. If you have disabled automatic updates, ensure that you refresh your snaps manually.</p>
+<p>Ubuntu 26.10, 26.04 LTS, 24.04 LTS, and 22.04 LTS receive these fixes as part of standard support. If you are using Ubuntu 20.04 LTS or older, you can apply this fix with an Ubuntu Pro subscription via the Expanded Security Maintenance (ESM) service. Ubuntu Pro is free for up to 5 machines, or up to 50 machines for community members. Ubuntu Pro also provides access to Landscape which enables you to control the roll-out of security fixes across your estate. <a href="http://www.ubuntu.com/pro">Learn more</a>.</p>
 <h2 class="wp-block-heading">References</h2>
-<ul>
-<li><a href="https://ubuntu.com/security/notices/USN-8944-1">https://ubuntu.com/security/notices/USN-8944-1</a></li>
-<li><a href="https://ubuntu.com/security/notices/USN-8944-2">https://ubuntu.com/security/notices/USN-8944-2</a></li>
-<li><a href="https://emudhra.we-have-a-problem.com/">https://emudhra.we-have-a-problem.com/</a></li>
+<ul class="wp-block-list">
+<li><a href="https://ubuntu.com/security/notices/USN-8948-1">https://ubuntu.com/security/notices/USN-8948-1</a></li>
+<li><a href="https://ubuntu.com/security/notices/USN-8948-2">https://ubuntu.com/security/notices/USN-8948-2</a></li>
+<li><a href="https://www.php.net/archive/2026.php#2026-10-21-5">https://www.php.net/archive/2026.php#2026-10-21-5</a></li>
 </ul>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
@@ -152,106 +150,6 @@ get to keep my <code>.name</code> domain. But at this point I lost all hope.</p>
       <source url="http://andrea.corbellini.name/ubuntu.rss">Andrea Corbellini</source>
     </item>
     <item>
-      <title>Protect your Launchpad API tokens with a security key</title>
-      <link>https://blog.launchpad.net/general/protect-your-launchpad-api-tokens-with-a-security-key</link>
-      <guid isPermaLink="true">https://blog.launchpad.net/general/protect-your-launchpad-api-tokens-with-a-security-key</guid>
-      <pubDate>Mon, 19 Oct 2026 20:40:02 GMT</pubDate>
-      <description><![CDATA[<p>Supply-chain attacks that harvest developer credentials are on the rise. The <a href="https://unit42.paloaltonetworks.com/npm-supply-chain-attack/">Shai-Hulud</a> campaign, for example, used automated scanners to sweep up any secrets they could find in files and keyrings. If you use Launchpad&#8217;s API, one of those secrets is your API token &#8211; and until now it has been about as safe as the laptop it sits on.</p>
-
-
-
-<p>Launchpad now supports <strong>hardware-bound API tokens</strong>: you can tie your API access to a USB FIDO2 security key, such as a YubiKey, so that a stolen token is useless to an attacker who does not have your physical key.</p>
-
-
-
-<h2>The problem</h2>
-
-
-
-<p>Tools like lp-shell and ubuntu-archive-tools use the launchpadlib library to talk to Launchpad. After you log in, launchpadlib stores your OAuth token &#8211; either as a plaintext file on disk or in your desktop keyring. The keyring is unlocked when you log in to your session, so to anything running as you, or to malware that can read your files, that token is effectively plaintext.</p>
-
-
-
-<p>For most people that is an acceptable risk. For core developers, stable release update team members, archive administrators, and Launchpad developers who run a lot of unaudited code, it is a tempting target.</p>
-
-
-
-<h2>The idea</h2>
-
-
-
-<p>Hardware-bound API tokens change what gets stored. Instead of a usable token, launchpadlib stores a long-lived OAuth <strong>refresh grant</strong> that is useless on its own. To do anything with it, launchpadlib has to ask your security key to sign a challenge from Launchpad, which mints a <strong>short-lived access token</strong> for the actual API calls.</p>
-
-
-
-<p>The stored grant cannot mint a token without the key. So if an attacker copies your grant, they get nothing &#8211; the signing happens on a device they do not have.</p>
-
-
-
-<h2>How it works</h2>
-
-
-
-<p>Once you have registered a key and issued a grant, logging in looks like this:</p>
-
-
-
-<ol><li>launchpadlib loads your stored refresh grant.</li><li>It asks Launchpad for a challenge.</li><li>Your security key signs the challenge (you touch the key, and enter its PIN if it has one).</li><li>Launchpad verifies the signature against your registered key and returns a short-lived access token.</li><li>launchpadlib uses that token for API calls until it is close to expiry, then you need to touch your hardware key to renew.</li></ol>
-
-
-
-<p>The signing step is a standard WebAuthn assertion &#8211; the same mechanism browsers use for passkeys &#8211; so it builds on a well-tested security model.</p>
-
-
-
-<h2>Keeping it usable</h2>
-
-
-
-<p>Security that gets in the way does not get used, so the design keeps everyday work smooth:</p>
-
-
-
-<ul><li>A minted access token is reused until it is nearly expired, so you are not touching your key on every command.</li><li>Long-running scripts keep working; the token is renewed as needed.</li><li>The grant is stored in your keyring by default, or in a file you control if you prefer.</li></ul>
-
-
-
-<h2>What it protects &#8211; and what it doesn&#8217;t</h2>
-
-
-
-<p>Being honest about the boundaries matters:</p>
-
-
-
-<ul><li><strong>Opportunistic theft</strong> of stored credentials &#8211; the main thing this defends against. A scanner that grabs your grant gets something it cannot use.</li><li><strong>Targeted attacks on your user session</strong> &#8211; if an attacker can already run code as you, they could still capture a freshly minted access token. Reducing that exposure is future work.</li><li><strong>Root-level compromise</strong> &#8211; out of scope. If an attacker owns the machine, no client-side measure fully protects you.</li></ul>
-
-
-
-<p>This is also specifically about <strong>programmatic access through launchpadlib</strong>, not logging in to the Launchpad website, and it is not intended for automation or bot accounts.</p>
-
-
-
-<h2>Try it</h2>
-
-
-
-<p>You will need a USB FIDO2 security key and launchpadlib with the fido2 extra:</p>
-
-
-
-<pre class="wp-block-code"><code>pip install 'launchpadlib&#91;fido2]'</code></pre>
-
-
-
-<p>Then register your key, issue a grant, and log in with it. The step-by-step instructions are in the Launchpad documentation&#8217;s how-to, <a href="https://ubuntu.com/docs/launchpad/user/how-to/launchpadlib/use-hardware-bound-api-tokens/"><em>Use hardware-bound API tokens</em></a>, with the design and protocol covered in the developer docs.</p>
-
-
-
-<p>We would love your feedback as you start using it! <a href="mailto:feedback@launchpad.net">feedback@launchpad.net</a></p>]]></description>
-      <source url="http://news.launchpad.net/feed">Launchpad News</source>
-    </item>
-    <item>
       <title>Sobre GenAI LLMs y Knowledge workers</title>
       <link>https://foursixnine.io//blog/software/genai/ai/venezuela/software%20engineering/security/2026/10/18/sobre-genai-y-knowledge-work.html</link>
       <guid isPermaLink="true">https://foursixnine.io//blog/software/genai/ai/venezuela/software%20engineering/security/2026/10/18/sobre-genai-y-knowledge-work.html</guid>
@@ -338,14 +236,6 @@ y menos de monkey-coders y tira-flechas</em></p>
   </ol>
 </div>]]></description>
       <source url="https://foursixnine.io/atom.xml">Santiago Zarate</source>
-    </item>
-    <item>
-      <title>Lubuntu 26.10 Released!</title>
-      <link>https://lubuntu.me/lubuntu-26-10-released/</link>
-      <guid isPermaLink="true">https://lubuntu.me/lubuntu-26-10-released/</guid>
-      <pubDate>Thu, 15 Oct 2026 23:05:46 GMT</pubDate>
-      <description><![CDATA[Thanks to the hard work from our contributors, Lubuntu 26.10 has been released. With the codename Stonking Stingray, Lubuntu 26.10 is the 31st release of Lubuntu, the 17th release of Lubuntu with LXQt as the default desktop environment. Download and Support Lifespan With Lubuntu 26.10 being an interim release, it will follow the standard non-LTS [&#8230;]]]></description>
-      <source url="http://lubuntu.me/feed/?mrss=off">Lubuntu Blog</source>
     </item>
     <item>
       <title>Ubuntu Studio 26.10 Released!</title>
@@ -4227,6 +4117,98 @@ Into empty area / &ldquo;Clipboard to file&rdquo; menu: Will create the file cli
       <source url="https://jeremy.bicha.net/category/ubuntu/feed/?mrss=off">Jeremy Bicha</source>
     </item>
     <item>
+      <title>finding binary differences</title>
+      <link>https://outflux.net/blog/archives/2022/06/24/finding-binary-differences/</link>
+      <guid isPermaLink="true">https://outflux.net/blog/archives/2022/06/24/finding-binary-differences/</guid>
+      <pubDate>Fri, 24 Jun 2022 20:11:48 GMT</pubDate>
+      <description><![CDATA[<p>As part of the continuing work to <a href="https://github.com/KSPP/linux/issues/79">replace 1-element arrays in the Linux kernel</a>, it&#8217;s very handy to show that a source change has had no executable code difference. For example, if you started with this:</p>
+<pre class="brush:c">
+struct foo {
+    unsigned long flags;
+    u32 length;
+    u32 data[1];
+};
+
+void foo_init(int count)
+{
+    struct foo *instance;
+    size_t bytes = sizeof(*instance) + sizeof(u32) * (count - 1);
+    ...
+    instance = kmalloc(bytes, GFP_KERNEL);
+    ...
+};
+</pre>
+<p>And you changed only the struct definition:</p>
+<pre class="brush:diff">
+-    u32 data[1];
++    u32 data[];
+</pre>
+<p>The <code>bytes</code> calculation is going to be incorrect, since it is still subtracting 1 element&#8217;s worth of space from the desired count. (And let&#8217;s ignore for the moment the open-coded calculation that may end up with an arithmetic over/underflow here; that can be solved separately by using the <code>struct_size()</code> helper or the <code>size_mul()</code>, <code>size_add()</code>, etc family of helpers.)</p>
+<p>The missed adjustment to the size calculation is relatively easy to find in this example, but sometimes it&#8217;s much less obvious how structure sizes might be woven into the code. I&#8217;ve been checking for issues by using the fantastic <a href="https://diffoscope.org/">diffoscope</a> tool. It can produce a LOT of noise if you try to compare builds without keeping in mind the issues solved by <a href="https://docs.kernel.org/kbuild/reproducible-builds.html">reproducible builds</a>, with some additional notes. I prepare my build with the &#8220;known to disrupt code layout&#8221; options disabled, but with debug info enabled:</p>
+<pre class="brush:shell">
+$ KBF="KBUILD_BUILD_TIMESTAMP=1980-01-01 KBUILD_BUILD_USER=user KBUILD_BUILD_HOST=host KBUILD_BUILD_VERSION=1"
+$ OUT=gcc
+$ make $KBF O=$OUT allmodconfig
+$ ./scripts/config --file $OUT/.config \
+        -d GCOV_KERNEL -d KCOV -d GCC_PLUGINS -d IKHEADERS -d KASAN -d UBSAN \
+        -d DEBUG_INFO_NONE -e DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT
+$ make $KBF O=$OUT olddefconfig
+</pre>
+<p>Then I build a stock target, saving the output in &#8220;before&#8221;. In this case, I&#8217;m examining <code>drivers/scsi/megaraid/</code>:</p>
+<pre class="brush:shell">
+$ make -jN $KBF O=$OUT drivers/scsi/megaraid/
+$ mkdir -p $OUT/before
+$ cp $OUT/drivers/scsi/megaraid/*.o $OUT/before/
+</pre>
+<p>Then I patch and build a modified target, saving the output in &#8220;after&#8221;:</p>
+<pre class="brush:shell">
+$ vi the/source/code.c
+$ make -jN $KBF O=$OUT drivers/scsi/megaraid/
+$ mkdir -p $OUT/after
+$ cp $OUT/drivers/scsi/megaraid/*.o $OUT/after/
+</pre>
+<p>And then run <code>diffoscope</code>:</p>
+<pre class="brush:shell">
+$ diffoscope $OUT/before/ $OUT/after/
+</pre>
+<p>If <code>diffoscope</code> output reports nothing, then we&#8217;re done. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f973.png" alt="🥳" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Usually, though, when source lines move around other stuff will shift too (e.g. <code>WARN</code> macros rely on line numbers, so the bug table may change contents a bit, etc), and <code>diffoscope</code> output will look noisy. To examine just the executable code, the command that <code>diffoscope</code>  used is reported in the output, and we can run it directly, but with possibly shifted line numbers not reported. i.e. running <code>objdump</code> without <code>--line-numbers</code>:</p>
+<pre class="brush:shell">
+$ ARGS="--disassemble --demangle --reloc --no-show-raw-insn --section=.text"
+$ for i in $(cd $OUT/before && echo *.o); do
+        echo $i
+        diff -u <(objdump $ARGS $OUT/before/$i | sed "0,/^Disassembly/d") \
+                <(objdump $ARGS $OUT/after/$i  | sed "0,/^Disassembly/d")
+done
+</pre>
+<p>If I see an unexpected difference, for example:</p>
+<pre class="brush:diff">
+-    c120:      movq   $0x0,0x800(%rbx)
++    c120:      movq   $0x0,0x7f8(%rbx)
+</pre>
+<p>Then I'll search for the pattern with line numbers added to the <code>objdump</code> output:</p>
+<pre class="brush:shell">
+$ vi <(objdump --line-numbers $ARGS $OUT/after/megaraid_sas_fp.o)
+</pre>
+<p>I'd search for "0x0,0x7f8", find the source file and line number above it, open that source file at that position, and look to see where something was being miscalculated:</p>
+<pre class="brush:shell">
+$ vi drivers/scsi/megaraid/megaraid_sas_fp.c +329
+</pre>
+<p>Once tracked down, I'd start over at the "patch and build a modified target" step above, repeating until there were no differences. For example, in the starting example, I'd also need to make this change:</p>
+<pre class="brush:diff">
+-    size_t bytes = sizeof(*instance) + sizeof(u32) * (count - 1);
++    size_t bytes = sizeof(*instance) + sizeof(u32) * count;
+</pre>
+<p>Though, as hinted earlier, better yet would be:</p>
+<pre class="brush:diff">
+-    size_t bytes = sizeof(*instance) + sizeof(u32) * (count - 1);
++    size_t bytes = struct_size(instance, data, count);
+</pre>
+<p>But sometimes adding the helper usage will add binary output differences since they're performing overflow checking that might saturate at <code>SIZE_MAX</code>. To help with patch clarity, those changes can be done separately from fixing the array declaration.</p>
+<p style='text-align:left'>&copy; 2022 - 2023, <a href="https://outflux.net/blog/">Kees Cook</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 License</a>.<br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img decoding="async" alt="CC BY-SA 4.0" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a> </p>]]></description>
+      <source url="http://outflux.net/blog/archives/category/ubuntu/feed">Kees Cook</source>
+    </item>
+    <item>
       <title>How much does my flight sponsor Vladimir?</title>
       <link>http://blog.markvdb.be/2022/04/how-much-does-my-flight-sponsor-vladimir.html</link>
       <guid isPermaLink="true">http://blog.markvdb.be/2022/04/how-much-does-my-flight-sponsor-vladimir.html</guid>
@@ -5668,29 +5650,6 @@ time=&quot;2019-04-04T01:19:12Z&quot; level=info msg=&quot;Changing record.&quot
 <li><a href="https://github.com/helm/charts/tree/master/stable/external-dns#configuration">The full list of configuration details for the ExternalDNS Helm&nbsp;chart</a></li>
 </ul>]]></description>
       <source url="http://blog.andrewsomething.com/feeds/all.atom.xml">Andrew SB</source>
-    </item>
-    <item>
-      <title>Resource Scale for Fractional Scaling support in GNOME Shell 3.32</title>
-      <link>https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</link>
-      <guid isPermaLink="true">https://blog.3v1n0.net/informatica/linux/gnome-shell-fractional-scaling-in-wayland-landed/</guid>
-      <pubDate>Mon, 04 Mar 2019 15:17:55 GMT</pubDate>
-      <description><![CDATA[<p><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30.png"><em><img class="size-medium wp-image-886 alignleft" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-16-30-300x169.png" alt="Fractional Scaling Test" width="300" height="169" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-300x169.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-768x432.png 768w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-16-30-1024x576.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></em></a>The <em>fractional scaling era</em> for <strong>GNOME shell</strong> has finally arrived!</p>
-<p>The <a href="https://www.reddit.com/r/gnome/comments/aw9dgg/fractional_scaling_support_with_gnome_332/" target="_blank" rel="noopener">news</a> spread out quite quickly, once last Friday <a href="https://gitlab.gnome.org/jadahl">Jonas</a> pressed <em>the button</em> and that triggered the last-second <strong>merge</strong> for the relevant proposals we prepared for <a href="https://gitlab.gnome.org/GNOME/mutter/merge_requests/3">Mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/5">GNOME Shell</a> in order to get this available for GNOME 3.32.</p>
-<p>As someone might recall, we started this work <a href="https://blog.3v1n0.net/informatica/linux/gnome-hackfest-for-fractional-scaling/">some years ago</a> (ouch!) and lead to an <a href="https://blog.3v1n0.net/informatica/linux/gnome-fractional-and-multi-monitor-scaling-hackfest-the-report/">Hackfest in Taipei,</a> but in between other work to do and priorities which caused this to be delayed a bit. While the first iteration was ready for some time now. But at every review we improved things fixing bugs (like missing scaled widgets) and optimizing some code paths, so hopefully this time helped in serving better quality :).</p>
-<p>We&#8217;ve still quite a lot of work to do (see these issues for <a href="https://gitlab.gnome.org/GNOME/mutter/issues/478">mutter</a> and <a href="https://gitlab.gnome.org/GNOME/gnome-shell/issues/1008">shell</a>) and some fixes that we have in queue already, but the main task is there. So starting from now the shell will paint all its elements properly and in good <em>visual quality</em> at any fractional scaled value, and <span style="text-decoration: underline;">independently for every <em>monitor</em></span>.</p>
-<div id="attachment_887" style="width: 660px" class="wp-caption aligncenter"><a href="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08.png"><img class="wp-image-887" src="https://downloads.tuxfamily.org/3v1deb/wp-media//Schermata-da-2019-03-04-15-05-08-1024x329.png" alt="Multi-monitor fractional scaling" width="650" height="209" srcset="https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-1024x329.png 1024w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-300x96.png 300w, https://downloads.tuxfamily.org/3v1deb/wp-media/Schermata-da-2019-03-04-15-05-08-768x247.png 768w" sizes="(max-width: 650px) 100vw, 650px" /></a><p class="wp-caption-text">Monitors with different scaling values, and a window drawn in between the two</p></div>
-<p>As you might have noticed in the screenshot above, the <strong>X11</strong> apps are still not really scaled in quality, while it&#8217;s not possible for them all (like <code>xterm</code> there), we need to work for a solution that will cover the legacy applications which does support scaling, and at the same time those which doesn&#8217;t want to be scaled at all (games!).</p>
-<p>As per what said above, this feature is still considered <code>experimental</code> and then you need to enable it via:</p>
-<blockquote>
-<pre>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</pre>
-</blockquote>
-<p>Doing this will allow you to set more a wider set of scaling values under <strong>Control</strong> <strong>Center</strong>, display panel.</p>
-<p>For what concerns <strong>Extensions</strong>, most of them should work with no change, but not those using directly the <code>St.TextureCache</code>, as <a href="https://gitlab.gnome.org/GNOME/gnome-shell/commit/420697693b2f659fd7faccdc5c675f25494f00e0#e2ad7fe6f7e31476aee3654eb0a17bd0deb5e437" target="_blank" rel="noopener">we changed the methods signature</a> by adding a <code>resource_scale</code> parameter.<br />
-We discussed weather adding <em>another method instead</em> (as <a href="https://gitlab.gnome.org/GNOME/gobject-introspection/issues/4" target="_blank" rel="noopener">gir doesn&#8217;t support default values</a>), but since 3.32 will need anyway a rewrite of most extensions anyways, and since it&#8217;s better to have them to behave properly with resource scale since the beginning (instead of blurred contents), we decided not to do it.<br />
-So, please sync with this change (and sorry :)).</p>
-<p>Putting my <strong>Ubuntu</strong> hat now, this won&#8217;t change much things for <em>default ubuntu experience</em>, since it&#8217;s still using X11 (although I&#8217;ve something in the works for this too), but people who want to take advantage of this can easily just login using the <strong>Ubuntu on Wayland</strong> session, enable the experimental setting and profit.</p>
-<p>As final world, <strong>thanks</strong> to people who helped having this in by reviewing and testing the code.</p>]]></description>
-      <source url="http://blog.3v1n0.net/tag/planet-ubuntu/feed/">Marco Trevisan (Treviño)</source>
     </item>
     <item>
       <title>Rise and fall of libclamav</title>
@@ -7184,15 +7143,6 @@ introducing <code>git ubuntu tag</code>.</p>]]></description>
 <p>Si deseas participar en dicha actividad recuerda que debes registrarte a través del siguiente enlace: <a href="https://www.eventbrite.es/e/entradas-festival-universitario-de-tecnologias-libres-2016-27283438499">https://www.eventbrite.es/e/entradas-festival-universitario-de-tecnologias-libres-2016-27283438499</a></p>
 <p>Si deseas obtener mayor información, puedes contactarme a través del correo <a href="mailto:csevilla@fundacite-zulia.gob.ve">csevilla@fundacite-zulia.gob.ve</a></p>]]></description>
       <source url="https://cesarsevilla.wordpress.com/category/ubuntu/feed/?mrss=off">Cesar Sevilla</source>
-    </item>
-    <item>
-      <title>A week ago …</title>
-      <link>https://blogs.fsfe.org/myriam/2016/06/08/a-week-ago/</link>
-      <guid isPermaLink="true">https://blogs.fsfe.org/myriam/2016/06/08/a-week-ago/</guid>
-      <pubDate>Wed, 08 Jun 2016 20:44:39 GMT</pubDate>
-      <description><![CDATA[<p>my cat Filoue turned 15. She survives her nephew Stupsi, who sadly left us earlier this year.<a href="http://blogs.fsfe.org/myriam/files/2016/06/DSC_0040.jpg"><img class="alignnone size-medium wp-image-767" src="http://blogs.fsfe.org/myriam/files/2016/06/DSC_0040-300x199.jpg" alt="" width="300" height="199" srcset="https://blogs.fsfe.org/myriam/files/2016/06/DSC_0040-300x199.jpg 300w, https://blogs.fsfe.org/myriam/files/2016/06/DSC_0040-1024x680.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
-<p>This reminds me how long I contribute to KDE already <img src="https://s.w.org/images/core/emoji/12.0.0-1/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> She has been sitting next to the keyboard purring on almost everything I did in the last 15 years.</p>]]></description>
-      <source url="http://blogs.fsfe.org/myriam/?feed=rss2">Myriam Schweingruber</source>
     </item>
     <item>
       <title>Ask Ubuntu moderator election is now underway!</title>
@@ -8869,54 +8819,6 @@ There we were starting discussions for the <a href="http://uds.ubuntu.com/">Ubun
 <p>The books will be available for download by this weekend so I&#8217;ll update everyone on where to find them.  Also, if you&#8217;re a developer looking to scratch an itch and help folks, one of these projects might be for you!  If you&#8217;re a System Admin or make recommendations to organizations who might need a great OpenMRS or disaster planning software, we&#8217;ll have a book for you at the end of the week.</p>
 <p>Follow the event on twitter #docsummit #flossmanuals</p>]]></description>
       <source url="https://dindafoss.wordpress.com/category/ubuntu/feed/?mrss=off">Belinda Lopez</source>
-    </item>
-    <item>
-      <title>Ubuntu Global Jam Oneiric</title>
-      <link>http://tumbleweed.org.za/2011/09/05/ubuntu-global-jam-oneiric</link>
-      <guid isPermaLink="true">http://tumbleweed.org.za/2011/09/05/ubuntu-global-jam-oneiric</guid>
-      <pubDate>Mon, 05 Sep 2011 17:22:04 GMT</pubDate>
-      <description><![CDATA[<p>We had quite a successful <a href="http://loco.ubuntu.com/events/ubuntu-za/1169/detail/">Ubuntu Global Jam</a> on Saturday. Thanks <a href="http://www.yola.com/">Yola</a> for hosting us. It was only 5 of us, and I was the only one with any uploads under my belt, but the nice small team meant I had time to help everyone fix some build failures. We had intended to focus on Scientific packages, but it was easier to just pick arbitrary build failures from the most recent <a href="http://people.ubuntuwire.org/~wgrant/rebuild-ftbfs-test/test-rebuild-20110816-oneiric.html">archive rebuild</a>.</p>
-
-<p>Maia <a href="http://my-ubuntu-day.blogspot.com/2011/09/oneiric-global-jam-in-cape-town.html">visited us briefly at lunch time</a> and took some photos, thanks :) Sorry you couldn&#8217;t stay longer.</p>
-
-<h1>Some stats from the jam</h1>
-
-<p>Examples that we fixed together:</p>
-
-<ul>
-<li><a href="https://launchpad.net/ubuntu/oneiric/+source/libmatio/1.3.4-3">sync libmatio to fix <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/832806">fix <span class="caps">FTBFS</span> in pidgin-twitter</a></li>
-</ul>
-
-<p><a href="https://launchpad.net/~dappermuis">Kyle Williams</a>:</p>
-
-<ul>
-<li><a href="https://bugs.launchpad.net/bugs/840385">sync kcollectd to fix <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/840523">sync k9copy to fix <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/831105">fix kx11grab <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/770860">fix kon2 <span class="caps">FTBFS</span></a></li>
-</ul>
-
-<p><a href="https://launchpad.net/~marco-gallotta">Marco Gallotta</a>:</p>
-
-<ul>
-<li><a href="https://bugs.launchpad.net/bugs/835752">fix pysatellites <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/771103">fix ratpoison <span class="caps">FTBFS</span></a></li>
-</ul>
-
-<p><a href="https://launchpad.net/~michielbaird">Michiel Baird</a>:</p>
-
-<ul>
-<li><a href="https://bugs.launchpad.net/bugs/840338">Sync camlimages to fix advi <span class="caps">FTBFS</span></a></li>
-<li><a href="https://bugs.launchpad.net/bugs/840400">Sync libsdl-sound1.2 to fix asc <span class="caps">FTBFS</span></a></li>
-</ul>
-
-<p>I think that&#8217;s pretty good for a day&#8217;s work :P</p>
-
-<h1>In other news</h1>
-
-<p>Eep, haven&#8217;t blogged an ages. Since I last blogged, I&#8217;ve become a <a href="http://qa.debian.org/developer.php?login=stefanor">Debian Developer</a>, made an <a href="http://launchpad.net/ibid">Ibid</a> point release, been to (my first) <a href="http://summit.ubuntu.com/uds-o/"><span class="caps">UDS</span></a> and a <a href="http://debconf11.debconf.org/">Debconf</a> (which were both fantastic, and very different), spent a week sailing in Croatia with my brother, and been pulled into the Ubuntu release team. All this has meant little progress in my MSc, though :/</p>]]></description>
-      <source url="http://tumbleweed.org.za/tags/ubuntu/feed">Stefano Rivera</source>
     </item>
     <item>
       <title>The sooner the better.</title>
