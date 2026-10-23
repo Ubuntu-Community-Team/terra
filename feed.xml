@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 22 Oct 2026 03:43:18 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 03:47:48 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -15,7 +15,7 @@
       <guid isPermaLink="true">https://ubuntu.com//blog/php2shell-vulnerability-fixes-available</guid>
       <pubDate>Wed, 21 Oct 2026 14:43:48 GMT</pubDate>
       <description><![CDATA[<h2 class="wp-block-heading">Introduction</h2>
-<p><br/>Two critical security vulnerabilities affecting PHP have been identified that result in unauthenticated remote code execution (RCE) for any PHP application. The vulnerabilities have been assigned the CVE-2026-109618 and CVE-2026-109619 identifiers, but are also referred to using the php2shell nickname. Ubuntu has released fixes for the affected packages for all supported releases.</p>
+<p><br/>Two critical security vulnerabilities affecting PHP have been identified that result in unauthenticated remote code execution (RCE) for any PHP application. The vulnerabilities have been assigned the <a href="https://ubuntu.com/security/CVE-2026-109618">CVE-2026-109618</a> and <a href="https://ubuntu.com/security/CVE-2026-109619">CVE-2026-109619</a> identifiers, but are also referred to using the php2shell nickname. Ubuntu has released fixes for the affected packages for all supported releases.</p>
 <p>The two vulnerabilities both have a CVSS 4.0 score of 9.2, corresponding to a severity of CRITICAL.</p>
 <p>The vulnerabilities have been responsibly disclosed and the PHP Foundation has engaged in coordinated vulnerability disclosure (CVD) with distributors, establishing a public disclosure date of 22 October 2026 at 14:00 UTC. However, due to a public leak, the disclosure date has been moved forward to 21 October 2026 14:00 UTC.</p>
 <h2 class="wp-block-heading">Which Ubuntu releases are affected by php2shell?</h2>
@@ -39,7 +39,7 @@
 <li>Applies new security updates every 24 hours automatically.</li>
 <li>If you have this enabled, the patches above will be automatically applied within 24 hours of being available, but the affected applications would still need to be restarted or the system rebooted.</li>
 </ul>
-<p>Ubuntu 26.10, 26.04 LTS, 24.04 LTS, and 22.04 LTS receive these fixes as part of standard support. If you are using Ubuntu 20.04 LTS or older, you can apply this fix with an Ubuntu Pro subscription via the Expanded Security Maintenance (ESM) service. Ubuntu Pro is free for up to 5 machines, or up to 50 machines for community members. Ubuntu Pro also provides access to Landscape which enables you to control the roll-out of security fixes across your estate. <a href="http://www.ubuntu.com/pro">Learn more</a>.</p>
+<p>Ubuntu 26.10, 26.04 LTS, 24.04 LTS, and 22.04 LTS receive these fixes as part of standard support. If you are using Ubuntu 20.04 LTS or older, the Ubuntu Pro subscription offers coverage for up to 15 years. Ubuntu 20.04 LTS and 18.04 LTS are covered by Expanded Security Maintenance (ESM), while Ubuntu 16.04 LTS and 14.04 LTS require ESM with the Legacy add-on. Ubuntu Pro is free for up to 5 machines, or up to 50 machines for community members. Ubuntu Pro also provides access to Landscape which enables you to control the roll-out of security fixes across your estate. <a href="http://www.ubuntu.com/pro">Learn more</a>.</p>
 <h2 class="wp-block-heading">References</h2>
 <ul class="wp-block-list">
 <li><a href="https://ubuntu.com/security/notices/USN-8948-1">https://ubuntu.com/security/notices/USN-8948-1</a></li>
