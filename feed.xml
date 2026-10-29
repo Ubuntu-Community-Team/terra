@@ -6,52 +6,9 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Wed, 28 Oct 2026 04:43:17 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 04:55:31 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>E389 Farmar Clones Antrópicos</title>
-      <link>https://podcastubuntuportugal.org/e389/</link>
-      <guid isPermaLink="true">https://podcastubuntuportugal.org/e389/</guid>
-      <pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[<p>Sim, nós sabemos, este episódio sai atrasado, mas é que somos pessoas muito ocupadas; temos de ver filmes sobre KDE e o Claude escravizou o Diogo e não o deixou sair do computador até terminar a sua app de navegação. Nesta semana continuámos com os nossos afazeres doidos de software CW Trainer, queimámos tokens ao máximo, fomos acampar e também tivemos discussões acesas sobre «vibe coding», «slop», propriedade intelectual, monopólios rentistas na Internet, como tudo devia ser uma comuna anarco-sindicalista autosuficiente (com gritos e insultos); rimos muito com os clones da ArtCraft e como os LLM viraram o jogo e levámos as mãos à cabeça com o PHP apanhado de calças na mão e certificados com chaves criptográficas terminadas em 0004. Um regabofe.</p>
-<p>Já sabem: oiçam, subscrevam e partilhem!</p>
-<ul>
-<li>KDE, o documentário: <a href="https://www.youtube.com/watch?v=1Vyzla9mx4g">https://www.youtube.com/watch?v=1Vyzla9mx4g</a></li>
-<li>CW Trainer (Snap): <a href="https://snapcraft.io/wr-cw-trainer">https://snapcraft.io/wr-cw-trainer</a></li>
-<li>BigCliveDotCom: <a href="https://www.youtube.com/channel/UCtM5z2gkrGRuWd0JQMx76qA">https://www.youtube.com/channel/UCtM5z2gkrGRuWd0JQMx76qA</a></li>
-<li>Open Store do UBuntu Touch: <a href="https://open-store.io/">https://open-store.io/</a></li>
-<li>Art Craft, como clones descaradíssimos feitos com LLM viraram o mundo do avesso: <a href="https://getartcraft.com/apps">https://getartcraft.com/apps</a></li>
-<li>DeepSeek: <a href="https://chat.deepseek.com/">https://chat.deepseek.com/</a></li>
-<li>Claude: <a href="https://claude.com/">https://claude.com/</a></li>
-<li>Qwen 3.8 como Snap: <a href="https://snapcraft.io/qwen3-8">https://snapcraft.io/qwen3-8</a></li>
-<li>UbPorts: <a href="https://ubports.com">https://ubports.com</a></li>
-<li>Unav: <a href="https://open-store.io/app/navigator.costales/">https://open-store.io/app/navigator.costales/</a></li>
-<li>Pure Maps: <a href="https://open-store.io/app/pure-maps.jonnius/">https://open-store.io/app/pure-maps.jonnius/</a></li>
-<li>Open Street Maps: OpenStreetMaps.org</li>
-<li>Open Free Map: <a href="https://openfreemap.org/">https://openfreemap.org/</a></li>
-<li>OSM Scout Server: <a href="https://open-store.io/app/osmscout-server.jonnius/">https://open-store.io/app/osmscout-server.jonnius/</a></li>
-<li>LCD Porto: <a href="https://lcdporto.org">https://lcdporto.org</a></li>
-<li>OCS Francófonos:
-<ul>
-<li><a href="https://www.radiofrance.fr/info">https://www.radiofrance.fr/info</a></li>
-<li><a href="https://information.tv5monde.com/">https://information.tv5monde.com/</a></li>
-<li><a href="https://www.rts.ch/info/monde/">https://www.rts.ch/info/monde/</a></li>
-<li><a href="https://www.mediapart.fr/">https://www.mediapart.fr/</a></li>
-<li><a href="https://www.monde-diplomatique.fr/">https://www.monde-diplomatique.fr/</a></li>
-</ul>
-</li>
-<li>LoCo PT: <a href="https://loco.ubuntu.com/teams/ubuntu-pt/">https://loco.ubuntu.com/teams/ubuntu-pt/</a></li>
-<li>Mastodon: <a href="https://masto.pt/@pup">https://masto.pt/@pup</a></li>
-<li>Youtube: <a href="https://youtube.com/PodcastUbuntuPortugal">https://youtube.com/PodcastUbuntuPortugal</a></li>
-</ul>
-<h3 id="atribuição-e-licenças">Atribuição e licenças</h3>
-<p>Este episódio foi produzido por Diogo Constantino, Joana Simões, Miguel e Tiago Carrondo e editado pelo <a href="https://senhorpodcast.pt/">Senhor Podcast</a>.
-O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcastubuntuportugal/website">código aberto</a> está licenciado nos termos da <a href="https://gitlab.com/podcastubuntuportugal/website/main/LICENSE">Licença MIT</a>. (<a href="https://creativecommons.org/licenses/by/4.0/)">https://creativecommons.org/licenses/by/4.0/)</a>. A música do genérico é: &ldquo;Won&rsquo;t see it comin&rsquo; (Feat Aequality &amp; N&rsquo;sorte d&rsquo;autruche)&rdquo;, por Alpha Hydrae e está licenciada nos termos da <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal License</a>.
-Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: Technology Corporate Background (loop ver.1) by AudioCoffee &ndash; <a href="https://freesound.org/s/729141/">https://freesound.org/s/729141/</a> &ndash; License: Attribution NonCommercial 4.0; Car_Inside_Traveling_1 by SMKoski02 &ndash; <a href="https://freesound.org/s/868897/">https://freesound.org/s/868897/</a> &ndash; License: Creative Commons 0; Blinker.wav by 14FValtrovaT &ndash; <a href="https://freesound.org/s/419693/">https://freesound.org/s/419693/</a> &ndash; License: Attribution NonCommercial 3.0; loopable processed excerpt of Mativve&rsquo;s freesound#561080.flac by Timbre &ndash; <a href="https://freesound.org/s/561191/">https://freesound.org/s/561191/</a> &ndash; License: Attribution NonCommercial 4.0; Life on synthwave by Unlistenable &ndash; <a href="https://freesound.org/s/561080/">https://freesound.org/s/561080/</a> &ndash; License: Attribution NonCommercial 4.0
-A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
-      <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
-    </item>
     <item>
       <title>php2shell (CVE-2026-109618 and CVE-2026-109619) – PHP critical vulnerability fixes available</title>
       <link>https://ubuntu.com//blog/php2shell-vulnerability-fixes-available</link>
