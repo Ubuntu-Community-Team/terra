@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Tue, 03 Nov 2026 05:44:11 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 05:18:25 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -16,7 +16,7 @@
       <pubDate>Mon, 02 Nov 2026 21:00:15 GMT</pubDate>
       <description><![CDATA[<h2 class="wp-block-heading">Introduction</h2>
 <p>We have received several questions about CVE-2026-98432, a flaw in how the Linux kernel sets up IPv4 TCP connections, present in Linux kernel versions 4.4 and later.</p>
-<p>The vulnerability has a CVSS 3.1 score of 9.8, corresponding to a severity of High. </p>
+<p>The vulnerability has a CVSS 3.1 score of 9.8, corresponding to a severity of Critical. </p>
 <p>Our team is currently working on testing the fixes for CVE-2026-98432 for Ubuntu 22.04 LTS and newer. The fixes are currently in the -proposed pocket, so users who run their own kernel acceptance tests can choose to apply them as per <a href="https://canonical.com/blog/accelerating-delivery-of-cve-fixes-with-a-new-kernel-release-strategy">our new SRU strategy for accelerating CVE fixes</a>. A fix for older, still supported Ubuntu releases will follow. </p>
 <p>To ensure stability across a wide ecosystem we perform extensive tests on more than 2,000 certified servers and devices. We will release the fixes in the updates pocket of the Ubuntu archive as soon as those tests are complete, and will update this blog with further details. Users can also check our CVE status page for up-to-date <a href="https://ubuntu.com/security/CVE-2026-98432">information</a>.</p>
 <h2 class="wp-block-heading">Which Ubuntu releases are affected by CVE-2026-98432?</h2>
