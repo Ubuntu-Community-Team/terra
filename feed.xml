@@ -6,58 +6,54 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 05 Nov 2026 05:38:09 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 05:34:51 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CVE-2026-109518 APT vulnerability fixes available</title>
-      <link>https://ubuntu.com//blog/apt-vulnerability-fixes-available</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/apt-vulnerability-fixes-available</guid>
-      <pubDate>Wed, 04 Nov 2026 19:49:00 GMT</pubDate>
-      <description><![CDATA[<h1 class="wp-block-heading">Introduction</h1>
-<p>Max Justicz discovered and responsibly disclosed a vulnerability in APT, the package manager used in Debian, Ubuntu, and derivative Linux distributions. The vulnerability has been assigned the identifier <a href="https://ubuntu.com/security/CVE-2026-109518">CVE-2026-109518</a> and has a severity of High. An on-path attacker who can manipulate the HTTP traffic between a system and an archive server can trigger the installation of an attacker-controlled .deb package file and obtain root privileges on the target system. We have released security updates for all affected Ubuntu releases. Ubuntu 22.04 LTS (Jammy Jellyfish) and newer releases are affected by default; older releases are only affected if the Acquire::Retries APT configuration setting is set to a non-zero value.</p>
-<p>The vulnerability has a CVSS 4.0 score of 7.7, corresponding to a severity of High (CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N).</p>
-<p>The vulnerability exists in the HTTP backend invoked by the APT library, and affects any APT-based frontend (apt, apt-get, aptitude, or any of the Ubuntu graphical applications).</p>
-<p>The vulnerability does not affect software installation via snap packages, as snaps use a different package management system.</p>
-<p>The use of TLS via HTTPS protects against this vulnerability, as exploitation requires the attacker to manipulate HTTP traffic. This post describes how to enable HTTPS for APT traffic. Other transport methods (such as FTP) are not affected by this vulnerability.</p>
-<p>The vulnerability requires the client to retry a failed download. This is controlled by the Acquire::Retries APT configuration setting. If this is set to 0, no downloads are retried and the vulnerability cannot be exploited. This configuration setting is only set to a non-zero value in Ubuntu 22.04 LTS (Jammy Jellyfish) and newer releases.</p>
-<h1 class="wp-block-heading">Which Ubuntu releases are affected by CVE-2026-109518?</h1>
-<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td><strong>Release</strong></td><td><strong>Source package name</strong></td><td><strong>Remediation status</strong></td></tr><tr><td>Trusty (14.04 LTS)</td><td>apt</td><td>Fixed in 1.0.1ubuntu2.24+esm4</td></tr><tr><td>Xenial (16.04 LTS)</td><td>apt</td><td>Fixed in 1.2.36+esm1</td></tr><tr><td>Bionic (18.04 LTS)</td><td>apt</td><td>Fixed in 1.6.19+esm1</td></tr><tr><td>Focal (20.04 LTS)</td><td>apt</td><td>Fixed in 2.0.12+esm1</td></tr><tr><td>Jammy (22.04 LTS)</td><td>apt</td><td>Fixed in 2.4.15ubuntu0.1</td></tr><tr><td>Noble (24.04 LTS)</td><td>apt</td><td>Fixed in 2.8.4ubuntu0.1</td></tr><tr><td>Resolute (26.04 LTS)</td><td>apt</td><td>Fixed in 3.2.1ubuntu0.1</td></tr><tr><td>Stonking (26.10)</td><td>apt</td><td>Fixed in 3.3.3ubuntu0.1</td></tr></tbody></table></figure>
-<h1 class="wp-block-heading">How to check if you are impacted by CVE-2026-109518</h1>
-<p>Compare the version of the installed packages from the APT source with the versions in the table above.</p>
-<pre class="wp-block-code"><code>apt list --installed '?source-package(^apt$)'</code></pre>
-<h1 class="wp-block-heading">Impact of CVE-2026-109518</h1>
-<p>An attacker can exploit the vulnerability only if the target system attempts to install a .deb package. An on-path attacker that can manipulate the HTTP traffic between the APT client and the archive server used can replace one of the package files retrieved with an-attacker controlled one. Normally, the <a href="https://documentation.ubuntu.com/security/software-integrity/archive-verification/">archive signature scheme</a> protects against this kind of attack. However, the vulnerability allows an attacker to trick APT into installing a package even if it fails signature verification.</p>
-<p>When the system installs a .deb package, it executes the package’s scripts with root privileges. Therefore, the installation of untrusted packages is <a href="https://documentation.ubuntu.com/security/common-mistakes/deb-download-untrusted/">strongly discouraged</a> as it leads to system compromise. This vector can be used by an attacker who can exploit the vulnerability to achieve root privileges on the target system.</p>
-<p>A malicious package mirror can similarly exploit the vulnerability to deliver unsigned, malicious packages to target systems. The archive signature scheme normally secures package mirrors; therefore, once users update the APT client library on the end-user system, compromised mirrors no longer pose a risk.”</p>
-<h1 class="wp-block-heading">Enabling TLS</h1>
-<p>If you have concerns about the network path to the selected Ubuntu archive server, you can enable TLS as a mitigating measure. Once this vulnerability is patched, enabling TLS is only necessary as a future precaution. The archive signature scheme remains a much stronger <a href="https://documentation.ubuntu.com/security/software-integrity/archive-verification/">integrity protection</a> safeguard that provides end-to-end verification, not just during transit (as TLS does).</p>
-<p>However, where the possibility of an on-path attacker cannot be eliminated, enabling TLS prior to installing the security updates for this vulnerability ensures there is no point in which an attacker could exploit the vulnerability.</p>
-<p>To enable TLS, modify the APT sources configured and replace http:// URLs with https:// ones. The APT sources files are in /etc/apt/sources.list and the /etc/apt/sources.list.d/ drop-in directory, using either the DEB22 format in .sources files or the older line-oriented format in .list files.</p>
-<p>You can replace all HTTP URLs pointing to the Ubuntu archive to HTTPs ones with the following command:</p>
-<pre class="wp-block-code"><code>sudo sed -Ei 's!http://((([a-z]+\.)?archive|security|ports)\.ubuntu\.com)!https://\1!' /etc/apt/sources.list /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources</code></pre>
-<p>Please note that the command does not modify URLs which may point to other mirrors or package repositories. You should then update the local package list and ensure that no errors occur (which could happen if a package mirror does not support HTTPS):</p>
-<pre class="wp-block-code"><code>sudo apt update</code></pre>
-<p>Please note that some mirrors operated by the community, including some country-specific mirrors, do not support HTTPS. </p>
-<p>While enabling TLS provides protection against this particular vulnerability when exploited by an on-path attacker, we strongly recommend that you install the security updates, as described in the following section.</p>
-<h1 class="wp-block-heading">How to apply fixes for CVE-2026-109518</h1>
-<p>Temporarily setting Acquire::Retries to zero while installing this security update provides a mitigation against this vulnerability, whether exploited by an on-path attacker or a potentially malicious mirror.</p>
-<p>We recommend you upgrade all packages:</p>
-<pre class="wp-block-code"><code>sudo apt update &amp;&amp; sudo apt upgrade -o Acquire::Retries=0</code></pre>
-<p>If this is not possible, the affected component can be targeted:</p>
-<pre class="wp-block-code"><code>sudo apt update &amp;&amp; sudo apt install -o Acquire::Retries=0 --only-upgrade '?source-package(^apt$)'</code></pre>
-<p>The unattended-upgrades feature is enabled by default for Ubuntu 16.04 LTS onwards. This service:  </p>
+      <title>Ubuntu Pro is now available on AWS Deep Learning Amazon Machine Images (DLAMI)</title>
+      <link>https://ubuntu.com//blog/ubuntu-pro-available-on-dlami</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/ubuntu-pro-available-on-dlami</guid>
+      <pubDate>Thu, 05 Nov 2026 13:53:49 GMT</pubDate>
+      <description><![CDATA[<p>In September 2026, Amazon Web Services (AWS) published its first DLAMIs built on Ubuntu Pro in the Base GPU family. By choosing Ubuntu Pro, enterprises launching DLAMIs gain a stronger security maintenance posture at launch thanks to Expanded Security Maintenance (ESM).</p>
+<h2 class="wp-block-heading">What are the DLAMIs?</h2>
+<p>The DLAMIs are AWS-maintained machine images for GPU and accelerator instances. Each ships the NVIDIA driver, CUDA, the Elastic Fabric Adapter (EFA) networking stack, and the surrounding tooling already installed and tested together. This means a GPU node is productive on first boot, rather than after a day of driver work. </p>
+<p>These images cover 31 actively built lines: Base AMIs carrying the drivers alone, framework images with PyTorch preinstalled, and Neuron images for Trainium and Inferentia. </p>
+<h2 class="wp-block-heading">What is included in Ubuntu Pro DLAMI images?</h2>
+<p>Ubuntu Pro DLAMI is available as a base GPU image for typical AI workloads on the latest GPU hardware. There are four versions of the image split across 2 Ubuntu releases and 2 architectures. This enables a broad support of instance types, including Grace Blackwell architecture. It ships with NVIDIA driver 595.91.07 and several CUDA toolkits.</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Image</strong></th><th><strong>Architecture</strong></th><th><strong>Kernel</strong></th><th><strong>CUDA</strong></th></tr></thead><tbody><tr><td>Base GPU AMI (Ubuntu Pro 24.04 Long Term Supported (LTS))</td><td>x86_64</td><td>7.0.0-1013-aws</td><td>12.8, 12.9, 13.0, 13.2 (13.2 default)</td></tr><tr><td>Base GPU AMI (Ubuntu Pro 22.04 LTS)</td><td>x86_64</td><td>6.8.0-1064-aws</td><td>12.8, 12.9, 13.0, 13.2 (13.2 default)</td></tr><tr><td>ARM64 Base GPU AMI (Ubuntu Pro 24.04 LTS)</td><td>ARM64</td><td>7.0.0-1013-aws</td><td>12.8, 12.9, 13.0, 13.2 (13.2 default)</td></tr><tr><td>ARM64 Base GPU AMI (Ubuntu Pro 22.04 LTS)</td><td>ARM64</td><td>6.8.0-1064-aws</td><td>12.8, 12.9, 13.0, 13.2 (13.2 default)</td></tr></tbody></table></figure>
+<p>The x86 images cover 14 GPU families, from G4dn and G5 through P4d, P5, and P5en, to the Blackwell P6-B200 and P6-B300. The ARM images cover G5g and the Grace Blackwell P6e-GB200 and P6e-GB300 instance families.</p>
+<h2 class="wp-block-heading">Enterprise grade images with Ubuntu Pro</h2>
+<p>GPU images have been preconfigured with a pinned kernel for stability and compatibility purposes. The NVIDIA and EFA drivers are compiled against it, so AWS holds the kernel packages and ships security fixes as a new image every week or two. </p>
+<p><a href="https://ubuntu.com/pro"><strong>Ubuntu Pro</strong></a><strong> comes with ESM</strong> by default, which expands security updates from the Main repository (the primary Ubuntu repository, maintained by Canonical’s engineers) to Universe (the community-maintained repository of Ubuntu) and extends the overall security coverage from 5 to 10 years. This solves a major compliance challenge for enterprises that cannot rely solely on community support. The Universe repository contains many key AI/ML dependencies, which the default DLAMI already has included at launch. </p>
+<p>It also enables <a href="https://ubuntu.com/security/livepatch"><strong>Kernel Livepatch,</strong></a> delivering in-memory security updates for the active kernel to prevent unexpected reboots. This is especially important for GPU accelerated machines, which are typically dedicated to continuous, long-running operations.</p>
+<h2 class="wp-block-heading">Supporting NVIDIA Grace Blackwell P6e-GB200 and P6e-GB300 instance types</h2>
+<p>For the first time on AWS, Ubuntu Pro DLAMIs provide out-of-the-box NVIDIA Grace Blackwell support across its two variants: GB200 and GB300.  While Ubuntu Pro 24.04 LTS supports both P6e-GB200 and P6e-GB300, Ubuntu Pro 22.04 LTS supports only P6e-GB200. </p>
+<p>Kernel livepatch on ARM64 is available from Ubuntu 26.04 LTS onwards.</p>
+<h2 class="wp-block-heading">What ESM covers on the image</h2>
+<p>If you’re curious to know whether the Ubuntu Pro variant is for you, you can either run <code>pro security-status --esm-apps </code>on the Ubuntu Pro 24.04 LTS Base GPU image, or continue reading.</p>
+<p>The Ubuntu Pro DLAMI base image comes with 38 pre-installed packages from the Universe repository. These packages are covered by Ubuntu Pro from launch, and include key packages commonly used on AI workloads at scale:</p>
+<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>What it is</strong></th><th><strong>Packages covered by ESM</strong></th></tr></thead><tbody><tr><td>MPI and RDMA fabric</td><td>libopenmpi3t64<br/>libfabric1<br/>libpmix2t64<br/>libucx0<br/>libpsm2-2<br/>libpsm-infinipath1<br/>libhwloc15<br/>libhwloc-plugins<br/>libibdm1<br/>libopensm9<br/>libosmcomp5<br/>libosmvendor5<br/>ibutils<br/>libmunge2<br/></td></tr><tr><td>GPU and accelerator runtime</td><td>libamdhip64-5<br/>libamd-comgr2<br/>libhsa-runtime64-1<br/>libhsakmt1<br/>ocl-icd-libopencl1</td></tr><tr><td>Python packaging</td><td>python3-pip<br/>python3-pip-whl<br/>python3-wheel<br/>python3-venv<br/>python3.12-venv<br/>python3-setuptools-whl</td></tr><tr><td>Everything else</td><td>apt-transport-https<br/>check<br/>environment-modules<br/>fuse<br/>libfuse2t64<br/>libsnmp-dev<br/>libsnmp-perl<br/>libnetsnmptrapd40t64<br/>libsubunit0<br/>libsubunit-dev<br/>pahole<br/>pigz</td></tr></tbody></table></figure>
+<p>However, these packages are only the starting point. With every deployment built, more packages and dependencies will be drawn in, the majority of which often come from the Universe repository. These packages receive support only through a Canonical Pro subscription, through ESM. </p>
+<h2 class="wp-block-heading">How to get the images</h2>
+<p>Each image line has a public AWS Systems Manager (SSM) parameter that resolves to its latest build. You can get the images by running the following commands with AWS CLI.</p>
+<p>For AMD64 images:</p>
+<pre class="wp-block-code"><code><code>aws ssm get-parameters --names /aws/service/deeplearning/ami/x86_64/base-oss-nvidia-driver-gpu-ubuntu-pro-24.04/latest/ami-id</code></code></pre>
+<pre class="wp-block-code"><code><code>aws ssm get-parameters --names /aws/service/deeplearning/ami/arm64/base-oss-nvidia-driver-gpu-ubuntu-pro-24.04/latest/ami-id</code></code></pre>
+<p>For ARM64 (Graviton and NVIDIA Grace Blackwell):</p>
+<pre class="wp-block-code"><code><code>aws ssm get-parameters --names /aws/service/deeplearning/ami/arm64/base-oss-nvidia-driver-gpu-ubuntu-pro-24.04/latest/ami-id</code></code></pre>
+<p>If you want to check whether your Ubuntu Pro subscription is active, run pro status on a live instance to see your active entitlements and configurations.</p>
+<h2 class="wp-block-heading">Conclusion and Next Steps</h2>
+<p>Bringing Ubuntu Pro to the AWS DLAMIs provides enterprises with an ESM posture right out of the box. With Canonical’s commitment to support and maintain Universe packages for 10 years, and Kernel Livepatch enabling seamless patching without reboots, organizations can confidently run AI workloads while meeting stringent security and compliance standards.</p>
+<p>Ready to enhance your GPU workloads? Get started today by launching the new Ubuntu Pro DLAMIs on AMD64 images or ARM64, or visit the <a href="https://docs.aws.amazon.com/dlami/">AWS Deep Learning AMI Documentation</a> for detailed setup guides and deployment options. If you have any questions, <a href="https://ubuntu.com/aws#get-in-touch">contact us here</a>. </p>
+<p>Learn more:</p>
 <ul class="wp-block-list">
-<li>Applies new security updates every 24 hours automatically.</li>
-<li>If you have this enabled, the patches above will be automatically applied within 24 hours of being available.</li>
-</ul>
-<p>Ubuntu 26.10, 26.04 LTS, 24.04 LTS, and 22.04 LTS receive these fixes as part of standard support. If you are using Ubuntu 20.04 LTS or older, the Ubuntu Pro subscription offers coverage for up to 15 years. Ubuntu 20.04 LTS and 18.04 LTS are covered by Expanded Security Maintenance (ESM), while Ubuntu 16.04 LTS and 14.04 LTS require ESM with the Legacy add-on. Ubuntu Pro is free for up to 5 machines, or up to 50 machines for community members. Ubuntu Pro also provides access to Landscape which enables you to control the roll-out of security fixes across your estate. <a href="http://www.ubuntu.com/pro">Learn more</a>.</p>
-<h1 class="wp-block-heading">References</h1>
-<ul class="wp-block-list">
-<li><a href="https://ubuntu.com/security/CVE-2026-109518">https://ubuntu.com/security/CVE-2026-109518</a></li>
-<li><a href="https://ubuntu.com/security/notices/USN-8996-1">https://ubuntu.com/security/notices/USN-8996-1</a></li>
-</ul>
-<p></p>]]></description>
+<li><a href="https://docs.aws.amazon.com/dlami/latest/devguide/aws-deep-learning-x86-base-gpu-ami-ubuntu-pro-24-04.html">AWS Deep Learning Base GPU AMI (Ubuntu Pro 24.04 LTS)</a> – AMD64</li>
+<li><a href="https://docs.aws.amazon.com/dlami/latest/devguide/aws-deep-learning-arm64-base-gpu-ami-ubuntu-pro-24-04.html">AWS Deep Learning ARM64 Base GPU AMI (Ubuntu Pro 24.04 LTS)</a> – Graviton and Grace Blackwell</li>
+<li><a href="https://docs.aws.amazon.com/dlami/">AWS Deep Learning AMI Documentation</a> </li>
+<li><a href="https://docs.aws.amazon.com/dlami/latest/devguide/dlami-support-policy-table.html">DLAMI Support Policy Table – AWS DLAMIs</a> </li>
+<li><a href="https://docs.aws.amazon.com/dlami/latest/devguide/aws-deep-learning-ami-gpubaseoss-ul2404pro-2026-09-24.html">Supported Instance types, packages installed and changes for AMD64 Base Image</a></li>
+<li><a href="https://docs.aws.amazon.com/dlami/latest/devguide/aws-deep-learning-ami-gpubaseossarm64-ul2404pro-2026-09-24.html">Supported Instance types, packages installed and changes for ARM64 Base Image</a></li>
+</ul>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -526,6 +522,49 @@ O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcas
 Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: Technology Corporate Background (loop ver.1) by AudioCoffee &ndash; <a href="https://freesound.org/s/729141/">https://freesound.org/s/729141/</a> &ndash; License: Attribution NonCommercial 4.0; Car_Inside_Traveling_1 by SMKoski02 &ndash; <a href="https://freesound.org/s/868897/">https://freesound.org/s/868897/</a> &ndash; License: Creative Commons 0; Blinker.wav by 14FValtrovaT &ndash; <a href="https://freesound.org/s/419693/">https://freesound.org/s/419693/</a> &ndash; License: Attribution NonCommercial 3.0; loopable processed excerpt of Mativve&rsquo;s freesound#561080.flac by Timbre &ndash; <a href="https://freesound.org/s/561191/">https://freesound.org/s/561191/</a> &ndash; License: Attribution NonCommercial 4.0; Life on synthwave by Unlistenable &ndash; <a href="https://freesound.org/s/561080/">https://freesound.org/s/561080/</a> &ndash; License: Attribution NonCommercial 4.0
 A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
       <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
+    </item>
+    <item>
+      <title>Bug Tracking for PPAs Is Now Available in Launchpad</title>
+      <link>https://blog.launchpad.net/general/bug-tracking-for-ppas-is-now-available-in-launchpad/</link>
+      <guid isPermaLink="true">https://blog.launchpad.net/general/bug-tracking-for-ppas-is-now-available-in-launchpad/</guid>
+      <pubDate>Wed, 21 Oct 2026 13:21:32 GMT</pubDate>
+      <description><![CDATA[<p>Launchpad now supports bug tracking for Personal Package Archives (PPAs). You can report and track issues against a PPA, individual source packages within it, and specific Ubuntu releases.</p>
+<p>This brings bug reports closer to the packages they concern, giving users a place to report problems and maintainers a clearer picture of what is affected.</p>
+<h2 id="why-track-bugs-against-a-ppa">Why Track Bugs Against a PPA?</h2>
+<p>PPAs let maintainers distribute packages outside Ubuntu’s official archives. Those packages might contain a newer upstream release, an experimental feature, a patch that is not available in Ubuntu’s version, or even exist solely in PPAs without being in the primary Ubuntu archive at all.</p>
+<p>These differences matter when something goes wrong. A bug affecting a package from a PPA does not necessarily affect the package in Ubuntu’s official archive. Likewise, an issue might affect one PPA’s package without affecting another.</p>
+<p>PPA bug tracking lets a report capture that distinction directly.</p>
+<h2 id="a-practical-example">A Practical Example</h2>
+<p>Suppose a team publishes a new version of an application called Example Editor in its testing PPA. A user installs it on Ubuntu 24.04 LTS and discovers that opening a large document causes a crash. The version in Ubuntu’s official archive works correctly.</p>
+<p>The user can report the issue against the source package in the team’s PPA and identify the affected Ubuntu release. This gives the maintainers a report tied to the package they distribute, without treating it as a confirmed problem in Ubuntu’s version.</p>
+<p>If investigation shows that other targets are affected, the same Launchpad bug can track those too, with a separate status for each target.</p>
+<h2 id="tracking-issues-at-the-right-level">Tracking Issues at the Right Level</h2>
+<p>PPA bug tracking supports different levels of detail:</p>
+<ul>
+<li>PPA: for issues concerning the archive as a whole.</li>
+<li>A source package: for issues affecting a particular package within the PPA.</li>
+<li>An Ubuntu release: to distinguish which release is affected, including for a particular source package.</li>
+</ul>
+<p>This allows reports to start with the information available and become more specific as maintainers investigate.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Open the PPA’s page in Launchpad and select View bugs to browse its bug reports.</p>
+<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/ppa-view-bugs.png" alt=""></p>
+<p>The bugs page lists reports affecting the PPA or its source packages. You can search existing reports or select Report a bug to create a new one.</p>
+<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/ppa-bugs-page.png" alt=""></p>
+<p>On a bug report, the Affects table identifies the PPA and its owning person or team. Each target has its own status, importance, and assignee, so you can track progress for the PPA separately from other affected targets.</p>
+<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/bug-affects-ppa.png" alt=""></p>
+<p>You can also add a PPA or one of its source packages as an affected target on an existing bug report. Select Also affects PPA/package beneath the Affects table.</p>
+<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/also-affects-ppa-package.png" alt=""></p>
+<p>In the form that opens, select the affected PPA. If you know which source package is affected, enter its name; otherwise, leave that field blank. Select Continue to proceed.</p>
+<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/also-affects-form.png" alt=""></p>
+<p>To change an existing bug target, expand its row in the Affects table. Select PPA, choose the archive, and optionally specify a source package. Select Save Changes to update the target.</p>
+<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/edit-bug-target.png" alt=""></p>
+<h2 id="for-ppa-maintainers">For PPA Maintainers</h2>
+<p>With the new PPA bugs, bug reports now have another target to better reflect where your packages are published. You can use Launchpad’s bug-tracking workflow to triage issues and track their status for the relevant PPA, source package, or Ubuntu release.</p>
+<p>When a report also affects Ubuntu’s official package or an upstream project, use the appropriate additional bug targets to record that scope. Keeping those targets accurate helps everyone understand where investigation or a fix is still needed.</p>
+<h2 id="available-now">Available Now</h2>
+<p>PPA bug tracking is now enabled in Launchpad. Visit your PPA and select View bugs to explore it.</p>]]></description>
+      <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
       <title>This blog has moved to a new domain</title>
@@ -3080,19 +3119,19 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
       <link>https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</link>
       <guid isPermaLink="true">https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</guid>
       <pubDate>Fri, 16 May 2025 11:17:23 GMT</pubDate>
-      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd wp-block-paragraph">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
+      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
 
 
 
-<p class="wp-block-paragraph"></p>
+<p></p>
 
 
 
-<p class="wp-block-paragraph"></p>
+<p></p>
 
 
 
-<p class="wp-block-paragraph"></p>]]></description>
+<p></p>]]></description>
       <source url="https://ograblog.wordpress.com/feed/atom">Oliver Grawert</source>
     </item>
     <item>
@@ -4851,220 +4890,6 @@ for <a href="https://www.qt.io/blog/qt-6.0-released">Qt 6</a>. Qt 5 support will
 <p>Sin embargo, tambien he visto como las producciones empiezan a tener mucha exclusividad entre las plataformas, lo que hace difícil encontrar series o películas en el servicio que uno esta pagando, o que hayan otras prioridades en los gastos, por eso espero que este tutorial les sirva de ayuda.</p>
 <p>Si tienen alguna duda, recomendación o problema no duden en escribir un comentario aca abajo o contactenme en mis redes sociales!</p>]]></description>
       <source url="https://desentropia.com/tags/ubuntu/index.xml">Julian Alarcon</source>
-    </item>
-    <item>
-      <title>Creating AWS IAM Access Analyzers In All Regions Of All Accounts</title>
-      <link>https://alestic.com/2020/01/aws-iam-access-analyzer/</link>
-      <guid isPermaLink="true">https://alestic.com/2020/01/aws-iam-access-analyzer/</guid>
-      <pubDate>Mon, 06 Jan 2020 08:01:00 GMT</pubDate>
-      <description><![CDATA[<p>Amazon recently announced the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS IAM Access Analyzer</a>,
-a useful tool to help discover if you have granted unintended access
-to specific types of resources in your AWS account.</p>
-<p>At the moment, an Access Analyzer needs to be created in each region
-of each account where you want to run it.</p>
-<p>Since this manual requirement can be a lot of work, it is a common
-complaint from customers. Given that Amazon listens to customer
-feedback and since we currently have to specify a &ldquo;type&rdquo; of &ldquo;ACCOUNT&rdquo;,
-I expect at some point Amazon may make it easier to run Access
-Analyzer across all regions and maybe in all accounts in an AWS
-Organization. Until then&hellip;</p>
-<p>This article shows how I created an AWS IAM Access Analyzer in all
-regions of all accounts in my AWS Organization using the aws-cli.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>To make this easy, I use the bash helper functions that I defined
-in last week&rsquo;s blog post here:</p>
-<blockquote>
-<p><a href="https://alestic.com/2019/12/aws-cli-across-organization-accounts/">Running AWS CLI Commands Across All Accounts In An AWS Organization</a></p>
-</blockquote>
-<p>Please read the blog post to see what assumptions I make about the AWS
-Organization and account setup. You may need to tweak things if your
-setup differs from mine.</p>
-<p>Here is my GitHub repo that makes it more convenient for me to install
-the bash functions. If your AWS account structure matches mine
-sufficiently, it might work for you, too:</p>
-<blockquote>
-<p><a href="https://github.com/alestic/aws-cli-multi-account-sessions">https://github.com/alestic/aws-cli-multi-account-sessions</a></p>
-</blockquote>
-<h2 id="iam-access-analyzer-in-all-regions-of-single-account">IAM Access Analyzer In All Regions Of Single Account</h2>
-<p>To start, let&rsquo;s show how to create an IAM Access Analyzer in all
-regions of a single account.</p>
-<p>Here&rsquo;s a simple command to get all the regions in the current AWS
-account:</p>
-<pre><code>aws ec2 describe-regions \
-  --output text \
-  --query 'Regions[][RegionName]'
-</code></pre>
-<p>This command creates an IAM Access Analyzer in a specific
-region. We&rsquo;ll tack on a UUID because that&rsquo;s what Amazon does, though I
-suspect it&rsquo;s not really necessary.</p>
-<pre><code>region=us-east-1
-uuid=$(uuid -v4 -FSIV || echo &quot;1&quot;) # may need to install &quot;uuid&quot; command
-analyzer=&quot;accessanalyzer-$uuid&quot;
-aws accessanalyzer create-analyzer \
-   --region &quot;$region&quot; \
-   --analyzer-name &quot;$analyzer&quot; \
-   --type ACCOUNT
-</code></pre>
-<p>By default, there is a limit of a single IAM Access Analyzer per
-account region. The fact that this is a &ldquo;default limit&rdquo; implies that
-it may be increased by request, but for this guide, we&rsquo;ll just not
-create an IAM Access Analyzer if one already exists.</p>
-<p>This command lists the name of any IAM Access Analyzers that might
-already have been created in a region:</p>
-<pre><code>region=us-east-1
-aws accessanalyzer list-analyzers \
-  --region &quot;$region&quot; \
-  --output text \
-  --query 'analyzers[][name]'
-</code></pre>
-<p>We can put the above together, iterating over the regions, checking to
-see if an IAM Access Analyzer already exists, and creating one if it
-doesn&rsquo;t:</p>
-<p>regions=$(aws ec2 describe-regions <br>
-&ndash;output text <br>
-&ndash;query &lsquo;Regions[][RegionName]&rsquo; |
-sort)</p>
-<pre><code>for region in $regions; do
-  analyzer=$(aws accessanalyzer list-analyzers \
-    --region &quot;$region&quot; \
-    --output text \
-    --query 'analyzers[][name]')
-  if [ -n &quot;$analyzer&quot; ]; then
-    echo &quot;$region: EXISTING: $analyzer&quot;
-  else
-    uuid=$(uuid -v4 -FSIV || echo &quot;1&quot;) # may need to install &quot;uuid&quot; command
-    analyzer=&quot;accessanalyzer-$uuid&quot;
-    echo &quot;$region: CREATING: $analyzer&quot;
-    aws accessanalyzer create-analyzer \
-       --region &quot;$region&quot; \
-       --analyzer-name &quot;$analyzer&quot; \
-       --type ACCOUNT \
-       &gt; /dev/null # only show errors
-  fi
-done
-</code></pre>
-<h2 id="creating-iam-access-analyzers-in-all-regions-of-all-accounts">Creating IAM Access Analyzers In All Regions Of All Accounts</h2>
-<p>Now let&rsquo;s prepare to run the above in multiple accounts using the
-aws-cli-multi-account-sessions bash helper functions from last week&rsquo;s
-article:</p>
-<pre><code>git clone git@github.com:alestic/aws-cli-multi-account-sessions.git
-source aws-cli-multi-account-sessions/functions.sh
-</code></pre>
-<p>Specify the values for <code>source_profile</code> and <code>mfa_serial</code> from your
-aws-cli config file. You can leave the <code>mfa_serial</code> empty if you
-aren&rsquo;t using MFA:</p>
-<pre><code>source_profile=your_aws_cli_source_profile
-mfa_serial=arn:aws:iam::YOUR_ACCOUNT:mfa/YOUR_USER
-</code></pre>
-<p>Specify the role you can assume in all accounts:</p>
-<pre><code>role=&quot;admin&quot; # Yours might be called &quot;OrganizationAccountAccessRole&quot;
-</code></pre>
-<p>Get a list of all accounts in the AWS Organization, and a list of all
-regions:</p>
-<pre><code>accounts=$(aws organizations list-accounts \
-             --output text \
-             --query 'Accounts[].[JoinedTimestamp,Status,Id,Email,Name]' |
-           grep ACTIVE |
-           sort |
-           cut -f3) # just the ids
-
-regions=$(aws ec2 describe-regions \
-            --output text \
-            --query 'Regions[][RegionName]' |
-          sort)
-</code></pre>
-<p>Run this once to create temporary session credentials with MFA:</p>
-<pre><code>aws-session-init $source_profile $mfa_serial
-</code></pre>
-<p>Iterate through AWS accounts, running the necessary AWS CLI commands
-to create an AIM Access Analyzer in each account/role and each region:</p>
-<pre><code>for account in $accounts; do
-  echo &quot;Visiting account: $account&quot;
-  aws-session-set $account $role || continue
-
-  for region in $regions; do
-    # Run the aws-cli commands using the assume role credentials
-    analyzers=$(aws-session-run \
-                  aws accessanalyzer list-analyzers \
-                    --region &quot;$region&quot; \
-                    --output text \
-                    --query 'analyzers[][name]')
-    if [ -n &quot;$analyzers&quot; ]; then
-      echo &quot;$account/$region: EXISTING: $analyzers&quot;
-    else
-      uuid=$(uuid -v4 -FSIV || echo &quot;1&quot;)
-      analyzer=&quot;accessanalyzer-$uuid&quot;
-      echo &quot;$account/$region: CREATING: $analyzer&quot;
-      aws-session-run \
-        aws accessanalyzer create-analyzer \
-          --region &quot;$region&quot; \
-          --analyzer-name &quot;$analyzer&quot; \
-          --type ACCOUNT \
-          &gt; /dev/null # only show errors
-    fi
-  done
-done
-</code></pre>
-<p>Clear out bash variables holding temporary AWS credentials:</p>
-<pre><code>aws-session-cleanup
-</code></pre>
-<p>In a bit, you can go to the <a href="https://us-west-2.console.aws.amazon.com/access-analyzer/">AWS IAM Console</a> and view what
-the Access Analyzers found.</p>
-<p>Yep, you have to look at the Access Analyzer findings in each account
-and each region. Wouldn&rsquo;t it be nice if we had some way to collect all
-this centrally? I think so, too, so I&rsquo;m looking into what can be done
-there. Thoughts welcome in the comments below or on Twitter.</p>
-<h2 id="cleanup">Cleanup</h2>
-<p>The following deletes all IAM Access Analyzers in all regions in the
-current account. You don&rsquo;t need to do this if you want to leave the
-IAM Access Analyzers running, especially since there is no additional
-cost for keeping them.</p>
-<pre><code># WARNING! DESTRUCTIVE!
-
-source_profile=[as above]
-mfa_serial=[as above]
-role=[as above]
-
-accounts=$(aws organizations list-accounts \
-             --output text \
-             --query 'Accounts[].[JoinedTimestamp,Status,Id,Email,Name]' |
-           grep ACTIVE |
-           sort |
-           cut -f3) # just the ids
-
-regions=$(aws ec2 describe-regions \
-            --profile &quot;$source_profile&quot; \
-            --output text \
-            --query 'Regions[][RegionName]' |
-          sort)
-
-aws-session-init $source_profile $mfa_serial
-
-for account in $accounts; do
-  echo &quot;Visiting account: $account&quot;
-  aws-session-set $account $role || continue
-
-  for region in $regions; do
-    # Run the aws-cli commands using the assume role credentials
-    analyzers=$(aws-session-run \
-                  aws accessanalyzer list-analyzers \
-                    --region &quot;$region&quot; \
-                    --output text \
-                    --query 'analyzers[][name]')
-    for analyzer in $analyzers; do
-      echo &quot;$account/$region: DELETING: $analyzer&quot;
-      aws-session-run \
-        aws accessanalyzer delete-analyzer \
-          --region &quot;$region&quot; \
-          --analyzer-name &quot;$analyzer&quot;
-    done
-  done
-done
-
-aws-session-cleanup
-</code></pre>
-        <p>Original article and comments: <a href="https://alestic.com/2020/01/aws-iam-access-analyzer/">https://alestic.com/2020/01/aws-iam-access-analyzer/</a></p>]]></description>
-      <source url="http://feeds.alestic.com/alestic-planetubuntu">Eric Hammond</source>
     </item>
     <item>
       <title>Puberty</title>
