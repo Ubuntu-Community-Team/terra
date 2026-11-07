@@ -6,54 +6,41 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 06 Nov 2026 05:34:51 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 05:02:54 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ubuntu Pro is now available on AWS Deep Learning Amazon Machine Images (DLAMI)</title>
-      <link>https://ubuntu.com//blog/ubuntu-pro-available-on-dlami</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/ubuntu-pro-available-on-dlami</guid>
-      <pubDate>Thu, 05 Nov 2026 13:53:49 GMT</pubDate>
-      <description><![CDATA[<p>In September 2026, Amazon Web Services (AWS) published its first DLAMIs built on Ubuntu Pro in the Base GPU family. By choosing Ubuntu Pro, enterprises launching DLAMIs gain a stronger security maintenance posture at launch thanks to Expanded Security Maintenance (ESM).</p>
-<h2 class="wp-block-heading">What are the DLAMIs?</h2>
-<p>The DLAMIs are AWS-maintained machine images for GPU and accelerator instances. Each ships the NVIDIA driver, CUDA, the Elastic Fabric Adapter (EFA) networking stack, and the surrounding tooling already installed and tested together. This means a GPU node is productive on first boot, rather than after a day of driver work. </p>
-<p>These images cover 31 actively built lines: Base AMIs carrying the drivers alone, framework images with PyTorch preinstalled, and Neuron images for Trainium and Inferentia. </p>
-<h2 class="wp-block-heading">What is included in Ubuntu Pro DLAMI images?</h2>
-<p>Ubuntu Pro DLAMI is available as a base GPU image for typical AI workloads on the latest GPU hardware. There are four versions of the image split across 2 Ubuntu releases and 2 architectures. This enables a broad support of instance types, including Grace Blackwell architecture. It ships with NVIDIA driver 595.91.07 and several CUDA toolkits.</p>
-<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Image</strong></th><th><strong>Architecture</strong></th><th><strong>Kernel</strong></th><th><strong>CUDA</strong></th></tr></thead><tbody><tr><td>Base GPU AMI (Ubuntu Pro 24.04 Long Term Supported (LTS))</td><td>x86_64</td><td>7.0.0-1013-aws</td><td>12.8, 12.9, 13.0, 13.2 (13.2 default)</td></tr><tr><td>Base GPU AMI (Ubuntu Pro 22.04 LTS)</td><td>x86_64</td><td>6.8.0-1064-aws</td><td>12.8, 12.9, 13.0, 13.2 (13.2 default)</td></tr><tr><td>ARM64 Base GPU AMI (Ubuntu Pro 24.04 LTS)</td><td>ARM64</td><td>7.0.0-1013-aws</td><td>12.8, 12.9, 13.0, 13.2 (13.2 default)</td></tr><tr><td>ARM64 Base GPU AMI (Ubuntu Pro 22.04 LTS)</td><td>ARM64</td><td>6.8.0-1064-aws</td><td>12.8, 12.9, 13.0, 13.2 (13.2 default)</td></tr></tbody></table></figure>
-<p>The x86 images cover 14 GPU families, from G4dn and G5 through P4d, P5, and P5en, to the Blackwell P6-B200 and P6-B300. The ARM images cover G5g and the Grace Blackwell P6e-GB200 and P6e-GB300 instance families.</p>
-<h2 class="wp-block-heading">Enterprise grade images with Ubuntu Pro</h2>
-<p>GPU images have been preconfigured with a pinned kernel for stability and compatibility purposes. The NVIDIA and EFA drivers are compiled against it, so AWS holds the kernel packages and ships security fixes as a new image every week or two. </p>
-<p><a href="https://ubuntu.com/pro"><strong>Ubuntu Pro</strong></a><strong> comes with ESM</strong> by default, which expands security updates from the Main repository (the primary Ubuntu repository, maintained by Canonical’s engineers) to Universe (the community-maintained repository of Ubuntu) and extends the overall security coverage from 5 to 10 years. This solves a major compliance challenge for enterprises that cannot rely solely on community support. The Universe repository contains many key AI/ML dependencies, which the default DLAMI already has included at launch. </p>
-<p>It also enables <a href="https://ubuntu.com/security/livepatch"><strong>Kernel Livepatch,</strong></a> delivering in-memory security updates for the active kernel to prevent unexpected reboots. This is especially important for GPU accelerated machines, which are typically dedicated to continuous, long-running operations.</p>
-<h2 class="wp-block-heading">Supporting NVIDIA Grace Blackwell P6e-GB200 and P6e-GB300 instance types</h2>
-<p>For the first time on AWS, Ubuntu Pro DLAMIs provide out-of-the-box NVIDIA Grace Blackwell support across its two variants: GB200 and GB300.  While Ubuntu Pro 24.04 LTS supports both P6e-GB200 and P6e-GB300, Ubuntu Pro 22.04 LTS supports only P6e-GB200. </p>
-<p>Kernel livepatch on ARM64 is available from Ubuntu 26.04 LTS onwards.</p>
-<h2 class="wp-block-heading">What ESM covers on the image</h2>
-<p>If you’re curious to know whether the Ubuntu Pro variant is for you, you can either run <code>pro security-status --esm-apps </code>on the Ubuntu Pro 24.04 LTS Base GPU image, or continue reading.</p>
-<p>The Ubuntu Pro DLAMI base image comes with 38 pre-installed packages from the Universe repository. These packages are covered by Ubuntu Pro from launch, and include key packages commonly used on AI workloads at scale:</p>
-<figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>What it is</strong></th><th><strong>Packages covered by ESM</strong></th></tr></thead><tbody><tr><td>MPI and RDMA fabric</td><td>libopenmpi3t64<br/>libfabric1<br/>libpmix2t64<br/>libucx0<br/>libpsm2-2<br/>libpsm-infinipath1<br/>libhwloc15<br/>libhwloc-plugins<br/>libibdm1<br/>libopensm9<br/>libosmcomp5<br/>libosmvendor5<br/>ibutils<br/>libmunge2<br/></td></tr><tr><td>GPU and accelerator runtime</td><td>libamdhip64-5<br/>libamd-comgr2<br/>libhsa-runtime64-1<br/>libhsakmt1<br/>ocl-icd-libopencl1</td></tr><tr><td>Python packaging</td><td>python3-pip<br/>python3-pip-whl<br/>python3-wheel<br/>python3-venv<br/>python3.12-venv<br/>python3-setuptools-whl</td></tr><tr><td>Everything else</td><td>apt-transport-https<br/>check<br/>environment-modules<br/>fuse<br/>libfuse2t64<br/>libsnmp-dev<br/>libsnmp-perl<br/>libnetsnmptrapd40t64<br/>libsubunit0<br/>libsubunit-dev<br/>pahole<br/>pigz</td></tr></tbody></table></figure>
-<p>However, these packages are only the starting point. With every deployment built, more packages and dependencies will be drawn in, the majority of which often come from the Universe repository. These packages receive support only through a Canonical Pro subscription, through ESM. </p>
-<h2 class="wp-block-heading">How to get the images</h2>
-<p>Each image line has a public AWS Systems Manager (SSM) parameter that resolves to its latest build. You can get the images by running the following commands with AWS CLI.</p>
-<p>For AMD64 images:</p>
-<pre class="wp-block-code"><code><code>aws ssm get-parameters --names /aws/service/deeplearning/ami/x86_64/base-oss-nvidia-driver-gpu-ubuntu-pro-24.04/latest/ami-id</code></code></pre>
-<pre class="wp-block-code"><code><code>aws ssm get-parameters --names /aws/service/deeplearning/ami/arm64/base-oss-nvidia-driver-gpu-ubuntu-pro-24.04/latest/ami-id</code></code></pre>
-<p>For ARM64 (Graviton and NVIDIA Grace Blackwell):</p>
-<pre class="wp-block-code"><code><code>aws ssm get-parameters --names /aws/service/deeplearning/ami/arm64/base-oss-nvidia-driver-gpu-ubuntu-pro-24.04/latest/ami-id</code></code></pre>
-<p>If you want to check whether your Ubuntu Pro subscription is active, run pro status on a live instance to see your active entitlements and configurations.</p>
-<h2 class="wp-block-heading">Conclusion and Next Steps</h2>
-<p>Bringing Ubuntu Pro to the AWS DLAMIs provides enterprises with an ESM posture right out of the box. With Canonical’s commitment to support and maintain Universe packages for 10 years, and Kernel Livepatch enabling seamless patching without reboots, organizations can confidently run AI workloads while meeting stringent security and compliance standards.</p>
-<p>Ready to enhance your GPU workloads? Get started today by launching the new Ubuntu Pro DLAMIs on AMD64 images or ARM64, or visit the <a href="https://docs.aws.amazon.com/dlami/">AWS Deep Learning AMI Documentation</a> for detailed setup guides and deployment options. If you have any questions, <a href="https://ubuntu.com/aws#get-in-touch">contact us here</a>. </p>
-<p>Learn more:</p>
+      <title>Introducing the new Launchpad blog</title>
+      <link>https://blog.launchpad.net/general/introducing-the-new-launchpad-blog/</link>
+      <guid isPermaLink="true">https://blog.launchpad.net/general/introducing-the-new-launchpad-blog/</guid>
+      <pubDate>Fri, 06 Nov 2026 19:21:08 GMT</pubDate>
+      <description><![CDATA[<p>The Launchpad blog has moved from WordPress to a static site, built from the <a href="https://launchpad.net/launchpad-blog">launchpad-blog</a> project on Launchpad.</p>
+<p>All the posts since 2007 have been carried over, and they are at the same URLs as before. Existing links to posts, categories, tags and authors keep working. If you follow the blog with a feed reader, you do not need to change anything. The feed is still at <a href="https://blog.launchpad.net/feed/">https://blog.launchpad.net/feed/</a>, and old posts will not show up again as new ones.</p>
+<p>The old comments were not carried over, but you can still read them through the <a href="https://web.archive.org/">Wayback Machine</a>.</p>
+<p>If you find a broken link, a missing image or a post that does not look right, please <a href="https://bugs.launchpad.net/launchpad-blog/+filebug">report a bug</a>.</p>]]></description>
+      <source url="http://news.launchpad.net/feed">Launchpad News</source>
+    </item>
+    <item>
+      <title>Ubuntu Summit 26.10: Less than a week away!</title>
+      <link>https://ubuntu.com//blog/ubuntu-summit-26-10-less-than-a-week-away</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/ubuntu-summit-26-10-less-than-a-week-away</guid>
+      <pubDate>Fri, 06 Nov 2026 16:43:41 GMT</pubDate>
+      <description><![CDATA[<h3 class="wp-block-heading">Ubuntu Summit 26.10: Less than a week away!</h3>
+<p>Here in London, the long summer has stepped aside for cooler nights and damp, misty mornings. The trees are turning amber and the sunlight is low on the horizon, which can only mean one thing: the next <a data-id="https://ubuntu.com/summit" data-type="link" href="https://ubuntu.com/summit">Ubuntu Summit</a> is just around the corner. In fact, it’s next week, Thursday and Friday,<strong> November 12-13</strong>.</p>
+<p>This will be our third Summit since switching to our twice-yearly schedule. What initially seemed like a huge challenge, fitting a year of planning into six months, then starting again, has become a massive opportunity for those of us who put the event together.</p>
+<figure class="wp-block-image size-full"><img alt="" height="691" loading="lazy" sizes="(min-width: 1036px) 1036px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp" srcset="https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp 460w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp 620w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp 1036w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp 1681w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp 1920w" width="1036"/><figcaption class="wp-element-caption">From Ubuntu Summit 25.10, DOOM in space!</figcaption></figure>
+<p>Much like the <em>release early, release often</em> software development philosophy (which <a href="https://discourse.ubuntu.com/t/if-it-hurts-do-it-more/88163">many of our teams</a> have adopted here at Canonical), frequency forces you to get good at what’s important. And what’s most important at a remote-first event like the Ubuntu Summit is the quality of the talks and presentations. With a fresh Summit every six months, we’re able to capture the best of what’s happening now and present the freshest ideas to the community. Never has moving fast been more important.</p>
+<p>And because we are broadcasting a live, interactive stream from our base in London, you get to experience this immediately, whether you are watching at home or joining one of the local watch parties. You can ask questions to our speakers, take part in interactive activities, and poke around the latest open source developments without having to book a flight.</p>
+<p>When you gather this often, conversations shift from distant, theoretical roadmaps to what people are actually designing, developing and deploying today. Our <a data-id="https://discourse.ubuntu.com/t/ubuntu-summit-26-10-timetable/90216" data-type="link" href="https://discourse.ubuntu.com/t/ubuntu-summit-26-10-timetable/90216">Ubuntu Summit 26.10 Timetable</a> reflects this, which you can see from just the first morning’s sessions:</p>
 <ul class="wp-block-list">
-<li><a href="https://docs.aws.amazon.com/dlami/latest/devguide/aws-deep-learning-x86-base-gpu-ami-ubuntu-pro-24-04.html">AWS Deep Learning Base GPU AMI (Ubuntu Pro 24.04 LTS)</a> – AMD64</li>
-<li><a href="https://docs.aws.amazon.com/dlami/latest/devguide/aws-deep-learning-arm64-base-gpu-ami-ubuntu-pro-24-04.html">AWS Deep Learning ARM64 Base GPU AMI (Ubuntu Pro 24.04 LTS)</a> – Graviton and Grace Blackwell</li>
-<li><a href="https://docs.aws.amazon.com/dlami/">AWS Deep Learning AMI Documentation</a> </li>
-<li><a href="https://docs.aws.amazon.com/dlami/latest/devguide/dlami-support-policy-table.html">DLAMI Support Policy Table – AWS DLAMIs</a> </li>
-<li><a href="https://docs.aws.amazon.com/dlami/latest/devguide/aws-deep-learning-ami-gpubaseoss-ul2404pro-2026-09-24.html">Supported Instance types, packages installed and changes for AMD64 Base Image</a></li>
-<li><a href="https://docs.aws.amazon.com/dlami/latest/devguide/aws-deep-learning-ami-gpubaseossarm64-ul2404pro-2026-09-24.html">Supported Instance types, packages installed and changes for ARM64 Base Image</a></li>
-</ul>]]></description>
+<li><strong><a href="https://discourse.ubuntu.com/t/astra-an-open-source-observatory-control-software-for-exoplanet-hunting/87867" rel="noreferrer noopener" target="_blank">Astra: an open-source observatory control software for exoplanet hunting</a></strong>: The development and application of open-source software used in astronomical observatories to detect and track exoplanets.</li>
+<li><strong><a href="https://discourse.ubuntu.com/t/ntfy-the-joys-of-handling-4-million-push-notifications-per-day/88293" rel="noreferrer noopener" target="_blank">ntfy: the joys of handling 4 million push notifications per day</a></strong>: An architectural overview of scaling backend infrastructure and managing high-throughput message delivery.</li>
+<li><strong><a href="https://discourse.ubuntu.com/t/hax-ai-coding-agent-as-a-lightweight-unix-tool/87808" rel="noreferrer noopener" target="_blank">hax: AI coding agent as a lightweight Unix tool</a></strong>: How to integrate large language models into traditional, terminal-based developer workflows using established Unix principles.</li>
+<li><strong><a href="https://discourse.ubuntu.com/t/how-local-ai-is-transforming-ubuntu-accessibility/87806" rel="noreferrer noopener" target="_blank">How local AI is transforming Ubuntu accessibility</a></strong>: Our big news for Ubuntu – the integration of locally processed artificial intelligence models to improve user accessibility features within the  desktop environment.</li>
+<li><strong><a href="https://discourse.ubuntu.com/t/text-to-cad-how-i-designed-a-robot-with-llms-and-open-source-tools/87958" rel="noreferrer noopener" target="_blank">Text to CAD: how I designed a robot with LLMs and open source tools</a></strong>: The practical application of open-source software and large language models in physical engineering and robotics design.</li>
+</ul>
+<p>Register today (it’s free!) and we’ll see you next week.</p>
+<p><a href="https://discourse.ubuntu.com/c/ubuntu-summit/420?_gl=1*1f1520k*_gcl_au*NzI2MTc3NDc0LjE3OTA5Mzc3NzkuLS4tLjE3OTEyODQxNTYuMjEyMjc2ODUyMC4xNzkyMTY1MjQ0LjE3OTIxNzUwNTA.">Register for the Summit</a></p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -522,49 +509,6 @@ O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcas
 Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: Technology Corporate Background (loop ver.1) by AudioCoffee &ndash; <a href="https://freesound.org/s/729141/">https://freesound.org/s/729141/</a> &ndash; License: Attribution NonCommercial 4.0; Car_Inside_Traveling_1 by SMKoski02 &ndash; <a href="https://freesound.org/s/868897/">https://freesound.org/s/868897/</a> &ndash; License: Creative Commons 0; Blinker.wav by 14FValtrovaT &ndash; <a href="https://freesound.org/s/419693/">https://freesound.org/s/419693/</a> &ndash; License: Attribution NonCommercial 3.0; loopable processed excerpt of Mativve&rsquo;s freesound#561080.flac by Timbre &ndash; <a href="https://freesound.org/s/561191/">https://freesound.org/s/561191/</a> &ndash; License: Attribution NonCommercial 4.0; Life on synthwave by Unlistenable &ndash; <a href="https://freesound.org/s/561080/">https://freesound.org/s/561080/</a> &ndash; License: Attribution NonCommercial 4.0
 A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
       <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
-    </item>
-    <item>
-      <title>Bug Tracking for PPAs Is Now Available in Launchpad</title>
-      <link>https://blog.launchpad.net/general/bug-tracking-for-ppas-is-now-available-in-launchpad/</link>
-      <guid isPermaLink="true">https://blog.launchpad.net/general/bug-tracking-for-ppas-is-now-available-in-launchpad/</guid>
-      <pubDate>Wed, 21 Oct 2026 13:21:32 GMT</pubDate>
-      <description><![CDATA[<p>Launchpad now supports bug tracking for Personal Package Archives (PPAs). You can report and track issues against a PPA, individual source packages within it, and specific Ubuntu releases.</p>
-<p>This brings bug reports closer to the packages they concern, giving users a place to report problems and maintainers a clearer picture of what is affected.</p>
-<h2 id="why-track-bugs-against-a-ppa">Why Track Bugs Against a PPA?</h2>
-<p>PPAs let maintainers distribute packages outside Ubuntu’s official archives. Those packages might contain a newer upstream release, an experimental feature, a patch that is not available in Ubuntu’s version, or even exist solely in PPAs without being in the primary Ubuntu archive at all.</p>
-<p>These differences matter when something goes wrong. A bug affecting a package from a PPA does not necessarily affect the package in Ubuntu’s official archive. Likewise, an issue might affect one PPA’s package without affecting another.</p>
-<p>PPA bug tracking lets a report capture that distinction directly.</p>
-<h2 id="a-practical-example">A Practical Example</h2>
-<p>Suppose a team publishes a new version of an application called Example Editor in its testing PPA. A user installs it on Ubuntu 24.04 LTS and discovers that opening a large document causes a crash. The version in Ubuntu’s official archive works correctly.</p>
-<p>The user can report the issue against the source package in the team’s PPA and identify the affected Ubuntu release. This gives the maintainers a report tied to the package they distribute, without treating it as a confirmed problem in Ubuntu’s version.</p>
-<p>If investigation shows that other targets are affected, the same Launchpad bug can track those too, with a separate status for each target.</p>
-<h2 id="tracking-issues-at-the-right-level">Tracking Issues at the Right Level</h2>
-<p>PPA bug tracking supports different levels of detail:</p>
-<ul>
-<li>PPA: for issues concerning the archive as a whole.</li>
-<li>A source package: for issues affecting a particular package within the PPA.</li>
-<li>An Ubuntu release: to distinguish which release is affected, including for a particular source package.</li>
-</ul>
-<p>This allows reports to start with the information available and become more specific as maintainers investigate.</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>Open the PPA’s page in Launchpad and select View bugs to browse its bug reports.</p>
-<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/ppa-view-bugs.png" alt=""></p>
-<p>The bugs page lists reports affecting the PPA or its source packages. You can search existing reports or select Report a bug to create a new one.</p>
-<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/ppa-bugs-page.png" alt=""></p>
-<p>On a bug report, the Affects table identifies the PPA and its owning person or team. Each target has its own status, importance, and assignee, so you can track progress for the PPA separately from other affected targets.</p>
-<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/bug-affects-ppa.png" alt=""></p>
-<p>You can also add a PPA or one of its source packages as an affected target on an existing bug report. Select Also affects PPA/package beneath the Affects table.</p>
-<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/also-affects-ppa-package.png" alt=""></p>
-<p>In the form that opens, select the affected PPA. If you know which source package is affected, enter its name; otherwise, leave that field blank. Select Continue to proceed.</p>
-<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/also-affects-form.png" alt=""></p>
-<p>To change an existing bug target, expand its row in the Affects table. Select PPA, choose the archive, and optionally specify a source package. Select Save Changes to update the target.</p>
-<p><img src="https://blog.launchpad.net/images/posts/2026/10/ppa-bug-tracking/edit-bug-target.png" alt=""></p>
-<h2 id="for-ppa-maintainers">For PPA Maintainers</h2>
-<p>With the new PPA bugs, bug reports now have another target to better reflect where your packages are published. You can use Launchpad’s bug-tracking workflow to triage issues and track their status for the relevant PPA, source package, or Ubuntu release.</p>
-<p>When a report also affects Ubuntu’s official package or an upstream project, use the appropriate additional bug targets to record that scope. Keeping those targets accurate helps everyone understand where investigation or a fix is still needed.</p>
-<h2 id="available-now">Available Now</h2>
-<p>PPA bug tracking is now enabled in Launchpad. Visit your PPA and select View bugs to explore it.</p>]]></description>
-      <source url="http://news.launchpad.net/feed">Launchpad News</source>
     </item>
     <item>
       <title>This blog has moved to a new domain</title>
@@ -3428,97 +3372,6 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
       <source url="http://smackerelofopinion.blogspot.com/feeds/posts/default">Colin King</source>
     </item>
     <item>
-      <title>Waiting for a Linux system to be online</title>
-      <link>https://blog.slyon.de/2024/10/15/waiting-for-a-linux-system-to-be-online/</link>
-      <guid isPermaLink="true">https://blog.slyon.de/2024/10/15/waiting-for-a-linux-system-to-be-online/</guid>
-      <pubDate>Tue, 15 Oct 2024 07:33:10 GMT</pubDate>
-      <description><![CDATA[<div class="wp-block-image">
-<figure class="aligncenter size-large"><a href="https://blog.slyon.de/wp-content/uploads/2024/10/gradient-network-connection-background_23-2148874050.avif"><img fetchpriority="high" decoding="async" width="1024" height="569" src="https://blog.slyon.de/wp-content/uploads/2024/10/gradient-network-connection-background_23-2148874050-1024x569.avif" alt="" class="wp-image-2424" srcset="https://blog.slyon.de/wp-content/uploads/2024/10/gradient-network-connection-background_23-2148874050-1024x569.avif 1024w, https://blog.slyon.de/wp-content/uploads/2024/10/gradient-network-connection-background_23-2148874050-300x167.avif 300w, https://blog.slyon.de/wp-content/uploads/2024/10/gradient-network-connection-background_23-2148874050-768x427.avif 768w, https://blog.slyon.de/wp-content/uploads/2024/10/gradient-network-connection-background_23-2148874050.avif 1380w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><figcaption class="wp-element-caption">Designed by <a href="https://www.freepik.com">Freepik</a></figcaption></figure>
-</div>
-
-
-<h2 class="wp-block-heading">What is an “online” system?</h2>
-
-
-
-<p class="wp-block-paragraph">Networking is a complex topic, and there is lots of confusion around the definition of an “online” system. Sometimes the boot process gets delayed up to two minutes, because the system still waits for one or more network interfaces to be ready. Systemd provides the <a href="https://systemd.io/NETWORK_ONLINE/"><strong>network-online.target</strong></a> that other service units can rely on, if they are deemed to require network connectivity. But what does “online” actually mean in this context, is a link-local IP address enough, do we need a routable gateway and how about DNS name resolution?</p>
-
-
-
-<p class="wp-block-paragraph">The requirements for an “online” network interface depend very much on the services using an interface. For some services it might be good enough to reach their local network segment (e.g. to announce Zeroconf services), while others need to reach domain names (e.g. to mount a NFS share) or reach the global internet to run a web server. On the other hand, the implementation of <strong>network-online.target</strong> varies, depending on which networking daemon is in use, e.g. <strong>systemd-networkd-wait-online.service</strong> or <strong>NetworkManager-wait-online.service</strong>. For Ubuntu, we created a <a href="https://discourse.ubuntu.com/t/spec-definition-of-an-online-system/27838">specification</a> that describes what we as a distro expect an “online” system to be. Having a definition in place, we are able to tackle the <a href="https://bugs.launchpad.net/ubuntu/+bugs?field.searchtext=&amp;orderby=-importance&amp;field.status%3Alist=NEW&amp;field.status%3Alist=OPINION&amp;field.status%3Alist=INVALID&amp;field.status%3Alist=WONTFIX&amp;field.status%3Alist=EXPIRED&amp;field.status%3Alist=CONFIRMED&amp;field.status%3Alist=TRIAGED&amp;field.status%3Alist=INPROGRESS&amp;field.status%3Alist=FIXCOMMITTED&amp;field.status%3Alist=FIXRELEASED&amp;field.status%3Alist=INCOMPLETE_WITH_RESPONSE&amp;field.status%3Alist=INCOMPLETE_WITHOUT_RESPONSE&amp;assignee_option=any&amp;field.assignee=&amp;field.bug_reporter=&amp;field.bug_commenter=&amp;field.subscriber=&amp;field.structural_subscriber=&amp;field.component-empty-marker=1&amp;field.tag=network-online-ordering&amp;field.tags_combinator=ANY&amp;field.status_upstream-empty-marker=1&amp;field.has_cve.used=&amp;field.omit_dupes.used=&amp;field.omit_dupes=on&amp;field.affects_me.used=&amp;field.has_no_package.used=&amp;field.has_patch.used=&amp;field.has_branches.used=&amp;field.has_branches=on&amp;field.has_no_branches.used=&amp;field.has_no_branches=on&amp;field.has_blueprints.used=&amp;field.has_blueprints=on&amp;field.has_no_blueprints.used=&amp;field.has_no_blueprints=on&amp;search=Search">network-online-ordering</a> issues that got reported over the years and can work out solutions to avoid <a href="https://bugs.launchpad.net/netplan/+bug/2060311">delayed boot</a> times on Ubuntu systems.</p>
-
-
-
-<p class="wp-block-paragraph">In essence, we want systems to reach the following networking state to be considered online:</p>
-
-
-
-<ol class="wp-block-list">
-<li>Do not wait for “optional” interfaces to receive network configuration</li>
-
-
-
-<li>Have IPv6 and/or IPv4 “link-local” addresses on every network interface</li>
-
-
-
-<li>Have at least one interface with a globally routable connection</li>
-
-
-
-<li>Have functional domain name resolution on any routable interface</li>
-</ol>
-
-
-
-<h2 class="wp-block-heading">A common implementation</h2>
-
-
-
-<p class="wp-block-paragraph"><strong>NetworkManager</strong> and <strong>systemd-networkd</strong> are two very common networking daemons used on modern Linux systems. But they originate from different contexts and therefore show different behaviours in certain scenarios, such as <strong>wait-online</strong>. Luckily, on Ubuntu we already have <a href="https://ubuntu.com/blog/a-declarative-approach-to-linux-networking-with-netplan"><strong>Netplan</strong></a> as a unification layer on top of those networking daemons, that allows for common network configuration, and can also be used to tweak the <strong>wait-online</strong> logic.</p>
-
-
-
-<p class="wp-block-paragraph">With the recent release of <a href="https://blog.slyon.de/2024/08/14/netplan-v1-1-released/">Netplan v1.1</a> we introduced initial functionality to tweak the behaviour of the <strong>systemd-networkd-wait-online.service</strong>, as used on Ubuntu Server systems. When <strong>Netplan</strong> is used to drive the <strong>systemd-networkd</strong> backend, it will emit an override configuration file in <strong>/run/systemd/system/systemd-networkd-wait-online.service.d/10-netplan.conf</strong>, listing the specific <a href="https://github.com/canonical/netplan/pull/456">non-optional interfaces that should receive link-local IP configuration</a>. In parallel to that, it defines a list of network interfaces that Netplan detected to be potential global connections, and waits for any of those <a href="https://github.com/canonical/netplan/pull/482">interfaces to reach a globally routable state</a>.</p>
-
-
-
-<p class="wp-block-paragraph">Such override config file might look like this:</p>
-
-
-
-<pre class="wp-block-preformatted"><code>[Unit]<br>ConditionPathIsSymbolicLink=/run/systemd/generator/network-online.target.wants/systemd-networkd-wait-online.service<br><br>[Service]<br>ExecStart=<br>ExecStart=/lib/systemd/systemd-networkd-wait-online -i eth99.43:carrier -i lo:carrier -i eth99.42:carrier -i eth99.44:degraded -i bond0:degraded<br>ExecStart=/lib/systemd/systemd-networkd-wait-online --any -o routable -i eth99.43 -i eth99.45 -i bond0</code></pre>
-
-
-
-<p class="wp-block-paragraph"></p>
-
-
-
-<p class="wp-block-paragraph">In addition to the new features implemented in Netplan, we reached out to upstream systemd, proposing an <a href="https://github.com/systemd/systemd/pull/34640">enhancement to the <strong>systemd-networkd-wait-online</strong> service</a>, integrating it with <strong>systemd-resolved</strong> to check for the availability of DNS name resolution. Once this is implemented upstream, we’re able to fully control the <strong>systemd-networkd</strong> backend on Ubuntu Server systems, to behave consistently and according to the definition of an “online” system that was lined out above.</p>
-
-
-
-<h2 class="wp-block-heading">Future work</h2>
-
-
-
-<p class="wp-block-paragraph">The story doesn’t end there, because Ubuntu Desktop systems are using <strong>NetworkManager</strong> as their networking backend. This daemon provides its very own <strong>nm-online</strong> utility, utilized by the <strong>NetworkManager-wait-online</strong> systemd service. It implements a much higher-level approach, looking at the networking daemon in general instead of the individual network interfaces. By default, it considers a system to be online once every “autoconnect” profile got activated (or failed to activate), meaning that either a IPv4 or IPv6 address got assigned.</p>
-
-
-
-<p class="wp-block-paragraph">There are considerable enhancements to be implemented to this tool, for it to be controllable in a fine-granular way similar to <strong>systemd-networkd-wait-online</strong>, so that it can be instructed to wait for specific networking states on selected interfaces.</p>
-
-
-
-<h2 class="wp-block-heading">A note of caution</h2>
-
-
-
-<p class="wp-block-paragraph">Making a service depend on <strong>network-online.target</strong> is considered an antipattern in most cases. This is because networking on Linux systems is very dynamic and the systemd target can only ever reflect the networking state at a single point in time. It cannot guarantee this state to be remained over the uptime of your system and has the potentially to delay the boot process considerably. Cables can be unplugged, wireless connectivity can drop, or remote routers can go down at any time, affecting the connectivity state of your local system. Therefore, “instead of wondering what to do about network.target, please just fix your program to be friendly to dynamically changing network configuration.” [<a href="https://systemd.io/NETWORK_ONLINE/#should-network-onlinetarget-be-used">source</a>].</p>]]></description>
-      <source url="https://blog.slyon.de/category/ubuntu/feed/">Lukas Märdian</source>
-    </item>
-    <item>
       <title>git revert name and Akademy</title>
       <link>https://jriddell.org/2024/09/12/git-revert-name-and-akademy/</link>
       <guid isPermaLink="true">https://jriddell.org/2024/09/12/git-revert-name-and-akademy/</guid>
@@ -3640,6 +3493,240 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
 
 <p class="wp-block-paragraph">Thank you to everyone who contributed to OpenStack&nbsp;2023.2 Bobcat!</p>]]></description>
       <source url="https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off">Corey Bryant</source>
+    </item>
+    <item>
+      <title>Building a NAS</title>
+      <link>https://apebox.org/wordpress/tech/1325</link>
+      <guid isPermaLink="true">https://apebox.org/wordpress/tech/1325</guid>
+      <pubDate>Tue, 12 Sep 2023 21:33:05 GMT</pubDate>
+      <description><![CDATA[<h2 class="wp-block-heading">The status quo</h2>
+
+
+
+<p>Back in 2015, I bought an off-the-shelf NAS, a QNAP TS-453mini, to act as my file store and Plex server. I had previously owned a Synology box, and whilst I liked the Synology OS and experience, the hardware was underwhelming. I loaded up the successor QNAP with four 5TB drives in RAID10, and moved all my files over (after some initial DoA drive issues were handled).</p>
+
+
+
+<figure class="wp-block-image size-medium"><img fetchpriority="high" decoding="async" width="550" height="550" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png" alt="QNAP TS-453mini product photo" class="wp-image-1329" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-150x150.png 150w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-768x768.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3.png 850w" sizes="(max-width: 550px) 100vw, 550px" /><figcaption class="wp-element-caption">QNAP TS-453mini product photo</figcaption></figure>
+
+
+
+<p>That thing has been in service for about 8 years now, and it&#8217;s been&#8230; a mixed bag. It was definitely more powerful than the predecessor system, but it was clear that QNAP&#8217;s OS was not up to the same standard as Synology&#8217;s &#8211; perhaps best exemplified by &#8220;HappyGet 2&#8221;, the QNAP webapp for downloading videos from streaming services like YouTube, whose icon is a straight rip-off of StarCraft 2. On its own, meaningless &#8211; but a bad omen for overall software quality</p>
+
+
+
+<span id="more-1325"></span>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="884" height="172" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png" alt="The logo for QNAP HappyGet 2 and Blizzard's Starcraft 2 side by side" class="wp-image-1328" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png 884w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-550x107.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-768x149.png 768w" sizes="(max-width: 884px) 100vw, 884px" /><figcaption class="wp-element-caption">The logo for QNAP HappyGet 2 and Blizzard&#8217;s StarCraft 2 side by side</figcaption></figure>
+
+
+
+<p>Additionally, the embedded Celeron processor in the NAS turned out to be an issue for some cases. It turns out, when playing back videos with subtitles, most Plex clients do not support subtitles properly &#8211; instead they rely on the Plex server doing JIT transcoding to bake the subtitles directly into the video stream. I discovered this with some Blu-Ray rips of Game of Thrones &#8211; some episodes would play back fine on my smart TV, but episodes with subtitled Dothraki speech would play at only 2 or 3 frames per second.</p>
+
+
+
+<p>The final straw was a ransomware attack, which went through all my data and locked every file below a 60MiB threshold. Practically all my music gone. A substantial collection of downloaded files, all gone. Some of these files had been carried around since my college days &#8211; digital rarities, or at least digital detritus I felt a real sense of loss at having to replace. This episode was caused by a ransomware targeting specific vulnerabilities in the QNAP OS, not an error on my part.</p>
+
+
+
+<p>So, I decided to start planning a replacement with:</p>
+
+
+
+<ul class="wp-block-list">
+<li>A non-garbage OS, whilst still being a NAS-appliance type offering (not an off-the-shelf Linux server distro)</li>
+
+
+
+<li>Full remote management capabilities</li>
+
+
+
+<li>A small form factor comparable to off-the-shelf NAS</li>
+
+
+
+<li>A powerful modern CPU capable of transcoding high resolution video</li>
+
+
+
+<li>All flash storage, no spinning rust</li>
+</ul>
+
+
+
+<p>At the time, no consumer NAS offered everything (The Asustor FS6712X exists now, but didn&#8217;t when this project started), so I opted to go for a full DIY rather than an appliance &#8211; not the first time I&#8217;ve jumped between appliances and DIY for home storage.</p>
+
+
+
+<h2 class="wp-block-heading">Selecting the core of the system</h2>
+
+
+
+<p>There aren&#8217;t many companies which will sell you a small motherboard with IPMI. Supermicro is a bust, so is Tyan. But ASRock Rack, the server division of third-tier motherboard vendor ASRock, delivers. Most of their boards aren&#8217;t actually compliant Mini-ITX size, they&#8217;re a proprietary &#8220;Deep Mini-ITX&#8221; with the regular screw holes, but 40mm of extra length (and a commensurately small list of compatible cases). But, thankfully, they do have a tiny selection of boards without the extra size, and I stumbled onto the <a href="https://www.asrockrack.com/general/productdetail.asp?Model=X570D4I-2T">X570D4I-2T</a>, a board with an AMD AM4 socket and the mature X570 chipset. This board can use <em>any</em> AMD Ryzen chip (before the latest-gen Ryzen 7000 series); has built in dual 10 gigabit ethernet; IPMI; four (laptop-sized) RAM slots with full ECC support; one M.2 slot for NVMe SSD storage; a PCIe 16x slot (generally for graphics cards, but we live in a world of possibilities); and up to 8 SATA drives OR a couple more NVMe SSDs. It&#8217;s astonishingly well featured, just a shame it costs about $450 compared to a good consumer-grade Mini ITX AM4 board costing less than half that.</p>
+
+
+
+<p>I was so impressed with the offering, in fact, that I crowed about it on Mastodon and ended up securing ASRock another sale, with someone else looking into a very similar project to mine around the same timespan.</p>
+
+
+
+<p>The next question was the CPU. An important feature of a system expected to run 24/7 is low power, and AM4 chips can consume as much as 130W under load, out of the box. At the other end, some models can require as little as 35W under load &#8211; the OEM-only &#8220;GE&#8221; suffix chips, which are readily found for import on eBay. In their &#8220;PRO&#8221; variant, they also support ECC (all non-G Ryzen chips support ECC, but only Pro G chips do). The top of the range 8 core Ryzen 7 PRO 5750GE is prohibitively expensive, but the slightly weaker 6 core <a href="https://www.amd.com/en/products/apu/amd-ryzen-5-pro-5650ge">Ryzen 5 PRO 5650GE</a> was affordable, and one arrived quickly from Hong Kong. Supplemented with a couple of cheap 16 GiB SODIMM sticks of DDR4 PC-3200 direct from Micron for under $50 a piece, that left only cooling as an unsolved problem to get a bootable test system.</p>
+
+
+
+<p>The official support list for the X570D4I-2T only includes two rackmount coolers, both expensive and hard to source. The reason for such a small list is the non standard cooling layout of the board &#8211; instead of an AM4 hole pattern with the standard plastic AM4 retaining clips, it has an Intel 115x hole pattern with a non-standard backplate (Intel 115x boards have no backplate, the stock Intel 115x cooler attaches to the holes with push pins). As such every single cooler compatibility list excludes this motherboard. However, the backplate is only secured with a mild glue &#8211; with minimal pressure and a plastic prying tool it can be removed, giving compatibility with any 115x cooler (which is basically any CPU cooler for more than a decade). I picked an oversized low profile <a href="http://thermalright.com/product/axp120-x67-black-argb/">Thermalright AXP120-X67</a> hoping that its 120mm fan would cool the nearby MOSFETs and X570 chipset too.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg" alt="" class="wp-image-1333" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Thermalright AXP120-X67, AMD Ryzen 5 PRO 5650GE, ASRock Rack X570D4I-2T, all assembled and running on a flat surface</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Testing up to this point</h2>
+
+
+
+<p>Using a spare ATX power supply, I had enough of a system built to explore the IPMI and UEFI instances, and run MemTest86 to validate my progress. The memory test ran without a hitch and confirmed the ECC was working, although it also showed that the memory was only running at 2933 MT/s instead of the rated 3200 MT/s (a limit imposed by the motherboard, as higher speeds are considered overclocking). The IPMI interface isn&#8217;t the best I&#8217;ve ever used by a long shot, but it&#8217;s minimum viable and allowed me to configure the basics and boot from media entirely via a Web browser.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="905" height="819" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png" alt="" class="wp-image-1341" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png 905w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-550x498.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-768x695.png 768w" sizes="auto, (max-width: 905px) 100vw, 905px" /><figcaption class="wp-element-caption">Memtest86 showing test progress, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>One sad discovery, however, which I&#8217;ve never seen documented before, on PCIe bifurcation.</p>
+
+
+
+<p>With PCI Express, you have a number of &#8220;lanes&#8221; which are allocated in groups by the motherboard and CPU manufacturer. For Ryzen prior to Ryzen 7000, that&#8217;s 16 lanes in one slot for the graphics card; 4 lanes in one M.2 connector for an SSD; then 4 lanes connecting the CPU to the chipset, which can offer whatever it likes for peripherals or extra lanes (bottlenecked by that shared 4x link to the CPU, if it comes down to it).</p>
+
+
+
+<p>It&#8217;s possible, with motherboard and CPU support, to split PCIe groups up &#8211; for example an 8x slot could be split into two 4x slots (eg allowing two NVMe drives in an adapter card &#8211; NVME drives these days all use 4x). However with a &#8220;Cezanne&#8221; Ryzen with integrated graphics, the 16x graphics card slot cannot be split into four 4x slots (ie used for for NVMe drives) &#8211; the most bifurcation it allows is 8x4x4x, which is useless in a NAS.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="897" height="806" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png" alt="" class="wp-image-1336" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png 897w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-550x494.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-768x690.png 768w" sizes="auto, (max-width: 897px) 100vw, 897px" /><figcaption class="wp-element-caption">Screenshot of PCIe 16x slot bifurcation options in UEFI settings, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>As such, I had to abandon any ideas of an all-NVMe NAS I was considering: the 16x slot split into four 4x, combined with two 4x connectors fed by the X570 chipset, to a total of 6 NVMe drives. 7.6TB U.2 enterprise disks are remarkably affordable (cheaper than consumer SATA 8TB drives), but alas, I was locked out by my 5650GE. Thankfully I found out before spending hundreds on a U.2 hot swap bay. The NVMe setup would be nearly 10x as fast as SATA SSDs, but at least the SATA SSD route would still outperform any spinning rust choice on the market (including the fastest 10K RPM SAS drives)</p>
+
+
+
+<h2 class="wp-block-heading">Containing the core</h2>
+
+
+
+<p>The next step was to pick a case and power supply. A lot of NAS cases require an SFX (rather than ATX) size supply, so I ordered a modular <a href="https://www.silverstonetek.com/en/product/info/power-supplies/SX500-G/">SX500</a> unit from Silverstone. Even if I ended up with a case requiring ATX, it&#8217;s easy to turn an SFX power supply into ATX, and the worst result is you have less space taken up in your case, hardly the worst problem to have.</p>
+
+
+
+<p>That said, on to picking a case. There&#8217;s only one brand with any cachet making ITX NAS cases, Silverstone. They have three choices in an appropriate size: <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS01-HS/">CS01-HS</a>, <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS280/">CS280</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/DS380/">DS380</a>. The problem is, these cases are all badly designed garbage. Take the CS280 as an example, the case with the most space for a CPU cooler. Here&#8217;s how close together the hotswap bay (right) and power supply (left) are:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="568" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png" alt="" class="wp-image-1343" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-550x391.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-768x545.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>With actual cables connected, the cable clearance problem is even worse:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="533" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png" alt="" class="wp-image-1344" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-550x366.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-768x512.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>Remember, this is the <em>best</em> of the three cases for internal layout, the one with the least restriction on CPU cooler height. And it&#8217;s garbage! Total hot garbage! I decided therefore to completely skip the NAS case market, and instead purchase a 5.25&#8243;-to-2.5&#8243; hot swap bay adapter from Icy Dock, and put it in an ITX gamer case with a 5.25&#8243; bay. This is no longer a served market &#8211; 5.25&#8243; bays are extinct since nobody uses CD/DVD drives anymore. The ones on the market are really new old stock from 2014-2017: The <a href="https://www.fractal-design.com/products/cases/core/core-500/black/">Fractal Design Core 500</a>, <a href="https://www.coolermaster.com/catalog/cases/mini-itx/elite130/">Cooler Master Elite 130</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/SUGO14/">Silverstone SUGO 14</a>. Of the three, the Fractal is the best rated so I opted to get that one &#8211; however it seems the global supply of &#8220;new old stock&#8221; fully dried up in the two weeks between me making a decision and placing an order &#8211; leaving only the Silverstone case.</p>
+
+
+
+<p>Icy Dock have a selection of 8-bay 2.5&#8243; SATA 5.25&#8243; hot swap chassis choices in their ToughArmor MB998 series. I opted for the <a href="https://global.icydock.com/product_169.html">ToughArmor MB998IP-B</a>, to reduce cable clutter &#8211; it requires only two SFF-8611-to-SF-8643 cables from the motherboard to serve all eight bays, which should make airflow less of a mess. The X570D4I-2T doesn&#8217;t have any SATA ports on board, instead it has two SFF-8611 OCuLink ports, each supporting 4 PCI Express lanes OR 4 SATA connectors via a breakout cable. I had hoped to get the ToughArmor MB118VP-B and run six U.2 drives, but as I said, the PCIe bifurcation issue with Ryzen &#8220;G&#8221; chips meant I wouldn&#8217;t be able to run all six bays successfully.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg" alt="" class="wp-image-1348" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">NAS build in Silverstone SUGO 14, mid build, panels removed</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg" alt="" class="wp-image-1349" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">Silverstone SUGO 14 from the front, with hot swap bay installed</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Actual storage for the storage server</h2>
+
+
+
+<p>My concept for the system always involved a fast boot/cache drive in the motherboard&#8217;s M.2 slot, non-redundant (just backups of the config if the worst were to happen) and separate storage drives somewhere between 3.8 and 8 TB each (somewhere from $200-$350). As a boot drive, I selected the <a href="https://www.intel.com/content/www/us/en/products/sku/211868/intel-optane-ssd-p1600x-series-58gb-m-2-80mm-pcie-3-0-x4-3d-xpoint/specifications.html">Intel Optane SSD P1600X 58G</a>, available for under $35 and rated for 228 years between failures (or 11,000 complete drive rewrite cycles).</p>
+
+
+
+<p>So, on to the big expensive choice: storage drives. I narrowed it down to two contenders: new-old-stock Intel D3-S4510 3.84TB enterprise drives, at about $200, or Samsung 870 QVO 8TB consumer drives, at about $375. I did spend a long time agonizing over the specification differences, the ZFS usage reports, the expected lifetime endurance figures, but in reality, it came down to price &#8211; $1600 of expensive drives vs $3200 of even more expensive drives. That&#8217;s 27TB of usable capacity in RAID-Z1, or 23TB in RAID-Z2. For comparison, I&#8217;m using about 5TB of the old NAS, so that&#8217;s a LOT of overhead for expansion.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg" alt="" class="wp-image-1355" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Storage SSD loaded into hot swap sled</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Booting up</h2>
+
+
+
+<p>Bringing it all together is the OS. I wanted an &#8220;appliance&#8221; NAS OS rather than self-administering a Linux distribution, and after looking into the surrounding ecosystems, decided on <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> (the beta of the 2023 release, based on Debian 12).</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="600" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png" alt="" class="wp-image-1353" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-550x322.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-768x450.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1536x900.png 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image.png 2013w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">TrueNAS Dashboard screenshot in browser window</figcaption></figure>
+
+
+
+<p>I set up RAID-Z1, and with zero tuning (other than enabling auto-TRIM), got the following performance numbers:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>19.3k</td><td>75.6 MiB/s</td></tr><tr><td>4k random reads</td><td>36.1k</td><td>141 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>2300 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>3800 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Results using fio parameters <a href="https://support.huaweicloud.com/intl/en-us/evs_faq/evs_faq_0019.html#evs_faq_0019__section273349017162">suggested by Huawei</a></figcaption></figure>
+
+
+
+<p>And for comparison, the maximum theoretical numbers quoted by Intel for a single drive:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>16k</td><td>?</td></tr><tr><td>4k random reads</td><td>90k</td><td>?</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>280 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>560 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Numbers quoted by Intel SSD successors <a href="https://www.solidigm.com/products/data-center/d3/s4510.html">Solidigm</a>.</figcaption></figure>
+
+
+
+<p>Finally, the numbers reported on the old NAS with four 7200 RPM hard disks in RAID 10:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>430</td><td>1.7 MiB/s</td></tr><tr><td>4k random reads</td><td>8006</td><td>32 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>311 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>566 MiB/s</td></tr></tbody></table></figure>
+
+
+
+<p>Performance seems pretty OK. There&#8217;s always going to be an overhead to RAID. I&#8217;ll settle for the 45x improvement on random writes vs. its predecessor, and 4.5x improvement on random reads. The sequential write numbers are gonna be impacted by the size of the ZFS cache (50% of RAM, so 16 GiB), but the rest should be a reasonable indication of true performance.</p>
+
+
+
+<p>It took me a little while to fully understand the TrueNAS permissions model, but I finally got Plex configured to access data from the same place as my SMB shares, which have anonymous read-only access or authenticated write access for myself and my wife, working fine via both Linux and Windows.</p>
+
+
+
+<p>And&#8230; that&#8217;s it! I built a NAS. I intend to add some fans and more RAM, but that&#8217;s the build. Total spent: about $3000, which sounds like an unreasonable amount, but it&#8217;s actually less than a comparable Synology DiskStation DS1823xs+ which has 4 cores instead of 6, first-generation AMD Zen instead of Zen 3, 8 GiB RAM instead of 32 GiB, no hardware-accelerated video transcoding, etc. And it would have been a whole lot less fun!</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg" alt="" class="wp-image-1364" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">The final system, powered up</figcaption></figure>
+
+
+
+<p>(Also posted on <a href="https://pcpartpicker.com/b/fYhtt6">PCPartPicker</a>)</p>]]></description>
+      <source url="http://apebox.org/wordpress/tag/ubuntu/feed/">Jo Shields</source>
     </item>
     <item>
       <title>Understanding vm.swappiness: Improving Linux Performance and Memory Management</title>
@@ -4890,6 +4977,220 @@ for <a href="https://www.qt.io/blog/qt-6.0-released">Qt 6</a>. Qt 5 support will
 <p>Sin embargo, tambien he visto como las producciones empiezan a tener mucha exclusividad entre las plataformas, lo que hace difícil encontrar series o películas en el servicio que uno esta pagando, o que hayan otras prioridades en los gastos, por eso espero que este tutorial les sirva de ayuda.</p>
 <p>Si tienen alguna duda, recomendación o problema no duden en escribir un comentario aca abajo o contactenme en mis redes sociales!</p>]]></description>
       <source url="https://desentropia.com/tags/ubuntu/index.xml">Julian Alarcon</source>
+    </item>
+    <item>
+      <title>Creating AWS IAM Access Analyzers In All Regions Of All Accounts</title>
+      <link>https://alestic.com/2020/01/aws-iam-access-analyzer/</link>
+      <guid isPermaLink="true">https://alestic.com/2020/01/aws-iam-access-analyzer/</guid>
+      <pubDate>Mon, 06 Jan 2020 08:01:00 GMT</pubDate>
+      <description><![CDATA[<p>Amazon recently announced the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS IAM Access Analyzer</a>,
+a useful tool to help discover if you have granted unintended access
+to specific types of resources in your AWS account.</p>
+<p>At the moment, an Access Analyzer needs to be created in each region
+of each account where you want to run it.</p>
+<p>Since this manual requirement can be a lot of work, it is a common
+complaint from customers. Given that Amazon listens to customer
+feedback and since we currently have to specify a &ldquo;type&rdquo; of &ldquo;ACCOUNT&rdquo;,
+I expect at some point Amazon may make it easier to run Access
+Analyzer across all regions and maybe in all accounts in an AWS
+Organization. Until then&hellip;</p>
+<p>This article shows how I created an AWS IAM Access Analyzer in all
+regions of all accounts in my AWS Organization using the aws-cli.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To make this easy, I use the bash helper functions that I defined
+in last week&rsquo;s blog post here:</p>
+<blockquote>
+<p><a href="https://alestic.com/2019/12/aws-cli-across-organization-accounts/">Running AWS CLI Commands Across All Accounts In An AWS Organization</a></p>
+</blockquote>
+<p>Please read the blog post to see what assumptions I make about the AWS
+Organization and account setup. You may need to tweak things if your
+setup differs from mine.</p>
+<p>Here is my GitHub repo that makes it more convenient for me to install
+the bash functions. If your AWS account structure matches mine
+sufficiently, it might work for you, too:</p>
+<blockquote>
+<p><a href="https://github.com/alestic/aws-cli-multi-account-sessions">https://github.com/alestic/aws-cli-multi-account-sessions</a></p>
+</blockquote>
+<h2 id="iam-access-analyzer-in-all-regions-of-single-account">IAM Access Analyzer In All Regions Of Single Account</h2>
+<p>To start, let&rsquo;s show how to create an IAM Access Analyzer in all
+regions of a single account.</p>
+<p>Here&rsquo;s a simple command to get all the regions in the current AWS
+account:</p>
+<pre><code>aws ec2 describe-regions \
+  --output text \
+  --query 'Regions[][RegionName]'
+</code></pre>
+<p>This command creates an IAM Access Analyzer in a specific
+region. We&rsquo;ll tack on a UUID because that&rsquo;s what Amazon does, though I
+suspect it&rsquo;s not really necessary.</p>
+<pre><code>region=us-east-1
+uuid=$(uuid -v4 -FSIV || echo &quot;1&quot;) # may need to install &quot;uuid&quot; command
+analyzer=&quot;accessanalyzer-$uuid&quot;
+aws accessanalyzer create-analyzer \
+   --region &quot;$region&quot; \
+   --analyzer-name &quot;$analyzer&quot; \
+   --type ACCOUNT
+</code></pre>
+<p>By default, there is a limit of a single IAM Access Analyzer per
+account region. The fact that this is a &ldquo;default limit&rdquo; implies that
+it may be increased by request, but for this guide, we&rsquo;ll just not
+create an IAM Access Analyzer if one already exists.</p>
+<p>This command lists the name of any IAM Access Analyzers that might
+already have been created in a region:</p>
+<pre><code>region=us-east-1
+aws accessanalyzer list-analyzers \
+  --region &quot;$region&quot; \
+  --output text \
+  --query 'analyzers[][name]'
+</code></pre>
+<p>We can put the above together, iterating over the regions, checking to
+see if an IAM Access Analyzer already exists, and creating one if it
+doesn&rsquo;t:</p>
+<p>regions=$(aws ec2 describe-regions <br>
+&ndash;output text <br>
+&ndash;query &lsquo;Regions[][RegionName]&rsquo; |
+sort)</p>
+<pre><code>for region in $regions; do
+  analyzer=$(aws accessanalyzer list-analyzers \
+    --region &quot;$region&quot; \
+    --output text \
+    --query 'analyzers[][name]')
+  if [ -n &quot;$analyzer&quot; ]; then
+    echo &quot;$region: EXISTING: $analyzer&quot;
+  else
+    uuid=$(uuid -v4 -FSIV || echo &quot;1&quot;) # may need to install &quot;uuid&quot; command
+    analyzer=&quot;accessanalyzer-$uuid&quot;
+    echo &quot;$region: CREATING: $analyzer&quot;
+    aws accessanalyzer create-analyzer \
+       --region &quot;$region&quot; \
+       --analyzer-name &quot;$analyzer&quot; \
+       --type ACCOUNT \
+       &gt; /dev/null # only show errors
+  fi
+done
+</code></pre>
+<h2 id="creating-iam-access-analyzers-in-all-regions-of-all-accounts">Creating IAM Access Analyzers In All Regions Of All Accounts</h2>
+<p>Now let&rsquo;s prepare to run the above in multiple accounts using the
+aws-cli-multi-account-sessions bash helper functions from last week&rsquo;s
+article:</p>
+<pre><code>git clone git@github.com:alestic/aws-cli-multi-account-sessions.git
+source aws-cli-multi-account-sessions/functions.sh
+</code></pre>
+<p>Specify the values for <code>source_profile</code> and <code>mfa_serial</code> from your
+aws-cli config file. You can leave the <code>mfa_serial</code> empty if you
+aren&rsquo;t using MFA:</p>
+<pre><code>source_profile=your_aws_cli_source_profile
+mfa_serial=arn:aws:iam::YOUR_ACCOUNT:mfa/YOUR_USER
+</code></pre>
+<p>Specify the role you can assume in all accounts:</p>
+<pre><code>role=&quot;admin&quot; # Yours might be called &quot;OrganizationAccountAccessRole&quot;
+</code></pre>
+<p>Get a list of all accounts in the AWS Organization, and a list of all
+regions:</p>
+<pre><code>accounts=$(aws organizations list-accounts \
+             --output text \
+             --query 'Accounts[].[JoinedTimestamp,Status,Id,Email,Name]' |
+           grep ACTIVE |
+           sort |
+           cut -f3) # just the ids
+
+regions=$(aws ec2 describe-regions \
+            --output text \
+            --query 'Regions[][RegionName]' |
+          sort)
+</code></pre>
+<p>Run this once to create temporary session credentials with MFA:</p>
+<pre><code>aws-session-init $source_profile $mfa_serial
+</code></pre>
+<p>Iterate through AWS accounts, running the necessary AWS CLI commands
+to create an AIM Access Analyzer in each account/role and each region:</p>
+<pre><code>for account in $accounts; do
+  echo &quot;Visiting account: $account&quot;
+  aws-session-set $account $role || continue
+
+  for region in $regions; do
+    # Run the aws-cli commands using the assume role credentials
+    analyzers=$(aws-session-run \
+                  aws accessanalyzer list-analyzers \
+                    --region &quot;$region&quot; \
+                    --output text \
+                    --query 'analyzers[][name]')
+    if [ -n &quot;$analyzers&quot; ]; then
+      echo &quot;$account/$region: EXISTING: $analyzers&quot;
+    else
+      uuid=$(uuid -v4 -FSIV || echo &quot;1&quot;)
+      analyzer=&quot;accessanalyzer-$uuid&quot;
+      echo &quot;$account/$region: CREATING: $analyzer&quot;
+      aws-session-run \
+        aws accessanalyzer create-analyzer \
+          --region &quot;$region&quot; \
+          --analyzer-name &quot;$analyzer&quot; \
+          --type ACCOUNT \
+          &gt; /dev/null # only show errors
+    fi
+  done
+done
+</code></pre>
+<p>Clear out bash variables holding temporary AWS credentials:</p>
+<pre><code>aws-session-cleanup
+</code></pre>
+<p>In a bit, you can go to the <a href="https://us-west-2.console.aws.amazon.com/access-analyzer/">AWS IAM Console</a> and view what
+the Access Analyzers found.</p>
+<p>Yep, you have to look at the Access Analyzer findings in each account
+and each region. Wouldn&rsquo;t it be nice if we had some way to collect all
+this centrally? I think so, too, so I&rsquo;m looking into what can be done
+there. Thoughts welcome in the comments below or on Twitter.</p>
+<h2 id="cleanup">Cleanup</h2>
+<p>The following deletes all IAM Access Analyzers in all regions in the
+current account. You don&rsquo;t need to do this if you want to leave the
+IAM Access Analyzers running, especially since there is no additional
+cost for keeping them.</p>
+<pre><code># WARNING! DESTRUCTIVE!
+
+source_profile=[as above]
+mfa_serial=[as above]
+role=[as above]
+
+accounts=$(aws organizations list-accounts \
+             --output text \
+             --query 'Accounts[].[JoinedTimestamp,Status,Id,Email,Name]' |
+           grep ACTIVE |
+           sort |
+           cut -f3) # just the ids
+
+regions=$(aws ec2 describe-regions \
+            --profile &quot;$source_profile&quot; \
+            --output text \
+            --query 'Regions[][RegionName]' |
+          sort)
+
+aws-session-init $source_profile $mfa_serial
+
+for account in $accounts; do
+  echo &quot;Visiting account: $account&quot;
+  aws-session-set $account $role || continue
+
+  for region in $regions; do
+    # Run the aws-cli commands using the assume role credentials
+    analyzers=$(aws-session-run \
+                  aws accessanalyzer list-analyzers \
+                    --region &quot;$region&quot; \
+                    --output text \
+                    --query 'analyzers[][name]')
+    for analyzer in $analyzers; do
+      echo &quot;$account/$region: DELETING: $analyzer&quot;
+      aws-session-run \
+        aws accessanalyzer delete-analyzer \
+          --region &quot;$region&quot; \
+          --analyzer-name &quot;$analyzer&quot;
+    done
+  done
+done
+
+aws-session-cleanup
+</code></pre>
+        <p>Original article and comments: <a href="https://alestic.com/2020/01/aws-iam-access-analyzer/">https://alestic.com/2020/01/aws-iam-access-analyzer/</a></p>]]></description>
+      <source url="http://feeds.alestic.com/alestic-planetubuntu">Eric Hammond</source>
     </item>
     <item>
       <title>Puberty</title>
