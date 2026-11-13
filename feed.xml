@@ -6,9 +6,49 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 12 Nov 2026 06:22:13 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 05:42:26 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What if your Virtual Data Room (VDR) was Android™ based?</title>
+      <link>https://ubuntu.com//blog/what-if-your-virtual-data-room-vdr-was-android-based</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/what-if-your-virtual-data-room-vdr-was-android-based</guid>
+      <pubDate>Wed, 11 Nov 2026 08:00:00 GMT</pubDate>
+      <description><![CDATA[<p>When working through merger and acquisitions, one needs to follow a proper due diligence process, in which lawyers, financial advisors, and potential buyers will need access to highly confidential documents, often coming from very different organizations and structures. </p>
+<p>Matters are further complicated by the fact that all of the stakeholders have different types of devices, operating systems (OSs), and IT rules. Access must be thoroughly controlled and monitored, and more importantly, revoked when necessary. So, how can private information be made available without sharing the files themselves?</p>
+<p>VDRs and dataroom software vendors solve this issue by relying on access restrictions and some form of secure document viewing. Most VDR providers already prevent users from downloading or sending original files. </p>
+<p>However, this raises another interesting question: where should the applications that process those confidential documents actually run?</p>
+<h2 class="wp-block-heading">Move the application, not the documents</h2>
+<p>Usually, these documents are viewed in a browser or with a dedicated, locally installed application. Viewing the document from a browser is convenient as no additional app is required and it generally works on multiple devices. That being said, depending on how the solution was built, the content of the document itself may be processed locally, which is a limiting factor and may impact the security of the method.</p>
+<p>While VDRs today can render documents remotely, how an application itself is built and delivered to the user can impact both the viewing experience and the protection of the document itself. Indeed, providing dedicated applications comes at the cost of installation, maintenance, and OS-specific support.</p>
+<p>In both cases, trying to focus the control efforts on the devices themselves actually increases the complexity, while potentially exposing sensitive information.</p>
+<p>An alternative to using a browser or locally installed application is to completely run the document viewer app in the cloud, and only stream its content to the user, using software like <a href="https://canonical.com/anbox-cloud">Anbox Cloud</a>. This comes with the benefits of browser-based convenience and centralized application execution, meaning no need to process documents on the users’ devices.</p>
+<p>With Anbox Cloud, a VDR provider can run their own Android document-viewing application in an isolated containerized instance and stream its content through any browser. The user logs on to the VDR platform, opens the authorized documents, and interacts with the remote application without ever receiving the original file.</p>
+<figure class="wp-block-image size-full"><img alt="" height="540" loading="lazy" sizes="(min-width: 2048px) 2048px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_2048/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F2feb%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F2feb%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F2feb%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F2feb%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F2feb%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F2feb%2Fimage.png 1920w" width="2048"/></figure>
+<p>The Android instance can be stopped when the session is over, removing its temporary data. It runs in the provider’s managed infrastructure, not on the user’s device. By doing so, the documents don’t need to be stored or even processed on the device. This considerably reduces the risk of unauthorized copies. Moreover, since the browser is actually streaming pixels, there is absolutely no residual data or traces of the document itself. Therefore, the VDR provider keeps complete control over the information, its processing, and its storage.</p>
+<p>This changes the architecture, but not the user experience.</p>
+<h2 class="wp-block-heading">Why use Android for VDRs?</h2>
+<p>That’s a fair question. If you only want to display a PDF, a conventional web viewer may be enough. The value of Android becomes more obvious when a VDR provider already has a dedicated Android app with its own document handling app, logic, integrations, and workflows.</p>
+<p>Using Anbox Cloud means that, instead of rebuilding that application for desktop platforms, the provider can stream it directly to users through their browsers. Users don’t need to install the Android app or even have an Android phone. Any browser will do.</p>
+<p>With Anbox Cloud you get the underlying infrastructure to run isolated instances of Android, manage application lifecycles, and stream applications. Its containerized execution model fits well with application-centric workloads, allowing providers to easily manage multiple independent sessions. Deploying to a public or private infrastructure also allows flexibility on where applications and data are processed. This model is useful not only for VDRs, but also for <a href="https://ubuntu.com/blog/rethinking-byod-security-protecting-data-without-trusting-devices">managing bring-your-own-device (BYOD) security</a>, where exposure is reduced by keeping sensitive data off of users’ devices.</p>
+<p>In practice, this means you can reuse existing software seamlessly, while retaining centralized control of its execution. VDR providers can integrate the Android execution and streaming layer provided by Anbox Cloud into their existing security architecture.</p>
+<h2 class="wp-block-heading">Security is a shared responsibility</h2>
+<p>Streaming changes the way information is delivered to a device. The VDR provider can do document processing in their backend and send only the rendered surface: the pixels, instead of sending the original document over.</p>
+<p>Streaming implies that only the graphical data is sent to the device. The server never sends the document or any part of it. The document is fully processed in the cloud and only the pixels (of the current view) are sent, which is the same as streaming a video. The file is never sent to the device, thereby decreasing the risk of exposure. This makes the extraction much more difficult.</p>
+<p>But this does not mean that one can’t get information. Malicious users can still take screenshots, screen recordings, or use an external camera, so we still highly recommend VDR authentication, document permissions, and watermarking.</p>
+<h2 class="wp-block-heading">A different way to deliver confidential information</h2>
+<p>Although for web-native VDRs adding Android may not sound like an obvious advantage, cloud-hosted execution gives providers who are already using Android apps another way to expand access across devices, without needing to maintain separate clients or distribute documents for local processing.</p>
+<p>At the end of the day, the question isn’t whether Android is a better document viewer. It is whether the viewing application needs to run on the user’s device at all.</p>
+<p>With Anbox Cloud, it doesn’t have to.</p>
+<h1 class="wp-block-heading"><strong>Further reading</strong></h1>
+<p><a href="https://canonical.com/anbox-cloud">Learn more about Anbox Cloud or contact our team to discuss your use case</a></p>
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+<p>Android is a trademark of Google LLC.</p>
+<p>Anbox Cloud uses assets available through the Android Open Source Project.</p>
+<p>The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the<a href="https://creativecommons.org/licenses/by/3.0/"> Creative Commons</a> 3.0 Attribution License.</p>
+<p></p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>Ohme knows when I’m in. Its “never sell” promise is out</title>
       <link>https://blog.popey.com/2026/11/ohme-knows-when-im-in-its-never-sell-promise-is-out/</link>
@@ -80,29 +120,6 @@
 <p>The old comments were not carried over, but you can still read them through the <a href="https://web.archive.org/">Wayback Machine</a>.</p>
 <p>If you find a broken link, a missing image or a post that does not look right, please <a href="https://bugs.launchpad.net/launchpad-blog/+filebug">report a bug</a>.</p>]]></description>
       <source url="http://news.launchpad.net/feed">Launchpad News</source>
-    </item>
-    <item>
-      <title>Ubuntu Summit 26.10: Less than a week away!</title>
-      <link>https://ubuntu.com//blog/ubuntu-summit-26-10-less-than-a-week-away</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/ubuntu-summit-26-10-less-than-a-week-away</guid>
-      <pubDate>Fri, 06 Nov 2026 16:43:41 GMT</pubDate>
-      <description><![CDATA[<h3 class="wp-block-heading">Ubuntu Summit 26.10: Less than a week away!</h3>
-<p>Here in London, the long summer has stepped aside for cooler nights and damp, misty mornings. The trees are turning amber and the sunlight is low on the horizon, which can only mean one thing: the next <a data-id="https://ubuntu.com/summit" data-type="link" href="https://ubuntu.com/summit">Ubuntu Summit</a> is just around the corner. In fact, it’s next week, Thursday and Friday,<strong> November 12-13</strong>.</p>
-<p>This will be our third Summit since switching to our twice-yearly schedule. What initially seemed like a huge challenge, fitting a year of planning into six months, then starting again, has become a massive opportunity for those of us who put the event together.</p>
-<figure class="wp-block-image size-full"><img alt="" height="691" loading="lazy" sizes="(min-width: 1036px) 1036px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp" srcset="https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp 460w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp 620w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp 1036w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp 1681w, https://res.cloudinary.com/canonical/image/fetch/f_webp,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F4461%2Fdoom.webp 1920w" width="1036"/><figcaption class="wp-element-caption">From Ubuntu Summit 25.10, DOOM in space!</figcaption></figure>
-<p>Much like the <em>release early, release often</em> software development philosophy (which <a href="https://discourse.ubuntu.com/t/if-it-hurts-do-it-more/88163">many of our teams</a> have adopted here at Canonical), frequency forces you to get good at what’s important. And what’s most important at a remote-first event like the Ubuntu Summit is the quality of the talks and presentations. With a fresh Summit every six months, we’re able to capture the best of what’s happening now and present the freshest ideas to the community. Never has moving fast been more important.</p>
-<p>And because we are broadcasting a live, interactive stream from our base in London, you get to experience this immediately, whether you are watching at home or joining one of the local watch parties. You can ask questions to our speakers, take part in interactive activities, and poke around the latest open source developments without having to book a flight.</p>
-<p>When you gather this often, conversations shift from distant, theoretical roadmaps to what people are actually designing, developing and deploying today. Our <a data-id="https://discourse.ubuntu.com/t/ubuntu-summit-26-10-timetable/90216" data-type="link" href="https://discourse.ubuntu.com/t/ubuntu-summit-26-10-timetable/90216">Ubuntu Summit 26.10 Timetable</a> reflects this, which you can see from just the first morning’s sessions:</p>
-<ul class="wp-block-list">
-<li><strong><a href="https://discourse.ubuntu.com/t/astra-an-open-source-observatory-control-software-for-exoplanet-hunting/87867" rel="noreferrer noopener" target="_blank">Astra: an open-source observatory control software for exoplanet hunting</a></strong>: The development and application of open-source software used in astronomical observatories to detect and track exoplanets.</li>
-<li><strong><a href="https://discourse.ubuntu.com/t/ntfy-the-joys-of-handling-4-million-push-notifications-per-day/88293" rel="noreferrer noopener" target="_blank">ntfy: the joys of handling 4 million push notifications per day</a></strong>: An architectural overview of scaling backend infrastructure and managing high-throughput message delivery.</li>
-<li><strong><a href="https://discourse.ubuntu.com/t/hax-ai-coding-agent-as-a-lightweight-unix-tool/87808" rel="noreferrer noopener" target="_blank">hax: AI coding agent as a lightweight Unix tool</a></strong>: How to integrate large language models into traditional, terminal-based developer workflows using established Unix principles.</li>
-<li><strong><a href="https://discourse.ubuntu.com/t/how-local-ai-is-transforming-ubuntu-accessibility/87806" rel="noreferrer noopener" target="_blank">How local AI is transforming Ubuntu accessibility</a></strong>: Our big news for Ubuntu – the integration of locally processed artificial intelligence models to improve user accessibility features within the  desktop environment.</li>
-<li><strong><a href="https://discourse.ubuntu.com/t/text-to-cad-how-i-designed-a-robot-with-llms-and-open-source-tools/87958" rel="noreferrer noopener" target="_blank">Text to CAD: how I designed a robot with LLMs and open source tools</a></strong>: The practical application of open-source software and large language models in physical engineering and robotics design.</li>
-</ul>
-<p>Register today (it’s free!) and we’ll see you next week.</p>
-<p><a href="https://discourse.ubuntu.com/c/ubuntu-summit/420?_gl=1*1f1520k*_gcl_au*NzI2MTc3NDc0LjE3OTA5Mzc3NzkuLS4tLjE3OTEyODQxNTYuMjEyMjc2ODUyMC4xNzkyMTY1MjQ0LjE3OTIxNzUwNTA.">Register for the Summit</a></p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Ubuntu Weekly Newsletter Issue 969</title>
@@ -5997,42 +6014,6 @@ So, please sync with this change (and sorry :)).</p>
 
 <p>A big congratulations to the winners, and thanks to everyone who submitted a wallpaper.  You can find these wallpapers (along with dozens of other stunning wallpapers) today at the links above, or in your desktop wallpaper list after you upgrade to or install Ubuntu 18.10 on October 18th.</p>]]></description>
       <source url="https://www.nhaines.com/feed.xml">Nathan Haines</source>
-    </item>
-    <item>
-      <title>NVIDIA PRIME in Ubuntu 18.04 and 18.10, and a call for testing</title>
-      <link>https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</link>
-      <guid isPermaLink="true">https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</guid>
-      <pubDate>Thu, 20 Sep 2018 09:19:48 GMT</pubDate>
-      <description><![CDATA[<p class="wp-block-paragraph"><strong>Ubuntu 18.04</strong> marked the transition to a new, more granular, packaging of the NVIDIA drivers, which, unfortunately, combined with a <a href="https://bugs.launchpad.net/bugs/1777099">change in <g class="gr_ gr_3 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="3" data-gr-id="3">logind</g></a>, and with the previous migration from Lightdm to Gdm3, caused <strong>(Intel+NVIDIA) hybrid laptops</strong> to stop working the way they used to in Ubuntu 16.xx and older.</p>
-
-
-
-<p class="wp-block-paragraph">The following are the <strong>main issues</strong> experienced by our users:</p>
-
-
-
-<ul class="wp-block-list"><li>An increase in power consumption when using the power saving profile (i.e. when the discrete GPU is off).</li><li>The inability to switch between power profiles on log out (thus requiring a reboot).</li></ul>
-
-
-
-<p class="wp-block-paragraph">We have backported a commit to solve the <a href="https://bugs.launchpad.net/bugs/1777099">problem with logind</a>, and I have worked on a few changes in gpu-manager, and in the other key components, to improve the experience when using <strong>Gdm3</strong>.</p>
-
-
-
-<p class="has-background has-light-green-cyan-background-color wp-block-paragraph"><strong>NOTE:</strong> fixes for <strong>Lightdm</strong>, and for <strong>SDDM</strong> still need some work, and will be made available in the next update.</p>
-
-
-
-<p class="wp-block-paragraph">Both issues should be fixed in <strong>Ubuntu 18.10</strong>, and I have backported my work to <strong>Ubuntu 18.04</strong>, which is now <a href="https://bugs.launchpad.net/ubuntu/+source/nvidia-prime/+bug/1778011">available for testing.</a></p>
-
-
-
-<p class="wp-block-paragraph">If you run <strong>Ubuntu 18.04</strong>, own a hybrid laptop with an Intel and an NVIDIA GPU (supported by the <strong>390 NVIDIA driver</strong>),  <strong>we would love to get your feedback</strong> on the updates in Ubuntu 18.04.</p>
-
-
-
-<p class="wp-block-paragraph">If you are interested, head over to the <a href="https://bugs.launchpad.net/ubuntu/+source/nvidia-prime/+bug/1778011">bug report</a>, follow the instructions at the end of the bug <g class="gr_ gr_3 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-del replaceWithoutSep" id="3" data-gr-id="3">description,</g> and let us know about your experience.</p>]]></description>
-      <source url="http://albertomilone.com/wordpress/?feed=rss2">Alberto Milone</source>
     </item>
     <item>
       <title>Help needed to improve proposed migration</title>
