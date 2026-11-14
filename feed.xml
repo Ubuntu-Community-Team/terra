@@ -6,7 +6,7 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Fri, 13 Nov 2026 05:42:26 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 05:32:15 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -6014,6 +6014,42 @@ So, please sync with this change (and sorry :)).</p>
 
 <p>A big congratulations to the winners, and thanks to everyone who submitted a wallpaper.  You can find these wallpapers (along with dozens of other stunning wallpapers) today at the links above, or in your desktop wallpaper list after you upgrade to or install Ubuntu 18.10 on October 18th.</p>]]></description>
       <source url="https://www.nhaines.com/feed.xml">Nathan Haines</source>
+    </item>
+    <item>
+      <title>NVIDIA PRIME in Ubuntu 18.04 and 18.10, and a call for testing</title>
+      <link>https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</link>
+      <guid isPermaLink="true">https://albertomilone.com/blog/nvidia-prime-in-ubuntu-18-04-and-18-10-and-a-call-for-testing/</guid>
+      <pubDate>Thu, 20 Sep 2018 09:19:48 GMT</pubDate>
+      <description><![CDATA[<p class="wp-block-paragraph"><strong>Ubuntu 18.04</strong> marked the transition to a new, more granular, packaging of the NVIDIA drivers, which, unfortunately, combined with a <a href="https://bugs.launchpad.net/bugs/1777099">change in <g class="gr_ gr_3 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="3" data-gr-id="3">logind</g></a>, and with the previous migration from Lightdm to Gdm3, caused <strong>(Intel+NVIDIA) hybrid laptops</strong> to stop working the way they used to in Ubuntu 16.xx and older.</p>
+
+
+
+<p class="wp-block-paragraph">The following are the <strong>main issues</strong> experienced by our users:</p>
+
+
+
+<ul class="wp-block-list"><li>An increase in power consumption when using the power saving profile (i.e. when the discrete GPU is off).</li><li>The inability to switch between power profiles on log out (thus requiring a reboot).</li></ul>
+
+
+
+<p class="wp-block-paragraph">We have backported a commit to solve the <a href="https://bugs.launchpad.net/bugs/1777099">problem with logind</a>, and I have worked on a few changes in gpu-manager, and in the other key components, to improve the experience when using <strong>Gdm3</strong>.</p>
+
+
+
+<p class="has-background has-light-green-cyan-background-color wp-block-paragraph"><strong>NOTE:</strong> fixes for <strong>Lightdm</strong>, and for <strong>SDDM</strong> still need some work, and will be made available in the next update.</p>
+
+
+
+<p class="wp-block-paragraph">Both issues should be fixed in <strong>Ubuntu 18.10</strong>, and I have backported my work to <strong>Ubuntu 18.04</strong>, which is now <a href="https://bugs.launchpad.net/ubuntu/+source/nvidia-prime/+bug/1778011">available for testing.</a></p>
+
+
+
+<p class="wp-block-paragraph">If you run <strong>Ubuntu 18.04</strong>, own a hybrid laptop with an Intel and an NVIDIA GPU (supported by the <strong>390 NVIDIA driver</strong>),  <strong>we would love to get your feedback</strong> on the updates in Ubuntu 18.04.</p>
+
+
+
+<p class="wp-block-paragraph">If you are interested, head over to the <a href="https://bugs.launchpad.net/ubuntu/+source/nvidia-prime/+bug/1778011">bug report</a>, follow the instructions at the end of the bug <g class="gr_ gr_3 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-del replaceWithoutSep" id="3" data-gr-id="3">description,</g> and let us know about your experience.</p>]]></description>
+      <source url="http://albertomilone.com/wordpress/?feed=rss2">Alberto Milone</source>
     </item>
     <item>
       <title>Help needed to improve proposed migration</title>
