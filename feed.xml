@@ -6,50 +6,166 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Thu, 19 Nov 2026 06:33:06 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 06:20:25 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>From desktop to cloud to road</title>
-      <link>https://ubuntu.com//blog/from-desktop-to-cloud-to-road</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/from-desktop-to-cloud-to-road</guid>
-      <pubDate>Fri, 13 Nov 2026 09:31:00 GMT</pubDate>
-      <description><![CDATA[<p>In an era where software defines vehicle value, engineering teams face a friction bottleneck. They spend hours fighting dependency conflicts, toolchain mismatches, and integration failures instead of writing vehicle features. As vehicles effectively become data centers, teams waste hours resolving dependency conflicts across desktop workstations, cloud, and physical targets.</p>
-<p>This article explores how establishing consistency across desktop, cloud, and embedded targets prevents inconsistencies between silicon options and streamlines developer workflows.</p>
-<h2 class="wp-block-heading"><strong>The target integration bottleneck</strong></h2>
-<p>Traditional automotive engineering treats every environment, including desktop, cloud, and target electronic control unit (ECU), as a unique universe. Development teams write code on x86 workstations and validate algorithms on cloud instances. Then, they identify dependency bugs when deploying to target ARM or RISC-V architectures.</p>
-<p>Every new silicon brings custom toolchains, mismatched library versions, and integration delays. Moreover, code written in isolation demands manual regression testing and custom porting to execute on physical vehicle hardware.</p>
-<p>This fragmented model cannot scale for modern software-defined vehicles (SDVs). To build, test, and deploy software at cloud speed, automotive teams must adopt modern practices rooted in environmental parity.</p>
-<h2 class="wp-block-heading"><strong>Understanding environmental parity</strong></h2>
-<p>Environmental parity means that your software behaves identically regardless of where you execute it. An application compiled on a laptop runs with the same dependencies, libraries, and kernels in a cloud continuous integration pipeline and inside a vehicle ECU.</p>
-<p>Achieving true parity demands two distinct layers of architectural abstraction:</p>
-<ul class="wp-block-list">
-<li><strong>Hardware abstraction: </strong>Software must not bind itself to specific silicon vendor drivers. You need an intermediate layer that decouples target applications from the underlying hardware, allowing you to swap silicon without rewriting the application.</li>
-</ul>
-<ul class="wp-block-list">
-<li><strong>Operating system abstraction</strong>: Running the same kernel version and open source library versions across desktop, cloud, and embedded targets ensures complete dependency fulfillment. This approach solves the “it works on my machine” problem.</li>
-</ul>
-<p>When you implement these abstractions, the complete system runs a virtual ECU (vECU) in the cloud that mirrors physical road hardware.</p>
-<h2 class="wp-block-heading"><strong>Environmental parity starts with the operating system</strong></h2>
-<p>So naturally, the next question is: how do you implement hardware and operating system abstraction? At Canonical, our answer to this challenge is Ubuntu. </p>
-<p>At the hardware level, Ubuntu is engineered to run optimally across all major silicon architectures, running natively on x86, ARM64, and RISC-V. We build specific silicon drivers directly into the kernel, hiding the hardware complexity from your developers.</p>
-<p>This foundation completely decouples your software from the underlying chip. As a result, you can swap hardware at any time without rewriting a single code of line.</p>
-<p>At the software level, Ubuntu delivers a consistent experience across platforms with continuous integration. You can write code once on a developer workstation, test it at scale in the cloud, and deploy it straight to production road vehicles without target-specific rewrites.</p>
-<p>Additionally, when you standardize your automotive software stack on Ubuntu Pro, you unlock key commercial and operational advantages:</p>
-<ul class="wp-block-list">
-<li><strong>Long-term enterprise security:</strong> Canonical offers up to 15 years of Long Term Support (LTS) through Ubuntu Pro, protecting vehicle fleets throughout their operational lifespan.</li>
-</ul>
-<ul class="wp-block-list">
-<li><strong>API stability and regression testing:</strong> Canonical maintains strict API stability and conducts continuous regression testing, preventing breakages during regular system updates.</li>
-</ul>
-<ul class="wp-block-list">
-<li><strong>Automotive compliance built-in:</strong> We align our processes with critical automotive cybersecurity standards, including ISO/SAE 21434, simplifying compliance and auditing across your supply chain.</li>
-</ul>
-<h2 class="wp-block-heading"><strong>Transform your automotive software pipeline</strong></h2>
-<p>The future of automotive engineering is not about managing disparate toolchains for every chip on the vehicle network. It is about establishing parity from desktop to cloud to road. Canonical provides the predictable, security-maintained, open source foundation required to deliver next-generation mobility.</p>
-<p>Ready to streamline your automotive software pipeline? Learn more about our <a href="https://canonical.com/solutions/automotive">automotive solutions</a> or <a href="https://canonical.com/solutions/automotive#get-in-touch">contact our team today</a> to schedule a technical deep-dive.</p>
-<p></p>]]></description>
+      <title>Automating bare metal infrastructure in FIPS-regulated environments with MAAS</title>
+      <link>https://ubuntu.com//blog/automating-bare-metal-infrastructure-in-fips-regulated-environments-with-maas</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/automating-bare-metal-infrastructure-in-fips-regulated-environments-with-maas</guid>
+      <pubDate>Wed, 18 Nov 2026 22:26:26 GMT</pubDate>
+      <description><![CDATA[<p>Organizations operating sensitive infrastructure, particularly in the government, defense, and financial services sectors, often face strict security and compliance requirements. These requirements extend beyond applications and operating systems (OSs) to the tools responsible for provisioning and managing the underlying physical infrastructure.</p>
+<p>The Federal Information Processing Standard (FIPS) 140-3 defines security requirements for cryptographic modules used to protect sensitive information. Supporting FIPS requirements across the infrastructure stack is therefore an important consideration for organizations operating in regulated environments.</p>
+<p>With the release of <a href="https://canonical.com/maas/docs/release-information/release-notes/#version-3-7-release-notes">MAAS v3.7.4</a>, Canonical introduces long-awaited FIPS mode support for the bare metal management control plane. This allows organizations to apply stricter cryptographic and security controls to their infrastructure, while maintaining automated provisioning and lifecycle management of physical servers.</p>
+<h2 class="wp-block-heading">What FIPS mode brings to MAAS</h2>
+<p><a href="https://canonical.com/maas">Canonical MAAS (Metal as a Service)</a> is an open source platform that brings cloud-like automation to bare metal infrastructure. It provides a centralized control plane to discover, test, provision, configure, and manage physical servers throughout their lifecycle. Through its APIs and integration with infrastructure-as-code tools, MAAS enables organizations to manage large fleets of servers with consistent, repeatable operations. You can learn more about how MAAS helps organizations manage their data centers in our <a href="https://ubuntu.com/engage/reduce-data-center-costs-with-bare-metal-automation">whitepaper</a>.</p>
+<p>As the control plane for physical infrastructure, MAAS communicates with server management controllers, manages remote power operations, and provisions OSs. These functions involve network connections, authentication, and cryptographic mechanisms that must also meet the organization’s security requirements.</p>
+<p>When FIPS mode is enabled, MAAS automatically applies stricter security controls. These include restricting Transport Layer Security (TLS) and Secure Shell Protocol (SSH) connections to approved cryptographic algorithms, validating key types and sizes, requiring trusted SSH host keys, and rejecting power management configurations that rely on insecure protocols. For example, Intelligent Platform Management Interface (IPMI) connections must use cipher suite 17, and unsupported power drivers are rejected.</p>
+<p>MAAS also makes security hardening mandatory when FIPS mode is active. Administrators can identify configuration problems through validation errors and security notifications, while the MAAS API provides users with visibility into the FIPS and hardening status of each controller.</p>
+<p>By integrating these controls into MAAS, infrastructure teams can enforce security requirements more consistently, without relying entirely on manual checks or custom validation scripts.</p>
+<h2 class="wp-block-heading">Getting started with FIPS mode in MAAS</h2>
+<p>MAAS supports FIPS mode on its controllers and can also deploy Ubuntu machines with FIPS-enabled kernels. These are separate capabilities, and the configuration process depends on whether you are setting up a new environment, adapting an existing deployment, or provisioning managed machines.</p>
+<h3 class="wp-block-heading">Enabling FIPS mode on MAAS controllers</h3>
+<p>For new deployments, we recommend starting with an Ubuntu host already running in FIPS mode. Using an <a href="https://ubuntu.com/pro">Ubuntu Pro</a> subscription, administrators can enable the fips-updates service and reboot the host before deploying MAAS.</p>
+<p>MAAS detects FIPS mode at startup and automatically activates the corresponding security controls. Administrators can then validate the configuration and verify the FIPS status through the MAAS API. In deployments with multiple controllers, FIPS mode must be enabled consistently across all of them.</p>
+<p>Detailed instructions are available in the <a href="https://canonical.com/maas/docs/latest/how-to-guides/enable-fips-mode-on-a-controller/">guide to enabling FIPS mode on a MAAS controller</a>.</p>
+<h3 class="wp-block-heading">Adopting FIPS mode on existing deployments</h3>
+<p>For environments with FIPS requirements, it is best to begin with a new MAAS deployment with FIPS mode enabled from the outset. Enabling FIPS mode on an existing deployment can introduce complex dependencies between components, potentially leading to compatibility issues, unexpected conflicts, and unsupported configurations. For this reason, enabling FIPS mode on existing deployments should only be considered as a last resort, when a fresh deployment is not feasible. If adopting FIPS mode on an existing deployment, it is critical to carefully plan and test deployments before transitioning.</p>
+<p>Existing MAAS installations require additional preparation before enabling FIPS mode. Administrators must review their power management configurations, ensure compatible IPMI cipher suites, register trusted SSH host keys, and validate existing cryptographic keys and certificates. Supporting services such as <a href="https://canonical.com/data/postgresql">PostgreSQL</a> also need to be reviewed.</p>
+<p>This preparation is particularly important, because MAAS does not automatically revalidate previously stored cryptographic material. As a result, converting an existing populated deployment to FIPS mode is not a supported path to achieving FIPS compliance.</p>
+<p>The <a href="https://canonical.com/maas/docs/latest/how-to-guides/adopt-fips-on-an-existing-deployment/">migration guide</a> explains the required preparation and considerations for existing environments.</p>
+<h3 class="wp-block-heading">Deploying machines with FIPS-enabled kernels</h3>
+<p>Separately from controller FIPS mode, MAAS can provision Ubuntu machines with FIPS-enabled kernels using MAAS’s standard deployment workflow and cloud-init.</p>
+<p>After deploying Ubuntu, cloud-init activates Ubuntu Pro, installs the FIPS kernel, and reboots the machine. This makes it possible to incorporate FIPS kernel installation into existing bare metal provisioning workflows.</p>
+<p>For prerequisites and configuration details, check the <a href="https://canonical.com/maas/docs/latest/how-to-guides/deploy-a-fips-kernel/">MAAS guide to deploying FIPS kernels</a>. The documented procedure covers Ubuntu LTS deployment and requires an Ubuntu Pro subscription and network access to obtain the necessary packages.</p>
+<h2 class="wp-block-heading">Improve the security of your infrastructure operations with MAAS</h2>
+<p>With FIPS mode support in MAAS 3.7.4, organizations have more control over the cryptographic policies used to manage their physical infrastructure. Security restrictions can be enforced as part of normal MAAS operations, reducing the need to maintain separate processes for security validation and infrastructure provisioning.</p>
+<p>If you are planning to deploy MAAS in an environment with FIPS requirements, start by reviewing the <a href="https://canonical.com/maas/docs/latest/how-to-guides/enhance-maas-security/">MAAS security documentation</a> to understand the prerequisites, supported configurations, and limitations.</p>
+<p>You can also <a href="https://canonical.com/maas/contact-us">contact Canonical experts</a> to discuss your infrastructure security and compliance requirements.</p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
+    <item>
+      <title>Google Meet's call control (WebHID) works with Chromium snap</title>
+      <link>https://nobuto-m.github.io/post/2026/google-meet-call-control-webhid-works-with-chromium-snap/</link>
+      <guid isPermaLink="true">https://nobuto-m.github.io/post/2026/google-meet-call-control-webhid-works-with-chromium-snap/</guid>
+      <pubDate>Wed, 18 Nov 2026 10:01:03 GMT</pubDate>
+      <description><![CDATA[<p>Google Meet’s <a href="https://support.google.com/meet/answer/12562325?hl=en" target="_blank" rel="noopener">“Call control” feature</a> synchronizes the physical mute status and LED indicator on supported devices (e.g. headsets and conference speakerphones) with your mute status inside a Meet call. Other platforms including web-based Zoom clients offer equivalent functionality.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-call-control-synchronizes-the-hardware-mute-led-and-mute-status-in-google-meet">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="Call control synchronizes the hardware mute LED and mute status in Google Meet" srcset="
+               /post/2026/google-meet-call-control-webhid-works-with-chromium-snap/featured_hu1e17e7d5b3a11e8407448c8cd9b036a1_171498_5be6106fedee7b55b594697e2b05dbf3.webp 400w,
+               /post/2026/google-meet-call-control-webhid-works-with-chromium-snap/featured_hu1e17e7d5b3a11e8407448c8cd9b036a1_171498_c67e1683e4c2992a8d2a366955d47bfe.webp 760w,
+               /post/2026/google-meet-call-control-webhid-works-with-chromium-snap/featured_hu1e17e7d5b3a11e8407448c8cd9b036a1_171498_1200x1200_fit_q75_h2_lanczos.webp 1200w"
+               src="https://nobuto-m.github.io/post/2026/google-meet-call-control-webhid-works-with-chromium-snap/featured_hu1e17e7d5b3a11e8407448c8cd9b036a1_171498_5be6106fedee7b55b594697e2b05dbf3.webp"
+               width="760"
+               height="570"
+               loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Call control synchronizes the hardware mute LED and mute status in Google Meet
+    </figcaption></figure>
+
+<p>This relies on <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API" target="_blank" rel="noopener">WebHID</a> to let web pages communicate directly with Human Interface Devices (HID). Because <a href="https://mozilla.github.io/standards-positions/#webhid" target="_blank" rel="noopener">Firefox does not support WebHID as a conscious decision</a>, I tested it with the Chromium snap first. Mute synchronization didn’t work initially, even though Chromium detected the speakerphone. I suspected snap confinement issues, but testing it with the .deb package of Google Chrome didn’t work either.</p>
+<p>Chrome’s documentation notes that WebHID on Linux requires configuration, but it does not specify what exact udev rules are needed.</p>
+<p><a href="https://support.google.com/chrome/answer/12576972?hl=en" target="_blank" rel="noopener">https://support.google.com/chrome/answer/12576972?hl=en</a></p>
+<blockquote>
+<p>Tip: To access the connected device on the Linux system, the udev rule needs to be configured appropriately.</p>
+</blockquote>
+<p>By default and <a href="https://github.com/systemd/systemd/issues/38991" target="_blank" rel="noopener">by design</a>, <code>hidraw</code> devices used by WebHID are accessible only by the root user. However, certain devices (e.g. Yubikeys classified under <code>ID_SECURITY_TOKEN</code>) receive udev rules that grant access to the logged-in user via <code>uaccess</code> tagging.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ls -alF /dev/hidraw*
+</span></span><span class="line"><span class="cl">crw-rw----+ <span class="m">1</span> root root 240, <span class="m">0</span> Nov <span class="m">17</span> 21:14 /dev/hidraw0  <span class="c1">## &lt;- Yubikey</span>
+</span></span><span class="line"><span class="cl">crw-------  <span class="m">1</span> root root 240, <span class="m">1</span> Nov <span class="m">17</span> 21:13 /dev/hidraw1  <span class="c1">## &lt;- conference speakerphone</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ getfacl -t /dev/hidraw0  <span class="c1">## &lt;- Yubikey</span>
+</span></span><span class="line"><span class="cl">getfacl: Removing leading <span class="s1">&#39;/&#39;</span> from absolute path names
+</span></span><span class="line"><span class="cl"><span class="c1"># file: dev/hidraw0</span>
+</span></span><span class="line"><span class="cl">USER   root      rw-     
+</span></span><span class="line"><span class="cl">user   sssd      rw-     
+</span></span><span class="line"><span class="cl">user   nobuto    rw-  <span class="c1">## &lt;- access granted for the logged-in user</span>
+</span></span><span class="line"><span class="cl">GROUP  root      ---     
+</span></span><span class="line"><span class="cl">mask             rw-     
+</span></span><span class="line"><span class="cl">other            ---     
+</span></span></code></pre></div><p>Once I know how ACL works, an explicit udev rule for a specific device can be configured as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Make Anker PowerConf available for WebHID</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Change the vendor and product ID to fit your hardware</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;hidraw&#34;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;hidraw*&#34;</span>, ATTRS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;291a&#34;</span>, ATTRS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">&#34;3301&#34;</span> <span class="nv">TAG</span><span class="o">+=</span><span class="s2">&#34;uaccess&#34;</span>
+</span></span></code></pre></div><p>The Chromium snap requires additional setup. The snap’s AppArmor confinement does not block access to <code>/dev/hidraw*</code> thanks to the auto-connection of the <code>u2f-devices</code> interface. The remaining step is to tag specific devices so the snap can access them. The final udev rules are saved as follows in <code>/etc/udev/rules.d/69-snap.chromium_custom.rules</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Make Anker PowerConf available for WebHID</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Change the vendor and product ID to fit your hardware</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;hidraw&#34;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;hidraw*&#34;</span>, ATTRS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;291a&#34;</span>, ATTRS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">&#34;3301&#34;</span> <span class="nv">TAG</span><span class="o">+=</span><span class="s2">&#34;uaccess&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Tagging for the Chromium snap to be run before 70-snap.chromium.rules</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Change the vendor and product ID to fit your hardware</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;hidraw&#34;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;hidraw*&#34;</span>, ATTRS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;291a&#34;</span>, ATTRS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">&#34;3301&#34;</span> <span class="nv">TAG</span><span class="o">+=</span><span class="s2">&#34;snap_chromium_chromedriver&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;hidraw&#34;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;hidraw*&#34;</span>, ATTRS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;291a&#34;</span>, ATTRS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">&#34;3301&#34;</span> <span class="nv">TAG</span><span class="o">+=</span><span class="s2">&#34;snap_chromium_chromium&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;hidraw&#34;</span>, <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;hidraw*&#34;</span>, ATTRS<span class="o">{</span>idVendor<span class="o">}==</span><span class="s2">&#34;291a&#34;</span>, ATTRS<span class="o">{</span>idProduct<span class="o">}==</span><span class="s2">&#34;3301&#34;</span> <span class="nv">TAG</span><span class="o">+=</span><span class="s2">&#34;snap_chromium_daemon&#34;</span>
+</span></span></code></pre></div><p>After completing those prerequisites and enrolling the device in the Google Meet configuration, we are good to go.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-enroll-a-new-device-with--connect-device-button">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="Enroll a new device with **&#43; Connect device** button"
+           src="https://nobuto-m.github.io/post/2026/google-meet-call-control-webhid-works-with-chromium-snap/enroll-call-control-device.png"
+           loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Enroll a new device with <strong>+ Connect device</strong> button
+    </figcaption></figure>
+
+<p>Bidirectional mute status synchronization over WebHID now works seamlessly with the Chromium snap! It works with web-based Zoom calls too.</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<video controls  >
+  <source src="https://nobuto-m.github.io/post/2026/google-meet-call-control-webhid-works-with-chromium-snap/google-meet-call-control-snap-chromium.mp4" type="video/mp4">
+</video>]]></description>
+      <source url="https://nobuto-m.github.io/tag/planet-ubuntu/index.xml">Nobuto Murata</source>
     </item>
     <item>
       <title>E390 Bili-Bili Com Dobby No Deti</title>
@@ -2736,6 +2852,140 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
       <source url="https://steveire.wordpress.com/feed/?mrss=off">Stephen Kelly</source>
     </item>
     <item>
+      <title>Free software activity in November 2025</title>
+      <link>https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</link>
+      <guid isPermaLink="true">https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</guid>
+      <pubDate>Thu, 04 Dec 2025 17:55:59 GMT</pubDate>
+      <description><![CDATA[<p>My Debian contributions this month were all
+<a href="https://www.freexian.com/about/debian-contributions/">sponsored</a> by
+Freexian.  I had a bit less time than usual, because Freexian collaborators
+gathered in Marseille this month for our yearly sprint, doing some planning
+for next&nbsp;year.</p>
+<p>You can also support my work directly via
+<a href="https://liberapay.com/cjwatson">Liberapay</a> or <a href="https://github.com/sponsors/cjwatson">GitHub
+Sponsors</a>.</p>
+<h2>OpenSSH</h2>
+<p>I began preparing for the second stage of the <a href="https://lists.debian.org/debian-devel/2024/04/msg00044.html"><span class="caps">GSS</span>-<span class="caps">API</span> key exchange package
+split</a> (some
+details have changed since that message).  It seems that we&#8217;ll need to wait
+until Ubuntu 26.04 <span class="caps">LTS</span> has been released, but that&#8217;s close enough that it&#8217;s
+worth making sure we&#8217;re ready.  This month I just did some packaging
+cleanups that would otherwise have been annoying to copy, such as removing
+support for direct upgrades from pre-bookworm.  I&#8217;m considering some other
+package rearrangements to make the split easier to manage, but haven&#8217;t made
+any decisions here&nbsp;yet.</p>
+<p>This also led me to start on a long-overdue bug triage pass, mainly
+consisting of applying usertags to lots of our open bugs to sort them by
+which program they apply to, and also closing a few that have been fixed,
+since some bugs will eventually need to be reassigned to <span class="caps">GSS</span>-<span class="caps">API</span> packages
+and it would be helpful to make them easier to find.  At the time of
+writing, about 30% of the bug list remains to be categorized this&nbsp;way.</p>
+<h2>Python&nbsp;packaging</h2>
+<p>I upgraded these packages to new upstream&nbsp;versions:</p>
+<ul>
+<li>aioftp</li>
+<li>basemap (fixing <a href="https://bugs.debian.org/1119728">Cython 3.1
+  compatibility</a>)</li>
+<li>billiard</li>
+<li>black</li>
+<li>django-phonenumber-field</li>
+<li>flask-security</li>
+<li>flufl.i18n</li>
+<li>langtable</li>
+<li>mariadb-connector-python</li>
+<li>peewee (fixing <a href="https://bugs.debian.org/1119757">Cython 3.1
+  compatibility</a>)</li>
+<li>pydantic</li>
+<li>pydantic-core</li>
+<li>pydantic-settings</li>
+<li>pylsqpack</li>
+<li>pymongo</li>
+<li>pymssql</li>
+<li>pyodbc</li>
+<li>python-auditwheel (<a href="https://github.com/pypa/auditwheel/pull/640">contributed follow-up fix
+  upstream</a>)</li>
+<li>python-avro</li>
+<li>python-bleach</li>
+<li>python-btrees</li>
+<li>python-certifi</li>
+<li>python-charset-normalizer</li>
+<li>python-colorlog</li>
+<li>python-django-channels</li>
+<li>python-django-constance</li>
+<li>python-django-contact-form</li>
+<li>python-django-hashids</li>
+<li>python-djvulibre (fixing <a href="https://bugs.debian.org/1119766">Cython 3.1
+  compatibility</a>)</li>
+<li>python-evalidate</li>
+<li>python-legacy-cgi</li>
+<li>python-openstep-plist (fixing <a href="https://bugs.debian.org/1119767">Cython 3.1
+  compatibility</a>)</li>
+<li>python-pytest-run-parallel</li>
+<li>python-pytokens</li>
+<li>python-tblib</li>
+<li>python-webargs</li>
+<li>pyupgrade</li>
+<li>sqlfluff</li>
+<li>trove-classifiers</li>
+<li>ttconv</li>
+<li>wcwidth</li>
+<li>zope.hookable</li>
+<li>zope.i18nmessageid (removing <a href="https://bugs.debian.org/1084014">run-time dependency on
+  setuptools</a>)</li>
+<li>zope.interface</li>
+<li>zope.proxy</li>
+<li>zope.security (removing <a href="https://bugs.debian.org/1084018">run-time dependency on
+  setuptools</a>)</li>
+<li>zope.sqlalchemy</li>
+</ul>
+<p>I packaged <a href="https://bugs.debian.org/1120507">django-pgtransaction</a> and
+backported it to trixie, since we plan to use it in Debusine; and I adopted
+python-certifi for the Python&nbsp;team.</p>
+<p>I fixed or helped to fix several other build/test&nbsp;failures:</p>
+<ul>
+<li><a href="https://bugs.debian.org/1119744">kivy</a></li>
+<li><a href="https://bugs.debian.org/1120242">mypy</a></li>
+<li><a href="https://bugs.debian.org/1114284">pytest-mypy-testing</a> (<a href="https://github.com/davidfritzsche/pytest-mypy-testing/pull/57">contributed
+  upstream</a>)</li>
+<li><a href="https://salsa.debian.org/python-team/packages/python-cytoolz/-/commit/52856c4c1d1bc9fab0241e4c1b0d20d75bdaa99a">python-cytoolz</a></li>
+<li><a href="https://bugs.debian.org/1120725">python-discord</a></li>
+<li><a href="https://bugs.debian.org/1120469">python-ncls</a>, fixing some failures in&nbsp;pyranges</li>
+<li><a href="https://bugs.debian.org/1121095">pyxdg</a></li>
+<li><a href="https://bugs.debian.org/1114415">traitlets</a></li>
+<li><a href="https://bugs.debian.org/1120228">twine</a></li>
+</ul>
+<p>I fixed a couple of other&nbsp;bugs:</p>
+<ul>
+<li><a href="https://bugs.debian.org/1119801">pmix: B-D on python3-all-dev, but not built for all supported Python3&nbsp;versions</a></li>
+<li><a href="https://bugs.debian.org/1064621">python-certifi: Package not compatible with&nbsp;multiarch</a></li>
+</ul>
+<h2>Other bits and&nbsp;pieces</h2>
+<ul>
+<li><a href="https://bugs.debian.org/1087524">cdebconf: Move to&nbsp;/usr/lib/apt/apt-extracttemplates</a></li>
+<li><a href="https://salsa.debian.org/debian/devscripts/-/merge_requests/588">devscripts: Restore dpkg-dev&nbsp;dependency</a></li>
+<li><a href="https://bugs.debian.org/1121577">groff: Missing information about some utilities in the &#8220;contrib&#8221;&nbsp;directory</a></li>
+</ul>
+<h2>Code&nbsp;reviews</h2>
+<ul>
+<li><a href="https://bugs.debian.org/1119914">base-passwd: French translation</a> (merged
+  and&nbsp;uploaded)</li>
+<li><a href="https://salsa.debian.org/installer-team/cdebconf/-/merge_requests/23">cdebconf: Consider using the standard dh sequence in
+  d/rules</a>
+  (merged and&nbsp;uploaded)</li>
+<li><a href="https://bugs.debian.org/430151">cdebconf: Multiple select is not right aligned in
+  Hebrew</a> (patch fails to build; asked
+  reporter for an&nbsp;update)</li>
+<li><a href="https://bugs.debian.org/1078936">cdebconf: Allow building without
+  libglib2.0-dev</a> (merged and&nbsp;uploaded)</li>
+<li><a href="https://bugs.debian.org/1121035">pydantic-core</a> (merged and&nbsp;uploaded)</li>
+<li>pymongo (sponsored adoption by Aryan&nbsp;Karamtoth)</li>
+<li><a href="https://salsa.debian.org/python-team/packages/maturin/-/merge_requests/1">python-maturin: Add missing build
+  dependencies</a>
+  (merged and&nbsp;uploaded)</li>
+</ul>]]></description>
+      <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
+    </item>
+    <item>
       <title>Why I Won’t Be Attending or Speaking at Ubuntu Summit 25.10</title>
       <link>https://ericheickmeyer.com/2025/10/09/why-i-wont-be-attending-or-speaking-at-ubuntu-summit-25-10/</link>
       <guid isPermaLink="true">https://ericheickmeyer.com/2025/10/09/why-i-wont-be-attending-or-speaking-at-ubuntu-summit-25-10/</guid>
@@ -3064,283 +3314,6 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
       <pubDate>Thu, 20 Feb 2025 17:31:00 GMT</pubDate>
       <description><![CDATA[<p>The Open Source Initiative has two classes of board seats: Affiliate seats, and Individual Member seats.&nbsp;</p><p>In the upcoming election, each affiliate can nominate a candidate, and each affiliate can cast a vote for the Affiliate candidates, but there's only 1 Affiliate seat available. I initially expressed interest in being nominated as an Affiliate candidate via Debian. But since <a href="https://ebb.org/bkuhn/">Bradley Kuhn</a> is also running for an Affiliate seat with a similar platform to me, especially with regards to the OSAID, I decided to run as part of an aligned "ticket" as an Individual Member to avoid contention for the 1 Affiliate seat.</p><p>Bradley and I discussed running on a similar ticket around 8/9pm Pacific, and I submitted my candidacy around 9pm PT on 17 February.&nbsp;</p><p>I was dismayed when I received the following mail from <span style="white-space: normal;">Nick Vidal:</span></p><p></p><blockquote><span face="Arial, Helvetica, sans-serif" style="background-color: white; color: #222222; font-size: small;">Dear Luke,</span><br style="background-color: white; color: #222222; font-family: Arial, Helvetica, sans-serif; font-size: small;" /><br style="background-color: white; color: #222222; font-family: Arial, Helvetica, sans-serif; font-size: small;" /><span face="Arial, Helvetica, sans-serif" style="background-color: white; color: #222222; font-size: small;">Thank you for your interest in the OSI Board of Directors election. Unfortunately, we are unable to accept your application as it was submitted after the official deadline of Monday Feb 17 at 11:59 pm UTC. To ensure a fair process,<b> we must adhere to the deadline for all candidates.</b></span><br style="background-color: white; color: #222222; font-family: Arial, Helvetica, sans-serif; font-size: small;" /><br style="background-color: white; color: #222222; font-family: Arial, Helvetica, sans-serif; font-size: small;" /><span face="Arial, Helvetica, sans-serif" style="background-color: white; color: #222222; font-size: small;">We appreciate your enthusiasm and encourage you to stay engaged with OSI’s mission. We hope you’ll consider applying in the future or contributing in other meaningful ways.</span><br style="background-color: white; color: #222222; font-family: Arial, Helvetica, sans-serif; font-size: small;" /><br style="background-color: white; color: #222222; font-family: Arial, Helvetica, sans-serif; font-size: small;" /><span face="Arial, Helvetica, sans-serif" style="background-color: white; color: #222222; font-size: small;">Best regards,</span><br style="background-color: white; color: #222222; font-family: Arial, Helvetica, sans-serif; font-size: small;" /><span face="Arial, Helvetica, sans-serif" style="background-color: white; color: #222222; font-size: small;">OSI Election Teams</span></blockquote><p>Nowhere on the&nbsp;<a href="https://opensource.org/blog/osis-board-of-directors-in-2025-details-about-the-elections">"OSI’s board of directors in 2025: details about the elections"</a>&nbsp;page do they list a timezone for closure of nominations; they simply list Monday 17 February.&nbsp;</p><p>The OSI's contact address is in California, so it seems arbitrary and capricious to retroactively define all of these processes as being governed by UTC.</p><p>I was not able to participate in the "potential board director" info sessions accordingly, but people who attended heard that the importance of accommodating differing TZ's was discussed during the info session, and that OSI representatives mentioned they try to accommodate TZ's of everyone. This seems in sharp contrast with the above policy.&nbsp;</p><p>I urge the OSI to reconsider this policy and allow me to stand for an Individual seat in the current cycle.&nbsp;</p><p><b>Upd</b>, N.B.: to people writing about this, I use they/them pronouns</p><p></p>]]></description>
       <source url="http://blog.luke.wf/feeds/posts/default/-/ubuntu-planet/">Luke Faraone</source>
-    </item>
-    <item>
-      <title>How to prevent TrackPoint or touchpad events from waking up ThinkPad T14 Gen 5 AMD from suspend</title>
-      <link>https://nobuto-m.github.io/post/2025/how-to-prevent-trackpoint-events-from-waking-up-thinkpad-t14-gen-5-amd-from-suspend/</link>
-      <guid isPermaLink="true">https://nobuto-m.github.io/post/2025/how-to-prevent-trackpoint-events-from-waking-up-thinkpad-t14-gen-5-amd-from-suspend/</guid>
-      <pubDate>Thu, 09 Jan 2025 14:50:38 GMT</pubDate>
-      <description><![CDATA[<h2 id="tldr">TL;DR</h2>
-<p>Try the following lines in your custom udev rules, e.g.<br>
-<code>/etc/udev/rules.d/99-local-disable-wakeup-events.rules</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;i2c-ELAN0676:00&#34;</span>, <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;i2c&#34;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&#34;i2c_hid_acpi&#34;</span>, ATTR<span class="o">{</span>power/wakeup<span class="o">}=</span><span class="s2">&#34;disabled&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;PNP0C0E:00&#34;</span>, ATTR<span class="o">{</span>power/wakeup<span class="o">}=</span><span class="s2">&#34;disabled&#34;</span>
-</span></span></code></pre></div>
-
-<details class="toc-inpage d-print-none  " open>
-  <summary class="font-weight-bold">Table of Contents</summary>
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#tldr">TL;DR</a></li>
-    <li><a href="#the-motivation">The motivation</a></li>
-    <li><a href="#disabling-touchpad-as-a-wakeup-source-on-t14-gen-5-amd">Disabling touchpad as a wakeup source on T14 Gen 5 AMD</a></li>
-    <li><a href="#disabling-trackpoint-as-a-wakeup-source-on-t14-gen-5-amd">Disabling TrackPoint as a wakeup source on T14 Gen 5 AMD</a></li>
-    <li><a href="#in-the-case-of-thinkpad-t14-gen-3-amd">In the case of ThinkPad T14 Gen 3 AMD</a></li>
-    <li><a href="#references">References</a></li>
-  </ul>
-</nav>
-</details>
-
-<h2 id="the-motivation">The motivation</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<figure  id="figure-whenever-something-touches-the-red-cap-the-system-wakes-up-from-suspends2idle">
-  <div class="d-flex justify-content-center">
-    <div class="w-100" ><img alt="Whenever something touches the red cap, the system wakes up from suspend/s2idle." srcset="
-               /post/2025/how-to-prevent-trackpoint-events-from-waking-up-thinkpad-t14-gen-5-amd-from-suspend/featured_hu236477c92f30afd096faecc971ed105b_216203_4c1c11344310bee682732078c26bf1f3.webp 400w,
-               /post/2025/how-to-prevent-trackpoint-events-from-waking-up-thinkpad-t14-gen-5-amd-from-suspend/featured_hu236477c92f30afd096faecc971ed105b_216203_81f124a57e0d1d41c2112639562f955b.webp 760w,
-               /post/2025/how-to-prevent-trackpoint-events-from-waking-up-thinkpad-t14-gen-5-amd-from-suspend/featured_hu236477c92f30afd096faecc971ed105b_216203_1200x1200_fit_q75_h2_lanczos.webp 1200w"
-               src="https://nobuto-m.github.io/post/2025/how-to-prevent-trackpoint-events-from-waking-up-thinkpad-t14-gen-5-amd-from-suspend/featured_hu236477c92f30afd096faecc971ed105b_216203_4c1c11344310bee682732078c26bf1f3.webp"
-               width="760"
-               height="428"
-               loading="lazy" data-zoomable /></div>
-  </div><figcaption>
-      Whenever something touches the red cap, the system wakes up from suspend/s2idle.
-    </figcaption></figure>
-
-<p>I&rsquo;ve used ThinkPad T14 Gen 3 AMD for 2 years, and I recently purchased T14 <strong>Gen 5</strong> AMD. The previous system as Gen 3 annoyed me so much because the laptop randomly woke up from suspend even inside a backpack on its own, heated up the confined air in it, and drained the battery pretty fast as a consequence. Basically it&rsquo;s too sensitive to any events. For example, whenever a USB Type-C cable is plugged in as a power source or whenever something touches the TrackPoint <strong>even if a display on a closed lid slightly makes contact with the red cap, the system wakes up from suspend</strong>. It was uncontrollable.</p>
-<p>I was hoping that Gen 5 would make a difference, and it did when it comes to the power source event. However, frequent wakeups due to the TrackPoint event remained the same so I started to dig in.</p>
-<h2 id="disabling-touchpad-as-a-wakeup-source-on-t14-gen-5-amd">Disabling touchpad as a wakeup source on T14 Gen 5 AMD</h2>
-<p>Disabling touchpad events as a wakeup source is straightforward. The touchpad device, <code>ELAN0676:00 04F3:3195 Touchpad</code>, can be found in the udev device tree as follows.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ udevadm info --tree
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"> └─input/input12
-</span></span><span class="line"><span class="cl">   ┆ P: /devices/platform/AMDI0010:01/i2c-1/i2c-ELAN0676:00/0018:04F3:3195.0001/input/input12
-</span></span><span class="line"><span class="cl">   ┆ M: input12
-</span></span><span class="line"><span class="cl">   ┆ R: <span class="m">12</span>
-</span></span><span class="line"><span class="cl">   ┆ U: input
-</span></span><span class="line"><span class="cl">   ┆ E: <span class="nv">DEVPATH</span><span class="o">=</span>/devices/platform/AMDI0010:01/i2c-1/i2c-ELAN0676:00/0018:04F3:3195.0001/input/input12
-</span></span><span class="line"><span class="cl">   ┆ E: <span class="nv">SUBSYSTEM</span><span class="o">=</span>input
-</span></span><span class="line"><span class="cl">   ┆ E: <span class="nv">PRODUCT</span><span class="o">=</span>18/4f3/3195/100
-</span></span><span class="line"><span class="cl">   ┆ E: <span class="nv">NAME</span><span class="o">=</span><span class="s2">&#34;ELAN0676:00 04F3:3195 Touchpad&#34;</span>
-</span></span><span class="line"><span class="cl">   ┆ E: <span class="nv">PHYS</span><span class="o">=</span><span class="s2">&#34;i2c-ELAN0676:00&#34;</span>
-</span></span></code></pre></div><p>And you can get all attributes including parent devices like the following.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ udevadm info --attribute-walk -p /devices/platform/AMDI0010:01/i2c-1/i2c-ELAN0676:00/0018:04F3:3195.0001/input/input12
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  looking at device <span class="s1">&#39;/devices/platform/AMDI0010:01/i2c-1/i2c-ELAN0676:00/0018:04F3:3195.0001/input/input12&#39;</span>:
-</span></span><span class="line"><span class="cl">    <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;input12&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;input&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">DRIVER</span><span class="o">==</span><span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    ...
-</span></span><span class="line"><span class="cl">    ATTR<span class="o">{</span>name<span class="o">}==</span><span class="s2">&#34;ELAN0676:00 04F3:3195 Touchpad&#34;</span>
-</span></span><span class="line"><span class="cl">    ATTR<span class="o">{</span>phys<span class="o">}==</span><span class="s2">&#34;i2c-ELAN0676:00&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  looking at parent device <span class="s1">&#39;/devices/platform/AMDI0010:01/i2c-1/i2c-ELAN0676:00&#39;</span>:
-</span></span><span class="line"><span class="cl">    <span class="nv">KERNELS</span><span class="o">==</span><span class="s2">&#34;i2c-ELAN0676:00&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">SUBSYSTEMS</span><span class="o">==</span><span class="s2">&#34;i2c&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&#34;i2c_hid_acpi&#34;</span>
-</span></span><span class="line"><span class="cl">    ATTRS<span class="o">{</span>name<span class="o">}==</span><span class="s2">&#34;ELAN0676:00&#34;</span>
-</span></span><span class="line"><span class="cl">    ...
-</span></span><span class="line"><span class="cl">    ATTRS<span class="o">{</span>power/wakeup<span class="o">}==</span><span class="s2">&#34;enabled&#34;</span>
-</span></span></code></pre></div><p>The line I&rsquo;m looking for is <code>ATTRS{power/wakeup}==&quot;enabled&quot;</code>. By using the identifiers of the parent device that has <code>ATTRS{power/wakeup}</code>, I can make sure that <code>/sys/devices/platform/AMDI0010:01/i2c-1/i2c-ELAN0676:00/power/wakeup</code> is always <code>disabled</code> with the custom udev rule as follows.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;i2c-ELAN0676:00&#34;</span>, <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;i2c&#34;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&#34;i2c_hid_acpi&#34;</span>, ATTR<span class="o">{</span>power/wakeup<span class="o">}=</span><span class="s2">&#34;disabled&#34;</span>
-</span></span></code></pre></div><h2 id="disabling-trackpoint-as-a-wakeup-source-on-t14-gen-5-amd">Disabling TrackPoint as a wakeup source on T14 Gen 5 AMD</h2>
-<p>I&rsquo;ve seen a pattern already as above so I <em>should</em> be able to apply the same method. The TrackPoint device, <code>TPPS/2 Elan TrackPoint</code>, can be found in the udev device tree.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ udevadm info --tree
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"> └─input/input5
-</span></span><span class="line"><span class="cl">   ┆ P: /devices/platform/i8042/serio1/input/input5
-</span></span><span class="line"><span class="cl">   ┆ M: input5
-</span></span><span class="line"><span class="cl">   ┆ R: <span class="m">5</span>
-</span></span><span class="line"><span class="cl">   ┆ U: input
-</span></span><span class="line"><span class="cl">   ┆ E: <span class="nv">DEVPATH</span><span class="o">=</span>/devices/platform/i8042/serio1/input/input5
-</span></span><span class="line"><span class="cl">   ┆ E: <span class="nv">SUBSYSTEM</span><span class="o">=</span>input
-</span></span><span class="line"><span class="cl">   ┆ E: <span class="nv">PRODUCT</span><span class="o">=</span>11/2/a/63
-</span></span><span class="line"><span class="cl">   ┆ E: <span class="nv">NAME</span><span class="o">=</span><span class="s2">&#34;TPPS/2 Elan TrackPoint&#34;</span>
-</span></span><span class="line"><span class="cl">   ┆ E: <span class="nv">PHYS</span><span class="o">=</span><span class="s2">&#34;isa0060/serio1/input0&#34;</span>
-</span></span></code></pre></div><p>And the information of parent devices too.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ udevadm info --attribute-walk -p /devices/platform/i8042/serio1/input/input5
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  looking at device <span class="s1">&#39;/devices/platform/i8042/serio1/input/input5&#39;</span>:
-</span></span><span class="line"><span class="cl">    <span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;input5&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;input&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">DRIVER</span><span class="o">==</span><span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    ...
-</span></span><span class="line"><span class="cl">    ATTR<span class="o">{</span>name<span class="o">}==</span><span class="s2">&#34;TPPS/2 Elan TrackPoint&#34;</span>
-</span></span><span class="line"><span class="cl">    ATTR<span class="o">{</span>phys<span class="o">}==</span><span class="s2">&#34;isa0060/serio1/input0&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  looking at parent device <span class="s1">&#39;/devices/platform/i8042/serio1&#39;</span>:
-</span></span><span class="line"><span class="cl">    <span class="nv">KERNELS</span><span class="o">==</span><span class="s2">&#34;serio1&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">SUBSYSTEMS</span><span class="o">==</span><span class="s2">&#34;serio&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&#34;psmouse&#34;</span>
-</span></span><span class="line"><span class="cl">    ATTRS<span class="o">{</span>bind_mode<span class="o">}==</span><span class="s2">&#34;auto&#34;</span>
-</span></span><span class="line"><span class="cl">    ATTRS<span class="o">{</span>description<span class="o">}==</span><span class="s2">&#34;i8042 AUX port&#34;</span>
-</span></span><span class="line"><span class="cl">    ATTRS<span class="o">{</span>drvctl<span class="o">}==</span><span class="s2">&#34;(not readable)&#34;</span>
-</span></span><span class="line"><span class="cl">    ATTRS<span class="o">{</span>firmware_id<span class="o">}==</span><span class="s2">&#34;PNP: LEN0321 PNP0f13&#34;</span>
-</span></span><span class="line"><span class="cl">    ...
-</span></span><span class="line"><span class="cl">    ATTRS<span class="o">{</span>power/wakeup<span class="o">}==</span><span class="s2">&#34;disabled&#34;</span>
-</span></span></code></pre></div><p>I hit the wall here. <code>ATTRS{power/wakeup}==&quot;disabled&quot;</code> for the <code>i8042 AUX port</code> is already there but the TrackPoint still wakes up the system from suspend. I had to do bisecting for all remaining wakeup sources.</p>
-<details class="spoiler "  id="spoiler-2">
-  <summary>The list of the remaining wakeup sources</summary>
-  <p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ cat /proc/acpi/wakeup
-</span></span><span class="line"><span class="cl">Device	S-state	  Status   Sysfs node
-</span></span><span class="line"><span class="cl">GPP0	  S0	*disabled
-</span></span><span class="line"><span class="cl">GPP2	  S3	*disabled
-</span></span><span class="line"><span class="cl">GPP5	  S0	*enabled   pci:0000:00:02.1
-</span></span><span class="line"><span class="cl">GPP6	  S4	*enabled   pci:0000:00:02.2
-</span></span><span class="line"><span class="cl">GP11	  S4	*enabled   pci:0000:00:03.1
-</span></span><span class="line"><span class="cl">SWUS	  S4	*disabled
-</span></span><span class="line"><span class="cl">GP12	  S4	*enabled   pci:0000:00:04.1
-</span></span><span class="line"><span class="cl">SWUS	  S4	*disabled
-</span></span><span class="line"><span class="cl">XHC0	  S3	*enabled   pci:0000:c4:00.3
-</span></span><span class="line"><span class="cl">XHC1	  S4	*enabled   pci:0000:c4:00.4
-</span></span><span class="line"><span class="cl">XHC2	  S4	*disabled  pci:0000:c6:00.0
-</span></span><span class="line"><span class="cl">NHI0	  S3	*enabled   pci:0000:c6:00.5
-</span></span><span class="line"><span class="cl">XHC3	  S3	*enabled   pci:0000:c6:00.3
-</span></span><span class="line"><span class="cl">NHI1	  S4	*enabled   pci:0000:c6:00.6
-</span></span><span class="line"><span class="cl">XHC4	  S3	*enabled   pci:0000:c6:00.4
-</span></span><span class="line"><span class="cl">LID	  S4	*enabled   platform:PNP0C0D:00
-</span></span><span class="line"><span class="cl">SLPB	  S3	*enabled   platform:PNP0C0E:00
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> Wakeup sources:
-</span></span><span class="line"><span class="cl"> │  [/sys/devices/platform/USBC000:00/power_supply/ucsi-source-psy-USBC000:001/wakeup66]: enabled
-</span></span><span class="line"><span class="cl"> │  [/sys/devices/platform/USBC000:00/power_supply/ucsi-source-psy-USBC000:002/wakeup67]: enabled
-</span></span><span class="line"><span class="cl"> │ ACPI Battery [PNP0C0A:00]: enabled
-</span></span><span class="line"><span class="cl"> │ ACPI Lid Switch [PNP0C0D:00]: enabled
-</span></span><span class="line"><span class="cl"> │ ACPI Power Button [PNP0C0C:00]: enabled
-</span></span><span class="line"><span class="cl"> │ ACPI Sleep Button [PNP0C0E:00]: enabled
-</span></span><span class="line"><span class="cl"> │ AT Translated Set 2 keyboard [serio0]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] ISA bridge [0000:00:14.3]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] Multimedia controller [0000:c4:00.5]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] PCI bridge [0000:00:02.1]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] PCI bridge [0000:00:02.2]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] PCI bridge [0000:00:03.1]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] PCI bridge [0000:00:04.1]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] USB controller [0000:c4:00.3]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] USB controller [0000:c4:00.4]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] USB controller [0000:c6:00.3]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] USB controller [0000:c6:00.4]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] USB controller [0000:c6:00.5]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] USB controller [0000:c6:00.6]: enabled
-</span></span><span class="line"><span class="cl"> │ Mobile Broadband host interface [mhi0]: enabled
-</span></span><span class="line"><span class="cl"> │ Plug-n-play Real Time Clock [00:01]: enabled
-</span></span><span class="line"><span class="cl"> │ Real Time Clock alarm timer [rtc0]: enabled
-</span></span><span class="line"><span class="cl"> │ Thunderbolt domain [domain0]: enabled
-</span></span><span class="line"><span class="cl"> │ Thunderbolt domain [domain1]: enabled
-</span></span><span class="line"><span class="cl"> │ USB4 host controller [0-0]: enabled
-</span></span><span class="line"><span class="cl"> └─USB4 host controller [1-0]: enabled
-</span></span></code></pre></div></p>
-</details>
-<p>Somehow, disabling <code>SLPB</code> &ldquo;ACPI Sleep Button&rdquo; stopped undesired wakeups by the TrackPoint.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  looking at parent device <span class="s1">&#39;/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0E:00&#39;</span>:
-</span></span><span class="line"><span class="cl">    <span class="nv">KERNELS</span><span class="o">==</span><span class="s2">&#34;PNP0C0E:00&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">SUBSYSTEMS</span><span class="o">==</span><span class="s2">&#34;acpi&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&#34;button&#34;</span>
-</span></span><span class="line"><span class="cl">    ATTRS<span class="o">{</span>hid<span class="o">}==</span><span class="s2">&#34;PNP0C0E&#34;</span>
-</span></span><span class="line"><span class="cl">    ATTRS<span class="o">{</span>path<span class="o">}==</span><span class="s2">&#34;\_SB_.SLPB&#34;</span>
-</span></span><span class="line"><span class="cl">    ...
-</span></span><span class="line"><span class="cl">    ATTRS<span class="o">{</span>power/wakeup<span class="o">}==</span><span class="s2">&#34;enabled&#34;</span>
-</span></span></code></pre></div><p>The final udev rule is the following. It also disables wakeup events from the keyboard as a side effect, but opening the lid or pressing the power button can still wake up the system so it works for me.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;PNP0C0E:00&#34;</span>, ATTR<span class="o">{</span>power/wakeup<span class="o">}=</span><span class="s2">&#34;disabled&#34;</span>
-</span></span></code></pre></div><h2 id="in-the-case-of-thinkpad-t14-gen-3-amd">In the case of ThinkPad T14 Gen 3 AMD</h2>
-<p>After solving the headache of frequent wakeups for T14 Gen5 AMD. I was curious if I could apply the same to Gen 3 AMD retrospectively. Gen 3 has the following wakeup sources active out of the box.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> Wakeup sources:
-</span></span><span class="line"><span class="cl"> │ ACPI Battery [PNP0C0A:00]: enabled
-</span></span><span class="line"><span class="cl"> │ ACPI Lid Switch [PNP0C0D:00]: enabled
-</span></span><span class="line"><span class="cl"> │ ACPI Power Button [LNXPWRBN:00]: enabled
-</span></span><span class="line"><span class="cl"> │ ACPI Power Button [PNP0C0C:00]: enabled
-</span></span><span class="line"><span class="cl"> │ ACPI Sleep Button [PNP0C0E:00]: enabled
-</span></span><span class="line"><span class="cl"> │ AT Translated Set 2 keyboard [serio0]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] ISA bridge [0000:00:14.3]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] PCI bridge [0000:00:02.1]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] PCI bridge [0000:00:02.2]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] USB controller [0000:04:00.3]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] USB controller [0000:04:00.4]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] USB controller [0000:05:00.0]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] USB controller [0000:05:00.3]: enabled
-</span></span><span class="line"><span class="cl"> │ Advanced Micro Devices, Inc. [AMD] USB controller [0000:05:00.4]: enabled
-</span></span><span class="line"><span class="cl"> │ ELAN0678:00 04F3:3195 Mouse [i2c-ELAN0678:00]: enabled
-</span></span><span class="line"><span class="cl"> │ Mobile Broadband host interface [mhi0]: enabled
-</span></span><span class="line"><span class="cl"> │ Plug-n-play Real Time Clock [00:01]: enabled
-</span></span><span class="line"><span class="cl"> └─Real Time Clock alarm timer [rtc0]: enabled
-</span></span></code></pre></div><p>Disabling the touchpad event was straightforward. The only difference from Gen 5 was the ID of the device.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;i2c-ELAN0678:00&#34;</span>, <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;i2c&#34;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&#34;i2c_hid_acpi&#34;</span>, ATTR<span class="o">{</span>power/wakeup<span class="o">}=</span><span class="s2">&#34;disabled&#34;</span>
-</span></span></code></pre></div><p>When it comes to the TrackPoint or power source event, nothing was able to stop it from waking up the system even after disabling all wakeup sources. I came across a hidden gem named <code>amd_s2idle.py</code>. The <a href="https://gitlab.freedesktop.org/drm/amd/-/blob/master/scripts/amd_s2idle.py" target="_blank" rel="noopener">&ldquo;S0i3/s2idle analysis script for AMD systems&rdquo;</a> is full with the domain knowledge of s2idle like where to look in <code>/proc</code> or <code>/sys</code> or how to enable debug and what part of the logs is important.</p>
-<p>By running the script, I got the following output around the unexpected wakeup.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ sudo python3 ./amd_s2idle.py --debug-ec --duration 30
-</span></span><span class="line"><span class="cl">Debugging script for s2idle on AMD systems
-</span></span><span class="line"><span class="cl">💻 LENOVO 21CF21CFT1 (ThinkPad T14 Gen 3) running BIOS 1.56 (R23ET80W (1.56 )) released 10/28/2024 and EC 1.32
-</span></span><span class="line"><span class="cl">🐧 Ubuntu 24.04.1 LTS
-</span></span><span class="line"><span class="cl">🐧 Kernel 6.11.0-12-generic
-</span></span><span class="line"><span class="cl">🔋 Battery BAT0 (Sunwoda ) is operating at 90.91% of design
-</span></span><span class="line"><span class="cl">Checking prerequisites for s2idle
-</span></span><span class="line"><span class="cl">✅ Logs are provided via systemd
-</span></span><span class="line"><span class="cl">✅ AMD Ryzen 7 PRO 6850U with Radeon Graphics (family 19 model 44)
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Suspending system in 0:00:02
-</span></span><span class="line"><span class="cl">Suspending system in 0:00:01
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Started at 2025-01-04 00:46:53.063495 (cycle finish expected @ 2025-01-04 00:47:27.063532)
-</span></span><span class="line"><span class="cl">Collecting data in 0:00:02
-</span></span><span class="line"><span class="cl">Collecting data in 0:00:01
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Results from last s2idle cycle
-</span></span><span class="line"><span class="cl">💤 Suspend count: 1
-</span></span><span class="line"><span class="cl">💤 Hardware sleep cycle count: 1
-</span></span><span class="line"><span class="cl">○ GPIOs active: [&#39;0&#39;]
-</span></span><span class="line"><span class="cl">🥱 Wakeup triggered from IRQ 9: ACPI SCI
-</span></span><span class="line"><span class="cl">🥱 Wakeup triggered from IRQ 7: GPIO Controller
-</span></span><span class="line"><span class="cl">🥱 Woke up from IRQ 7: GPIO Controller
-</span></span><span class="line"><span class="cl">❌ Userspace suspended for 0:00:14.031448 (&lt; minimum expected 0:00:27)
-</span></span><span class="line"><span class="cl">💤 In a hardware sleep state for 0:00:10.566894 (75.31%)
-</span></span><span class="line"><span class="cl">🔋 Battery BAT0 lost 10000 µWh (0.02%) [Average rate 2.57W]
-</span></span><span class="line"><span class="cl">Explanations for your system
-</span></span><span class="line"><span class="cl">🚦 Userspace wasn&#39;t asleep at least 0:00:30
-</span></span><span class="line"><span class="cl">        The system was programmed to sleep for 0:00:30, but woke up prematurely.
-</span></span><span class="line"><span class="cl">        This typically happens when the system was woken up from a non-timer based source.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        If you didn&#39;t intentionally wake it up, then there may be a kernel or firmware bug
-</span></span></code></pre></div><p>I compared all the logs generated between the events of power button, power source, TrackPoint, and touchpad. But except for the touchpad event, everything else was coming from GPIO pin #0 and there was no more information of how to distinguish those wakeup triggers. I ended up with a drastic approach of ignoring wakeup triggers from the GPIO pin #0 completely with the following kernel option.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gpiolib_acpi.ignore_wake<span class="o">=</span>AMDI0030:00@0
-</span></span></code></pre></div><p>And I get the line on each boot.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kernel: amd_gpio AMDI0030:00: Ignoring wakeup on pin <span class="m">0</span>
-</span></span></code></pre></div><p>That comes with obvious downsides. The system doesn&rsquo;t wake up frequently any longer, that is good. However, nothing can wake it up after getting into suspend. Opening the lid, pressing the power button or any key is simply ignored since all are going to GPIO pin #0. In the end, I had to enable the touchpad back as a wakeup source explicitly so the system can wakeup by tapping the touchpad. It&rsquo;s far from ideal, but the touchpad is less sensitive than the TrackPoint so I will keep it that way.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">KERNEL</span><span class="o">==</span><span class="s2">&#34;i2c-ELAN0678:00&#34;</span>, <span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&#34;i2c&#34;</span>, <span class="nv">DRIVERS</span><span class="o">==</span><span class="s2">&#34;i2c_hid_acpi&#34;</span>, ATTR<span class="o">{</span>power/wakeup<span class="o">}=</span><span class="s2">&#34;enabled&#34;</span>
-</span></span></code></pre></div><p>I guess the limitation is coming from a firmware more or less, but at the same time I don&rsquo;t expect fixes for the few year old model.</p>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://gitlab.freedesktop.org/drm/amd/-/blob/master/scripts/amd_s2idle.py" target="_blank" rel="noopener">scripts/amd_s2idle.py · master · drm / amd · GitLab</a></li>
-<li><a href="https://gitlab.freedesktop.org/drm/amd/-/issues/2405" target="_blank" rel="noopener">Cannot disable wakeup sources on Yellow Carp / Rembrandt 6850U w/ kernels 6.0 and 6.1 (#2405) · Issues · drm / amd · GitLab</a></li>
-<li><a href="https://github.com/torvalds/linux/blob/v6.11/drivers/gpio/gpiolib-acpi.c#L31-L41" target="_blank" rel="noopener">ignore_wake, ignore_interrupt linux/drivers/gpio/gpiolib-acpi.c at v6.11 · torvalds/linux</a></li>
-<li><a href="https://github.com/torvalds/linux/blob/v6.11/drivers/gpio/gpiolib-acpi.c#L1518-L1700" target="_blank" rel="noopener">gpiolib_acpi_quirks linux/drivers/gpio/gpiolib-acpi.c at v6.11 · torvalds/linux</a></li>
-<li><a href="https://wiki.archlinux.org/title/Lenovo_ThinkPad_T14_%28AMD%29_Gen_3" target="_blank" rel="noopener">Lenovo ThinkPad T14 (AMD) Gen 3 - ArchWiki</a></li>
-<li><a href="https://github.com/systemd/systemd/issues/27077" target="_blank" rel="noopener">Introduce concept of suspend/resume with dark screen on wakeup · Issue #27077 · systemd/systemd</a></li>
-</ul>]]></description>
-      <source url="https://nobuto-m.github.io/tag/planet-ubuntu/index.xml">Nobuto Murata</source>
     </item>
     <item>
       <title>C void return gotcha</title>
@@ -6929,220 +6902,6 @@ $2 = (minimal_symbol *) 0x0
 
 <p>I look forward to hopefully seeing you at freenode #live!</p>]]></description>
       <source url="http://nhandler.com/blog/feed.ubuntu.xml">Nathan Handler</source>
-    </item>
-    <item>
-      <title>More on the imported repositories</title>
-      <link>http://www.justgohome.co.uk/blog/2017/08/more-on-the-imported-repositories.html</link>
-      <guid isPermaLink="true">http://www.justgohome.co.uk/blog/2017/08/more-on-the-imported-repositories.html</guid>
-      <pubDate>Mon, 21 Aug 2017 16:53:44 GMT</pubDate>
-      <description><![CDATA[<p><img alt="git ubuntu illustration" src="http://www.justgohome.co.uk/blog/2017/07/git-ubuntu.png" /></p>
-<p>This is the third post in our series on our git workflow tooling in
-Ubuntu.  There is an <a href="http://www.justgohome.co.uk/blog/2017/07/developing-ubuntu-using-git.html#multi-post-index">index of all our planned posts in the first
-post</a>.
-As mentioned there, it is important to keep in mind that <a href="http://www.justgohome.co.uk/blog/2017/07/developing-ubuntu-using-git.html#experimental-status">the tooling
-and implementation are still highly
-experimental</a>.</p>
-<p>Nish introduced our imported repositories <a href="https://naccblog.wordpress.com/2017/08/01/git-ubuntu-clone/">using the <code>git ubuntu clone</code>
-wrapper</a>, as well
-as using git directly.</p>
-<p>I'd like to go into a little more detail about what we're actually importing.</p>
-<p>Automatic imports watch for new source publications in Launchpad. When they
-occur, the importer will push new commits and tags to match those publications
-and move up branch pointers automatically. All branches maintained by the
-importer are fast-forwarding. A temporary exception to this is during our
-experimental stage, before we release a 1.0. Until then, we may re-import
-packages as we work on the importer.</p>
-<p>Our importer maintains one repository per source package in
-<a href="https://code.launchpad.net/~usd-import-team/+git">lp:~usd-import-team</a> for
-now. Eventually we expect to make these available under an alias of the form
-<code>lp:ubuntu/+source/&lt;package&gt;</code>.</p>
-<p>The imported trees correctly reflect the ancestry of individual source
-packages. This includes both Debian and Ubuntu history, with Ubuntu history
-correctly parented from the appropriate points in Debian's history.</p>
-<p>There is a branch corresponding to each Debian and Ubuntu series (eg. <code>sid</code>,
-<code>stretch</code>, <code>xenial</code>, <code>artful</code>), and in the case of Ubuntu, pocket (eg.
-<code>trusty-updates</code>, <code>xenial-security</code>, <code>artful-proposed</code>). We’ll cover details on
-how exactly these work, and the logic behind their design, in future posts.</p>
-<h2>Single source of truth</h2>
-<p>A goal of the importer is to reflect the single source of truth, which
-we define as Launchpad's source publication history. Therefore, the only
-source of the imported tags and branches must come via the importer and
-not directly from uploaders. Only the importer can push to the imported
-repositories. We do have a mechanism to preserve "rich history" provided
-by git committers that in any other project they'd be able to push
-directly; more on this in a future post.</p>
-<p>Note that this methodology means that upstream's commit graphs are typically
-not made available by the importer. You won't find individual upstream commits
-by looking in our imported respository against a particular package. We may
-decide to make this possible in the future by relying on the "rich history"
-import mechanism combined with the use of our parenting invariant. More on this
-in a future post.</p>
-<p>We're trying hard to make sure that there is no case where a source package
-upload can cause the importer to fail. We're treating any failure to import a
-source package as a bug in our importer. The importer should be able to import
-anything that was ever uploaded to Debian or Ubuntu.</p>
-<h2>Available branches</h2>
-<p>As Nish mentioned, there are two main types of branches:</p>
-<ol>
-<li>Devel branches: the branches on which to start development.</li>
-<li>Pocket branches: understanding the current state of the archive.</li>
-</ol>
-<p>There are also "applied" versions of these branches, which provide quilt
-patches already applied.</p>
-<h3>The "devel" branches</h3>
-<p>Ubuntu developers are used to using <code>pull-lp-source</code> to grab the latest version
-of a package source on which to base development. We want to make <code>git clone</code>
-work instead.</p>
-<p>What is the correct version on which to base development? In Ubuntu,
-this can vary depending on the exact publication state. Usually you want
-the highest version published in the development release, or the highest
-version published in a particular series for an
-<a href="https://wiki.ubuntu.com/StableReleaseUpdates">SRU</a>. For this purpose,
-the git importer maintains <code>devel</code> branches. For the development
-release, this is just called <code>ubuntu/devel</code>. For a stable release, it is
-<code>ubuntu/&lt;codename&gt;-devel</code>; for example: <code>ubuntu/xenial-devel</code>.</p>
-<p>This is intended to save developers the effort of figuring out which pocket to
-use (between the release pocket, <code>proposed</code>, <code>updates</code> and <code>security</code>) and
-saves scripts from having to figure it out themselves.</p>
-<p>One exception to this is in the rare case that a version in the proposed pocket
-has been discarded, such as a failed SRU. The importer only follows new version
-publications and does not follow deletions. In this case you may wish to start
-directly from a pocket branch (described below). Alternatively, before you
-begin you could start from the devel branch and use <code>git revert</code> to add a
-commit reversing the published change in line with the deletion. The
-infrastructure doesn’t care which method you choose.</p>
-<h3>Pocket branches</h3>
-<p>A different use case is to look at the git branches to understand what the
-archive looks like today, or how it looked in the past.</p>
-<h4>Ubuntu’s pockets</h4>
-<p>First let’s review what Ubuntu pockets actually are.</p>
-<p>In Ubuntu, the archive for a particular release (“series”) is divided up into a
-number of “pockets”, which correspond to the entries in your <code>sources.list</code>
-file:</p>
-<ol>
-<li>
-<p>The release pocket. This pocket has no specific name. During
-    development, the release pocket is where package eventually land.
-    Upon release, this pocket is frozen and never changes again.</p>
-</li>
-<li>
-<p>The “proposed” pocket. This pocket is used for two different
-    purposes depending on whether the series is in development or has
-    been released. During development, this is the staging area in which
-    packages are built, tested and checked for installability before
-    they land. When all tests pass, packages are moved into the release
-    pocket in a process called <a href="https://wiki.ubuntu.com/ProposedMigration">proposed
-    migration</a>. After
-    release, the proposed pocket is used for a different purpose: manual
-    user verification of proposed stable release updates through the
-    <a href="https://wiki.ubuntu.com/StableReleaseUpdates#Verification">SRU verification
-    process</a>.
-    When a package passes SRU verification, the package is moved into
-    the updates pocket, rather than the release pocket is as the case
-    during development.</p>
-</li>
-<li>
-<p>The “updates” pocket. Only used for stable releases, this pocket is
-    used to issue recommended updates to users during the lifetime of a
-    stable release.</p>
-</li>
-<li>
-<p>The “security” pocket. Only used for stable releases, this pocket is
-    used to issue security updates to users during the lifetime of a
-    stable release. Updates to the security pocket are always also
-    copied into the updates pocket.</p>
-</li>
-</ol>
-<p>The name of a pocket is in the form <code>&lt;series&gt;-&lt;type&gt;</code>, such as
-<code>xenial-security</code> and <code>artful-updates</code>. As an exception, the release pocket is
-the series with no suffix, such as <code>trusty</code>.</p>
-<h4>Importing pockets into git</h4>
-<p>The importer maintains a branch for each pocket, in the form <code>ubuntu/&lt;pocket
-name&gt;</code>, such as <code>ubuntu/trusty</code> (the Trusty release pocket),
-<code>ubuntu/xenial-security</code>, <code>ubuntu/artful-proposed</code> and so on.</p>
-<h3>Combining pocket branches: the devel branches</h3>
-<p>To support the archeology use case, the importer must maintain these pocket
-branches. However, for the ongoing development use case, it's far more
-convenient for developers to use our "devel branches".</p>
-<p>We do this by making use of our "parenting invariant", which we’ll describe in
-more detail in a future post. For now, it’s sufficient to understand that the
-devel branches are the points at which you should start development, and the
-pocket branches can be used to examine the current state of the various pockets
-in the Ubuntu archive.</p>
-<h3>Applied branches</h3>
-<p>For our drive-by contributor use case, it would be nice if these drive-by
-contributors didn't have to understand quilt. It's reasonable to expect that,
-straight after running <code>git clone</code> from Ubuntu and selecting an appropriate
-branch, the tree that appears is exactly the source used to build the
-corresponding Ubuntu package. For drive-by contributors unfamiliar with Debian
-packaging, this means that quilt patches should appear applied. Our "applied"
-branches and tags provide this function.</p>
-<p>The non-applied branches are the normative imports from Debian and Ubuntu
-developer uploads. They are intended to represent the source package exactly
-and without any derived components. This means that quilt patches appear in
-<code>debian/patches/</code> as normal, but are not applied.</p>
-<p>From one of these import commits, all quilt patches (if any) are applied one by
-one. Each application results in a separate git commit. A final commit with an
-identical tree is added for branch fast-forwarding purposes, and these commits
-form the line of the "applied" branch.</p>
-<p>Consequently, you can switch to an "applied" branch, or corresponding tag, and
-you'll see the state of the Ubuntu source package with all patches applied and
-as if quilt doesn't exist. Drive-by contributors can then file pull requests
-against such a branch (eg. <code>applied/ubuntu/devel</code>) and bots and sponsors will
-be able to understand exactly what is being requested.</p>
-<p>It will often be necessary to pull out requested changes into a separate
-quilt patch, add <a href="http://dep.debian.net/deps/dep3/">dep3</a> headers, and
-possibly squash the requested change into an existing quilt patch,
-before uploading. We hope to automate some of this in the future, but
-for now this is left as a task for sponsors who accept git workflow
-upload requests. Contributors can either submit pull requests against
-the applied branches this way, or fold up into quilt patches themselves
-and submit pull requests against the non-applied branches instead.</p>
-<p>In the future, it may be desirable for all Ubuntu developers to forget quilt
-and live entirely inside git-based patchsets. For the time being, we want to
-support both traditional and git-based workflows. So both applied and
-non-applied branches are maintained by the importer.</p>
-<p>It is a matter of debate as to whether the non-applied or applied branches
-should appear by default. We are open to further discussion on this.</p>
-<h2>Available tags</h2>
-<p>The first time the importer imports a new version of a source package, it tags
-it using an "import tag", which is of the form <code>import/&lt;version&gt;</code>. The
-patches-applied equivalent is derived, and the result is tagged in the form
-<code>applied/&lt;version&gt;</code>.</p>
-<p>Pocket copies, such as from Debian into Ubuntu via autosync, are not tagged;
-the pocket branches are moved forward with new commits (with identical trees)
-as necessary.</p>
-<p>Since not all valid package version strings are valid git tag names, the tag
-names are escaped using the same rules as specified in
-<a href="http://dep.debian.net/deps/dep14/">dep14</a>, Debian's recommendation on git
-repository layouts.</p>
-<p>We use tags of the form <code>upload/&lt;version&gt;</code> to supply rich history for adoption
-into the imported commit graph. This cannot be pushed directly; more on this in
-a future post.</p>
-<p>To support the preservation of orig tarballs using pristine tar, the importer
-also tags <code>upstream/&lt;version&gt;</code>.</p>
-<h2>pristine-tar and the dsc branches</h2>
-<p>So that the git repositories contain all the information needed to reconstruct
-an imported source package, the importer also stores the orig tarballs using
-pristine-tar and the signed dsc file in separate branches. Orig tarballs are
-automatically extracted on package build as needed by the <code>git ubuntu build</code>
-wrapper. This means that <code>git ubuntu clone</code> followed by <code>git ubuntu build</code>
-should Just Work.</p>
-<p>Orig tarballs between Debian and Ubuntu may vary in exceptional cases, so the
-importer keeps these properly namespaced in <code>debian/pristine-tar</code> and
-<code>ubuntu/pristine-tar</code> branches to avoid collisions, and likewise for the dsc
-files <code>debian/dsc</code> and <code>ubuntu/dsc</code>. pristine-tar doesn't currently support
-multiple branches; it assumes a single branch of <code>pristine-tar</code>. Our <code>git
-ubuntu build</code> wrapper works around this for now. In the future I'd like for us
-to drive getting parameterised branch name support into <code>pristine-tar</code> upstream
-to support our use case.</p>
-<h2>Conclusion</h2>
-<p>In order to provide a full understanding of what we're doing to those
-developers interested in all the detail, I've tried to cover all the git
-reference objects presented by our importer in this post today.</p>
-<p>In our next post, Nish will continue discussing the <code>git ubuntu</code> tooling by
-introducing <code>git ubuntu tag</code>.</p>]]></description>
-      <source url="http://www.justgohome.co.uk/blog/feeds/tag/planet-ubuntu.atom.xml">Robie Basak</source>
     </item>
     <item>
       <title>1er Festival Universitario de Tecnologías Libres</title>
