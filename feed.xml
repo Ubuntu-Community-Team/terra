@@ -6,9 +6,63 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Mon, 23 Nov 2026 06:30:42 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 08:59:34 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>15 years of long term support for bare metal automation with MAAS</title>
+      <link>https://ubuntu.com//blog/15-years-of-long-term-support-for-bare-metal-automation-with-maas</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/15-years-of-long-term-support-for-bare-metal-automation-with-maas</guid>
+      <pubDate>Sun, 22 Nov 2026 10:30:00 GMT</pubDate>
+      <description><![CDATA[<p>Building modern AI supercomputing clusters, deploying 5G telecommunications networks, or operating High Performance Computing (HPC) data centers requires significant capital investment (CapEx). These investments are planned with a long-term horizon in mind, and the infrastructure management platforms supporting them often need to operate across multiple hardware generations.</p>
+<p>However, the software used to provision and manage physical servers often follows much shorter support cycles. This creates a mismatch between long-term infrastructure investments and the software platforms responsible for operating them.</p>
+<p>For infrastructure teams, this translates into additional operational costs and risks. Upgrading or replacing infrastructure management platforms requires careful planning, compatibility testing, and coordination with other infrastructure components. This challenge is particularly relevant for bare metal automation, which provides the foundation for discovering, provisioning, and managing physical servers. In large-scale environments, where reliability and availability are critical, these activities can consume considerable engineering resources.</p>
+<h1 class="wp-block-heading">MAAS introduces 15 years of long-term support</h1>
+<p><a href="https://canonical.com/maas">Canonical MAAS</a> (Metal as a Service) is an open source platform that brings cloud-like automation to physical infrastructure. It provides centralized management of bare metal servers, automating their lifecycle from hardware discovery and commissioning to operating system (OS) deployment and repurposing. Through its APIs and integration with infrastructure-as-code (IaC) tools, MAAS enables organizations to manage large fleets of physical servers using consistent and repeatable processes.</p>
+<p>With MAAS 3.8, Canonical introduces the first Long Term Supported (LTS) release of MAAS, offering up to 15 years of <a href="https://canonical.com/solutions/open-source-security">security maintenance</a>, predictable operational stability, and <a href="https://ubuntu.com/support">enterprise support</a> for its bare metal automation platform, following <a href="https://ubuntu.com/blog/canonical-expands-total-coverage-for-ubuntu-lts-releases-to-15-years-with-legacy-add-on">Ubuntu LTS commitment</a>.</p>
+<p>This extended support lifecycle allows organizations to maintain a stable bare metal management platform over a much longer period, reducing the frequency of major upgrades which are driven primarily by end-of-support deadlines. Infrastructure teams can continue refreshing hardware, expanding capacity, and adapting their environments without having to replace the underlying management platform at the same pace.</p>
+<p>This gives organizations more flexibility to schedule infrastructure upgrades according to their operational needs, while reducing maintenance overhead and maintaining access to security updates throughout the applicable support period.</p>
+<h1 class="wp-block-heading">Long-term support across the Canonical infrastructure stack</h1>
+<p>Bare metal automation does not operate in isolation. It provides the foundation for higher-level infrastructure platforms, including OSs, <a href="https://canonical.com/solutions/infrastructure/virtualization-solutions">virtualization</a>, storage, and container orchestration. Each of these layers has its own software lifecycle, and differences in their support periods can introduce additional complexity for infrastructure teams.</p>
+<p>The introduction of 15 years of support for MAAS marks an important milestone for Canonical’s broader <a href="https://canonical.com/solutions/infrastructure">infrastructure portfolio</a>. With MAAS now joining the LTS offering, all the major components of Canonical’s infrastructure stack have LTS releases. This enables organizations to align support lifecycles across the entire stack, from bare metal to applications, simplifying long-term infrastructure planning and maintenance.</p>
+<p>This includes MAAS for bare metal provisioning, <a href="https://ubuntu.com/desktop">Ubuntu </a>as the base OS,<a href="https://canonical.com/openstack"> OpenStack</a> and<a href="https://canonical.com/microcloud"> MicroCloud</a> for cloud infrastructure,<a href="https://canonical.com/ceph"> Ceph</a> for storage,<a href="https://ubuntu.com/kubernetes"> Canonical Kubernetes</a> for container orchestration, and<a href="https://canonical.com/juju"> Juju</a> for application deployment and lifecycle management.</p>
+<p>Having long-term support across these platforms simplifies infrastructure lifecycle planning. Instead of managing completely separate support strategies for each component, organizations can work with a single vendor and better coordinate maintenance, security updates, and platform upgrades across their infrastructure stack.</p>
+<h1 class="wp-block-heading">Why long-term support matters for enterprise infrastructure</h1>
+<p>Long-term software support is particularly valuable in environments where infrastructure investments are substantial and availability is critical.</p>
+<p>In AI and HPC, infrastructure platforms often manage multiple generations of servers and accelerators. A bare metal control plane with long-term support allows teams to refresh and expand their computing capacity while maintaining consistent provisioning and management processes.</p>
+<p>For telecommunications and 5G providers, infrastructure changes typically require extensive validation and coordination. Longer support cycles help reduce the frequency of support-driven upgrades and make it easier to align software maintenance with network modernization plans.</p>
+<p>For critical infrastructure, such as power distribution networks and financial institutions, availability, security, and operational resilience are essential. Changes to infrastructure management platforms often require extensive testing, formal approval, and careful coordination to avoid disrupting critical services. By reducing the need for frequent, support-driven upgrades, organizations providing critical services can maintain stable operations more easily, while supporting their security and regulatory requirements.</p>
+<h1 class="wp-block-heading">What else is new in MAAS 3.8?</h1>
+<p>Beyond the introduction of LTS, MAAS 3.8 brings several improvements focused on security, access management, and deployment customization.</p>
+<h2 class="wp-block-heading">OpenID Connect (OIDC) integration</h2>
+<p>MAAS now supports integration with external OIDC identity providers, enabling Single Sign-On (SSO) and simplifying centralized user authentication. </p>
+<p>Learn more in the<a href="https://canonical.com/maas/docs/3.8/how-to-guides/sso/"> MAAS SSO guide</a>.</p>
+<figure class="wp-block-image size-full"><img alt="" height="589" loading="lazy" sizes="(min-width: 686px) 686px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_686/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc528%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc528%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc528%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc528%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_686/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc528%2Fimage.png 686w" width="686"/></figure>
+<p>Figure 1 MAAS UI: showing how to set an OIDC compliant provider</p>
+<h2 class="wp-block-heading">Relationship-Based Access Control (ReBAC)</h2>
+<p>A new authorization framework introduces more granular permissions through users, groups, and resource entitlements. This provides greater flexibility when managing access to MAAS resources. </p>
+<p>Read the<a href="https://canonical.com/maas/docs/3.8/how-to-guides/user-groups-and-entitlements/"> user groups and entitlements guide</a>.</p>
+<figure class="wp-block-image size-full"><img alt="" height="589" loading="lazy" sizes="(min-width: 1111px) 1111px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1111/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1111/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 1111w" width="1111"/></figure>
+<p>Figure 2 MAAS UI: configuration of ReBAC entitlements</p>
+<h2 class="wp-block-heading">Deployment scripts</h2>
+<p>Administrators can now execute custom scripts before or after OS installation, allowing additional hardware checks and deployment-specific tasks to be integrated into the provisioning workflow. </p>
+<p>While commissioning gathers hardware information, deployment turns a machine into a running system, and some tasks only make sense at deployment time, for example:</p>
+<ul class="wp-block-list">
+<li>Applying firmware or BIOS settings that must be in place before the OS is installed</li>
+<li>Preparing attached hardware (such as flashing a Data Processing Unit (DPU)) as part of every deployment</li>
+<li>Running site-specific setup that has to happen on every machine, without baking it into a custom image with specific pre-seeds</li>
+</ul>
+<p>Deployment scripts provide a single, repeatable place to put that logic. Every machine being deployed runs the uploaded deployment scripts, so behaviour is consistent across the whole fleet.</p>
+<p>See the<a href="https://canonical.com/maas/docs/3.8/explanation/deployment-scripts/"> deployment scripts documentation</a>.</p>
+<figure class="wp-block-image size-full"><img alt="" height="589" loading="lazy" sizes="(min-width: 1111px) 1111px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1111/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1111/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 1111w" width="1111"/></figure>
+<p>Figure 3 MAAS UI: configuration of deployment scripts</p>
+<h2 class="wp-block-heading">FIPS readiness and security improvements</h2>
+<p>MAAS 3.8 incorporates the FIPS-related enhancements introduced in MAAS 3.7.4, preparing the platform for FIPS-compliant operation once a FIPS-compliant kernel becomes available for Ubuntu 26.04 LTS. The release also expands security audit logging, providing better visibility into authentication and authorization events. <a data-id="https://ubuntu.com/blog/automating-bare-metal-infrastructure-in-fips-regulated-environments-with-maas" data-type="link" href="https://ubuntu.com/blog/automating-bare-metal-infrastructure-in-fips-regulated-environments-with-maas">Learn more about FIPS compliance for MAAS in our blog post</a>.</p>
+<h1 class="wp-block-heading">Long-term infrastructure needs long-term software</h1>
+<p>As hardware and workloads evolve, infrastructure teams need management platforms that provide continuity and reliability. With up to 15 years of support, MAAS allows organizations to maintain a supported bare metal control plane across multiple hardware generations, reducing the pressure to upgrade solely because of software end-of-support deadlines.</p>
+<p>Explore the<a href="https://canonical.com/maas/docs/release-information/release-notes/"> MAAS release notes</a> to learn more about MAAS 3.8, or<a href="https://canonical.com/maas/contact-us"> contact Canonical</a> to discuss long-term support for your infrastructure.</p>]]></description>
+      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
+    </item>
     <item>
       <title>Changes on freedesktop.org!</title>
       <link>https://blog.tenstral.net/2026/11/new-fdo-website.html</link>
@@ -120,41 +174,6 @@
 <p><strong>SuperTuxKart</strong> has a --benchmark option, which reported that "Steady" FPS and "Typical" FPS never changed by more than 1. There could have been a 1% change but we just wouldn't be able to see it.</p>
 <p><strong>OpenArena</strong> shifted from an average FPS of 437.4 to 442.9. That works out to a 1.2% improvement, but the PTS results were actually better than either Ubuntu archive build.</p>]]></description>
       <source url="https://bryanquigley.com/rss.xml">Bryan Quigley</source>
-    </item>
-    <item>
-      <title>Automating bare metal infrastructure in FIPS-regulated environments with MAAS</title>
-      <link>https://ubuntu.com//blog/automating-bare-metal-infrastructure-in-fips-regulated-environments-with-maas</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/automating-bare-metal-infrastructure-in-fips-regulated-environments-with-maas</guid>
-      <pubDate>Wed, 18 Nov 2026 22:26:26 GMT</pubDate>
-      <description><![CDATA[<p>Organizations operating sensitive infrastructure, particularly in the government, defense, and financial services sectors, often face strict security and compliance requirements. These requirements extend beyond applications and operating systems (OSs) to the tools responsible for provisioning and managing the underlying physical infrastructure.</p>
-<p>The Federal Information Processing Standard (FIPS) 140-3 defines security requirements for cryptographic modules used to protect sensitive information. Supporting FIPS requirements across the infrastructure stack is therefore an important consideration for organizations operating in regulated environments.</p>
-<p>With the release of <a href="https://canonical.com/maas/docs/release-information/release-notes/#version-3-7-release-notes">MAAS v3.7.4</a>, Canonical introduces long-awaited FIPS mode support for the bare metal management control plane. This allows organizations to apply stricter cryptographic and security controls to their infrastructure, while maintaining automated provisioning and lifecycle management of physical servers.</p>
-<h2 class="wp-block-heading">What FIPS mode brings to MAAS</h2>
-<p><a href="https://canonical.com/maas">Canonical MAAS (Metal as a Service)</a> is an open source platform that brings cloud-like automation to bare metal infrastructure. It provides a centralized control plane to discover, test, provision, configure, and manage physical servers throughout their lifecycle. Through its APIs and integration with infrastructure-as-code tools, MAAS enables organizations to manage large fleets of servers with consistent, repeatable operations. You can learn more about how MAAS helps organizations manage their data centers in our <a href="https://ubuntu.com/engage/reduce-data-center-costs-with-bare-metal-automation">whitepaper</a>.</p>
-<p>As the control plane for physical infrastructure, MAAS communicates with server management controllers, manages remote power operations, and provisions OSs. These functions involve network connections, authentication, and cryptographic mechanisms that must also meet the organization’s security requirements.</p>
-<p>When FIPS mode is enabled, MAAS automatically applies stricter security controls. These include restricting Transport Layer Security (TLS) and Secure Shell Protocol (SSH) connections to approved cryptographic algorithms, validating key types and sizes, requiring trusted SSH host keys, and rejecting power management configurations that rely on insecure protocols. For example, Intelligent Platform Management Interface (IPMI) connections must use cipher suite 17, and unsupported power drivers are rejected.</p>
-<p>MAAS also makes security hardening mandatory when FIPS mode is active. Administrators can identify configuration problems through validation errors and security notifications, while the MAAS API provides users with visibility into the FIPS and hardening status of each controller.</p>
-<p>By integrating these controls into MAAS, infrastructure teams can enforce security requirements more consistently, without relying entirely on manual checks or custom validation scripts.</p>
-<h2 class="wp-block-heading">Getting started with FIPS mode in MAAS</h2>
-<p>MAAS supports FIPS mode on its controllers and can also deploy Ubuntu machines with FIPS-enabled kernels. These are separate capabilities, and the configuration process depends on whether you are setting up a new environment, adapting an existing deployment, or provisioning managed machines.</p>
-<h3 class="wp-block-heading">Enabling FIPS mode on MAAS controllers</h3>
-<p>For new deployments, we recommend starting with an Ubuntu host already running in FIPS mode. Using an <a href="https://ubuntu.com/pro">Ubuntu Pro</a> subscription, administrators can enable the fips-updates service and reboot the host before deploying MAAS.</p>
-<p>MAAS detects FIPS mode at startup and automatically activates the corresponding security controls. Administrators can then validate the configuration and verify the FIPS status through the MAAS API. In deployments with multiple controllers, FIPS mode must be enabled consistently across all of them.</p>
-<p>Detailed instructions are available in the <a href="https://canonical.com/maas/docs/latest/how-to-guides/enable-fips-mode-on-a-controller/">guide to enabling FIPS mode on a MAAS controller</a>.</p>
-<h3 class="wp-block-heading">Adopting FIPS mode on existing deployments</h3>
-<p>For environments with FIPS requirements, it is best to begin with a new MAAS deployment with FIPS mode enabled from the outset. Enabling FIPS mode on an existing deployment can introduce complex dependencies between components, potentially leading to compatibility issues, unexpected conflicts, and unsupported configurations. For this reason, enabling FIPS mode on existing deployments should only be considered as a last resort, when a fresh deployment is not feasible. If adopting FIPS mode on an existing deployment, it is critical to carefully plan and test deployments before transitioning.</p>
-<p>Existing MAAS installations require additional preparation before enabling FIPS mode. Administrators must review their power management configurations, ensure compatible IPMI cipher suites, register trusted SSH host keys, and validate existing cryptographic keys and certificates. Supporting services such as <a href="https://canonical.com/data/postgresql">PostgreSQL</a> also need to be reviewed.</p>
-<p>This preparation is particularly important, because MAAS does not automatically revalidate previously stored cryptographic material. As a result, converting an existing populated deployment to FIPS mode is not a supported path to achieving FIPS compliance.</p>
-<p>The <a href="https://canonical.com/maas/docs/latest/how-to-guides/adopt-fips-on-an-existing-deployment/">migration guide</a> explains the required preparation and considerations for existing environments.</p>
-<h3 class="wp-block-heading">Deploying machines with FIPS-enabled kernels</h3>
-<p>Separately from controller FIPS mode, MAAS can provision Ubuntu machines with FIPS-enabled kernels using MAAS’s standard deployment workflow and cloud-init.</p>
-<p>After deploying Ubuntu, cloud-init activates Ubuntu Pro, installs the FIPS kernel, and reboots the machine. This makes it possible to incorporate FIPS kernel installation into existing bare metal provisioning workflows.</p>
-<p>For prerequisites and configuration details, check the <a href="https://canonical.com/maas/docs/latest/how-to-guides/deploy-a-fips-kernel/">MAAS guide to deploying FIPS kernels</a>. The documented procedure covers Ubuntu LTS deployment and requires an Ubuntu Pro subscription and network access to obtain the necessary packages.</p>
-<h2 class="wp-block-heading">Improve the security of your infrastructure operations with MAAS</h2>
-<p>With FIPS mode support in MAAS 3.7.4, organizations have more control over the cryptographic policies used to manage their physical infrastructure. Security restrictions can be enforced as part of normal MAAS operations, reducing the need to maintain separate processes for security validation and infrastructure provisioning.</p>
-<p>If you are planning to deploy MAAS in an environment with FIPS requirements, start by reviewing the <a href="https://canonical.com/maas/docs/latest/how-to-guides/enhance-maas-security/">MAAS security documentation</a> to understand the prerequisites, supported configurations, and limitations.</p>
-<p>You can also <a href="https://canonical.com/maas/contact-us">contact Canonical experts</a> to discuss your infrastructure security and compliance requirements.</p>]]></description>
-      <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
       <title>Google Meet's call control (WebHID) works with Chromium snap</title>
@@ -2647,140 +2666,6 @@ ubuntu@security-sshkeysignpwn:~/ssh-keysign-pwn$ </code></pre>
       <source url="https://steveire.wordpress.com/feed/?mrss=off">Stephen Kelly</source>
     </item>
     <item>
-      <title>Free software activity in November 2025</title>
-      <link>https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</link>
-      <guid isPermaLink="true">https://www.chiark.greenend.org.uk/~cjwatson/blog/activity-2025-11.html</guid>
-      <pubDate>Thu, 04 Dec 2025 17:55:59 GMT</pubDate>
-      <description><![CDATA[<p>My Debian contributions this month were all
-<a href="https://www.freexian.com/about/debian-contributions/">sponsored</a> by
-Freexian.  I had a bit less time than usual, because Freexian collaborators
-gathered in Marseille this month for our yearly sprint, doing some planning
-for next&nbsp;year.</p>
-<p>You can also support my work directly via
-<a href="https://liberapay.com/cjwatson">Liberapay</a> or <a href="https://github.com/sponsors/cjwatson">GitHub
-Sponsors</a>.</p>
-<h2>OpenSSH</h2>
-<p>I began preparing for the second stage of the <a href="https://lists.debian.org/debian-devel/2024/04/msg00044.html"><span class="caps">GSS</span>-<span class="caps">API</span> key exchange package
-split</a> (some
-details have changed since that message).  It seems that we&#8217;ll need to wait
-until Ubuntu 26.04 <span class="caps">LTS</span> has been released, but that&#8217;s close enough that it&#8217;s
-worth making sure we&#8217;re ready.  This month I just did some packaging
-cleanups that would otherwise have been annoying to copy, such as removing
-support for direct upgrades from pre-bookworm.  I&#8217;m considering some other
-package rearrangements to make the split easier to manage, but haven&#8217;t made
-any decisions here&nbsp;yet.</p>
-<p>This also led me to start on a long-overdue bug triage pass, mainly
-consisting of applying usertags to lots of our open bugs to sort them by
-which program they apply to, and also closing a few that have been fixed,
-since some bugs will eventually need to be reassigned to <span class="caps">GSS</span>-<span class="caps">API</span> packages
-and it would be helpful to make them easier to find.  At the time of
-writing, about 30% of the bug list remains to be categorized this&nbsp;way.</p>
-<h2>Python&nbsp;packaging</h2>
-<p>I upgraded these packages to new upstream&nbsp;versions:</p>
-<ul>
-<li>aioftp</li>
-<li>basemap (fixing <a href="https://bugs.debian.org/1119728">Cython 3.1
-  compatibility</a>)</li>
-<li>billiard</li>
-<li>black</li>
-<li>django-phonenumber-field</li>
-<li>flask-security</li>
-<li>flufl.i18n</li>
-<li>langtable</li>
-<li>mariadb-connector-python</li>
-<li>peewee (fixing <a href="https://bugs.debian.org/1119757">Cython 3.1
-  compatibility</a>)</li>
-<li>pydantic</li>
-<li>pydantic-core</li>
-<li>pydantic-settings</li>
-<li>pylsqpack</li>
-<li>pymongo</li>
-<li>pymssql</li>
-<li>pyodbc</li>
-<li>python-auditwheel (<a href="https://github.com/pypa/auditwheel/pull/640">contributed follow-up fix
-  upstream</a>)</li>
-<li>python-avro</li>
-<li>python-bleach</li>
-<li>python-btrees</li>
-<li>python-certifi</li>
-<li>python-charset-normalizer</li>
-<li>python-colorlog</li>
-<li>python-django-channels</li>
-<li>python-django-constance</li>
-<li>python-django-contact-form</li>
-<li>python-django-hashids</li>
-<li>python-djvulibre (fixing <a href="https://bugs.debian.org/1119766">Cython 3.1
-  compatibility</a>)</li>
-<li>python-evalidate</li>
-<li>python-legacy-cgi</li>
-<li>python-openstep-plist (fixing <a href="https://bugs.debian.org/1119767">Cython 3.1
-  compatibility</a>)</li>
-<li>python-pytest-run-parallel</li>
-<li>python-pytokens</li>
-<li>python-tblib</li>
-<li>python-webargs</li>
-<li>pyupgrade</li>
-<li>sqlfluff</li>
-<li>trove-classifiers</li>
-<li>ttconv</li>
-<li>wcwidth</li>
-<li>zope.hookable</li>
-<li>zope.i18nmessageid (removing <a href="https://bugs.debian.org/1084014">run-time dependency on
-  setuptools</a>)</li>
-<li>zope.interface</li>
-<li>zope.proxy</li>
-<li>zope.security (removing <a href="https://bugs.debian.org/1084018">run-time dependency on
-  setuptools</a>)</li>
-<li>zope.sqlalchemy</li>
-</ul>
-<p>I packaged <a href="https://bugs.debian.org/1120507">django-pgtransaction</a> and
-backported it to trixie, since we plan to use it in Debusine; and I adopted
-python-certifi for the Python&nbsp;team.</p>
-<p>I fixed or helped to fix several other build/test&nbsp;failures:</p>
-<ul>
-<li><a href="https://bugs.debian.org/1119744">kivy</a></li>
-<li><a href="https://bugs.debian.org/1120242">mypy</a></li>
-<li><a href="https://bugs.debian.org/1114284">pytest-mypy-testing</a> (<a href="https://github.com/davidfritzsche/pytest-mypy-testing/pull/57">contributed
-  upstream</a>)</li>
-<li><a href="https://salsa.debian.org/python-team/packages/python-cytoolz/-/commit/52856c4c1d1bc9fab0241e4c1b0d20d75bdaa99a">python-cytoolz</a></li>
-<li><a href="https://bugs.debian.org/1120725">python-discord</a></li>
-<li><a href="https://bugs.debian.org/1120469">python-ncls</a>, fixing some failures in&nbsp;pyranges</li>
-<li><a href="https://bugs.debian.org/1121095">pyxdg</a></li>
-<li><a href="https://bugs.debian.org/1114415">traitlets</a></li>
-<li><a href="https://bugs.debian.org/1120228">twine</a></li>
-</ul>
-<p>I fixed a couple of other&nbsp;bugs:</p>
-<ul>
-<li><a href="https://bugs.debian.org/1119801">pmix: B-D on python3-all-dev, but not built for all supported Python3&nbsp;versions</a></li>
-<li><a href="https://bugs.debian.org/1064621">python-certifi: Package not compatible with&nbsp;multiarch</a></li>
-</ul>
-<h2>Other bits and&nbsp;pieces</h2>
-<ul>
-<li><a href="https://bugs.debian.org/1087524">cdebconf: Move to&nbsp;/usr/lib/apt/apt-extracttemplates</a></li>
-<li><a href="https://salsa.debian.org/debian/devscripts/-/merge_requests/588">devscripts: Restore dpkg-dev&nbsp;dependency</a></li>
-<li><a href="https://bugs.debian.org/1121577">groff: Missing information about some utilities in the &#8220;contrib&#8221;&nbsp;directory</a></li>
-</ul>
-<h2>Code&nbsp;reviews</h2>
-<ul>
-<li><a href="https://bugs.debian.org/1119914">base-passwd: French translation</a> (merged
-  and&nbsp;uploaded)</li>
-<li><a href="https://salsa.debian.org/installer-team/cdebconf/-/merge_requests/23">cdebconf: Consider using the standard dh sequence in
-  d/rules</a>
-  (merged and&nbsp;uploaded)</li>
-<li><a href="https://bugs.debian.org/430151">cdebconf: Multiple select is not right aligned in
-  Hebrew</a> (patch fails to build; asked
-  reporter for an&nbsp;update)</li>
-<li><a href="https://bugs.debian.org/1078936">cdebconf: Allow building without
-  libglib2.0-dev</a> (merged and&nbsp;uploaded)</li>
-<li><a href="https://bugs.debian.org/1121035">pydantic-core</a> (merged and&nbsp;uploaded)</li>
-<li>pymongo (sponsored adoption by Aryan&nbsp;Karamtoth)</li>
-<li><a href="https://salsa.debian.org/python-team/packages/maturin/-/merge_requests/1">python-maturin: Add missing build
-  dependencies</a>
-  (merged and&nbsp;uploaded)</li>
-</ul>]]></description>
-      <source url="https://www.chiark.greenend.org.uk/~cjwatson/blog/feeds/tag/planet-ubuntu.atom.xml">Colin Watson</source>
-    </item>
-    <item>
       <title>Why I Won’t Be Attending or Speaking at Ubuntu Summit 25.10</title>
       <link>https://ericheickmeyer.com/2025/10/09/why-i-wont-be-attending-or-speaking-at-ubuntu-summit-25-10/</link>
       <guid isPermaLink="true">https://ericheickmeyer.com/2025/10/09/why-i-wont-be-attending-or-speaking-at-ubuntu-summit-25-10/</guid>
@@ -2877,14 +2762,6 @@ python-certifi for the Python&nbsp;team.</p>
 
 <p class="wp-block-paragraph">Thank you for reading this, and I hope this reaches the people I&#8217;m trying to reach and have it speak for those who either won&#8217;t speak-up or don&#8217;t think they can make a difference.</p>]]></description>
       <source url="https://ericheickmeyer.com/category/planet-ubuntu/feed/">Erich Eickmeyer</source>
-    </item>
-    <item>
-      <title>Setting up a weird dual-boot DOS workstation</title>
-      <link>https://arraybolt3.substack.com/p/setting-up-a-weird-dual-boot-dos</link>
-      <guid isPermaLink="true">https://arraybolt3.substack.com/p/setting-up-a-weird-dual-boot-dos</guid>
-      <pubDate>Sun, 21 Sep 2025 18:04:21 GMT</pubDate>
-      <description><![CDATA[<p>I&#8217;ve been wanting to create some Bible study software for DOS for a while now. Why target DOS? Because it&#8217;s a cool platform, it&#8217;s still in use in some areas of the world, and I haven&#8217;t been able to find readily available Bible software for DOS, whether open-source or not. Over the weekend, I was thinking about this project again, and decided that, for the sake of development ease and avoiding emulator quirks, I should set up a DOS installation on physical hardware and create the software on that machine.</p><p>I have tons of old computers in varying states of decay or usefulness; three of them still work pretty well. I decided to pick the weakest of the three for this project since it probably had more than enough grunt for the project at hand, but wouldn&#8217;t be useful for much else. The chosen system was a Compaq Presario 6000 desktop, featuring some iteration of an AMD Athlon XP processor, 256 MB RAM, a 20 GB hard drive (which I was about to expand for reasons I&#8217;ll get into later), a floppy drive, and dual optical drives (only one of which works). This particular system is a bit strange since its USB controller and network card are both NVIDIA hardware, even though NVIDIA is typically associated with graphics cards. Beyond that though, the system was pretty typical for the kind of hardware you&#8217;d see in the early 2000s - all of the drives use IDE to communicate with the motherboard, and most of the expansion slots are PCI (except for a couple of mystery slots, one of them <em>might</em> be AGP, and another one seems to be intentionally blocked off and I can&#8217;t tell what it is). The back panel features PS/2 ports for a mouse and keyboard, a parallel port and a serial port, a VGA port for the monitor, and a few USB (probably USB 2) ports. There was also a 3Com network card installed in one of the slots, which I had put there when experimenting with OpenBSD on this system. The front panel had a couple more USB ports.</p><div class="subscription-widget-wrap-editor" data-attrs="{&quot;url&quot;:&quot;https://arraybolt3.substack.com/subscribe?&quot;,&quot;text&quot;:&quot;Subscribe&quot;,&quot;language&quot;:&quot;en&quot;}" data-component-name="SubscribeWidgetToDOM"><div class="subscription-widget show-subscribe"><div class="preamble"><p class="cta-caption">Thanks for reading Arraybolt's Archives! Subscribe for free to receive new posts and support my work.</p></div><form class="subscription-widget-subscribe"><input type="email" class="email-input" name="email" placeholder="Type your email&#8230;" tabindex="-1"><input type="submit" class="button primary" value="Subscribe"><div class="fake-input-wrapper"><div class="fake-input"></div><div class="fake-button"></div></div></form></div></div><p>One downside of using DOS for development is a lack of good source code versioning systems. Git doesn&#8217;t exist for DOS, and I don&#8217;t have the time or willingness to learn RCS or similar (maybe I should?), so I decided I would implement version control by just copying the project every so often to a backup location, probably zipping it in the process. Anticipating that this would probably require a hefty chunk of disk space, I decided to add a 40 GB Maxtor drive taken from a Pentium 4 desktop I had laying around. Getting the drive installed was a bit of a challenge; many older computers have the drives slide out backwards into the system, but this Compaq has them slide out <em>forward</em> out the front of the machine. This meant I had to get the front panel off of the machine, which was hard because it was held on by four extremely stiff plastic latches that had to all be disengaged at the same time. Thankfully the plastic of the front panel was able to bend enough that I could disengage each latch individually, then keep it that way while I worked on another latch.</p><p>After getting the cover off, I had to fight with Compaq&#8217;s drive mounting hardware. Rather than just screwing the drives directly into the bay like a normal computer would, Compaq elected to use a system of rails and latches to keep the drives fully hooked into the machine. The screws had very thick heads, and were intended to slide along the rails and then latch in place once inserted far enough. As strange as this already was, there was also the problem that the secondary drive bay had a malformed rail, that was just <em>barely</em> too narrow for the mounting screws to actually slide in. There were also separate screw types for the optical drives and the hard drives. What I ended up doing was using optical drive screws on the Maxtor hard drive, which seemed to fit correctly and were able to latch in place. After getting this kludgy setup to work, I then remembered that I needed to set jumpers on the drives to configure them as &#8220;master&#8221; and &#8220;slave&#8221; properly, so I then took both drives out, reconfigured the jumpers, and slid them back in. After a bit of cable routing shenanigans (including removing a rather unfortunately located zip tie), I finally had both drives installed.</p><p>To confirm that I hadn&#8217;t made a total mess of my drive configuration, I decided to take some time to power the system on and check the BIOS. I had an old PS/2 Microsoft keyboard, and a small, 4:3 aspect ratio flatscreen display with a built-in VGA cable, so I decided to use those for the project. Nothing caught fire when I plugged it in and powered it on, and after getting into the BIOS settings I found that both drives appeared to be properly recognized. I also saw &#8220;Removable Media Boot&#8221;, which made me hopeful that this machine might support USB boot. I turned off a bunch of settings related to &#8220;fast startup&#8221; to minimize the chances of having issues, then saved my changes and exited.</p><p>Since I thought USB boot might work, I downloaded the FreeDOS 1.4 FullUSB and flashed it to a USB drive. Unfortunately, my hopes were soon dashed; the USB drive did not appear in the BIOS&#8217;s boot order settings. Crud.</p><p>I don&#8217;t generally like burning CD-Rs if I don&#8217;t have to, since they can&#8217;t be rewritten, they probably won&#8217;t keep being manufactured for much longer, and I only had 48 of my original stack of 50 left (oh horror!), but I didn&#8217;t see another good option at this point, so I dragged out one of the other working old computers, a Panasonic Toughbook that had an old-ish install of Void Linux on it. This particular machine looks like it&#8217;s been through a warzone, but it still works well enough, and most importantly, the CD burner in it seems to work flawlessly. In the hopes of not having to waste any further CDs in the future, I decided to burn Plop Boot Manager to the disc rather than burning FreeDOS itself. The burn went smoothly enough, the Compaq was happy to boot from it, and next thing I knew I was able to boot into FreeDOS from the USB! Woohoo!&#8230;</p><p>&#8230;or&#8230;. not. FreeDOS itself seemed to run without issues, and partitioning and formatting the drives wasn&#8217;t a problem, but for some reason FreeDOS&#8217;s installer didn&#8217;t work when booted in this way. Despite the fact that it was installing to what it considered drive D:, it kept trying to write files to drive C:, which was the read-only volume on the USB drive. This resulted in lots of &#8220;Abort, Retry, Ignore, Fail?&#8221; error messages, and while the installer did seem to work (kinda) if I just "ignored&#8221; all the errors, I didn&#8217;t trust the finished installation was going to work. I also couldn&#8217;t just sit there and press and hold the &#8220;I&#8221; key to keep ignoring errors, since doing so slowed the copy process down (probably because it was spamming the keyboard interrupt, I would guess). So, one CD-R apparently wasted. Next!</p><p>Back on the Toughbook, I used wget to download both the FreeDOS 1.4 LiveCD and BonusCD. I needed both discs, since the OS was on the LiveCD and the development tools (like the C compiler I wanted to use) was on the BonusCD. Burning the discs was pretty easy, and FreeDOS seemed much happier installing from a CD than trying to install from a USB. Soon enough I had a working FreeDOS installation, and a little bit later I had a good text editor and the Open Watcom 1.9 compiler installed.</p><p>At this point I was almost ready to sit down and start coding, but decided I had better figure out how to get data off the system before I dedicated a bunch of time working on my project. I didn&#8217;t want it to just rot on the machine it was coded on. At this point I discovered two frustrating facts:</p><ul><li><p>The USB driver included with FreeDOS only works with UHCI controllers, but the controller in this system is an OHCI controller.</p></li><li><p>The network card wasn&#8217;t supported out of the box - there were packet drivers out there for it most likely, but those weren&#8217;t very useful since I couldn&#8217;t get outside data onto the machine since USB didn&#8217;t work.</p></li></ul><p>(At this point one might reasonably ask why I don&#8217;t just use the floppy disk drive. That&#8217;s because I have exactly one functional computer with a floppy disk drive, that being the Compaq I was setting up. I can use floppies as storage if I&#8217;m willing to risk catastrophic data loss, but they&#8217;re useless as a data transfer mechanism. There are also OHCI drivers for DOS available online, even open-source drivers, but of course those would have to be transferred to the system in order to use them.)</p><p>At this point what a normal person probably would do is accept the fact that they&#8217;re going to have to burn some more CD-Rs, and proceed to get some USB and network drivers onto the machine. But due to being paranoid about running out of CD-Rs, that was an absolutely unacceptable solution to me. I had the OpenBSD disc I used some months ago laying around, so&#8230;</p><p>Dual-booting FreeDOS and OpenBSD didn&#8217;t end up being all that hard. For one, BSD&#8217;s partitioning system actually works really well for multibooting. Even though OpenBSD generally uses a whole bunch of partitions, it doesn&#8217;t try to create them all directly on the drive. Instead, it creates one &#8220;container&#8221; partition, and then creates a bunch of OpenBSD-specific partitions within that container, separate from the drive&#8217;s usual partitioning scheme. On top of that, the installer is pretty straightforward (once you realize that you need to skip all forms of network setup if you don&#8217;t intend to plug the machine into a network), and an OpenBSD installation without an X server or games fits in 3 GB of disk space with a bit of wiggle room to spare. I don&#8217;t expect I&#8217;ll be able to update this installation without pain, but since all I need it to do is let me move files to and from a USB drive, I don&#8217;t need to update it (and won&#8217;t be connecting it to a network).</p><p>The only really painful part of the installation process was partitioning - every operating system seems to have a radically different idea of how fdisk is supposed to work, and OpenBSD&#8217;s idea of fdisk is the most&#8230; um&#8230; interesting one I&#8217;ve seen to date. Rather than working in terms of unallocated space and partition creation, OpenBSD&#8217;s fdisk just acts as if all four partitions MBR allows for always exist at all times. You don&#8217;t create a partition, you just configure each of the partition slots you&#8217;re interested in working with. If you don&#8217;t want a partition to exit, you set its type code to &#8220;00&#8221; (unused). If you do want a partition to exist, you set its type code to whatever&#8217;s appropriate for your use case, define a start and end sector, and you&#8217;re done. I&#8217;m guessing this is <em>probably</em> a more accurate model of how MBR actually works, but it was nonetheless surprising to me. More surprising is that there don&#8217;t seem to be any safeguards to make sure you don&#8217;t do something completely ridiculous like define partitions that overlap each other, or put sector 0 as part of a partition. OpenBSD&#8217;s fdisk also does not try to guess things like how large you want the partition to be, so you have to calculate everything by hand and double-check your work to keep from making a mess. To be honest, I actually kind of like this system, it was just very unexpected.</p><p>After fighting with the partitioner a bit, I made a 3 GB partition at the end of the 40 GB Maxtor drive to install OpenBSD to. The remaining 37 GB would still be dedicated to a FAT32 DOS system. (In retrospect, I wish I had split the drive 50-50 between DOS and OpenBSD so I could play with both, and in all likelihood I&#8217;ll probably go back and do that at some point in the future, but this is the setup I have now.) Once that was done, OpenBSD installed just fine&#8230;</p><p>&#8230;and then I realized that the BIOS in this machine doesn&#8217;t allow me to specify which hard drive I want to boot from. The boot order settings fail to list the secondary drive anywhere, and there&#8217;s no boot menu button.</p><p>Thankfully there was a good workaround. Remember the Plop Boot Manager disc I burned near the beginning of this ordeal? Turns out it had no problem recognizing all of the partitions on all of the drives in this system. All I have to do is just leave the Plop CD in the bootable drive, and then I can choose whether i want to boot into FreeDOS or OpenBSD effortlessly.</p><p>That pretty much describes where my setup is at so far. I have been able to successfully transfer files between my main work laptop and the FreeDOS system using this OpenBSD &#8220;shim&#8221;. I haven&#8217;t gotten USB working in FreeDOS yet, and I haven&#8217;t managed to get either of the network cards to work yet, but the system does work, and I had a lot of fun using &#8220;edit&#8221; and &#8220;fed&#8221; to write up a README.TXT for the Bible software project that inspired this whole endeavor. There&#8217;s still more to do for setting up the workstation though:</p><ul><li><p>I really would like to have working USB in FreeDOS. There&#8217;s a Panasonic driver floating around the Internet that people claim to have success with, I&#8217;ll probably end up using that.</p></li><li><p>I should replace the broken optical drive. Then I can have both Plop Boot Manager and the FreeDos 1.4 BonusCD inserted at the same time, which would make life quite a bit easier.</p></li><li><p>I&#8217;m already regretting only giving OpenBSD 3 GB of space on the secondary drive. I&#8217;d like to be able to use it to chat on IRC, which means connecting it to the Internet, which means keeping it up-to-date, so I&#8217;ll probably repartition the drive, allocate 20 GB to OpenBSD, and leave 20 GB for DOS. Even that&#8217;s probably huge, but we&#8217;ll find out. (I don&#8217;t intend to connect FreeDOS to the Internet since I&#8217;m a bit scared of the security issues of doing that.)</p></li><li><p>Embarrassingly, I&#8217;m using a Chromebook to let me look at Open Watcom&#8217;s documentation in a web browser. I should set things up so that I can read the documentation from within DOS itself.</p></li></ul><p>Other than the above points though, the system is working quite well, and I&#8217;m happy with it. Hopefully I won&#8217;t end up spending so much time setting it up that I never use it for its intended purpose! :P</p><div class="subscription-widget-wrap-editor" data-attrs="{&quot;url&quot;:&quot;https://arraybolt3.substack.com/subscribe?&quot;,&quot;text&quot;:&quot;Subscribe&quot;,&quot;language&quot;:&quot;en&quot;}" data-component-name="SubscribeWidgetToDOM"><div class="subscription-widget show-subscribe"><div class="preamble"><p class="cta-caption">Thanks for reading Arraybolt's Archives! Subscribe for free to receive new posts and support my work.</p></div><form class="subscription-widget-subscribe"><input type="email" class="email-input" name="email" placeholder="Type your email&#8230;" tabindex="-1"><input type="submit" class="button primary" value="Subscribe"><div class="fake-input-wrapper"><div class="fake-input"></div><div class="fake-button"></div></div></form></div></div>]]></description>
-      <source url="https://arraybolt3.substack.com/feed">Aaron Rainbolt</source>
     </item>
     <item>
       <title>Mini UbuCon Malaysia 2025 -  An Event Dedicated To Advancing The Open Source Software Ecosystem</title>
@@ -3339,240 +3216,6 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
 
 <p class="wp-block-paragraph">Thank you to everyone who contributed to OpenStack&nbsp;2023.2 Bobcat!</p>]]></description>
       <source url="https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off">Corey Bryant</source>
-    </item>
-    <item>
-      <title>Building a NAS</title>
-      <link>https://apebox.org/wordpress/tech/1325</link>
-      <guid isPermaLink="true">https://apebox.org/wordpress/tech/1325</guid>
-      <pubDate>Tue, 12 Sep 2023 21:33:05 GMT</pubDate>
-      <description><![CDATA[<h2 class="wp-block-heading">The status quo</h2>
-
-
-
-<p>Back in 2015, I bought an off-the-shelf NAS, a QNAP TS-453mini, to act as my file store and Plex server. I had previously owned a Synology box, and whilst I liked the Synology OS and experience, the hardware was underwhelming. I loaded up the successor QNAP with four 5TB drives in RAID10, and moved all my files over (after some initial DoA drive issues were handled).</p>
-
-
-
-<figure class="wp-block-image size-medium"><img fetchpriority="high" decoding="async" width="550" height="550" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png" alt="QNAP TS-453mini product photo" class="wp-image-1329" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-150x150.png 150w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-768x768.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3.png 850w" sizes="(max-width: 550px) 100vw, 550px" /><figcaption class="wp-element-caption">QNAP TS-453mini product photo</figcaption></figure>
-
-
-
-<p>That thing has been in service for about 8 years now, and it&#8217;s been&#8230; a mixed bag. It was definitely more powerful than the predecessor system, but it was clear that QNAP&#8217;s OS was not up to the same standard as Synology&#8217;s &#8211; perhaps best exemplified by &#8220;HappyGet 2&#8221;, the QNAP webapp for downloading videos from streaming services like YouTube, whose icon is a straight rip-off of StarCraft 2. On its own, meaningless &#8211; but a bad omen for overall software quality</p>
-
-
-
-<span id="more-1325"></span>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="884" height="172" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png" alt="The logo for QNAP HappyGet 2 and Blizzard's Starcraft 2 side by side" class="wp-image-1328" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png 884w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-550x107.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-768x149.png 768w" sizes="(max-width: 884px) 100vw, 884px" /><figcaption class="wp-element-caption">The logo for QNAP HappyGet 2 and Blizzard&#8217;s StarCraft 2 side by side</figcaption></figure>
-
-
-
-<p>Additionally, the embedded Celeron processor in the NAS turned out to be an issue for some cases. It turns out, when playing back videos with subtitles, most Plex clients do not support subtitles properly &#8211; instead they rely on the Plex server doing JIT transcoding to bake the subtitles directly into the video stream. I discovered this with some Blu-Ray rips of Game of Thrones &#8211; some episodes would play back fine on my smart TV, but episodes with subtitled Dothraki speech would play at only 2 or 3 frames per second.</p>
-
-
-
-<p>The final straw was a ransomware attack, which went through all my data and locked every file below a 60MiB threshold. Practically all my music gone. A substantial collection of downloaded files, all gone. Some of these files had been carried around since my college days &#8211; digital rarities, or at least digital detritus I felt a real sense of loss at having to replace. This episode was caused by a ransomware targeting specific vulnerabilities in the QNAP OS, not an error on my part.</p>
-
-
-
-<p>So, I decided to start planning a replacement with:</p>
-
-
-
-<ul class="wp-block-list">
-<li>A non-garbage OS, whilst still being a NAS-appliance type offering (not an off-the-shelf Linux server distro)</li>
-
-
-
-<li>Full remote management capabilities</li>
-
-
-
-<li>A small form factor comparable to off-the-shelf NAS</li>
-
-
-
-<li>A powerful modern CPU capable of transcoding high resolution video</li>
-
-
-
-<li>All flash storage, no spinning rust</li>
-</ul>
-
-
-
-<p>At the time, no consumer NAS offered everything (The Asustor FS6712X exists now, but didn&#8217;t when this project started), so I opted to go for a full DIY rather than an appliance &#8211; not the first time I&#8217;ve jumped between appliances and DIY for home storage.</p>
-
-
-
-<h2 class="wp-block-heading">Selecting the core of the system</h2>
-
-
-
-<p>There aren&#8217;t many companies which will sell you a small motherboard with IPMI. Supermicro is a bust, so is Tyan. But ASRock Rack, the server division of third-tier motherboard vendor ASRock, delivers. Most of their boards aren&#8217;t actually compliant Mini-ITX size, they&#8217;re a proprietary &#8220;Deep Mini-ITX&#8221; with the regular screw holes, but 40mm of extra length (and a commensurately small list of compatible cases). But, thankfully, they do have a tiny selection of boards without the extra size, and I stumbled onto the <a href="https://www.asrockrack.com/general/productdetail.asp?Model=X570D4I-2T">X570D4I-2T</a>, a board with an AMD AM4 socket and the mature X570 chipset. This board can use <em>any</em> AMD Ryzen chip (before the latest-gen Ryzen 7000 series); has built in dual 10 gigabit ethernet; IPMI; four (laptop-sized) RAM slots with full ECC support; one M.2 slot for NVMe SSD storage; a PCIe 16x slot (generally for graphics cards, but we live in a world of possibilities); and up to 8 SATA drives OR a couple more NVMe SSDs. It&#8217;s astonishingly well featured, just a shame it costs about $450 compared to a good consumer-grade Mini ITX AM4 board costing less than half that.</p>
-
-
-
-<p>I was so impressed with the offering, in fact, that I crowed about it on Mastodon and ended up securing ASRock another sale, with someone else looking into a very similar project to mine around the same timespan.</p>
-
-
-
-<p>The next question was the CPU. An important feature of a system expected to run 24/7 is low power, and AM4 chips can consume as much as 130W under load, out of the box. At the other end, some models can require as little as 35W under load &#8211; the OEM-only &#8220;GE&#8221; suffix chips, which are readily found for import on eBay. In their &#8220;PRO&#8221; variant, they also support ECC (all non-G Ryzen chips support ECC, but only Pro G chips do). The top of the range 8 core Ryzen 7 PRO 5750GE is prohibitively expensive, but the slightly weaker 6 core <a href="https://www.amd.com/en/products/apu/amd-ryzen-5-pro-5650ge">Ryzen 5 PRO 5650GE</a> was affordable, and one arrived quickly from Hong Kong. Supplemented with a couple of cheap 16 GiB SODIMM sticks of DDR4 PC-3200 direct from Micron for under $50 a piece, that left only cooling as an unsolved problem to get a bootable test system.</p>
-
-
-
-<p>The official support list for the X570D4I-2T only includes two rackmount coolers, both expensive and hard to source. The reason for such a small list is the non standard cooling layout of the board &#8211; instead of an AM4 hole pattern with the standard plastic AM4 retaining clips, it has an Intel 115x hole pattern with a non-standard backplate (Intel 115x boards have no backplate, the stock Intel 115x cooler attaches to the holes with push pins). As such every single cooler compatibility list excludes this motherboard. However, the backplate is only secured with a mild glue &#8211; with minimal pressure and a plastic prying tool it can be removed, giving compatibility with any 115x cooler (which is basically any CPU cooler for more than a decade). I picked an oversized low profile <a href="http://thermalright.com/product/axp120-x67-black-argb/">Thermalright AXP120-X67</a> hoping that its 120mm fan would cool the nearby MOSFETs and X570 chipset too.</p>
-
-
-
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg" alt="" class="wp-image-1333" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Thermalright AXP120-X67, AMD Ryzen 5 PRO 5650GE, ASRock Rack X570D4I-2T, all assembled and running on a flat surface</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Testing up to this point</h2>
-
-
-
-<p>Using a spare ATX power supply, I had enough of a system built to explore the IPMI and UEFI instances, and run MemTest86 to validate my progress. The memory test ran without a hitch and confirmed the ECC was working, although it also showed that the memory was only running at 2933 MT/s instead of the rated 3200 MT/s (a limit imposed by the motherboard, as higher speeds are considered overclocking). The IPMI interface isn&#8217;t the best I&#8217;ve ever used by a long shot, but it&#8217;s minimum viable and allowed me to configure the basics and boot from media entirely via a Web browser.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="905" height="819" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png" alt="" class="wp-image-1341" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png 905w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-550x498.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-768x695.png 768w" sizes="auto, (max-width: 905px) 100vw, 905px" /><figcaption class="wp-element-caption">Memtest86 showing test progress, taken from IPMI remote control window</figcaption></figure>
-
-
-
-<p>One sad discovery, however, which I&#8217;ve never seen documented before, on PCIe bifurcation.</p>
-
-
-
-<p>With PCI Express, you have a number of &#8220;lanes&#8221; which are allocated in groups by the motherboard and CPU manufacturer. For Ryzen prior to Ryzen 7000, that&#8217;s 16 lanes in one slot for the graphics card; 4 lanes in one M.2 connector for an SSD; then 4 lanes connecting the CPU to the chipset, which can offer whatever it likes for peripherals or extra lanes (bottlenecked by that shared 4x link to the CPU, if it comes down to it).</p>
-
-
-
-<p>It&#8217;s possible, with motherboard and CPU support, to split PCIe groups up &#8211; for example an 8x slot could be split into two 4x slots (eg allowing two NVMe drives in an adapter card &#8211; NVME drives these days all use 4x). However with a &#8220;Cezanne&#8221; Ryzen with integrated graphics, the 16x graphics card slot cannot be split into four 4x slots (ie used for for NVMe drives) &#8211; the most bifurcation it allows is 8x4x4x, which is useless in a NAS.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="897" height="806" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png" alt="" class="wp-image-1336" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png 897w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-550x494.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-768x690.png 768w" sizes="auto, (max-width: 897px) 100vw, 897px" /><figcaption class="wp-element-caption">Screenshot of PCIe 16x slot bifurcation options in UEFI settings, taken from IPMI remote control window</figcaption></figure>
-
-
-
-<p>As such, I had to abandon any ideas of an all-NVMe NAS I was considering: the 16x slot split into four 4x, combined with two 4x connectors fed by the X570 chipset, to a total of 6 NVMe drives. 7.6TB U.2 enterprise disks are remarkably affordable (cheaper than consumer SATA 8TB drives), but alas, I was locked out by my 5650GE. Thankfully I found out before spending hundreds on a U.2 hot swap bay. The NVMe setup would be nearly 10x as fast as SATA SSDs, but at least the SATA SSD route would still outperform any spinning rust choice on the market (including the fastest 10K RPM SAS drives)</p>
-
-
-
-<h2 class="wp-block-heading">Containing the core</h2>
-
-
-
-<p>The next step was to pick a case and power supply. A lot of NAS cases require an SFX (rather than ATX) size supply, so I ordered a modular <a href="https://www.silverstonetek.com/en/product/info/power-supplies/SX500-G/">SX500</a> unit from Silverstone. Even if I ended up with a case requiring ATX, it&#8217;s easy to turn an SFX power supply into ATX, and the worst result is you have less space taken up in your case, hardly the worst problem to have.</p>
-
-
-
-<p>That said, on to picking a case. There&#8217;s only one brand with any cachet making ITX NAS cases, Silverstone. They have three choices in an appropriate size: <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS01-HS/">CS01-HS</a>, <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS280/">CS280</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/DS380/">DS380</a>. The problem is, these cases are all badly designed garbage. Take the CS280 as an example, the case with the most space for a CPU cooler. Here&#8217;s how close together the hotswap bay (right) and power supply (left) are:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="568" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png" alt="" class="wp-image-1343" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-550x391.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-768x545.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
-
-
-
-<p>With actual cables connected, the cable clearance problem is even worse:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="533" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png" alt="" class="wp-image-1344" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-550x366.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-768x512.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
-
-
-
-<p>Remember, this is the <em>best</em> of the three cases for internal layout, the one with the least restriction on CPU cooler height. And it&#8217;s garbage! Total hot garbage! I decided therefore to completely skip the NAS case market, and instead purchase a 5.25&#8243;-to-2.5&#8243; hot swap bay adapter from Icy Dock, and put it in an ITX gamer case with a 5.25&#8243; bay. This is no longer a served market &#8211; 5.25&#8243; bays are extinct since nobody uses CD/DVD drives anymore. The ones on the market are really new old stock from 2014-2017: The <a href="https://www.fractal-design.com/products/cases/core/core-500/black/">Fractal Design Core 500</a>, <a href="https://www.coolermaster.com/catalog/cases/mini-itx/elite130/">Cooler Master Elite 130</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/SUGO14/">Silverstone SUGO 14</a>. Of the three, the Fractal is the best rated so I opted to get that one &#8211; however it seems the global supply of &#8220;new old stock&#8221; fully dried up in the two weeks between me making a decision and placing an order &#8211; leaving only the Silverstone case.</p>
-
-
-
-<p>Icy Dock have a selection of 8-bay 2.5&#8243; SATA 5.25&#8243; hot swap chassis choices in their ToughArmor MB998 series. I opted for the <a href="https://global.icydock.com/product_169.html">ToughArmor MB998IP-B</a>, to reduce cable clutter &#8211; it requires only two SFF-8611-to-SF-8643 cables from the motherboard to serve all eight bays, which should make airflow less of a mess. The X570D4I-2T doesn&#8217;t have any SATA ports on board, instead it has two SFF-8611 OCuLink ports, each supporting 4 PCI Express lanes OR 4 SATA connectors via a breakout cable. I had hoped to get the ToughArmor MB118VP-B and run six U.2 drives, but as I said, the PCIe bifurcation issue with Ryzen &#8220;G&#8221; chips meant I wouldn&#8217;t be able to run all six bays successfully.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg" alt="" class="wp-image-1348" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">NAS build in Silverstone SUGO 14, mid build, panels removed</figcaption></figure>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg" alt="" class="wp-image-1349" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">Silverstone SUGO 14 from the front, with hot swap bay installed</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Actual storage for the storage server</h2>
-
-
-
-<p>My concept for the system always involved a fast boot/cache drive in the motherboard&#8217;s M.2 slot, non-redundant (just backups of the config if the worst were to happen) and separate storage drives somewhere between 3.8 and 8 TB each (somewhere from $200-$350). As a boot drive, I selected the <a href="https://www.intel.com/content/www/us/en/products/sku/211868/intel-optane-ssd-p1600x-series-58gb-m-2-80mm-pcie-3-0-x4-3d-xpoint/specifications.html">Intel Optane SSD P1600X 58G</a>, available for under $35 and rated for 228 years between failures (or 11,000 complete drive rewrite cycles).</p>
-
-
-
-<p>So, on to the big expensive choice: storage drives. I narrowed it down to two contenders: new-old-stock Intel D3-S4510 3.84TB enterprise drives, at about $200, or Samsung 870 QVO 8TB consumer drives, at about $375. I did spend a long time agonizing over the specification differences, the ZFS usage reports, the expected lifetime endurance figures, but in reality, it came down to price &#8211; $1600 of expensive drives vs $3200 of even more expensive drives. That&#8217;s 27TB of usable capacity in RAID-Z1, or 23TB in RAID-Z2. For comparison, I&#8217;m using about 5TB of the old NAS, so that&#8217;s a LOT of overhead for expansion.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg" alt="" class="wp-image-1355" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Storage SSD loaded into hot swap sled</figcaption></figure>
-
-
-
-<h2 class="wp-block-heading">Booting up</h2>
-
-
-
-<p>Bringing it all together is the OS. I wanted an &#8220;appliance&#8221; NAS OS rather than self-administering a Linux distribution, and after looking into the surrounding ecosystems, decided on <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> (the beta of the 2023 release, based on Debian 12).</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="600" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png" alt="" class="wp-image-1353" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-550x322.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-768x450.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1536x900.png 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image.png 2013w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">TrueNAS Dashboard screenshot in browser window</figcaption></figure>
-
-
-
-<p>I set up RAID-Z1, and with zero tuning (other than enabling auto-TRIM), got the following performance numbers:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>19.3k</td><td>75.6 MiB/s</td></tr><tr><td>4k random reads</td><td>36.1k</td><td>141 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>2300 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>3800 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Results using fio parameters <a href="https://support.huaweicloud.com/intl/en-us/evs_faq/evs_faq_0019.html#evs_faq_0019__section273349017162">suggested by Huawei</a></figcaption></figure>
-
-
-
-<p>And for comparison, the maximum theoretical numbers quoted by Intel for a single drive:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>16k</td><td>?</td></tr><tr><td>4k random reads</td><td>90k</td><td>?</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>280 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>560 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Numbers quoted by Intel SSD successors <a href="https://www.solidigm.com/products/data-center/d3/s4510.html">Solidigm</a>.</figcaption></figure>
-
-
-
-<p>Finally, the numbers reported on the old NAS with four 7200 RPM hard disks in RAID 10:</p>
-
-
-
-<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>430</td><td>1.7 MiB/s</td></tr><tr><td>4k random reads</td><td>8006</td><td>32 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>311 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>566 MiB/s</td></tr></tbody></table></figure>
-
-
-
-<p>Performance seems pretty OK. There&#8217;s always going to be an overhead to RAID. I&#8217;ll settle for the 45x improvement on random writes vs. its predecessor, and 4.5x improvement on random reads. The sequential write numbers are gonna be impacted by the size of the ZFS cache (50% of RAM, so 16 GiB), but the rest should be a reasonable indication of true performance.</p>
-
-
-
-<p>It took me a little while to fully understand the TrueNAS permissions model, but I finally got Plex configured to access data from the same place as my SMB shares, which have anonymous read-only access or authenticated write access for myself and my wife, working fine via both Linux and Windows.</p>
-
-
-
-<p>And&#8230; that&#8217;s it! I built a NAS. I intend to add some fans and more RAM, but that&#8217;s the build. Total spent: about $3000, which sounds like an unreasonable amount, but it&#8217;s actually less than a comparable Synology DiskStation DS1823xs+ which has 4 cores instead of 6, first-generation AMD Zen instead of Zen 3, 8 GiB RAM instead of 32 GiB, no hardware-accelerated video transcoding, etc. And it would have been a whole lot less fun!</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg" alt="" class="wp-image-1364" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">The final system, powered up</figcaption></figure>
-
-
-
-<p>(Also posted on <a href="https://pcpartpicker.com/b/fYhtt6">PCPartPicker</a>)</p>]]></description>
-      <source url="http://apebox.org/wordpress/tag/ubuntu/feed/">Jo Shields</source>
     </item>
     <item>
       <title>Understanding vm.swappiness: Improving Linux Performance and Memory Management</title>
@@ -6939,6 +6582,220 @@ $2 = (minimal_symbol *) 0x0
 
 <p>I look forward to hopefully seeing you at freenode #live!</p>]]></description>
       <source url="http://nhandler.com/blog/feed.ubuntu.xml">Nathan Handler</source>
+    </item>
+    <item>
+      <title>More on the imported repositories</title>
+      <link>http://www.justgohome.co.uk/blog/2017/08/more-on-the-imported-repositories.html</link>
+      <guid isPermaLink="true">http://www.justgohome.co.uk/blog/2017/08/more-on-the-imported-repositories.html</guid>
+      <pubDate>Mon, 21 Aug 2017 16:53:44 GMT</pubDate>
+      <description><![CDATA[<p><img alt="git ubuntu illustration" src="http://www.justgohome.co.uk/blog/2017/07/git-ubuntu.png" /></p>
+<p>This is the third post in our series on our git workflow tooling in
+Ubuntu.  There is an <a href="http://www.justgohome.co.uk/blog/2017/07/developing-ubuntu-using-git.html#multi-post-index">index of all our planned posts in the first
+post</a>.
+As mentioned there, it is important to keep in mind that <a href="http://www.justgohome.co.uk/blog/2017/07/developing-ubuntu-using-git.html#experimental-status">the tooling
+and implementation are still highly
+experimental</a>.</p>
+<p>Nish introduced our imported repositories <a href="https://naccblog.wordpress.com/2017/08/01/git-ubuntu-clone/">using the <code>git ubuntu clone</code>
+wrapper</a>, as well
+as using git directly.</p>
+<p>I'd like to go into a little more detail about what we're actually importing.</p>
+<p>Automatic imports watch for new source publications in Launchpad. When they
+occur, the importer will push new commits and tags to match those publications
+and move up branch pointers automatically. All branches maintained by the
+importer are fast-forwarding. A temporary exception to this is during our
+experimental stage, before we release a 1.0. Until then, we may re-import
+packages as we work on the importer.</p>
+<p>Our importer maintains one repository per source package in
+<a href="https://code.launchpad.net/~usd-import-team/+git">lp:~usd-import-team</a> for
+now. Eventually we expect to make these available under an alias of the form
+<code>lp:ubuntu/+source/&lt;package&gt;</code>.</p>
+<p>The imported trees correctly reflect the ancestry of individual source
+packages. This includes both Debian and Ubuntu history, with Ubuntu history
+correctly parented from the appropriate points in Debian's history.</p>
+<p>There is a branch corresponding to each Debian and Ubuntu series (eg. <code>sid</code>,
+<code>stretch</code>, <code>xenial</code>, <code>artful</code>), and in the case of Ubuntu, pocket (eg.
+<code>trusty-updates</code>, <code>xenial-security</code>, <code>artful-proposed</code>). We’ll cover details on
+how exactly these work, and the logic behind their design, in future posts.</p>
+<h2>Single source of truth</h2>
+<p>A goal of the importer is to reflect the single source of truth, which
+we define as Launchpad's source publication history. Therefore, the only
+source of the imported tags and branches must come via the importer and
+not directly from uploaders. Only the importer can push to the imported
+repositories. We do have a mechanism to preserve "rich history" provided
+by git committers that in any other project they'd be able to push
+directly; more on this in a future post.</p>
+<p>Note that this methodology means that upstream's commit graphs are typically
+not made available by the importer. You won't find individual upstream commits
+by looking in our imported respository against a particular package. We may
+decide to make this possible in the future by relying on the "rich history"
+import mechanism combined with the use of our parenting invariant. More on this
+in a future post.</p>
+<p>We're trying hard to make sure that there is no case where a source package
+upload can cause the importer to fail. We're treating any failure to import a
+source package as a bug in our importer. The importer should be able to import
+anything that was ever uploaded to Debian or Ubuntu.</p>
+<h2>Available branches</h2>
+<p>As Nish mentioned, there are two main types of branches:</p>
+<ol>
+<li>Devel branches: the branches on which to start development.</li>
+<li>Pocket branches: understanding the current state of the archive.</li>
+</ol>
+<p>There are also "applied" versions of these branches, which provide quilt
+patches already applied.</p>
+<h3>The "devel" branches</h3>
+<p>Ubuntu developers are used to using <code>pull-lp-source</code> to grab the latest version
+of a package source on which to base development. We want to make <code>git clone</code>
+work instead.</p>
+<p>What is the correct version on which to base development? In Ubuntu,
+this can vary depending on the exact publication state. Usually you want
+the highest version published in the development release, or the highest
+version published in a particular series for an
+<a href="https://wiki.ubuntu.com/StableReleaseUpdates">SRU</a>. For this purpose,
+the git importer maintains <code>devel</code> branches. For the development
+release, this is just called <code>ubuntu/devel</code>. For a stable release, it is
+<code>ubuntu/&lt;codename&gt;-devel</code>; for example: <code>ubuntu/xenial-devel</code>.</p>
+<p>This is intended to save developers the effort of figuring out which pocket to
+use (between the release pocket, <code>proposed</code>, <code>updates</code> and <code>security</code>) and
+saves scripts from having to figure it out themselves.</p>
+<p>One exception to this is in the rare case that a version in the proposed pocket
+has been discarded, such as a failed SRU. The importer only follows new version
+publications and does not follow deletions. In this case you may wish to start
+directly from a pocket branch (described below). Alternatively, before you
+begin you could start from the devel branch and use <code>git revert</code> to add a
+commit reversing the published change in line with the deletion. The
+infrastructure doesn’t care which method you choose.</p>
+<h3>Pocket branches</h3>
+<p>A different use case is to look at the git branches to understand what the
+archive looks like today, or how it looked in the past.</p>
+<h4>Ubuntu’s pockets</h4>
+<p>First let’s review what Ubuntu pockets actually are.</p>
+<p>In Ubuntu, the archive for a particular release (“series”) is divided up into a
+number of “pockets”, which correspond to the entries in your <code>sources.list</code>
+file:</p>
+<ol>
+<li>
+<p>The release pocket. This pocket has no specific name. During
+    development, the release pocket is where package eventually land.
+    Upon release, this pocket is frozen and never changes again.</p>
+</li>
+<li>
+<p>The “proposed” pocket. This pocket is used for two different
+    purposes depending on whether the series is in development or has
+    been released. During development, this is the staging area in which
+    packages are built, tested and checked for installability before
+    they land. When all tests pass, packages are moved into the release
+    pocket in a process called <a href="https://wiki.ubuntu.com/ProposedMigration">proposed
+    migration</a>. After
+    release, the proposed pocket is used for a different purpose: manual
+    user verification of proposed stable release updates through the
+    <a href="https://wiki.ubuntu.com/StableReleaseUpdates#Verification">SRU verification
+    process</a>.
+    When a package passes SRU verification, the package is moved into
+    the updates pocket, rather than the release pocket is as the case
+    during development.</p>
+</li>
+<li>
+<p>The “updates” pocket. Only used for stable releases, this pocket is
+    used to issue recommended updates to users during the lifetime of a
+    stable release.</p>
+</li>
+<li>
+<p>The “security” pocket. Only used for stable releases, this pocket is
+    used to issue security updates to users during the lifetime of a
+    stable release. Updates to the security pocket are always also
+    copied into the updates pocket.</p>
+</li>
+</ol>
+<p>The name of a pocket is in the form <code>&lt;series&gt;-&lt;type&gt;</code>, such as
+<code>xenial-security</code> and <code>artful-updates</code>. As an exception, the release pocket is
+the series with no suffix, such as <code>trusty</code>.</p>
+<h4>Importing pockets into git</h4>
+<p>The importer maintains a branch for each pocket, in the form <code>ubuntu/&lt;pocket
+name&gt;</code>, such as <code>ubuntu/trusty</code> (the Trusty release pocket),
+<code>ubuntu/xenial-security</code>, <code>ubuntu/artful-proposed</code> and so on.</p>
+<h3>Combining pocket branches: the devel branches</h3>
+<p>To support the archeology use case, the importer must maintain these pocket
+branches. However, for the ongoing development use case, it's far more
+convenient for developers to use our "devel branches".</p>
+<p>We do this by making use of our "parenting invariant", which we’ll describe in
+more detail in a future post. For now, it’s sufficient to understand that the
+devel branches are the points at which you should start development, and the
+pocket branches can be used to examine the current state of the various pockets
+in the Ubuntu archive.</p>
+<h3>Applied branches</h3>
+<p>For our drive-by contributor use case, it would be nice if these drive-by
+contributors didn't have to understand quilt. It's reasonable to expect that,
+straight after running <code>git clone</code> from Ubuntu and selecting an appropriate
+branch, the tree that appears is exactly the source used to build the
+corresponding Ubuntu package. For drive-by contributors unfamiliar with Debian
+packaging, this means that quilt patches should appear applied. Our "applied"
+branches and tags provide this function.</p>
+<p>The non-applied branches are the normative imports from Debian and Ubuntu
+developer uploads. They are intended to represent the source package exactly
+and without any derived components. This means that quilt patches appear in
+<code>debian/patches/</code> as normal, but are not applied.</p>
+<p>From one of these import commits, all quilt patches (if any) are applied one by
+one. Each application results in a separate git commit. A final commit with an
+identical tree is added for branch fast-forwarding purposes, and these commits
+form the line of the "applied" branch.</p>
+<p>Consequently, you can switch to an "applied" branch, or corresponding tag, and
+you'll see the state of the Ubuntu source package with all patches applied and
+as if quilt doesn't exist. Drive-by contributors can then file pull requests
+against such a branch (eg. <code>applied/ubuntu/devel</code>) and bots and sponsors will
+be able to understand exactly what is being requested.</p>
+<p>It will often be necessary to pull out requested changes into a separate
+quilt patch, add <a href="http://dep.debian.net/deps/dep3/">dep3</a> headers, and
+possibly squash the requested change into an existing quilt patch,
+before uploading. We hope to automate some of this in the future, but
+for now this is left as a task for sponsors who accept git workflow
+upload requests. Contributors can either submit pull requests against
+the applied branches this way, or fold up into quilt patches themselves
+and submit pull requests against the non-applied branches instead.</p>
+<p>In the future, it may be desirable for all Ubuntu developers to forget quilt
+and live entirely inside git-based patchsets. For the time being, we want to
+support both traditional and git-based workflows. So both applied and
+non-applied branches are maintained by the importer.</p>
+<p>It is a matter of debate as to whether the non-applied or applied branches
+should appear by default. We are open to further discussion on this.</p>
+<h2>Available tags</h2>
+<p>The first time the importer imports a new version of a source package, it tags
+it using an "import tag", which is of the form <code>import/&lt;version&gt;</code>. The
+patches-applied equivalent is derived, and the result is tagged in the form
+<code>applied/&lt;version&gt;</code>.</p>
+<p>Pocket copies, such as from Debian into Ubuntu via autosync, are not tagged;
+the pocket branches are moved forward with new commits (with identical trees)
+as necessary.</p>
+<p>Since not all valid package version strings are valid git tag names, the tag
+names are escaped using the same rules as specified in
+<a href="http://dep.debian.net/deps/dep14/">dep14</a>, Debian's recommendation on git
+repository layouts.</p>
+<p>We use tags of the form <code>upload/&lt;version&gt;</code> to supply rich history for adoption
+into the imported commit graph. This cannot be pushed directly; more on this in
+a future post.</p>
+<p>To support the preservation of orig tarballs using pristine tar, the importer
+also tags <code>upstream/&lt;version&gt;</code>.</p>
+<h2>pristine-tar and the dsc branches</h2>
+<p>So that the git repositories contain all the information needed to reconstruct
+an imported source package, the importer also stores the orig tarballs using
+pristine-tar and the signed dsc file in separate branches. Orig tarballs are
+automatically extracted on package build as needed by the <code>git ubuntu build</code>
+wrapper. This means that <code>git ubuntu clone</code> followed by <code>git ubuntu build</code>
+should Just Work.</p>
+<p>Orig tarballs between Debian and Ubuntu may vary in exceptional cases, so the
+importer keeps these properly namespaced in <code>debian/pristine-tar</code> and
+<code>ubuntu/pristine-tar</code> branches to avoid collisions, and likewise for the dsc
+files <code>debian/dsc</code> and <code>ubuntu/dsc</code>. pristine-tar doesn't currently support
+multiple branches; it assumes a single branch of <code>pristine-tar</code>. Our <code>git
+ubuntu build</code> wrapper works around this for now. In the future I'd like for us
+to drive getting parameterised branch name support into <code>pristine-tar</code> upstream
+to support our use case.</p>
+<h2>Conclusion</h2>
+<p>In order to provide a full understanding of what we're doing to those
+developers interested in all the detail, I've tried to cover all the git
+reference objects presented by our importer in this post today.</p>
+<p>In our next post, Nish will continue discussing the <code>git ubuntu</code> tooling by
+introducing <code>git ubuntu tag</code>.</p>]]></description>
+      <source url="http://www.justgohome.co.uk/blog/feeds/tag/planet-ubuntu.atom.xml">Robie Basak</source>
     </item>
     <item>
       <title>1er Festival Universitario de Tecnologías Libres</title>
