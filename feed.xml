@@ -6,61 +6,199 @@
     <description>Fresh posts from the Planet Ubuntu</description>
     <language>en</language>
     <generator>json-to-rss (GitHub Actions)</generator>
-    <lastBuildDate>Tue, 24 Nov 2026 08:59:34 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 07:37:51 GMT</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https://ubuntu-community-team.github.io/terra//feed.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>15 years of long term support for bare metal automation with MAAS</title>
-      <link>https://ubuntu.com//blog/15-years-of-long-term-support-for-bare-metal-automation-with-maas</link>
-      <guid isPermaLink="true">https://ubuntu.com//blog/15-years-of-long-term-support-for-bare-metal-automation-with-maas</guid>
-      <pubDate>Sun, 22 Nov 2026 10:30:00 GMT</pubDate>
-      <description><![CDATA[<p>Building modern AI supercomputing clusters, deploying 5G telecommunications networks, or operating High Performance Computing (HPC) data centers requires significant capital investment (CapEx). These investments are planned with a long-term horizon in mind, and the infrastructure management platforms supporting them often need to operate across multiple hardware generations.</p>
-<p>However, the software used to provision and manage physical servers often follows much shorter support cycles. This creates a mismatch between long-term infrastructure investments and the software platforms responsible for operating them.</p>
-<p>For infrastructure teams, this translates into additional operational costs and risks. Upgrading or replacing infrastructure management platforms requires careful planning, compatibility testing, and coordination with other infrastructure components. This challenge is particularly relevant for bare metal automation, which provides the foundation for discovering, provisioning, and managing physical servers. In large-scale environments, where reliability and availability are critical, these activities can consume considerable engineering resources.</p>
-<h1 class="wp-block-heading">MAAS introduces 15 years of long-term support</h1>
-<p><a href="https://canonical.com/maas">Canonical MAAS</a> (Metal as a Service) is an open source platform that brings cloud-like automation to physical infrastructure. It provides centralized management of bare metal servers, automating their lifecycle from hardware discovery and commissioning to operating system (OS) deployment and repurposing. Through its APIs and integration with infrastructure-as-code (IaC) tools, MAAS enables organizations to manage large fleets of physical servers using consistent and repeatable processes.</p>
-<p>With MAAS 3.8, Canonical introduces the first Long Term Supported (LTS) release of MAAS, offering up to 15 years of <a href="https://canonical.com/solutions/open-source-security">security maintenance</a>, predictable operational stability, and <a href="https://ubuntu.com/support">enterprise support</a> for its bare metal automation platform, following <a href="https://ubuntu.com/blog/canonical-expands-total-coverage-for-ubuntu-lts-releases-to-15-years-with-legacy-add-on">Ubuntu LTS commitment</a>.</p>
-<p>This extended support lifecycle allows organizations to maintain a stable bare metal management platform over a much longer period, reducing the frequency of major upgrades which are driven primarily by end-of-support deadlines. Infrastructure teams can continue refreshing hardware, expanding capacity, and adapting their environments without having to replace the underlying management platform at the same pace.</p>
-<p>This gives organizations more flexibility to schedule infrastructure upgrades according to their operational needs, while reducing maintenance overhead and maintaining access to security updates throughout the applicable support period.</p>
-<h1 class="wp-block-heading">Long-term support across the Canonical infrastructure stack</h1>
-<p>Bare metal automation does not operate in isolation. It provides the foundation for higher-level infrastructure platforms, including OSs, <a href="https://canonical.com/solutions/infrastructure/virtualization-solutions">virtualization</a>, storage, and container orchestration. Each of these layers has its own software lifecycle, and differences in their support periods can introduce additional complexity for infrastructure teams.</p>
-<p>The introduction of 15 years of support for MAAS marks an important milestone for Canonical’s broader <a href="https://canonical.com/solutions/infrastructure">infrastructure portfolio</a>. With MAAS now joining the LTS offering, all the major components of Canonical’s infrastructure stack have LTS releases. This enables organizations to align support lifecycles across the entire stack, from bare metal to applications, simplifying long-term infrastructure planning and maintenance.</p>
-<p>This includes MAAS for bare metal provisioning, <a href="https://ubuntu.com/desktop">Ubuntu </a>as the base OS,<a href="https://canonical.com/openstack"> OpenStack</a> and<a href="https://canonical.com/microcloud"> MicroCloud</a> for cloud infrastructure,<a href="https://canonical.com/ceph"> Ceph</a> for storage,<a href="https://ubuntu.com/kubernetes"> Canonical Kubernetes</a> for container orchestration, and<a href="https://canonical.com/juju"> Juju</a> for application deployment and lifecycle management.</p>
-<p>Having long-term support across these platforms simplifies infrastructure lifecycle planning. Instead of managing completely separate support strategies for each component, organizations can work with a single vendor and better coordinate maintenance, security updates, and platform upgrades across their infrastructure stack.</p>
-<h1 class="wp-block-heading">Why long-term support matters for enterprise infrastructure</h1>
-<p>Long-term software support is particularly valuable in environments where infrastructure investments are substantial and availability is critical.</p>
-<p>In AI and HPC, infrastructure platforms often manage multiple generations of servers and accelerators. A bare metal control plane with long-term support allows teams to refresh and expand their computing capacity while maintaining consistent provisioning and management processes.</p>
-<p>For telecommunications and 5G providers, infrastructure changes typically require extensive validation and coordination. Longer support cycles help reduce the frequency of support-driven upgrades and make it easier to align software maintenance with network modernization plans.</p>
-<p>For critical infrastructure, such as power distribution networks and financial institutions, availability, security, and operational resilience are essential. Changes to infrastructure management platforms often require extensive testing, formal approval, and careful coordination to avoid disrupting critical services. By reducing the need for frequent, support-driven upgrades, organizations providing critical services can maintain stable operations more easily, while supporting their security and regulatory requirements.</p>
-<h1 class="wp-block-heading">What else is new in MAAS 3.8?</h1>
-<p>Beyond the introduction of LTS, MAAS 3.8 brings several improvements focused on security, access management, and deployment customization.</p>
-<h2 class="wp-block-heading">OpenID Connect (OIDC) integration</h2>
-<p>MAAS now supports integration with external OIDC identity providers, enabling Single Sign-On (SSO) and simplifying centralized user authentication. </p>
-<p>Learn more in the<a href="https://canonical.com/maas/docs/3.8/how-to-guides/sso/"> MAAS SSO guide</a>.</p>
-<figure class="wp-block-image size-full"><img alt="" height="589" loading="lazy" sizes="(min-width: 686px) 686px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_686/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc528%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc528%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc528%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc528%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_686/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc528%2Fimage.png 686w" width="686"/></figure>
-<p>Figure 1 MAAS UI: showing how to set an OIDC compliant provider</p>
-<h2 class="wp-block-heading">Relationship-Based Access Control (ReBAC)</h2>
-<p>A new authorization framework introduces more granular permissions through users, groups, and resource entitlements. This provides greater flexibility when managing access to MAAS resources. </p>
-<p>Read the<a href="https://canonical.com/maas/docs/3.8/how-to-guides/user-groups-and-entitlements/"> user groups and entitlements guide</a>.</p>
-<figure class="wp-block-image size-full"><img alt="" height="589" loading="lazy" sizes="(min-width: 1111px) 1111px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1111/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1111/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F3bfe%2Fimage.png 1111w" width="1111"/></figure>
-<p>Figure 2 MAAS UI: configuration of ReBAC entitlements</p>
-<h2 class="wp-block-heading">Deployment scripts</h2>
-<p>Administrators can now execute custom scripts before or after OS installation, allowing additional hardware checks and deployment-specific tasks to be integrated into the provisioning workflow. </p>
-<p>While commissioning gathers hardware information, deployment turns a machine into a running system, and some tasks only make sense at deployment time, for example:</p>
-<ul class="wp-block-list">
-<li>Applying firmware or BIOS settings that must be in place before the OS is installed</li>
-<li>Preparing attached hardware (such as flashing a Data Processing Unit (DPU)) as part of every deployment</li>
-<li>Running site-specific setup that has to happen on every machine, without baking it into a custom image with specific pre-seeds</li>
+      <title>Introducing apt-core-json</title>
+      <link>https://blog.jak-linux.org/2026/11/23/apt-core-json/</link>
+      <guid isPermaLink="true">https://blog.jak-linux.org/2026/11/23/apt-core-json/</guid>
+      <pubDate>Mon, 23 Nov 2026 17:20:49 GMT</pubDate>
+      <description><![CDATA[<p>Today I finalized apt-core-json, the first in a new set of core libraries for APT to bring APT into the new decade,
+following the latest C++23 standard, with a focus on memory safety, absurd amounts of template metaprogramming,
+<code>std::expected</code>, and of course: coroutines and event loops, leading to a Varlink library as the next big deliverable.
+The running joke is that the &ldquo;Core&rdquo; stands for &ldquo;<em>Cor</em>outines and <em>E</em>vent Loop&rdquo;.</p>
+<p>The JSON library was one of the first things needed for a Varlink library.
+JSON is not particularly hard,
+but I did not want to write my own parser (and I deleted my old writer!).
+Instead of a custom library, I had to pick json-c as the backend.
+I then had to work around a whole ton of issues with json-c not being strict enough;
+heck that thing will read embedded NUL bytes in strings and then silently truncate them!
+So we had to implement a verification step that understands enough JSON to reject
+&ldquo;\u0000&rdquo; as well as literal NUL bytes in input strings.
+In an optimal world, I&rsquo;d just use sd-varlink, but obviously it&rsquo;s not available on Hurd.</p>
+<p>After two loooooooooooong sessions this weekend (10 + 6 hours, and a couple today),
+this work just landed in main, and I want to share with you the concepts of the library.
+Very happy to say that this is the first library to have any, let alone <em>extensive</em>, <code>clang-tidy</code> checks.</p>
+<h2 id="core-types">Core types</h2>
+<p>APT::JSON provides two main types:</p>
+<ul>
+<li>View, which is a read-only view into a JSON object</li>
+<li>Value, which is an owned, move-only, mutable reference</li>
 </ul>
-<p>Deployment scripts provide a single, repeatable place to put that logic. Every machine being deployed runs the uploaded deployment scripts, so behaviour is consistent across the whole fleet.</p>
-<p>See the<a href="https://canonical.com/maas/docs/3.8/explanation/deployment-scripts/"> deployment scripts documentation</a>.</p>
-<figure class="wp-block-image size-full"><img alt="" height="589" loading="lazy" sizes="(min-width: 1111px) 1111px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1111/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1920/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 1920w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1111/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fccf2%2Fimage.png 1111w" width="1111"/></figure>
-<p>Figure 3 MAAS UI: configuration of deployment scripts</p>
-<h2 class="wp-block-heading">FIPS readiness and security improvements</h2>
-<p>MAAS 3.8 incorporates the FIPS-related enhancements introduced in MAAS 3.7.4, preparing the platform for FIPS-compliant operation once a FIPS-compliant kernel becomes available for Ubuntu 26.04 LTS. The release also expands security audit logging, providing better visibility into authentication and authorization events. <a data-id="https://ubuntu.com/blog/automating-bare-metal-infrastructure-in-fips-regulated-environments-with-maas" data-type="link" href="https://ubuntu.com/blog/automating-bare-metal-infrastructure-in-fips-regulated-environments-with-maas">Learn more about FIPS compliance for MAAS in our blog post</a>.</p>
-<h1 class="wp-block-heading">Long-term infrastructure needs long-term software</h1>
-<p>As hardware and workloads evolve, infrastructure teams need management platforms that provide continuity and reliability. With up to 15 years of support, MAAS allows organizations to maintain a supported bare metal control plane across multiple hardware generations, reducing the pressure to upgrade solely because of software end-of-support deadlines.</p>
-<p>Explore the<a href="https://canonical.com/maas/docs/release-information/release-notes/"> MAAS release notes</a> to learn more about MAAS 3.8, or<a href="https://canonical.com/maas/contact-us"> contact Canonical</a> to discuss long-term support for your infrastructure.</p>]]></description>
+<p>Let&rsquo;s have a look at how this plays out decoding a Varlink call:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> val <span style="color:#f92672">=</span> JSON<span style="color:#f92672">::</span>Value<span style="color:#f92672">::</span>parse(someString);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (not val)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> std<span style="color:#f92672">::</span>unexpected(val.error());
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> call <span style="color:#f92672">=</span> val.get<span style="color:#f92672">&lt;</span>Call<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (not call)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> std<span style="color:#f92672">::</span>unexpected(call.error());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Called with method: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> call<span style="color:#f92672">-&gt;</span>method <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;              more: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> call<span style="color:#f92672">-&gt;</span>more <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> backIntoJson <span style="color:#f92672">=</span> JSON<span style="color:#f92672">::</span>Value<span style="color:#f92672">::</span>encode(call);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (not backIntoJson)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> std<span style="color:#f92672">::</span>unexpected(backIntoJson.error());
+</span></span></code></pre></div><p>You may notice the <code>get&lt;Call&gt;()</code> syntax and the <code>encode</code>
+call. These are implemented using <code>Encode</code> and <code>Decode</code>
+templates.</p>
+<h2 id="encoders-and-decoders">Encoders and Decoders</h2>
+<p>Encoders and decoders are relatively straightforward;
+instantiate the <code>Encode</code> and/or <code>Decode</code> template for
+the type you want to make encodable, and you are done:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">TestStruct</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   std<span style="color:#f92672">::</span>string name;
+</span></span><span style="display:flex;"><span>   std<span style="color:#f92672">::</span>optional<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> count;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">JSON</span><span style="color:#f92672">::</span>Decode<span style="color:#f92672">&lt;</span>TestStruct<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">static</span> std<span style="color:#f92672">::</span>expected<span style="color:#f92672">&lt;</span>TestStruct, JSON<span style="color:#f92672">::</span>Error<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">operator</span>()(JSON<span style="color:#f92672">::</span>View v)
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>      TestStruct result;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> v.into(<span style="color:#e6db74">&#34;name&#34;</span>, result.name)
+</span></span><span style="display:flex;"><span>         .and_then([<span style="color:#f92672">&amp;</span>] <span style="color:#66d9ef">noexcept</span> { <span style="color:#66d9ef">return</span> v.into(<span style="color:#e6db74">&#34;count&#34;</span>, result.count); })
+</span></span><span style="display:flex;"><span>         .transform([<span style="color:#f92672">&amp;</span>] { <span style="color:#66d9ef">return</span> result; });
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static_assert</span>(JSON<span style="color:#f92672">::</span>Decodable<span style="color:#f92672">&lt;</span>TestStruct<span style="color:#f92672">&gt;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">JSON</span><span style="color:#f92672">::</span>Encode<span style="color:#f92672">&lt;</span>TestStruct<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">static</span> std<span style="color:#f92672">::</span>expected<span style="color:#f92672">&lt;</span>Value, JSON<span style="color:#f92672">::</span>Error<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">operator</span>()(<span style="color:#66d9ef">const</span> TestStruct <span style="color:#f92672">&amp;</span>val)
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">auto</span> obj <span style="color:#f92672">=</span> Value<span style="color:#f92672">::</span>object();
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> obj.set(<span style="color:#e6db74">&#34;name&#34;</span>, val.name)
+</span></span><span style="display:flex;"><span>         .and_then([<span style="color:#f92672">&amp;</span>] { <span style="color:#66d9ef">return</span> obj.set(<span style="color:#e6db74">&#34;count&#34;</span>, val.count); })
+</span></span><span style="display:flex;"><span>         .transform([<span style="color:#f92672">&amp;</span>] { <span style="color:#66d9ef">return</span> std<span style="color:#f92672">::</span>move(obj); });
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Doing this a bunch of times gets old quickly, so of course we added
+reflection.</p>
+<h2 id="reflection">Reflection</h2>
+<p>Reflection allows you to inspect the fields a class has and how they
+map to JSON keys. Doing so is quite straightforward:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ReflectableTestStruct</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   std<span style="color:#f92672">::</span>string name;
+</span></span><span style="display:flex;"><span>   std<span style="color:#f92672">::</span>optional<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> count;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">template</span> <span style="color:#f92672">&lt;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">JSON</span><span style="color:#f92672">::</span>Reflect<span style="color:#f92672">&lt;</span>ReflectableTestStruct<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">constexpr</span> <span style="color:#66d9ef">auto</span> <span style="color:#a6e22e">operator</span>()(<span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span>val) <span style="color:#66d9ef">noexcept</span>
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> std<span style="color:#f92672">::</span>tuple{
+</span></span><span style="display:flex;"><span>         std<span style="color:#f92672">::</span>pair{<span style="color:#e6db74">&#34;name&#34;</span>, std<span style="color:#f92672">::</span>ref(val.name)},
+</span></span><span style="display:flex;"><span>         std<span style="color:#f92672">::</span>pair{<span style="color:#e6db74">&#34;count&#34;</span>, std<span style="color:#f92672">::</span>ref(val.count)},
+</span></span><span style="display:flex;"><span>      };
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>But this also gets a bit repetitive so if you want you can use
+a macro:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>APT_REFLECT(ReflectableTestStruct, APT_FIELD(name), APT_FIELD(count));
+</span></span></code></pre></div><p>The <code>APT_FIELD</code> macro also takes an optional second argument (a
+string) to specify the name in the JSON object.</p>
+<p>One thing to point out is that reflection handles missing fields and null values the same:
+A <code>std::nullopt</code> is skipped during Encode, and missing fields or <code>null</code> values yield <code>nullopt</code> equally.</p>
+<h2 id="whats-next">What&rsquo;s next?</h2>
+<p>The next step is likely <code>apt-core-io</code>,
+which implements an <code>EventLoop</code> and <code>FileDescriptor</code> utilizing the coroutine features from recent C++ standard versions.</p>
+<p>Then we can implement <code>APT::Varlink::Server</code> and <code>APT::Varlink::Client</code>
+on top of this.</p>
+<p>The aim is for <code>APT::Varlink</code> to likewise be self-describing; a method
+should have a <code>MethodSpec</code> and an interface an <code>InterfaceSpec</code>, and
+the IDL should be automatically generated from it, as well as the
+dispatch to the coroutines handling responses.</p>
+<p>This will allow us to have a fully type-safe and exception-free
+Varlink implementation with incredible ergonomics.</p>]]></description>
+      <source url="https://blog.jak-linux.org/post/index.xml">Julian Andres Klode</source>
+    </item>
+    <item>
+      <title>Automating encryption at rest with Canonical’s Charmed MongoDB</title>
+      <link>https://ubuntu.com//blog/encryption-at-rest-with-charmed-mongodb</link>
+      <guid isPermaLink="true">https://ubuntu.com//blog/encryption-at-rest-with-charmed-mongodb</guid>
+      <pubDate>Mon, 23 Nov 2026 10:00:00 GMT</pubDate>
+      <description><![CDATA[<p>When stakes are high, and your data is worth gold, you want to keep it secure from your client to your storage. This usually means setting up in-transit security with transport layer security (TLS), proper user and group policies with an identity platform. Finally, you’ll want data encryption at rest, which ensures that it encrypts database storage on disk, and the encryption keys are themselves stored securely.</p>
+<p>Without data encryption at rest, anyone with sufficient permissions can read the data from the files on the disk. If the disks are stolen, your data is not secured. With data encryption at rest properly implemented, no one will be able to recover the data without the encryption keys. Data encryption at rest can also be a matter of regulations and compliance on sensitive data.</p>
+<p>Before diving into the details of data encryption at rest in MongoDB, a word of warning: losing the encryption keys means losing access to your data. Without the key, no one can recover the data on the disk, not even you. This article will provide ways to store the encryption keys securely so you don’t lose them.</p>
+<h2 id="encryption-at-rest-in-mongodb">Encryption at rest in MongoDB</h2>
+<p>The first thing to note is that whether or not you will implement encryption at rest is a major decision. In Charmed MongoDB, encryption at rest must be configured during the initial deployment, before the database starts for the first time. It cannot be enabled or disabled on an existing deployment by changing the configuration. It is an immutable state of the database. Enabling it at runtime will leave the server unable to restart until the configuration is updated to disable it. Similarly, you can’t disable encryption at rest at runtime, since the database won’t be able to restart until the configuration is restored.</p>
+<p>For these reasons, you should always think carefully before enabling encryption at rest – even if the answer to the question “does my organization need encryption at rest?” is almost always a resounding yes.</p>
+<h3 id="master-key-and-database-keys">Master key and database keys</h3>
+<p>That’s enough with the warnings; let’s dig into how encryption at rest works in MongoDB. Canonical’s Charmed MongoDB Operator supports data encryption at rest of the data using a two-level key hierarchy, and is local to each instance.</p>
+<p>First, for each instance of MongoDB, a master key is created. This master key is used to encrypt a special database, the <em>key database</em> that contains one encryption key per database. So two different kind of keys are to be differentiated, as they represent different steps:</p>
+<ul>
+<li>The <em>master key</em> is stored separately from the database. It requires external management and is required to start the server. This key encrypts the <em>key database</em>.</li>
+<li>A <em>database key</em> is stored in the <em>key database</em> on the server. There is one key per database, used to encrypt this specific database, on this specific instance.</li>
+</ul>
+<p>This two-level encryption ensures that one key only is used per database, not a single key for all the data. Moreover, it also provides an easy way to rotate encryption keys without having to re-encrypt each entry in the database: rotating the <em>master key</em> is enough. Only the <em>key database</em> will be re-encrypted with the new <em>master key</em>, while the individual <em>database keys</em> remain unchanged. There is no need to re-encrypt all the data.</p>
+<div class="wp-caption aligncenter" id="attachment_132738" style="width: 885px"><img alt="" height="326" loading="lazy" sizes="(min-width: 875px) 875px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_875/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10d2%2Fencryption-at-rest.excalidraw.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10d2%2Fencryption-at-rest.excalidraw.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10d2%2Fencryption-at-rest.excalidraw.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10d2%2Fencryption-at-rest.excalidraw.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10d2%2Fencryption-at-rest.excalidraw.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_875/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F10d2%2Fencryption-at-rest.excalidraw.png 875w" width="875"/><p class="wp-caption-text" id="caption-attachment-132738">Figure 1 The two-level encryption mechanism used by MongoDB</p></div>
+<p style="text-align: left;">Time for another warning: none of those keys should ever be lost, so no matter how the <em>master key</em> is stored, it should be backed up as well. If you’re taking file-based backups of your system, ensure that the <em>key database</em> is backed up. Losing the <em>key database</em> means losing access to your data.</p>
+<h3 id="storing-the-master-key-securely">Storing the master key securely</h3>
+<p>As we’ve seen, the <em>master key</em> is critical data as it allows us to encrypt and decrypt the data. Owning the key gives access to the data, so a secure management and storage of the key is absolutely essential. A few different methods are available to store the key: local file, KMIP or HashiCorp Vault KV engine.</p>
+<p>While you can use a local file to store the master key, we don’t recommend it for production. The local file lives on the server, so if the machine is compromised, it is easy to get the master key and decrypt all the data. What’s more, it does not support rotating the key, which would fail any well-designed compliance test, and you wouldn’t be able to recover from a master key being leaked.</p>
+<p>Percona Server for MongoDB (which we package in Charmed MongoDB) supports multiple backends for storing the master key securely: HashiCorp Vault, OpenBao, or any Key Management Interoperability Protocol (KMIP) server.</p>
+<p>While KMIP is the new state-of-the-art protocol for a secure transfer of keys, few implementations exist and even fewer are production ready and open source. The enterprise version of HashiCorp Vault provides it, but not the Community Edition, for example. As we aim at providing an end-to-end, production-stable open source experience, we decided not to continue with this solution.</p>
+<p>HashiCorp Vault (and its fork OpenBao) support the KV Engine, which stores key-value secrets securely, with restricted scope access. Crucially, it supports secret versioning and rotation. Secret versioning enables users to keep track of the older revisions of the secret inside Vault. Meanwhile, secret rotation does what the name suggests: it enables MongoDB to request a secret rotation. This covers both scenarios, either the master key is leaked and the secret needs rotation immediately, or a compliance regulation requires rotating the key every year. You should make sure that your Vault/OpenBao instance is backed up regularly, and that the data can be restored.</p>
+<h3 id="limitations-of-those-implementations">Limitations of those implementations</h3>
+<p>A few cases are not entirely covered by the data encryption at rest implementation:</p>
+<ul>
+<li>The <em>master key</em> rotation does not replace the individual keys. It changes only the <em>master key</em> that protects the <em>key database</em>. However as the <em>database keys</em> are only stored unencrypted in memory, this should not be a problem.</li>
+<li>Encryption at rest does not provide process-level security. If someone were to dump the memory of a process, it will get access to the <em>database key</em> and the <em>master key</em>. If you want a higher level of security on your running processes, we recommend that you have a look at <a href="https://ubuntu.com/confidential-computing">confidential computing</a> as an additional protection against infrastructure threats.</li>
+</ul>
+<h3 id="rotating-the-master-key">Rotating the master key</h3>
+<p>Rotating the master key is a three step process: stop MongoDB, restart it with a specific argument, and restart it for good. When restarted with the argument to rotate the master key, MongoDB will restart, rotate the master key and exit again. Finally, remove the extra option from the CLI or the file, and restart. MongoDB will now use the new key to decrypt the <em>key database</em>. The rotation is now complete.</p>
+<div class="sourceCode" id="cb1">
+<pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><span class="co"># First, stop mongodb </span></span>
+<span id="cb1-2"><span class="fu">sudo</span> snap stop charmed-mongodb.mongod</span>
+<span id="cb1-3"><span class="co"># This will rotate the master key and then exit</span></span>
+<span id="cb1-4"><span class="fu">sudo</span> snap run charmed-mongodb.mongod-cli <span class="at">--vaultRotateMasterKey</span> </span>
+<span id="cb1-5"><span class="co"># This picks the new key and starts the server again.</span></span>
+<span id="cb1-6"><span class="fu">sudo</span> snap start charmed-mongodb.mongod</span></code></pre>
+</div>
+<p>This process rotates the master key, and re-encrypts the <em>key database</em> only – the entire dataset is not changed. This is a tradeoff as re-encrypting the entire dataset could take a very long time in large deployments. Below, we’ll show that this can be achieved in one command when using the Charmed MongoDB Operator.</p>
+<p>As you can see, the master key rotation for a node can only be done offline, and not online. This means that it must be done one member at a time within each relevant replica set (on a replica set deployment, or in a sharded deployment) to ensure high availability. This process can be cumbersome on large deployments, but provides an opportunity for well-engineered automation.</p>
+<h2 id="charmed-mongodb-operator-data-encryption-at-rest-support">Charmed MongoDB Operator data encryption at rest support</h2>
+<p>Canonical’s NoSQL team has worked hard to provide seamless support of data encryption at rest for our <a href="https://charmhub.io/mongodb">Charmed MongoDB Operator</a> and <a href="https://charmhub.io/mongodb-k8s">Charmed MongoDB K8s Operator</a>. It features automated data encryption at rest, key loss prevention, master key rotation, and alert rules in case anything goes wrong. It also prevents any restart that would leave the deployment broken.</p>
+<p>To simplify deployments, we prepared a Terraform module which can deploy the whole stack in a few simple commands, which you can find <a href="https://github.com/canonical/charms-reference-architectures/">in this repository</a>. This implementation uses <a href="https://charmhub.io/vault">Vault Operator</a> (or <a href="https://charmhub.io/vault-k8s">Vault K8S Operator</a>) as a backend to store the master key, and a Vault Agent to ensure that MongoDB always has access to a valid token. It ensures that the system stays highly available during all the necessary operations.</p>
+<p>A production ready feature would not be fully ready without dedicated observability. Charmed MongoDB has exporters running, so you can integrate it with your observability stack or use the <a href="https://canonical.com/observability/docs/track-3.0">Canonical Observability Stack (COS)</a>. It also aims at providing observability and alerting on all the services it runs, including the side services such as Vault Agent. This gives the system administrator visibility over the full ecosystem, enabling them to understand the health of the entire system more easily.</p>
+<p>Finally, to ensure that you don’t lose your master key, you can back up Vault Operator with the <a href="https://charmhub.io/s3-integrator">S3 Integrator</a>. We strongly recommend that you backup your Vault deployment to ensure that the data is safe. Don’t store Vault backups in the same bucket with your data backups; make sure that Vault backups are stored in their own secure place with very limited access. Ensure that you have regular backup and restore testing as part of your disaster-recovery plan to ensure that you can recover your keys from the backups.</p>
+<p>With a working Vault Operator deployment (see <a href="https://canonical-vault-charms.readthedocs-hosted.com/en/2.0/">the documentation</a>), the deployment is transparent:</p>
+<div class="sourceCode" id="cb2">
+<pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><span class="ex">juju</span> deploy mongodb <span class="at">--channel</span> 8/stable <span class="at">--config</span> enable-encryption-at-rest=true <span class="at">-n</span> 3</span>
+<span id="cb2-2"><span class="ex">juju</span> integrate mongodb:vault-kv vault:vault-kv</span><span id="cb2-3"></span>
+<span id="cb2-4"><span class="co"># To rotate the key on unit &lt;n&gt;</span></span>
+<span id="cb2-5"><span class="ex">juju</span> run mongodb/<span class="op">&lt;</span>n<span class="op">&gt;</span> rotate-encryption-master-key</span></code></pre>
+</div>
+<h3 id="solving-high-availability-and-resiliency">Solving high availability and resiliency</h3>
+<p>A key challenge we had to address when designing Charmed MongoDB was high availability. Vault Operator provides an AppRole that can issue short-lived tokens (1h), which is usually not an issue as most services support AppRoles directly and can request the secrets through that AppRole. Percona MongoDB however suffers from a limitation, it does not support AppRoles, only token files.</p>
+<p>This would lead to issues in the event of unexpected restarts. If the server restarts for whatever reason – RAM issue, a server fault, the process being killed accidentally – it would not find the token file and would refuse to start, leaving the database server unable to start and leaving the HA at risk.</p>
+<p>We solved this using a specific feature of Hashicorp Vault, the Vault Agent. It authenticates using AppRole and maintains the token file by renewing the token or obtaining a replacement when needed. In this case, it is configured so that it will write the token in a file with very limited permissions, maintaining it always up to date. This ensures that MongoDB finds a valid token when it needs starting.</p>
+<div class="wp-caption aligncenter" id="attachment_132739" style="width: 885px"><img alt="" height="362" loading="lazy" sizes="(min-width: 875px) 875px, 100vw" src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_875/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F57ef%2Fmongodb-process-eer.png" srcset="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_460/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F57ef%2Fmongodb-process-eer.png 460w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_620/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F57ef%2Fmongodb-process-eer.png 620w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1036/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F57ef%2Fmongodb-process-eer.png 1036w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_1681/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F57ef%2Fmongodb-process-eer.png 1681w, https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_875/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2F57ef%2Fmongodb-process-eer.png 875w" width="875"/><p class="wp-caption-text" id="caption-attachment-132739">Figure 2 General deployment of Charmed MongoDB for data at rest encryption using Canonical Vault Operator</p></div>
+<h2 id="conclusion">Conclusion</h2>
+<p>Encryption at rest complements in-transit security (TLS, network segregation), access controls, secure policies, and secure key management. It should be the last step to secure your data end-to-end. It’s pointless to have data encryption at rest if anybody can take a sneak peek at your data or intercept it before it even reaches the database.</p>
+<p>However, when used as part of a robust security strategy, it ensures that sensitive data is protected up to the storage. This however does not provide run-time security, which can be obtained with <a href="https://ubuntu.com/confidential-computing">confidential computing</a>.</p>
+<p>Canonical’s Charmed MongoDB simplifies a lot of these security operations, including encryption at rest. It provides an easy way to set up and configure it, and provides clear metrics and actions for master key rotation. However, you remain responsible for protecting recovery material and testing backups. There is only so much we can automate!</p>
+<p>If there are just two takeaways from this article that you should remember about data at rest encryption, it is first that data at rest encryption is only valuable with proper in-transit encryption and access policies, and second that your master key should be stored securely, and you must never lose it.</p>
+<p>To learn more about deploying Canonical’s Charmed MongoDB on-premises in your own infrastructure, read <a href="https://canonical.com/data/mongodb/docs/8/how-to/encryption-at-rest/">the documentation</a>.</p>
+<p>To discuss Canonical’s Data solutions for your own use case, <a aria-label=" (opens in a new tab)" class="p-button--small p-button--positive" href="https://canonical.com/data#get-in-touch" rel="noreferrer noopener" target="_blank">get in touch with our Data team</a>.</p>]]></description>
       <source url="https://ubuntu.com/blog/feed/">Ubuntu Blog</source>
     </item>
     <item>
@@ -344,319 +482,6 @@ O website é produzido por Tiago Carrondo e o <a href="https://gitlab.com/podcas
 Os separadores de péssima qualidade foram tocados ao vivo e sem rede pelo Miguel, pelo que pedimos desculpa pelos incómodos causados. Os efeitos sonoros têm os seguintes créditos: Magic Christmas by lena_orsa &ndash; <a href="https://freesound.org/s/442791/">https://freesound.org/s/442791/</a> &ndash; License: Attribution NonCommercial 4.0; Breaking news intro music by humanoide9000 &ndash; <a href="https://freesound.org/s/760770/">https://freesound.org/s/760770/</a> &ndash; License: Attribution 4.0; Protest chant FX by mondofred &ndash; <a href="https://freesound.org/s/321577/">https://freesound.org/s/321577/</a> &ndash; License: Creative Commons 0.
 A arte de episódio foi criada por encomenda pela Shizamura - artista, ilustradora e autora de BD. Podem ficar a conhecer melhor a <a href="https://ciberlandia.pt/@shizamura">Shizamura na Ciberlândia</a> e no <a href="https://sarilho.net/">seu sítio web</a>.</p>]]></description>
       <source url="https://podcastubuntuportugal.org/feed/podcast/index.xml">Podcast Ubuntu Portugal</source>
-    </item>
-    <item>
-      <title>Ubuntu Weekly Newsletter Issue 970</title>
-      <link>https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-970/91441</link>
-      <guid isPermaLink="true">https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-970/91441</guid>
-      <pubDate>Tue, 10 Nov 2026 00:17:28 GMT</pubDate>
-      <description><![CDATA[<p></p><div class="lightbox-wrapper"><a class="lightbox" href="https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/3X/8/8/8831ee40a8aa53ba3972751d598fefba8ac7d279.png" data-download-href="/uploads/short-url/jqPUxySZDw2bO39PWjRKSjyjhDr.png?dl=1" title="header"><img src="https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/3X/8/8/8831ee40a8aa53ba3972751d598fefba8ac7d279.png" alt="header" data-base62-sha1="jqPUxySZDw2bO39PWjRKSjyjhDr" width="522" height="111"></a></div><p></p>
-<h1><a name="p-236785-ubuntu-weekly-news-1" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-weekly-news-1" aria-label="Heading link"></a>Ubuntu Weekly News</h1>
-<h2><a name="p-236785-uwn-issue-970-november-8-14-2026-2" class="anchor" href="https://discourse.ubuntu.com#p-236785-uwn-issue-970-november-8-14-2026-2" aria-label="Heading link"></a>UWN Issue 970 November 8-14 2026.</h2>
-<p>Welcome to the Ubuntu Weekly Newsletter, Issue 970 for the week of November 8 - 14, 2026.</p>
-<h2><a name="p-236785-in-this-issue-3" class="anchor" href="https://discourse.ubuntu.com#p-236785-in-this-issue-3" aria-label="Heading link"></a>In this Issue</h2>
-<ul>
-<li>Ubuntu Summit 26.10 (November 12-13 2026)</li>
-<li>Welcome New Members and Developers</li>
-<li>Ubuntu Stats</li>
-<li>Hot in Support</li>
-<li>Other Meeting Reports</li>
-<li>Upcoming Meetings and Events</li>
-<li>Ubuntu Circles! (LoCo) Events</li>
-<li>Ubuntu Discourse</li>
-<li>Introducing initial upki support</li>
-<li>Other Community News</li>
-<li>Ubuntu Cloud News</li>
-<li>Canonical News</li>
-<li>In the Press</li>
-<li>In the Blogosphere</li>
-<li>Featured Audio and Video</li>
-<li>Security and Updates for Ubuntu 22.04, 24.04, 26.04 and 26.10</li>
-<li>And much more!</li>
-</ul>
-<h2><a name="p-236785-general-community-news-4" class="anchor" href="https://discourse.ubuntu.com#p-236785-general-community-news-4" aria-label="Heading link"></a>General Community News</h2>
-<h3><a name="p-236785-ubuntu-summit-2610-november-12-13-2026-5" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-summit-2610-november-12-13-2026-5" aria-label="Heading link"></a>Ubuntu Summit 26.10 (November 12-13 2026)</h3>
-<p>The Ubuntu Summit 26.10 has just been held, and whilst most articles telling us about it (if we weren’t watching it live) are yet to be published, some links on the Summit are as follows.</p>
-<ul>
-<li>Ubuntu Summit 26.10 Posts - <a href="https://discourse.ubuntu.com/c/ubuntu-summit/420/none">https://discourse.ubuntu.com/c/ubuntu-summit/420/none</a></li>
-<li>Ubuntu Summit 26.10 Timetable - <a href="https://discourse.ubuntu.com/t/ubuntu-summit-26-10-timetable/90216">https://discourse.ubuntu.com/t/ubuntu-summit-26-10-timetable/90216</a></li>
-<li>Jon Seager: opening remarks for the Ubuntu Summit 26.10 - <a href="https://youtu.be/p5U_ZAoT_qw?is=ngpqykkzelD67dJx">https://youtu.be/p5U_ZAoT_qw?is=ngpqykkzelD67dJx</a></li>
-<li>Ubuntu Summit 26.10 Day One - <a href="https://www.youtube.com/watch?v=UAepri4WKiA">https://www.youtube.com/watch?v=UAepri4WKiA</a></li>
-<li>Ubuntu Summit 26.10 Day Two - <a href="https://www.youtube.com/watch?v=u9j-Ih_5Cw8">https://www.youtube.com/watch?v=u9j-Ih_5Cw8</a></li>
-<li>How Local AI is transforming Ubuntu accessibility - <a href="https://www.youtube.com/watch?v=eBMQ-eJSJmA">https://www.youtube.com/watch?v=eBMQ-eJSJmA</a></li>
-</ul>
-<h3><a name="p-236785-welcome-new-members-and-developers-6" class="anchor" href="https://discourse.ubuntu.com#p-236785-welcome-new-members-and-developers-6" aria-label="Heading link"></a>Welcome New Members and Developers</h3>
-<ul>
-<li>Nadzeya Hutsko (nadzeya); Ubuntu Core Developer - <a href="https://lists.ubuntu.com/archives/ubuntu-devel/2026-November/043678.html">https://lists.ubuntu.com/archives/ubuntu-devel/2026-November/043678.html</a></li>
-</ul>
-<p>Congratulations Nadzeya!</p>
-<h2><a name="p-236785-ubuntu-stats-7" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-stats-7" aria-label="Heading link"></a>Ubuntu Stats</h2>
-<h3><a name="p-236785-bug-stats-8" class="anchor" href="https://discourse.ubuntu.com#p-236785-bug-stats-8" aria-label="Heading link"></a>Bug Stats</h3>
-<ul>
-<li>Open: 138222 (+201)</li>
-<li>Critical: 296 (-3)</li>
-<li>Unconfirmed: 73948 (+139)</li>
-</ul>
-<p>As always, the Bug Squad needs more help. If you want to get started, please see: <a href="https://wiki.ubuntu.com/BugSquad">https://wiki.ubuntu.com/BugSquad</a></p>
-<h3><a name="p-236785-translations-9" class="anchor" href="https://discourse.ubuntu.com#p-236785-translations-9" aria-label="Heading link"></a>Translations</h3>
-<ul>
-<li>Swedish: 100.00% (0/3755)</li>
-<li>Albanian: 98.38% (6164/0)</li>
-<li>Ukrainian: 89.14% (41414/1205)</li>
-<li>German: 87.02% (49496/390)</li>
-<li>French: 85.99% (53434/6617)</li>
-</ul>
-<h2><a name="p-236785-hot-in-support-10" class="anchor" href="https://discourse.ubuntu.com#p-236785-hot-in-support-10" aria-label="Heading link"></a>Hot in Support</h2>
-<h3><a name="p-236785-ubuntu-community-discourse-trending-top-5-threads-11" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-community-discourse-trending-top-5-threads-11" aria-label="Heading link"></a>Ubuntu Community Discourse Trending Top 5 Threads</h3>
-<ul>
-<li>‘mysql_native_password’ error messages on Ubuntu 26.04 LTS server - <a href="https://discourse.ubuntu.com/t/mysql-native-password-error-messages-on-ubuntu-26-04-lts-server/91206">https://discourse.ubuntu.com/t/mysql-native-password-error-messages-on-ubuntu-26-04-lts-server/91206</a></li>
-<li>Variation on no password login - <a href="https://discourse.ubuntu.com/t/variation-on-no-password-login/91386">https://discourse.ubuntu.com/t/variation-on-no-password-login/91386</a></li>
-<li>Struggling to install ubuntu on my 2015 macbook pro using usb stick - <a href="https://discourse.ubuntu.com/t/struggling-to-install-ubuntu-on-my-2015-macbook-pro-using-usb-stick/91395">https://discourse.ubuntu.com/t/struggling-to-install-ubuntu-on-my-2015-macbook-pro-using-usb-stick/91395</a></li>
-<li>Ubuntu 26.10, LUKS and Plasma/KDE - <a href="https://discourse.ubuntu.com/t/ubuntu-26-10-luks-and-plasma-kde/91911">https://discourse.ubuntu.com/t/ubuntu-26-10-luks-and-plasma-kde/91911</a></li>
-<li>No connection to internet - <a href="https://discourse.ubuntu.com/t/no-connection-to-internet/91945">https://discourse.ubuntu.com/t/no-connection-to-internet/91945</a><br>
-Find more support at: <a href="https://discourse.ubuntu.com/c/support-and-help/306">https://discourse.ubuntu.com/c/support-and-help/306</a></li>
-</ul>
-<h3><a name="p-236785-ask-ubuntu-top-questions-12" class="anchor" href="https://discourse.ubuntu.com#p-236785-ask-ubuntu-top-questions-12" aria-label="Heading link"></a>Ask Ubuntu Top Questions</h3>
-<ul>
-<li>Kubuntu 26.04 - Greek as a second language - <a href="https://askubuntu.com/questions/1570896/kubuntu-26-04-greek-as-a-second-language">https://askubuntu.com/questions/1570896/kubuntu-26-04-greek-as-a-second-language</a></li>
-<li>Weird results when I tested dd to REPLICATE a HDD - <a href="https://askubuntu.com/questions/1570921/weird-results-when-i-tested-dd-to-replicate-a-hdd">https://askubuntu.com/questions/1570921/weird-results-when-i-tested-dd-to-replicate-a-hdd</a></li>
-<li>Ubuntu 26.04 Lts support for old php versions - <a href="https://askubuntu.com/questions/1570834/ubuntu-26-04-lts-support-for-old-php-versions">https://askubuntu.com/questions/1570834/ubuntu-26-04-lts-support-for-old-php-versions</a></li>
-<li>How to download Ubuntu 24.0.5 LTS? - <a href="https://askubuntu.com/questions/1570878/how-to-download-ubuntu-24-04.5-lts">https://askubuntu.com/questions/1570878/how-to-download-ubuntu-24-04.5-lts</a></li>
-<li>Ubuntu Desktop sharing auto locks - <a href="https://askubuntu.com/questions/1570829/ubuntu-desktop-sharing-auto-locks">https://askubuntu.com/questions/1570829/ubuntu-desktop-sharing-auto-locks</a></li>
-</ul>
-<p>Ask (and answer!) questions at: <a href="https://askubuntu.com/">https://askubuntu.com/</a></p>
-<h2><a name="p-236785-other-meeting-reports-13" class="anchor" href="https://discourse.ubuntu.com#p-236785-other-meeting-reports-13" aria-label="Heading link"></a>Other Meeting Reports</h2>
-<ul>
-<li>Ubuntu Flavor sync meeting notes: 9 November 2026 - <a href="https://discourse.ubuntu.com/t/ubuntu-flavor-sync-meeting-notes-9-november-2026/91410">https://discourse.ubuntu.com/t/ubuntu-flavor-sync-meeting-notes-9-november-2026/91410</a></li>
-<li>[daily] Server Triage Reports - <a href="https://discourse.ubuntu.com/c/project/server/17">https://discourse.ubuntu.com/c/project/server/17</a></li>
-<li>Ubuntu Governance meeting sync notes - 10 Nov 2026 - <a href="https://discourse.ubuntu.com/t/ubuntu-governance-meeting-sync-notes-10-nov-2026/91544/">https://discourse.ubuntu.com/t/ubuntu-governance-meeting-sync-notes-10-nov-2026/91544/</a></li>
-<li>utkarsh2102 (Utkarsh Gupta): FOSS Activities in October 2026 - <a href="https://utkarsh2102.org/posts/foss-in-oct-26/">https://utkarsh2102.org/posts/foss-in-oct-26/</a></li>
-<li>Foundations Team Updates - 2026-11-12 - <a href="https://discourse.ubuntu.com/t/foundations-team-updates-2026-11-12/91795">https://discourse.ubuntu.com/t/foundations-team-updates-2026-11-12/91795</a></li>
-</ul>
-<h2><a name="p-236785-upcoming-meetings-and-events-14" class="anchor" href="https://discourse.ubuntu.com#p-236785-upcoming-meetings-and-events-14" aria-label="Heading link"></a>Upcoming Meetings and Events</h2>
-<ul>
-<li>Ubuntu HPC weekly community call: Wednesday, 18 November, 4:30 - 5:00 PM - <a href="https://meet.jit.si/Ubuntu-HPC">https://meet.jit.si/Ubuntu-HPC</a> | <a href="https://matrix.to/#/#hpc:ubuntu.com" rel="noopener nofollow ugc">https://matrix.to/#/#hpc:ubuntu.com</a></li>
-<li>Lubuntu Weekly Standup: Thursday 19 November, 9:00 - 10:00 PM - <a href="https://matrix.to/#/#lubuntu-devel:ubuntu.com" rel="noopener nofollow ugc">https://matrix.to/#/#lubuntu-devel:ubuntu.com</a> | <a href="https://discourse.ubuntu.com/t/lubuntu-weekly-standup/43699">https://discourse.ubuntu.com/t/lubuntu-weekly-standup/43699</a></li>
-</ul>
-<p>Times shown are UTC unless otherwise specified. For more details and further dates please visit: <a href="https://discourse.ubuntu.com/upcoming-events">https://discourse.ubuntu.com/upcoming-events</a></p>
-<h2><a name="p-236785-ubuntu-circles-loco-events-15" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-circles-loco-events-15" aria-label="Heading link"></a>Ubuntu Circles! (LoCo) Events</h2>
-<p>The following LoCo team events are currently scheduled in the next two weeks:</p>
-<ul>
-<li>Atlanta Linux Enthusiasts: Linux In-Person Help Session; Wings and Things Tyrone, GA; Thursday, 19 November, 6:00 - 8:00 PM PM CDT - <a href="https://www.heylo.com/event/a3bc2ebc-d71b-4019-94e7-eadf3a1b992c">https://www.heylo.com/event/a3bc2ebc-d71b-4019-94e7-eadf3a1b992c</a></li>
-<li>Arizona LoCo: Virtual Installfest/Linux Workshop on line; 21 November, 1000-1600 - Big Blue Button, <a href="https://bbb.azloco.net">https://bbb.azloco.net</a> (co-hosted with the Phoenix Linux User Group)</li>
-<li>Atlanta Linux Enthusiasts: Linux Help Session (Online) - Jitsi; 22 November, 3 PM CT - <a href="https://www.heylo.com/event/70bc7e82-dc43-43f9-9609-aca744a4f3fb">https://www.heylo.com/event/70bc7e82-dc43-43f9-9609-aca744a4f3fb</a></li>
-<li>Atlanta Linux Enthusiasts: Linux In-Person Help Session; Wings and Things Tyrone, GA; Thursday, 26 November, 6:00 - 8:00 PM PM CDT - <a href="https://www.heylo.com/event/a6160517-a6160517-ee0b-4473-9cf1-009465143d30">https://www.heylo.com/event/a6160517-a6160517-ee0b-4473-9cf1-009465143d30</a></li>
-</ul>
-<p>Looking beyond the next two weeks? Visit the respective Circles!/LoCo Team calendar to browse upcoming events.</p>
-<p>Please also see:</p>
-<ul>
-<li>Atlanta Linux Enthusiasts: <a href="https://ale.org/">https://ale.org/</a></li>
-<li>Ubuntu Arizona LoCo: <a href="https://discourse.ubuntu.com/t/upcoming-events-for-azloco/38466">https://discourse.ubuntu.com/t/upcoming-events-for-azloco/38466</a></li>
-<li>Registered LoCo contacts: <a href="https://discourse.ubuntu.com/c/locos/129">https://discourse.ubuntu.com/c/locos/129</a></li>
-</ul>
-<h2><a name="p-236785-ubuntu-discourse-16" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-discourse-16" aria-label="Heading link"></a>Ubuntu Discourse</h2>
-<h3><a name="p-236785-introducing-initial-upki-support-17" class="anchor" href="https://discourse.ubuntu.com#p-236785-introducing-initial-upki-support-17" aria-label="Heading link"></a>Introducing initial upki support</h3>
-<p>Rui Marques announces that Ubuntu 26.10 ships <code>curl</code> with upki revocation built in. We’re told this is a “first step towards browser-grade certificate verification across the entire OS”; this post gives us details of what we’ve now got. We’re shown a gif that demonstrates differences, told how it works, and it’s suggested to try it for ourselves. We’re also told why revocation matters, and what we should expect with Ubuntu 27.04. Thanks is given to Dirkjan Ochtman, Joe Birr-Pixton and Julian Andres Klode, with a link back to prior posts on the topic.</p>
-<p><a href="https://discourse.ubuntu.com/t/introducing-initial-upki-support/91540">https://discourse.ubuntu.com/t/introducing-initial-upki-support/91540</a></p>
-<ul>
-<li>Ubuntu 26.10 Begins Rolling Out upki Support For Certificate Revocation - <a href="https://www.phoronix.com/news/Ubuntu-26.10-Does-upki">https://www.phoronix.com/news/Ubuntu-26.10-Does-upki</a></li>
-</ul>
-<h2><a name="p-236785-other-community-news-18" class="anchor" href="https://discourse.ubuntu.com#p-236785-other-community-news-18" aria-label="Heading link"></a>Other Community News</h2>
-<h3><a name="p-236785-bringing-rust-into-ubuntu-at-scale-interview-with-jon-seager-19" class="anchor" href="https://discourse.ubuntu.com#p-236785-bringing-rust-into-ubuntu-at-scale-interview-with-jon-seager-19" aria-label="Heading link"></a>Bringing Rust into Ubuntu at Scale: Interview with Jon Seager</h3>
-<p>Denis Oleynikov presents an interview with Jon Seager which focuses on Ubuntu’s adoption of <code>uutils</code>, replacing GNU coreutils as core components in Ubuntu 26.10. We’re given a history of the transition, what Canonical learned in bringing Rust into core Ubuntu, and the many players in this transition. Also covered are Ubuntu Core Desktop, Workshop and more, with numerous quotes, and some links to prior related articles.</p>
-<p><a href="https://serokell.io/blog/ubuntu-rust-coreutils-jon-seager">https://serokell.io/blog/ubuntu-rust-coreutils-jon-seager</a></p>
-<h2><a name="p-236785-ubuntu-cloud-news-20" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-cloud-news-20" aria-label="Heading link"></a>Ubuntu Cloud News</h2>
-<ul>
-<li>Ubuntu Core 26 enters public preview on AWS, Azure, and Google Cloud - <a href="https://canonical.com/blog/ubuntu-core-26-public-cloud-preview">https://canonical.com/blog/ubuntu-core-26-public-cloud-preview</a></li>
-</ul>
-<h2><a name="p-236785-canonical-news-21" class="anchor" href="https://discourse.ubuntu.com#p-236785-canonical-news-21" aria-label="Heading link"></a>Canonical News</h2>
-<ul>
-<li>From desktop to cloud to road - <a href="https://ubuntu.com/blog/from-desktop-to-cloud-to-road">https://ubuntu.com/blog/from-desktop-to-cloud-to-road</a></li>
-</ul>
-<h2><a name="p-236785-in-the-press-22" class="anchor" href="https://discourse.ubuntu.com#p-236785-in-the-press-22" aria-label="Heading link"></a>In the Press</h2>
-<h3><a name="p-236785-ubuntu-plans-a-staged-rollout-for-linux-firmware-hwe-23" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-plans-a-staged-rollout-for-linux-firmware-hwe-23" aria-label="Heading link"></a>Ubuntu plans a staged rollout for linux-firmware-hwe</h3>
-<p>This post reminds us of Ubuntu’s separation plan in firmware delivery, and gives us specifics from Juerg Haefliger’s messages on the topic, including a link to the mailing list. With mention of prior articles (from Phoronix though no links given, see <a href="https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-969/90896#p-235663-ubuntu-moving-ahead-with-plans-for-splitting-up-linux-firmware-hwe-option-39">UWN 969</a>), we’re given some details and pointed to Juerg’s PPA for tenacious (27.04). Mention is made of planned rollout in stages across existing Ubuntu releases (26.10 &amp; 26.04).</p>
-<p><a href="https://www.neoteo.com/en/ubuntu-plans-a-staged-rollout-for-linux-firmware-hwe">https://www.neoteo.com/en/ubuntu-plans-a-staged-rollout-for-linux-firmware-hwe</a></p>
-<h2><a name="p-236785-in-the-blogosphere-24" class="anchor" href="https://discourse.ubuntu.com#p-236785-in-the-blogosphere-24" aria-label="Heading link"></a>In the Blogosphere</h2>
-<h3><a name="p-236785-xorg-server-21126-and-xwayland-24115-are-out-to-patch-more-security-issues-25" class="anchor" href="https://discourse.ubuntu.com#p-236785-xorg-server-21126-and-xwayland-24115-are-out-to-patch-more-security-issues-25" aria-label="Heading link"></a>XOrg Server 21.1.26 and Xwayland 24.1.15 Are Out to Patch More Security Issues</h3>
-<p>Marcus Nestor tells us of the release of Xorg Server 21.1.26 and XWayland 24.1.15. We’re told of security issues that are patched, and given brief descriptions - including CVE numbers of the vulnerabilities resolved in these releases. The link to Xorg Security Advisory is included, with us ‘urged’ to update when we can.</p>
-<p><a href="https://9to5linux.com/xorg-server-21-1-26-and-xwayland-24-1-15-are-out-to-patch-more-security-issues">https://9to5linux.com/xorg-server-21-1-26-and-xwayland-24-1-15-are-out-to-patch-more-security-issues</a></p>
-<h3><a name="p-236785-new-steam-client-update-introduces-linux-64-bit-support-steam-achievement-sets-26" class="anchor" href="https://discourse.ubuntu.com#p-236785-new-steam-client-update-introduces-linux-64-bit-support-steam-achievement-sets-26" aria-label="Heading link"></a>New Steam Client Update Introduces Linux 64-Bit Support, Steam Achievement Sets</h3>
-<p>Marcus Nestor writes about Valve’s release of a new stable Steam Client. The given details include it being the first stable release to run as a 64-bit application on Linux. Marcus touches on why the 64-bit execution matters to us, the fact that now the Steam Client runs inside a runtime container, and more. This is a somewhat extensive post, with a link to the official release notes, too.</p>
-<p><a href="https://9to5linux.com/new-steam-client-update-introduces-linux-64-bit-support-steam-achievement-sets">https://9to5linux.com/new-steam-client-update-introduces-linux-64-bit-support-steam-achievement-sets</a></p>
-<h3><a name="p-236785-running-android-apps-on-ubuntu-is-now-surprisingly-easy-27" class="anchor" href="https://discourse.ubuntu.com#p-236785-running-android-apps-on-ubuntu-is-now-surprisingly-easy-27" aria-label="Heading link"></a>Running Android apps on Ubuntu is now surprisingly easy</h3>
-<p>Joey Sneddon reminds us that “Ubuntu doesn’t run Android apps and games natively”, then tells us what Waydroid is, and what it can enable us to easily do. We’re told it’s just an <code>apt install</code> away (for Ubuntu 26.10 &amp; later). We are given details and shown screenshots, including some examples of commands Joey found useful in his exploration (such as changing display scale &amp; more). Joey also provides a list of common questions and their answers, before concluding with the question “Is Waydroid worth using?”. This is also a rather extensive post.</p>
-<p><a href="https://www.omgubuntu.co.uk/2026/11/android-apps-on-ubuntu-waydroid">https://www.omgubuntu.co.uk/2026/11/android-apps-on-ubuntu-waydroid</a></p>
-<h3><a name="p-236785-ubuntu-2704-tenacious-t-rex-daily-builds-are-now-available-for-download-28" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-2704-tenacious-t-rex-daily-builds-are-now-available-for-download-28" aria-label="Heading link"></a>Ubuntu 27.04 “Tenacious T-Rex” Daily Builds Are Now Available for Download</h3>
-<p>Marcus Nestor reports Ubuntu 27.04 “Tenacious T-Rex” daily builds are being published, and gives us the respective download links. Marcus advises that while the base currently is that of 26.10, he projects the upcoming tooling. He gives the standard caveat that these builds are not to be installed on production machines. Finally, pertinent dates are provided.</p>
-<p><a href="https://9to5linux.com/ubuntu-27-04-tenacious-t-rex-daily-builds-are-now-available-for-download">https://9to5linux.com/ubuntu-27-04-tenacious-t-rex-daily-builds-are-now-available-for-download</a></p>
-<h2><a name="p-236785-featured-audio-and-video-29" class="anchor" href="https://discourse.ubuntu.com#p-236785-featured-audio-and-video-29" aria-label="Heading link"></a>Featured Audio and Video</h2>
-<h3><a name="p-236785-linux-unplugged-episode-692-ubuntus-core-reset-30" class="anchor" href="https://discourse.ubuntu.com#p-236785-linux-unplugged-episode-692-ubuntus-core-reset-30" aria-label="Heading link"></a>LINUX Unplugged: Episode 692 - Ubuntu’s Core Reset</h3>
-<p>“Canonical’s Jon Seager joins us to unpack Ubuntu’s bold desktop reset, and what could be the biggest reimagining of Ubuntu in its history.”</p>
-<p><a href="https://linuxunplugged.com/692">https://linuxunplugged.com/692</a></p>
-<h3><a name="p-236785-portugal-podcast-episode-390-bili-bili-com-dobby-no-deti-31" class="anchor" href="https://discourse.ubuntu.com#p-236785-portugal-podcast-episode-390-bili-bili-com-dobby-no-deti-31" aria-label="Heading link"></a>Portugal Podcast: Episode 390 - Bili-bili com Dobby no Deti</h3>
-<p>“É um trabalho duro, mas alguém tem de o fazer: o Diogo vai comer ovos moles. Discutimos as novidades dos sabores de Ubuntu - Edubuntu, Ubuntu Studio, Kubuntu e ainda os ambientes gráficos Cinnamon, Lomiri, Unity, o regresso do Mate… O Miguel continua a gastar dinheiro colando antenas de rádio com fita-cola para se juntar a novas comunidades livres e vai matando ratos uns atrás dos outros, sem piedade. Entretanto, começámos uma campanha de solidariedade para o Natal: ajudem-no a decidir se deve optar por Ubuntu 26.04 com Gnome, Debian com Plasma ou até, sei lá, Lomiri ou Raspberry Pi OS agora disponível para 64 bit! Percorremos todas as notícias sobre os blogues e wiki da Canonical, demos a volta à agenda de eventos, aprender com o Terminal pode ser divertido (não, a sério!), rimos muito com a Nvidia e com a Microslop e ainda perorámos sobre GPS, sistemas de navegação inercial…e Super Tux Kart!”</p>
-<p><a href="https://podcastubuntuportugal.org/e390/">https://podcastubuntuportugal.org/e390/</a></p>
-<h3><a name="p-236785-ubuntu-onair-documentation-office-hours-24th-september-2026-32" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-onair-documentation-office-hours-24th-september-2026-32" aria-label="Heading link"></a>Ubuntu OnAir: Documentation Office Hours 24th September 2026</h3>
-<p>Agenda: Actions from previous meeting, Mir, Miriway, Lomiri, Miracle-wm, Schedule of office hours , and Any Other Business.</p>
-<p><a href="https://www.youtube.com/watch?v=GBdtO53Ktmw">https://www.youtube.com/watch?v=GBdtO53Ktmw</a> | <a href="https://discourse.ubuntu.com/t/mir-office-hours-2026-11-1115-15utc/90935/6">https://discourse.ubuntu.com/t/mir-office-hours-2026-11-1115-15utc/90935/6</a></p>
-<h2><a name="p-236785-security-and-updates-for-ubuntu-2204-2404-2604-and-2610-33" class="anchor" href="https://discourse.ubuntu.com#p-236785-security-and-updates-for-ubuntu-2204-2404-2604-and-2610-33" aria-label="Heading link"></a>Security and Updates for Ubuntu 22.04, 24.04, 26.04 and 26.10</h2>
-<h3><a name="p-236785-security-updates-34" class="anchor" href="https://discourse.ubuntu.com#p-236785-security-updates-34" aria-label="Heading link"></a>Security Updates</h3>
-<ul>
-<li>[USN-9001-2] ca-certificates update - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011504.html" class="inline-onebox">[USN-9001-2] ca-certificates update</a></li>
-<li>[USN-9007-1] FreeRDP vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011502.html" class="inline-onebox">[USN-9007-1] FreeRDP vulnerabilities</a></li>
-<li>[USN-9008-1] libnfs vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011503.html" class="inline-onebox">[USN-9008-1] libnfs vulnerability</a></li>
-<li>[USN-9009-1] OpenJDK 8 vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011510.html" class="inline-onebox">[USN-9009-1] OpenJDK 8 vulnerabilities</a></li>
-<li>[USN-9010-1] OpenJDK 11 vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011509.html" class="inline-onebox">[USN-9010-1] OpenJDK 11 vulnerabilities</a></li>
-<li>[USN-9011-1] pyasn1 vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011505.html" class="inline-onebox">[USN-9011-1] pyasn1 vulnerabilities</a></li>
-<li>[USN-9013-1] Fetchmail vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011506.html" class="inline-onebox">[USN-9013-1] Fetchmail vulnerabilities</a></li>
-<li>[USN-9004-1] OpenJDK 25 vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011507.html" class="inline-onebox">[USN-9004-1] OpenJDK 25 vulnerabilities</a></li>
-<li>[USN-9005-1] OpenJDK 27 vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011508.html" class="inline-onebox">[USN-9005-1] OpenJDK 27 vulnerabilities</a></li>
-<li>[USN-9015-1] OpenJDK 21 vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011511.html" class="inline-onebox">[USN-9015-1] OpenJDK 21 vulnerabilities</a></li>
-<li>[USN-9014-1] OpenJDK 17 vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011512.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011512.html</a></li>
-<li>[USN-9012-1] libheif vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011513.html" class="inline-onebox">[USN-9012-1] libheif vulnerability</a></li>
-<li>[USN-8890-3] libsoup regression - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011514.html" class="inline-onebox">[USN-8890-3] libsoup regression</a></li>
-<li>[USN-9016-1] Apache HTTP Server vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011515.html" class="inline-onebox">[USN-9016-1] Apache HTTP Server vulnerabilities</a></li>
-<li>[USN-9006-1] Perl vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011533.html" class="inline-onebox">[USN-9006-1] Perl vulnerability</a></li>
-<li>[USN-9018-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011516.html" class="inline-onebox">[USN-9018-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9019-1] Linux kernel (Azure) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011531.html" class="inline-onebox">[USN-9019-1] Linux kernel (Azure) vulnerabilities</a></li>
-<li>[USN-9020-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011517.html" class="inline-onebox">[USN-9020-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9021-1] Linux kernel (Raspberry Pi) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011551.html" class="inline-onebox">[USN-9021-1] Linux kernel (Raspberry Pi) vulnerabilities</a></li>
-<li>[USN-9022-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011525.html" class="inline-onebox">[USN-9022-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9023-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011520.html" class="inline-onebox">[USN-9023-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9024-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011529.html" class="inline-onebox">[USN-9024-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9025-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011521.html" class="inline-onebox">[USN-9025-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9026-1] Linux kernel (Azure) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011530.html" class="inline-onebox">[USN-9026-1] Linux kernel (Azure) vulnerabilities</a></li>
-<li>[USN-9027-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011527.html" class="inline-onebox">[USN-9027-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9028-1] Linux kernel (Azure CVM) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011518.html" class="inline-onebox">[USN-9028-1] Linux kernel (Azure CVM) vulnerabilities</a></li>
-<li>[USN-9029-1] Linux kernel (Raspberry Pi) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011528.html" class="inline-onebox">[USN-9029-1] Linux kernel (Raspberry Pi) vulnerabilities</a></li>
-<li>[USN-9030-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011519.html" class="inline-onebox">[USN-9030-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9031-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011526.html" class="inline-onebox">[USN-9031-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9032-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011524.html" class="inline-onebox">[USN-9032-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9033-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011522.html" class="inline-onebox">[USN-9033-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9034-1] Linux kernel (AWS) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011532.html" class="inline-onebox">[USN-9034-1] Linux kernel (AWS) vulnerabilities</a></li>
-<li>[USN-9035-1] Linux kernel vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011523.html" class="inline-onebox">[USN-9035-1] Linux kernel vulnerabilities</a></li>
-<li>[USN-9017-1] libgphoto2 vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011534.html" class="inline-onebox">[USN-9017-1] libgphoto2 vulnerabilities</a></li>
-<li>[USN-8946-2] Unbound vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011539.html" class="inline-onebox">[USN-8946-2] Unbound vulnerabilities</a></li>
-<li>[USN-9036-1] ca-certificates-java update - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011535.html" class="inline-onebox">[USN-9036-1] ca-certificates-java update</a></li>
-<li>[USN-9038-1] GStreamer Good Plugins, GStreamer Base Plugins vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011536.html" class="inline-onebox">[USN-9038-1] GStreamer Good Plugins, GStreamer Base Plugins vulnerabilities</a></li>
-<li>[USN-9037-1] HPLIP vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011537.html" class="inline-onebox">[USN-9037-1] HPLIP vulnerabilities</a></li>
-<li>[USN-9039-1] Linux kernel (Azure CVM) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011540.html" class="inline-onebox">[USN-9039-1] Linux kernel (Azure CVM) vulnerabilities</a></li>
-<li>[USN-9040-1] Linux kernel (Low Latency NVIDIA) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011541.html" class="inline-onebox">[USN-9040-1] Linux kernel (Low Latency NVIDIA) vulnerabilities</a></li>
-<li>[USN-8952-3] Tornado regression - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011538.html" class="inline-onebox">[USN-8952-3] Tornado regression</a></li>
-<li>[USN-9043-1] Linux kernel (NVIDIA) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011543.html" class="inline-onebox">[USN-9043-1] Linux kernel (NVIDIA) vulnerabilities</a></li>
-<li>[USN-9044-1] Linux kernel (NVIDIA BaseOS) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011544.html" class="inline-onebox">[USN-9044-1] Linux kernel (NVIDIA BaseOS) vulnerabilities</a></li>
-<li>[USN-9045-1] Linux kernel (NVIDIA) vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011545.html" class="inline-onebox">[USN-9045-1] Linux kernel (NVIDIA) vulnerability</a></li>
-<li>[USN-9041-1] uutils coreutils vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011542.html" class="inline-onebox">[USN-9041-1] uutils coreutils vulnerabilities</a></li>
-<li>[USN-9046-1] MySQL vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011546.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011546.html</a></li>
-<li>[USN-9047-1] asyncpg vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011548.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011548.html</a></li>
-<li>[USN-9048-1] AWL vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011552.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011552.html</a></li>
-<li>[USN-9050-1] DAViCal vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011549.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011549.html</a></li>
-<li>[USN-9049-1] btrbk vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011553.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011553.html</a></li>
-<li>[USN-9051-1] FastCGI vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011554.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011554.html</a></li>
-<li>[USN-9052-1] Logback vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011555.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011555.html</a></li>
-<li>[USN-9053-1] NetworkManager-ssh vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011556.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011556.html</a></li>
-<li>[USN-9053-1] NetworkManager-ssh vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011566.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011566.html</a></li>
-<li>[USN-9054-1] Babel vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011550.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011550.html</a></li>
-<li>[USN-9055-1] pecl_http vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011557.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011557.html</a></li>
-<li>[USN-9056-1] Prosody Community Modules vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011558.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011558.html</a></li>
-<li>[USN-9057-1] rkhunter vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011559.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011559.html</a></li>
-<li>[USN-9058-1] Action Pack Page Caching vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011560.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011560.html</a></li>
-<li>[USN-9059-1] ruby-jwt vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011561.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011561.html</a></li>
-<li>[USN-9061-1] Apache Shiro vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011562.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011562.html</a></li>
-<li>[USN-9060-1] kramdown vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011563.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011563.html</a></li>
-<li>[USN-9062-1] SNMPTT vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011564.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011564.html</a></li>
-<li>[USN-9063-1] Yodl vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011565.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011565.html</a></li>
-<li>[USN-9042-1] .NET vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011547.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011547.html</a></li>
-<li>[USN-9018-2] Linux kernel (HWE) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011567.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011567.html</a></li>
-<li>[USN-9066-1] Linux kernel (HWE) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011568.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011568.html</a></li>
-<li>[USN-9065-1] GNU C Library vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011569.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011569.html</a></li>
-<li>[USN-8895-2] Sudo vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011570.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011570.html</a></li>
-<li>[USN-9090-1] Apache HTTP Server vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011571.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011571.html</a></li>
-<li>[USN-9064-1] Pillow vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011581.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011581.html</a></li>
-<li>[USN-9067-1] Charybdis vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011582.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011582.html</a></li>
-<li>[USN-9068-1] Debian-LAN vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011572.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011572.html</a></li>
-<li>[USN-9069-1] libseccomp-golang vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011583.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011583.html</a></li>
-<li>[USN-9070-1] Hiredis vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011584.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011584.html</a></li>
-<li>[USN-9071-1] HTTPie vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011573.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011573.html</a></li>
-<li>[USN-9072-1] IMAPFilter vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011585.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011585.html</a></li>
-<li>[USN-9073-1] Lhasa vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011586.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011586.html</a></li>
-<li>[USN-9074-1] JGraphX vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011587.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011587.html</a></li>
-<li>[USN-9075-1] libjwt vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011588.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011588.html</a></li>
-<li>[USN-9076-1] libsolv vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011589.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011589.html</a></li>
-<li>[USN-9077-1] MiniSSDPd vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011590.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011590.html</a></li>
-<li>[USN-9078-1] ncmpc vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011591.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011591.html</a></li>
-<li>[USN-9079-1] nfdump vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011574.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011574.html</a></li>
-<li>[USN-9081-1] OpenConnect vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011592.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011592.html</a></li>
-<li>[USN-9080-1] tough-cookie vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011575.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011575.html</a></li>
-<li>[USN-9082-1] pngquant vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011593.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011593.html</a></li>
-<li>[USN-9083-1] gevent vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011576.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011576.html</a></li>
-<li>[USN-9084-1] Radicale vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011577.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011577.html</a></li>
-<li>[USN-9085-1] Ruby OpenID vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011578.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011578.html</a></li>
-<li>[USN-9086-1] SA-Exim vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011594.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011594.html</a></li>
-<li>[USN-9087-1] signing-party vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011579.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011579.html</a></li>
-<li>[USN-9088-1] TigerVNC vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011580.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011580.html</a></li>
-<li>[USN-9089-1] x11vnc vulnerability - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011595.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011595.html</a></li>
-<li>[USN-9091-1] Linux kernel (NVIDIA Tegra) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011597.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011597.html</a></li>
-<li>[USN-9027-2] Linux kernel (FIPS) vulnerabilities - <a href="https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011596.html">https://lists.ubuntu.com/archives/ubuntu-security-announce/2026-November/011596.html</a></li>
-</ul>
-<h3><a name="p-236785-ubuntu-2204-updates-35" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-2204-updates-35" aria-label="Heading link"></a>Ubuntu 22.04 Updates</h3>
-<p>Maintenance Activity: <a href="https://lists.ubuntu.com/archives/jammy-changes/2026-November/">https://lists.ubuntu.com/archives/jammy-changes/2026-November/</a></p>
-<p>End of Standard Support: April 2027</p>
-<h3><a name="p-236785-ubuntu-2404-updates-36" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-2404-updates-36" aria-label="Heading link"></a>Ubuntu 24.04 Updates</h3>
-<p>Maintenance Activity: <a href="https://lists.ubuntu.com/archives/noble-changes/2026-November/">https://lists.ubuntu.com/archives/noble-changes/2026-November/</a></p>
-<p>End of standard support: April 2029</p>
-<h3><a name="p-236785-ubuntu-2604-updates-37" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-2604-updates-37" aria-label="Heading link"></a>Ubuntu 26.04 Updates</h3>
-<p>Maintenance Activity: <a href="https://lists.ubuntu.com/archives/resolute-changes/2026-November/">https://lists.ubuntu.com/archives/resolute-changes/2026-November/</a></p>
-<p>End of Standard Support: April 2031</p>
-<h3><a name="p-236785-ubuntu-2610-updates-38" class="anchor" href="https://discourse.ubuntu.com#p-236785-ubuntu-2610-updates-38" aria-label="Heading link"></a>Ubuntu 26.10 Updates</h3>
-<p>Maintenance Activity: <a href="https://lists.ubuntu.com/archives/stonking-changes/2026-November/">https://lists.ubuntu.com/archives/stonking-changes/2026-November/</a></p>
-<p>End of Life: July 2027</p>
-<p>[The Release Update Listings] have become unwieldy so we’re providing links.</p>
-<h2><a name="p-236785-subscribe-39" class="anchor" href="https://discourse.ubuntu.com#p-236785-subscribe-39" aria-label="Heading link"></a>Subscribe</h2>
-<p>Get your copy of the Ubuntu Weekly Newsletter delivered each week to you via email at: <a href="https://lists.ubuntu.com/mailman/listinfo/ubuntu-news">https://lists.ubuntu.com/mailman/listinfo/ubuntu-news</a></p>
-<p>Or follow us via our various social media presences:</p>
-<ul>
-<li><a href="https://www.facebook.com/UbuntuWeeklyNewsletter">https://www.facebook.com/UbuntuWeeklyNewsletter</a></li>
-<li><a href="https://twitter.com/Ubuntu_News">https://twitter.com/Ubuntu_News</a></li>
-<li><a href="https://t.me/ubuntunewsletter">https://t.me/ubuntunewsletter</a> (Telegram)</li>
-<li><a href="https://ubuntu.social/">https://ubuntu.social/</a> (Mastodon)</li>
-<li><a href="https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss">https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss</a> (our RSS feed)</li>
-</ul>
-<h2><a name="p-236785-archives-40" class="anchor" href="https://discourse.ubuntu.com#p-236785-archives-40" aria-label="Heading link"></a>Archives</h2>
-<p>For recent issues of the Ubuntu Weekly Newsletter <a href="https://discourse.ubuntu.com/c/uwn/uwn-issues/419">Issue 786 &amp; later please visit our Discourse page:</a> or <a href="https://ubuntu.com/community/uwn/">our Portal page:</a> that is easier to read. The older WIKI issues (809 and earlier) are available at<a href="https://wiki.ubuntu.com/UbuntuWeeklyNewsletter/Archive">: UbuntuWeeklyNewsletter/Archive</a>.</p>
-<h2><a name="p-236785-further-news-41" class="anchor" href="https://discourse.ubuntu.com#p-236785-further-news-41" aria-label="Heading link"></a>Further News</h2>
-<p>As always you can find more Ubuntu news and announcements at:</p>
-<ul>
-<li><a href="https://ubuntu.com/blog/">https://ubuntu.com/blog/</a></li>
-<li><a href="https://ubuntu.com/community">https://ubuntu.com/community</a></li>
-</ul>
-<h2><a name="p-236785-conclusion-42" class="anchor" href="https://discourse.ubuntu.com#p-236785-conclusion-42" aria-label="Heading link"></a>Conclusion</h2>
-<p>Thank you for reading the Ubuntu Weekly Newsletter.</p>
-<p>See you next week!</p>
-<h2><a name="p-236785-credits-43" class="anchor" href="https://discourse.ubuntu.com#p-236785-credits-43" aria-label="Heading link"></a>Credits</h2>
-<p>The Ubuntu Weekly Newsletter is brought to you by:</p>
-<ul>
-<li>Krytarik Raido</li>
-<li>Bashing-om</li>
-<li>Chris Guiver</li>
-<li>Wild Man</li>
-<li>irihapeti</li>
-<li>Denis Oleynikov</li>
-<li>And many others</li>
-</ul>
-<h2><a name="p-236785-glossary-of-terms-44" class="anchor" href="https://discourse.ubuntu.com#p-236785-glossary-of-terms-44" aria-label="Heading link"></a>Glossary of Terms</h2>
-<p>Other acronyms can be found at: <a href="https://discourse.ubuntu.com/t/glossary-uwn/42405">https://discourse.ubuntu.com/t/glossary-uwn/42405</a></p>
-<h2><a name="p-236785-get-involved-45" class="anchor" href="https://discourse.ubuntu.com#p-236785-get-involved-45" aria-label="Heading link"></a>Get Involved</h2>
-<p>The Ubuntu community consists of individuals and teams, working on different aspects of the distribution, giving advice and technical support, and helping to promote Ubuntu to a wider audience. No contribution is too small, and anyone can help. It’s your chance to get in on all the community fun associated with developing and promoting Ubuntu. More on this at: <a href="https://community.ubuntu.com/contribute/">https://community.ubuntu.com/contribute/</a></p>
-<p>Or get involved with the Ubuntu Weekly Newsletter team! We always need summary writers and editors, if you’re interested, learn more at: <a href="https://discourse.ubuntu.com/t/joining-the-ubuntu-weekly-newsletter-team/40929">https://discourse.ubuntu.com/t/joining-the-ubuntu-weekly-newsletter-team/40929</a></p>
-<h2><a name="p-236785-feedback-46" class="anchor" href="https://discourse.ubuntu.com#p-236785-feedback-46" aria-label="Heading link"></a>Feedback</h2>
-<p>This document is maintained by the Ubuntu Weekly News Team. If you have a story idea or suggestions for the Weekly Newsletter, join the Ubuntu News Team mailing list at <a href="https://lists.ubuntu.com/mailman/listinfo/Ubuntu-news-team">https://lists.ubuntu.com/mailman/listinfo/Ubuntu-news-team</a> and submit it. Ideas can also be added to the wiki at <a href="https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-ideas/40053/">https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-ideas/40053/</a> . If you’d like to contribute to a future issue of the Ubuntu Weekly Newsletter, please feel free to edit the appropriate wiki page. If you have any technical support questions, please check <a href="https://community.ubuntu.com/help-information/">https://community.ubuntu.com/help-information/</a> for more information on where to get help.</p>
-<p>Except where otherwise noted, this issue of the Ubuntu Weekly Newsletter is licensed under a Creative Commons Attribution ShareAlike 3.0 License.</p>
-<p><img src="https://ubuntucommunity.s3.us-east-2.amazonaws.com/original/3X/d/b/dbf59da03627b1c1aed30432a2467c245b8cfbf1.png" alt="CCL" data-base62-sha1="vnQNj6QVCJUCgWWL8t8nrPszYqJ" width="88" height="31"></p>
-            <p><small>1 post - 1 participant</small></p>
-            <p><a href="https://discourse.ubuntu.com/t/ubuntu-weekly-newsletter-issue-970/91441">Read full topic</a></p>]]></description>
-      <source url="https://discourse.ubuntu.com/c/uwn/uwn-issues/419.rss">Ubuntu Weekly News</source>
     </item>
     <item>
       <title>Ohme knows when I’m in. Its “never sell” promise is out</title>
@@ -2060,40 +1885,6 @@ co-creation from them is another entirely.</p>
       <source url="http://bobthegnome.blogspot.com/feeds/posts/default">Robert Ancell</source>
     </item>
     <item>
-      <title>The pandemic of incomplete OpenSSL error handling</title>
-      <link>https://blog.jak-linux.org/2026/07/03/openssl-pandemic/</link>
-      <guid isPermaLink="true">https://blog.jak-linux.org/2026/07/03/openssl-pandemic/</guid>
-      <pubDate>Fri, 03 Jul 2026 15:54:22 GMT</pubDate>
-      <description><![CDATA[<p>Recently a person reported a bug in APT saying that TLS is failing on FIPS
-systems with MD5 errors, and suggested we call <code>ERR_clear_error()</code> around
-TLS operations.</p>
-<p>Like any serious software engineer would do, I said No. Just because one component
-failed to handle its errors does not mean I can go around and discard all errors
-in another place - the program should have failed earlier (or discarded the error
-when it was determined to be safe).</p>
-<p>Little did I know that people have for years been using this approach as a best
-practice: Codebases everywhere are littered with calls to <code>ERR_clear_error()</code>
-before performing TLS, and upstream themselves suggest to do just that.</p>
-<p>This is a major, systemic, pandemic of incomplete error handling. We cannot
-just discard unrelated errors if they become inconvenient. The code that
-caused the error needs to be fixed to handle it.</p>
-<p>This isn&rsquo;t all. It seems many authors are not familiar with libraries using a
-stack of errors, and there is a second anti-pattern:</p>
-<p>Call an OpenSSL operation, check the top-level error, and then discard all
-errors if deemed &ldquo;not too bad&rdquo;. This has the same problem: Unrelated errors
-get silently discarded.</p>
-<p>I would strongly encourage everyone to inspect their code bases for any calls
-to <code>ERR_clear_error()</code> and whether they are safe or one of the bad patterns
-above (or maybe you find a new pattern). You may want to use error stack
-functionality of<code>ERR_set_mark</code> (<a href="https://docs.openssl.org/3.4/man3/ERR_set_mark/">https://docs.openssl.org/3.4/man3/ERR_set_mark/</a>)
-to essentially &ldquo;push&rdquo; and &ldquo;pop&rdquo; an error context of your own as a guard around
-multiple OpenSSL operations.</p>
-<p>To the OpenSSL authors, I would suggest not encouraging devastating security
-practices that fundamentally break any trust in software.</p>
-<p>We need to do better than this.</p>]]></description>
-      <source url="https://blog.jak-linux.org/post/index.xml">Julian Andres Klode</source>
-    </item>
-    <item>
       <title>Introducing Trustmux: Your Terminal, In Your Pocket</title>
       <link>http://blog.dustinkirkland.com/2026/06/introducing-trustmux.html</link>
       <guid isPermaLink="true">http://blog.dustinkirkland.com/2026/06/introducing-trustmux.html</guid>
@@ -2972,19 +2763,19 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
       <link>https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</link>
       <guid isPermaLink="true">https://ograblog.wordpress.com/2025/05/16/rooming-with-mark/</guid>
       <pubDate>Fri, 16 May 2025 11:17:23 GMT</pubDate>
-      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd wp-block-paragraph">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
+      <description><![CDATA[<p class="has-black-color has-text-color has-link-color wp-elements-46088db9ef993c5ecc5629835e2d0dbd">Yesterday, exactly twenty years ago my mobile rang while I was walking the dog. <br><br>I had just returned from Sydney about a week ago (still battling with the last remains of my Jet-lag (I had never left Europe before!)) where I had attended the UbuntuDownUnder summit and had a 30min interview on the last day (that was literally rather like having a coffee with friends after lunch) with Mark Shuttleworth and Matt Zimmerman (back then Canonicals CTO) on a nice hotel terrace directly under a tree with a colony of flying foxes sleeping above our heads.<br><br>There was Jane Silber (CEO) on the phone, telling me: &#8220;I&#8217;m so happy to tell you you are hired! In your new role we want you to create an educational flavor of Ubuntu, there will be a debian-edu/skolelinux gathering in Bergen in Norway from the 10th to 12th of June, are you okay flying there with Mark?&#8221;<br><br>I rushed back home and told my girlfriend: &#8220;I&#8217;m hired, and I&#8217;ll fly Canonical One on my first business trip next month!&#8221; (Canonical One was the name of Marks plane). I learned the next weeks that Canonical had indeed booked a generic scheduled flight for me and we&#8217;d only meet at the venue <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>The flight was a disaster, after we were boarding that small 20-seater 2 prop plane that was supposed to get us from Cologne to Amsterdam and the pilot started the engine my window all of a sudden was soaked in oil. We had to stay in the plane out on the filed while the mechanics were fixing the engine for like 2-3h so indeed I missed the connection in Amsterdam and had to stay for the night instead of arriving in Bergen the evening before the event started.<br><br>When I arrived at the venue everyone was already busy hacking on stuff and I jumped right in alongside, finally meeting some users of LTSP (Linux Terminal Server Project) which I was upstream for at that time and working with them on the problems they faced in debian with it, tinkering with moodle as a teaching support system and looking at other edu software, meanwhile Mark was sitting on a bar-stool in a corner with his laptop hacking on launchpad code.<br><br>When we went to our hotel in the evening it turned out they did not have our booking at all and were completely overbooked due to a jewelry exhibition they had in the house for that week. I talked like 15min to the lady behind the counter, showed her my booking confirmation PDF on the laptop, begged and flirted a lot and eventually she told us &#8220;We do have an exhibition room that we keep as spare, it only has one bed but you can have it and we will add a folding bed&#8221;. The room was actually a normal hotel room but completely set up with wallpaper tables all around the walls. <br><br>Mark insisted to take the folding bed and I can tell you, he does not snore &#8230; (well, he didn&#8217;t back then)<br><br>This was only the first of a plethora of adventures that followed in the upcoming 20 years, that phone call clearly changed my life and the company gave me the opportunity to work with the brightest, sharpest and most intelligent people on the planet in and outside of Canonical.<br><br>It surely changed a lot over these years (when I started we were building the distro with 18 people in the distro team and did that for quite a few years before it actually got split into server, foundations, kernel and desktop teams) but it never lost its special spirit of having these exceptional people with such a high focus on bringing opensource to everyone and making it accessible to everyone. <br>Indeed, with growth comes the requirement to make more money to pay the people, the responsibility to give your employees a certain amount of security and persistence grows, but Canonical and especially Mark have always managed to keep the balance to not lose that focus and do the right thing in the end.<br><br>Ten years ago I said &#8220;onward to the next ten!!&#8221;, I won&#8217;t really say &#8220;onward to the next 20!&#8221; today, not because I ever plan to resign but simply because I doubt I still want to work full time when I&#8217;m 75 <img src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br><br>Thank you Mark for dragging me into this adventure and thank you for still having me! I still love the ride!!</p>
 
 
 
-<p class="wp-block-paragraph"></p>
+<p></p>
 
 
 
-<p class="wp-block-paragraph"></p>
+<p></p>
 
 
 
-<p class="wp-block-paragraph"></p>]]></description>
+<p></p>]]></description>
       <source url="https://ograblog.wordpress.com/feed/atom">Oliver Grawert</source>
     </item>
     <item>
@@ -3216,6 +3007,240 @@ believe they&#8217;re now seen as sub-par.</p>]]></description>
 
 <p class="wp-block-paragraph">Thank you to everyone who contributed to OpenStack&nbsp;2023.2 Bobcat!</p>]]></description>
       <source url="https://wrestlingpenguins.wordpress.com/category/ubuntu/feed/?mrss=off">Corey Bryant</source>
+    </item>
+    <item>
+      <title>Building a NAS</title>
+      <link>https://apebox.org/wordpress/tech/1325</link>
+      <guid isPermaLink="true">https://apebox.org/wordpress/tech/1325</guid>
+      <pubDate>Tue, 12 Sep 2023 21:33:05 GMT</pubDate>
+      <description><![CDATA[<h2 class="wp-block-heading">The status quo</h2>
+
+
+
+<p>Back in 2015, I bought an off-the-shelf NAS, a QNAP TS-453mini, to act as my file store and Plex server. I had previously owned a Synology box, and whilst I liked the Synology OS and experience, the hardware was underwhelming. I loaded up the successor QNAP with four 5TB drives in RAID10, and moved all my files over (after some initial DoA drive issues were handled).</p>
+
+
+
+<figure class="wp-block-image size-medium"><img fetchpriority="high" decoding="async" width="550" height="550" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png" alt="QNAP TS-453mini product photo" class="wp-image-1329" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-550x550.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-150x150.png 150w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3-768x768.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-3.png 850w" sizes="(max-width: 550px) 100vw, 550px" /><figcaption class="wp-element-caption">QNAP TS-453mini product photo</figcaption></figure>
+
+
+
+<p>That thing has been in service for about 8 years now, and it&#8217;s been&#8230; a mixed bag. It was definitely more powerful than the predecessor system, but it was clear that QNAP&#8217;s OS was not up to the same standard as Synology&#8217;s &#8211; perhaps best exemplified by &#8220;HappyGet 2&#8221;, the QNAP webapp for downloading videos from streaming services like YouTube, whose icon is a straight rip-off of StarCraft 2. On its own, meaningless &#8211; but a bad omen for overall software quality</p>
+
+
+
+<span id="more-1325"></span>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="884" height="172" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png" alt="The logo for QNAP HappyGet 2 and Blizzard's Starcraft 2 side by side" class="wp-image-1328" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2.png 884w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-550x107.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-2-768x149.png 768w" sizes="(max-width: 884px) 100vw, 884px" /><figcaption class="wp-element-caption">The logo for QNAP HappyGet 2 and Blizzard&#8217;s StarCraft 2 side by side</figcaption></figure>
+
+
+
+<p>Additionally, the embedded Celeron processor in the NAS turned out to be an issue for some cases. It turns out, when playing back videos with subtitles, most Plex clients do not support subtitles properly &#8211; instead they rely on the Plex server doing JIT transcoding to bake the subtitles directly into the video stream. I discovered this with some Blu-Ray rips of Game of Thrones &#8211; some episodes would play back fine on my smart TV, but episodes with subtitled Dothraki speech would play at only 2 or 3 frames per second.</p>
+
+
+
+<p>The final straw was a ransomware attack, which went through all my data and locked every file below a 60MiB threshold. Practically all my music gone. A substantial collection of downloaded files, all gone. Some of these files had been carried around since my college days &#8211; digital rarities, or at least digital detritus I felt a real sense of loss at having to replace. This episode was caused by a ransomware targeting specific vulnerabilities in the QNAP OS, not an error on my part.</p>
+
+
+
+<p>So, I decided to start planning a replacement with:</p>
+
+
+
+<ul class="wp-block-list">
+<li>A non-garbage OS, whilst still being a NAS-appliance type offering (not an off-the-shelf Linux server distro)</li>
+
+
+
+<li>Full remote management capabilities</li>
+
+
+
+<li>A small form factor comparable to off-the-shelf NAS</li>
+
+
+
+<li>A powerful modern CPU capable of transcoding high resolution video</li>
+
+
+
+<li>All flash storage, no spinning rust</li>
+</ul>
+
+
+
+<p>At the time, no consumer NAS offered everything (The Asustor FS6712X exists now, but didn&#8217;t when this project started), so I opted to go for a full DIY rather than an appliance &#8211; not the first time I&#8217;ve jumped between appliances and DIY for home storage.</p>
+
+
+
+<h2 class="wp-block-heading">Selecting the core of the system</h2>
+
+
+
+<p>There aren&#8217;t many companies which will sell you a small motherboard with IPMI. Supermicro is a bust, so is Tyan. But ASRock Rack, the server division of third-tier motherboard vendor ASRock, delivers. Most of their boards aren&#8217;t actually compliant Mini-ITX size, they&#8217;re a proprietary &#8220;Deep Mini-ITX&#8221; with the regular screw holes, but 40mm of extra length (and a commensurately small list of compatible cases). But, thankfully, they do have a tiny selection of boards without the extra size, and I stumbled onto the <a href="https://www.asrockrack.com/general/productdetail.asp?Model=X570D4I-2T">X570D4I-2T</a>, a board with an AMD AM4 socket and the mature X570 chipset. This board can use <em>any</em> AMD Ryzen chip (before the latest-gen Ryzen 7000 series); has built in dual 10 gigabit ethernet; IPMI; four (laptop-sized) RAM slots with full ECC support; one M.2 slot for NVMe SSD storage; a PCIe 16x slot (generally for graphics cards, but we live in a world of possibilities); and up to 8 SATA drives OR a couple more NVMe SSDs. It&#8217;s astonishingly well featured, just a shame it costs about $450 compared to a good consumer-grade Mini ITX AM4 board costing less than half that.</p>
+
+
+
+<p>I was so impressed with the offering, in fact, that I crowed about it on Mastodon and ended up securing ASRock another sale, with someone else looking into a very similar project to mine around the same timespan.</p>
+
+
+
+<p>The next question was the CPU. An important feature of a system expected to run 24/7 is low power, and AM4 chips can consume as much as 130W under load, out of the box. At the other end, some models can require as little as 35W under load &#8211; the OEM-only &#8220;GE&#8221; suffix chips, which are readily found for import on eBay. In their &#8220;PRO&#8221; variant, they also support ECC (all non-G Ryzen chips support ECC, but only Pro G chips do). The top of the range 8 core Ryzen 7 PRO 5750GE is prohibitively expensive, but the slightly weaker 6 core <a href="https://www.amd.com/en/products/apu/amd-ryzen-5-pro-5650ge">Ryzen 5 PRO 5650GE</a> was affordable, and one arrived quickly from Hong Kong. Supplemented with a couple of cheap 16 GiB SODIMM sticks of DDR4 PC-3200 direct from Micron for under $50 a piece, that left only cooling as an unsolved problem to get a bootable test system.</p>
+
+
+
+<p>The official support list for the X570D4I-2T only includes two rackmount coolers, both expensive and hard to source. The reason for such a small list is the non standard cooling layout of the board &#8211; instead of an AM4 hole pattern with the standard plastic AM4 retaining clips, it has an Intel 115x hole pattern with a non-standard backplate (Intel 115x boards have no backplate, the stock Intel 115x cooler attaches to the holes with push pins). As such every single cooler compatibility list excludes this motherboard. However, the backplate is only secured with a mild glue &#8211; with minimal pressure and a plastic prying tool it can be removed, giving compatibility with any 115x cooler (which is basically any CPU cooler for more than a decade). I picked an oversized low profile <a href="http://thermalright.com/product/axp120-x67-black-argb/">Thermalright AXP120-X67</a> hoping that its 120mm fan would cool the nearby MOSFETs and X570 chipset too.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg" alt="" class="wp-image-1333" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/08/img_7819-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Thermalright AXP120-X67, AMD Ryzen 5 PRO 5650GE, ASRock Rack X570D4I-2T, all assembled and running on a flat surface</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Testing up to this point</h2>
+
+
+
+<p>Using a spare ATX power supply, I had enough of a system built to explore the IPMI and UEFI instances, and run MemTest86 to validate my progress. The memory test ran without a hitch and confirmed the ECC was working, although it also showed that the memory was only running at 2933 MT/s instead of the rated 3200 MT/s (a limit imposed by the motherboard, as higher speeds are considered overclocking). The IPMI interface isn&#8217;t the best I&#8217;ve ever used by a long shot, but it&#8217;s minimum viable and allowed me to configure the basics and boot from media entirely via a Web browser.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="905" height="819" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png" alt="" class="wp-image-1341" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5.png 905w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-550x498.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-5-768x695.png 768w" sizes="auto, (max-width: 905px) 100vw, 905px" /><figcaption class="wp-element-caption">Memtest86 showing test progress, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>One sad discovery, however, which I&#8217;ve never seen documented before, on PCIe bifurcation.</p>
+
+
+
+<p>With PCI Express, you have a number of &#8220;lanes&#8221; which are allocated in groups by the motherboard and CPU manufacturer. For Ryzen prior to Ryzen 7000, that&#8217;s 16 lanes in one slot for the graphics card; 4 lanes in one M.2 connector for an SSD; then 4 lanes connecting the CPU to the chipset, which can offer whatever it likes for peripherals or extra lanes (bottlenecked by that shared 4x link to the CPU, if it comes down to it).</p>
+
+
+
+<p>It&#8217;s possible, with motherboard and CPU support, to split PCIe groups up &#8211; for example an 8x slot could be split into two 4x slots (eg allowing two NVMe drives in an adapter card &#8211; NVME drives these days all use 4x). However with a &#8220;Cezanne&#8221; Ryzen with integrated graphics, the 16x graphics card slot cannot be split into four 4x slots (ie used for for NVMe drives) &#8211; the most bifurcation it allows is 8x4x4x, which is useless in a NAS.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="897" height="806" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png" alt="" class="wp-image-1336" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4.png 897w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-550x494.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-4-768x690.png 768w" sizes="auto, (max-width: 897px) 100vw, 897px" /><figcaption class="wp-element-caption">Screenshot of PCIe 16x slot bifurcation options in UEFI settings, taken from IPMI remote control window</figcaption></figure>
+
+
+
+<p>As such, I had to abandon any ideas of an all-NVMe NAS I was considering: the 16x slot split into four 4x, combined with two 4x connectors fed by the X570 chipset, to a total of 6 NVMe drives. 7.6TB U.2 enterprise disks are remarkably affordable (cheaper than consumer SATA 8TB drives), but alas, I was locked out by my 5650GE. Thankfully I found out before spending hundreds on a U.2 hot swap bay. The NVMe setup would be nearly 10x as fast as SATA SSDs, but at least the SATA SSD route would still outperform any spinning rust choice on the market (including the fastest 10K RPM SAS drives)</p>
+
+
+
+<h2 class="wp-block-heading">Containing the core</h2>
+
+
+
+<p>The next step was to pick a case and power supply. A lot of NAS cases require an SFX (rather than ATX) size supply, so I ordered a modular <a href="https://www.silverstonetek.com/en/product/info/power-supplies/SX500-G/">SX500</a> unit from Silverstone. Even if I ended up with a case requiring ATX, it&#8217;s easy to turn an SFX power supply into ATX, and the worst result is you have less space taken up in your case, hardly the worst problem to have.</p>
+
+
+
+<p>That said, on to picking a case. There&#8217;s only one brand with any cachet making ITX NAS cases, Silverstone. They have three choices in an appropriate size: <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS01-HS/">CS01-HS</a>, <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/CS280/">CS280</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/DS380/">DS380</a>. The problem is, these cases are all badly designed garbage. Take the CS280 as an example, the case with the most space for a CPU cooler. Here&#8217;s how close together the hotswap bay (right) and power supply (left) are:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="568" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png" alt="" class="wp-image-1343" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-550x391.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-6-768x545.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>With actual cables connected, the cable clearance problem is even worse:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="800" height="533" src="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png" alt="" class="wp-image-1344" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7.png 800w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-550x366.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/08/image-7-768x512.png 768w" sizes="auto, (max-width: 800px) 100vw, 800px" /><figcaption class="wp-element-caption">Internal image of Silverstone CS280 NAS build. Image stolen from <a href="https://www.servethehome.com/silverstone-cs280-review-8-bay-asrock-rack-diy-nas-build/2/">ServeTheHome</a></figcaption></figure>
+
+
+
+<p>Remember, this is the <em>best</em> of the three cases for internal layout, the one with the least restriction on CPU cooler height. And it&#8217;s garbage! Total hot garbage! I decided therefore to completely skip the NAS case market, and instead purchase a 5.25&#8243;-to-2.5&#8243; hot swap bay adapter from Icy Dock, and put it in an ITX gamer case with a 5.25&#8243; bay. This is no longer a served market &#8211; 5.25&#8243; bays are extinct since nobody uses CD/DVD drives anymore. The ones on the market are really new old stock from 2014-2017: The <a href="https://www.fractal-design.com/products/cases/core/core-500/black/">Fractal Design Core 500</a>, <a href="https://www.coolermaster.com/catalog/cases/mini-itx/elite130/">Cooler Master Elite 130</a>, and <a href="https://www.silverstonetek.com/en/product/info/computer-chassis/SUGO14/">Silverstone SUGO 14</a>. Of the three, the Fractal is the best rated so I opted to get that one &#8211; however it seems the global supply of &#8220;new old stock&#8221; fully dried up in the two weeks between me making a decision and placing an order &#8211; leaving only the Silverstone case.</p>
+
+
+
+<p>Icy Dock have a selection of 8-bay 2.5&#8243; SATA 5.25&#8243; hot swap chassis choices in their ToughArmor MB998 series. I opted for the <a href="https://global.icydock.com/product_169.html">ToughArmor MB998IP-B</a>, to reduce cable clutter &#8211; it requires only two SFF-8611-to-SF-8643 cables from the motherboard to serve all eight bays, which should make airflow less of a mess. The X570D4I-2T doesn&#8217;t have any SATA ports on board, instead it has two SFF-8611 OCuLink ports, each supporting 4 PCI Express lanes OR 4 SATA connectors via a breakout cable. I had hoped to get the ToughArmor MB118VP-B and run six U.2 drives, but as I said, the PCIe bifurcation issue with Ryzen &#8220;G&#8221; chips meant I wouldn&#8217;t be able to run all six bays successfully.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg" alt="" class="wp-image-1348" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7941-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">NAS build in Silverstone SUGO 14, mid build, panels removed</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg" alt="" class="wp-image-1349" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7942-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">Silverstone SUGO 14 from the front, with hot swap bay installed</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Actual storage for the storage server</h2>
+
+
+
+<p>My concept for the system always involved a fast boot/cache drive in the motherboard&#8217;s M.2 slot, non-redundant (just backups of the config if the worst were to happen) and separate storage drives somewhere between 3.8 and 8 TB each (somewhere from $200-$350). As a boot drive, I selected the <a href="https://www.intel.com/content/www/us/en/products/sku/211868/intel-optane-ssd-p1600x-series-58gb-m-2-80mm-pcie-3-0-x4-3d-xpoint/specifications.html">Intel Optane SSD P1600X 58G</a>, available for under $35 and rated for 228 years between failures (or 11,000 complete drive rewrite cycles).</p>
+
+
+
+<p>So, on to the big expensive choice: storage drives. I narrowed it down to two contenders: new-old-stock Intel D3-S4510 3.84TB enterprise drives, at about $200, or Samsung 870 QVO 8TB consumer drives, at about $375. I did spend a long time agonizing over the specification differences, the ZFS usage reports, the expected lifetime endurance figures, but in reality, it came down to price &#8211; $1600 of expensive drives vs $3200 of even more expensive drives. That&#8217;s 27TB of usable capacity in RAID-Z1, or 23TB in RAID-Z2. For comparison, I&#8217;m using about 5TB of the old NAS, so that&#8217;s a LOT of overhead for expansion.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg" alt="" class="wp-image-1355" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1024x768.jpg 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-550x413.jpg 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-768x576.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-1536x1152.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7945-2048x1536.jpg 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">Storage SSD loaded into hot swap sled</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">Booting up</h2>
+
+
+
+<p>Bringing it all together is the OS. I wanted an &#8220;appliance&#8221; NAS OS rather than self-administering a Linux distribution, and after looking into the surrounding ecosystems, decided on <a href="https://www.truenas.com/truenas-scale/">TrueNAS Scale</a> (the beta of the 2023 release, based on Debian 12).</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="600" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png" alt="" class="wp-image-1353" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1024x600.png 1024w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-550x322.png 550w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-768x450.png 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image-1536x900.png 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/image.png 2013w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">TrueNAS Dashboard screenshot in browser window</figcaption></figure>
+
+
+
+<p>I set up RAID-Z1, and with zero tuning (other than enabling auto-TRIM), got the following performance numbers:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>19.3k</td><td>75.6 MiB/s</td></tr><tr><td>4k random reads</td><td>36.1k</td><td>141 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>2300 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>3800 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Results using fio parameters <a href="https://support.huaweicloud.com/intl/en-us/evs_faq/evs_faq_0019.html#evs_faq_0019__section273349017162">suggested by Huawei</a></figcaption></figure>
+
+
+
+<p>And for comparison, the maximum theoretical numbers quoted by Intel for a single drive:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>16k</td><td>?</td></tr><tr><td>4k random reads</td><td>90k</td><td>?</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>280 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>560 MiB/s</td></tr></tbody></table><figcaption class="wp-element-caption">Numbers quoted by Intel SSD successors <a href="https://www.solidigm.com/products/data-center/d3/s4510.html">Solidigm</a>.</figcaption></figure>
+
+
+
+<p>Finally, the numbers reported on the old NAS with four 7200 RPM hard disks in RAID 10:</p>
+
+
+
+<figure class="wp-block-table"><table><tbody><tr><td></td><td>IOPS</td><td>Bandwidth</td></tr><tr><td>4k random writes</td><td>430</td><td>1.7 MiB/s</td></tr><tr><td>4k random reads</td><td>8006</td><td>32 MiB/s</td></tr><tr><td>Sequential writes</td><td>&#8211;</td><td>311 MiB/s</td></tr><tr><td>Sequential reads</td><td>&#8211;</td><td>566 MiB/s</td></tr></tbody></table></figure>
+
+
+
+<p>Performance seems pretty OK. There&#8217;s always going to be an overhead to RAID. I&#8217;ll settle for the 45x improvement on random writes vs. its predecessor, and 4.5x improvement on random reads. The sequential write numbers are gonna be impacted by the size of the ZFS cache (50% of RAM, so 16 GiB), but the rest should be a reasonable indication of true performance.</p>
+
+
+
+<p>It took me a little while to fully understand the TrueNAS permissions model, but I finally got Plex configured to access data from the same place as my SMB shares, which have anonymous read-only access or authenticated write access for myself and my wife, working fine via both Linux and Windows.</p>
+
+
+
+<p>And&#8230; that&#8217;s it! I built a NAS. I intend to add some fans and more RAM, but that&#8217;s the build. Total spent: about $3000, which sounds like an unreasonable amount, but it&#8217;s actually less than a comparable Synology DiskStation DS1823xs+ which has 4 cores instead of 6, first-generation AMD Zen instead of Zen 3, 8 GiB RAM instead of 32 GiB, no hardware-accelerated video transcoding, etc. And it would have been a whole lot less fun!</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg" alt="" class="wp-image-1364" srcset="https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-768x1024.jpg 768w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-413x550.jpg 413w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1152x1536.jpg 1152w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-1536x2048.jpg 1536w, https://apebox.org/wordpress/wp-content/uploads/2023/09/img_7958-scaled.jpg 1920w" sizes="auto, (max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">The final system, powered up</figcaption></figure>
+
+
+
+<p>(Also posted on <a href="https://pcpartpicker.com/b/fYhtt6">PCPartPicker</a>)</p>]]></description>
+      <source url="http://apebox.org/wordpress/tag/ubuntu/feed/">Jo Shields</source>
     </item>
     <item>
       <title>Understanding vm.swappiness: Improving Linux Performance and Memory Management</title>
